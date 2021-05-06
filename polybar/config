@@ -32,7 +32,7 @@ foreground = ${colors.foreground}
 line-size = 1.5
 line-color = #f00
 
-border-size = 0 
+border-size = 0
 border-color = #00000000
 
 padding-left = 1
@@ -50,7 +50,7 @@ font-2 = siji:pixelsize=12;1
 
 modules-left =i3
 modules-center =
-modules-right = spotify alsa2 battery date bluetooth
+modules-right = spotify pulseaudio battery date bluetooth
 
 ;tray-position = right
 tray-padding = 2
@@ -59,7 +59,7 @@ tray-padding = 2
 ;wm-restack = bspwm
 ;wm-restack = i3
 
-override-redirect = false 
+override-redirect = false
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev

@@ -21,6 +21,8 @@
     "Show Status Bar": "F10"
     "File Tree": "F4"
     "Outline": "F5"
+    "Comment": "Ctrl+l"
+    "YAML Front Matter": "Ctrl+m"
   },
 
   "monocolorEmoji": false, //default false. Only work for Windows
