@@ -1,10 +1,5 @@
-;   To learn more about how to configure Polybar
-;   go to https://github.com/polybar/polybar
-
 ; File inclusion
-;include-file = ~/.config/polybar/grayblocks/modules.ini
 include-file = ~/.config/polybar/modules.ini
-;include-file = ~/.config/polybar/polybar-themes/bitmap/hack/export.ini
 
 [colors]
 ;background = ${xrdb:color0:#222}
