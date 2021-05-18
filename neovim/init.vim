@@ -1,4 +1,7 @@
+# This is obsolete
+
 let mapleader=" "
+
 
 call plug#begin(expand('~/.vim/plugged'))
 Plug 'arcticicestudio/nord-vim'
