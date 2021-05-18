@@ -9,6 +9,7 @@ include-file = ~/.config/polybar/modules.ini
 [colors]
 ;background = ${xrdb:color0:#222}
 background = #00000000
+# background = #161616
 background-alt = #00000000
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -29,14 +30,18 @@ fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 1.5
+line-size = 1
 line-color = #f00
-
 border-size = 0
+border-top = 0
 border-color = #00000000
+border-bottom-size = 0
 
-padding-left = 1
-padding-right = 2
+
+padding-left = 3
+padding-right = 4
+
+# spacing = 1
 
 module-margin-left = 1
 module-margin-right = 1
@@ -44,13 +49,14 @@ module-margin-right = 1
 ;font-0 = fixed:pixelsize=12;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 
-font-0 = "Iosevka Nerd Font:pixelsize=13;3"
+# font-0 = "Iosevka Nerd Font:pixelsize=15;3"
+font-0 = "Iosevka Nerd Font:pixelsize=14;3"
 font-1 = "Iosevka Nerd Font:pixelsize=12;4"
 font-2 = siji:pixelsize=12;1
 
 modules-left =i3
 modules-center =
-modules-right = spotify pulseaudio battery date bluetooth
+modules-right =protonvpn pulseaudio battery date bluetooth 
 
 ;tray-position = right
 tray-padding = 2
@@ -84,5 +90,6 @@ screenchange-reload = true
 [global/wm]
 margin-top = 5
 margin-bottom = 5
+
 
 ; vim:ft=dosini
