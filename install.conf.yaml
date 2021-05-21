@@ -1,0 +1,37 @@
+# 1. Move to repository: cp /source /destination
+# 2. Install: ./install
+- defaults:
+    link:
+      create: true
+      force: true
+
+- clean: ['~']
+
+- link:
+    # Shell
+    ~/.zshrc: zsh/zshrc
+    ~/.oh-my-zsh/custom/aliases.zsh: zsh/aliases
+    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+
+    # Environment
+    ~/.config/i3/config: i3/config
+    ~/.config/polybar/config: polybar/config
+    ~/.config/polybar/modules.ini: polybar/modules.ini
+
+    # Tools
+    ~/.config/ranger/rc.conf: ranger/rc.conf
+    ~/.config/ranger/rifle.conf: ranger/rifle.conf
+    ~/.config/Typora/conf/conf.user.json: typora/conf.user.json
+    ~/.config/mpv/input.conf: mpv/input.conf
+    ~/.config/mpv/mpv.conf: mpv/mpv.conf
+    ~/.config/spotify-tui/client.yml: spotify/client.yml
+    ~/.config/spotify-tui/config.yml: spotify/config.yml
+    ~/.config/spotifyd/spotifyd.conf: spotify/spotifyd.conf
+    ~/.config/tridactyl/tridactylrc: tridactyl/tridactylrc.vim
+
+    # Neovim
+    ~/.config/nvim/lua/keymappings.lua: nvim/keymappings.lua
+    ~/.config/nvim/lua/plugins.lua: nvim/plugins.lua
+    ~/.config/nvim/lv-settings.lua: nvim/lv-settings.lua
+    ~/.config/nvim/init.lua: nvim/init.lua
+    

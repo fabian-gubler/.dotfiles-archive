@@ -1,0 +1,43 @@
+# Scripts
+alias tmuxdd='~/scripts/i3/tmuxdd.sh'
+
+# Productivity
+alias cleancache="sudo paccache -rk 1 && paccache -ruk0"
+alias r='ranger'
+alias rsyncy='sudo rsync -a --info=progress2'
+alias rsync-delete="sudo rsync -a --delete --info=progress2"
+alias drive='lsblk'
+alias pls='sudo $(fc -ln -1)'
+alias yt="mpsyt"
+alias pirate="pirate-get -T"
+alias listinstall="expac --timefmt='%Y-%m-%d %T' '%l\t%n'|sort -n"
+alias pirate="~/scripts/cli-torrent-dl/tordl.sh"
+alias torrent="sudo protonvpn --cc CH c && rtorrent"
+alias q="exit"
+alias yt="ytfzf --preview-side=right -t"
+alias sub="ytfzf --preview-side=right -tS "
+alias gfx="lspci | grep VGA && cat /proc/acpi/bbswitch"
+alias polystart="$HOME/.config/polybar/launch.sh &"
+alias zoomdl="zoomdl-beta -u"
+alias n="nvim"
+alias dragon="dragon-drag-and-drop"
+alias dropstatus="find /data/Dropbox -type f -exec dropbox filestatus {} \; | grep 'syncing'"
+
+
+# Pacman
+alias pacman='sudo pacman --color auto'
+alias update='yay -Syyu'
+
+# Spelling
+alias vim='nvim'
+alias npm='sudo npm'
+
+# Protonvpn
+alias protonfast='sudo protonvpn --cc CH c'
+alias protonstop='sudo protonvpn d'
+alias protonconnect='sudo protonvpn c'
+alias protonstatus='protonvpn s'
+
+# Switch between bash and zsh
+alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
+alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
