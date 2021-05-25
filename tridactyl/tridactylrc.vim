@@ -4,6 +4,20 @@
 colourscheme nord
 
 " --------------------------------------------------------------------------------"
+" ---  Bindings"
+" --------------------------------------------------------------------------------"
+" Navigation
+bind j scrollline 4
+bind J scrollline 15
+bind k scrollline -4
+bind K scrollline -15
+bind f fullscreen
+
+" Hinting
+bind s hint
+bind S hint -b
+
+" --------------------------------------------------------------------------------"
 " ---  Bindurl"
 " --------------------------------------------------------------------------------"
 " Only hint search results on Google 
@@ -20,7 +34,32 @@ set hintdelay 100
 " details, read the comment at the top of this file.
 fixamo_quiet
 
+" Smoothscroll
+set smoothscroll true
+
+" --------------------------------------------------------------------------------"
+" ---  Unbind Key"
+" --------------------------------------------------------------------------------"
+unbind <C-b>
+
+
+
+
 " --------------------------------------------------------------------------------"
 " ---  Unbind Url"
 " --------------------------------------------------------------------------------"
+" YouTube
 unbindurl youtube.com/watch k
+
+" Google Calendar
+unbindurl calendar.google/ j
+unbindurl calendar.google/ k
+unbindurl calendar.google/ w
+
+
+# --------------------------------------------------------------------------------
+# --- Alias
+# --------------------------------------------------------------------------------
+command pref tabopen about:preferences
+command conf tabopen about:config
+command addon tabopen about:addons

@@ -7,8 +7,7 @@
 # Print = PRINT key
 # Tab = TAB key
 
-# --- testing 
-popup_during_fullscreen leave_fullscreen
+
 
 # --------------------------------------------------------------------------------
 # --- Look
@@ -25,7 +24,9 @@ client.urgent           #4A4A4A #4A4A4A #f7f7f7 #4A4A4A
 
 exec --no-startup-id autorandr --change
 exec --no-startup-id nitrogen --restore
+exec --no-startup-id spotifyd
 exec_always --no-startup-id $HOME/.config/Insync/launch.sh
+
 # --------------------------------------------------------------------------------
 # --- Keybindings 
 # --------------------------------------------------------------------------------
@@ -36,11 +37,10 @@ bindsym $mod+F1 		exec firefox https://learning.unisg.ch/courses/9971 	# Statist
 bindsym $mod+F2 		exec firefox https://learning.unisg.ch/courses/9868 	# Subjekttheorie
 bindsym $mod+F3 		exec firefox https://learning.unisg.ch/courses/9864 	# ESR
 bindsym $mod+F4 		exec firefox https://learning.unisg.ch/courses/9944 	# Strategic Management
-bindsym $mod+F5 		exec firefox outlook.live.com/				# Outlook
+bindsym $mod+F5 		exec firefox outlook.live.com/				            # Outlook
 bindsym $mod+d			exec dmenu_run -i -h 45 -fn 'Monospace:Regular:pixelsize=15' -nf "#F8F8F2" -nb "#252A34" -sf "#191919" -sb "#81A1C1"
 bindsym control+mod1+m		exec --no-startup-id xfce4-settings-manager
 bindsym --release $mod+Escape 	exec xkill
-bindsym $mod+w 			exec --no-startup-id exo-open --launch webbrowser;focus
 bindsym $mod+Return		exec --no-startup-id alacritty
 bindsym $mod+Shift+Return exec --no-startup-id alacritty -e ranger -r ~/.config/ranger
 bindsym Print 			exec --no-startup-id flameshot gui
@@ -63,10 +63,21 @@ bindsym --whole-window $mod+button2		kill  					# middle button + mod kills wind
 # --------------------------------------------------------------------------------
 # --- Scratchpads 
 # --------------------------------------------------------------------------------
+bindsym $mod+BackSpace move scratchpad
+
+# Typora
+bindsym $mod+t exec ~/scripts/i3/switch.sh "Typora" "typora"
+bindsym $mod+Shift+t exec typora; [class="Typora"] scratchpad show
+for_window [class="Typora"] move scratchpad 
+exec --no-startup-id typora
+
+# Firefox
+bindsym $mod+w exec ~/scripts/i3/switch.sh "firefox" "firefox"
+for_window [class="firefox"] move scratchpad 
+exec --no-startup-id firefox 
 # i3-scratchpads 
 bindsym $mod+a 			exec --no-startup-id i3-scratchpad -d 1200x750  -tt alacritty --class dropdown &
-bindsym $mod+u 			exec --no-startup-id i3-scratchpad -d 800x400 -tt alacritty -e R -q 
-# bindsym $mod+r			exec --no-startup-id i3-scratchpad -d 1200x750 -tt alacritty -e ranger
+bindsym $mod+u 			exec --no-startup-id i3-scratchpad -d 800x400 -tt alacritty -e R -q; floating toggle
 
 # --------------------------------------------------------------------------------
 # --- Workspaces 
@@ -103,8 +114,8 @@ bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 # --------------------------------------------------------------------------------
 set $mod Mod4
 bindsym $mod+Shift+r		restart
-
-bindsym $mod+q 			[con_id="__focused__" instance="^(?!dropdown2).*$"] kill
+bindsym $mod+q exec i3-persist kill
+bindsym $mod+Shift+q exec i3-persist lock
 floating_modifier 		$mod
 bindsym $mod+Shift+space floating toggle
 
@@ -121,12 +132,11 @@ bindsym $mod+Shift+l 	move right
 # --------------------------------------------------------------------------------
 # --- Tiling 
 # --------------------------------------------------------------------------------
+popup_during_fullscreen leave_fullscreen
 default_orientation horizontal
 bindsym $mod+Shift+v	split h
 bindsym $mod+v 	    	split v
 bindsym $mod+f 			fullscreen toggle
-bindsym $mod+s 			layout stacking
-bindsym $mod+t 			layout tabbed
 bindsym $mod+e 			layout toggle split
 bindsym $mod+space 		focus mode_toggle
 bindsym $mod+p 			focus parent

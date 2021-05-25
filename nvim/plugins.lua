@@ -36,6 +36,7 @@ return require("packer").startup(
         use {"ap/vim-css-color", opt=true}
         use {"psliwka/vim-smoothie", opt=true}
         use {"ebranlard/vim-simple-comment", opt=true}
+        use {"easymotion/vim-easymotion", opt = true}
 
 
         -- Packer can manage itself as an optional plugin
@@ -51,7 +52,6 @@ return require("packer").startup(
         use {"nvim-lua/plenary.nvim", opt = true}
         use {"nvim-telescope/telescope.nvim", opt = true}
         use {"nvim-telescope/telescope-fzy-native.nvim", opt = true}
-        use {"easymotion/vim-easymotion", opt = true}
 
         -- Debugging
         use {"mfussenegger/nvim-dap", opt = true}

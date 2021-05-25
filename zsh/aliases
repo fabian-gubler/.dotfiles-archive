@@ -22,7 +22,9 @@ alias zoomdl="zoomdl-beta -u"
 alias n="nvim"
 alias dragon="dragon-drag-and-drop"
 alias dropstatus="find /data/Dropbox -type f -exec dropbox filestatus {} \; | grep 'syncing'"
-
+alias agenda="gcalcli agenda --military"
+alias monitor="autorandr --load monitor"
+alias laptop="autorandr --load laptop"
 
 # Pacman
 alias pacman='sudo pacman --color auto'

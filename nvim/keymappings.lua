@@ -21,6 +21,10 @@ vim.api.nvim_set_keymap('n', 'J', '<C-d>', {silent = true})
 
 -- Easy Motion
 vim.cmd([[
+    " Quick Find
+    let g:EasyMotion_smartcase = 1
+    nmap f <Plug>(easymotion-overwin-f2)
+
     "Move to Word
     map sw <Plug>(easymotion-bd-w)
     nmap sw <Plug>(easymotion-overwin-w)
@@ -30,7 +34,7 @@ vim.cmd([[
     map sj <Plug>(easymotion-j)
     map sk <Plug>(easymotion-k)
     map sh <Plug>(easymotion-linebackward)
-    
+
     " Better Search
     map  S <Plug>(easymotion-sn)
     omap S <Plug>(easymotion-tn)
