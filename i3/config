@@ -30,6 +30,9 @@ exec_always --no-startup-id $HOME/.config/Insync/launch.sh
 # --------------------------------------------------------------------------------
 # --- Keybindings 
 # --------------------------------------------------------------------------------
+bindsym End         	exec betterlockscreen -l dim
+bindsym $mod+i          exec networkmanager_dmenu -h 25 -fn 'Monospace:Regular:pixelsize=15' -nf "#F8F8F2" -nb "#252A34" -sf "#191919" -sb "#81A1C1"
+bindsym $mod+End    	exec i3lock --color=#000000
 bindsym $mod+F12		exec VBoxManage startvm 'Windows 10'
 bindsym $mod+x 			exec /home/fabian/scripts/dmenu/dmlogout
 bindsym $mod+c			exec /home/fabian/scripts/dmenu/dmconf
@@ -38,15 +41,15 @@ bindsym $mod+F2 		exec firefox https://learning.unisg.ch/courses/9868 	# Subjekt
 bindsym $mod+F3 		exec firefox https://learning.unisg.ch/courses/9864 	# ESR
 bindsym $mod+F4 		exec firefox https://learning.unisg.ch/courses/9944 	# Strategic Management
 bindsym $mod+F5 		exec firefox outlook.live.com/				            # Outlook
-bindsym $mod+d			exec dmenu_run -i -h 45 -fn 'Monospace:Regular:pixelsize=15' -nf "#F8F8F2" -nb "#252A34" -sf "#191919" -sb "#81A1C1"
+bindsym $mod+d			exec dmenu_run -i -h 40 -fn 'Monospace:Regular:pixelsize=15' -nf "#F8F8F2" -nb "#252A34" -sf "#191919" -sb "#81A1C1"
 bindsym control+mod1+m		exec --no-startup-id xfce4-settings-manager
-bindsym --release $mod+Escape 	exec xkill
 bindsym $mod+Return		exec --no-startup-id alacritty
 bindsym $mod+Shift+Return exec --no-startup-id alacritty -e ranger -r ~/.config/ranger
 bindsym Print 			exec --no-startup-id flameshot gui
 bindsym Shift+Print		exec gpick
 bindsym $mod+n 			bar mode toggle
 bindsym $mod+b          exec --no-startup-id rofi-bluetooth
+bindsym $mod+m          exec --no-startup-id mailspring
 
 # --- Media Keys 
 bindsym XF86AudioRaiseVolume 			exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
@@ -63,7 +66,10 @@ bindsym --whole-window $mod+button2		kill  					# middle button + mod kills wind
 # --------------------------------------------------------------------------------
 # --- Scratchpads 
 # --------------------------------------------------------------------------------
+
+# Control
 bindsym $mod+BackSpace move scratchpad
+bindsym $mod+Shift+BackSpace scratchpad show
 
 # Typora
 bindsym $mod+t exec ~/scripts/i3/switch.sh "Typora" "typora"
@@ -73,11 +79,8 @@ exec --no-startup-id typora
 
 # Firefox
 bindsym $mod+w exec ~/scripts/i3/switch.sh "firefox" "firefox"
-for_window [class="firefox"] move scratchpad 
-exec --no-startup-id firefox 
-# i3-scratchpads 
-bindsym $mod+a 			exec --no-startup-id i3-scratchpad -d 1200x750  -tt alacritty --class dropdown &
-bindsym $mod+u 			exec --no-startup-id i3-scratchpad -d 800x400 -tt alacritty -e R -q; floating toggle
+for_window [class="firefox"] move scratchpad mark fire
+exec --no-startup-id firefox  
 
 # --------------------------------------------------------------------------------
 # --- Workspaces 
@@ -114,8 +117,8 @@ bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 # --------------------------------------------------------------------------------
 set $mod Mod4
 bindsym $mod+Shift+r		restart
-bindsym $mod+q exec i3-persist kill
-bindsym $mod+Shift+q exec i3-persist lock
+bindsym $mod+q              [con_id="__focused__" class="^(?!firefox|Typora|VirtualBox Machine).*$"] kill
+bindsym --release $mod+Escape exec xkill
 floating_modifier 		$mod
 bindsym $mod+Shift+space floating toggle
 
@@ -170,7 +173,7 @@ mode "resize" {
 # --- Bar & Gaps 
 # --------------------------------------------------------------------------------
 bar {
-    position top
+    position bottom
     mode invisible
     modifier none
     status_command i3blocks -c ~/.config/i3/i3blocks-active.conf
@@ -197,5 +200,7 @@ popup_during_fullscreen smart
 for_window [class="^.*"] border pixel 4
 
 # --- gaps [inner|outer|horizontal|vertical|top|left|bottom|right] <px>
-gaps inner 30
-gaps top -20
+gaps inner 28
+gaps top -8
+
+

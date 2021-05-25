@@ -33,11 +33,10 @@ return require("packer").startup(
     function(use)
         -- Custom Bindings
         use {"907th/vim-auto-save", opt=true}
-        use {"ap/vim-css-color", opt=true}
         use {"psliwka/vim-smoothie", opt=true}
         use {"ebranlard/vim-simple-comment", opt=true}
         use {"easymotion/vim-easymotion", opt = true}
-
+        use {"lilydjwg/colorizer", opt = true}
 
         -- Packer can manage itself as an optional plugin
         use "wbthomason/packer.nvim"
@@ -89,10 +88,10 @@ return require("packer").startup(
         use {"glepnir/galaxyline.nvim", opt = true}
         use {"romgrk/barbar.nvim", opt = true}
 
+        require_plugin("lilydjwg/colorizer")
         require_plugin("vim-easymotion")
         require_plugin("vim-simple-comment")
         require_plugin("vim-smoothie")
-        require_plugin("vim-css-color")
         require_plugin("vim-auto-save")
         require_plugin("nvim-lspconfig")
         require_plugin("lspsaga.nvim")

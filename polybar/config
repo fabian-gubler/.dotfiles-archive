@@ -3,7 +3,8 @@ include-file = ~/.config/polybar/modules.ini
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #00000000
+; background = #00000000
+background = #252A34
 # background = #161616
 background-alt = #00000000
 ;foreground = ${xrdb:color7:#222}
@@ -50,7 +51,7 @@ font-2 = siji:pixelsize=12;1
 
 modules-left =i3
 modules-center =
-modules-right =protonvpn pulseaudio battery date bluetooth 
+modules-right =protonvpn pulseaudio battery date bluetooth network-short
 
 ;tray-position = right
 tray-padding = 2
@@ -85,5 +86,3 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
-
-; vim:ft=dosini

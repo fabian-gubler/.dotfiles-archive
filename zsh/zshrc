@@ -12,12 +12,13 @@ ZSH_THEME=""
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
-prompt_newline='%666v' # Single-line Prompt
+# prompt_newline='%666v' # Single-line Prompt
 PROMPT=" $PROMPT"
 
 # fzf configurations
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 export FZF_DEFAULT_OPTS='--no-height --layout=reverse '
+export FZF_CTRL_T_OPTS="-e"
 
 # --------------------------------------------------------------------------------
 # --- Plugins 

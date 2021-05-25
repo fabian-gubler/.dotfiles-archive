@@ -25,6 +25,7 @@ alias dropstatus="find /data/Dropbox -type f -exec dropbox filestatus {} \; | gr
 alias agenda="gcalcli agenda --military"
 alias monitor="autorandr --load monitor"
 alias laptop="autorandr --load laptop"
+alias wlan="networkmanager_dmenu"
 
 # Pacman
 alias pacman='sudo pacman --color auto'
