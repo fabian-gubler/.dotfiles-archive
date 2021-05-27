@@ -21,9 +21,11 @@
     "Show Status Bar": "F10"
     "File Tree": "F4"
     "Outline": "F5"
-    "Comment": "Ctrl+l"
     "YAML Front Matter": "Ctrl+m"
     "Open Quickly...": "Ctrl+o"
+    "Open...": "Ctrl+p"
+    "Task List": "Ctrl+t"
+    "Unordered List": "Ctrl+d"
   },
 
   "monocolorEmoji": false, //default false. Only work for Windows

@@ -7,8 +7,6 @@
 # Print = PRINT key
 # Tab = TAB key
 
-
-
 # --------------------------------------------------------------------------------
 # --- Look
 # --------------------------------------------------------------------------------
@@ -74,13 +72,13 @@ bindsym $mod+Shift+BackSpace scratchpad show
 # Typora
 bindsym $mod+t exec ~/scripts/i3/switch.sh "Typora" "typora"
 bindsym $mod+Shift+t exec typora; [class="Typora"] scratchpad show
-for_window [class="Typora"] move scratchpad 
+for_window [class="Typora" window_role="browser-window"] move scratchpad 
 exec --no-startup-id typora
 
 # Firefox
 bindsym $mod+w exec ~/scripts/i3/switch.sh "firefox" "firefox"
-for_window [class="firefox"] move scratchpad mark fire
-exec --no-startup-id firefox  
+for_window [class="firefox" instance="Navigator"] move scratchpad 
+exec --no-startup-id firefox   
 
 # --------------------------------------------------------------------------------
 # --- Workspaces 

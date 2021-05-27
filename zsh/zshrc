@@ -12,13 +12,8 @@ ZSH_THEME=""
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
-# prompt_newline='%666v' # Single-line Prompt
+prompt_newline='%666v'              # Single-line Prompt
 PROMPT=" $PROMPT"
-
-# fzf configurations
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-export FZF_DEFAULT_OPTS='--no-height --layout=reverse '
-export FZF_CTRL_T_OPTS="-e"
 
 # --------------------------------------------------------------------------------
 # --- Plugins 
@@ -27,14 +22,15 @@ export FZF_CTRL_T_OPTS="-e"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
     zsh-autosuggestions
-    zsh-vi-mode
-    fzf
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # Vi-Mode Config 
 ZVM_VI_HIGHLIGHT_BACKGROUND=#81a1c1
+
+# zsh-autosuggestions
+bindkey '^I' autosuggest-accept
 
 # PATH 
 PATH=/home/fabian/.torrench/bin:/home/fabian/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
