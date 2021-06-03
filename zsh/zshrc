@@ -12,7 +12,7 @@ ZSH_THEME=""
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
-prompt_newline='%666v'              # Single-line Prompt
+# prompt_newline='%666v'              # Single-line Prompt
 PROMPT=" $PROMPT"
 
 # --------------------------------------------------------------------------------

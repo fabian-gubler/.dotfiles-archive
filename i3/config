@@ -7,6 +7,10 @@
 # Print = PRINT key
 # Tab = TAB key
 
+set $mod Mod4
+set $sup Scroll_Lock
+
+exec i3-msg "workspace 1"
 # --------------------------------------------------------------------------------
 # --- Look
 # --------------------------------------------------------------------------------
@@ -23,55 +27,70 @@ client.urgent           #4A4A4A #4A4A4A #f7f7f7 #4A4A4A
 exec --no-startup-id autorandr --change
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id spotifyd
+exec --no-startup-id bluetoothctl power on
 exec_always --no-startup-id $HOME/.config/Insync/launch.sh
 
 # --------------------------------------------------------------------------------
 # --- Keybindings 
 # --------------------------------------------------------------------------------
-bindsym End         	exec betterlockscreen -l dim
+
+# --- Floating enable 
+for_window [class="Gcolor3"] floating enable
+
+# --- Bindings 
+bindsym Menu         	exec betterlockscreen -l dim
 bindsym $mod+i          exec networkmanager_dmenu -h 25 -fn 'Monospace:Regular:pixelsize=15' -nf "#F8F8F2" -nb "#252A34" -sf "#191919" -sb "#81A1C1"
-bindsym $mod+End    	exec i3lock --color=#000000
-bindsym $mod+F12		exec VBoxManage startvm 'Windows 10'
+bindsym $mod+s          exec alacritty -e spt
 bindsym $mod+x 			exec /home/fabian/scripts/dmenu/dmlogout
 bindsym $mod+c			exec /home/fabian/scripts/dmenu/dmconf
 bindsym $mod+F1 		exec firefox https://learning.unisg.ch/courses/9971 	# Statistics
 bindsym $mod+F2 		exec firefox https://learning.unisg.ch/courses/9868 	# Subjekttheorie
 bindsym $mod+F3 		exec firefox https://learning.unisg.ch/courses/9864 	# ESR
 bindsym $mod+F4 		exec firefox https://learning.unisg.ch/courses/9944 	# Strategic Management
-bindsym $mod+F5 		exec firefox outlook.live.com/				            # Outlook
 bindsym $mod+d			exec dmenu_run -i -h 40 -fn 'Monospace:Regular:pixelsize=15' -nf "#F8F8F2" -nb "#252A34" -sf "#191919" -sb "#81A1C1"
 bindsym control+mod1+m		exec --no-startup-id xfce4-settings-manager
 bindsym $mod+Return		exec --no-startup-id alacritty
 bindsym $mod+Shift+Return exec --no-startup-id alacritty -e ranger -r ~/.config/ranger
 bindsym Print 			exec --no-startup-id flameshot gui
-bindsym Shift+Print		exec gpick
+bindsym Insert		    exec gcolor3
 bindsym $mod+n 			bar mode toggle
 bindsym $mod+b          exec --no-startup-id rofi-bluetooth
 bindsym $mod+m          exec --no-startup-id mailspring
 
 # --- Media Keys 
-bindsym XF86AudioRaiseVolume 			exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume 			exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioMute 				exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
+# Increase Volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master unmute && amixer set Master 5%+ && rumno -r 0.001 --icon-height 0.4 -v $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
+bindsym $mod+Up exec --no-startup-id "amixer set Master unmute && amixer set Master 5%+ && rumno -r 0.001 --icon-height 0.4 -v $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
+
+# Lower Volume
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master unmute && amixer set Master 5%- && rumno  -r 0.001 --icon-height 0.4 -v $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
+bindsym $mod+Down exec --no-startup-id "amixer set Master unmute && amixer set Master 5%- && rumno  -r 0.001 --icon-height 0.4 -v $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
+
+# Mute
+bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle && if amixer get Master | grep -Fq '[off]'; then rumno -r 0.001 --icon-height 0.4 -m; else rumno -r 0.001 --icon-height 0.4 -v $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1); fi"
+
 bindsym XF86AudioPlay 				exec --no-startup-id playerctl play-pause
-bindsym XF86AudioNext 				exec --no-startup-id playerctl next
-bindsym XF86AudioPrev 				exec --no-startup-id playerctl previous
+bindsym XF86AudioNext 				exec --no-startup-id playerctl next && rumno -r 0.01 -n
+bindsym XF86AudioPrev 				exec --no-startup-id playerctl previous && rumno -r 0.01 -p
 bindsym XF86AudioStop 				exec --no-startup-id playerctl stop
-bindsym XF86MonBrightnessUp 			exec --no-startup-id xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown 			exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
-bindsym --whole-window $mod+button2		kill  					# middle button + mod kills window
+
+# --- Brightness 
+bindsym F8 			exec --no-startup-id blight set -- -5% && rumno -r 0.001 --icon-height 0.4 -b $(light -G)
+bindsym F9 			exec --no-startup-id blight set -- +5% && rumno -r 0.001 --icon-height 0.4 -b $(light -G)
 
 # --------------------------------------------------------------------------------
 # --- Scratchpads 
 # --------------------------------------------------------------------------------
 
 # Control
-bindsym $mod+BackSpace move scratchpad
-bindsym $mod+Shift+BackSpace scratchpad show
+bindsym $mod+Tab move scratchpad
+bindsym $mod+BackSpace scratchpad show
+
+# Pavucontrol
+bindsym $mod+t          exec alacritty -e ncpamixer 
 
 # Typora
-bindsym $mod+t exec ~/scripts/i3/switch.sh "Typora" "typora"
-bindsym $mod+Shift+t exec typora; [class="Typora"] scratchpad show
+bindsym $mod+a exec ~/scripts/i3/switch.sh "Typora" "typora"
 for_window [class="Typora" window_role="browser-window"] move scratchpad 
 exec --no-startup-id typora
 
@@ -83,11 +102,12 @@ exec --no-startup-id firefox
 # --------------------------------------------------------------------------------
 # --- Workspaces 
 # --------------------------------------------------------------------------------
-set $up l
-set $down k
-set $left j
-set $right semicolon
 
+# --- Virtualbox 
+for_window [class="VirtualBox Machine"]     move container to workspace 0, focus
+
+
+bindsym $mod+dead_circumflex workspace 0
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -99,6 +119,7 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+bindsym $mod+Shift+dead_circumflex move container to workspace 0; workspace 0
 bindsym $mod+Shift+1 move container to workspace 1; workspace 1
 bindsym $mod+Shift+2 move container to workspace 2; workspace 2
 bindsym $mod+Shift+3 move container to workspace 3; workspace 3
@@ -113,7 +134,6 @@ bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 # --------------------------------------------------------------------------------
 # --- Navigation 
 # --------------------------------------------------------------------------------
-set $mod Mod4
 bindsym $mod+Shift+r		restart
 bindsym $mod+q              [con_id="__focused__" class="^(?!firefox|Typora|VirtualBox Machine).*$"] kill
 bindsym --release $mod+Escape exec xkill
@@ -198,7 +218,7 @@ popup_during_fullscreen smart
 for_window [class="^.*"] border pixel 4
 
 # --- gaps [inner|outer|horizontal|vertical|top|left|bottom|right] <px>
-gaps inner 28
+gaps inner 36
 gaps top -8
 
 

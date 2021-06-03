@@ -10,7 +10,7 @@ bind f fullscreen
 
 " Tabs
 bind n newtab
-bind qq composite newtab | tabclosealltoleft
+bind q composite newtab | tabclosealltoleft
 
 " Hinting
 bind s hint
@@ -21,8 +21,10 @@ unbind <C-b>
 unbind d
 
 " Tools
+bind <A-t> tabopen about:downloads
 bind m hint -qW mpvsafe
-bind d open https://drive.google.com/drive/starred
+bind dd open https://drive.google.com/drive/starred
+bind dc open https://calendar.google.com
 
 " Container
 bind c composite tabopen -c GUBAG | fillcmdline open
@@ -34,8 +36,8 @@ bind c composite tabopen -c GUBAG | fillcmdline open
 " Only hint search results on Google 
 bindurl www.google.com s hint -Jc #search div:not(.action-menu) > a
 bindurl www.google.com S hint -Jbc #search div:not(.action-menu) > a
-bindurl www.youtube.com s hint -Jc
-bindurl www.youtube.com s hint -Jb
+bindurl www.youtube.com s hint -J
+bindurl www.youtube.com S hint -Jb
 
 " YouTube
 unbindurl youtube.com k
@@ -55,7 +57,7 @@ unbindurl drive.google.com k
 # --------------------------------------------------------------------------------
 
 " Mozilla Pages
-command pref tabopen about:preferences
+command preferences tabopen about:preferences
 command conf tabopen about:config
 command addon tabopen about:addons
 command newtab tabopen about:blank

@@ -15,8 +15,6 @@
 
   // Custom key binding, which will override the default ones.
   "keyBinding": {
-    // for example: 
-    // "Always on Top": "Ctrl+Shift+P"
     "Source Code Mode": "F12"
     "Show Status Bar": "F10"
     "File Tree": "F4"
@@ -24,7 +22,8 @@
     "YAML Front Matter": "Ctrl+m"
     "Open Quickly...": "Ctrl+o"
     "Open...": "Ctrl+p"
-    "Task List": "Ctrl+t"
+    "Task List": "Ctrl+e"
+    "Insert Table": "Ctrl+t"
     "Unordered List": "Ctrl+d"
   },
 

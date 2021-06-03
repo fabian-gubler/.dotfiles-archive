@@ -40,10 +40,11 @@
     color: var(--tridactyl-bg);
 }
 
+/* Input field for entering commands */
 #tridactyl-input {    padding: 1rem;
     color: var(--tridactyl-fg);
     width: 90%;
-    font-size: 1.5rem;
+    font-size: 20pt;
     line-height: 1.5;
     background: var(--tridactyl-bg);
     padding-left: unset;
@@ -69,7 +70,8 @@
     color: var(--tridactyl-fg);
     background: var(--tridactyl-bg);
     display: inline-block;
-    font-size: unset;
+    /* Subtitle Size (e.g. ex commands) */
+    font-size: 14pt;
     font-weight: 200;
     overflow: hidden;
     width: 100%;
@@ -82,8 +84,9 @@
     min-height: unset;
 }
 
+/* Used for open & tabopen */
 #completions .HistoryCompletionSource table {    width: 100%;
-    font-size: 9pt;
+    font-size: 12pt;
     border-spacing: 0;
     table-layout: fixed;
 }

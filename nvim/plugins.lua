@@ -43,7 +43,7 @@ return require("packer").startup(
 
         -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
         use {"neovim/nvim-lspconfig", opt = true}
-        use {"glepnir/lspsaga.nvim", opt = false}
+        use {"glepnir/lspsaga.nvim", opt = true}
         use {"kabouzeid/nvim-lspinstall", opt = true}
 
         -- Telescope

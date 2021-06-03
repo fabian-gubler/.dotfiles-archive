@@ -2,14 +2,14 @@
 include-file = ~/.config/polybar/modules.ini
 
 [colors]
-;background = ${xrdb:color0:#222}
-; background = #00000000
+;background = #00000000
+;background-alt = #00000000
+background-alt = #353B49
 background = #252A34
-# background = #161616
-background-alt = #00000000
+;background-alt = #434c5e
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #4c566a
+foreground-alt = #6f7787
 primary = #d8dee9
 secondary = #e5e9f0
 
@@ -32,46 +32,31 @@ border-top = 0
 border-color = #00000000
 border-bottom-size = 0
 
+padding-left = 7
+padding-right = 8
+;spacing = 1
 
-padding-left = 3
-padding-right = 4
+# --------------------------------------------------------------------------------
+# --- Modules
+# --------------------------------------------------------------------------------
 
-# spacing = 1
-
-module-margin-left = 1
-module-margin-right = 1
+module-margin = 2
 
 ;font-0 = fixed:pixelsize=12;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-
-# font-0 = "Iosevka Nerd Font:pixelsize=15;3"
-font-0 = "Iosevka Nerd Font:pixelsize=14;3"
-font-1 = "Iosevka Nerd Font:pixelsize=12;4"
+font-0 = "SF Pro Text:pixelsize=15;3"
+font-1 = "Iosevka Nerd Font:pixelsize=13;3"
 font-2 = siji:pixelsize=12;1
 
 modules-left =i3
 modules-center =
-modules-right =protonvpn pulseaudio battery date bluetooth network-short
-
-;tray-position = right
-tray-padding = 2
-;tray-background = #0063ff
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-override-redirect = false
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
+modules-right =pulseaudio battery network-short bluetooth date 
+; possible: redshift
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-separator = |
+;separator = |
+;separator-padding = 3
 separator-foreground = ${colors.foreground-alt}
 
 [settings]
