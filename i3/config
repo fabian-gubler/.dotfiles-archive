@@ -1,16 +1,22 @@
-# $Mod = WINDOWS key
-# Control = CTRL key
-# Shift = SHIFT key
-# Escape = ESCAPE key
-# Return = ENTER key
-# Pause = PAUSE key
-# Print = PRINT key
-# Tab = TAB key
+# --------------------------------------------------------------------------------
+# --- Initial 
+# --------------------------------------------------------------------------------
 
+# --- Xorg
+exec_always --no-startup-id xrdb -load ~/.Xresources
+exec --no-startup-id xfsettingsd
+
+# --- Global Variables
 set $mod Mod4
 set $sup Scroll_Lock
 
+
+# --- Startup 
 exec i3-msg "workspace 1"
+exec --no-startup-id autorandr --change
+exec --no-startup-id nitrogen --restore
+exec_always --no-startup-id $HOME/.config/Insync/launch.sh
+
 # --------------------------------------------------------------------------------
 # --- Look
 # --------------------------------------------------------------------------------
@@ -24,23 +30,21 @@ client.unfocused        #434c5e #434c5e #aaaaaa #2e3440
 client.focused_inactive #434c5e #434c5e #a9a9a9 #2e3440
 client.urgent           #4A4A4A #4A4A4A #f7f7f7 #4A4A4A
 
-exec --no-startup-id autorandr --change
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id spotifyd
-exec --no-startup-id bluetoothctl power on
-exec_always --no-startup-id $HOME/.config/Insync/launch.sh
-
 # --------------------------------------------------------------------------------
 # --- Keybindings 
 # --------------------------------------------------------------------------------
 
-# --- Floating enable 
+# --- Focus, Floating, & Sticky
+for_window [class="(?i)(?:qt5ct|pinentry)"]          floating enable, focus
+for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
+for_window [window_role="(?i)(?:pop-up|setup)"]      floating enable
 for_window [class="Gcolor3"] floating enable
+popup_during_fullscreen smart
 
 # --- Bindings 
 bindsym Menu         	exec betterlockscreen -l dim
 bindsym $mod+i          exec networkmanager_dmenu -h 25 -fn 'Monospace:Regular:pixelsize=15' -nf "#F8F8F2" -nb "#252A34" -sf "#191919" -sb "#81A1C1"
-bindsym $mod+s          exec alacritty -e spt
+bindsym $mod+s          exec alacritty -e spotui
 bindsym $mod+x 			exec /home/fabian/scripts/dmenu/dmlogout
 bindsym $mod+c			exec /home/fabian/scripts/dmenu/dmconf
 bindsym $mod+F1 		exec firefox https://learning.unisg.ch/courses/9971 	# Statistics
@@ -53,7 +57,7 @@ bindsym $mod+Return		exec --no-startup-id alacritty
 bindsym $mod+Shift+Return exec --no-startup-id alacritty -e ranger -r ~/.config/ranger
 bindsym Print 			exec --no-startup-id flameshot gui
 bindsym Insert		    exec gcolor3
-bindsym $mod+n 			bar mode toggle
+bindsym $mod+Shift+b 			bar mode toggle
 bindsym $mod+b          exec --no-startup-id rofi-bluetooth
 bindsym $mod+m          exec --no-startup-id mailspring
 
@@ -106,7 +110,6 @@ exec --no-startup-id firefox
 # --- Virtualbox 
 for_window [class="VirtualBox Machine"]     move container to workspace 0, focus
 
-
 bindsym $mod+dead_circumflex workspace 0
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -131,10 +134,13 @@ bindsym $mod+Shift+8 move container to workspace 8; workspace 8
 bindsym $mod+Shift+9 move container to workspace 9; workspace 9
 bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 
+bindsym $mod+n exec --no-startup-id ~/scripts/i3/i3-new-workspace
+bindsym $mod+Shift+n exec --no-startup-id ~/scripts/i3/i3-switch-new
 # --------------------------------------------------------------------------------
 # --- Navigation 
 # --------------------------------------------------------------------------------
 bindsym $mod+Shift+r		restart
+bindsym $mod+Shift+c        reload
 bindsym $mod+q              [con_id="__focused__" class="^(?!firefox|Typora|VirtualBox Machine).*$"] kill
 bindsym --release $mod+Escape exec xkill
 floating_modifier 		$mod
@@ -145,11 +151,6 @@ bindsym $mod+j	 		focus down
 bindsym $mod+h 			focus left
 bindsym $mod+l	 		focus right
 
-bindsym $mod+Shift+k 	move up
-bindsym $mod+Shift+j 	move down
-bindsym $mod+Shift+h 	move left
-bindsym $mod+Shift+l 	move right
-
 # --------------------------------------------------------------------------------
 # --- Tiling 
 # --------------------------------------------------------------------------------
@@ -159,7 +160,8 @@ bindsym $mod+Shift+v	split h
 bindsym $mod+v 	    	split v
 bindsym $mod+f 			fullscreen toggle
 bindsym $mod+e 			layout toggle split
-bindsym $mod+space 		focus mode_toggle
+bindsym $mod+space exec polybar-msg cmd toggle
+# bindsym $mod+space 		focus mode_toggle
 bindsym $mod+p 			focus parent
 
 bindsym $mod+g 			mode "resize"
@@ -171,10 +173,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-       bindsym $left       resize shrink width 10 px or 10 ppt
-       bindsym $down       resize grow height 10 px or 10 ppt
-       bindsym $up         resize shrink height 10 px or 10 ppt
-       bindsym $right      resize grow width 10 px or 10 ppt
+       bindsym h       resize shrink width 10 px or 10 ppt
+       bindsym j       resize grow height 10 px or 10 ppt
+       bindsym k         resize shrink height 10 px or 10 ppt
+       bindsym l      resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
        bindsym Left        resize shrink width 10 px or 10 ppt

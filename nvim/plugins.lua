@@ -32,6 +32,9 @@ vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when th
 return require("packer").startup(
     function(use)
         -- Custom Bindings
+        use {"Asheq/close-buffers.vim", opt=true}
+        use {"Pocco81/TrueZen.nvim", opt=true}
+        use { 'michaelb/sniprun', run = 'bash ./install.sh'}
         use {"907th/vim-auto-save", opt=true}
         use {"psliwka/vim-smoothie", opt=true}
         use {"ebranlard/vim-simple-comment", opt=true}
@@ -88,6 +91,8 @@ return require("packer").startup(
         use {"glepnir/galaxyline.nvim", opt = true}
         use {"romgrk/barbar.nvim", opt = true}
 
+        require_plugin("TrueZen.nvim")
+        require_plugin("close-buffers.vim")
         require_plugin("lilydjwg/colorizer")
         require_plugin("vim-easymotion")
         require_plugin("vim-simple-comment")

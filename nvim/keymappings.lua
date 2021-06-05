@@ -2,6 +2,9 @@
 -- --- Custom Mappings 
 -- --------------------------------------------------------------------------------
 
+vim.api.nvim_set_keymap('v', 'f', '<Plug>SnipRun', {silent = true})
+-- vim.api.nvim_set_keymap('n', 'f', '<Plug>SnipRunOperator', {silent = true})
+vim.api.nvim_set_keymap('n', 'f', '<Plug>SnipRun', {silent = true})
 -- --- Global 
 vim.cmd([[
     " Remove Highlight with "Esc"
@@ -13,6 +16,13 @@ vim.cmd([[
     map <Left> <Nop>
     map <Right> <Nop>
     map <Down> <Nop>
+    nnoremap <C-A> ggVG
+    nmap <C-h> <C-w>h
+    nmap <C-j> <C-w>j
+    nmap <C-k> <C-w>k
+    nmap <C-l> <C-w>l
+    nnoremap <C-R> :sp <CR> :term python % <CR>
+    nnoremap <silent> Q :Bdelete! this<CR>
 ]])
 
 -- Scrolling
@@ -21,9 +31,6 @@ vim.api.nvim_set_keymap('n', 'J', '<C-d>', {silent = true})
 
 -- Easy Motion
 vim.cmd([[
-    " Quick Find
-    let g:EasyMotion_smartcase = 1
-    nmap f <Plug>(easymotion-overwin-f2)
 
     "Move to Word
     map sw <Plug>(easymotion-bd-w)

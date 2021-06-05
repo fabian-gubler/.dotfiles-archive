@@ -15,16 +15,16 @@
 
   // Custom key binding, which will override the default ones.
   "keyBinding": {
-    "Source Code Mode": "F12"
+    "Source Code Mode": "F1"
     "Show Status Bar": "F10"
-    "File Tree": "F4"
-    "Outline": "F5"
+    "Typewriter Mode": "F2"
+    "File Tree": "F5"
+    "Outline": "F4"
     "YAML Front Matter": "Ctrl+m"
     "Open Quickly...": "Ctrl+o"
     "Open...": "Ctrl+p"
-    "Task List": "Ctrl+e"
+    "Task List": "Ctrl+Shift+t"
     "Insert Table": "Ctrl+t"
-    "Unordered List": "Ctrl+d"
   },
 
   "monocolorEmoji": false, //default false. Only work for Windows
