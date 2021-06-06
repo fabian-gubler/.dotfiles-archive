@@ -151,6 +151,10 @@ bindsym $mod+j	 		focus down
 bindsym $mod+h 			focus left
 bindsym $mod+l	 		focus right
 
+bindsym $mod+Shift+k 	move up
+bindsym $mod+Shift+j 	move down
+bindsym $mod+Shift+h 	move left
+bindsym $mod+Shift+l 	move right
 # --------------------------------------------------------------------------------
 # --- Tiling 
 # --------------------------------------------------------------------------------
@@ -164,7 +168,7 @@ bindsym $mod+space exec polybar-msg cmd toggle
 # bindsym $mod+space 		focus mode_toggle
 bindsym $mod+p 			focus parent
 
-bindsym $mod+g 			mode "resize"
+bindsym $mod+r 			mode "resize"
 
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode

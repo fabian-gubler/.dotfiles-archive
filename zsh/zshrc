@@ -22,6 +22,7 @@ PROMPT=" $PROMPT"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
     zsh-autosuggestions
+    zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
