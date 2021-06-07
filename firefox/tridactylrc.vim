@@ -8,9 +8,15 @@ bind k scrollline -4
 bind K scrollline -15
 bind f fullscreen
 
+" Find
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind n findnext 1
+bind N findnext -1
+
 " Tabs
-bind n newtab
 bind q composite newtab | tabclosealltoleft
+bind --mode=browser <C-6> composite newtab | tabclosealltoleft 
 
 " Hinting
 bind s hint
@@ -18,6 +24,8 @@ bind S hint -b
 
 " Unbind
 unbind <C-b>
+unbind <C-d>
+unbind <C-u>
 unbind d
 
 " Tools
@@ -28,6 +36,35 @@ bind dc open https://calendar.google.com
 
 " Container
 bind c composite tabopen -c GUBAG | fillcmdline open
+
+
+" --------------------------------------------------------------------------------
+" --- Text
+" --------------------------------------------------------------------------------
+
+" Navigation Line
+bind --mode=ex     <C-a> text.beginning_of_line
+bind --mode=insert <C-a> text.beginning_of_line
+bind --mode=input  <C-a> text.beginning_of_line
+bind --mode=ex     <C-e> text.end_of_line
+bind --mode=insert <C-e> text.end_of_line
+bind --mode=input  <C-e> text.end_of_line
+
+" Navigation Word
+bind --mode=ex     <C-f> text.forward_word
+bind --mode=insert <C-f> text.forward_word
+bind --mode=input  <C-f> text.forward_word
+bind --mode=ex     <C-d> text.backward_word
+bind --mode=insert <C-d> text.backward_word
+bind --mode=input  <C-d> text.backward_word
+
+" Deletion
+bind --mode=ex     <C-k> text.kill_line
+bind --mode=insert <C-k> text.kill_line
+bind --mode=input  <C-k> text.kill_line
+bind --mode=ex     <C-u> text.backward_kill_line
+bind --mode=insert <C-u> text.backward_kill_line
+bind --mode=input  <C-u> text.backward_kill_line
 
 " --------------------------------------------------------------------------------"
 " ---  Url Specific Bindings"
@@ -51,6 +88,7 @@ unbindurl calendar.google w
 " Google Drive
 unbindurl drive.google.com j
 unbindurl drive.google.com k
+unbindurl drive.google.com m
 
 # --------------------------------------------------------------------------------
 # --- Alias

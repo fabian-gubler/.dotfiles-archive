@@ -135,7 +135,7 @@
     background: var(--tridactyl-bg) !important;
     border: unset !important;
     border: 0px var(--base03) solid !important;
-    font-size: 10pt !important;
+    font-size: 14pt !important;
     /*font-weight: 200 !important;*/
     padding: 0.8ex !important;
 }
