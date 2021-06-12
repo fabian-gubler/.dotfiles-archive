@@ -15,9 +15,7 @@
 
   // Custom key binding, which will override the default ones.
   "keyBinding": {
-    "Source Code Mode": "F1"
     "Show Status Bar": "F10"
-    "Typewriter Mode": "F2"
     "File Tree": "F5"
     "Outline": "F4"
     "YAML Front Matter": "Ctrl+m"

@@ -1,7 +1,6 @@
 # --------------------------------------------------------------------------------
 # --- Initial 
 # --------------------------------------------------------------------------------
-
 # --- Xorg
 exec_always --no-startup-id xrdb -load ~/.Xresources
 exec --no-startup-id xfsettingsd
@@ -9,7 +8,6 @@ exec --no-startup-id xfsettingsd
 # --- Global Variables
 set $mod Mod4
 set $sup Scroll_Lock
-
 
 # --- Startup 
 exec i3-msg "workspace 1"
@@ -42,6 +40,7 @@ for_window [class="Gcolor3"] floating enable
 popup_during_fullscreen smart
 
 # --- Bindings 
+bindsym $mod+t          exec pavucontrol
 bindsym $mod+u  exec betterlockscreen -l dim
 bindsym $mod+i          exec networkmanager_dmenu -h 25 -fn 'Monospace:Regular:pixelsize=15' -nf "#F8F8F2" -nb "#252A34" -sf "#191919" -sb "#81A1C1"
 bindsym $mod+s          exec alacritty -e spotui
@@ -73,7 +72,7 @@ bindsym $mod+Down exec --no-startup-id "amixer set Master unmute && amixer set M
 # Mute
 bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle && if amixer get Master | grep -Fq '[off]'; then rumno -r 0.001 --icon-height 0.4 -m; else rumno -r 0.001 --icon-height 0.4 -v $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1); fi"
 
-bindsym XF86AudioPlay 				exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPlay 				exec --no-startup-id playerctl play-pause 
 bindsym XF86AudioNext 				exec --no-startup-id playerctl next && rumno -r 0.01 -n
 bindsym XF86AudioPrev 				exec --no-startup-id playerctl previous && rumno -r 0.01 -p
 bindsym XF86AudioStop 				exec --no-startup-id playerctl stop
@@ -90,8 +89,9 @@ bindsym F9 			exec --no-startup-id blight set -- +5% && rumno -r 0.001 --icon-he
 bindsym $mod+Tab move scratchpad
 bindsym $mod+BackSpace scratchpad show
 
-# Pavucontrol
-bindsym $mod+t          exec alacritty -e ncpamixer 
+# Masterpdfeditor
+bindsym $mod+p exec ~/scripts/i3/switch.sh "masterpdfeditor5" "masterpdfeditor5"
+for_window [class="masterpdfeditor5"] move scratchpad 
 
 # Typora
 bindsym $mod+a exec ~/scripts/i3/switch.sh "Typora" "typora"
@@ -141,7 +141,7 @@ bindsym $mod+Shift+n exec --no-startup-id ~/scripts/i3/i3-switch-new
 # --------------------------------------------------------------------------------
 bindsym $mod+Shift+r		restart
 bindsym $mod+Shift+c        reload
-bindsym $mod+q              [con_id="__focused__" class="^(?!firefox|Typora|VirtualBox Machine).*$"] kill
+bindsym $mod+q              [con_id="__focused__" class="^(?!firefox|Typora|VirtualBox Machine|Master PDF Editor 5).*$"] kill
 bindsym --release $mod+Escape exec xkill
 floating_modifier 		$mod
 bindsym $mod+Shift+space floating toggle
@@ -166,7 +166,7 @@ bindsym $mod+f 			fullscreen toggle
 bindsym $mod+e 			layout toggle split
 bindsym $mod+space exec polybar-msg cmd toggle
 # bindsym $mod+space 		focus mode_toggle
-bindsym $mod+p 			focus parent
+# bindsym $mod+p 			focus parent
 
 bindsym $mod+r 			mode "resize"
 
@@ -223,7 +223,7 @@ popup_during_fullscreen smart
 for_window [class="^.*"] border pixel 4
 
 # --- gaps [inner|outer|horizontal|vertical|top|left|bottom|right] <px>
-gaps inner 36
+gaps inner 30
 gaps top -8
 
 
