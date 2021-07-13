@@ -34,4 +34,4 @@ ZVM_VI_HIGHLIGHT_BACKGROUND=#81a1c1
 bindkey '^I' autosuggest-accept
 
 # PATH 
-PATH=/home/fabian/.torrench/bin:/home/fabian/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+PATH=/home/fabian/.torrench/bin:/home/fabian/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin

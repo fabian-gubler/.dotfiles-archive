@@ -98,6 +98,9 @@ return require("packer").startup(function(use)
     -- Zen Mode
     use {"Pocco81/TrueZen.nvim", opt = true}
 
+    -- Colemak
+    use {"jooize/vim-colemak", opt = true}
+
     -- Custom
     require_plugin("vim-venter")
     require_plugin("close-buffers.vim")
@@ -106,6 +109,7 @@ return require("packer").startup(function(use)
     require_plugin("vim-simple-comment")
     require_plugin("vim-smoothie")
     require_plugin("vim-auto-save")
+    require_plugin("vim-colemak")
 
     -- Lunarvim
     require_plugin("nvim-lspconfig")

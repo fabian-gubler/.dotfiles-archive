@@ -17,8 +17,10 @@ alias laptop="autorandr --load laptop"
 alias night="redshift -O 4300"
 alias day="redshift -x"
 alias bat="cat /sys/class/power_supply/BAT0/capacity"
+alias top="gotop -l minimal"
 alias xev="xev -event keyboard  | egrep -o 'keycode.*\)'"
 alias lock="betterlockscreen -l dim && exit"
+alias background="feh --bg-fill ~/pics/feh/wall2.jpeg"
 
 # Maintenance
 alias cleancache="sudo paccache -rk 1 && paccache -ruk0"

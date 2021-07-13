@@ -3,9 +3,6 @@
 -- --- Custom Mappings 
 -- --------------------------------------------------------------------------------
 
-vim.api.nvim_set_keymap('v', 'f', '<Plug>SnipRun', {silent = true})
--- vim.api.nvim_set_keymap('n', 'f', '<Plug>SnipRunOperator', {silent = true})
-vim.api.nvim_set_keymap('n', 'f', '<Plug>SnipRun', {silent = true})
 -- --- Global 
 vim.cmd([[
     " Remove Highlight with "Esc"
@@ -21,7 +18,7 @@ vim.cmd([[
     nmap <C-k> <C-w>k
     nmap <C-l> <C-w>l
     noremap zz :VenterToggle <CR>
-    nnoremap <C-R> :sp <CR> :term python % <CR>
+    nnoremap <C-B> :sp <CR> :term python % <CR>
     nnoremap <silent> Q :Bdelete! this<CR>
 ]])
 
@@ -34,21 +31,6 @@ vim.cmd([[
 
 -- Easy Motion
 vim.cmd([[
-
-    " Two-Character
-    " s{char}{char} to move to {char}{char}
-    nmap ss <Plug>(easymotion-overwin-f2)
-
-    "Move to Word
-    map sw <Plug>(easymotion-bd-w)
-    nmap sw <Plug>(easymotion-overwin-w)
-
-    " Move to Line
-    map sl <Plug>(easymotion-lineforward)
-    map sj <Plug>(easymotion-j)
-    map sk <Plug>(easymotion-k)
-    map sh <Plug>(easymotion-linebackward)
-
     " Better Search
     map  / <Plug>(easymotion-sn)
     omap / <Plug>(easymotion-tn)

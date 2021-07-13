@@ -4,7 +4,7 @@ include-file = ~/.config/polybar/modules.ini
 [colors]
 ;background = #00000000
 ;background-alt = #00000000
-background-alt = #353B49
+background-alt = #3b4252
 background = #252A34
 ;background-alt = #434c5e
 ;foreground = ${xrdb:color7:#222}
@@ -13,7 +13,6 @@ foreground-alt = #6f7787
 primary = #d8dee9
 secondary = #e5e9f0
 
-
 [bar/example]
 enable-ipc = true
 width = 100%
@@ -21,17 +20,18 @@ height = 40
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
-fixed-center = false
+fixed-center = true
+
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 1
+line-size = 0
 line-color = #f00
 border-size = 0
 border-top = 0
-border-color = #00000000
-border-bottom-size = 0
+border-color = #3b4252
+border-bottom-size = 4
 
 padding-left = 8
 padding-right = 9
@@ -49,8 +49,8 @@ font-0 = "SF Pro Text:pixelsize=15;3"
 font-1 = "Iosevka Nerd Font:pixelsize=13;3"
 font-2 = siji:pixelsize=12;1
 
-modules-left =i3
-modules-center =
+modules-left = 
+modules-center =i3
 modules-right =pulseaudio battery network-short bluetooth date 
 ; possible: redshift
 cursor-click = pointer

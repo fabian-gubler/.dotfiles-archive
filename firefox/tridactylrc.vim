@@ -2,19 +2,16 @@
 " ---  Global Bindings"
 " --------------------------------------------------------------------------------"
 set newtab about:blank
+set tabopenpos related
 bind d fillcmdline_notrail
 
 " Navigation
-bind j scrollline 4
-bind <ArrowDown> scrollline 15
-bind k scrollline -4
-bind <ArrowUp> scrollline -15
-bind f fullscreen
+bind n scrollline 10
+bind N scrollline 20
 
 " Tabs
-bind n newtab
-bind --mode=browser <A-2> newtab
-bind --mode=browser <A-1> composite newtab | tabclosealltoleft 
+bind --mode=browser <A-h> tabopen about:blank
+bind --mode=browser <A-l> composite newtab | tabclosealltoleft 
 
 " Search
 bind b fillcmdline google
@@ -28,13 +25,11 @@ bind S hint -b
 unbind <C-b>
 unbind <C-d>
 unbind <C-u>
-unbind J
-unbind K
 
 " Tools
 bind <A-t> tabopen about:downloads
 bind m hint -qW mpvsafe
-bind gd open https://drive.google.com/drive/starred
+bind gd open https://drive.google.com/drive/my-drive
 bind gc open https://calendar.google.com
 
 " Container
@@ -88,10 +83,11 @@ unbindurl docs.google.com u
 command fullclean sanitise tridactyllocal tridactylsync
 
 " Mozilla Pages
-command settings tabopen about:preferences
+command preferences tabopen about:preferences
 command config tabopen about:config
-command addon tabopen about:addons
+command addons tabopen about:addons
 command newtab tabopen about:blank
+command debugging tabopen about:debugging
 
 " Extension Preferences
 command sideberry tabopen moz-extension://3061008f-8326-4efe-a177-996dd394b96a/settings/settings.html
