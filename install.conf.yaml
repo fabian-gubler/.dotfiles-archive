@@ -1,33 +1,35 @@
 - defaults:
     link:
-      create: true
-      force: true
+      create: true    # Create parent directories as needed
+      force: true     # Removes the old target and forces a new link
 
 - clean: ['~']
 
 - link:
-    # Shell
+
+    # SYSTEM ------------------------------------------------------
     ~/.zshrc:                               zsh/zshrc
     ~/.oh-my-zsh/custom/aliases.zsh:        zsh/aliases
     ~/.config/alacritty/alacritty.yml:      alacritty/alacritty.yml
 
-    # Environment
+    # UTILITIES ---------------------------------------------------
+    ~/.config/lvim/config.lua:              nvim/config.lua
+    ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
+
+    # TOOLS -------------------------------------------------------
     ~/.config/i3/config:                    i3/config
     ~/.config/polybar/config:               polybar/config
     ~/.config/polybar/modules.ini:          polybar/modules.ini
-
-    # Tools
     ~/.config/ranger/rc.conf:               ranger/rc.conf
     ~/.config/ranger/rifle.conf:            ranger/rifle.conf
-    ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
-    ~/.config/mpv/input.conf:               mpv/input.conf
-    ~/.config/mpv/mpv.conf:                 mpv/mpv.conf
 
-    # Neovim
-    ~/.config/lvim/lv-config.lua:           nvim/lv-config.lua
-    
-    # Firefox
+    # WEB TOOLS ---------------------------------------------------
     ~/.mozilla/firefox/u7my0den.default-release/chrome/userChrome.css: firefox/userChrome.css
     ~/.mozilla/firefox/u7my0den.default-release/chrome/userContent.css: firefox/userContent.css
     ~/.config/tridactyl/tridactylrc:        firefox/tridactylrc.vim
     ~/.config/tridactyl/themes/nord.css:    firefox/nord.css
+
+    # MEDIA -------------------------------------------------------
+    ~/.config/mpv/input.conf:               mpv/input.conf
+    ~/.config/mpv/mpv.conf:                 mpv/mpv.conf
+    
