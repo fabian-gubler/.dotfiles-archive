@@ -1,5 +1,3 @@
-# 1. Move to repository: cp /source /destination
-# 2. Install: ./install
 - defaults:
     link:
       create: true
@@ -26,10 +24,7 @@
     ~/.config/mpv/mpv.conf:                 mpv/mpv.conf
 
     # Neovim
-    ~/.config/nvim/lua/keymappings.lua:     nvim/keymappings.lua
-    ~/.config/nvim/lua/plugins.lua:         nvim/plugins.lua
-    ~/.config/nvim/lv-settings.lua:         nvim/lv-settings.lua
-    ~/.config/nvim/init.lua:                nvim/init.lua
+    ~/.config/lvim/lv-config.lua:           nvim/lv-config.lua
     
     # Firefox
     ~/.mozilla/firefox/u7my0den.default-release/chrome/userChrome.css: firefox/userChrome.css

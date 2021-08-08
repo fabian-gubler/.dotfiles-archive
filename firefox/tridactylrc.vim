@@ -1,21 +1,19 @@
 " --------------------------------------------------------------------------------"
 " ---  Global Bindings"
 " --------------------------------------------------------------------------------"
-set newtab about:blank
 set tabopenpos related
+set hintchars arstneio
 bind d fillcmdline_notrail
 
 " Navigation
 bind n scrollline 10
-bind N scrollline 20
+bind e scrollline -10
+bind i scrollpx 50
+bind m scrollpx -50
 
 " Tabs
 bind --mode=browser <A-h> tabopen about:blank
-bind --mode=browser <A-l> composite newtab | tabclosealltoleft 
-
-" Search
-bind b fillcmdline google
-bind B fillcmdline Google
+bind --mode=browser <A-l> tabclosealltoleft
 
 " Hinting
 bind s hint
@@ -27,8 +25,6 @@ unbind <C-d>
 unbind <C-u>
 
 " Tools
-bind <A-t> tabopen about:downloads
-bind m hint -qW mpvsafe
 bind gd open https://drive.google.com/drive/my-drive
 bind gc open https://calendar.google.com
 
@@ -58,6 +54,8 @@ bindurl www.youtube.com s hint -J
 bindurl www.youtube.com S hint -Jb
 
 " YouTube
+unbindurl youtube.com j
+unbindurl youtube.com l
 unbindurl youtube.com k
 unbindurl youtube.com f
 unbindurl youtube.com p

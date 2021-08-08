@@ -10,12 +10,11 @@ set $mod Mod4
 set $sup Scroll_Lock
 
 # --- Startup 
-exec redshift
-exec xmodmap ~/.Xmodmap &
 exec xset s off -dpms
 exec i3-msg "workspace 1"
 exec --no-startup-id autorandr --change
 exec --no-startup-id nitrogen --restore
+exec polystart
 exec_always --no-startup-id $HOME/.config/Insync/launch.sh
 
 # --------------------------------------------------------------------------------
@@ -46,15 +45,9 @@ popup_during_fullscreen smart
 # --- Bindings 
 bindsym $mod+q          exec notify-send.py a --hint boolean:deadd-notification-center:true \
                string:type:clearPopups
-bindsym $mod+Shift+q    exec notify-send.py a --hint boolean:deadd-notification-center:true \
-               string:type:clearInCenter
-bindsym Menu          exec feh -F --zoom 67 ~/pics/feh/wall2-dim.jpg
-bindsym $mod+x 			exec /home/fabian/scripts/dmenu/dmlogout
-bindsym $mod+c			exec /home/fabian/scripts/dmenu/dmconf
-bindsym $mod+F1 		exec firefox https://learning.unisg.ch/courses/9971 	# Statistics
-bindsym $mod+F2 		exec firefox https://learning.unisg.ch/courses/9864 
-bindsym $mod+s			exec dmenu_run -i -h 40 -fn 'Monospace:Regular:pixelsize=15' -nf "#F8F8F2" -nb "#252A34" -sf "#191919" -sb "#81A1C1"
-bindsym control+mod1+m		exec --no-startup-id xfce4-settings-manager
+bindsym $mod+k 			exec /home/fabian/scripts/dmenu/dmlogout
+bindsym $mod+h			exec /home/fabian/scripts/dmenu/dmconf
+bindsym $mod+o			exec dmenu_run -i -h 40 -fn 'Monospace:Regular:pixelsize=15' -nf "#F8F8F2" -nb "#252A34" -sf "#191919" -sb "#81A1C1"
 bindsym $mod+t		exec --no-startup-id alacritty
 bindsym $mod+r exec --no-startup-id alacritty -e ranger -r ~/.config/ranger
 bindsym Print 			exec --no-startup-id flameshot gui
@@ -63,8 +56,9 @@ bindsym $mod+Shift+b 			bar mode toggle
 bindsym $mod+b          exec --no-startup-id rofi-bluetooth
 
 
-bindsym $mod+period        workspace next
+bindsym $mod+period workspace next
 bindsym $mod+comma  workspace prev
+
 # --- Media Keys 
 # Increase Volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master unmute && amixer set Master 5%+ && rumno -r 0.001 --icon-height 0.4 -v $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
@@ -121,34 +115,27 @@ bindsym $mod+l workspace 1
 bindsym $mod+u workspace 2
 bindsym $mod+y workspace 3
 
-bindsym $mod+Shift+dead_circumflex move container to workspace 0; workspace 0
-bindsym $mod+Shift+1 move container to workspace 1; workspace 1
-bindsym $mod+Shift+2 move container to workspace 2; workspace 2
-bindsym $mod+Shift+3 move container to workspace 3; workspace 3
-bindsym $mod+Shift+4 move container to workspace 4; workspace 4
-bindsym $mod+Shift+5 move container to workspace 5; workspace 5
-bindsym $mod+Shift+6 move container to workspace 6; workspace 6
-bindsym $mod+Shift+7 move container to workspace 7; workspace 7
-bindsym $mod+Shift+8 move container to workspace 8; workspace 8
-bindsym $mod+Shift+9 move container to workspace 9; workspace 9
-bindsym $mod+Shift+0 move container to workspace 10; workspace 10
+bindsym $mod+Shift+j move container to workspace 0; workspace 0
+bindsym $mod+Shift+l move container to workspace 1; workspace 1
+bindsym $mod+Shift+u move container to workspace 2; workspace 2
+bindsym $mod+Shift+y move container to workspace 3; workspace 3
 
 bindsym $mod+g exec --no-startup-id ~/scripts/i3/i3-new-workspace
 bindsym $mod+Shift+g exec --no-startup-id ~/scripts/i3/i3-switch-new
 # --------------------------------------------------------------------------------
 # --- Navigation 
 # --------------------------------------------------------------------------------
-bindsym $mod+Shift+r		restart
-bindsym $mod+Shift+c        reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c reload
 bindsym $mod+BackSpace              [con_id="__focused__" class="^(?!firefox|Typora|VirtualBox Machine|Master PDF Editor 5|pomotroid).*$"] kill
 bindsym --release $mod+Escape exec xkill
 floating_modifier 		$mod
 bindsym $mod+Shift+space floating toggle
 
-bindsym $mod+e	 		focus up
-bindsym $mod+n	 		focus down
-bindsym $mod+m 			focus left
-bindsym $mod+i	 		focus right
+bindsym $mod+e focus up
+bindsym $mod+n focus down
+bindsym $mod+m focus left
+bindsym $mod+i focus right
 
 bindsym $mod+Shift+e 	move up
 bindsym $mod+Shift+n 	move down

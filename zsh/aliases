@@ -1,4 +1,5 @@
 # Productivity
+alias nvim='lvim'
 alias r='ranger'
 alias rsyncy='sudo rsync -a --info=progress2'
 alias rsync-delete="sudo rsync -a --delete --info=progress2"

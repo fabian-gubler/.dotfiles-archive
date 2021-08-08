@@ -2,6 +2,7 @@
 bindkey -v
 
 # Path to your oh-my-zsh installation.
+export EDITOR="/usr/local/bin/lvim"
 export ZSH="/home/fabian/.oh-my-zsh"
 # --------------------------------------------------------------------------------
 # --- Themes 
