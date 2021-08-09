@@ -48,10 +48,7 @@ bindsym $mod+q          exec notify-send.py a --hint boolean:deadd-notification-
 bindsym $mod+k 			exec /home/fabian/scripts/dmenu/dmlogout
 bindsym $mod+h			exec /home/fabian/scripts/dmenu/dmconf
 bindsym $mod+o			exec dmenu_run -i -h 40 -fn 'Monospace:Regular:pixelsize=15' -nf "#F8F8F2" -nb "#252A34" -sf "#191919" -sb "#81A1C1"
-bindsym $mod+t		exec --no-startup-id alacritty
-bindsym $mod+r exec --no-startup-id alacritty -e ranger -r ~/.config/ranger
-bindsym Print 			exec --no-startup-id flameshot gui
-bindsym Insert		    exec gcolor3
+bindsym $mod+Return		exec --no-startup-id alacritty
 bindsym $mod+Shift+b 			bar mode toggle
 bindsym $mod+b          exec --no-startup-id rofi-bluetooth
 

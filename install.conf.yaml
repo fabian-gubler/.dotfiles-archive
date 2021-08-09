@@ -8,9 +8,13 @@
 - link:
 
     # SYSTEM ------------------------------------------------------
-    ~/.zshrc:                               zsh/zshrc
-    ~/.oh-my-zsh/custom/aliases.zsh:        zsh/aliases
+    ~/.config/zsh/.zshrc:                   zsh/.zshrc
+    ~/.config/zsh/zsh-aliases:              zsh/zsh-aliases
+    ~/.config/zsh/zsh-functions:            zsh/zsh-functions
+    ~/.config/zsh/zsh-vim-mode:             zsh/zsh-vim-mode
     ~/.config/alacritty/alacritty.yml:      alacritty/alacritty.yml
+    ~/.xprofile:                            X/.xprofile
+    ~/.Xresources:                          X/.Xresources
 
     # UTILITIES ---------------------------------------------------
     ~/.config/lvim/config.lua:              nvim/config.lua
@@ -19,6 +23,7 @@
     # TOOLS -------------------------------------------------------
     ~/.config/i3/config:                    i3/config
     ~/.config/polybar/config:               polybar/config
+    ~/.config/polybar/launch.sh:            polybar/launch.sh
     ~/.config/polybar/modules.ini:          polybar/modules.ini
     ~/.config/ranger/rc.conf:               ranger/rc.conf
     ~/.config/ranger/rifle.conf:            ranger/rifle.conf

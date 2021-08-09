@@ -1,0 +1,37 @@
+# Productivity
+alias nvim='lvim'
+alias r='ranger'
+alias rsyncy='sudo rsync -a --info=progress2'
+alias rsync-delete="sudo rsync -a --delete --info=progress2"
+alias drive='lsblk'
+alias pls='sudo $(fc -ln -1)'
+alias pirate="~/scripts/cli-torrent-dl/tordl.sh"
+alias q="exit"
+alias yt="ytfzf --preview-side=right -t"
+alias sub="ytfzf --preview-side=right -tS "
+alias polystart="$HOME/.config/polybar/launch.sh &"
+alias zoomdl="zoomdl-beta -u"
+alias dragon="dragon-drag-and-drop"
+alias agenda="gcalcli agenda --military"
+alias monitor="autorandr --load monitor"
+alias laptop="autorandr --load laptop"
+alias night="redshift -O 4300"
+alias day="redshift -x"
+alias bat="cat /sys/class/power_supply/BAT0/capacity"
+alias top="gotop -l minimal"
+alias xev="xev -event keyboard  | egrep -o 'keycode.*\)'"
+alias lock="betterlockscreen -l dim && exit"
+alias background="feh --bg-fill ~/pics/feh/wall2.jpeg"
+
+# Maintenance
+alias cleancache="sudo paccache -rk 1 && paccache -ruk0"
+alias listinstall="expac --timefmt='%Y-%m-%d %T' '%l\t%n'|sort -n"
+alias unused="yay -Ycq"
+alias large-dir="sudo du -ahx / | sort -rh | head -20"
+
+# Pacman
+alias pacman='sudo pacman --color auto'
+alias update='yay -Syyu'
+
+# Spelling
+alias vim='nvim'

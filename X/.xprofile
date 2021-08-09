@@ -1,0 +1,26 @@
+#!/bin/sh
+# --- Variables
+export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$HOME/.local/bin:$PATH"
+export LD_LIBRARY_PATH=/usr/local/lib
+export export ZDOTDIR=$HOME/.config/zsh     # ZSH config directory
+
+# --- Startup programs
+pushbullet &
+$HOME/.config/polybar/launch.sh &
+deadd-notification-center &
+mailspring -b %U &
+xfsettingsd &
+bluetoothctl power on &
+feh --bg-fill ~/pics/feh/wall2.jpeg &
+optimus-manager-qt &
+flameshot &
+rumno-background &
+picom -b &
+xfce4-power-manager &
+unclutter --timeout 3 &
+yay -Sy &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+gnome-keyring-daemon --start --components=pkcs11 &
+xset r rate 350 60 &
+xset s off -dpms                
