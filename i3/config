@@ -13,7 +13,6 @@ set $sup Scroll_Lock
 exec xset s off -dpms
 exec i3-msg "workspace 1"
 exec --no-startup-id autorandr --change
-exec --no-startup-id nitrogen --restore
 exec polystart
 exec_always --no-startup-id $HOME/.config/Insync/launch.sh
 
@@ -22,7 +21,7 @@ exec_always --no-startup-id $HOME/.config/Insync/launch.sh
 # --------------------------------------------------------------------------------
 font pango:monospace 16
 
-#class			border	backgr.	text	indicator
+#class            			border	backgr.	text	  indicator
 client.placeholder      #2e3440 #2e3440 #242424
 client.background       #2e3440 #2e3440 #242424
 client.focused          #88c0d0 #88c0d0 #2e3440 #88c0d0
@@ -38,8 +37,7 @@ client.urgent           #4A4A4A #4A4A4A #f7f7f7 #4A4A4A
 for_window [class="(?i)(?:qt5ct|pinentry)"]          floating enable, focus
 for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
 for_window [window_role="(?i)(?:pop-up|setup)"]      floating enable
-for_window [class="Lampe-gtk"]                                floating enable
-for_window [class="Gcolor3"] floating enable
+for_window [class="Gcolor3"]                         floating enable
 popup_during_fullscreen smart
 
 # --- Bindings 
@@ -49,6 +47,7 @@ bindsym $mod+k 			exec /home/fabian/scripts/dmenu/dmlogout
 bindsym $mod+h			exec /home/fabian/scripts/dmenu/dmconf
 bindsym $mod+o			exec dmenu_run -i -h 40 -fn 'Monospace:Regular:pixelsize=15' -nf "#F8F8F2" -nb "#252A34" -sf "#191919" -sb "#81A1C1"
 bindsym $mod+Return		exec --no-startup-id alacritty
+bindsym $mod+Shift+Return		exec --no-startup-id alacritty -e ranger
 bindsym $mod+Shift+b 			bar mode toggle
 bindsym $mod+b          exec --no-startup-id rofi-bluetooth
 
@@ -138,38 +137,24 @@ bindsym $mod+Shift+e 	move up
 bindsym $mod+Shift+n 	move down
 bindsym $mod+Shift+m 	move left
 bindsym $mod+Shift+i 	move right
+
 # --------------------------------------------------------------------------------
 # --- Tiling 
 # --------------------------------------------------------------------------------
 popup_during_fullscreen leave_fullscreen
 default_orientation horizontal
-bindsym $mod+Shift+v	split h
+bindsym $mod+d        split h
 bindsym $mod+v 	    	split v
-bindsym $mod+f         	fullscreen toggle
-# bindsym $mod+e 			layout toggle split
-bindsym Mod1+space exec polybar-msg cmd toggle
-# bindsym $mod+space 		focus mode_toggle
-# bindsym $mod+p 			focus parent
+bindsym $mod+f        fullscreen toggle
+bindsym $mod+space 		focus mode_toggle
 
-# bindsym $mod+r 			mode "resize"
+bindsym $mod+r 			mode "resize"
 
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-       bindsym h       resize shrink width 10 px or 10 ppt
-       bindsym j       resize grow height 10 px or 10 ppt
-       bindsym k         resize shrink height 10 px or 10 ppt
-       bindsym l      resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-       bindsym Left        resize shrink width 10 px or 10 ppt
-       bindsym Down        resize grow height 10 px or 10 ppt
-       bindsym Up          resize shrink height 10 px or 10 ppt
-       bindsym Right       resize grow width 10 px or 10 ppt
+       bindsym m       resize shrink width 10 px or 10 ppt
+       bindsym n       resize grow height 10 px or 10 ppt
+       bindsym e         resize shrink height 10 px or 10 ppt
+       bindsym i      resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
        bindsym Return mode "default"
