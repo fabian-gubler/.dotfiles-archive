@@ -38,6 +38,5 @@
     # MEDIA -------------------------------------------------------
     ~/.config/mpv/input.conf:               mpv/input.conf
     ~/.config/mpv/mpv.conf:                 mpv/mpv.conf
+    ~/.config/mpv/script-opts/uosc.conf:    mpv/uosc.conf 
     
-    # ROOT --------------------------------------------------------
-    /etc/timeshift/timeshift.json:          timeshift/timeshift.json
