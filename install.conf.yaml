@@ -19,6 +19,7 @@
     # UTILITIES ---------------------------------------------------
     ~/.config/lvim/config.lua:              nvim/config.lua
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
+      
 
     # TOOLS -------------------------------------------------------
     ~/.config/i3/config:                    i3/config
@@ -38,3 +39,5 @@
     ~/.config/mpv/input.conf:               mpv/input.conf
     ~/.config/mpv/mpv.conf:                 mpv/mpv.conf
     
+    # ROOT --------------------------------------------------------
+    /etc/timeshift/timeshift.json:          timeshift/timeshift.json

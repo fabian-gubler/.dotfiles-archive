@@ -1,0 +1,30 @@
+{
+  "backup_device_uuid" : "3c01e926-8fa4-42ab-a988-0f83e7e05df5",
+  "parent_device_uuid" : "",
+  "do_first_run" : "false",
+  "btrfs_mode" : "false",
+  "include_btrfs_home_for_backup" : "false",
+  "include_btrfs_home_for_restore" : "false",
+  "stop_cron_emails" : "true",
+  "btrfs_use_qgroup" : "true",
+  "schedule_monthly" : "true",
+  "schedule_weekly" : "true",
+  "schedule_daily" : "true",
+  "schedule_hourly" : "false",
+  "schedule_boot" : "false",
+  "count_monthly" : "2",
+  "count_weekly" : "3",
+  "count_daily" : "3",
+  "count_hourly" : "6",
+  "count_boot" : "5",
+  "snapshot_size" : "39336954446",
+  "snapshot_count" : "437370",
+  "date_format" : "%d %b %Y %I:%M %p",
+  "exclude" : [
+    "+ /root/**",
+    "/home/fabian/env/***",
+    "+ /home/fabian/**",
+    "/data/***"
+  ],
+  "exclude-apps" : []
+}
