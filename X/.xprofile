@@ -9,7 +9,7 @@ export export ZDOTDIR=$HOME/.config/zsh
 export TERM=alacritty
 
 # --- Startup programs
-# rumno-background &
+rumno-background &
 $HOME/.config/polybar/launch.sh &
 mailspring -b %U &
 xfsettingsd &

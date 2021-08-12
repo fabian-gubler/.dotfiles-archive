@@ -32,6 +32,18 @@
     # WEB TOOLS ---------------------------------------------------
     ~/.mozilla/firefox/u7my0den.default-release/chrome/userChrome.css: firefox/userChrome.css
     ~/.mozilla/firefox/u7my0den.default-release/chrome/userContent.css: firefox/userContent.css
+
+
+    ~/.mozilla/firefox/u7my0den.default-release/chrome/_bookmarks-bar.css: firefox/_bookmarks-bar.css
+    ~/.mozilla/firefox/u7my0den.default-release/chrome/_find-bar.css: firefox/_find-bar.css 
+    ~/.mozilla/firefox/u7my0den.default-release/chrome/_global.css: firefox/_global.css
+    ~/.mozilla/firefox/u7my0den.default-release/chrome/_menu.css: firefox/_menu.css
+    ~/.mozilla/firefox/u7my0den.default-release/chrome/_navigation-bar.css: firefox/_navigation-bar.css
+    ~/.mozilla/firefox/u7my0den.default-release/chrome/_side-bar.css: firefox/_side-bar.css
+    ~/.mozilla/firefox/u7my0den.default-release/chrome/_tab-bar.css: firefox/_tab-bar.css
+    ~/.mozilla/firefox/u7my0den.default-release/chrome/_variables.css: firefox/_variables.css
+
+
     ~/.config/tridactyl/tridactylrc:        firefox/tridactylrc.vim
     ~/.config/tridactyl/themes/nord.css:    firefox/nord.css
 

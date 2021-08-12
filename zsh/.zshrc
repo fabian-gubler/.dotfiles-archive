@@ -24,4 +24,5 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
 
 # Keybinds
-bindkey -s '^o' 'ranger^M'
+bindkey -e                    # emacs bindings
+bindkey -s '^o' 'ranger^M'    # open ranger

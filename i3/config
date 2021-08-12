@@ -1,15 +1,15 @@
-# --------------------------------------------------------------------------------
-# --- Initial 
-# --------------------------------------------------------------------------------
-# --- Xorg
+# --- INITIAL ----------------
+
+# Xorg
 exec_always --no-startup-id xrdb -load ~/.Xresources
 exec --no-startup-id xfsettingsd
 
-# --- Global Variables
+# Global Variables
 set $mod Mod4
 set $sup Scroll_Lock
+set $scratch scratchpad show floating disable move to workspace current focus 
 
-# --- Startup 
+# Startup 
 exec xset s off -dpms
 exec i3-msg "workspace 1"
 exec --no-startup-id autorandr --change
@@ -17,12 +17,11 @@ exec polystart
 exec feh --bg-scale ~/scripts/installer/assets/wall.png
 exec_always --no-startup-id $HOME/.config/Insync/launch.sh
 
-# --------------------------------------------------------------------------------
-# --- Look
-# --------------------------------------------------------------------------------
+# --- LOOK -------------------
+
 font pango:monospace 16
 
-#class            			border	backgr.	text	  indicator
+#Class            			border	backgr.	text	  indicator
 client.placeholder      #2e3440 #2e3440 #242424
 client.background       #2e3440 #2e3440 #242424
 client.focused          #88c0d0 #88c0d0 #2e3440 #88c0d0
@@ -30,18 +29,16 @@ client.unfocused        #3b4252 #3b4252 #aaaaaa #2e3440
 client.focused_inactive #3b4252 #3b4252 #a9a9a9 #2e3440
 client.urgent           #4A4A4A #4A4A4A #f7f7f7 #4A4A4A
 
-# --------------------------------------------------------------------------------
-# --- Keybindings 
-# --------------------------------------------------------------------------------
+# --- KEYBINDINGS ------------
 
-# --- Focus, Floating, & Sticky
+# Focus, Floating, & Sticky
 for_window [class="(?i)(?:qt5ct|pinentry)"]          floating enable, focus
 for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
 for_window [window_role="(?i)(?:pop-up|setup)"]      floating enable
 for_window [class="Gcolor3"]                         floating enable
 popup_during_fullscreen smart
 
-# --- Bindings 
+# Bindings 
 bindsym $mod+q          exec notify-send.py a --hint boolean:deadd-notification-center:true \
                string:type:clearPopups
 bindsym $mod+k 			exec /home/fabian/scripts/dmenu/dmlogout
@@ -56,7 +53,7 @@ bindsym $mod+b          exec --no-startup-id rofi-bluetooth
 bindsym $mod+period workspace next
 bindsym $mod+comma  workspace prev
 
-# --- Media Keys 
+# --- Media ---------------- 
 # Increase Volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master unmute && amixer set Master 5%+ && rumno -r 0.001 --icon-height 0.4 -v $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
 bindsym $mod+Up exec --no-startup-id "amixer set Master unmute && amixer set Master 5%+ && rumno -r 0.001 --icon-height 0.4 -v $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
@@ -71,32 +68,24 @@ bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle && if amixe
 bindsym XF86AudioPlay 				exec --no-startup-id playerctl play-pause && rumno -r 0.01 --play
 bindsym XF86AudioNext 				exec --no-startup-id playerctl next && rumno -r 0.01 -n
 bindsym XF86AudioPrev 				exec --no-startup-id playerctl previous && rumno -r 0.01 -p
-# bindsym XF86AudioStop 				exec --no-startup-id playerctl stop
 
-# --- Brightness 
-bindsym F8 			exec --no-startup-id blight set -- -5% && rumno -r 0.001 --icon-height 0.4 -b $(light -G)
-bindsym F9 			exec --no-startup-id blight set -- +5% && rumno -r 0.001 --icon-height 0.4 -b $(light -G)
+# Brightness 
+# bindsym F8 			exec --no-startup-id blight set -- -5% && rumno -r 0.001 --icon-height 0.4 -b $(light -G)
+# bindsym F9 			exec --no-startup-id blight set -- +5% && rumno -r 0.001 --icon-height 0.4 -b $(light -G)
 
-# --------------------------------------------------------------------------------
-# --- Scratchpads 
-# --------------------------------------------------------------------------------
+# --- SCRATCHPADS -------------------
 
 # Control
 bindsym Mod1+BackSpace move scratchpad
-# bindsym $mod+BackSpace scratchpad show
-
-
-# Masterpdfeditor
-bindsym $mod+p exec ~/scripts/i3/switch.sh "masterpdfeditor5" "masterpdfeditor5"
-for_window [class="masterpdfeditor5"] move scratchpad 
+bindsym Mod1+Shift+BackSpace scratchpad show
 
 # Typora
-bindsym $mod+a exec ~/scripts/i3/switch.sh "Typora" "typora"
+bindsym $mod+a [class="Typora"] $scratch 
 for_window [class="Typora" window_role="browser-window"] move scratchpad 
 exec --no-startup-id typora
 
 # Firefox
-bindsym $mod+w exec ~/scripts/i3/switch.sh "firefox" "firefox"
+bindsym $mod+w [class="firefox"] $scratch 
 for_window [class="firefox" instance="Navigator"] move scratchpad 
 exec --no-startup-id firefox   
 
