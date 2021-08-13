@@ -13,6 +13,7 @@ set $scratch scratchpad show floating disable move to workspace current focus
 exec xset s off -dpms
 exec i3-msg "workspace 1"
 exec --no-startup-id autorandr --change
+exec --no-startup-id $HOME/scripts/i3/i3-alternating-layouts.py
 exec polystart
 exec feh --bg-scale ~/scripts/installer/assets/wall.png
 exec_always --no-startup-id $HOME/.config/Insync/launch.sh
@@ -42,7 +43,7 @@ popup_during_fullscreen smart
 bindsym $mod+q          exec notify-send.py a --hint boolean:deadd-notification-center:true \
                string:type:clearPopups
 bindsym $mod+k 			exec /home/fabian/scripts/dmenu/dmlogout
-bindsym $mod+h			exec /home/fabian/scripts/dmenu/dmconf
+bindsym $mod+s			exec /home/fabian/scripts/dmenu/dmconf
 bindsym $mod+o			exec dmenu_run -i -h 40 -fn 'Monospace:Regular:pixelsize=15' -nf "#F8F8F2" -nb "#252A34" -sf "#191919" -sb "#81A1C1"
 bindsym $mod+Return		exec --no-startup-id alacritty
 bindsym $mod+Shift+Return		exec --no-startup-id alacritty -e ranger
@@ -133,8 +134,6 @@ bindsym $mod+Shift+i 	move right
 # --------------------------------------------------------------------------------
 popup_during_fullscreen leave_fullscreen
 default_orientation horizontal
-bindsym $mod+d        split h
-bindsym $mod+v 	    	split v
 bindsym $mod+f        fullscreen toggle
 bindsym $mod+space 		focus mode_toggle
 

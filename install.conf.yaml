@@ -19,6 +19,7 @@
     # UTILITIES ---------------------------------------------------
     ~/.config/lvim/config.lua:              nvim/config.lua
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
+    /etc/optimus-manager/optimus-manager.conf: optimus/optimus-manager.conf 
       
 
     # TOOLS -------------------------------------------------------
