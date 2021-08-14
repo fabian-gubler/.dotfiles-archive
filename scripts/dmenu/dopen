@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+filemanager=ranger
+term=alacritty
+editor=lvim
+videoplayer=mpv
+audioplayer=mpv
+imageviewer=feh
+pdfviewer=zathura
+
+path="$(fd -H . /home/fabian | dmenu -i -l 30 -p "Open File/Dir:")"
+
+[[ -d "$path" ]] && ($term -e $filemanager "$path" &) && exit
+
+case "$(xdg-mime query filetype "$path")" in
+
+	text/*) ($term -e $editor "$path" &);;
+	video/*) "$videoplayer" "$path";;
+	audio/*) "$audioplayer" "$path";;
+	image/*) "$imageviewer" "$path";;
+	application/pdf*) "$pdfviewer" "$path";;
+	*) xdg-open "$path";;
+esac

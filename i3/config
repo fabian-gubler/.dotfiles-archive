@@ -42,9 +42,9 @@ popup_during_fullscreen smart
 # Bindings 
 bindsym $mod+q          exec notify-send.py a --hint boolean:deadd-notification-center:true \
                string:type:clearPopups
-bindsym $mod+k 			exec /home/fabian/scripts/dmenu/dmlogout
-bindsym $mod+s			exec /home/fabian/scripts/dmenu/dmconf
-bindsym $mod+o			exec dmenu_run -i -h 40 -fn 'Monospace:Regular:pixelsize=15' -nf "#F8F8F2" -nb "#252A34" -sf "#191919" -sb "#81A1C1"
+bindsym $mod+k 			exec /home/fabian/.dotfiles/scripts/dmenu/dmlogout
+bindsym $mod+s			exec /home/fabian/.dotfiles/scripts/dmenu/dmconf
+bindsym $mod+o			exec dmenu_run -i -h 40 
 bindsym $mod+Return		exec --no-startup-id alacritty
 bindsym $mod+Shift+Return		exec --no-startup-id alacritty -e ranger
 bindsym $mod+Shift+b 			bar mode toggle

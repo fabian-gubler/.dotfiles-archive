@@ -1,4 +1,6 @@
 # Productivity
+alias v="lvim"
+alias ll='exa --header --long --git'
 alias nvim='lvim'
 alias r='ranger'
 alias rsyncy='sudo rsync -a --info=progress2'

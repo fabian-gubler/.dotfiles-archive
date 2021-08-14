@@ -2,7 +2,9 @@
 HISTFILE=~/.config/zsh/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+export MANPAGER="lvim -c 'set ft=man' -"
 # End of lines configured by zsh-newuser-install
+
 
 # Prompt
 fpath+=$HOME/.config/zsh/pure
@@ -19,6 +21,7 @@ zsh_add_file "zsh-aliases"
 # zsh_add_file "zsh-vim-mode"
 
 # Plugins
+# zsh_add_plugin "Aloxaf/fzf-tab"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"

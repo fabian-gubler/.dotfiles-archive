@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+#
+# Script name: dmconf
+# Description: Choose from a list of configuration files to edit.
+# Dependencies: dmenu, emacsclient
+# GitLab: https://www.gitlab.com/dwt1/dmscripts
+# License: https://www.gitlab.com/dwt1/dmscripts/LICENSE
+# Contributors: Derek Taylor
+#               Simon Ingelsson
+#               HostGrady
+# Usage:
+# to use other editor than emacsclient set DMEDITOR accordingly
+#   Example: `DMEDITOR="alacritty -e nvim" ./dmconf`
+DMCONFIG="$HOME/.config/dmscripts/dmconf"
+if [ -f "$DMCONFIG" ]; then
+	source "$DMCONFIG"
+else
+	: "${DMEDITOR:=alacritty -e lvim}"
+# An array of options to choose.
+# You can edit this list to add/remove config files.
+	declare -A options
+        options[alacritty]="$HOME/.dotfiles/alacritty/alacritty.yml"
+        options[zshrc]="$HOME/.zshrc"
+        options[alias]="$HOME/.oh-my-zsh/custom/aliases.zsh"
+        options[i3]="$HOME/.config/i3/config"
+        options[dmconf]="$HOME/.dotfiles/scripts/dmenu/dmconf"
+        options[dmlogout]="$HOME/.dotfiles/scripts/dmenu/dmlogout"
+        options[xprofile]="$HOME/.xprofile"
+        options[ranger]="$HOME/.dotfiles/ranger/rifle.conf"
+        options[rc.conf]="$HOME/.dotfiles/ranger/rc.conf"
+        options[typora]="$HOME/.dotfiles/typora/conf.user.json"
+        options[polybar]="$HOME/.dotfiles/polybar/config"
+        options[polybar modules]="$HOME/.dotfiles/polybar/modules.ini"
+        options[destreamer]="$HOME/scripts/destreamer/list.txt"
+        options[tridactyl]="/$HOME/.config/tridactyl/tridactylrc"
+fi
+# Clean options array making sure that the files exist
+declare -A options_clean
+  for i in "${!options[@]}"; do
+    [[ -f ${options["${i}"]} ]] && options_clean["${i}"]=${options["${i}"]}
+  done
+
+# Piping the above array (cleaned) into dmenu.
+# We use "printf '%s\n'" to format the array one item to a line.
+#choice=$(printf '%s\n' "${!options_clean[@]}" | sort | dmenu -i -l 20 -p 'Edit config:' "$@")
+choice=$(printf '%s\n' "${!options_clean[@]}" | sort | dmenu -i -h 40 -p  'Edit config:' "$@" )
+
+# What to do when/if we choose a file to edit.
+if [ "$choice" ]; then
+  cfg=$(printf '%s\n' "${options_clean["${choice}"]}")
+  $DMEDITOR "$cfg"
+
+# What to do if we just escape without choosing anything.
+else
+    echo "Program terminated." && exit 0
+fi
