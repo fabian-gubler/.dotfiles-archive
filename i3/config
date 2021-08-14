@@ -107,8 +107,8 @@ bindsym $mod+Shift+l move container to workspace 1; workspace 1
 bindsym $mod+Shift+u move container to workspace 2; workspace 2
 bindsym $mod+Shift+y move container to workspace 3; workspace 3
 
-bindsym $mod+g exec --no-startup-id ~/scripts/i3/i3-new-workspace
-bindsym $mod+Shift+g exec --no-startup-id ~/scripts/i3/i3-switch-new
+bindsym $mod+g exec --no-startup-id ~/.dotfiles/scripts/i3/i3-new-workspace
+bindsym $mod+Shift+g exec --no-startup-id ~/.dotfiles/scripts/i3/i3-switch-new
 # --------------------------------------------------------------------------------
 # --- Navigation 
 # --------------------------------------------------------------------------------
