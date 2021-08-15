@@ -220,7 +220,7 @@ echo "FINAL SETUP AND CONFIGURATION"
 # Clone dotfiles
 sudo rm -rf $HOME/.dotfiles
 cd ~
-git clone https://github.com/fabian-gubler/.dotfiles.git 
+git clone git@github.com:fabian-gubler/.dotfiles.git
 
 # ------------------------------------
 
@@ -303,6 +303,21 @@ echo "DOTFILES: Deploying files"
 echo "Deploying my dotfiles"
 cd $HOME/.dotfiles
 ./install
+
+# ------------------------------------
+
+ssh-keygen
+cat $HOME/.ssh/id_rsa.pub
+
+# User confirmation dialog
+while true; do
+    read -p "Please add your ssh key to github settings [y/n]" yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 
 # .secrets
 sudo rm -rf $HOME/.secrets
