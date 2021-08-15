@@ -51,9 +51,15 @@ echo
 sudo pacman -S base-devel --noconfirm --needed
 
 # Yay
-git clone https://aur.archlinux.org/yay.git "$HOME/downloads/yay"
-cd $HOME/downloads/yay
-makepkg -si --noconfirm
+if ! command -v yay &> /dev/null
+then
+    git clone https://aur.archlinux.org/yay.git "$HOME/downloads/yay"
+    cd $HOME/downloads/yay
+    makepkg -si --noconfirm
+    exit
+else
+    echo "Yay already Exists, skipping..."
+fi
 
 # ----------------------------------------------------
 
@@ -140,11 +146,14 @@ packages=$(comm -13 <(pacman -Qqe | sort) <(sort $HOME/file.txt))
 echo "The following programs will be installed:"
 echo $packages
 
+# Installation command
+sudo -u $USER yay -S --noconfirm --needed $packages
+
 # Installation loop
-for PKG in "${packages[@]}"; do
-    echo "INSTALLING: ${PKG}"
-    sudo sudo -u $USER yay -S "$PKG" --noconfirm --needed
-done
+# for PKG in "${packages[@]}"; do
+#     echo "INSTALLING: ${PKG}"
+#     sudo sudo -u $USER yay -S "$PKG" --noconfirm --needed
+# done
 
 # REMOVING UNNEEDED PACKAGES ---------------------------
 
