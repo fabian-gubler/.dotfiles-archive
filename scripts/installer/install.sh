@@ -287,7 +287,7 @@ echo
 echo "LUNARVIM: Single line install"
 
 # Single line command
-LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh) --overwrite
+LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh) 
 
 # ------------------------------------
 
