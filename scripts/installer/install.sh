@@ -78,7 +78,6 @@ PRGS=(
     'otf-san-francisco'           # Apple font
     'nerd-fonts-iosevka'          # Icons
     'wget'                        # Download web content
-    'xrandr'                      # Monitor configuration
     'rust'                        # Programming language
 
     # UTILITIES ---------------------------------------
