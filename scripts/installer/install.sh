@@ -305,11 +305,8 @@ cd $HOME/.dotfiles
 ./install
 
 # .secrets
-# echo "Deploying sensitive files"
-# sudo rm -rf $HOME/.secrets
-# mkdir $HOME/.secrets && cd $HOME/.secrets
-# git clone https://github.com/fabian-gubler/.secrets.git 
-# sudo ./install 
+sudo rm -rf $HOME/.secrets
+git clone git@github.com:fabian-gubler/.secrets.git "$HOME/.secrets"
 
 # .mozilla
 # echo "Dowload and extract mozilla folder"
