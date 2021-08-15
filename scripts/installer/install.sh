@@ -1,5 +1,7 @@
 #!/bin/sh
 
+aurhelper="yay"
+
 # ------------------------------------------------------
 # --- PART 1: INTRODUCTION------------------------------
 # ------------------------------------------------------
@@ -49,15 +51,15 @@ echo
 # Base-devel
 sudo pacman -S base-devel --noconfirm --needed
 
-# Yay
-if ! command -v yay &> /dev/null
+# Build
+if ! command -v $aurhelper &> /dev/null
 then
     git clone https://aur.archlinux.org/yay.git "$HOME/downloads/yay"
     cd $HOME/downloads/yay
     makepkg -si --noconfirm
     break
 else
-    echo "Yay already Exists, skipping..."
+    echo "$aurhelper already Exists, skipping..."
 fi
 
 # ----------------------------------------------------
@@ -137,32 +139,19 @@ PRGS=(
 )
 
 # Compare list with already installed packages
-printf "%s\n" "${PRGS[@]}" > $HOME/file.txt
-packages=$(comm -13 <(pacman -Qqe | sort) <(sort $HOME/file.txt))
+packages=$(comm -13 <(pacman -Qqe | sort) <(printf "%s\n" "${PRGS[@]}" | sort))
 
 # ------------------------------------------------------
 
 echo "The following programs will be installed:"
 echo $packages
 
-# User confirmation dialog
-while true; do
-    read -p "Do you wish to proceed? [y/n]" yn
-    case $yn in
-        [Yy]* ) break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
-
-# Installation command
-sudo -u $USER yay -S --noconfirm --needed $packages
 
 # Installation loop
-# for PKG in "${packages[@]}"; do
-#     echo "INSTALLING: ${PKG}"
-#     sudo sudo -u $USER yay -S "$PKG" --noconfirm --needed
-# done
+for PKG in $packages; do
+    echo "INSTALLING: $PKG"
+    sudo sudo -u $USER $aurhelper -S "$PKG" --noconfirm --needed
+done
 
 # REMOVING UNNEEDED PACKAGES ---------------------------
 
@@ -180,7 +169,7 @@ RMV=(
 # Removal
 for RM in "${RMV[@]}"; do
     echo "REMOVING: ${RM}"
-    sudo sudo -u $USER yay -R "$RM" --noconfirm 
+    sudo sudo -u $USER $aurhelper -R "$RM" --noconfirm 
 done
 
 # ------------------------------------------------------
