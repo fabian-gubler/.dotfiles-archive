@@ -18,7 +18,7 @@ sudo pacman -S git --noconfirm --needed
 
 # Clone dotfiles
 sudo rm -rf $HOME/.dotfiles
-git clone https://github.com/fabian-gubler/dotfiles.git "$HOME/.dotfiles"
+git clone https://github.com/fabian-gubler/.dotfiles.git "$HOME/.dotfiles"
 
 
 # ------------------------------------------------------
@@ -79,6 +79,7 @@ PRGS=(
     'nerd-fonts-iosevka'          # Icons
     'wget'                        # Download web content
     'rust'                        # Programming language
+    'exa'                         # Ls alternative
 
     # UTILITIES ---------------------------------------
     'ranger'                      # File explorer
@@ -295,7 +296,8 @@ echo "DOTFILES: Deploying files"
 
 # .dotfiles
 echo "Deploying my dotfiles"
-sudo $HOME/.dotfiles/install 
+cd $HOME/.dotfiles
+./install
 
 # .secrets
 # echo "Deploying sensitive files"
