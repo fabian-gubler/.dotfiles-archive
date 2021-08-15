@@ -217,7 +217,9 @@ echo "FINAL SETUP AND CONFIGURATION"
 
 # Clone dotfiles
 sudo rm -rf $HOME/.dotfiles
-git clone https://github.com/fabian-gubler/.dotfiles.git "$HOME/.dotfiles"
+cd ~
+git clone https://github.com/fabian-gubler/.dotfiles.git 
+
 # ------------------------------------
 
 echo
