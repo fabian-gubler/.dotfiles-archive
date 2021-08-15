@@ -17,7 +17,7 @@ sudo pacman -S git --noconfirm --needed
 
 # Clone dotfiles
 sudo rm -rf $HOME/.dotfiles
-git clone https://github.com/fabian-gubler/.dotfiles.git "$HOME/.dotfiles"
+git clone https://github.com/fabian-gubler/dotfiles.git "$HOME/.dotfiles"
 
 
 # ------------------------------------------------------
