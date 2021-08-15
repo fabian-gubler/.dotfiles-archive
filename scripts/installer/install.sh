@@ -8,7 +8,6 @@ echo
 echo 'Some things need to be done first before running...'
 echo
 
-# Update packages
 echo 'Synchronizing database and updating packages'
 sudo pacman -Syu --noconfirm --needed
 
@@ -56,7 +55,7 @@ then
     git clone https://aur.archlinux.org/yay.git "$HOME/downloads/yay"
     cd $HOME/downloads/yay
     makepkg -si --noconfirm
-    exit
+    break
 else
     echo "Yay already Exists, skipping..."
 fi
@@ -133,7 +132,7 @@ PRGS=(
     'system-config-printer'       # Gui tool
 
     # VIRTUALIZATION ----------------------------------
-    'virtualbox'
+    'virtualbox'                  # OS virtualization
     'virtualbox-host-modules-arch'
 )
 
@@ -145,6 +144,16 @@ packages=$(comm -13 <(pacman -Qqe | sort) <(sort $HOME/file.txt))
 
 echo "The following programs will be installed:"
 echo $packages
+
+# User confirmation dialog
+while true; do
+    read -p "Do you wish to proceed? [y/n]" yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 
 # Installation command
 sudo -u $USER yay -S --noconfirm --needed $packages
@@ -185,7 +194,7 @@ then
     git clone https://gitlab.com/natjo/rumno.git "$HOME/rumno"
     cd $HOME/rumno
     cargo build --release
-    exit
+    break
 else
     echo "Rumno already Exists, skipping..."
 fi
