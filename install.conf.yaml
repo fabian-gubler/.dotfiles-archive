@@ -15,10 +15,14 @@
     ~/.config/alacritty/alacritty.yml:      alacritty/alacritty.yml
     ~/.xprofile:                            X/.xprofile
     ~/.Xresources:                          X/.Xresources
+    ~/.xinitrc:                             X/.xinitrc
+    ~/.config/user-dirs.dirs:               X/user-dirs.dirs
 
     # UTILITIES ---------------------------------------------------
     ~/.config/lvim/config.lua:              nvim/config.lua
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
+    ~/.config/gtk-3.0/settings.ini:         gtk/settings.ini
+    ~/.gtkrc-2.0:                           gtk/.gtkrc-2.0
       
 
     # TOOLS -------------------------------------------------------

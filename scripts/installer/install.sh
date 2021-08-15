@@ -54,6 +54,7 @@ then
     git clone https://aur.archlinux.org/yay.git "$HOME/downloads/yay"
     cd $HOME/downloads/yay
     makepkg -si --noconfirm
+    rm -rf $HOME/downloads/yay
     break
 else
     echo "$aurhelper already Exists, skipping..."
@@ -180,6 +181,7 @@ then
     git clone https://gitlab.com/natjo/rumno.git "$HOME/rumno"
     cd $HOME/rumno
     cargo build --release
+    rm -rf $HOME/rumno
     break
 else
     echo "Rumno already Exists, skipping..."
@@ -282,6 +284,7 @@ mkdir $HOME/temp
 git clone https://github.com/pantajoe/typora-nord-theme.git "$HOME/temp/typora"
 cp $HOME/temp/typora/src/nord.css $HOME/.config/Typora/themes/
 cp -r $HOME/temp/typora/src/nord $HOME/.config/Typora/themes/
+rm -rf $HOME/temp
 
 # ------------------------------------
 
@@ -310,7 +313,7 @@ cd $HOME/.dotfiles
 
 # .mozilla
 # echo "Dowload and extract mozilla folder"
-# sudo $HOME/.secrets/installer/gdrive.sh
+sudo $HOME/.secrets/installer/gdrive.sh
 
 # ------------------------------------
 
@@ -340,6 +343,12 @@ sudo systemctl start optimus-manager.service
 sudo systemctl enable --now cups
 
 # ------------------------------------
+
+cd ~
+rmdir Desktop Documents Downloads Music Pictures Videos Templates Public
+rm -rf $HOME/.config/volumeicon
+rm -rf $HOME/.config/nitrogen
+rm -rf $HOME/.config/i3status
 
 # FINISH -----------------------------------------------
 
