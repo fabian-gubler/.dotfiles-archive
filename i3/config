@@ -15,7 +15,7 @@ exec i3-msg "workspace 1"
 exec --no-startup-id autorandr --change
 exec --no-startup-id $HOME/scripts/i3/i3-alternating-layouts.py
 exec polystart
-exec feh --bg-scale ~/scripts/installer/assets/wall.png
+exec feh --bg-scale ~/.dotfiles/scripts/installer/assets/wall.png
 exec_always --no-startup-id $HOME/.config/Insync/launch.sh
 
 # --- LOOK -------------------
