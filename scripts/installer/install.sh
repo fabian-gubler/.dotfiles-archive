@@ -78,6 +78,8 @@ PRGS=(
     'wget'                        # Download web content
     'rust'                        # Programming language
     'exa'                         # Ls alternative
+    'qt5ct'                       # Qt theming
+    'adwaita-qt'                  # Adwaita dark
 
     # UTILITIES ---------------------------------------
     'ranger'                      # File explorer
@@ -95,6 +97,7 @@ PRGS=(
     'dragon-drag-and-drop-git'    # Drag and drop
     'baobab'                      # Disk space
     'optimus-manager'             # GPU switcher
+    'autorandr'                   # Monitor setup
 
     # DEVELOPMENT -------------------------------------
     'git'                         # Version control
@@ -109,6 +112,7 @@ PRGS=(
     # MEDIA -------------------------------------------
     'alsa-utils'                  # For setting volume
     'bluez-utils'                 # Bluetooth support
+    'bluez'                       # Bluetooth protocol
     'feh'                         # Image viewer
     'mpv'                         # Media player
     'gimp'                        # Image manipulation
@@ -162,6 +166,7 @@ RMV=(
     'nitrogen'
     'volumeicon'
     'xfce4-settings'
+    'gsimplecal'
 )
 
 # Removal
@@ -253,14 +258,6 @@ git clone https://github.com/faraadi/mailspring-nord-theme.git "$HOME/.config/Ma
 # ------------------------------------
 
 echo
-echo "MPV: uosc overlay"
-
-mkdir $HOME/.config/mpv/scripts
-git clone https://github.com/darsain/uosc.git "$HOME/.config/mpv/scripts/uosc.lua"
-
-# ------------------------------------
-
-echo
 echo "DMENU: Build program"
 
 cd $HOME/.dotfiles/dmenu
@@ -275,9 +272,6 @@ mkdir $HOME/.themes
 
 # GTK
 git clone https://github.com/EliverLara/Nordic.git "$HOME/.themes/Nordic"
-
-# qBittorrent
-git clone https://github.com/jagannatharjun/qbt-theme.git "$HOME/.themes/qBittorrent"
 
 # Typora
 mkdir $HOME/temp
@@ -329,21 +323,21 @@ sudo $HOME/.secrets/installer/gdrive.sh
 
 # ------------------------------------
 
-# echo
-# echo "HDD: Mounting and give ownership"
-# 
-# # Create group & add user
-# sudo groupadd data
-# sudo usermod -a -G data $USER
-# 
-# # Append sdb1 to fstab
-# sudo echo "# /dev/sdb1
-# UUID=3c01e926-8fa4-42ab-a988-0f83e7e05df5 /data    auto nosuid,nodev,nofail,x-gvfs-show 0 0" >> /etc/fstab
-# sudo mkdir /data
-# sudo mount -a
-# 
-# # Ownership permission
-# sudo chown $USER:data /data
+echo
+echo "HDD: Mounting and give ownership"
+
+# Create group & add user
+sudo groupadd data
+sudo usermod -a -G data $USER
+
+# Append sdb1 to fstab
+sudo echo "# /dev/sdb1
+UUID=3c01e926-8fa4-42ab-a988-0f83e7e05df5 /data    auto nosuid,nodev,nofail,x-gvfs-show 0 0" >> /etc/fstab
+sudo mkdir /data
+sudo mount -a
+
+# Ownership permission
+sudo chown $USER:data /data
 
 # ------------------------------------
 
@@ -353,6 +347,7 @@ sudo sed -i -e 's|[# ]*HandleLidSwitch[ ]*=[ ]*.*|HandleLidSwitch=ignore|g' /etc
 # Systemd
 sudo systemctl start optimus-manager.service
 sudo systemctl enable --now cups
+sudo systemctl enable bluetooth.service
 
 # ------------------------------------
 
@@ -361,6 +356,8 @@ rmdir Desktop Documents Downloads Music Pictures Videos Templates Public
 rm -rf $HOME/.config/volumeicon
 rm -rf $HOME/.config/nitrogen
 rm -rf $HOME/.config/i3status
+rm -rf $HOME/.config/gsimplecal
+
 
 # FINISH -----------------------------------------------
 

@@ -1,8 +1,9 @@
 # Productivity
 alias v="lvim"
-alias ll='exa --header --long --git'
+alias sv="sudoedit"
+alias ll='exa --header --long --git -a'
 alias nvim='lvim'
-alias r='ranger'
+alias r='autorandr'
 alias rsyncy='sudo rsync -a --info=progress2'
 alias rsync-delete="sudo rsync -a --delete --info=progress2"
 alias drive='lsblk'

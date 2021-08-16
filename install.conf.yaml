@@ -21,8 +21,9 @@
     # UTILITIES ---------------------------------------------------
     ~/.config/lvim/config.lua:              nvim/config.lua
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
-    ~/.config/gtk-3.0/settings.ini:         gtk/settings.ini
-    ~/.gtkrc-2.0:                           gtk/.gtkrc-2.0
+    ~/.config/gtk-3.0/settings.ini:         theme/gtk/settings.ini
+    ~/.gtkrc-2.0:                           theme/gtk/.gtkrc-2.0
+    ~/.config/qt5ct/qt5ct.conf:             theme/qt/qt5ct.conf
       
 
     # TOOLS -------------------------------------------------------
@@ -32,6 +33,10 @@
     ~/.config/polybar/modules.ini:          polybar/modules.ini
     ~/.config/ranger/rc.conf:               ranger/rc.conf
     ~/.config/ranger/rifle.conf:            ranger/rifle.conf
+    ~/.config/rofi/config:                  rofi/config
+    ~/.config/rofi/themes/minimal.rasi:     rofi/minimal.rasi
+    ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf
+      
 
     # WEB TOOLS ---------------------------------------------------
     ~/.mozilla/firefox/u7my0den.default-release/chrome/userChrome.css: firefox/userChrome.css
@@ -55,4 +60,5 @@
     ~/.config/mpv/input.conf:               mpv/input.conf
     ~/.config/mpv/mpv.conf:                 mpv/mpv.conf
     ~/.config/mpv/script-opts/uosc.conf:    mpv/uosc.conf 
+    ~/.config/mpv/scripts/uosc.lua:         mpv/uosc.lua
     

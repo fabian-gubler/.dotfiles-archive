@@ -20,8 +20,8 @@ else
 # You can edit this list to add/remove config files.
 	declare -A options
         options[alacritty]="$HOME/.dotfiles/alacritty/alacritty.yml"
-        options[zshrc]="$HOME/.zshrc"
-        options[alias]="$HOME/.oh-my-zsh/custom/aliases.zsh"
+        options[zshrc]="$HOME/.dotfiles/zsh/.zshrc"
+        options[alias]="$HOME/.dotfiles/zsh/zsh-aliases"
         options[i3]="$HOME/.config/i3/config"
         options[dmconf]="$HOME/.dotfiles/scripts/dmenu/dmconf"
         options[dmlogout]="$HOME/.dotfiles/scripts/dmenu/dmlogout"
@@ -31,7 +31,6 @@ else
         options[typora]="$HOME/.dotfiles/typora/conf.user.json"
         options[polybar]="$HOME/.dotfiles/polybar/config"
         options[polybar modules]="$HOME/.dotfiles/polybar/modules.ini"
-        options[destreamer]="$HOME/scripts/destreamer/list.txt"
         options[tridactyl]="/$HOME/.config/tridactyl/tridactylrc"
 fi
 # Clean options array making sure that the files exist

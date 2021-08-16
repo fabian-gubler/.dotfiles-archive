@@ -17,6 +17,7 @@ lvim.builtin.which_key.mappings["a"] = {
 }
 -- Native Keymappings
 vim.cmd([[
+    autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
     nnoremap <esc> :noh<return><esc>
     map <Up> <C-u>
     map <C-a> ggaG

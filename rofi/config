@@ -1,0 +1,6 @@
+rofi.theme: .config/rofi/themes/minimal.rasi
+
+rofi.kb-row-up:                      Up,Shift+Tab
+rofi.kb-row-down:                    Down
+rofi.kb-accept-entry:                Return,KP_Enter
+rofi.kb-remove-char-back:            BackSpace
