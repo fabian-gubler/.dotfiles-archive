@@ -1,0 +1,23 @@
+@import '_variables.css';
+@import '_global.css';
+@import '_tab-bar.css';
+@import '_navigation-bar.css';
+@import '_bookmarks-bar.css';
+@import '_find-bar.css';
+@import '_side-bar.css';
+@import '_menu.css';
+
+/* Hide Firefox UI */  
+/* @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul); */
+/* #navigator-toolbox { */
+/*     height: 0px !important; */
+/*     min-height: 0px !important; */
+/*     overflow: hidden !important; */
+/* } */
+/*  */
+/* #navigator-toolbox:focus, */
+/* #navigator-toolbox:focus-within, */
+/* #navigator-toolbox:active { */
+/*     height: auto !important; */
+/* }  */
+

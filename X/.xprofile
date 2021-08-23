@@ -12,7 +12,7 @@ export TERM=alacritty
 # --- Startup programs
 rumno-background &
 $HOME/.config/polybar/launch.sh &
-mailspring -b %U &
+# mailspring -b %U &
 xfsettingsd &
 bluetoothctl power on &
 picom -b &
@@ -20,6 +20,10 @@ xfce4-power-manager &
 unclutter --timeout 3 &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 gnome-keyring-daemon --start --components=pkcs11 &
-setxkbmap us
 xset r rate 350 60 &
-xset s off -dpms                
+xset s off -dpms &
+xsetroot -solid "#252a34" &
+setxkbmap -config /home/fabian/.config/keyboard.conf &
+
+# --- Custom Scripts
+$HOME/.dotfiles/suckless/dwm/scripts/xsetloop.sh

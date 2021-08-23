@@ -55,7 +55,6 @@ then
     cd $HOME/downloads/yay
     makepkg -si --noconfirm
     rm -rf $HOME/downloads/yay
-    break
 else
     echo "$aurhelper already Exists, skipping..."
 fi
@@ -74,7 +73,7 @@ PRGS=(
     'python-pip'                  # Python packages
     'lxappearance'                # GTK theme switcher
     'otf-san-francisco'           # Apple font
-    'nerd-fonts-iosevka'          # Icons
+    'nerd-fonts-roboto-mono'      # Icons
     'wget'                        # Download web content
     'rust'                        # Programming language
     'exa'                         # Ls alternative
@@ -113,6 +112,8 @@ PRGS=(
     'alsa-utils'                  # For setting volume
     'bluez-utils'                 # Bluetooth support
     'bluez'                       # Bluetooth protocol
+    'bluetooth-autoconnect'       # Trusted connect
+    'pulseaudio-bluetooth'        # Bluetooth support
     'feh'                         # Image viewer
     'mpv'                         # Media player
     'gimp'                        # Image manipulation
@@ -137,7 +138,7 @@ PRGS=(
 
     # VIRTUALIZATION ----------------------------------
     'virtualbox'                  # OS virtualization
-    'virtualbox-host-modules-arch'
+    'virtualbox-host-modules-arch' # Kernel modules
 )
 
 # Compare list with already installed packages
@@ -187,7 +188,6 @@ then
     cd $HOME/rumno
     cargo build --release
     rm -rf $HOME/rumno
-    break
 else
     echo "Rumno already Exists, skipping..."
 fi
@@ -221,6 +221,19 @@ while true; do
 done
 echo
 echo "FINAL SETUP AND CONFIGURATION"
+
+ssh-keygen
+cat $HOME/.ssh/id_rsa.pub
+
+# User confirmation dialog
+while true; do
+    read -p "Please add your ssh key to github settings [y/n]" yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 
 # Clone dotfiles
 sudo rm -rf $HOME/.dotfiles
@@ -296,26 +309,15 @@ echo "DOTFILES: Deploying files"
 # .dotfiles
 echo "Deploying my dotfiles"
 cd $HOME/.dotfiles
-./install
+sudo ./install
 
 # ------------------------------------
 
-ssh-keygen
-cat $HOME/.ssh/id_rsa.pub
-
-# User confirmation dialog
-while true; do
-    read -p "Please add your ssh key to github settings [y/n]" yn
-    case $yn in
-        [Yy]* ) break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
 
 # .secrets
 sudo rm -rf $HOME/.secrets
 git clone git@github.com:fabian-gubler/.secrets.git "$HOME/.secrets"
+sudo $HOME/.secrets/install
 
 # .mozilla
 # echo "Dowload and extract mozilla folder"
@@ -348,6 +350,11 @@ sudo sed -i -e 's|[# ]*HandleLidSwitch[ ]*=[ ]*.*|HandleLidSwitch=ignore|g' /etc
 sudo systemctl start optimus-manager.service
 sudo systemctl enable --now cups
 sudo systemctl enable bluetooth.service
+sudo systemctl --user enable pulseaudio-bluetooth-autoconnect
+
+# ------------------------------------
+# Start Printer setup
+sudo hp-setup
 
 # ------------------------------------
 

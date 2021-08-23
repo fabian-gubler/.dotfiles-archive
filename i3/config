@@ -12,7 +12,6 @@ set $scratch scratchpad show floating disable move to workspace current focus
 # Startup 
 exec xset s off -dpms
 exec --no-startup-id $HOME/scripts/i3/i3-alternating-layouts.py
-exec feh --bg-scale ~/.dotfiles/scripts/installer/assets/wall.png
 exec_always --no-startup-id $HOME/.config/Insync/launch.sh
 exec polystart
 exec i3-msg "workspace 1"

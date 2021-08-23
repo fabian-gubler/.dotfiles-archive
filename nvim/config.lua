@@ -1,7 +1,20 @@
+-- Variables
+local o = vim.opt
+local g = vim.g
+local home = os.getenv( "HOME" )
+g.mapleader = ' '
+
 -- General
 lvim.format_on_save = true
 lvim.lint_on_save = true
 lvim.colorscheme = "nord"
+
+-- Helper Function
+local function map(mode, lhs, rhs, opts)
+    local options = {noremap = true, silent = true}
+    if opts then options = vim.tbl_extend('force', options, opts) end
+    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
 
 -- Additional Plugins
 lvim.plugins = {
@@ -9,12 +22,24 @@ lvim.plugins = {
     {"shaunsingh/nord.nvim"},
     {"psliwka/vim-smoothie"},
     {"easymotion/vim-easymotion"},
+    {"mbbill/undotree"}
 }
+
+-- Undodir
+g.undotree_WindowLayout = 2
+
 
 -- Additional Leader bindings for WhichKey
 lvim.builtin.which_key.mappings["a"] = { 
   "<cmd>CommentToggle<cr>","Comment"
 }
+
+-- Options
+o.undodir = home .. '/.config/lvim/undodir'
+
+-- Custom Keymappings
+map('n', '<leader>u', '<cmd>UndotreeToggle<cr>')
+
 -- Native Keymappings
 vim.cmd([[
     autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"

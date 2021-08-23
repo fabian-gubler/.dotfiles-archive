@@ -16,7 +16,7 @@
     ~/.xprofile:                            X/.xprofile
     ~/.Xresources:                          X/.Xresources
     ~/.xinitrc:                             X/.xinitrc
-    ~/.config/user-dirs.dirs:               X/user-dirs.dirs
+    ~/.config/user-dirs.conf:               X/user-dirs.conf
 
     # UTILITIES ---------------------------------------------------
     ~/.config/lvim/config.lua:              nvim/config.lua
@@ -24,6 +24,9 @@
     ~/.config/gtk-3.0/settings.ini:         theme/gtk/settings.ini
     ~/.gtkrc-2.0:                           theme/gtk/.gtkrc-2.0
     ~/.config/qt5ct/qt5ct.conf:             theme/qt/qt5ct.conf
+    ~/.config/qt5ct/colors/nord.conf:       theme/qt/nord.conf 
+    ~/.config/gcolor3/config.ini:           theme/gcolor3/config.ini
+    ~/.config/dunst/dunstrc:                dunst/dunstrc
       
 
     # TOOLS -------------------------------------------------------
@@ -36,6 +39,7 @@
     ~/.config/rofi/config:                  rofi/config
     ~/.config/rofi/themes/minimal.rasi:     rofi/minimal.rasi
     ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf
+    ~/.config/autorandr/postswitch:         autorandr/postswitch
       
 
     # WEB TOOLS ---------------------------------------------------
