@@ -65,7 +65,7 @@ case $choice in
         fi
         ;;
     'Lock')
-        i3-msg exit
+        slock
         ;;
     'Reboot')
         systemctl reboot

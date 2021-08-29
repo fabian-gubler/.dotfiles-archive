@@ -5,7 +5,6 @@ SAVEHIST=1000
 export MANPAGER="lvim -c 'set ft=man' -"
 # End of lines configured by zsh-newuser-install
 
-
 # Prompt
 fpath+=$HOME/.config/zsh/pure
 zstyle :compinstall filename '/home/fabian/.config/zsh/.zshrc'

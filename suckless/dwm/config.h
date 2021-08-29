@@ -45,7 +45,9 @@ static const Layout layouts[] = {
 	{ "[M]",      monocle },
 };
 
+
 /* key definitions */
+#include <X11/XF86keysym.h>
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
@@ -60,6 +62,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 
 /*First arg only serves to match against key in rules*/
 static const char *firefoxscratch[] = {"s", "firefox", NULL}; 
@@ -69,11 +74,13 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
   { MODKEY,                       XK_g,      spawn,          SHCMD("networkmanager_dmenu")},
   { MODKEY,                       XK_f,      spawn,          SHCMD("alacritty -e ranger")},
+  { MODKEY,                       XK_x,      spawn,          SHCMD("alacritty -e vifm")},
   { MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("pcmanfm")},
   { MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmlogout")},
   { MODKEY,                       XK_j,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmconf")},
   { MODKEY,                       XK_c,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/colorpicker.sh")},
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/dmenu-bluetooth")},
+	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("VBoxManage startvm 'Windows 10'")},
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,      togglescratch,  {.v = firefoxscratch } },
@@ -110,6 +117,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+  { 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+	{ 0,                            XF86XK_AudioMute, spawn, {.v = mutevol } },
 };
 
 /* button definitions */

@@ -247,6 +247,7 @@ git clone git@github.com:fabian-gubler/.dotfiles.git
 echo
 echo "RANGER: Configuring devicons"
 
+git clone https://github.com/maximtrp/ranger-archives.git ~/.config/ranger/plugins/ranger_devicons
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 echo "default_linemode devicons" >> $HOME/.dotfiles/ranger/rc.conf
 
