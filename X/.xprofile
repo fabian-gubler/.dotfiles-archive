@@ -1,4 +1,5 @@
 #!/bin/sh
+
 # --- Variables
 export QT_QPA_PLATFORMTHEME=qt5ct
 export EDITOR=lvim
@@ -10,10 +11,9 @@ export export ZDOTDIR=$HOME/.config/zsh
 export TERM=alacritty
 
 # --- Startup programs
-rumno-background &
-$HOME/.config/polybar/launch.sh &
-# mailspring -b %U &
-xfsettingsd &
+# rumno-background &
+optimus-manager &
+prime-offload &
 bluetoothctl power on &
 picom -b &
 xfce4-power-manager &
@@ -24,6 +24,4 @@ xset r rate 350 60 &
 xset s off -dpms &
 xsetroot -solid "#252a34" &
 setxkbmap -config /home/fabian/.config/keyboard.conf &
-
-# --- Custom Scripts
-$HOME/.dotfiles/suckless/dwm/scripts/xsetloop.sh
+slstatus &

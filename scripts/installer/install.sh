@@ -72,13 +72,12 @@ PRGS=(
     'zsh'                         # Shell
     'python-pip'                  # Python packages
     'lxappearance'                # GTK theme switcher
-    'otf-san-francisco'           # Apple font
-    'nerd-fonts-roboto-mono'      # Icons
     'wget'                        # Download web content
     'rust'                        # Programming language
     'exa'                         # Ls alternative
     'qt5ct'                       # Qt theming
     'adwaita-qt'                  # Adwaita dark
+    'xorg-xinit'                  # Tty login
 
     # UTILITIES ---------------------------------------
     'ranger'                      # File explorer
@@ -86,7 +85,6 @@ PRGS=(
     'qbittorrent'                 # Torrent client
     'unclutter'                   # Mouse timeout
     'flameshot'                   # Screenshot tool
-    'gcolor3'                     # Color picker
     'timeshift'                   # Backup snapshots
     'insync'                      # Cloud sync
     'gotop-bin'                   # System monitoring
@@ -97,6 +95,7 @@ PRGS=(
     'baobab'                      # Disk space
     'optimus-manager'             # GPU switcher
     'autorandr'                   # Monitor setup
+    'unzip'                       # Unzip directories
 
     # DEVELOPMENT -------------------------------------
     'git'                         # Version control
@@ -117,17 +116,17 @@ PRGS=(
     'feh'                         # Image viewer
     'mpv'                         # Media player
     'gimp'                        # Image manipulation
-    'rofi-bluetooth-git'          # Bluetooth control
     'pavucontrol'                 # GTK audio control
   
 
     # PRODUCTIVITY ------------------------------------
     'anki'                        # Flashcard app
     'obs-studio'                  # Screen Recorder
-    'thunar'                      # GTK file manager
+    'pcmanfm-gtk3'                     # GTK file manager
     'zoom'                        # Virtual Classroom
     'teams'                       # Video Communication
     'zsa-wally'                   # Keyboard Layout
+    'zsa-wally-cli'               # Keyboard Layout
     'mailspring'                  # Email client
     'masterpdfeditor'             # PDF editor
 
@@ -164,9 +163,12 @@ echo
 
 # Packages
 RMV=(
+    'gvfs'
     'nitrogen'
     'volumeicon'
     'xfce4-settings'
+    'xfce4-power-manager'
+    'xfce4-notifyd'
     'gsimplecal'
 )
 
@@ -322,7 +324,6 @@ sudo $HOME/.secrets/install
 # .mozilla
 # echo "Dowload and extract mozilla folder"
 sudo $HOME/.secrets/installer/gdrive.sh
-
 # ------------------------------------
 
 echo
@@ -347,10 +348,10 @@ sudo chown $USER:data /data
 sudo sed -i -e 's|[# ]*HandleLidSwitch[ ]*=[ ]*.*|HandleLidSwitch=ignore|g' /etc/systemd/logind.conf
 
 # Systemd
-sudo systemctl start optimus-manager.service
+sudo systemctl enable optimus-manager.service
 sudo systemctl enable --now cups
 sudo systemctl enable bluetooth.service
-sudo systemctl --user enable pulseaudio-bluetooth-autoconnect
+sudo systemctl enable pulseaudio-bluetooth-autoconnect
 
 # ------------------------------------
 # Start Printer setup

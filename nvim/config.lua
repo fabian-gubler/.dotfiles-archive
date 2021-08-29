@@ -22,7 +22,9 @@ lvim.plugins = {
     {"shaunsingh/nord.nvim"},
     {"psliwka/vim-smoothie"},
     {"easymotion/vim-easymotion"},
-    {"mbbill/undotree"}
+    {"mbbill/undotree"},
+    {"francoiscabrol/ranger.vim"},
+    {"rbgrouleff/bclose.vim"}
 }
 
 -- Undodir

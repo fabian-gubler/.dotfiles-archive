@@ -13,9 +13,9 @@
 /* S E T T I N G S */
 
 :root {
-  --navbarWidth     : 500px; /* Set width of navbar. Use px for a fixed width 
+  --navbarWidth     : 400px; /* Set width of navbar. Use px for a fixed width 
                                 or vw for a percentage of your window. */
-  --animationSpeed  : 0.15s;
+  --animationSpeed  : 0s;
 }
 
 

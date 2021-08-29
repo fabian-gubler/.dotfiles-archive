@@ -20,18 +20,23 @@ else
 # You can edit this list to add/remove config files.
 	declare -A options
         options[alacritty]="$HOME/.dotfiles/alacritty/alacritty.yml"
-        options[zshrc]="$HOME/.dotfiles/zsh/.zshrc"
         options[alias]="$HOME/.dotfiles/zsh/zsh-aliases"
-        options[i3]="$HOME/.config/i3/config"
         options[dmconf]="$HOME/.dotfiles/scripts/dmenu/dmconf"
         options[dmlogout]="$HOME/.dotfiles/scripts/dmenu/dmlogout"
-        options[xprofile]="$HOME/.xprofile"
-        options[ranger]="$HOME/.dotfiles/ranger/rifle.conf"
-        options[rc.conf]="$HOME/.dotfiles/ranger/rc.conf"
-        options[typora]="$HOME/.dotfiles/typora/conf.user.json"
-        options[polybar]="$HOME/.dotfiles/polybar/config"
-        options[polybar modules]="$HOME/.dotfiles/polybar/modules.ini"
+        options[ranger files]="$HOME/.dotfiles/ranger/rifle.conf"
+        options[ranger config]="$HOME/.dotfiles/ranger/rc.conf"
         options[tridactyl]="/$HOME/.config/tridactyl/tridactylrc"
+        options[typora]="$HOME/.dotfiles/typora/conf.user.json"
+        options[xprofile]="$HOME/.xprofile"
+        options[zshrc]="$HOME/.dotfiles/zsh/.zshrc"
+        options[dwm]="$HOME/.dotfiles/dwm/config.def.h"
+        options[dmenu]="$HOME/.dotfiles/dmenu/config.def.h"
+        options[install.sh]="$HOME/.dotfiles/scripts/installer/install.sh"
+        options[dotbot]="$HOME/.dotfiles/install.conf.yaml"
+        options[dunst]="$HOME/.dotfiles/dunst/dunstrc"
+        options[xprofile]="$HOME/.xprofile"
+        options[neovim]="$HOME/.dotfiles/nvim/config.lua"
+
 fi
 # Clean options array making sure that the files exist
 declare -A options_clean
@@ -41,8 +46,7 @@ declare -A options_clean
 
 # Piping the above array (cleaned) into dmenu.
 # We use "printf '%s\n'" to format the array one item to a line.
-#choice=$(printf '%s\n' "${!options_clean[@]}" | sort | dmenu -i -l 20 -p 'Edit config:' "$@")
-choice=$(printf '%s\n' "${!options_clean[@]}" | sort | dmenu -i -h 40 -p  'Edit config:' "$@" )
+choice=$(printf '%s\n' "${!options_clean[@]}" | sort | dmenu -l 30 -i -p  'Edit config:' "$@" )
 
 # What to do when/if we choose a file to edit.
 if [ "$choice" ]; then

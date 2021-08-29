@@ -103,19 +103,19 @@
 
 font:
   normal:
-    family: LigaSFMonoNerdFont
+    family: SFMono
     style: Regular
 
   bold:
-    family: LigaSFMonoNerdFont
+    family: SFMono
     style: Bold
 
   italic:
-    family: LigaSFMonoNerdFont
+    family: SFMono
     style: Italic
 
   bold_italic:
-    family: LigaSFMonoNerdFont
+    family: SFMono
     style: Bold Italic
 
   size: 17

@@ -11,58 +11,49 @@
     ~/.config/zsh/.zshrc:                   zsh/.zshrc
     ~/.config/zsh/zsh-aliases:              zsh/zsh-aliases
     ~/.config/zsh/zsh-functions:            zsh/zsh-functions
-    ~/.config/zsh/zsh-vim-mode:             zsh/zsh-vim-mode
+    ~/.z:                                   zsh/.z
     ~/.config/alacritty/alacritty.yml:      alacritty/alacritty.yml
     ~/.xprofile:                            X/.xprofile
+    ~/.zprofile:                            X/.zprofile
     ~/.Xresources:                          X/.Xresources
     ~/.xinitrc:                             X/.xinitrc
     ~/.config/user-dirs.conf:               X/user-dirs.conf
+    ~/.local/share/fonts/apple:             misc/fonts/apple
+    ~/.config/keyboard.conf:                misc/keyboard.conf
+    ~/.config/picom.conf:                   misc/picom.conf
 
     # UTILITIES ---------------------------------------------------
     ~/.config/lvim/config.lua:              nvim/config.lua
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
-    ~/.config/gtk-3.0/settings.ini:         theme/gtk/settings.ini
-    ~/.gtkrc-2.0:                           theme/gtk/.gtkrc-2.0
-    ~/.config/qt5ct/qt5ct.conf:             theme/qt/qt5ct.conf
-    ~/.config/qt5ct/colors/nord.conf:       theme/qt/nord.conf 
-    ~/.config/gcolor3/config.ini:           theme/gcolor3/config.ini
-    ~/.config/dunst/dunstrc:                dunst/dunstrc
+    ~/.config/gtk-3.0/settings.ini:         misc/gtk/settings.ini
+    ~/.gtkrc-2.0:                           misc/gtk/.gtkrc-2.0
+    ~/.config/qt5ct/qt5ct.conf:             misc/qt/qt5ct.conf
+    ~/.config/qt5ct/colors/nord.conf:       misc/qt/nord.conf 
+    ~/.config/gcolor3/config.ini:           misc/gcolor3/config.ini
+    ~/.config/dunst/dunstrc:                misc/dunst/dunstrc
       
 
     # TOOLS -------------------------------------------------------
-    ~/.config/i3/config:                    i3/config
-    ~/.config/polybar/config:               polybar/config
-    ~/.config/polybar/launch.sh:            polybar/launch.sh
-    ~/.config/polybar/modules.ini:          polybar/modules.ini
+    ~/.config/i3/config:                    misc/archive/i3/config
+    ~/.config/polybar/config:               misc/archive/polybar/config
+    ~/.config/polybar/launch.sh:            misc/archive/polybar/launch.sh
+    ~/.config/polybar/modules.ini:          misc/archive/polybar/modules.ini
     ~/.config/ranger/rc.conf:               ranger/rc.conf
     ~/.config/ranger/rifle.conf:            ranger/rifle.conf
     ~/.config/rofi/config:                  rofi/config
     ~/.config/rofi/themes/minimal.rasi:     rofi/minimal.rasi
-    ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf
-    ~/.config/autorandr/postswitch:         autorandr/postswitch
+    ~/.config/qBittorrent/qBittorrent.conf: misc/qBittorrent/qBittorrent.conf
+    ~/.config/autorandr/postswitch:         misc/autorandr/postswitch
       
 
     # WEB TOOLS ---------------------------------------------------
     ~/.mozilla/firefox/u7my0den.default-release/chrome/userChrome.css: firefox/userChrome.css
-    ~/.mozilla/firefox/u7my0den.default-release/chrome/userContent.css: firefox/userContent.css
-
-
-    ~/.mozilla/firefox/u7my0den.default-release/chrome/_bookmarks-bar.css: firefox/_bookmarks-bar.css
-    ~/.mozilla/firefox/u7my0den.default-release/chrome/_find-bar.css: firefox/_find-bar.css 
-    ~/.mozilla/firefox/u7my0den.default-release/chrome/_global.css: firefox/_global.css
-    ~/.mozilla/firefox/u7my0den.default-release/chrome/_menu.css: firefox/_menu.css
-    ~/.mozilla/firefox/u7my0den.default-release/chrome/_navigation-bar.css: firefox/_navigation-bar.css
-    ~/.mozilla/firefox/u7my0den.default-release/chrome/_side-bar.css: firefox/_side-bar.css
-    ~/.mozilla/firefox/u7my0den.default-release/chrome/_tab-bar.css: firefox/_tab-bar.css
-    ~/.mozilla/firefox/u7my0den.default-release/chrome/_variables.css: firefox/_variables.css
-
-
     ~/.config/tridactyl/tridactylrc:        firefox/tridactylrc.vim
     ~/.config/tridactyl/themes/nord.css:    firefox/nord.css
 
     # MEDIA -------------------------------------------------------
-    ~/.config/mpv/input.conf:               mpv/input.conf
-    ~/.config/mpv/mpv.conf:                 mpv/mpv.conf
-    ~/.config/mpv/script-opts/uosc.conf:    mpv/uosc.conf 
-    ~/.config/mpv/scripts/uosc.lua:         mpv/uosc.lua
+    ~/.config/mpv/input.conf:               misc/mpv/input.conf
+    ~/.config/mpv/mpv.conf:                 misc/mpv/mpv.conf
+    ~/.config/mpv/script-opts/uosc.conf:    misc/mpv/uosc.conf 
+    ~/.config/mpv/scripts/uosc.lua:         misc/mpv/uosc.lua
     
