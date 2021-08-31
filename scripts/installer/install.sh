@@ -81,6 +81,7 @@ PRGS=(
 
     # UTILITIES ---------------------------------------
     'ranger'                      # File explorer
+    'ueberzug'                    # Image preview
     'xsane'                       # Scanning
     'qbittorrent'                 # Torrent client
     'unclutter'                   # Mouse timeout
@@ -106,6 +107,8 @@ PRGS=(
     'firefox'                     # Web browser
     'firefox-tridactyl-native'    # Vim integration
     'gdown'                       # GDrive download
+    'newsboat'                    # RSS Feed
+    'ytfzf'                       # YouTube search
 
     # MEDIA -------------------------------------------
     'alsa-utils'                  # For setting volume
@@ -129,6 +132,7 @@ PRGS=(
     'zsa-wally-cli'               # Keyboard Layout
     'mailspring'                  # Email client
     'masterpdfeditor'             # PDF editor
+    'zathura'                     # PDF viewer
 
     # PRINTER -----------------------------------------
     'cups'                        # Printer system

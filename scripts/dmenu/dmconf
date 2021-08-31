@@ -37,6 +37,10 @@ else
         options[xprofile]="$HOME/.xprofile"
         options[xprofile]="$HOME/.xprofile"
         options[zshrc]="$HOME/.dotfiles/zsh/.zshrc"
+        options[scimrc]="$HOME/.dotfiles/sc/scimrc"
+        options[scimrc help]="$HOME/.config/sc-im/help"
+        options[newsboat urls]="$HOME/.dotfiles/newsboat/urls"
+        options[newsboat config]="$HOME/.dotfiles/newsboat/config"
 
 fi
 # Clean options array making sure that the files exist

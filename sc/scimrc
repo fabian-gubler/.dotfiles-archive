@@ -1,0 +1,47 @@
+# Options
+set default_paste_from_clipboard_cmd="xsel"
+set autowrap
+
+# Colors
+DEFINE_COLOR "nord7" 143 188 187
+DEFINE_COLOR "nord9" 129 161 193 
+DEFINE_COLOR "nord10" 94 129 172 
+
+# Theme
+color "type=HEADINGS fg=DEFAULT_COLOR bg=BLACK bold=0"
+color "type=HEADINGS_ODD fg=DEFAULT_COLOR bg=BLACK bold=0"
+color "type=CELL_SELECTION fg=WHITE bg=nord10 bold=0"
+color "type=CELL_SELECTION_SC fg=WHITE bg=nord10 bold=0"
+color "type=DATEF fg=nord7 bg=DEFAULT_COLOR bold=0"
+color "type=STRG fg=WHITE bg=DEFAULT_COLOR bold=0"
+
+# Basic Navigation
+### m
+nnoremap "m" "h"
+vnoremap "m" "h"
+### n
+nnoremap "j" "n"
+vnoremap "j" "n"
+nnoremap "n" "j"
+vnoremap "n" "j"
+### e
+vnoremap "h" "e"
+nnoremap "e" "k"
+vnoremap "e" "k"
+### i
+nnoremap "sr" "ir"
+nnoremap "sc" "ic"
+nnoremap "i" "l"
+vnoremap "i" "l"
+
+# Operations
+nnoremap "a" "v"
+nnoremap "z" "u"
+nnoremap "q" ":x<cr>"
+nnoremap "l" "E"  
+nnoremap "h" "e"
+nnoremap "yc" ":ccopy<cr>"
+
+# Intuitive Navigation
+nnoremap "gg" "^"
+nnoremap "^" "0"

@@ -1,5 +1,7 @@
---- dwm.c
-+++ dwm.c
+diff --git i/dwm.c w/dwm.c
+index 4465af1..96b0b26 100644
+--- i/dwm.c
++++ w/dwm.c
 @@ -88,6 +88,7 @@ struct Client {
  	char name[256];
  	float mina, maxa;

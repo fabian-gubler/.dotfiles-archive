@@ -1,0 +1,44 @@
+### GENERAL
+#                   statement
+show-keymap-hint    no
+show-title-bar      no
+show-read-feeds     no
+max-items           20
+auto-reload         yes
+browser             "devour mpv"
+reload-time         0
+reload-threads      100
+pager               "lvim"
+keep-articles-days  30
+# html-renderer "w3m -dump -T text/html"
+# show-read-articles no
+
+### UI
+#                   format
+datetime-format     "%d %B"
+feedlist-format     "  %t %?d?- %-65d&? %> %U"
+articlelist-format  "%?T?  %-30T ?%-70t %> %D "
+
+### COLORS
+#         region                fore    back      font
+color     listnormal            white   default   dim
+color     listnormal_unread     white   default 
+color     listfocus             white   color67 
+color     listfocus_unread      white   color67 
+color     info                  white   color236
+
+### MACROS
+#         key     action
+macro     v       set browser "mpv"; open-in-browser ; set browser piper
+macro     f       set browser "firefox"; open-in-browser ; set browser pipe
+
+### KEYBINDINGS
+#         key     action
+bind-key  e       up
+bind-key  n       down
+bind-key  G       end
+bind-key  g       home
+bind-key  a       toggle-article-read 
+bind-key  i       open
+bind-key  m       quit
+bind-key  SPACE   macro-prefix

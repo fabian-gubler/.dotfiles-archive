@@ -9,6 +9,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib
 export export ZDOTDIR=$HOME/.config/zsh     
 export TERM=alacritty
+export LANG="en_US.utf8"
 
 # --- Startup programs
 # rumno-background &
@@ -24,4 +25,6 @@ xset r rate 350 60 &
 xset s off -dpms &
 xsetroot -solid "#252a34" &
 setxkbmap -config /home/fabian/.config/keyboard.conf &
+mailspring -b &
 slstatus &
+insync start &

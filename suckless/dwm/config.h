@@ -26,10 +26,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor    scratch key */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1,        0  },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1,        0  },
-	{ "firefox",  NULL,       NULL,       0,            0,           -1,       's' },
+	/* class            instance    title       tags mask     isfloating   monitor    scratch key */
+	{ "Gimp",           NULL,       NULL,       0,            1,           -1,        0  },
+	{ "Firefox",        NULL,       NULL,       1 << 8,       0,           -1,        0  },
+	{ "firefox",        NULL,       NULL,       0,            0,           -1,       's' },
+	{ NULL,             NULL,       "scratch",  0,            0,           -1,       'r' },
 };
 
 /* layout(s) */
@@ -68,22 +69,25 @@ static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "togg
 
 /*First arg only serves to match against key in rules*/
 static const char *firefoxscratch[] = {"s", "firefox", NULL}; 
+static const char *boatscratch[] = {"r", "alacritty", "-t", "scratch", "-e", "newsboat", NULL}; 
 
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
   { MODKEY,                       XK_g,      spawn,          SHCMD("networkmanager_dmenu")},
   { MODKEY,                       XK_f,      spawn,          SHCMD("alacritty -e ranger")},
-  { MODKEY,                       XK_x,      spawn,          SHCMD("alacritty -e vifm")},
   { MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("pcmanfm")},
   { MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmlogout")},
   { MODKEY,                       XK_j,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmconf")},
   { MODKEY,                       XK_c,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/colorpicker.sh")},
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/dmenu-bluetooth")},
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("alacritty -e sc-im /data/drive/todo.sc")},
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("VBoxManage startvm 'Windows 10'")},
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,      togglescratch,  {.v = firefoxscratch } },
+	{ MODKEY,                       XK_r,      togglescratch,  {.v = boatscratch } },
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("alacritty -e ytfzf -t")},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
   { MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = -1 } },

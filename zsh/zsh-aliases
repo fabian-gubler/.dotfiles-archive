@@ -1,4 +1,5 @@
 # Productivity
+alias sc="sc-im"
 alias v="lvim"
 alias sv="sudoedit"
 alias ll='exa --header --long --git -a'
