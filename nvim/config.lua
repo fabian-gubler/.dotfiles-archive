@@ -47,6 +47,7 @@ vim.cmd([[
     autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
     nnoremap <esc> :noh<return><esc>
     map <Up> <C-u>
+    nnoremap q :q<cr>
     map <C-a> ggaG
     map <C-s> :TermExec cmd='python %' <CR>
     map <Down> <C-d>

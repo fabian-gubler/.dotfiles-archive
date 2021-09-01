@@ -1,6 +1,7 @@
 # Options
 set default_paste_from_clipboard_cmd="xsel"
 set autowrap
+set xlsx_readformulas
 
 # Colors
 DEFINE_COLOR "nord7" 143 188 187

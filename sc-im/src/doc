@@ -1,0 +1,2162 @@
+                         This is the sc-im help file.
+
+Use the arrow keys to move around, or 'j' to go down and 'k' to go up.
+You can also use the <ENTER> key to go one line down and <DEL> to go up.
+
+<SPACE> moves a page down, while <C-f> and <C-b> move half page down or up.
+
+'G' moves to bottom, and <C-a> or 'gg' to the beginning of the text.
+
+Use '/' to search for a pattern in the help.
+
+Use ':q<Enter>' to go back to the spreadsheet.
+
+
+
+Important !!:
+    Please keep your config file in ~/.config/sc-im/scimrc, and not in
+    ~/.scimrc, nor .config/scimrc
+
+==============================================================================
+sc-im has the following modes:
+
+sc-im has the following modes:
+   NORMAL MODE:  In Normal mode, you can navigate cells and input normal
+                 commands.
+   INSERT MODE:  Use the '=', '<', '>', or '\' to go to Insert mode, where you
+                 can enter new values and expressions into cells.
+     EDIT MODE:  Use the 'e' or 'E' keys to go to Edit mode and enter a single
+                 line, Vi-like, command to modify cell content
+                 and expressions.  The 'e' and 'E' keys enter this mode.
+  COMMAND MODE:  Use the ':' key to enter Command mode. This is for entering
+                 special commands such as quitting the app and saving files.
+   VISUAL MODE:  Visual mode is used for selecting a range of cells.  See the
+                 section 'Selecting a range' below.
+                 The 'v' key enters this mode from Normal mode, or <C-v> in
+                 Insert and Command modes.
+
+==============================================================================
+&NORMAL MODE&
+
+Navigation commands:
+     j k l h     Move cursor down, up, right or left.
+     <UP>        Move cursor up
+     <DOWN>      Move cursor down
+     <LEFT>      Move cursor left
+     <RIGHT>     Move cursor right
+     ^           Go up to row 0 of the current column.
+     #           Go down to the last valid row of the current column.  If
+                 already in last valid row of the current column, then jump to
+                 last valid row of the last valid cell in spreadsheet.
+     0           Go left to column A in the current row.
+     $           Go right to the last valid column of the current row.
+     b           Go back to the previous valid cell.
+     w           Go forward to the next valid cell.
+     '{a-zA-Z}   Go to the cell or range marked previously with the character.
+                 See 'm' for details.
+     goab24      Go to cell AB24.  (There is no need to press <ENTER>.)
+     g0          Go to the leftmost column visible on screen.
+     g$          Go to the rightmost column visible on screen.
+     gM          Go to the middle column on the screen.
+     gf          Open filename or URL in current cell.
+                 Uses helper script 'scopen'.
+     H           Go to the top row visible on screen.
+     L           Go to the lowest row visible on screen.
+     M           Go to the middle row on the screen.
+     gg    c-a   Go to the first cell of sheet.
+     G     gG    Go to last valid cell of sheet.
+     gl          Go to the last (previously occupied) cell position.
+     gt          Move to next sheet in file.
+     gT          Move to previous sheet in file.
+     c-f   c-b   Scrolls down and up full screen.
+                 :set half_page_scroll=1 to scroll by half a page instead.
+                 half_page_scroll=0 (default) scrolls by a full page.
+                 See :set command for details.
+     c-e   c-y   Scroll a row down and up.
+     zh          Scroll left one column.
+     zl          Scroll right one column.
+     zH          Scroll left half a page.
+     zL          Scroll right half page.
+     zm          Scroll horizontally to position the selected cell at the
+                 center of the screen.
+     zz or z.    Scroll vertically to position the selected cell at the middle
+                 of the screen.
+     zt          Scroll vertically to position the selected cell at the top
+                 of the screen.
+     zb          Scroll vertically to position the selected cell at the bottom
+                 of the screen.
+     Vir         Select the smallest range that covers all valid cells.
+     ESC or c-g  Clean stdin buffer, so sc-im no longer waits for completing a
+                 correct command.
+
+
+Commands for handling cell content:
+     x     dd    Delete the current selected cell or range and save its
+                 content in the yankbuffer.
+     m{a-zA-Z}   Mark the current cell or selected range with that letter.
+                 Note: When a mark is changed, all ranges that use that mark
+                 are deleted.
+     c{a-zA-Z}   Copy the marked cell or range to the current position,
+                 adjusting row and column references in its numeric or string
+                 expression, if any.
+     R{a-zA-Z}{a-zA-Z}
+                 Select the range defined by the two marks.
+                 Note: If a range already exists, it is replaced with the new
+                 values.
+
+     { } |       Align the content of a cell to the left, right or center.  If
+                 a range is selected, every cell of the range gets aligned.
+
+     f< , fh , f-LEFT:  Change column format: Decrement column width.
+     f> , fl , f-RIGHT: Change column format: Increment column width.
+     f+                 Change column format: Increment decimal precision.
+     f-                 Change column format: Decrement decimal precision.
+     fj , f-DOWN:       Change row format: Increase height.
+     fk , f-UP:         Change row format: Decrease height.
+
+     fr          Freeze a row or the rows selected.
+                 If none is selected it freezes the current row.
+
+     fc          Freeze a col or the cols selected.
+                 If none is selected it freezes the current col.
+
+     fa          Freeze the area selected.
+
+     ir          Insert a row.
+     ic          Insert a column.
+     or          Open a row: insert after the current row.
+     oc          Open a column: insert after the current column.
+     sk          Shifts the current cell or range up.
+     sj          Shifts the current cell or range down.
+     sh          Shifts the current cell or range left.
+     sl          Shifts the current cell or range right.
+
+     yy          Yank the selected cell.
+     y           If a range is selected, yank the range.
+     yr          Yank current row.
+     yc          Yank current column.
+
+     p           Paste the previously yanked cell or range.
+                 If yr was used to yank a row, create a new row below and
+                 paste content there.
+                 If yc was used to yank a column, create a new column to the
+                 left and paste content there.
+     Pf          Works like 'p' except that only the cell formatting is
+                 merged, leaving cell values intact.
+     Pv          Works like 'p' except that only cell values are copied,
+                 leaving cell formatting intact.
+     Pc          Works like 'p' except that all cell references are adjusted
+                 in the same way that they are for the copy command.
+
+     t           Same as 'p' but if yr was used to yank a row, create a new
+                 row above and paste content there.
+                 If yc was used to yank a column, create a new column to the
+                 right and paste content there.
+     Tf          Works like 't' except that only cell formatting information
+                 is merged in, leaving cell values intact.
+     Tv          Works like 't' except that only cell values are copied,
+                 leaving cell formatting intact.
+     Tc          Works like 't' except that all cell references are adjusted
+                 in the same way that they are for the copy command.
+
+     dr          Delete the current row.
+     dc          Deletes the current column.
+     .           Repeat the last normal mode command.
+     -           Decrease a numeric value of the cell or range.
+     +           Increase a numeric value of the cell or range.
+
+     u           UNDO last change
+     c-r         REDO last change
+                 Note: Events implemented for undo and redo:
+                 1. cell or range deletion
+                 2. cell input
+                 3. cell editing
+                 4. cell or range change in alignment
+                 5. pasting a cell or range
+                 6. range or cell shift with sh sj sk sl
+                 7. row or column insertion
+                 8. row or column deletion
+                 9. pasting a row or column
+                 10. zap(hide) or show a row or column
+                 11. reordering of a range
+                 12. changing the format of a range or cell
+                 13. '-' and '+' commands in normal mode
+                 14. locking and unlocking of cells
+                 15. the datefmt command
+                 16. the cellcolor command
+                 17. Change in format of a column as a result of the 'f' command
+                 18. Change in format of a column as a result of auto_jus
+                 19. Change format of columns as a result of ic dc
+                 20. fill command
+                 21. unformat
+                 22. change in the format of rows
+
+     c-d         Convert the text content of a selected cell or range to a
+                 date, using default LOCALE's D_FMT format.
+                 This converts text to a numeric value that can be shown as a
+                 date. See DATES INPUT below for more info.
+                 Note: USELOCALE has to be enabled during build.
+
+     aa    c-j   Auto-resize the selected column(s) to accommodate the widest
+                 cells.
+
+ Other commands:
+     ^L          Redraw the screen.
+     Zr          Zap (hide) the current row.
+     Zc          Zap (hide) the current column.
+     Sr          If a range is selected, show the rows hidden in the range.
+     Sc          If a range is selected, show the columns hidden in the range.
+     /           Alias for ':int goto '.
+
+                 If a number is given, sc-im will search for a cell containing
+                 that number.  Searches for either strings or numbers proceed
+                 forward from the current cell, wrapping back to a0 at the end
+                 of the table, and terminate at the current cell if the string
+                 or number is not found.
+
+                 Example: Type '/4' to look for cells containing the value 4.
+                 Or type '/"value"' to look for cells that has "value" as
+                 label content.
+                 You can quote a regular expression, and sc-im will search for
+                 a cell containing a string matching that regular expression.
+                 Example: Type / followed by "[_mente]" (with the double
+                  quotes). That will look up for cells that has one character
+                 and finish with 'mente'
+
+                 You can search for formatted numbers or expressions using
+                 regular expressions by preceding the opening quotes of the
+                 regular expression with a '#' (for formatted numbers) or a
+                 '%' (for expressions).
+                 These are handy for searching for dates within a specified
+                 range or cells which reference a given cell, for example,
+                 although they are somewhat slower than searching through
+                 ordinary strings, since all numbers must be formatted or
+                 expressions decompiled on the fly during the search.
+
+     ?           Same as / but searchs backwards.
+     n           Move to next search match.
+     N           Move to previous search match.
+
+     rl          Lock the current cell or range. Locking makes cells immune to
+                 any type of editing. A locked cell can't be changed in any
+                 way until it is unlocked.
+     ru          Unlock a locked cell or range, making it editable.
+     rv          Valueize the current cell or range. Valueizing removes
+                 expressions, leaving only the values.
+
+==============================================================================
+&INSERT MODE&
+
+     =           Enter a numeric constant or expression.
+     <           Enter a left justified string or string expression.
+     \           Enter a centered label.
+     >           Enter a right justified string or string expression.
+     >
+                 NOTE: if entering strings that exceed column width, you
+                 can make them show truncated, overlapping to adjacent column, or to
+                 wrap it increasing the rows height.
+                 Please see :set overlap, :set truncate, :set autowrap
+                 options.
+                 You can also type \n when entering strings and sc-im will increase
+                 row height accordangly.
+
+     <TAB>       Return to Edit mode from Insert mode.
+     <LEFT>, <RIGHT>
+                 Move the cursor with the arrow keys.
+     Keys <ENTER>
+                 Input numbers, letters and operators.
+     <BS>, <DELETE>
+                 Delete the character after or before the cursor.
+     <ESC>       Go back to NORMAL MODE. If you were in EDIT MODE before,
+                 it goes back to that mode, instead of NORMAL MODE.
+     c-r{a-zA-Z}
+                 If the character is a mark of a cell or range, the range
+                 represented is inserted into the field.
+     c-v         Enter Visual mode. See C-o and C-k commands in VISUAL MODE.
+     \\{char}    Fills the cell with n occurrences of {char} to complete its width.
+
+==============================================================================
+&EDIT MODE&
+
+     e           In normal mode, enter Edit mode to edit a numeric value.
+     E           In normal mode, enter Edit mode to edit a text value.
+     h           Move a character left.
+     l           Move a character right.
+     w           Move to the beginning of the next word.
+     e           If at the end of a word, move to the end of the next word.
+                 Otherwise, move to the end of word under the cursor.
+     b           If at the beginning of a word, move to beginning of the
+                 previous word. Otherwise, move to beginning of word under the
+                 cursor.
+     0           Move to the beginning of the line.
+     ^           Go to the first non blank character of the line
+     $           Move to the end of the line.
+     g_          Go to the last non blank character of the line
+     f{char}     Move to the next occurrence of {char} to the right.
+     F{char}     Move to the previous occurrence of {char} to the left.
+     t{char}     Move until the next occurrence of {char} to the right.
+     T{char}     Move until the previous occurrence of {char} to the left.
+     r{char}     Replaces the character under the cursor with {char}.
+     R{word}     Each character you type replaces an existing character,
+                 starting with the character under the cursor.
+                 ESC key or ENTER key must be pressed when finished typing the
+                 new word.
+
+     de          Delete until the end of the word.
+     dw          Delete until the beginning of the next word.
+
+     d0          Delete until the beginning of the line.
+     d$          Delete until the end of the line.
+     d^          Delete from position until the first non blank character of the line
+     dg_         Delete from position until the last non blank character of the line
+
+     db          If at the beginning of a word, delete until the beginning of
+                 the previous word. Otherwise, delete until the beginning of
+                 the word under the cursor.
+     daw         Delete the word under the cursor.
+     dE          Delete until the end of WORD.
+     dW          Delete until the beginning of the next WORD.
+
+     dB          If at the beginning of a word, delete until the beginning of
+                 previous WORD. Otherwise, delete until the beginning of the
+                 WORD under the cursor.
+     daW         Delete the WORD under the cursor.
+     dl          Delete the character under the cursor.
+     d<RIGHT>    Delete the character under the cursor.
+     dh          Delete the character before the cursor.
+     d<LEFT>     Delete the character before the cursor.
+     df{char}    Delete until the first occurence of {char} to the right.
+     dF{char}    Delete until the previous occurence of {char} to the left.
+     dt{char}    Delete until the next occurrence of {char} to the right.
+     dT{char}    Delete until the previous occurrence of {char} to the left.
+
+
+     ce          Same as "de", then enter Insert mode.
+     cw          Same as "dw", then enter Insert mode.
+     c0          Same as "d0", then enter Insert mode.
+     cb          Same as "db", then enter Insert mode.
+     caw         Same as "daw", then enter Insert mode.
+     cE          Same as "dE", then enter Insert mode.
+     cW          Same as "dW", then enter Insert mode.
+     c$          Same as "d$", then enter Insert mode.
+     c^          Same as "d^", then enter Insert mode.
+     cg_         Same as "dg_", then enter Insert mode.
+     cB          Same as "dB", then enter Insert mode.
+     caW         Same as "daW", then enter Insert mode.
+     cl          Same as "dl", then enter Insert mode.
+     c<RIGHT>    Same as "d<RIGHT>", then enter Insert mode.
+     ch          Same as "dh", then enter Insert mode.
+     c<LEFT>     Same as "d<LEFT>", then enter Insert mode.
+     cf{char}    Same as "df{char}", then enter Insert mode.
+     cF{char}    Same as "dF{char}", then enter Insert mode.
+     ct{char}    Same as "dt{char}", then enter Insert mode.
+     cT{char}    Same as "dT{char}", then enter Insert mode.
+
+     x           Delete the character under the cursor.
+     X           Delete the character before the cursor.
+     i or =      Go back to Insert mode.
+     a           Append a character after the cursor.
+     s           Delete a character under the cursor, then enter Insert mode.
+     A           Append at the end of the line.
+     I           Append at the beginning of the line.
+     D           Delete from the current cursor position to end of line.
+     <SPACE>     Add a space under the cursor.
+     <ENTER>     Confirm changes.
+     <ESC>       Go back to NORMAL MODE. If you were in INSERT MODE before,
+                 it goes back to that mode, instead of NORMAL MODE.
+==============================================================================
+&COMMAND MODE&
+
+     <LEFT>, <RIGHT>
+                 Move the cursor position with the arrow keys.
+
+     <ENTER>
+                 Confirm a command.
+
+     <DELETE>, <BS>
+                 Delete the character under the cursor, or before the cursor.
+
+     <HOME>, <END>
+                 Move the cursor to the beginning or end of the line.
+
+     <TAB>       Complete a command that begins with the text already entered
+                 in the command line.
+
+     <C-w>, <C-b>
+                 Move forward or backwards a word.
+
+     <C-f>
+                 Paste the current cell format (if any) to the command line.
+
+     <C-v>       Starts VISUAL MODE. See C-o and C-k commands in VISUAL MODE.
+
+     :w          Save the current spreadsheet.
+     :w {file}   Save the current spreadsheet as {file}.
+     :w! {file}  Save the current spreadsheet as {file}, forcing an overwrite
+                 if {file} already exists.
+                 The format in which it will be save will be according to the current file extension, if any.
+
+     :h          Show this help.
+     :help       Show this help.
+
+     :q[uit]     Quit sc-im.
+     :q[uit]!    Quit sc-im, ignoring unsaved changes.
+
+     :load {file}
+                 Load (or reload) {file} into the sc-im database.
+
+                 {file} can be an sc format file (.sc), a comma-separated file
+                 (.csv), a tab-separated file (.tab, .tsv),a markdown table
+                 file (.md, mkd, .markdown), an xlsx or xls file.
+
+                 If loading a csv, tab or tsv file and
+                 'import_delimited_as_text' configuration variable is set
+                 Sc-im will import numbers as text.
+
+                 If loading an xlsx file and 'xlsx_readformulas' is set, Sc-im
+                 will try to import formulas, rather than the final values of
+                 a cell.
+
+     :load! {file}
+                 Same as previous, but ignore changes done to the current
+                 loaded spreadsheet.
+
+     :x          Save the current spreadsheet and quit sc-im.
+     :wq
+
+     :x {file}   Save the current spreadsheet to {file} and quit sc-im.
+
+     :x! {file}  Like ":x", but overwrite {file} if it exists.
+
+     :e tab      Export the current spreadsheet to a tab-separated file.
+                 The name of the created file comes from the current
+                 spreadsheet, with ".tab" appended.
+                 If a range is selected, only that range is exported.
+                 NOTE: If you do an export with the :e command, current file
+                 name stays unchaged.
+                 See :file command for more details.
+
+     :e tab {file}
+                 Export the current spreadsheet to tab-separated file {file}.
+
+     :e! tab {file}
+                 Like ":e tab", but overwrite {file} if it exists.
+                 If a range is selected, only that range is exported.
+
+     :e csv      Export the current spreadsheet to a comma-separated file.
+
+     :e csv {file}
+                 Export the current spreadsheet to comma-separated file
+                 {file}.
+
+     :e! csv {file}
+                 Like ":e csv", but overwrite {file} if it exists.
+
+     :e txt      Export current spreadsheet to plain text.
+                 If a range is selected, only that range is exported.
+
+     :e txt {file}
+                 Export the current spreadsheet to plain text file {file}.
+
+     :e! txt {file}
+                 Like ":e txt", but overwrite {file} if it exists.
+
+     :e tex      Export current spreadsheet to Latex file.
+                 If a range is selected, only that range is exported.
+
+     :e tex {file}
+                 Export the current spreadsheet to Latex file {file}.
+
+     :e! tex {file}
+                 Like ":e tex", but overwrite {file} if it exists.
+
+     :e mkd      Export the current spreadsheet to a markdown file solely
+                 containing a single markdown table.
+                 The column alignments come from the cells on the row. All
+                 other alignments are ignored as markdown tables do do not
+                 support cell level alignment.
+
+     :e mkd {file}
+                 Export the current spreadsheet to markdown file {file}.
+
+     :e! mkd {file}
+                 Like ":e mkd", but overwrite {file} if it exists.
+
+     :e xlsx {file}
+                 Export the current spreadsheet to xlsx file {file}.
+                 If 'xlsx_readformulas' is set, sc-im tries to export
+                 formulas, rather than the final values of a cell.
+
+     :e! xlsx {file}
+                 Like ":e xlsx", but overwrite {file} if it exists.
+
+     :ccopy      Copy a selected range to clipboard.
+                 When 'ccopy' command is executed, the default value of macro
+                 DEFAULT_COPY_TO_CLIPBOARD_CMD (set in Makefile during build)
+                 is executed.
+                 That value contains a system command that is executed to copy
+                 to an specific clipboard. See in Makefile the different
+                 options available.
+                 You can also set a different value of
+                 'default_copy_to_clipboard_cmd' configuration variable at
+                 runtime, using the :set command.
+                 This process will export content as plain text.
+                 It will not delimit columns with '\t' chars.
+                 If you wish to delimit columns with tabs, to paste content
+                 directly to other spreadsheet programs, rather than an
+                 editor, set "copy_to_clipboard_delimited_tab" variable to "1".
+
+     :cpaste     Paste clipboard content to Sc-im.
+                 When 'cpaste' command is executed, the default value of macro
+                 DEFAULT_PASTE_FROM_CLIPBOARD_CMD (set in Makefile during
+                 build) is executed.
+                 That value contains a system command that is executed to
+                 paste content of a specific clipboard to Sc-im.
+                 See in Makefile the different options available.
+                 You can also set a different value of
+                 'default_paste_from_clipboard_cmd' configuration variable at
+                 runtime, using the :set command.
+                 This process will treat '\t' chars as column delimiter, and
+                 '\n' chars as rows delimiters.
+
+     :version    Show sc-im version number.
+
+                 If you start Sc-im with ./sc-im --version
+                 version number of Sc-im will be printed on screen, including
+                 the different features that were enabled when Sc-im was
+                 compiled. Afterwards Sc-im will exit.
+
+     :refresh    Refresh the UI. Acts like the <C-l> command of NORMAL_MODE.
+
+     :set        Show all configuration options and their values.
+
+     :set {option}={value}
+                 Set a configuration option to {value}. The arguments may be
+                 repeated.
+                 Example:    :set half_page_scroll=0 numeric_zero=1
+                             :set numeric          (same as :set numeric=1)
+                             :set nonumeric        (same as :set numeric=0)
+                             :set default_paste_from_clipboard_cmd="xsel"
+
+     :newsheet "{name}"
+                 create a new sheet in file and move to it.
+
+     :nextsheet
+                 move to next sheet in file
+
+     :prevsheet
+                 move to previous sheet in file
+
+     :delsheet "{name}"
+                 deletes the sheet named {name}.
+
+     :delsheet
+                 deletes the current sheet.
+
+     :renamesheet "{name}"
+                 rename the current sheet to {name}.
+
+     :showmaps   Show all key mappings.
+
+     :nmap {lhs} {rhs}
+                 Map the key sequence {lhs} to {rhs} This mapping takes effect
+                 only in NORMAL_MODE.
+                 Example:  :nmap "H" ":h<cr>"
+
+     :imap {lhs} {rhs}
+                 Map the key sequence {lhs} to {rhs} This mapping takes effect
+                 only in INSERT_MODE.
+                 Example:  :imap "<C-f>" "format"
+
+     :vmap {lhs} {rhs}
+                 Map the key sequence {lhs} to {rhs} This mapping takes effect
+                 only in VISUAL_MODE.
+                 Example:  :vmap "e" "y"
+
+     :cmap {lhs} {rhs}
+                 Map the key sequence {lhs} to {rhs} This mapping takes effect
+                 only in COMMAND_MODE.
+                 Example:  :cmap "<C-q>" "quit<cr>"
+                           :cmap "kj" "<ESC>"
+
+     :nnoremap {lhs} {rhs}
+                 This is the non-recursive version of ":nmap". See NOTES on
+                 MAPPING below
+
+     :inoremap {lhs} {rhs}
+                 This is the non-recursive version of ":imap". See NOTES on
+                 MAPPING below
+
+     :vnoremap {lhs} {rhs}
+                 This is the non-recursive version of ":vmap". See NOTES on
+                 MAPPING below
+
+     :cnoremap {lhs} {rhs}
+                 This is the non-recursive version of ":cmap". See NOTES on
+                 MAPPING below
+
+     :nunmap {lhs}
+                 Remove the map sequence {lhs} that takes effect in
+                 NORMAL_MODE.
+
+     :iunmap {lhs}
+                 Remove the map sequence {lhs} that takes effect in
+                 INSERT_MODE.
+
+     :vunmap {lhs}
+                 Remove the map sequence {lhs} that takes effect in
+                 VISUAL_MODE.
+
+     :cunmap {lhs}
+                 Remove the map sequence {lhs} that takes effect in
+                 COMMAND_MODE.
+
+     :file [{file}]
+                 If {file} is given, expand {file}, and set the current file
+                 name to the result of the expansion.
+
+                 If {file} is not given, display the current file name on
+                 the status line.
+                 Take note that current file name is set during loading of
+                 Sc-im or with this command. If you do an export with the :e
+                 command, current file name stays unchaged.
+
+     :fill {range} {initial_number} {increment_number}
+                 Fill range {range} with values. The first cell of the range
+                 will have {initial_number} and each successive cell
+                 increments by {increment_number}.
+                 Example:   :fill A0:A100 1 0.25
+
+     :format "{format_string}"
+           Set the numeric format for the selected cell or range.
+           {format_string} can contain one or more of these:
+
+           #    Digit placeholder.  If the number has fewer digits on either
+                side of the decimal point than there are '#' characters in
+                the format, the extra '#' characters are ignored.  The number
+                is rounded to the number of digit placeholders as there are
+                to the right of the decimal point.  If there are more digits
+                in the number than there are digit placeholders on the left
+                side of the decimal point, then those digits are displayed.
+
+           0    Digit placeholder.  Same as for '#' except that the number
+                is padded with zeroes on either side of the decimal point.
+                The number of zeroes used in padding is determined by the
+                number of digit placeholders after the '0' for digits on
+                the left side of the decimal point and by the number of
+                digit placeholders before the '0' for digits on the right
+                side of the decimal point.
+
+           .    Decimal point.  Determines how many digits are placed on
+                the right and left sides of the decimal point in the number.
+                Note that numbers smaller than 1 will begin with a decimal
+                point if the left side of the decimal point contains only
+                a '#' digit placeholder.  Use a '0' placeholder to get a
+                leading zero in decimal formats.
+
+           %    Percentage.  For each '%' character in the format, the actual
+                number gets multiplied by 100 for the purposes of formatting
+                (the original value is unmodified) and the '%' character is
+                placed in the same position as it is in the format.
+
+           ,    Thousands separator.  The presence of a ',' in the format
+                (multiple commas are treated as one) will cause the number
+                to be formatted with a ',' separating each set of three digits
+                in the integer part of the number with numbering beginning
+                from the right end of the integer.
+
+           d    Specifies a date format that is applied to the numeric value
+                of a cell. (See also the DATES INPUT section below.) Date
+                format strings are identified by the presence of a 'd' in the
+                first position.  If this is present, the remainder of the
+                string is passed to the strftime() function, and therefore
+                uses the same conversion specifiers as strftime().
+                For more information on conversion specifiers for date format
+                strings, see the man page for strftime(3).
+
+           E- E+ e- e+
+                Scientific format.  Causes the number to formatted in
+                scientific notation.  The case of the 'E' or 'e' given is
+                preserved. If the format uses a '+', then the sign is always
+                given for the exponent value.  If the format uses a '-', then
+                the sign is only given when the exponent value is negative.
+                Note that if there is no digit placeholder following the '+'
+                or '-', then that part of the formatted number is left out. In
+                general, there should be one or more digit placeholders after
+                the '+' or '-'.
+
+           Examples:     :format "###,###,000"
+                         :format "d%d/%m/%Y"
+                         :format "####.####E+3"
+
+    :formatcol {width} {precision} {fixed-point}
+                Format the selected column or range of columns with the
+                specified format of width, precision and fixed-point.
+
+    :formatrow {height}
+                Format the selected row or range of rows with the specified
+                height.
+
+    :datefmt "{date_format_string}"   See the DATES INPUT section below.
+
+
+    :sort {range} "{sort_string}"
+                Sort a range of cells with a given criteria.
+                The rows in the specified range will be sorted according
+                to a criteria given in the form of a string of characters.
+                This string, enclosed in double quotes, may comprise a
+                single criterion or multiple criteria in decreasing order
+                of precedence. Each criterion has three parts, all of which
+                are mandatory.
+
+                The first part is a single character, either + or -, which
+                specifies whether the sort should be done in ascending or
+                descending order, respectively.
+
+                The second part, also a single character, is either # or $,
+                and specifies whether the sort should be based on the numeric
+                portion or the string portion, respectively, of the cells
+                being
+                used for the comparison.
+
+                The third part is one or two letters (case insensitive) that
+                specify the column used for making the comparisons.  This
+                column must be in the range being sorted.
+
+                Criteria may be concatenated with ';' and are applied in the
+                order specified.
+
+                Examples:        :sort C10:E13 "+#D"
+                                 :sort C10:E13 "+#C;-#D"
+
+    :sort "{sort_string}"
+                Like ":sort {range}", but the sort is performed on the
+                selected range.
+
+    :subtotal {col_range} {operation} {col_operation}
+                Apply subtotals over the data in a selected range.
+                {col_range} is the column to group by.
+                {operation} can be one of the followings:
+                    @sum, @prod, @avg, @count, @stddev, @max, @min
+                {col_operation} is the column whose values will be used
+                to do the {operation}.
+                Example: load the file example examples/sc/subtotals.sc,
+                select the A1:C9 range, and type    :subtotal A @sum C
+
+    :addfilter "{filter_string}"
+    :showfilters
+    :filteron {range}
+    :filteroff
+    :delfilter {filter_number}
+    :delfilters
+                These commands filter a range of rows by multiple criteria.
+
+                ":addfilter" defines a filter according to {filter_string} in
+                this format:
+
+                The first part is either '#' or '$', and specifies whether the
+                expression evaluates the numeric portion or the string portion
+                of the cell.
+
+                The second part specifies the column that contains the values
+                to be evaluated with the expression.
+
+                The third part is the actual expression evaluated.
+
+                Multiple criteria can be separated with the ';' character.
+
+                Examples:
+                            :addfilter "#B<8000"
+                            :addfilter "#C>1500"
+                            :addfilter "@eqs(@substr($B,1,3),'SEP')"
+                            :addfilter "#B>3000;#B<5000;#B>@avg(B1:B20)"
+
+                Once filters are added, you can see the details of each filter
+                with ":showfilters".
+                Each filter is preceded by a number. You can delete a filter
+                with ":delfilter {filter_number}".
+                For example, to remove the first filter defined:
+                            :delfilter 0
+
+                ":delfilters" deletes all defined filters.
+
+                ":filteron {range}" applies the filters to the range.
+                Example:        :filteron B10:C13
+
+                If a range is selected you can simply type ":filteron".
+
+                ":filteroff" turns off the filters.
+
+    :strtonum {range}
+                Converts string field containing digits to a numeric field.
+                So you can calculate with it.
+                Example:
+                label A0 = "5" -> let A0 = 5 (internal representation)
+
+    :int "{string}"
+                Send a command to the interpreter.
+                Example:          :int goto B2
+
+
+    :hidecol {column}
+    :hidecol {column:column}
+                Hide the column or column range given. (Case insensitive.)
+
+    :hiderow {row}
+    :hiderow {row:row}
+                Hide the row or rows given.
+
+    :showcol {column}
+    :showcol {column:column}
+                Show columns that were previously hidden.
+
+    :showcols
+                Having a selected range, it will show cols that were previously hidden in that range.
+
+    :showrow {rows}
+    :showrow {row:row}
+                Show rows that were previously hidden.
+
+    :showrows
+                Having a selected range, it will show rows that were previously hidden in that range.
+
+    :hiddenrows
+                Show details of hidden rows.
+
+    :hiddencols
+                Show details of hidden columns.
+
+    :freezecol {column}
+    :freezecol {column:column}
+                Freeze the column or column range given. (Case insensitive).
+                (the rest of the screen scrolls but the column/s stays fixed
+                on the screen).
+    :freezecol {range}
+                Freeze the columns determinated by the selected range.
+
+    :freezerow {row}
+    :freezerow {row:row}
+                Freeze the row or row range given.
+                (the rest of the screen scrolls but the row/s stays fixed on
+                the screen).
+    :freezerow {range}
+                Freeze the rows determinated by the selected range.
+
+    :unfreezecol {column}
+    :unfreezecol {column:column}
+                Unfreeze a previous frozen col or range of cols.
+
+    :unfreezerow {row}
+    :unfreezerow {row:row}
+                Unfreeze a previous frozen row or range of rows.
+
+    :pad {spaces}
+                Apply a left padding {spaces} characters in width to a column.
+                If a range selected, pad the columns inside that range.
+
+    :color "{key}={arg} .."
+                Change a color definition.
+
+                {key} is one of the following:
+                type, fg, bg, bold, italic, dim, reverse, standout, underline,
+                blink
+                Notes: The type, fg, and bg keys are mandatory.
+                       Some terminal dont support some attributes, such as italic.
+
+                The value of type shall be one of the following:
+                     HEADINGS, HEADINGD_ODD, MODE, NUMB, STRG, DATEF,
+                     EXPRESSION, GRID_EVEN, GRID_ODD,
+                     CELL_ERROR, CELL_NEGATIVE, CELL_SELECTION,
+                     CELL_SELECTION_SC, INFO_MSG, ERROR_MSG, CELL_ID,
+                     CELL_FORMAT, CELL_CONTENT, WELCOME, NORMAL, INPUT,
+                     HELP_HIGHLIGHT.
+
+                The value of fg and bg shall be one of the following:
+                     WHITE, BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN,
+                     DEFAULT_COLOR or NONE_COLOR.
+
+                     DEFAULT_COLOR just takes the default color of your
+                     terminal. If you set it as fg color it will take default
+                     color of your foreground. If you set it as bg color it
+                     will take the default background color of your terminal.
+
+
+                     If you set fg or bg value to NONE_COLOR. Colors will be kept
+                     intact and will not be changed. Just bold, italic and other
+                     attributes will be applied.
+
+
+                The value of other parameters are booleans, 1 or 0.
+
+                Example:  :color "type=HEADINGS bold=0 fg=BLACK bg=YELLOW"
+
+                Colors can be set at runtime or specified in:
+                     a. the scimrc file stored in $HOME/.config/sc-im/
+                     b. the current .sc file.
+
+                color "type=HEADINGS fg=WHITE bg=CYAN"
+
+
+                The different types and its details:
+                        - HEADINGS Topmost (header) row that lists column names
+                          (only for even columns), and leftmost (header) column
+                          that lists row numbers.                          
+                        - HEADINGS_ODD The same that above but shown for odd columns.
+                        - MODE The text in the top right that indicates which
+                          mode sc-im is currently in.
+                        - NUMB The cell styling used for cells formatted as
+                          numbers (That are positive)
+                        - STRG The cell styling used for cells formatted as
+                          strings.
+                        - DATEF The cell styling used for cells formated as
+                          dates.
+                        - CELL_SELECTION - The row and column selection styling
+                          used on the HEADINGS to indicate the coordinates of the
+                          selected row.
+                        - CELL_SELECTION_SC The currently (focussed) cell.
+                        - GRID_EVEN: Color shown for even columns itself.
+                        - GRID_ODD: Color shown for odd columns itself.
+                        - EXPRESSION The cell styling used for cells that are
+                          the result of an expression.
+                        - CELL_ERROR The cell styling used for when an expression
+                          results in an error (like dividing by zero)
+                        - CELL_NEGATIVE The cell that is used when a number (or
+                          expression) is a negative value.
+                        - INFO_MSG The text in the top left corner just above "A"
+                          that will provide info messages "At column A" when you
+                          try and go past the farthest column to the left
+                        - ERROR_MSG The text that will display in the top left
+                          corner when a command fails for some reason.
+                        - CELL_ID The coordinates of the currently selected cell
+                          that displays in the upper top left corner. Just to the
+                          left of the CELL_FORMAT and CELL_CONTENT.
+                        - CELL_FORMAT The text just to the right of the CELL_ID
+                          and left of the CELL_CONTENT in the top left corner that
+                          shows the formatting of the currently selected cell.
+                        - CELL_CONTENT The text just to the right of the CELL_ID
+                          and CELL_FORMAT that shows the content of the currently
+                          selected cell. This will show the expression used to get
+                          the current cell.
+                        - WELCOME The text that shows up when you first open sc-im
+                        - NORMAL Text that shows on top of the terminal (like in :help)
+                        - INPUT The text that shows up while you type text in the
+                          input bar at the top left of the screen.
+                        - HELP_HIGHLIGHT Color used for highlighting search results
+                          and titles of help page.
+
+    :cellcolor "{key}={arg} .."
+                Change the color of the current cell or range.
+                Example:   :cellcolor "bg=CYAN fg=WHITE"
+                           :cellcolor "fg=RED bold=1 underline=1"
+                           :cellcolor A2:A6 "fg=CYAN bold=1 underline=1"
+
+    :unformat
+    :unformat {range}
+                Removes a previous format set over a range.
+                If not range is specified, it removes the format over current
+                cell.
+
+    :define_color "{color} {R} {G} {B}
+                Create a custom color named {color} with {R} {G} {B} RGB
+                values.
+                RGB values range from 0 to 255.
+
+                Note: This requires that ncurses is built with --enable-ext-colors,
+                and the terminal must support 256 colors. For example, TERM=xterm-256color.
+                You can check how many colors your terminal supports with: 'tput colors' command.
+                sc-im must also be linked to ncursesw library and not the common ncurses library.
+
+                Example of use:   :define_color "skyblue" 75 50 200
+
+                To make this take effect every time sc-im is started, you can
+                add it to $HOME/.config/sc-im/scimrc:
+                            DEFINE_COLOR "skyblue" 75 50 200
+
+                You then can use the color defined above to colorize a type, like this:
+                            :color "type=HEADINGS fg=skyblue bg=BLACK"
+                or adding in $HOME/.config/sc-im/scimrc:
+                            color "type=HEADINGS fg=skyblue bg=BLACK"
+
+
+    :redefine_color "{color}" {R} {G} {B}
+                Change the RGB values of the colors defined by ncurses.
+                RGB values range from 0 to 255.
+
+                Note: This requires that ncurses is built with
+                --enable-ext-colors, and the terminal must support 256 colors.
+                For example, TERM=xterm-256color.  sc-im must link to
+                ncursesw library and not the common ncurses library.
+
+                Example:   :redefine_color "RED" 250 0 0
+
+                To make this take effect every time sc-im is started, you can
+                add it to $HOME/.config/sc-im/scimrc:
+                            REDEFINE_COLOR "RED" 250 0 0
+
+                Redefining the BLACK color itself is another way to change the
+                default background color of sc-im.
+
+    :lock       Lock the current cell or range.  Locked cells are immune to
+                any type of editing and can't be changed in any way until
+                unlocked.
+
+    :unlock     Reverses the effect of ":lock", making the current cell or
+                range editable.
+
+    :valueize   Replace expressions in the current cell or range with the
+                values evaluated from the expressions.
+
+    :! {cmd}    Executes shell command {cmd}.
+
+    :autofit {column}
+    :autofit {column}:{column}
+                Auto-resize the column or column range to fit their contents.
+
+    :autofit    Auto-resize the columns covered by the selected cell or range.
+
+    :trigger    Trigger action on cell or range. Trigger can be Read or Write
+                or Both. On Read, trigger is executed before evaluating cells
+                value, on Write, after the evaluation. Type of Trigger can be
+                Lua or C. In Lua there are sc-im specific function available
+                accessing cells, more in "examples/lua* directory.
+
+                Example:
+                :trigger a5 "mode=R type=LUA file=trg.lua function=trg"
+
+                Triggers when ever cell a5 is read and calls function
+                trg() in file trg.lua. In Lua column, row and mode is
+                passed as parameter to the function. Mode is whether
+                it was a READ or WRITE trigger.
+
+                :trigger b10 "mode=W type=C file=trg.so function=wr2mysql"
+
+                Function "wr2mysql" in trg.so is called when to
+                cell b10 is writen a new value.
+                See "examples/Module/module.c" for more Infos.
+                Adding "-Wl,--export-dynamic" in Makefile for linking
+                sc-im, will export all symbols from sc-im, making it
+                available for dynamic linking with modules.
+
+                The search path for LUA trigger files is
+                $PWD/lua/ or $HOME/.config/sc-im/lua/ or /usr/local/share/sc-im/lua
+                (in that order) and for C Trigger
+                $HOME/.sc-im/module or /usr/local/share/sc-im/module
+
+
+    :untrigger  Delete Trigger action on cell. Use with care.
+
+    :fsum       Sum the numeric values of a range.
+
+                The range is defined by the immediate cell above the current
+                cell for vertical ranges, or by the immediate cell at the left
+                of the current cell for horizontal ranges.
+
+                The top or left corner is limited by the first non-numeric
+                cell found.
+
+    :fcopy      Copy the formula of a selected cell down a number of rows.
+                The number of rows down is determined by the first empty cell
+                in the column to the left of current cell.
+
+                If a range is selected, the formula in the top left cell will
+                be copied down to the end of the range.
+
+    :fcopy {action}
+                Copy the formulas of multiple selected cells into a direction.
+
+                Use "c" or "columns" to copy every formula in the first
+                selected row down its column, "r" or "rows" to copy every
+                formula in the first selected column to the right in its row
+                or "cells" to copy the formula of the first selected cell into
+                all cells of the selected range.
+
+    :plot {type}
+                Plot a graphic using a selected range.
+                Right now, only 'line', 'scatter', 'bar' and 'pie' types are
+                allowed.
+
+                Ex. of use:     :plot line
+                This command calls gnuplot using the file called 'plotline'
+                that is first looked in $HOME/.config/sc-im/, and if not found in
+                /usr/local/share/sc-im/ (or HELPDIR path of Makefile).
+                This 'plotline' can be customized by user. (See :plotedit
+                command below). You can set terminal and other gnuplot
+                parameters. Default terminal is 'dumb', although 'caca'
+                terminal is recommended for colors and wide chars support.
+
+    :plotedit {type}
+                Edit a plot file that will be used for plotting.
+                Can contain any gnuplot command.
+                Right now, only 'line' type, 'scatter' type, 'bar' type and
+                'pie' type files can be edited.
+
+                Ex. of use:     :plotedit scatter
+
+    c-r{a-zA-Z}
+                If the character is a mark of a cell or range, the range
+                represented is inserted into the command line.
+
+                Command line history is stored in $HOME/.sciminfo.
+
+    c-p
+    <UP>        Go back in command line history.
+                NOTE: if inputline is not empty, up and down keys recall older
+                commands from history, but taking whose commands that
+                beginning matches the current inputline content.
+
+    c-n
+    <DOWN>      Go forward in command line history.
+
+==============================================================================
+&VISUAL MODE& - Selecting a range
+
+    Visual mode is used for selecting a range of cells for an operation.
+
+    You can enter this mode with 'v' in Normal mode, or with <C-v> in Insert
+    and Command mode.
+
+    When entering Visual mode from Normal mode, the top left and the bottom
+    right limit of the selected range is set to current row and column.
+
+    From Insert or Command mode, press <C-v>, then position the cursor with
+    arrow keys or hjkl keys, and then press <C-o> to begin selection.
+    Move the cursor to complete the selection, then press <C-k> to input
+    the range into the cell.
+
+    The following motion commands move the cursor during selection:
+    j k l h     Move down, up, right or left.
+    0           Move to column A.
+    $           Move forward to the last valid column of the current row.
+    #           Move down to the last valid row of the current column.
+    ^           Move up to row 0 of the current column.
+    '{a-zA-Z}   Move to the cell or select the range marked previously with
+                {a-zA-Z}.  See the 'm' command for details.
+    c-f c-b     Increase selection down or up a full screen.
+                :set half_page_scroll=1 to scroll by half a page instead.
+                See :set command for details.
+    c-a         Moves to first cell of spreadsheet.
+
+    y           Yank the selected cell or range and exit Visual mode.
+    p           Paste the previously yanked cell or range into the Visual
+                Range repeating to fill up the range
+    P           Works like 'p' except that all cell references are adjusted
+                in the same way that they are for the copy command.
+
+    x , dd      Delete the current range, saving its content to the
+                yankbuffer.
+    H           Move to the first row visible on screen.
+    L           Move to the last row visible on screen.
+    M           Move to the middle row visible on screen.
+    w           Move forward to the next valid cell.
+    b           Move back to the previous valid cell.
+    G           Move to last valid cell of spreadsheet.
+
+    :           Enters Command mode preserving the range selection, so a
+                special command can be entered.
+    Zr          Zap (hides) the rows covered by the selected range.
+    Zc          Zap (hides) the columns covered by the selected range.
+    f           Freeze the selected range
+    Sr          Show rows that are hidden and that are covered by the selected
+                range.
+    Sc          Show columns that are hidden and that are covered by the
+                selected range.
+    { } |       Align the content of the cells covered by the selected range
+                to the right, left or center.
+    rl          Lock the current cell or range. Locking makes cells immune to
+                any type of editing. A locked cell can't be changed in any
+                way until it is unlocked.
+    ru          Unlock a locked cell or range, making it editable.
+    rv          Valueize the current cell or range. Valueizing removes
+                expressions, leaving only the values.
+    m{a-zA-Z}   Mark the current cell or selected range with that letter.
+                Note: When a mark is changed, all ranges that use that mark
+                are deleted.
+    c-d         Convert the text content of a selected cell or range to a
+                date, using default LOCALE's D_FMT format.
+                This converts text to a numeric value that can be shown as a
+                date. See DATES INPUT below for more info.
+                Note: USELOCALE has to be enabled during build.
+    c-j         Auto-resize the selected column(s) to accommodate the widest
+                cells.
+
+==============================================================================
+&MAPPING&
+
+    Mapping can be done in any sc-im file or in CONFIG_DIR/scimrc file.
+
+    Maps can be added with the :nmap, :imap, :cmap and :vmap commands and removed
+    with the :nunmap, :iunmap, :cunmap and :vunmap commands.
+    Example:
+        :nmap "d" ":h<cr>"  ->   Maps d to ':help<cr>' in Normal mode.
+        :imap "f" "foo"     ->   Maps f to the string 'foo' in Insert mode.
+        :imap "f" "foo"     ->   Maps f to the string 'foo' in Insert mode.
+        :imap "kj" "<ESC>"  ->   Maps kj sequence to the ESC key in Insert mode.
+        :cmap "kj" "<ESC>"  ->   Maps kj sequence to the ESC key in Command mode.
+        :vmap "e" "y"       ->   Maps e to y in Visual mode.
+
+    Some notes:
+    The Left and Right sequence of a mapping cannot contain numbers.
+
+    The following special keys can be used for mappings:
+    <CR> <C-x> <TAB> <LEFT> <RIGHT> <DOWN> <UP> <DEL> <BS> <HOME> <END>
+    <PGDOWN> <PGUP> <ESC>
+
+    If an existing map sequence is remapped, it is replaced with the new one.
+    Mapping is recursive by default. The non-recursive versions of :nmap,
+    :imap, :cmap and :vmap are :nnoremap, :inoremap, :cnoremap and :vnoremap.
+    Example:
+        nmap "a" "b",
+        nnoremap "b" "j"
+        nmap "j" ":h<cr>"
+    With this, 'a' maps to 'j', and only 'j' maps to ':h<cr>'.
+
+==============================================================================
+&COMMAND MULTIPLIER&
+
+    An optional number may precede commands in Normal, Visual or Edit mode to
+    multiply or iterate the command.
+    Ex. '4j' in Normal mode, translates to 4 times 'j'.
+    Ex. '4yr' in Normal mode, yanks current row and the 3 rows below it.
+
+    Note: The 'x' command in Visual mode, and the shift commands in Visual
+    mode and Normal mode when a range is selected, cannot be multiplied.
+
+==============================================================================
+&DATES INPUT&
+
+    Dates are internally stored in sc-im as numeric values, and they are
+    displayed as dates if a date format is applied to the cells that store
+    them. You have 3 options for entering them:
+
+    1. Dates can be entered as text and then converted to a numeric
+    value with the :datefmt command.
+
+    The :datefmt command takes the cell's text content that represents a date,
+    and uses a given format to set the numeric value of the cell.
+    Its format is ':datefmt "{strftime_format}"', taking a strftime-compatible
+    format string. The format is applied to the cell (as could be done with
+    the :format function) so that the value is displayed as a date.
+
+    Example:            \12/03/2020
+                        :datefmt "%d/%m/%Y"
+
+    NOTE: The <C-d> command, used in NORMAL and VISUAL modes, acts as the
+    `:datefmt` described above, but uses the locale's D_FMT format.
+
+    2. You can also enter dates using the @date and @dts functions.
+    Example:            \"@date(@dts(2015, 23, 2), "%d/%m/%Y")
+    will show  '23/02/2015'.
+
+    3. Another option is to enter the numeric value that represents the
+    datetime (that would be the number of seconds since the beginning of the
+    epoch - December 31, 1969, midnight, GMT) and apply a format with the
+    :format special command.
+    Example:            =1424660400
+                        :format "d%d/%m/%Y"
+
+
+    Please see &Built-in Date and Time Functions& below for more details.
+
+==============================================================================
+&NUMBER FORMATS&
+
+    Numbers follow cell-specific format if set by the :format command.
+    Otherwise they default to column specific format, which can be set by the
+    scripting command FORMAT. The scripting FORMAT command has the syntax
+        FORMAT {COLUMN} {WIDTH} {PRECISION} {TYPE}
+        where TYPE is one of:
+            0   Fixed-point
+            1   Scientific format
+            2   Engineering format
+    The default column format is (10 2 0), meaning width 10, precision 2, and
+    fixed-point. The column format width follows changes to the column width.
+
+    Note: If the exponent is too large (>10^21) or too small (<10^-18), the
+    scientific format is used.
+
+==============================================================================
+&Entering Greek and Math operator symbols&
+
+    Greek letters and a large set of math symbols available in UTF-8
+    can be entered and will display, provided your terminal supports them.
+
+    The full list is given below. In each column, left of the equal sign is
+    the keyboard sequence to be entered, to obtain the character on the right
+    of the equal sign.
+
+    Ctrl-K a * = α	Ctrl-K b * = β	Ctrl-K c * = ξ	Ctrl-K d * = δ
+    Ctrl-K e * = ε	Ctrl-K f * = φ	Ctrl-K g * = γ	Ctrl-K h * = θ
+    Ctrl-K i * = ι	Ctrl-K j * = ϊ	Ctrl-K k * = κ	Ctrl-K l * = λ
+    Ctrl-K m * = μ	Ctrl-K n * = ν	Ctrl-K o * = ο	Ctrl-K p * = π
+    Ctrl-K q * = ψ	Ctrl-K r * = ρ	Ctrl-K s * = σ	Ctrl-K t * = τ
+    Ctrl-K u * = υ	Ctrl-K v * = ϋ	Ctrl-K w * = ω	Ctrl-K x * = χ
+    Ctrl-K y * = η	Ctrl-K z * = ζ
+
+    Ctrl-K A * = Α	Ctrl-K B * = Β	Ctrl-K C * = Ξ	Ctrl-K D * = Δ
+    Ctrl-K E * = Ε	Ctrl-K F * = Φ	Ctrl-K G * = Γ	Ctrl-K H * = Θ
+    Ctrl-K I * = Ι	Ctrl-K J * = Ϊ	Ctrl-K K * = Κ	Ctrl-K L * = Λ
+    Ctrl-K M * = Μ	Ctrl-K N * = Ν	Ctrl-K O * = Ο	Ctrl-K P * = Π
+    Ctrl-K Q * = Ψ	Ctrl-K R * = Ρ	Ctrl-K S * = Σ	Ctrl-K T * = Τ
+    Ctrl-K U * = Υ	Ctrl-K V * = Ϋ	Ctrl-K W * = Ω	Ctrl-K X * = Χ
+    Ctrl-K Y * = Η	Ctrl-K Z * = Ζ
+
+    Ctrl-K * s = ς	Ctrl-K R T = √	Ctrl-K F A = ∀	Ctrl-K T E = ∃
+    Ctrl-K N B = ∇	Ctrl-K ( - = ∈	Ctrl-K - ) = ∋	Ctrl-K d P = ∂
+    Ctrl-K I n = ∫	Ctrl-K I o = ∮	Ctrl-K D I = ∬	Ctrl-K * P = ∏
+    Ctrl-K + Z = ∑	Ctrl-K + - = ±	Ctrl-K - + = ∓	Ctrl-K 0 ( = ∝
+    Ctrl-K 0 0 = ∞	Ctrl-K - L = ∟	Ctrl-K - V = ∠	Ctrl-K P P = ∥
+    Ctrl-K A N = ∧	Ctrl-K O R = ∨	Ctrl-K ) U = ∪	Ctrl-K ( U = ∩
+    Ctrl-K ) C = ⊃	Ctrl-K ( C = ⊂	Ctrl-K ) _ = ⊇	Ctrl-K ( _ = ⊆
+    Ctrl-K . : = ∴	Ctrl-K : . = ∵	Ctrl-K ? - = ≃	Ctrl-K ! = = ≠
+    Ctrl-K = 3 = ≡	Ctrl-K = < = ≤	Ctrl-K > = = ≥	Ctrl-K < * = ≪
+    Ctrl-K > * = ≫	Ctrl-K ! < = ≮	Ctrl-K ! > = ≯
+
+    Note: It is possible to enter these characters also in the command mode,
+    but your OS may not support filenames containing them.
+
+==============================================================================
+&Other configuration variables&
+
+    'autocalc'
+    Set it to recalculate values automatically, or to '0' to do it manually
+    upon execution of a '@' command.
+
+    'numeric'
+    Set it to '1' to make an initial digit start a numeric value.
+    Set it to '0', to make a digit act as a command multiplier.
+
+    'numeric_zero' [default off]
+    'numeric_decimal' [default off]
+    When these are set, the zero digit or decimal point will correspondingly
+    initiate numeric entry, but only when 'numeric' is also set.
+
+    'newline_action' [default 0]
+    Set it to 'j' to move the cursor down after an entry.
+    Set it to 'l' to move right, or set it to '0' to take no action.
+
+    'external_functions' [default off]
+    Disabled by default, set this variable to enable external functions.  See
+    @ext function below.
+
+    'exec_lua' [default on]
+    Enabled by default, set this variable to enable the execution of @lua
+    scripts. See @lua function below.
+
+    'overlap' [default off]
+    If cell content exceedes column width it gets cut off to fit the column
+    width.  If overlap is set, the content overflows into the next column.
+
+    'input_bar_bottom' [default off]
+    Place the input bar at the bottom of the screen.
+
+    'underline_grid' [default off]
+    Underline cells to make a nicer grid
+
+    'truncate' [default off]
+    If cell content exceedes column width it gets replaced by asterisks '*'.
+    If truncate is set, the content is cut off at the end of the cell.
+
+    'autowrap' [default off]
+    Auto wrap cell content and auto adjust row height to cover it.
+    Works only when overlap and truncate are set to off.
+
+    'debug' [default off]
+    set this to see debug messages in screen
+
+    'half_page_scroll' [default off]
+    set this to scroll by half a page instead of full page.
+
+    'xlsx_readformulas' [default off]
+    If 'xlsx_readformulas' is set, sc-im tries to import formulas, rather than
+    the final values of a cell.
+
+    'tm_gmtoff' [default -10800 seconds]
+    set gmtoffset used for converting datetimes to localtime.
+
+    'command_timeout' [default 3000 milli seconds]
+    the time sc-im waits for a valid command to be entered (the time it stays in '?')
+
+    'mapping_timeout' [default 1500 milli seconds]
+    this is used when some user input collides with the start of a mapping.
+    sc-im will wait 'mapping_timeout' for user to complete a mapping. If
+    passed that time no mapping was reached, that input would be passed to
+    the stdin buffer.
+
+    'ignorecase' [default off]
+    set this to ignore case in searches done with '/' command.
+
+    'autobackup' [default 0 (no autobackup)]
+    set this to a number in seconds 'n', to backup current file every 'n'
+    seconds.
+    AUTOBACKUP must be set during sc-im build for this feature to be
+    available.
+    If you set this to 0 but AUTOBACKUP was set during build, it still will
+    check for existance of backups before loading a file.
+
+    'show_cursor' [default off]
+    Make the screen cursor follow the active cell. Useful for people
+    using sc-im with a braille display.
+
+==============================================================================
+&Built-in Range Functions&
+
+    The following functions return the result of performing an operation on
+    all valid (nonblank) entries in the given {range}. The optional second
+    argument {expr} is an expression that is to be evaluated for each cell
+    in the specified range to determine which cells to include in the
+    function. Only those cells for which the expression evaluates to true
+    (non-zero) will be used in calculating the value of the function.
+
+
+    @sum({range})
+    @sum({range},{expr})
+        Sum up the values.
+        examples with optional {expr} argument:
+            @sum(D1:D20,D1>25)
+            @sum(D1:D20,E1>25)
+            @sum(D1:D20,@eqs(C1,"s"))
+            @sum(D1:D20,@eqs(@fixed(C1),"s"))
+
+    @prod({range})
+    @prod({range},{expr})
+        Multiply the values together.
+
+    @avg({range})
+    @avg({range},{expr})
+        Average the values.
+
+    @count({range})
+    @count({range},{expr})
+        Count the values.
+        examples with optional {expr} argument:
+            @count(D1:D20,@eqs(D1,"enero"))
+
+    @max({range})
+    @max({range},{expr})
+        Find the maximum value.
+        See also the multi-argument version of @max below.
+
+    @min({range})
+    @min({range},{expr})
+        Find the minimum value.
+        See also the multi-argument version of @min below.
+
+    @stddev({range})
+    @stddev({range},{expr})
+        Get the sample standard deviation of the values.
+
+    @rows({range})
+    @cols({range})
+        Count the number of rows or columns.
+
+==============================================================================
+&Built-in Numeric Functions&
+
+    @exp({expr})
+        Return e (Euler's number) raised to the {expr} power.
+
+    @ln({expr})
+        Return the natural logarithm of {expr}.
+
+    @log({expr})
+        Return the base-10 logarithm of {expr}.
+
+    @floor({expr})
+        Return the largest integer not greater than {expr}.
+
+    @ceil({expr})
+        Return the smallest integer not less than {expr}.
+
+    @rnd({expr})
+        Round {expr} to the nearest integer.  Numbers halfway between integers
+        are rounded up.
+
+    @round({expr},{n})
+        Round {expr} to {n} decimal places.  {n} may be positive to round off
+        the right side of the decimal point or negative to round off the left
+        side.  See @rnd({expr}) above for rounding types.
+
+    @ascii("{se}")
+        Interpret the string expression {se} as a base-256 number without
+        digit 0 and convert to a base-10 nonnegative number.
+        See also @chr.
+
+    @frow({var})
+        Return the row of the cell {var}. Ex. @frow(A4) returns 4
+
+    @fcol({var})
+        Return the number of the col of the cell {var}. Ex. @fcol(D4) returns 3
+
+    @abs({expr})
+    @fabs({expr})
+        Return the absolute value of {expr}.
+
+    @pow({expr1},{expr2})
+        Return {expr1} raised to the power of {expr2}.
+
+    @hypot({expr1},{expr2})
+        Return @sqrt({expr1}*{expr1}+{expr2}*{expr2}), taking precautions
+        against overflows.
+
+    @pi
+        Return a constant quite close to pi.
+
+    @dtr({expr})
+        Convert {expr} from degrees to radians.
+
+    @rtd({expr})
+        Convert {expr} from radians to degrees.
+
+    @sin({expr})
+    @cos({expr})
+    @tan({expr})
+        Evaluate the trigonometric functions on {expr}, in radians. The
+        magnitude of the arguments are not checked to assure meaningful
+        results.
+
+    @asin({expr})
+        Return the arc sine of {expr} in the range -pi/2 to pi/2.
+
+    @acos({expr})
+        Return the arc cosine of {expr} in the range 0 to pi.
+
+    @atan({expr})
+        Return the arc tangent of {expr} in the range -pi/2 to pi/2.
+
+    @atan2({expr1},{expr2})
+        Returns the arc tangent of e1/e2 in the range -pi to pi.
+
+    @max({expr1},{expr2},...)
+    @min({expr1},{expr2},...)
+        Return the maximum or minimum of the values of the expressions. Two or
+        more expressions may be specified.
+        See also the range version of @max and @min above.
+
+    @ston("{se}")
+        Convert string expression {se} to a numeric value.
+
+    @nval("{se}",{expr})
+        Return the numeric value of a cell selected by name. String expression
+        {se} must evaluate to a column name ("A" - "ZZ") and {expr} must
+        evaluate to a row number (0 - maxrows, by default 65536).
+        If {se} or {expr} is out of bounds, or the cell has no numeric
+        value, the result is 0.
+        You can use this for simple table lookups. See also @sval below.
+        =@nval("B", 0);     would output the same as   =B0
+
+    @eqs("{se1}","{se2}")
+        Return 1 if string expressions {se1} and {se2} have the same value, 0
+        otherwise.
+
+    @slen("{se}")
+        Returns the length of string expression {se}.
+
+    @evaluate("{se}")
+        Evaluate a string expression as a numeric formula. Example of use:
+        If you have in cell D0 a formula as text, "@sum(A0:A11)", instead of a proper
+        numeric formula inserted with '=', you could make it get evaluated in another
+        cell (for this example E0) with =@evaluate(D0). Please note that this will not
+        added the dependency to the evaluation graph. That means that if you later
+        update the value of cell A0, it will not get updated in cell D0.
+
+==============================================================================
+&String Expressions&
+
+    String expressions are made up of string constants (characters surrounded
+    by double quotation marks), variables (cell names, which refer to the
+    cell's label strings or expressions), and string functions.
+
+    Note: String expressions are only allowed when entering a cell's label
+    string, not its numeric part.  They are entered with a backslash followed
+    by a double quote.
+               Examples:  \"@coltoa(4)
+                          \"A0 # "Plate"
+
+    Note: String expression results may be left or right flushed or centered,
+    according to the type of the cell's string label.
+
+    #      Concatenate strings.
+           For example, if the value of A0's string is "the la", then the
+           string expression
+
+               A0 # "zy dog"
+
+           returns the string "the lazy dog".
+
+==============================================================================
+&Built-in String Functions&
+
+    String functions can be entered typing \"
+
+    @substr("{se}",{expr1},{expr2})
+        Extract from string expression {se} the substring indexed by character
+        number {expr1} through {expr2}. (Defaults to the length of {se} if
+        greater than the length.)  If {expr1} is less than 1 or greater than
+        {expr2}, the result is the null string.  For example,
+
+        @substr ("River Plate", 4, 8)
+
+        returns the string 'er Pl'.
+
+    @upper("{se}")
+    @lower("{se}")
+        Convert the string expression {se} to uppercase or lowercase.
+
+    @capital("{se}")
+        Convert the initial letter of words in {se} to upper case and other
+        letters to lower case.
+
+    @replace("{se}","{eold}","{enew}")
+        Replace occurrences of {eold} in {se} with {enew}.
+        For example, having in A1 the string "Extension" and entering in A2
+        the following:
+        @replace(A1,"n","Z")
+        will result "ExteZsioZ" in A2.
+
+    @ext("{se}",{expr})
+        Call an external program or script.  This allows arbitrary functions
+        on values, e.g. table lookups and interpolations.  String expression
+        {se} is a command or command line to call with popen(3).  {expr} is
+        evaluated, converted to a string, and appended to the command line
+        as an argument.  The result of @ex is a string: the first line printed
+        to standard output by the command.  The command should emit exactly
+        one output line.  Additional output, or output to standard error,
+        messes up th  screen.  @ext returns a null string and prints an
+        appropriate warning if external functions are disabled, {se} is null,
+        or the attempt to run the command fails.
+
+        External functions can be slow to run, and if enabled are called at
+        each screen update, so they are disabled by default. Use the set
+        command to enable them when needed.
+
+        Example:
+            @ext ("echo", a1)
+
+        You can use @ston to convert the @ext result back to a number.
+
+        Example:
+            @ston (@ext ("form.sc.ext", a9 + b9))
+
+        Note: You can build a command line (including more argument values)
+        from a string expression with concatenation.  You can also "hide" the
+        second argument by ending the command line (first argument) with a "#"
+        shell comment.
+
+    @coltoa({expr})
+        Return a string name for a column from the numeric result of {expr}.
+
+        Example:
+            @coltoa(@mycol-1)      @nval(coltoa(@mycol-1), @myrow+1)
+
+    @sval("{se}",{expr})
+        Return the string value of a cell selected by column and row.  String
+        expression {se} must evaluate to a column name (A - AE) and {expr}
+        must evaluate to a row number (0 - 199).  If {se} or {e} is out of
+        bounds, or the cell has no string value, the result is the null
+        string.
+
+    @set8bit("{se}")
+        Return the string "{se}" with 8th bit set.
+
+    @chr({expr})
+        Interpret {expr} as a base-10 nonnegative integer and convert to a
+        string (base-256 number without digit 0).
+        See also @ascii.
+
+    @lua("{luascript}", {i})
+        Executes a "luascript". Using Lua script, sc-im can be extend with lot
+        new functionality, such as complex programming, accessing databases
+        etc.
+        The second parameter {i} is 0 or 1 indicating if the reference to this
+        cell should be added to the formula evaluation graph.
+        Setting it to 0 may be a good idea if you call sc.lquery to often in
+        your scripts.
+        However, in the cases were its not added to the dependency graph, it
+        will nevertheless be executed when the cell that calls the script
+        executions is referenced by another cell.
+
+        The search patch for LUA scripts files is $PWD/lua/
+        $HOME/.sc-im/lua/ or /usr/local/share/sc-im/lua (in that order)
+
+        To call a lua script use \" as with any other string function.
+        @lua("luascript", 1)
+
+    @fmt("{se}", {e})
+        Convert a number to a string. The argument se must be a valid
+        printf(3) format string. e is converted according to the standard
+        rules.  For example, the expression
+        \"@fmt("**%6.3f**", 10.5)
+        yields the string ``**10.500**''. e is a double, so applicable
+        formats are e, E, f, g, and G.  Try ``%g'' as a starting point.
+        More details on:
+        https://www.gnu.org/software/libc/manual/html_node/Floating_002dPoint-Conversions.html
+
+    @sevaluate("{se}")
+        Evaluate a string expression as a string formula. Example of use:
+        If you have in cell D0 a string formula as text, "@substr(A0, 4, 6)",
+        instead of a proper string formula inserted with '\"', you could make it
+        get evaluated in another cell (for this example E0) with =@sevaluate(D0).
+        Please note that this will not added the dependency to the evaluation
+        graph. That means that if you later update the value of cell A0, it will
+        not get updated in cell D0.
+
+==============================================================================
+&Built-in Date and Time Functions&
+
+    The following functions operate on an expression {date_expr} denoting a
+    UNIX timestamp.
+
+    @year({date_expr})
+        Return the year. Valid years begin with 1970, although many systems
+        will return years prior to 1970 if e is negative. The last legal year
+        is system dependent.
+
+    @month({date_expr})
+        Return the month, encoded as 1 (January) to 12 (December).
+
+    @day({date_expr})
+        Return the day of the month, encoded as 1 to 31.
+
+    @hour({date_expr})
+        Return the number of hours since midnight, encoded as 0 to 23.
+
+    @minute({date_expr})
+        Return the number of minutes since the last full hour, encoded as 0 to
+        59.
+
+    @second({date_expr})
+        Return the number of seconds since the last full minute, encoded as 0
+        to 59.
+
+    @now()
+        Return the current time encoded as the number of seconds since the
+        beginning of the epoch (December 31, 1969, midnight, GMT).
+
+    @date({date_expr}, {sexpr})
+           Convert the time {expr} in seconds to a date string, applying a format {sexpr}.
+           This functions is entered as a string formula with \". Example:
+           \"@date(@now, "%d/%m/%Y")
+           Note that you can extract parts of this fixed-format string with @substr().
+           A format string compatible with the strftime() function may optionally be
+           given as a second argument to override the default format.
+           See the strftime(3) man page for details.
+
+     @dts({expr1}, {expr2}, {expr3})
+           Convert a date to the number of seconds from the epoch to the first
+           second of the specified date, local time. Dates may be  specified
+           in either (m,d,y) or (y,m,d) format, although the latter is preferred,
+           since it's more universally recognized (m,d,y is only used in  America).
+           If e2 > 12 or e3 > 31, then (m,d,y) is assumed. Otherwise, (y,m,d)
+           is assumed.
+           Example of use:
+               @date(@dts(1976, 12, 14)) yields 'Tue Dec 14 00:00:00 1976'
+               @date(@dts(2015, 23, 2), "%d/%m/%Y") yields '23/02/2015'
+
+           The month should range from 1 to 12; the day should range from 1 to the
+           number of days in the specified month; and the year should
+           include the century (e.g. 1999 instead of 99). Any date capable of being
+           handled by the system is valid, typically 14 Dec 1901 to '18 Jan 2038'
+           on a system that uses a 32 bit time_t. Invalid dates or dates outside of
+           this range will return ERROR. For rapid entry of dates using only the
+           numeric keypad, sc provides the alternate syntax y.m.d or m.d.y, which is
+           automatically converted to the @dts(...) format above.
+           The year, month, and day must be entered numerically in the alternate
+           syntax; formulas are not allowed.
+
+       @tts({expr1}, {expr2}, {expr3})
+           @tts(8,20,45) converts the time 8:40:45 to the number of seconds since
+           midnight, the night before. The hour should range from 0 to 23;
+           the minutes and seconds should range from 0 to 59.
+
+
+==============================================================================
+&Other functions&
+    @if({expr}, {expr}, {expr})
+        Conditional:   If the  first  expression  is  true  then  the  value  of
+        the  second  is  returned,  otherwise the  value  of  the  third.
+        example of use: @if(@eqs(A1,"a"),B1,0)
+        example of use with string expression: @if(A1>100,"over","not enough")
+        Remember string expressions should be entered by typing \"
+
+    @getent({e}, {e})
+        Reference to a cell evaluating expressions. First expression in
+        formula corresponds to row number, the second expression to column
+        number.
+        Example of use: =@sum(A0:@getent(@lastrow-1,0))
+
+
+==============================================================================
+&LUA Scripts and Triggers&
+
+        sc-im was extended with LUA capabilities and also provided with helper
+        functions to manipulate sc-im data with Lua at runtime. Since it is a
+        fully functional Lua, you can also use all Lua packages for sc-im lua
+        scripts. Use luarocks to install additional packages.
+
+        Function provided to lua script/triggers :
+
+        sc.lgetnum (c, r)       - get numeric value of cell c,r (c/r is number
+                                  column/row) returns value
+        sc.lsetnum (c, r, val)  - set numeric value to a cell c,t
+        sc.lsetform (c, r, str) - set formula to a cell. Basically it does "let
+                                  cell= str"
+        sc.lsetstr(c, r, str)   - set string to a cell
+        sc.lgetstr(c, r, str)   - get string from a cell
+        sc.lquery(str)          - query input from user, but first prints str.
+                                  Use with care!!
+                                  Dont use this function within triggers!!
+                                  returns string
+        sc.sc(str)              - send str to sc-im parser
+        sc.a2colrow(str)        - convert ascii cell representation to numeric
+                                  column/row returns column, row example:
+                                  c,r=sc.a2colrow("c5")
+        sc.colrow2a(c,r)        - returns ascii representation of numeric
+                                  column/row
+        sc.maxcols()            - return current maximum columns
+        sc.maxrows()            - return current maximum rows
+        sc.curcol()             - return current column
+        sc.currow()             - return current row
+
+        The search patch for LUA scripts files is $PWD/lua or
+        $HOME/.config/sc-im/lua/ or /usr/local/share/sc-im/lua (in that order)
+        Example can be found in sc-im/examples/lua in source code tree.
+
+
+==============================================================================
+&Supported file formats / File import&
+
+    sc-im can open the following file formats:
+        .sc     sc-im's native text format
+        .xls    Microsoft Excel Spreadsheet
+        .xlsx   Microsoft Office Open XML Workbook
+        .csv    Comma-separated values
+        .tsv    Tab-separated values
+        .tab    Tab-separated values
+        .txt    Simple text files
+        .mkd    Markdown file with only table contents
+        .md     Markdown file with only table contents
+
+    You can pass files of any of the above formats to sc-im binary.
+    If you pass a .txt or .csv file to sc-im, it is imported using a comma as
+    the delimiter.
+    If you pass a .tsv or .tab file to sc-im, it is imported using the tab
+    character as the delimiter.
+
+    Note: You can always override the delimiter used passing the --txtdelim
+    parameter to sc-im.
+
+    Example: ./sc-im --txtdelim="\t" file.txt
+
+    Possible values are:
+        --txtdelim="\t"
+        --txtdelim=","
+        --txtdelim=";"
+        --txtdelim="|"
+
+==============================================================================
+&THEMES&
+
+    There are a couple of themes you can use with sc-im.
+    They are "dracula", "old.sc", "papercolor-dark" and "prince.persia", and
+    they are located in the "/themes" folder.
+    You can add the corresponding lines of those in your .scimrc or you can
+    load them at runtime with `:load path_to_theme_file`
+
+==============================================================================
+&External scripts&
+
+    sc-im can read data from a external script, either through a pipeline or
+    redirection.
+    This enables sc-im to be used as a non-interactive calculator.
+
+    It can also be run interactively without the ncurses interface if you pass
+    the --nocurses flag.
+
+    You can set the --output parameter to save the results to a file.
+
+    You can set the --quiet parameter to avoid printing messages of all kinds
+    (info, error or debug).
+
+    Export to csv, tab, markdown or plain text formats without interaction:
+        ./sc-im --quit_afterload --nocurses --export_csv
+        ./sc-im --quit_afterload --nocurses --export_tab
+        ./sc-im --quit_afterload --nocurses --export_mkd
+        ./sc-im --quit_afterload --nocurses --export_txt # (or just --export)
+
+    If you set the --quit_afterload flag, sc-im will quit after loading all
+    files, but before becoming interactive.
+
+    Suppose you have a file called "script" with the following content:
+        let A2=0
+        let A3=A2+14
+        recalc
+        getnum A3
+
+    The following invocations demonstrate sc-im's input and output options.
+
+    Output to stdout, then quit:
+        cat script | ./sc-im --nocurses --quit_afterload
+
+    Receive data from a pipe and output results to a file:
+        cat script | ./sc-im --quit_afterload --output=return_file
+
+    Receive data from a pipe and continue in non-ncurses mode:
+        cat script | ./sc-im --nocurses
+
+    Read data from a script and output to a file:
+        ./sc-im a.sc --quit_afterload --output=return_file
+
+    Receive data from both a pipe and a script, and output to file:
+        cat script | ./sc-im a.sc --quit_afterload --output=return_file
+
+    Export data and create pdf
+        echo 'export "mkd" "/dev/stdout"' | ./sc-im --nocurses --quiet --quit_afterload foo.csv | text2pdf -L > fighters.pdf
+
+    Start interactive mode but with no ncurses interface:
+        ./sc-im --nocurses
+
+    Note: Setting the --output parameter implies setting the --nocurses flag.
+
+    sc-im script function names are case insensitive.
+       'LET A0=1' is the same as 'let A0=1'
+
+    Almost every interactive sc-im command is available for non-interactive
+    scripting. Search the equivelent interactive commands for usage
+    information.
+
+    sc-im has these commands for available for external scripts.
+
+    LET {[COL][ROW]}={expr}
+        Sets the contents of a cell with a value or an expression. E.g.
+        'LET A1=A2*A2'
+
+    LABEL {[COL][ROW]}={expr}
+        Sets the label of a cell with to a string value.
+
+    EXECUTE "{STRING}"
+        Call an internal COMMAND MODE command. Examples:
+        EXECUTE "load /tmp/test.csv"
+
+    EXPORT "{STRING}" "{STRING}"
+        Export spreadsheet. First parameter is type, second is path to file.
+        example of use:
+        echo 'export "mkd" "/dev/stdout"' | ./sc-im --nocurses --quiet --quit_afterload foo.csv | text2pdf -L > fighters.pdf
+
+    RECALC
+        Recalculates a formulas in all cells
+
+    GETNUM {[COL][ROW]}
+        Get numeric value from cell and print to STDOUT
+
+    GETSTRING {[COL][ROW]}
+        Get text value from cell and print to STDOUT
+
+    GETEXP {[COL][ROW]}
+        Get expression from cell and print to STDOUT
+
+    GETFORMAT {COL}
+        Get format from cell and print to STDOUT
+
+    GETFMT {[COL][ROW]}
+        Get format from cell and print to STDOUT
+
+    QUIT
+        Quits sc-im.
+
+    Other available commands for scripting are:
+
+    DETAIL {var}
+    LEFTSTRING {var_or_range}
+    RIGHTSTRING {var_or_range}
+    LEFTJUSTIFY {var_or_range}
+    RIGHTJUSTIFY {var_or_range}
+    CENTER {var_or_range}
+    FORMAT {COL} {NUMBER} {NUMBER} {NUMBER}
+    FMT {var_or_range} {STRING}
+    DATEFMT {var_or_range} {STRING}
+    DATEFMT {STRING}
+    HIDE {COL}
+    HIDE {NUMBER}
+    SHOW {COL}
+    SHOW {NUMBER}
+    HIDECOL {COL}
+    SHOWCOL {COL}
+    HIDEROW {NUMBER}
+    SHOWROW {NUMBER}
+    SHOWCOL {COL} : {COL}
+    SHOWROW {NUMBER} : {NUMBER}
+    HIDECOL {COL} : {COL}
+    HIDEROW {NUMBER} : {NUMBER}
+    SHIFT {var_or_range} {STRING}
+    MARK {COL} {var_or_range}
+    MARK {COL} {var_or_range} {var_or_range}
+    FILL {var_or_range} {num} {num}
+    FILL {num} {num}
+    UNFREEZE
+    FREEZE {range}
+    FREEZE {NUMBER} : {NUMBER}
+    FREEZE {NUMBER}
+    FREEZE {COL} : {COL}
+    FREEZE {COL}
+    SORT {range} {STRING}
+    SUBTOTAL {range} {COL} {STRING} {COL}
+    RSUBTOTAL {range} {COL} {STRING} {COL}
+    FILTERON {range}
+    AUTOJUS {COL} : {COL}
+    AUTOJUS {COL}
+    GOTO {var_or_range} {var_or_range}
+    GOTO {var_or_range}
+    GOTO {num}
+    GOTO {STRING}
+    GOTO # {STRING}
+    GOTO % {STRING}
+    CCOPY {range}
+    CPASTE
+    LOCK {var_or_range}
+    UNLOCK {var_or_range}
+    NMAP {STRING} {STRING}
+    IMAP {STRING} {STRING}
+    NNOREMAP {STRING} {STRING}
+    INOREMAP {STRING} {STRING}
+    NUNMAP {STRING}
+    IUNMAP {STRING}
+    COLOR {STRING}
+    CELLCOLOR {var_or_range} {STRING}
+    TRIGGER {var_or_range} {STRING}
+    UNTRIGGER {var_or_range}
+    CELLCOLOR {STRING}
+    UNFORMAT {var_or_range}
+    UNFORMAT
+    REDEFINE_COLOR {STRING} {NUMBER} {NUMBER} {NUMBER}
+    FCOPY
+    FCOPY {strarg}
+    FSUM
+    PAD {NUMBER} {COL} : {COL}
+    PAD {NUMBER} {COL}
+    PAD {NUMBER} {var_or_range}
+    PLOT {STRING} {var_or_range}
+    SET {setlist}
+    DEFINE {strarg} {range}
+    DEFINE {strarg} {var}
+    UNDEFINE {var_or_range}
+    EVAL{expr}
+    REBUILD_GRAPH
+    PRINT_GRAPH
+    SYNCREFS
+    UNDO
+    REDO
+    SEVAL{expr}
+    ERROR {STRING}
+
+    The commands below can be used for calculations.
+
+    @MONTH ({expr})
+    @DAY ({expr})
+    @YEAR ({expr})
+    @NOW
+    @DTS ({expr},{expr},{expr})
+    {NUMBER} . {NUMBER} . {NUMBER}
+    @TTS ({expr},{expr},{expr})
+    @STON ({expr})
+    @SLEN ({expr})
+    @EQS ({expr},{expr})
+    @DATE ({expr})
+    @DATE ({expr},{expr})
+    @FMT ({expr},{expr})
+    @UPPER ({expr})
+    @LOWER ({expr})
+    @CAPITAL ({expr})
+    @INDEX ( {range} ,{expr})
+    @INDEX ({expr}, {range} )
+    @INDEX ( {range} ,{expr},{expr})
+    @LOOKUP ( {range} ,{expr})
+    @LOOKUP ({expr}, {range} )
+    @HLOOKUP ( {range} ,{expr},{expr})
+    @HLOOKUP ({expr}, {range} ,{expr})
+    @VLOOKUP ( {range} ,{expr},{expr})
+    @VLOOKUP ({expr}, {range} ,{expr})
+    @STINDEX ( {range} ,{expr})
+    @STINDEX ({expr}, {range} )
+    @STINDEX ( {range} ,{expr},{expr})
+    @EXT ({expr},{expr})
+    @LUA ({expr},{expr})
+    @NVAL ({expr},{expr})
+    @SVAL ({expr},{expr})
+    @REPLACE ({expr},{expr},{expr})
+    @SUBSTR ({expr},{expr},{expr})
+    FNUMBER
+    @PI
+    @FILENAME ({expr})
+    @MYROW
+    @MYCOL
+    @LASTROW
+    @LASTCOL
+    @COLTOA ({expr})
+    @ASCII ({expr})
+    @SET8BIT ({expr})
+    @CHR ({expr})
+    @ERR
+    ERR
+    @REF
+    REF
+
+    The commands below set runtime configuration values:
+
+    OVERLAP = {NUMBER}
+    OVERLAP
+    NOOVERLAP
+    AUTOBACKUP = {NUMBER}
+    NOAUTOBACKUP
+    AUTOCALC
+    AUTOCALC = {NUMBER}
+    NOAUTOCALC
+    DEBUG
+    DEBUG = {NUMBER}
+    NODEBUG
+    TRG
+    TRG = {NUMBER}
+    NOTRG
+    EXTERNAL_FUNCTIONS
+    EXTERNAL_FUNCTIONS = {NUMBER}
+    NOEXTERNAL_FUNCTIONS
+    EXEC_LUA
+    EXEC_LUA = {NUMBER}
+    NOEXEC_LUA
+    HALF_PAGE_SCROLL
+    HALF_PAGE_SCROLL = {NUMBER}
+    NOHALF_PAGE_SCROLL
+    QUIT_AFTERLOAD
+    QUIT_AFTERLOAD = {NUMBER}
+    NOQUIT_AFTERLOAD
+    XLSX_READFORMULAS
+    XLSX_READFORMULAS = {NUMBER}
+    NOXLSX_READFORMULAS
+    NOCURSES
+    NOCURSES = {NUMBER}
+    CURSES
+    NUMERIC
+    NUMERIC = {NUMBER}
+    NONUMERIC
+    IGNORECASE
+    IGNORECASE = {NUMBER}
+    NOIGNORECASE
+    NUMERIC_DECIMAL
+    NUMERIC_DECIMAL = {NUMBER}
+    NONUMERIC_DECIMAL
+    NUMERIC_ZERO
+    NUMERIC_ZERO = {NUMBER}
+    NONUMERIC_ZERO
+    NEWLINE_ACTION
+    NEWLINE_ACTION = {WORD}
+    DEFAULT_COPY_TO_CLIPBOARD_CMD = {strarg}
+    DEFAULT_PASTE_FROM_CLIPBOARD_CMD = {strarg}
+    COPY_TO_CLIPBOARD_DELIMITED_TAB
+    COPY_TO_CLIPBOARD_DELIMITED_TAB = {NUMBER}
+    NOCOPY_TO_CLIPBOARD_DELIMITED_TAB
+    NEWLINE_ACTION = {NUMBER}
+    TM_GMTOFF
+    TM_GMTOFF = {num}
+    MAPPING_TIMEOUT
+    MAPPING_TIMEOUT = {num}
+
+vim:tw=78:sw=4:ts=4:et:ft=help:norl:

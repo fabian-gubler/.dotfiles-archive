@@ -3,7 +3,6 @@
 /home/fabian/.config/fluent-reader|2|1630408297
 /data/drive/notes|4|1630276104
 /data/drive/hsg/archive/semester-4/empirical|3|1630358897
-/home/fabian/.dotfiles/sc|4|1630347200
 /home/fabian/.dotfiles/scripts/utils|40|1630191146
 /home/fabian/.secrets|5|1630364247
 /home/fabian/.dotfiles/zsh|8|1630185528
@@ -14,17 +13,19 @@
 /home/fabian/.config/sc-im/lua|1|1630358404
 /home/fabian/.dotfiles/suckless/dwm/patches|6|1630433717
 /home/fabian/.dotfiles/suckless/slstatus|4|1630265388
+/data/dropbox|18|1630500616
 /home/fabian/.dotfiles/scripts|10|1630273117
 /home/fabian/.config/ranger/plugins|3|1630274362
-/data/dropbox|10|1630360948
 /home/fabian/.vbox|2|1630268384
 /etc/X11|5|1630194386
+/home/fabian/.dotfiles/sc-im/src|2|1630501196
 /home/fabian/.dotfiles/suckless/st|1|1630187984
 /|3|1630184538
-/home/fabian/downloads|4|1630274279
+/home/fabian/downloads|7|1630499637
+/home/fabian/.dotfiles/sc-im|20|1630501216
 /home/fabian/.config|2|1630408288
 /etc/X11/xinit|4|1630194496
-/home/fabian/.dotfiles/suckless/dwm|154|1630433764
+/home/fabian/.dotfiles/suckless/dwm|161|1630449921
 /data/drive|8|1630354996
 /home/fabian/.dotfiles/suckless/slock|10|1630195845
 /home/fabian/.newsboat|9|1630423724
@@ -32,4 +33,4 @@
 /home/fabian/.config/ranger|1|1630332722
 /usr/share/i18n/locales|3|1630338097
 /home/fabian/.dotfiles/suckless|13|1630275890
-/home/fabian/.dotfiles|40|1630448497
+/home/fabian/.dotfiles|53|1630504604

@@ -3,6 +3,7 @@
 # --- Variables
 export QT_QPA_PLATFORMTHEME=qt5ct
 export EDITOR=lvim
+export PAGER=lvim
 export GTK_THEME=Nordic
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$HOME/.local/bin:$PATH"

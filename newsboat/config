@@ -1,22 +1,25 @@
 ### GENERAL
 #                   statement
+auto-reload         yes
 show-keymap-hint    no
 show-title-bar      no
 show-read-feeds     no
+show-read-articles  no
+
+#                   statement
 max-items           20
-auto-reload         yes
-browser             "devour mpv"
-reload-time         0
-reload-threads      100
-pager               "lvim"
 keep-articles-days  30
-# html-renderer "w3m -dump -T text/html"
-# show-read-articles no
+reload-time         2
+reload-threads      100
+
+#                   statement
+browser             "devour mpv"
+pager               "$PAGER"
 
 ### UI
 #                   format
 datetime-format     "%d %B"
-feedlist-format     "  %t %?d?- %-65d&? %> %U"
+feedlist-format     "  %t %?d?- %-65d&? %> %U Available"
 articlelist-format  "%?T?  %-30T ?%-70t %> %D "
 
 ### COLORS
@@ -29,7 +32,7 @@ color     info                  white   color236
 
 ### MACROS
 #         key     action
-macro     v       set browser "mpv"; open-in-browser ; set browser piper
+macro     v       set browser "mpv"; open-in-browser-and-mark-read ; set browser piper
 macro     f       set browser "firefox"; open-in-browser ; set browser pipe
 
 ### KEYBINDINGS
@@ -42,3 +45,5 @@ bind-key  a       toggle-article-read
 bind-key  i       open
 bind-key  m       quit
 bind-key  SPACE   macro-prefix
+bind-key  o       open-in-browser-and-mark-read
+bind-key  q       hard-quit 

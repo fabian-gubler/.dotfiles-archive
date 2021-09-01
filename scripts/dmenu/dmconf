@@ -37,7 +37,7 @@ else
         options[xprofile]="$HOME/.xprofile"
         options[xprofile]="$HOME/.xprofile"
         options[zshrc]="$HOME/.dotfiles/zsh/.zshrc"
-        options[scimrc]="$HOME/.dotfiles/sc/scimrc"
+        options[scimrc]="$HOME/.dotfiles/sc-im/scimrc"
         options[scimrc help]="$HOME/.config/sc-im/help"
         options[newsboat urls]="$HOME/.dotfiles/newsboat/urls"
         options[newsboat config]="$HOME/.dotfiles/newsboat/config"

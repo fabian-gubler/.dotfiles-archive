@@ -31,7 +31,7 @@
     ~/.config/qt5ct/colors/nord.conf:       misc/qt/nord.conf 
     ~/.config/gcolor3/config.ini:           misc/gcolor3/config.ini
     ~/.config/dunst/dunstrc:                misc/dunst/dunstrc
-    ~/.config/sc-im/scimrc:                 sc/scimrc
+    ~/.config/sc-im/scimrc:                 sc-im/scimrc
     ~/.newsboat/urls:                       newsboat/urls
     ~/.newsboat/config:                     newsboat/config
       

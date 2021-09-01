@@ -98,6 +98,12 @@ PRGS=(
     'autorandr'                   # Monitor setup
     'unzip'                       # Unzip directories
 
+    # SC-IM Dependencies ------------------------------
+    'libxml2'
+    'libzip'
+    'gnuplot'
+    'libxlsxwriter'
+
     # DEVELOPMENT -------------------------------------
     'git'                         # Version control
     'neovim'                      # Text editor
