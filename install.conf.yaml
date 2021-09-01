@@ -18,7 +18,7 @@
     ~/.Xresources:                          X/.Xresources
     ~/.xinitrc:                             X/.xinitrc
     ~/.config/user-dirs.conf:               X/user-dirs.conf
-    ~/.local/share/fonts/apple:             misc/fonts/apple
+    ~/.local/share/fonts:                   misc/fonts
     ~/.config/keyboard.conf:                misc/keyboard.conf
     ~/.config/picom.conf:                   misc/picom.conf
 

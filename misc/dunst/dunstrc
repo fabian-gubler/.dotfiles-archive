@@ -85,7 +85,7 @@
 
     ### Text ###
 
-    font = SF Pro Text 16
+    font = Noto Emoji 14, SF Pro Text 16
 
 
     # The spacing between lines.  If the height is smaller than the
@@ -258,31 +258,31 @@
     # Xev might be helpful to find names for keys.
 
     # Close notification.
-    close = ctrl+space
+    close = shift+space
 
     # Close all notifications.
-    close_all = ctrl+shift+space
+    close_all = ctrl+space
 
     # Redisplay last message(s).
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1". Make sure this key actually exists on your keyboard layout,
     # e.g. check output of 'xmodmap -pke'
-    history = ctrl+grave
+    # history = ctrl+grave
 
    # Context menu.
-    context = ctrl+shift+period
+    # context = ctrl+shift+period
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    timeout = 4
+    timeout = 0
     background = "#141c21"
     foreground = "#d8dee9"
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    timeout = 8
+    timeout = 0
     background = "#141c21"
     foreground = "#b7bcc7"
     # Icon for notifications with normal urgency, uncomment to enable

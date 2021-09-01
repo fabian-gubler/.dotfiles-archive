@@ -1,9 +1,9 @@
 # Productivity
+alias gpush="git add . && git commit -m 'update' && git push"
 alias sc="sc-im"
 alias v="lvim"
 alias sv="sudoedit"
 alias ll='exa --header --long --git -a'
-alias nvim='lvim'
 alias r='autorandr'
 alias rsyncy='sudo rsync -a --info=progress2'
 alias rsync-delete="sudo rsync -a --delete --info=progress2"

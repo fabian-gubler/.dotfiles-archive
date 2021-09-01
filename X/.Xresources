@@ -25,7 +25,7 @@ Xft.dpi: 100
 *fading: 35
 *fadeColor: nord3
 
-*.color0: nord1
+*.color0: nord0
 *.color1: nord11
 *.color2: nord14
 *.color3: nord13

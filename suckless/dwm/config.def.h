@@ -4,7 +4,7 @@
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int gappx     = 10;       /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
+static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "SFMono:size=12" };
 static const char col_gray1[]       = "#222222";
@@ -30,6 +30,7 @@ static const Rule rules[] = {
 	{ "Gimp",           NULL,       NULL,       0,            1,           -1,        0  },
 	{ "Firefox",        NULL,       NULL,       1 << 8,       0,           -1,        0  },
 	{ "firefox",        NULL,       NULL,       0,            0,           -1,       's' },
+	{ "Mailspring",     NULL,       NULL,       0,            0,           -1,       'm' },
 	{ NULL,             NULL,       "scratch",  0,            0,           -1,       'r' },
 };
 
@@ -69,12 +70,13 @@ static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "togg
 
 /*First arg only serves to match against key in rules*/
 static const char *firefoxscratch[] = {"s", "firefox", NULL}; 
+static const char *mailscratch[] = {"m", "mailspring", NULL}; 
 static const char *boatscratch[] = {"r", "alacritty", "-t", "scratch", "-e", "newsboat", NULL}; 
 
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-  { MODKEY,                       XK_g,      spawn,          SHCMD("networkmanager_dmenu")},
+  { MODKEY,                       XK_v,      spawn,          SHCMD("networkmanager_dmenu")},
   { MODKEY,                       XK_f,      spawn,          SHCMD("alacritty -e ranger")},
   { MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("pcmanfm")},
   { MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmlogout")},
@@ -86,6 +88,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,      togglescratch,  {.v = firefoxscratch } },
+	{ MODKEY,                       XK_g,      togglescratch,  {.v = mailscratch } },
 	{ MODKEY,                       XK_r,      togglescratch,  {.v = boatscratch } },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("alacritty -e ytfzf -t")},
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
