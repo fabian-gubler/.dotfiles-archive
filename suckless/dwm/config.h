@@ -6,16 +6,24 @@ static const unsigned int gappx     = 10;       /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int horizpadbar        = 0;        /* horizontal padding for statusbar */
+static const int vertpadbar         = 3;        /* vertical padding for statusbar */
 static const char *fonts[]          = { "SFMono:size=12" };
-static const char col_gray1[]       = "#222222";
+static const char col_gray1[]       = "#252A34";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_gray4[]       = "#d8dee9";
+static const char col_cyan[]        = "#5e81ac";
+static const char col_nord3[]        = "#434c5e";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeSel]  = { col_gray4, col_gray1,  col_cyan  },
+	[SchemeStatus]  = { col_gray3, col_gray1,  "#000000"  },    // Statusbar right {text,background,not used but cannot be empty}
+	[SchemeTagsSel]  = { col_gray4, col_nord3,  "#000000"  },    // Tagbar left selected {text,background,not used but cannot be empty}
+  [SchemeTagsNorm]  = { col_gray3, col_gray1,  "#000000"  },  // Tagbar left unselected {text,background,not used but cannot be empty}
+  [SchemeInfoSel]  = { col_gray4, col_gray1,  "#000000"  },    // infobar middle  selected {text,background,not used but cannot be empty}
+  [SchemeInfoNorm]  = { col_gray3, col_gray1,  "#000000"  },  // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
 /* tagging */
@@ -64,9 +72,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 
 /*First arg only serves to match against key in rules*/
 static const char *firefoxscratch[] = {"s", "firefox", NULL}; 
@@ -124,9 +129,11 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-  { 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
-	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
-	{ 0,                            XF86XK_AudioMute, spawn, {.v = mutevol } },
+  { 0, XF86XK_AudioLowerVolume, spawn, SHCMD("$HOME/.dotfiles/misc/rumno/usage_samples/mediactrl.sh volume-dec")},
+	{ 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("$HOME/.dotfiles/misc/rumno/usage_samples/mediactrl.sh volume-inc")},
+	{ 0, XF86XK_AudioMute, spawn, SHCMD("$HOME/.dotfiles/misc/rumno/usage_samples/mediactrl.sh volume-toggle")},
+  { 0, XF86XK_MonBrightnessUp, spawn, SHCMD("$HOME/.dotfiles/misc/rumno/usage_samples/mediactrl.sh brightness-inc")},
+	{ 0, XF86XK_MonBrightnessDown, spawn, SHCMD("$HOME/.dotfiles/misc/rumno/usage_samples/mediactrl.sh brightness-dec")},
 };
 
 /* button definitions */

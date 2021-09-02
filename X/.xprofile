@@ -13,7 +13,6 @@ export TERM=alacritty
 export LANG="en_US.utf8"
 
 # --- Startup programs
-# rumno-background &
 optimus-manager &
 prime-offload &
 bluetoothctl power on &
@@ -24,8 +23,9 @@ unclutter --timeout 3 &
 gnome-keyring-daemon --start --components=pkcs11 &
 xset r rate 350 60 &
 xset s off -dpms &
-xsetroot -solid "#252a34" &
+hsetroot -solid "#252a34" &
 setxkbmap -config /home/fabian/.config/keyboard.conf &
 mailspring -b &
+rumno-background &
 slstatus &
 insync start &

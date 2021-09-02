@@ -78,6 +78,7 @@ PRGS=(
     'qt5ct'                       # Qt theming
     'adwaita-qt'                  # Adwaita dark
     'xorg-xinit'                  # Tty login
+    'hsetroot'                    # Solid Background
 
     # UTILITIES ---------------------------------------
     'ranger'                      # File explorer
@@ -97,6 +98,7 @@ PRGS=(
     'optimus-manager'             # GPU switcher
     'autorandr'                   # Monitor setup
     'unzip'                       # Unzip directories
+    'acpilight'                   # Backlight
 
     # SC-IM Dependencies ------------------------------
     'libxml2'
@@ -134,7 +136,6 @@ PRGS=(
     'pcmanfm-gtk3'                     # GTK file manager
     'zoom'                        # Virtual Classroom
     'teams'                       # Video Communication
-    'zsa-wally'                   # Keyboard Layout
     'zsa-wally-cli'               # Keyboard Layout
     'mailspring'                  # Email client
     'masterpdfeditor'             # PDF editor
@@ -196,10 +197,12 @@ echo "RUMNO: Build program"
 # Only install if doesnt exist
 if ! command -v rumno &> /dev/null
 then
-    git clone https://gitlab.com/natjo/rumno.git "$HOME/rumno"
-    cd $HOME/rumno
+    git clone https://gitlab.com/natjo/rumno.git "$HOME/.dotfiles/misc/rumno"
+    cd $HOME/.dotfiles/misc/rumno
     cargo build --release
-    rm -rf $HOME/rumno
+    cd target/release
+    sudo cp rumno-background /usr/local/bin
+    sudo cp rumno /usr/local/bin
 else
     echo "Rumno already Exists, skipping..."
 fi
@@ -343,6 +346,7 @@ echo "HDD: Mounting and give ownership"
 # Create group & add user
 sudo groupadd data
 sudo usermod -a -G data $USER
+sudo usermod -a -G video $USER
 
 # Append sdb1 to fstab
 sudo echo "# /dev/sdb1

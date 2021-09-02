@@ -60,3 +60,6 @@
     ~/.config/mpv/script-opts/uosc.conf:    misc/mpv/uosc.conf 
     ~/.config/mpv/scripts/uosc.lua:         misc/mpv/uosc.lua
     
+    # SUDO --------------------------------------------------------
+    /usr/local/bin/rumno:                   misc/rumno/rumno
+    /usr/local/bin/rumno-background:        misc/rumno/rumno-background
