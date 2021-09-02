@@ -41,6 +41,8 @@ else
         options[scimrc help]="$HOME/.config/sc-im/help"
         options[newsboat urls]="$HOME/.dotfiles/newsboat/urls"
         options[newsboat config]="$HOME/.dotfiles/newsboat/config"
+        options[mpv input]="$HOME/.dotfiles/misc/mpv/input.conf"
+
 
 fi
 # Clean options array making sure that the files exist
