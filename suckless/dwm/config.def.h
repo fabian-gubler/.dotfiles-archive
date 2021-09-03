@@ -86,6 +86,7 @@ static Key keys[] = {
   { MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("pcmanfm")},
   { MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmlogout")},
   { MODKEY,                       XK_j,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmconf")},
+  { MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dlay")},
   { MODKEY,                       XK_c,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/colorpicker.sh")},
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/dmenu-bluetooth")},
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("alacritty -e sc-im /data/drive/todo.sc")},
@@ -130,11 +131,11 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-  { 0, XF86XK_AudioLowerVolume, spawn, SHCMD("$HOME/.dotfiles/misc/rumno/usage_samples/mediactrl.sh volume-dec")},
-	{ 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("$HOME/.dotfiles/misc/rumno/usage_samples/mediactrl.sh volume-inc")},
-	{ 0, XF86XK_AudioMute, spawn, SHCMD("$HOME/.dotfiles/misc/rumno/usage_samples/mediactrl.sh volume-toggle")},
-  { 0, XF86XK_MonBrightnessUp, spawn, SHCMD("$HOME/.dotfiles/misc/rumno/usage_samples/mediactrl.sh brightness-inc")},
-	{ 0, XF86XK_MonBrightnessDown, spawn, SHCMD("$HOME/.dotfiles/misc/rumno/usage_samples/mediactrl.sh brightness-dec")},
+  { 0, XF86XK_AudioLowerVolume, spawn, SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh volume-dec")},
+	{ 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh volume-inc")},
+	{ 0, XF86XK_AudioMute, spawn, SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh volume-toggle")},
+  { 0, XF86XK_MonBrightnessUp, spawn, SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh brightness-inc")},
+	{ 0, XF86XK_MonBrightnessDown, spawn, SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh brightness-dec")},
 };
 
 /* button definitions */

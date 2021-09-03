@@ -18,35 +18,34 @@
     ~/.Xresources:                          X/.Xresources
     ~/.xinitrc:                             X/.xinitrc
     ~/.config/user-dirs.conf:               X/user-dirs.conf
-    ~/.local/share/fonts:                   misc/fonts
-    ~/.config/keyboard.conf:                misc/keyboard.conf
-    ~/.config/picom.conf:                   misc/picom.conf
+    ~/.local/share/fonts:                   system/fonts
+    ~/.config/keyboard.conf:                system/setxkbmap/keyboard.conf
+    ~/.config/picom.conf:                   system/compositor/picom.conf
 
     # UTILITIES ---------------------------------------------------
     ~/.config/lvim/config.lua:              nvim/config.lua
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
-    ~/.config/gtk-3.0/settings.ini:         misc/gtk/settings.ini
-    ~/.gtkrc-2.0:                           misc/gtk/.gtkrc-2.0
-    ~/.config/qt5ct/qt5ct.conf:             misc/qt/qt5ct.conf
-    ~/.config/qt5ct/colors/nord.conf:       misc/qt/nord.conf 
-    ~/.config/gcolor3/config.ini:           misc/gcolor3/config.ini
-    ~/.config/dunst/dunstrc:                misc/dunst/dunstrc
+    ~/.config/gtk-3.0/settings.ini:         system/gtk/settings.ini
+    ~/.gtkrc-2.0:                           system/gtk/.gtkrc-2.0
+    ~/.config/qt5ct/qt5ct.conf:             system/qt/qt5ct.conf
+    ~/.config/qt5ct/colors/nord.conf:       system/qt/nord.conf 
+    ~/.config/dunst/dunstrc:                system/dunst/dunstrc
     ~/.config/sc-im/scimrc:                 sc-im/scimrc
     ~/.newsboat/urls:                       newsboat/urls
     ~/.newsboat/config:                     newsboat/config
       
 
     # TOOLS -------------------------------------------------------
-    ~/.config/i3/config:                    misc/archive/i3/config
-    ~/.config/polybar/config:               misc/archive/polybar/config
-    ~/.config/polybar/launch.sh:            misc/archive/polybar/launch.sh
-    ~/.config/polybar/modules.ini:          misc/archive/polybar/modules.ini
+    ~/.config/i3/config:                    archive/i3/config
+    ~/.config/polybar/config:               archive/polybar/config
+    ~/.config/polybar/launch.sh:            archive/polybar/launch.sh
+    ~/.config/polybar/modules.ini:          archive/polybar/modules.ini
     ~/.config/ranger/rc.conf:               ranger/rc.conf
     ~/.config/ranger/rifle.conf:            ranger/rifle.conf
-    ~/.config/rofi/config:                  rofi/config
-    ~/.config/rofi/themes/minimal.rasi:     rofi/minimal.rasi
-    ~/.config/qBittorrent/qBittorrent.conf: misc/qBittorrent/qBittorrent.conf
-    ~/.config/autorandr/postswitch:         misc/autorandr/postswitch
+    ~/.config/rofi/config:                  archive/rofi/config
+    ~/.config/rofi/themes/minimal.rasi:     archive/rofi/minimal.rasi
+    ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf
+    ~/.config/autorandr/postswitch:         system/autorandr/postswitch
       
 
     # WEB TOOLS ---------------------------------------------------
@@ -55,11 +54,11 @@
     ~/.config/tridactyl/themes/nord.css:    firefox/nord.css
 
     # MEDIA -------------------------------------------------------
-    ~/.config/mpv/input.conf:               misc/mpv/input.conf
-    ~/.config/mpv/mpv.conf:                 misc/mpv/mpv.conf
-    ~/.config/mpv/script-opts/uosc.conf:    misc/mpv/uosc.conf 
-    ~/.config/mpv/scripts/uosc.lua:         misc/mpv/uosc.lua
+    ~/.config/mpv/input.conf:               mpv/input.conf
+    ~/.config/mpv/mpv.conf:                 mpv/mpv.conf
+    ~/.config/mpv/script-opts/uosc.conf:    mpv/uosc.conf 
+    ~/.config/mpv/scripts/uosc.lua:         mpv/uosc.lua
     
     # SUDO --------------------------------------------------------
-    /usr/local/bin/rumno:                   misc/rumno/rumno
-    /usr/local/bin/rumno-background:        misc/rumno/rumno-background
+    /usr/local/bin/rumno:                   system/rumno/build/rumno
+    /usr/local/bin/rumno-background:        system/rumno/build/rumno-background

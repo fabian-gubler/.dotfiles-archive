@@ -1,0 +1,10 @@
+#!/bin/sh
+
+choices="main\nde"
+
+chosen=$(echo -e "$choices" | dmenu -i -p "Keyboard Layout:")
+
+case "$chosen" in
+	main) setxkbmap -config /home/fabian/.config/keyboard.conf;;
+	de) setxkbmap de;;
+esac

@@ -1,0 +1,23 @@
+[package]
+name = "rumno"
+version = "0.1.0"
+authors = ["Jonas Natzer <jonas.natzer@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+dbus = "0.6.5"
+bincode = "1.1.4"
+serde = "1.0.101"
+serde_derive = "1.0.101"
+clap = "2.33.0"
+gdk = "0.11.0"
+gio = "0.7.0"
+glib = "0.8.0"
+gtk = "0.7.0"
+cairo-rs = { version = "0.7.0", features = ["png"] }
+resvg = { version = "0.8.0", features = ["cairo-backend"] }
+num = "0.2.0"
+daemonize = "0.4.1"
+log = "0.4.8"
+fern = "0.5.8"
+chrono = "0.4.9"

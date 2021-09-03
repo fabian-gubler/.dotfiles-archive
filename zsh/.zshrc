@@ -29,3 +29,4 @@ source /home/fabian/.dotfiles/zsh/plugins/z/zsh-z.plugin.zsh
 # Keybinds
 bindkey -e                    # emacs bindings
 bindkey -s '^o' 'ranger^M'    # open ranger
+bindkey -s '^t' 'exa -a^M'    # open ranger
