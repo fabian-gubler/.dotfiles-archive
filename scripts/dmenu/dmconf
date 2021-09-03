@@ -35,7 +35,7 @@ else
         options[tridactyl]="/$HOME/.config/tridactyl/tridactylrc"
         options[typora]="$HOME/.dotfiles/typora/conf.user.json"
         options[xprofile]="$HOME/.xprofile"
-        options[xprofile]="$HOME/.xprofile"
+        options[xresources]="$HOME/.Xresources"
         options[zshrc]="$HOME/.dotfiles/zsh/.zshrc"
         options[scimrc]="$HOME/.dotfiles/sc-im/scimrc"
         options[scimrc help]="$HOME/.config/sc-im/help"

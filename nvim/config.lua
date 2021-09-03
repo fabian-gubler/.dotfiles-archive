@@ -9,6 +9,7 @@ lvim.format_on_save = true
 lvim.lint_on_save = true
 lvim.colorscheme = "nord"
 
+require("colorizer").setup()
 -- Helper Function
 local function map(mode, lhs, rhs, opts)
     local options = {noremap = true, silent = true}
@@ -24,7 +25,8 @@ lvim.plugins = {
     {"easymotion/vim-easymotion"},
     {"mbbill/undotree"},
     {"francoiscabrol/ranger.vim"},
-    {"rbgrouleff/bclose.vim"}
+    {"rbgrouleff/bclose.vim"},
+    {"norcalli/nvim-colorizer.lua"}
 }
 
 -- Undodir

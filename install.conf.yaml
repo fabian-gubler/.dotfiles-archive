@@ -62,3 +62,4 @@
     # SUDO --------------------------------------------------------
     /usr/local/bin/rumno:                   system/rumno/build/rumno
     /usr/local/bin/rumno-background:        system/rumno/build/rumno-background
+    /boot/loader/loader.conf:               system/systemd/loader.conf

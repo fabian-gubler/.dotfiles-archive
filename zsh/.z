@@ -2,6 +2,7 @@
 /data/torrent|4|1630406698
 /etc|3|1630363558
 /home/fabian/.config/fluent-reader|2|1630408297
+/home/fabian/.local/share|1|1630631997
 /data/drive/notes|4|1630276104
 /data/drive/hsg/archive/semester-4/empirical|3|1630358897
 /home/fabian/.dotfiles/system/rumno/build|3|1630630175
@@ -10,7 +11,7 @@
 /home/fabian/.secrets|18|1630592700
 /home/fabian/.dotfiles/scripts/utils|42|1630507210
 /home/fabian/.config/zsh|8|1630528750
-/home/fabian/.dotfiles/zsh|15|1630627299
+/home/fabian/.dotfiles/zsh|16|1630631089
 /home/fabian/.dotfiles/system/rumno/build/target/release|5|1630629251
 /home/fabian/.dotfiles/system/compositor|5|1630630118
 /data|14|1630406704
@@ -18,10 +19,12 @@
 /home/fabian/.vbox/Windows 10|3|1630268532
 /home/fabian/.config/sc-im|32|1630358398
 /home/fabian/.config/sc-im/lua|1|1630358404
-/home/fabian/.dotfiles/suckless/dwm/patches|6|1630433717
+/home/fabian/.dotfiles/suckless/dwm/patches|11|1630632298
 /home/fabian/.dotfiles/system/rumno|9|1630630186
 /home/fabian/.dotfiles/suckless/dmenu|11|1630527037
+/boot/loader|3|1630632519
 /home/fabian/.dotfiles/suckless/slstatus|4|1630265388
+/home/fabian/.local/share/lunarvim|1|1630632000
 /home/fabian/.secrets/mailspring|3|1630591936
 /home/fabian/.zoom|2|1630629555
 /home/fabian/.dotfiles/scripts/dmenu|12|1630627637
@@ -35,16 +38,16 @@
 /home/fabian/.dotfiles/suckless/st|1|1630187984
 /|3|1630184538
 /home/fabian/downloads|7|1630499637
-/home/fabian/.dotfiles/system|4|1630629392
 /home/fabian/.dotfiles/sc-im|20|1630501216
-/etc/X11/xinit|4|1630194496
+/home/fabian/.dotfiles/system|4|1630629392
 /home/fabian/.config|6|1630630514
-/home/fabian/.dotfiles/suckless/slock|10|1630195845
+/etc/X11/xinit|4|1630194496
 /data/drive|8|1630354996
-/home/fabian/.dotfiles/suckless/dwm|290|1630628953
+/home/fabian/.dotfiles/suckless/slock|10|1630195845
+/home/fabian/.dotfiles/suckless/dwm|299|1630632313
 /home/fabian/.newsboat|9|1630423724
-/home/fabian/.config/ranger|2|1630630520
 /home/fabian/.dotfiles/firefox|9|1630275912
+/home/fabian/.config/ranger|2|1630630520
 /usr/share/i18n/locales|3|1630338097
 /home/fabian/.dotfiles/suckless|13|1630275890
-/home/fabian/.dotfiles|98|1630630979
+/home/fabian/.dotfiles|103|1630632551
