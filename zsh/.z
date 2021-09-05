@@ -12,7 +12,7 @@
 /home/fabian/.dotfiles/scripts/utils|57|1630801924
 /home/fabian/.secrets|18|1630592700
 /home/fabian/.config/zsh|8|1630528750
-/home/fabian/.dotfiles/zsh|22|1630808343
+/home/fabian/.dotfiles/zsh|26|1630810482
 /home/fabian/.dotfiles/system/rumno/build/target/release|5|1630629251
 /home/fabian/.dotfiles/system/compositor|5|1630630118
 /data|14|1630406704
@@ -27,11 +27,11 @@
 /home/fabian/.dotfiles/suckless/slstatus|4|1630265388
 /home/fabian/.local/share/lunarvim|1|1630632000
 /home/fabian/.secrets/mailspring|3|1630591936
-/home/fabian/.zoom|2|1630629555
 /home/fabian/.dotfiles/scripts/dmenu|13|1630636644
-/home/fabian/.dotfiles/scripts|24|1630801872
+/home/fabian/.dotfiles/scripts|25|1630809703
 /data/dropbox|18|1630500616
 /home/fabian/.config/ranger/plugins|3|1630274362
+/home/fabian/.zoom|2|1630629555
 /usr/local/bin|2|1630802146
 /home/fabian/.vbox|2|1630268384
 /etc/X11|5|1630194386
@@ -55,4 +55,4 @@
 /usr/share/i18n/locales|3|1630338097
 /home/fabian/.dotfiles/system/systemd|5|1630632735
 /home/fabian/.dotfiles/suckless|13|1630275890
-/home/fabian/.dotfiles|141|1630809654
+/home/fabian/.dotfiles|144|1630810495
