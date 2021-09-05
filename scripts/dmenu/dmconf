@@ -15,7 +15,7 @@ DMCONFIG="$HOME/.config/dmscripts/dmconf"
 if [ -f "$DMCONFIG" ]; then
 	source "$DMCONFIG"
 else
-	: "${DMEDITOR:=alacritty -e lvim}"
+	: "${DMEDITOR:=alacritty -e tmux new-window lvim}"
 # An array of options to choose.
 # You can edit this list to add/remove config files.
 	declare -A options
