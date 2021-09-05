@@ -12,7 +12,7 @@
     ~/.config/zsh/zsh-aliases:              zsh/zsh-aliases
     ~/.config/zsh/zsh-functions:            zsh/zsh-functions
     ~/.z:                                   zsh/.z
-    ~/.config/alacritty/alacritty.yml:      alacritty/alacritty.yml
+    ~/.config/alacritty:                    alacritty
     ~/.xprofile:                            X/.xprofile
     ~/.zprofile:                            X/.zprofile
     ~/.Xresources:                          X/.Xresources
@@ -24,6 +24,7 @@
 
     # UTILITIES ---------------------------------------------------
     ~/.config/lvim/config.lua:              nvim/config.lua
+    ~/.local/share/lunarvim/lvim/lua/spacegray/palette.lua:  nvim/palette.lua
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
     ~/.config/gtk-3.0/settings.ini:         system/gtk/settings.ini
     ~/.gtkrc-2.0:                           system/gtk/.gtkrc-2.0
@@ -33,6 +34,7 @@
     ~/.config/sc-im/scimrc:                 sc-im/scimrc
     ~/.newsboat/urls:                       newsboat/urls
     ~/.newsboat/config:                     newsboat/config
+    ~/.config/ytfzf:                        ytfzf
       
 
     # TOOLS -------------------------------------------------------
@@ -62,4 +64,3 @@
     # SUDO --------------------------------------------------------
     /usr/local/bin/rumno:                   system/rumno/build/rumno
     /usr/local/bin/rumno-background:        system/rumno/build/rumno-background
-    /boot/loader/loader.conf:               system/systemd/loader.conf

@@ -1,21 +1,23 @@
 -- Variables
 local o = vim.opt
 local g = vim.g
+local keymap = vim.api.nvim_set_keymap
+local opt = { noremap = true }
 local home = os.getenv( "HOME" )
 g.mapleader = ' '
+
+-- Options
+o.undodir = home .. '/.config/lvim/undodir'
+o.swapfile = false
+o.relativenumber = true
+o.ignorecase = true
+o.termguicolors = true
 
 -- General
 lvim.format_on_save = true
 lvim.lint_on_save = true
-lvim.colorscheme = "nord"
+lvim.colorscheme = "spacegray"
 
-require("colorizer").setup()
--- Helper Function
-local function map(mode, lhs, rhs, opts)
-    local options = {noremap = true, silent = true}
-    if opts then options = vim.tbl_extend('force', options, opts) end
-    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
 
 -- Additional Plugins
 lvim.plugins = {
@@ -26,38 +28,29 @@ lvim.plugins = {
     {"mbbill/undotree"},
     {"francoiscabrol/ranger.vim"},
     {"rbgrouleff/bclose.vim"},
-    {"norcalli/nvim-colorizer.lua"}
+    {"norcalli/nvim-colorizer.lua"},
 }
+require("colorizer").setup()
+
+-- Custom Keymappings
+keymap('n', '<leader>u', '<cmd>UndotreeToggle<cr>', {})
+keymap('', ',', '<Plug>(easymotion-sn)', {})
+keymap('', '/', '<Plug>(easymotion-sn)', {})
+keymap('n', '<Up>', '<C-u>', {})
+keymap('n', '<Down>', '<C-d>', {})
+keymap('n', 'q', ':q<cr>', {})
 
 -- Undodir
 g.undotree_WindowLayout = 2
 
-
 -- Additional Leader bindings for WhichKey
-lvim.builtin.which_key.mappings["a"] = { 
+lvim.builtin.which_key.mappings["a"] = {
   "<cmd>CommentToggle<cr>","Comment"
 }
 
--- Options
-o.undodir = home .. '/.config/lvim/undodir'
-
--- Custom Keymappings
-map('n', '<leader>u', '<cmd>UndotreeToggle<cr>')
-
--- Native Keymappings
+-- Native
 vim.cmd([[
     autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
-    nnoremap <esc> :noh<return><esc>
-    map <Up> <C-u>
-    nnoremap q :q<cr>
-    map <C-a> ggaG
-    map <C-s> :TermExec cmd='python %' <CR>
-    map <Down> <C-d>
-    map  / <Plug>(easymotion-sn)
-    omap / <Plug>(easymotion-tn)
-    set noswapfile
-    set relativenumber
-    set ignorecase
     let g:auto_save = 1  " enable AutoSave on Vim startup
     let g:auto_save_silent = 1  " do not display the auto-save notification
     let bufferline = get(g:, 'bufferline', {})
@@ -70,44 +63,39 @@ lvim.builtin.dashboard.active = false
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
-
--- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = {}
-lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
 -- Colemak
+
+-- left, right, down, up
+keymap('', 'm', 'h', opt)
+keymap('', 'n', 'j', opt)
+keymap('', 'e', 'k', opt)
+keymap('', 'i', 'l', opt)
+
+-- l/L = back word/WORD
+keymap('', 'l', 'b', opt)
+keymap('', 'L', 'B', opt)
+
+-- u/U = end of word/WORD
+keymap('', 'u', 'e', opt)
+keymap('', 'U', 'E', opt)
+
+-- y/Y = forward word/WORD
+keymap('', 'y', 'w', opt)
+keymap('', 'Y', 'W', opt)
+
+-- insert, append, change
+keymap('n', 's', 'i', opt)
+keymap('n', 'S', 'I', opt)
+keymap('n', 't', 'a', opt)
+keymap('n', 'T', 'A', opt)
+keymap('n', 'w', 'c', opt)
+keymap('x', 'w', 'c', opt)
+keymap('n', 'ww', 'cc', opt)
+
+-- cut, copy, paste
 vim.cmd([[
-  " Up/down/left/right {{{
-      nnoremap m h|xnoremap m h|onoremap m h|
-      nnoremap n j|xnoremap n j|onoremap n j|
-      nnoremap e k|xnoremap e k|onoremap e k|
-      nnoremap i l|xnoremap i l|onoremap i l|
-  " }}}
-  " Words forward/backward {{{
-      " l/L = back word/WORD
-      " u/U = end of word/WORD
-      " y/Y = forward word/WORD
-      nnoremap l b|xnoremap l b|onoremap l b|
-      nnoremap L B|xnoremap L B|onoremap L B|
-      nnoremap u e|xnoremap u e|onoremap u e|
-      nnoremap U E|xnoremap U E|onoremap U E|
-      nnoremap y w|xnoremap y w|onoremap y w|
-      nnoremap Y W|xnoremap Y W|onoremap Y W|
-      cnoremap <C-L> <C-Left>
-      cnoremap <C-Y> <C-Right>
-  " }}}
-  " inSert/Replace/append (T) {{{
-      nnoremap s i|
-      nnoremap S I|
-      nnoremap t a|
-      nnoremap T A|
-  " }}}
-  " Change {{{
-      nnoremap w c|xnoremap w c|
-      nnoremap W C|xnoremap W C|
-      nnoremap ww cc|
-  " }}}
   " Cut/copy/paste {{{
       nnoremap x x|xnoremap x d|
       nnoremap c y|xnoremap c y|

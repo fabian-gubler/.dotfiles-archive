@@ -18,7 +18,7 @@ prime-offload &
 bluetoothctl power on &
 picom -b &
 xfce4-power-manager &
-unclutter --timeout 3 &
+unclutter --timeout 3 --start-hidden &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 gnome-keyring-daemon --start --components=pkcs11 &
 xset r rate 350 60 &

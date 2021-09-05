@@ -14,13 +14,12 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#d8dee9";
 static const char col_cyan[]        = "#5e81ac";
-static const char col_nord3[]        = "#434c5e";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_gray1,  col_cyan  },
 	[SchemeStatus]  = { col_gray3, col_gray1,  "#000000"  },    // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]  = { col_gray4, col_nord3,  "#000000"  },    // Tagbar left selected {text,background,not used but cannot be empty}
+	[SchemeTagsSel]  = { col_gray4, "#434c5e",  "#000000"  },    // Tagbar left selected {text,background,not used but cannot be empty}
   [SchemeTagsNorm]  = { col_gray3, col_gray1,  "#000000"  },  // Tagbar left unselected {text,background,not used but cannot be empty}
   [SchemeInfoSel]  = { col_gray4, col_gray1,  "#000000"  },    // infobar middle  selected {text,background,not used but cannot be empty}
   [SchemeInfoNorm]  = { col_gray3, col_gray1,  "#000000"  },  // infobar middle  unselected {text,background,not used but cannot be empty}
@@ -59,6 +58,7 @@ static const Layout layouts[] = {
 /* key definitions */
 #include <X11/XF86keysym.h>
 #define MODKEY Mod4Mask
+#define PrintScreen 0x0000ff61
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -71,12 +71,12 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[] = { "alacritty", NULL };
 
 /*First arg only serves to match against key in rules*/
 static const char *firefoxscratch[] = {"s", "firefox", NULL}; 
 static const char *mailscratch[] = {"m", "mailspring", NULL}; 
-static const char *boatscratch[] = {"r", "alacritty", "-t", "scratch", "-e", "newsboat", NULL}; 
+static const char *termscratch[] = {"r", "alacritty", "-t", "scratch", "-e", "tmuxdd", NULL}; 
 
 #include "movestack.c"
 static Key keys[] = {
@@ -93,11 +93,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("VBoxManage startvm 'Windows 10'")},
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("pavucontrol")},
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_Return, togglescratch,  {.v = termscratch } },
 	{ MODKEY,                       XK_w,      togglescratch,  {.v = firefoxscratch } },
 	{ MODKEY,                       XK_g,      togglescratch,  {.v = mailscratch } },
-	{ MODKEY,                       XK_r,      togglescratch,  {.v = boatscratch } },
-	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("alacritty -e ytfzf -t")},
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("alacritty -e ytfzf -t --preview-side=right")},
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
   { MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = -1 } },
@@ -136,6 +135,7 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioMute, spawn, SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh volume-toggle")},
   { 0, XF86XK_MonBrightnessUp, spawn, SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh brightness-inc")},
 	{ 0, XF86XK_MonBrightnessDown, spawn, SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh brightness-dec")},
+  { 0, PrintScreen,      spawn, SHCMD("flameshot gui")},
 };
 
 /* button definitions */
