@@ -36,8 +36,6 @@ require("colorizer").setup()
 keymap('n', '<leader>u', '<cmd>UndotreeToggle<cr>', {})
 keymap('', ',', '<Plug>(easymotion-sn)', {})
 keymap('', '/', '<Plug>(easymotion-sn)', {})
-keymap('n', '<Up>', '<C-u>', {})
-keymap('n', '<Down>', '<C-d>', {})
 keymap('n', 'q', ':q<cr>', {})
 
 -- Undodir

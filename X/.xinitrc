@@ -16,4 +16,4 @@ fi
 [ -r ~/.xprofile ] && . ~/.xprofile
 
 # launch the session, commands below this line will be ignored
-exec dwm
+exec dwm-gnome

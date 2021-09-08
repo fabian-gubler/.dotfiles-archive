@@ -79,6 +79,7 @@ PRGS=(
     'adwaita-qt'                  # Adwaita dark
     'xorg-xinit'                  # Tty login
     'hsetroot'                    # Solid Background
+    'snapd'                       # Distro ind. packages
 
     # UTILITIES ---------------------------------------
     'ranger'                      # File explorer
@@ -99,6 +100,7 @@ PRGS=(
     'autorandr'                   # Monitor setup
     'unzip'                       # Unzip directories
     'acpilight'                   # Backlight
+    'tmux'                        # Terminal Multiplexer
 
     # SC-IM Dependencies ------------------------------
     'libxml2'
@@ -137,7 +139,6 @@ PRGS=(
     'zoom'                        # Virtual Classroom
     'teams'                       # Video Communication
     'zsa-wally-cli'               # Keyboard Layout
-    'mailspring'                  # Email client
     'masterpdfeditor'             # PDF editor
     'zathura'                     # PDF viewer
 
@@ -165,6 +166,10 @@ for PKG in $packages; do
     echo "INSTALLING: $PKG"
     sudo sudo -u $USER $aurhelper -S "$PKG" --noconfirm --needed
 done
+
+# SNAP PACKAGES ----------------------------------------
+sudo systemctl enable snapd.service && systemctl start snapd.service
+sudo snap install mailspring
 
 # REMOVING UNNEEDED PACKAGES ---------------------------
 
@@ -367,7 +372,9 @@ sudo systemctl enable optimus-manager.service
 sudo systemctl enable --now cups
 sudo systemctl enable bluetooth.service
 sudo systemctl enable pulseaudio-bluetooth-autoconnect
+sudo systemctl enable snapd.service
 
+echo 'KEYMAP=de\nFONT=ter-p32b' | sudo tee /etc/vconsole.conf
 # ------------------------------------
 # Start Printer setup
 sudo hp-setup

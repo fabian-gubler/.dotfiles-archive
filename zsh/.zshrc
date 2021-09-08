@@ -30,5 +30,7 @@ source /home/fabian/.dotfiles/zsh/plugins/z/zsh-z.plugin.zsh
 
 # Keybinds
 bindkey -e                    # emacs bindings
-bindkey -s '^o' 'ranger^M'    # open ranger
+bindkey -s '^f' 'ranger^M'    # open ranger
 bindkey -s '^t' 'exa -a^M'    # open ranger
+bindkey "^[i" forward-word    # alt + i
+bindkey "^[m" backward-word   # alt + m

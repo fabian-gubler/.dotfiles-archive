@@ -21,6 +21,7 @@
     ~/.local/share/fonts:                   system/fonts
     ~/.config/keyboard.conf:                system/setxkbmap/keyboard.conf
     ~/.config/picom.conf:                   system/compositor/picom.conf
+    ~/.tmux.conf:                           tmux/.tmux.conf
 
     # UTILITIES ---------------------------------------------------
     ~/.config/lvim/config.lua:              nvim/config.lua

@@ -1,6 +1,8 @@
 #!/bin/sh
 
 # --- Variables
+export XDG_SESSION_TYPE=x11
+export GDK_BACKEND=x11
 export QT_QPA_PLATFORMTHEME=qt5ct
 export EDITOR=lvim
 export PAGER=lvim
@@ -8,7 +10,7 @@ export GTK_THEME=Nordic
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$HOME/.local/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib
-export export ZDOTDIR=$HOME/.config/zsh     
+export ZDOTDIR=$HOME/.config/zsh     
 export TERM=alacritty
 export LANG="en_US.utf8"
 
@@ -29,3 +31,6 @@ mailspring -b &
 rumno-background &
 slstatus &
 insync start &
+
+# Tablet
+# touchegg &
