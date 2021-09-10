@@ -20,6 +20,7 @@ bind s hint
 bind S hint -b
 
 " Unbind
+unbind h
 unbind <C-b>
 unbind <C-d>
 unbind <C-u>

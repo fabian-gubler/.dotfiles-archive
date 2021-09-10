@@ -3,11 +3,10 @@
 # Terminate already running bar instances
 killall -q polybar
 
-# Launch Bar
-echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
-polybar example 2>&1 | tee -a /tmp/polybar1.log & disown
+# Wait until the processes have been shut down
+while pgrep -x polybar >/dev/null; do sleep 1; done
 
-# Launch Second bar
-# polybar (name of second bar)
+# Launch
+polybar example &
 
 echo "Bars launched..."

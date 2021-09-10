@@ -16,30 +16,9 @@ sudo pacman -Syu --noconfirm --needed
 # Git
 sudo pacman -S git --noconfirm --needed
 
-
-
 # ------------------------------------------------------
 # --- PART 2: INSTALLATION------------------------------
 # ------------------------------------------------------
-
-echo
-echo "-------------------------------------"
-echo "Welcome to the installation part of the script. 
-It installs my favorite software."
-echo "-------------------------------------"
-echo
-
-# User confirmation dialog
-while true; do
-    read -p "Do you wish to proceed? [y/n]" yn
-    case $yn in
-        [Yy]* ) break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
-
-# -----------------------------------------------------
 
 echo
 echo "INSTALLING AUR HELPER"
@@ -67,19 +46,20 @@ echo
 
 PRGS=(
 
+    # LANGUAGES ---------------------------------------
+    'python-pip'                  # Python packages
+    'rust'                        # Programming language
+
     # SYSTEM ------------------------------------------
     'alacritty'                   # Terminal
     'zsh'                         # Shell
-    'python-pip'                  # Python packages
     'lxappearance'                # GTK theme switcher
     'wget'                        # Download web content
-    'rust'                        # Programming language
-    'exa'                         # Ls alternative
+    'exa'                         # Better ls
     'qt5ct'                       # Qt theming
     'adwaita-qt'                  # Adwaita dark
-    'xorg-xinit'                  # Tty login
     'hsetroot'                    # Solid Background
-    'snapd'                       # Distro ind. packages
+    'snapd'                       # External packages
 
     # UTILITIES ---------------------------------------
     'ranger'                      # File explorer
@@ -91,16 +71,16 @@ PRGS=(
     'timeshift'                   # Backup snapshots
     'insync'                      # Cloud sync
     'gotop-bin'                   # System monitoring
-    'polybar'                     # Taskbar
     'networkmanager-dmenu-git'    # Network manager
+    'rofi'                        # Custom Menus
     'devour'                      # Swallow programs
     'dragon-drag-and-drop-git'    # Drag and drop
     'baobab'                      # Disk space
-    'optimus-manager'             # GPU switcher
-    'autorandr'                   # Monitor setup
     'unzip'                       # Unzip directories
     'acpilight'                   # Backlight
     'tmux'                        # Terminal Multiplexer
+    'touchegg'                    # Gesture support
+    'touche'                      # Customize touchegg
 
     # SC-IM Dependencies ------------------------------
     'libxml2'
@@ -116,7 +96,6 @@ PRGS=(
     # WEB TOOLS ---------------------------------------
     'firefox'                     # Web browser
     'firefox-tridactyl-native'    # Vim integration
-    'gdown'                       # GDrive download
     'newsboat'                    # RSS Feed
     'ytfzf'                       # YouTube search
 
@@ -128,38 +107,23 @@ PRGS=(
     'pulseaudio-bluetooth'        # Bluetooth support
     'feh'                         # Image viewer
     'mpv'                         # Media player
-    'gimp'                        # Image manipulation
     'pavucontrol'                 # GTK audio control
-  
 
     # PRODUCTIVITY ------------------------------------
     'anki'                        # Flashcard app
-    'obs-studio'                  # Screen Recorder
-    'pcmanfm-gtk3'                     # GTK file manager
+    'pcmanfm-gtk3'                # GTK file manager
     'zoom'                        # Virtual Classroom
     'teams'                       # Video Communication
     'zsa-wally-cli'               # Keyboard Layout
     'masterpdfeditor'             # PDF editor
-    'zathura'                     # PDF viewer
-
-    # PRINTER -----------------------------------------
-    'cups'                        # Printer system
-    'hplip'                       # HP drivers
-    'system-config-printer'       # Gui tool
 
     # VIRTUALIZATION ----------------------------------
     'virtualbox'                  # OS virtualization
-    'virtualbox-host-modules-arch' # Kernel modules
+    'virtualbox-host-modules-arch'# Kernel modules
 )
 
 # Compare list with already installed packages
 packages=$(comm -13 <(pacman -Qqe | sort) <(printf "%s\n" "${PRGS[@]}" | sort))
-
-# ------------------------------------------------------
-
-echo "The following programs will be installed:"
-echo $packages
-
 
 # Installation loop
 for PKG in $packages; do
@@ -168,51 +132,20 @@ for PKG in $packages; do
 done
 
 # SNAP PACKAGES ----------------------------------------
-sudo systemctl enable snapd.service && systemctl start snapd.service
+
+sudo systemctl enable snapd.service
+sudo systemctl start snapd.service
 sudo snap install mailspring
 
-# REMOVING UNNEEDED PACKAGES ---------------------------
-
-echo
-echo "Removing clutter"
-echo
-
-# Packages
-RMV=(
-    'gvfs'
-    'nitrogen'
-    'volumeicon'
-    'xfce4-settings'
-    'xfce4-power-manager'
-    'xfce4-notifyd'
-    'gsimplecal'
-)
-
-# Removal
-for RM in "${RMV[@]}"; do
-    echo "REMOVING: ${RM}"
-    sudo sudo -u $USER $aurhelper -R "$RM" --noconfirm 
-done
-
 # ------------------------------------------------------
 
 echo
-echo "RUMNO: Build program"
+echo "LUNARVIM: Single line install"
 
-# Only install if doesnt exist
-if ! command -v rumno &> /dev/null
-then
-    git clone https://gitlab.com/natjo/rumno.git "$HOME/.dotfiles/misc/rumno"
-    cd $HOME/.dotfiles/misc/rumno
-    cargo build --release
-    cd target/release
-    sudo cp rumno-background /usr/local/bin
-    sudo cp rumno /usr/local/bin
-else
-    echo "Rumno already Exists, skipping..."
-fi
+# Single line command
+LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh) 
 
-# ------------------------------------------------------
+# -----------------------------------------------------
 
 echo
 echo "Done!"
@@ -222,23 +155,6 @@ echo
 # ------------------------------------------------------
 # --- PART 3: FINAL SETUP ------------------------------
 # ------------------------------------------------------
-
-echo
-echo "-------------------------------------"
-echo "Welcome to the configuration part of the script. 
-This will deploy my dotfiles and download some files."
-echo "-------------------------------------"
-echo
-
-# User confirmation dialog
-while true; do
-    read -p "Do you wish to proceed? [y/n]" yn
-    case $yn in
-        [Yy]* ) break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
 echo
 echo "FINAL SETUP AND CONFIGURATION"
 
@@ -257,70 +173,7 @@ done
 
 # Clone dotfiles
 sudo rm -rf $HOME/.dotfiles
-cd ~
-git clone git@github.com:fabian-gubler/.dotfiles.git
-
-# ------------------------------------
-
-echo
-echo "RANGER: Configuring devicons"
-
-git clone https://github.com/maximtrp/ranger-archives.git ~/.config/ranger/plugins/ranger_devicons
-git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
-echo "default_linemode devicons" >> $HOME/.dotfiles/ranger/rc.conf
-
-# ------------------------------------
-
-echo
-echo "ZSH: Configuring prompt"
-
-# Create .zsh directory and clone repo
-mkdir -p "$HOME/.config/zsh"
-git clone https://github.com/sindresorhus/pure.git "$HOME/.config/zsh/pure"
-
-# Delete .zshrc
-sudo rm -rf $HOME/.zshrc
-
-# ------------------------------------
-
-echo
-echo "MAILSPRILNG: Downloading nord theme"
-
-mkdir $HOME/.config/Mailspring/packages
-git clone https://github.com/faraadi/mailspring-nord-theme.git "$HOME/.config/Mailspring/packages/mailspring-nord-theme"
-
-# ------------------------------------
-
-echo
-echo "DMENU: Build program"
-
-cd $HOME/.dotfiles/dmenu
-sudo make install
-
-# ------------------------------------
-
-echo
-echo "GTK: theming"
-
-mkdir $HOME/.themes
-
-# GTK
-git clone https://github.com/EliverLara/Nordic.git "$HOME/.themes/Nordic"
-
-# Typora
-mkdir $HOME/temp
-git clone https://github.com/pantajoe/typora-nord-theme.git "$HOME/temp/typora"
-cp $HOME/temp/typora/src/nord.css $HOME/.config/Typora/themes/
-cp -r $HOME/temp/typora/src/nord $HOME/.config/Typora/themes/
-rm -rf $HOME/temp
-
-# ------------------------------------
-
-echo
-echo "LUNARVIM: Single line install"
-
-# Single line command
-LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh) 
+git clone git@github.com:fabian-gubler/.dotfiles.git "$HOME/.dotfiles"
 
 # ------------------------------------
 
@@ -334,15 +187,11 @@ sudo ./install
 
 # ------------------------------------
 
-
 # .secrets
 sudo rm -rf $HOME/.secrets
 git clone git@github.com:fabian-gubler/.secrets.git "$HOME/.secrets"
 sudo $HOME/.secrets/install
 
-# .mozilla
-# echo "Dowload and extract mozilla folder"
-sudo $HOME/.secrets/installer/gdrive.sh
 # ------------------------------------
 
 echo
@@ -364,30 +213,25 @@ sudo chown $USER:data /data
 
 # ------------------------------------
 
-# Laptop lid
-sudo sed -i -e 's|[# ]*HandleLidSwitch[ ]*=[ ]*.*|HandleLidSwitch=ignore|g' /etc/systemd/logind.conf
-
 # Systemd
 sudo systemctl enable optimus-manager.service
-sudo systemctl enable --now cups
+sudo systemctl enable cups
 sudo systemctl enable bluetooth.service
 sudo systemctl enable pulseaudio-bluetooth-autoconnect
 sudo systemctl enable snapd.service
 
+# tty
 echo 'KEYMAP=de\nFONT=ter-p32b' | sudo tee /etc/vconsole.conf
-# ------------------------------------
-# Start Printer setup
-sudo hp-setup
 
 # ------------------------------------
 
+# Cleanup Unused Folders
 cd ~
 rmdir Desktop Documents Downloads Music Pictures Videos Templates Public
 rm -rf $HOME/.config/volumeicon
 rm -rf $HOME/.config/nitrogen
 rm -rf $HOME/.config/i3status
 rm -rf $HOME/.config/gsimplecal
-
 
 # FINISH -----------------------------------------------
 

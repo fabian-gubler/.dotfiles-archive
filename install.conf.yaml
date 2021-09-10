@@ -11,6 +11,7 @@
     ~/.config/zsh/.zshrc:                   zsh/.zshrc
     ~/.config/zsh/zsh-aliases:              zsh/zsh-aliases
     ~/.config/zsh/zsh-functions:            zsh/zsh-functions
+    ~/.config/zsh/pure:                     zsh/pure
     ~/.z:                                   zsh/.z
     ~/.config/alacritty:                    alacritty
     ~/.xprofile:                            X/.xprofile
@@ -27,6 +28,8 @@
     ~/.config/lvim/config.lua:              nvim/config.lua
     ~/.local/share/lunarvim/lvim/lua/spacegray/palette.lua:  nvim/palette.lua
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
+    ~/.config/Typora/themes/nord:           typora/nord
+    ~/.config/Typora/themes/nord.css:       typora/nord.css
     ~/.config/gtk-3.0/settings.ini:         system/gtk/settings.ini
     ~/.gtkrc-2.0:                           system/gtk/.gtkrc-2.0
     ~/.config/qt5ct/qt5ct.conf:             system/qt/qt5ct.conf
@@ -36,6 +39,7 @@
     ~/.newsboat/urls:                       newsboat/urls
     ~/.newsboat/config:                     newsboat/config
     ~/.config/ytfzf:                        ytfzf
+    ~/.themes/Nordic:                       system/gtk/Nordic
       
 
     # TOOLS -------------------------------------------------------
@@ -45,6 +49,7 @@
     ~/.config/polybar/modules.ini:          archive/polybar/modules.ini
     ~/.config/ranger/rc.conf:               ranger/rc.conf
     ~/.config/ranger/rifle.conf:            ranger/rifle.conf
+    ~/.config/ranger/plugins:               ranger/plugins
     ~/.config/rofi/config:                  archive/rofi/config
     ~/.config/rofi/themes/minimal.rasi:     archive/rofi/minimal.rasi
     ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf

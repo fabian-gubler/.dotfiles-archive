@@ -37,8 +37,8 @@ keymap('n', '<leader>u', '<cmd>UndotreeToggle<cr>', {})
 keymap('', ',', '<Plug>(easymotion-sn)', {})
 keymap('', '/', '<Plug>(easymotion-sn)', {})
 keymap('n', 'q', ':q<cr>', {})
+keymap('v', '<C-c>', '"+c', {})
 
--- Undodir
 g.undotree_WindowLayout = 2
 
 -- Additional Leader bindings for WhichKey
