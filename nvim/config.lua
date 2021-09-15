@@ -16,8 +16,10 @@ o.termguicolors = true
 -- General
 lvim.format_on_save = true
 lvim.lint_on_save = true
-lvim.colorscheme = "spacegray"
+lvim.colorscheme = "onedarker"
 
+-- Disable virtual text
+lvim.lsp.diagnostics.virtual_text = false
 
 -- Additional Plugins
 lvim.plugins = {
@@ -30,7 +32,6 @@ lvim.plugins = {
     {"rbgrouleff/bclose.vim"},
     {"norcalli/nvim-colorizer.lua"},
 }
-require("colorizer").setup()
 
 -- Custom Keymappings
 keymap('n', '<leader>u', '<cmd>UndotreeToggle<cr>', {})

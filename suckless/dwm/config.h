@@ -36,10 +36,6 @@ static const Rule rules[] = {
 	/* class            instance    title       tags mask     isfloating   monitor    scratch key */
 	{ "Gimp",           NULL,       NULL,       0,            1,           -1,        0  },
 	{ "Firefox",        NULL,       NULL,       1 << 8,       0,           -1,        0  },
-	{ "firefox",        NULL,       NULL,       0,            0,           -1,       's' },
-	{ "Mailspring",     NULL,       NULL,       0,            0,           -1,       'm' },
-	{ "Typora",         NULL,       NULL,       0,            0,           -1,       't' },
-	{ NULL,             NULL,       "scratch",  0,            0,           -1,       'r' },
 };
 
 /* layout(s) */
@@ -74,17 +70,15 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[] = { "alacritty", NULL };
 
-/*First arg only serves to match against key in rules*/
-static const char *firefoxscratch[] = {"s", "firefox", NULL}; 
-static const char *mailscratch[] = {"m", "mailspring", NULL}; 
-static const char *notescratch[] = {"t", "typora", NULL}; 
-static const char *termscratch[] = {"r", "alacritty", "-t", "scratch", "-e", "tmuxdd", NULL}; 
-
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
   { MODKEY,                       XK_v,      spawn,          SHCMD("networkmanager_dmenu")},
-  { MODKEY,                       XK_f,      spawn,          SHCMD("alacritty -e ranger")},
+  { MODKEY,                       XK_g,      spawn,          SHCMD("mailspring")},
+  { MODKEY,                       XK_w,      spawn,          SHCMD("firefox")},
+  { MODKEY,                       XK_a,      spawn,          SHCMD("typora")},
+  { MODKEY,                       XK_f,      spawn,          SHCMD("ferdi")},
+  { MODKEY,                       XK_Return, spawn,          SHCMD("alacritty -e tmuxdd")},
   { MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("pcmanfm")},
   { MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmlogout")},
   { MODKEY,                       XK_j,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmconf")},
@@ -95,18 +89,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("VBoxManage startvm 'Windows 10'")},
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("pavucontrol")},
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, togglescratch,  {.v = termscratch } },
-	{ MODKEY,                       XK_w,      togglescratch,  {.v = firefoxscratch } },
-	{ MODKEY,                       XK_g,      togglescratch,  {.v = mailscratch } },
-	{ MODKEY,                       XK_a,      togglescratch,  {.v = notescratch } },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("alacritty -e ytfzf -t --preview-side=right")},
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
   { MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_m,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_i,      setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_n,      movestack,      {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_e,      movestack,      {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_n,      movestack,      {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_e,      movestack,      {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
@@ -151,7 +141,7 @@ static Button buttons[] = {
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
+	{ ClkClientWin,         MODKEY,         Button1,        resizemouse,    {0} },
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },

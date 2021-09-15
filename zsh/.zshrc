@@ -14,6 +14,15 @@ prompt pure
 zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
 PURE_CMD_MAX_EXEC_TIME=99999999999999
 
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored
+zstyle :compinstall filename '/home/fabian/.config/zsh/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
 # Useful Functions
 source "$ZDOTDIR/zsh-functions"
 

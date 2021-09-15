@@ -1,0 +1,12 @@
+{
+  "id": "franz-todos",
+  "name": "Franz ToDos",
+  "version": "1.0.0",
+  "description": "Franz Todos",
+  "main": "index.js",
+  "author": "Stefan Malzner <stefan@adlk.io>",
+  "license": "MIT",
+  "config": {
+    "serviceURL": "https://app.franztodos.com"
+  }
+}

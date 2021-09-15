@@ -35,6 +35,7 @@ choice=$(printf '%s\n' "${options[@]}" | dmenu -p 'Shutdown menu:' "${@}" )
 # What to do when/if we choose one of the options.
 case $choice in
     'Lock')
+        systemctl suspend
         slock
         ;;
     'Reboot')

@@ -40,6 +40,9 @@
     ~/.newsboat/config:                     newsboat/config
     ~/.config/ytfzf:                        ytfzf
     ~/.themes/Nordic:                       system/gtk/Nordic
+    ~/.config/xournalpp:                    xournal
+    ~/.config/Ferdi/recipes:                ferdi/recipes
+    ~/.config/Ferdi/config:                 ferdi/config
       
 
     # TOOLS -------------------------------------------------------
@@ -54,6 +57,7 @@
     ~/.config/rofi/themes/minimal.rasi:     archive/rofi/minimal.rasi
     ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf
     ~/.config/autorandr/postswitch:         system/autorandr/postswitch
+    ~/.config/zathura:                      zathura
       
 
     # WEB TOOLS ---------------------------------------------------
@@ -70,3 +74,4 @@
     # SUDO --------------------------------------------------------
     /usr/local/bin/rumno:                   system/rumno/build/rumno
     /usr/local/bin/rumno-background:        system/rumno/build/rumno-background
+    /usr/local/bin/tmuxdd:                  tmux/tmuxdd

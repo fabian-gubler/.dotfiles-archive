@@ -98,6 +98,7 @@ PRGS=(
     'firefox-tridactyl-native'    # Vim integration
     'newsboat'                    # RSS Feed
     'ytfzf'                       # YouTube search
+    'ferdi'                       # Website Platform
 
     # MEDIA -------------------------------------------
     'alsa-utils'                  # For setting volume
@@ -220,8 +221,8 @@ sudo systemctl enable bluetooth.service
 sudo systemctl enable pulseaudio-bluetooth-autoconnect
 sudo systemctl enable snapd.service
 
-# tty
-echo 'KEYMAP=de\nFONT=ter-p32b' | sudo tee /etc/vconsole.conf
+# tty | add FONT=ter-p32b
+echo 'KEYMAP=de' | sudo tee /etc/vconsole.conf
 
 # ------------------------------------
 

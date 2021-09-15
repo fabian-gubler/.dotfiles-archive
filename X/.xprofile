@@ -14,12 +14,9 @@ export ZDOTDIR=$HOME/.config/zsh
 export TERM=alacritty
 export LANG="en_US.utf8"
 
-# --- Startup programs
-optimus-manager &
-prime-offload &
+# --- Startup services
 bluetoothctl power on &
 picom -b &
-xfce4-power-manager &
 unclutter --timeout 3 --start-hidden &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 gnome-keyring-daemon --start --components=pkcs11 &
@@ -30,7 +27,7 @@ setxkbmap -config /home/fabian/.config/keyboard.conf &
 mailspring -b &
 rumno-background &
 slstatus &
-insync start &
 
-# Tablet
-# touchegg &
+# --- Background Applications
+insync start &
+/home/fabian/.dotfiles/scripts/utils/ferdi.sh &
