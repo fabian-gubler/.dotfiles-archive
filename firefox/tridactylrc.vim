@@ -7,12 +7,14 @@ bind d fillcmdline_notrail
 
 " Navigation
 bind n scrollline 10
+bind <C-d> scrollline 30
 bind e scrollline -10
+bind <C-u> scrollline -30
 bind i scrollpx 50
 bind m scrollpx -50
 
 " Tabs
-bind --mode=browser <A-h> tabopen about:blank
+bind --mode=browser <A-u> tabopen about:blank
 bind --mode=browser <A-l> tabclosealltoleft
 
 " Hinting
@@ -22,8 +24,6 @@ bind S hint -b
 " Unbind
 unbind h
 unbind <C-b>
-unbind <C-d>
-unbind <C-u>
 
 " Tools
 bind gd open https://drive.google.com/drive/my-drive
@@ -74,6 +74,10 @@ unbindurl drive.google.com m
 
 " Google Docs
 unbindurl docs.google.com u
+
+" Blacklist
+blacklistadd calendar.google.com
+
 " --------------------------------------------------------------------------------
 " --- Alias
 " --------------------------------------------------------------------------------

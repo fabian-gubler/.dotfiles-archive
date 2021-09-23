@@ -41,5 +41,6 @@ source /home/fabian/.dotfiles/zsh/plugins/z/zsh-z.plugin.zsh
 bindkey -e                    # emacs bindings
 bindkey -s '^f' 'ranger^M'    # open ranger
 bindkey -s '^t' 'exa -a^M'    # open ranger
-bindkey "^[i" forward-word    # alt + i
-bindkey "^[m" backward-word   # alt + m
+bindkey "^[[1;5D" backward-word   # ctrl + m
+bindkey "^[[1;5C" forward-word   # ctrl + m
+bindkey "^[[3~" delete-char

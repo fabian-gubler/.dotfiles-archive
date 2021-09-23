@@ -23,10 +23,10 @@ gnome-keyring-daemon --start --components=pkcs11 &
 xset r rate 350 60 &
 xset s off -dpms &
 hsetroot -solid "#252a34" &
-setxkbmap -config /home/fabian/.config/keyboard.conf &
 mailspring -b &
 rumno-background &
 slstatus &
+setxkbmap -config /home/fabian/.config/keyboard.conf &
 
 # --- Background Applications
 insync start &

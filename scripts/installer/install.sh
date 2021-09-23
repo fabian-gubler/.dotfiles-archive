@@ -60,6 +60,7 @@ PRGS=(
     'adwaita-qt'                  # Adwaita dark
     'hsetroot'                    # Solid Background
     'snapd'                       # External packages
+    'pipewire'                    # Multimedia framework
 
     # UTILITIES ---------------------------------------
     'ranger'                      # File explorer
@@ -79,8 +80,6 @@ PRGS=(
     'unzip'                       # Unzip directories
     'acpilight'                   # Backlight
     'tmux'                        # Terminal Multiplexer
-    'touchegg'                    # Gesture support
-    'touche'                      # Customize touchegg
 
     # SC-IM Dependencies ------------------------------
     'libxml2'
@@ -94,7 +93,7 @@ PRGS=(
     'typora'                      # Markdown editor
 
     # WEB TOOLS ---------------------------------------
-    'firefox'                     # Web browser
+    'firefox-developer-edition'   # Web browser
     'firefox-tridactyl-native'    # Vim integration
     'newsboat'                    # RSS Feed
     'ytfzf'                       # YouTube search
@@ -223,6 +222,9 @@ sudo systemctl enable snapd.service
 
 # tty | add FONT=ter-p32b
 echo 'KEYMAP=de' | sudo tee /etc/vconsole.conf
+
+# Wifi connect automatically
+nmcli radio wifi on
 
 # ------------------------------------
 

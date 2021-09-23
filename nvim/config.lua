@@ -13,13 +13,16 @@ o.relativenumber = true
 o.ignorecase = true
 o.termguicolors = true
 
--- General
-lvim.format_on_save = true
-lvim.lint_on_save = true
-lvim.colorscheme = "onedarker"
+-- Global
+g.undotree_WindowLayout = 2
+g.auto_save = 1
+g.auto_save_silent = 1
 
--- Disable virtual text
+-- Lunarvim
+lvim.format_on_save = false
+lvim.lint_on_save = false
 lvim.lsp.diagnostics.virtual_text = false
+lvim.colorscheme = "onedarker"
 
 -- Additional Plugins
 lvim.plugins = {
@@ -34,30 +37,30 @@ lvim.plugins = {
 }
 
 -- Custom Keymappings
+keymap('n', '<C-c>', ':split | terminal javac % && java %<cr>', {})
+keymap('n', '<C-a>', ':split | terminal parser %<cr>', {})
+keymap('n', '<leader>x', '<cmd>bd!<cr>', {})
 keymap('n', '<leader>u', '<cmd>UndotreeToggle<cr>', {})
 keymap('', ',', '<Plug>(easymotion-sn)', {})
 keymap('', '/', '<Plug>(easymotion-sn)', {})
 keymap('n', 'q', ':q<cr>', {})
-keymap('v', '<C-c>', '"+c', {})
-
-g.undotree_WindowLayout = 2
-
--- Additional Leader bindings for WhichKey
-lvim.builtin.which_key.mappings["a"] = {
-  "<cmd>CommentToggle<cr>","Comment"
-}
 
 -- Native
 vim.cmd([[
+    autocmd TermOpen * startinsert
     autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
-    let g:auto_save = 1  " enable AutoSave on Vim startup
-    let g:auto_save_silent = 1  " do not display the auto-save notification
     let bufferline = get(g:, 'bufferline', {})
     let bufferline.auto_hide = v:true
     let bufferline.animation = v:false
     let bufferline.closable = v:false
 ]])
 
+-- Additional Leader bindings for WhichKey
+lvim.builtin.which_key.mappings["a"] = {
+  "<cmd>CommentToggle<cr>","Comment"
+}
+
+-- Lunarvim
 lvim.builtin.dashboard.active = false
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"

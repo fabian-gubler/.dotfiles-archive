@@ -7,17 +7,17 @@
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Floating Toolbox (experimental) Copy"/>
   <property name="lastSavePath" value="/data/drive/hsg/semester/webapps"/>
-  <property name="lastOpenPath" value="/data/drive/hsg/semester/1-webapps/source"/>
+  <property name="lastOpenPath" value="/data/drive/hsg/semester/webapps"/>
   <property name="lastImagePath" value=""/>
   <property name="zoomStep" value="10.00000000"/>
   <property name="zoomStepScroll" value="2.00000000"/>
   <property name="displayDpi" value="72"/>
-  <property name="mainWndWidth" value="1920"/>
-  <property name="mainWndHeight" value="1280"/>
+  <property name="mainWndWidth" value="3440"/>
+  <property name="mainWndHeight" value="1440"/>
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="true"/>
   <property name="showSidebar" value="false"/>
-  <property name="sidebarWidth" value="117"/>
+  <property name="sidebarWidth" value="50"/>
   <property name="sidebarOnRight" value="false"/>
   <property name="scrollbarOnLeft" value="false"/>
   <property name="menubarVisible" value="true"/>
@@ -109,7 +109,7 @@
   <property name="latexSettings.autoCheckDependencies" value="true"/>
   <property name="latexSettings.globalTemplatePath" value="/usr/share/xournalpp/resources/default_template.tex"/>
   <property name="latexSettings.genCmd" value="pdflatex -halt-on-error -interaction=nonstopmode '{}'"/>
-  <property name="font" font="SF Pro Text" size="13.00000000"/>
+  <property name="font" font="SF Pro Text Bold" size="13.00000000"/>
   <data name="buttonConfig">
     <data name="default">
       <attribute name="color" type="hex" value="ff142e9a"/>
@@ -163,6 +163,10 @@
       <attribute name="deviceClass" type="int" value="3"/>
       <attribute name="deviceSource" type="int" value="2"/>
     </data>
+    <data name="Wacom HID 525C Pen Pen (0)">
+      <attribute name="deviceClass" type="int" value="2"/>
+      <attribute name="deviceSource" type="int" value="1"/>
+    </data>
     <data name="Wacom HID 525C Pen Pen (0xb7c40977)">
       <attribute name="deviceClass" type="int" value="2"/>
       <attribute name="deviceSource" type="int" value="1"/>
@@ -189,7 +193,7 @@
     <attribute name="count" type="int" value="9"/>
   </data>
   <data name="tools">
-    <attribute name="current" type="string" value="pen"/>
+    <attribute name="current" type="string" value="text"/>
     <data name="drawArrow">
       <attribute name="drawingType" type="string" value="default"/>
     </data>
@@ -214,21 +218,21 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="highlighter">
-      <attribute name="color" type="hex" value="50fa7b"/>
+      <attribute name="color" type="hex" value="ff79c6"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
-      <attribute name="size" type="string" value="BIG"/>
+      <attribute name="size" type="string" value="VERY_FINE"/>
     </data>
     <data name="image">
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="pen">
-      <attribute name="color" type="hex" value="f8f8f2"/>
+      <attribute name="color" type="hex" value="ff142e9a"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
-      <attribute name="size" type="string" value="BIG"/>
+      <attribute name="size" type="string" value="MEDIUM"/>
       <attribute name="style" type="string" value="plain"/>
     </data>
     <data name="playObject">
@@ -248,7 +252,7 @@
     </data>
     <data name="text">
       <attribute name="color" type="hex" value="000000"/>
-      <attribute name="drawingType" type="string" value="default"/>
+      <attribute name="drawingType" type="string" value="strokeRecognizer"/>
     </data>
     <data name="verticalSpace">
       <attribute name="drawingType" type="string" value="default"/>

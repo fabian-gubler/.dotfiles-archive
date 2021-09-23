@@ -1,12 +1,12 @@
 # Colemak
-map h     scroll left
-map n     scroll down
-map N    navigate next
-map e     scroll up
-map E  navigate previous
+map m     scroll left
+map h     scroll down
+map l     scroll up
+map n     navigate next
+map e     navigate previous
 map i     scroll right
 map r     recolor
-map p print
+map p     print
 
 # Base16 Nord
 set default-bg                  "#2E3440"
@@ -36,5 +36,7 @@ set completion-fg               "#81A1C1"
 set completion-highlight-fg     "#8FBCBB"
 set completion-highlight-bg     "#81A1C1"
 
+set recolor                     "true"
+set recolor-keephue             "true"
 set recolor-lightcolor          "#2E3440"
 set recolor-darkcolor           "#ECEFF4"
