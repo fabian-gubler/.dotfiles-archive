@@ -1,32 +1,23 @@
 # Productivity
 alias firefox="firefox-developer-edition"
 alias gpush="git add . && git commit -m 'update' && git push"
-alias sc="sc-im"
+alias sound="sudo python3 $HOME/.dotfiles/scripts/utils/sound/applyimproved.py $HOME/.dotfiles/scripts/utils/sound/alc285.txt"
 alias v="lvim"
 alias sv="sudoedit"
-alias ll='exa --header --long --git -a'
-alias r='autorandr'
-alias rsyncy='sudo rsync -a --info=progress2'
-alias rsync-delete="sudo rsync -a --delete --info=progress2"
 alias drive='lsblk'
 alias pls='sudo $(fc -ln -1)'
-alias pirate="~/scripts/cli-torrent-dl/tordl.sh"
 alias q="exit"
-alias yt="ytfzf --preview-side=right -t"
-alias sub="ytfzf --preview-side=right -tS "
-alias polystart="$HOME/.config/polybar/launch.sh &"
 alias zoomdl="zoomdl -u"
-alias dragon="dragon-drag-and-drop"
-alias agenda="gcalcli agenda --military"
 alias monitor="autorandr --load monitor"
 alias laptop="autorandr --load laptop"
 alias night="redshift -O 4300"
 alias day="redshift -x"
-alias bat="cat /sys/class/power_supply/BAT0/capacity"
 alias top="gotop -l minimal"
 alias xev="xev -event keyboard  | egrep -o 'keycode.*\)'"
-alias lock="betterlockscreen -l dim && exit"
-alias background="feh --bg-fill ~/pics/feh/wall2.jpeg"
+
+# File Operations
+alias rsyncy='sudo rsync -a --info=progress2'
+alias rsync-delete="sudo rsync -a --delete --info=progress2"
 
 # Maintenance
 alias cleancache="sudo paccache -rk 1 && paccache -ruk0"
@@ -40,3 +31,12 @@ alias update='yay -Syyu'
 
 # Spelling
 alias vim='nvim'
+
+# More Complex
+cl() {
+        cd "$@" && exa -a;
+}
+
+zl() {
+        zshz "$@" && exa -a;
+}

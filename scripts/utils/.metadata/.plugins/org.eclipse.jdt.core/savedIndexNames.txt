@@ -1,4 +1,0 @@
-INDEX VERSION 1.131+/home/fabian/.dotfiles/scripts/utils/.metadata/.plugins/org.eclipse.jdt.core
-1865797976.index
-3842426239.index
-3725866262.index

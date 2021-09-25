@@ -39,9 +39,10 @@ case $1 in
         NOW=$( amixer get Master |grep 'Right:' | awk -F'[]%[]' '{ print $2 }' );
         if [ $MUTED = "no" ]
         then
-            $BIN --custom-symbol ~/.dotfiles/misc/rumno/res/volume_alt.svg;
+            $BIN  -v $NOW;
         else
             $BIN  -v $NOW;
+            rumno --custom-symbol $HOME/.dotfiles/system/rumno/build/res/volume_alt.svg;
         fi
         ;;
     $BRIGHTNESS_INC)

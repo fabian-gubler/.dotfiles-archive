@@ -4,6 +4,7 @@ local g = vim.g
 local keymap = vim.api.nvim_set_keymap
 local opt = { noremap = true }
 local home = os.getenv( "HOME" )
+local cmd = vim.cmd
 g.mapleader = ' '
 
 -- Options
@@ -17,6 +18,10 @@ o.termguicolors = true
 g.undotree_WindowLayout = 2
 g.auto_save = 1
 g.auto_save_silent = 1
+
+-- Autocommands
+cmd 'autocmd CmdlineEnter /,? :set hlsearch'
+cmd 'autocmd CmdlineLeave /,? :set nohlsearch'
 
 -- Lunarvim
 lvim.format_on_save = false
@@ -41,7 +46,7 @@ keymap('n', '<C-c>', ':split | terminal javac % && java %<cr>', {})
 keymap('n', '<C-a>', ':split | terminal parser %<cr>', {})
 keymap('n', '<leader>x', '<cmd>bd!<cr>', {})
 keymap('n', '<leader>u', '<cmd>UndotreeToggle<cr>', {})
-keymap('', ',', '<Plug>(easymotion-sn)', {})
+keymap('', ',', '<Plug>(easymotion-overwin-f2)', {})
 keymap('', '/', '<Plug>(easymotion-sn)', {})
 keymap('n', 'q', ':q<cr>', {})
 
