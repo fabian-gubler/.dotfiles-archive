@@ -50,6 +50,11 @@ PRGS=(
     'python-pip'                  # Python packages
     'rust'                        # Programming language
 
+    # DEVELOPMENT -------------------------------------
+    'git'                         # Version control
+    'neovim'                      # Text editor
+    'typora'                      # Markdown editor
+
     # SYSTEM ------------------------------------------
     'alacritty'                   # Terminal
     'zsh'                         # Shell
@@ -58,9 +63,6 @@ PRGS=(
     'exa'                         # Better ls
     'qt5ct'                       # Qt theming
     'adwaita-qt'                  # Adwaita dark
-    'hsetroot'                    # Solid Background
-    'snapd'                       # External packages
-    'pipewire'                    # Multimedia framework
 
     # UTILITIES ---------------------------------------
     'ranger'                      # File explorer
@@ -73,26 +75,14 @@ PRGS=(
     'insync'                      # Cloud sync
     'gotop-bin'                   # System monitoring
     'networkmanager-dmenu-git'    # Network manager
-    'rofi'                        # Custom Menus
     'devour'                      # Swallow programs
     'dragon-drag-and-drop-git'    # Drag and drop
     'baobab'                      # Disk space
     'unzip'                       # Unzip directories
-    'acpilight'                   # Backlight
     'tmux'                        # Terminal Multiplexer
 
-    # SC-IM Dependencies ------------------------------
-    'libxml2'
-    'libzip'
-    'gnuplot'
-    'libxlsxwriter'
-
-    # DEVELOPMENT -------------------------------------
-    'git'                         # Version control
-    'neovim'                      # Text editor
-    'typora'                      # Markdown editor
-
     # WEB TOOLS ---------------------------------------
+    'firefox'                     # Web browser
     'firefox-developer-edition'   # Web browser
     'firefox-tridactyl-native'    # Vim integration
     'newsboat'                    # RSS Feed
@@ -110,12 +100,21 @@ PRGS=(
     'pavucontrol'                 # GTK audio control
 
     # PRODUCTIVITY ------------------------------------
+    'mailspring'                  # Email Client 
     'anki'                        # Flashcard app
     'pcmanfm-gtk3'                # GTK file manager
     'zoom'                        # Virtual Classroom
     'teams'                       # Video Communication
     'zsa-wally-cli'               # Keyboard Layout
     'masterpdfeditor'             # PDF editor
+    'zathura'                     # PDF viewer
+    'xournal'                     # PDF markup
+
+    # SC-IM Dependencies ------------------------------
+    'libxml2'
+    'libzip'
+    'gnuplot'
+    'libxlsxwriter'
 
     # VIRTUALIZATION ----------------------------------
     'virtualbox'                  # OS virtualization
@@ -130,12 +129,6 @@ for PKG in $packages; do
     echo "INSTALLING: $PKG"
     sudo sudo -u $USER $aurhelper -S "$PKG" --noconfirm --needed
 done
-
-# SNAP PACKAGES ----------------------------------------
-
-sudo systemctl enable snapd.service
-sudo systemctl start snapd.service
-sudo snap install mailspring
 
 # ------------------------------------------------------
 
@@ -158,67 +151,10 @@ echo
 echo
 echo "FINAL SETUP AND CONFIGURATION"
 
-ssh-keygen
-cat $HOME/.ssh/id_rsa.pub
-
-# User confirmation dialog
-while true; do
-    read -p "Please add your ssh key to github settings [y/n]" yn
-    case $yn in
-        [Yy]* ) break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
-
-# Clone dotfiles
-sudo rm -rf $HOME/.dotfiles
-git clone git@github.com:fabian-gubler/.dotfiles.git "$HOME/.dotfiles"
-
-# ------------------------------------
-
-echo
-echo "DOTFILES: Deploying files"
-
-# .dotfiles
-echo "Deploying my dotfiles"
-cd $HOME/.dotfiles
-sudo ./install
-
-# ------------------------------------
-
-# .secrets
-sudo rm -rf $HOME/.secrets
-git clone git@github.com:fabian-gubler/.secrets.git "$HOME/.secrets"
-sudo $HOME/.secrets/install
-
-# ------------------------------------
-
-echo
-echo "HDD: Mounting and give ownership"
-
-# Create group & add user
-sudo groupadd data
-sudo usermod -a -G data $USER
-sudo usermod -a -G video $USER
-
-# Append sdb1 to fstab
-sudo echo "# /dev/sdb1
-UUID=3c01e926-8fa4-42ab-a988-0f83e7e05df5 /data    auto nosuid,nodev,nofail,x-gvfs-show 0 0" >> /etc/fstab
-sudo mkdir /data
-sudo mount -a
-
-# Ownership permission
-sudo chown $USER:data /data
-
-# ------------------------------------
-
 # Systemd
-sudo systemctl enable optimus-manager.service
 sudo systemctl enable cups
 sudo systemctl enable bluetooth.service
 sudo systemctl enable pulseaudio-bluetooth-autoconnect
-sudo systemctl enable snapd.service
 
 # tty | add FONT=ter-p32b
 echo 'KEYMAP=de' | sudo tee /etc/vconsole.conf
@@ -226,15 +162,20 @@ echo 'KEYMAP=de' | sudo tee /etc/vconsole.conf
 # Wifi connect automatically
 nmcli radio wifi on
 
-# ------------------------------------
+ssh-keygen
+cat $HOME/.ssh/id_rsa.pub
 
-# Cleanup Unused Folders
-cd ~
-rmdir Desktop Documents Downloads Music Pictures Videos Templates Public
-rm -rf $HOME/.config/volumeicon
-rm -rf $HOME/.config/nitrogen
-rm -rf $HOME/.config/i3status
-rm -rf $HOME/.config/gsimplecal
+# User confirmation dialog
+while true; do
+    read -p "Add your ssh key to github settings [y/n]" yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+# Optional: git clone command
 
 # FINISH -----------------------------------------------
 

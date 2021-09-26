@@ -47,12 +47,10 @@ case $1 in
         ;;
     $BRIGHTNESS_INC)
         xbacklight -inc 10;
-        # $BIN -b $( xbacklight -get )  --bar-filled-color F1E57A --bar-empty-color F1E57A40;
         $BIN -b $( xbacklight -get ) ;
         ;;
     $BRIGHTNESS_DEC)
         xbacklight -dec 10;
-        # $BIN -b $( xbacklight -get )  --bar-filled-color F1E57A --bar-empty-color F1E57A40;
         $BIN -b $( xbacklight -get ) ;
         ;;
     $SPOTIFY_NEXT)

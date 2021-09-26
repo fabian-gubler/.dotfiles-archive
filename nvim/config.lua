@@ -43,7 +43,9 @@ lvim.plugins = {
 
 -- Custom Keymappings
 keymap('n', '<C-c>', ':split | terminal javac % && java %<cr>', {})
-keymap('n', '<C-a>', ':split | terminal parser %<cr>', {})
+keymap('n', '<leader>a', ':CommentToggle<cr>', {})
+keymap('v', '<leader>a', ':CommentToggle<cr>', {})
+keymap('n', '<C-s>', ':split | terminal parser %<cr>', {})
 keymap('n', '<leader>x', '<cmd>bd!<cr>', {})
 keymap('n', '<leader>u', '<cmd>UndotreeToggle<cr>', {})
 keymap('', ',', '<Plug>(easymotion-overwin-f2)', {})
@@ -60,10 +62,15 @@ vim.cmd([[
     let bufferline.closable = v:false
 ]])
 
+-- Overwrite Lunarvim Binds
+lvim.keys.normal_mode["<S-m>"] = ":BufferPrevious<CR>"
+lvim.keys.normal_mode["<S-i>"] = ":BufferNext<CR>"
+lvim.keys.normal_mode["<S-l>"] = nil
+
 -- Additional Leader bindings for WhichKey
-lvim.builtin.which_key.mappings["a"] = {
-  "<cmd>CommentToggle<cr>","Comment"
-}
+-- lvim.builtin.which_key.mappings["a"] = {
+--   "<cmd>CommentToggle<cr>","Comment"
+-- }
 
 -- Lunarvim
 lvim.builtin.dashboard.active = false

@@ -22,7 +22,7 @@ unclutter --timeout 3 --start-hidden &
 gnome-keyring-daemon --start --components=pkcs11 &
 xset r rate 350 60 &
 xset s off -dpms &
-hsetroot -solid "#252a34" &
+xsetroot -solid "#252a34" &
 mailspring -b &
 rumno-background &
 slstatus &
