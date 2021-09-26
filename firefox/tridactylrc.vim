@@ -113,9 +113,3 @@ set smoothscroll true
 
 " Colourscheme
 colourscheme nord
-
-
-
-
-
-

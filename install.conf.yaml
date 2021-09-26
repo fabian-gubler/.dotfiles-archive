@@ -58,6 +58,7 @@
     ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf
     ~/.config/autorandr/postswitch:         system/autorandr/postswitch
     ~/.config/zathura:                      zathura
+    ~/.config/spicetify:                    spicetify
       
 
     # WEB TOOLS ---------------------------------------------------
