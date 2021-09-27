@@ -80,6 +80,7 @@ PRGS=(
     'baobab'                      # Disk space
     'unzip'                       # Unzip directories
     'tmux'                        # Terminal Multiplexer
+    'ncpamixer'                   # Cli Pavucontrol
 
     # WEB TOOLS ---------------------------------------
     'firefox'                     # Web browser

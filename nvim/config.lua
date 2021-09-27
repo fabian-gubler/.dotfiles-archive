@@ -1,10 +1,15 @@
--- Variables
+-- Local
 local o = vim.opt
 local g = vim.g
+local cmd = vim.cmd
 local keymap = vim.api.nvim_set_keymap
 local opt = { noremap = true }
 local home = os.getenv( "HOME" )
-local cmd = vim.cmd
+
+-- Global
+g.undotree_WindowLayout = 2
+g.auto_save = 1
+g.auto_save_silent = 1
 g.mapleader = ' '
 
 -- Options
@@ -15,37 +20,51 @@ o.ignorecase = true
 o.termguicolors = true
 o.colorcolumn = "80"
 
--- Global
-g.undotree_WindowLayout = 2
-g.auto_save = 1
-g.auto_save_silent = 1
+-- Additional Plugins
+lvim.plugins = {
+  {"907th/vim-auto-save"},
+  {"shaunsingh/nord.nvim"},
+  {"psliwka/vim-smoothie"},
+  {"easymotion/vim-easymotion"},
+  {"mbbill/undotree"},
+  {"francoiscabrol/ranger.vim"},
+  {"rbgrouleff/bclose.vim"},
+  {"norcalli/nvim-colorizer.lua"},
+  {"lukas-reineke/indent-blankline.nvim"},
+  {"iamcco/markdown-preview.nvim"},
+}
 
--- Autocommands
-cmd 'autocmd CmdlineEnter /,? :set hlsearch'
-cmd 'autocmd CmdlineLeave /,? :set nohlsearch'
-
--- Lunarvim
-lvim.format_on_save = false
-lvim.lint_on_save = false
-lvim.lsp.diagnostics.virtual_text = false
-lvim.colorscheme = "onedarker"
-
+require'colorizer'.setup()
 
 -- Custom Keymappings
 keymap('n', '<C-c>', ':split | terminal javac % && java %<cr>', {})
-keymap('n', '<leader>a', ':CommentToggle<cr>', {})
-keymap('v', '<leader>a', ':CommentToggle<cr>', {})
 keymap('n', '<C-s>', ':split | terminal parser %<cr>', {})
-keymap('n', '<leader>x', '<cmd>bd!<cr>', {})
+keymap('n', '<leader>a', ':CommentToggle<cr>', {})
+keymap('n', '<leader>m', ':!typora %<cr>', {})
+keymap('v', '<leader>a', ':CommentToggle<cr>', {})
 keymap('n', '<leader>u', '<cmd>UndotreeToggle<cr>', {})
 keymap('', ',', '<Plug>(easymotion-overwin-f2)', {})
 keymap('', '/', '<Plug>(easymotion-sn)', {})
 keymap('n', 'q', ':q<cr>', {})
+-- Autocommands
+cmd 'autocmd CmdlineEnter /,? :set hlsearch'
+cmd 'autocmd CmdlineLeave /,? :set nohlsearch'
+cmd 'autocmd TermOpen * startinsert'
+cmd 'autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"'
+
+-- Lunarvim
+lvim.colorscheme = "onedarker"
+lvim.format_on_save = false
+lvim.lint_on_save = false
+lvim.lsp.diagnostics.virtual_text = false
+lvim.builtin.dashboard.active = false
+lvim.builtin.terminal.active = true
+lvim.builtin.nvimtree.side = "left"
+lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.treesitter.highlight.enabled = true
 
 -- Native
-vim.cmd([[
-  autocmd TermOpen * startinsert
-  autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
+cmd([[
   let bufferline = get(g:, 'bufferline', {})
   let bufferline.auto_hide = v:true
   let bufferline.animation = v:false
@@ -53,23 +72,19 @@ vim.cmd([[
 ]])
 
 -- Overwrite Lunarvim Binds
-lvim.keys.normal_mode["<S-m>"] = ":BufferPrevious<CR>"
-lvim.keys.normal_mode["<S-i>"] = ":BufferNext<CR>"
+lvim.keys.normal_mode["<S-m>"] = ":BufferPrevious<cr>"
+lvim.keys.normal_mode["<S-i>"] = ":BufferNext<cr>"
 lvim.keys.normal_mode["<S-l>"] = nil
 
--- Additional Leader bindings for WhichKey
--- lvim.builtin.which_key.mappings["a"] = {
---   "<cmd>CommentToggle<cr>","Comment"
--- }
+lvim.builtin.which_key.mappings["f"] = {
+  "<cmd>Telescope file_browser<cr>", "File browser"
+}
 
--- Lunarvim
-lvim.builtin.dashboard.active = false
-lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
-lvim.builtin.treesitter.highlight.enabled = true
+lvim.builtin.which_key.mappings["t"] = {
+  "<cmd>Telescope find_files<cr>", "Find files"
+}
 
--- Colemak
+-- COLEMAK REMAPPING ----------------------------------------------------------
 
 -- left, right, down, up
 keymap('', 'm', 'h', opt)
@@ -125,10 +140,10 @@ keymap('', 'k', 'n', opt)
 -- Inner text objects (dip -> drp)
 keymap('o', 'r', 'i', opt)
 
-vim.cmd([[
-    " Make insert/add work also in visual line mode like in visual block mode
-    xnoremap <silent> <expr> s (mode() =~# "[V]" ? "\<C-V>0o$I" : "I")
-    xnoremap <silent> <expr> S (mode() =~# "[V]" ? "\<C-V>0o$I" : "I")
-    xnoremap <silent> <expr> t (mode() =~# "[V]" ? "\<C-V>0o$A" : "A")
-    xnoremap <silent> <expr> T (mode() =~# "[V]" ? "\<C-V>0o$A" : "A")
+cmd([[
+  " Make insert/add work also in visual line mode
+  xnoremap <silent> <expr> s (mode() =~# "[V]" ? "\<C-V>0o$I" : "I")
+  xnoremap <silent> <expr> S (mode() =~# "[V]" ? "\<C-V>0o$I" : "I")
+  xnoremap <silent> <expr> t (mode() =~# "[V]" ? "\<C-V>0o$A" : "A")
+  xnoremap <silent> <expr> T (mode() =~# "[V]" ? "\<C-V>0o$A" : "A")
 ]])

@@ -59,6 +59,7 @@
     ~/.config/autorandr/postswitch:         system/autorandr/postswitch
     ~/.config/zathura:                      zathura
     ~/.config/spicetify:                    spicetify
+    ~/.config/ncpamixer.conf:               system/ncpamixer/ncpamixer.conf
       
 
     # WEB TOOLS ---------------------------------------------------
