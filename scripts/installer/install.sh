@@ -107,7 +107,8 @@ PRGS=(
     'zoom'                        # Virtual Classroom
     'teams'                       # Video Communication
     'zsa-wally-cli'               # Keyboard Layout
-    'masterpdfeditor'             # PDF editor
+    'masterpdfeditor'             # PDF editor (advanded)
+    'okular'                      # PDF editor (light)
     'zathura'                     # PDF viewer
     'xournal'                     # PDF markup
 
@@ -159,6 +160,9 @@ sudo systemctl enable pulseaudio-bluetooth-autoconnect
 
 # tty | add FONT=ter-p32b
 echo 'KEYMAP=de' | sudo tee /etc/vconsole.conf
+
+# Keyboard
+localectl set-x11-keymap us "" altgr-intl
 
 # Wifi connect automatically
 nmcli radio wifi on

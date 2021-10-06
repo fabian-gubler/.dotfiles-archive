@@ -26,7 +26,8 @@ xsetroot -solid "#252a34" &
 mailspring -b &
 rumno-background &
 slstatus &
-setxkbmap -config /home/fabian/.config/keyboard.conf &
+setxkbmap us altgr-intl &
+redshift &
 
 # --- Background Applications
 insync start &

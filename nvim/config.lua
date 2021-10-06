@@ -31,16 +31,15 @@ lvim.plugins = {
   {"rbgrouleff/bclose.vim"},
   {"norcalli/nvim-colorizer.lua"},
   {"lukas-reineke/indent-blankline.nvim"},
-  {"iamcco/markdown-preview.nvim"},
+  {"cometsong/CommentFrame.vim"},
 }
 
 require'colorizer'.setup()
 
 -- Custom Keymappings
-keymap('n', '<C-c>', ':split | terminal javac % && java %<cr>', {})
+keymap('n', '<C-c>', ':split | terminal python3 %<cr>', {})
 keymap('n', '<C-s>', ':split | terminal parser %<cr>', {})
 keymap('n', '<leader>a', ':CommentToggle<cr>', {})
-keymap('n', '<leader>m', ':!typora %<cr>', {})
 keymap('v', '<leader>a', ':CommentToggle<cr>', {})
 keymap('n', '<leader>u', '<cmd>UndotreeToggle<cr>', {})
 keymap('', ',', '<Plug>(easymotion-overwin-f2)', {})
@@ -76,12 +75,19 @@ lvim.keys.normal_mode["<S-m>"] = ":BufferPrevious<cr>"
 lvim.keys.normal_mode["<S-i>"] = ":BufferNext<cr>"
 lvim.keys.normal_mode["<S-l>"] = nil
 
+-- Whichkey
 lvim.builtin.which_key.mappings["f"] = {
   "<cmd>Telescope file_browser<cr>", "File browser"
 }
 
 lvim.builtin.which_key.mappings["t"] = {
   "<cmd>Telescope find_files<cr>", "Find files"
+}
+
+lvim.builtin.which_key.mappings["o"] = {
+  name = "Open in",
+  t = { ":!typora %<cr>", "Typora" },
+  f = { ":!firefox-developer-edition %<cr>", "Firefox" },
 }
 
 -- COLEMAK REMAPPING ----------------------------------------------------------

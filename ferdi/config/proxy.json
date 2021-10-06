@@ -47,5 +47,12 @@
     "port": "",
     "user": "",
     "password": ""
+  },
+  "0f85f3ce-9552-4524-bd0e-a0a7c7b0c3ae": {
+    "isEnabled": false,
+    "host": "",
+    "port": "",
+    "user": "",
+    "password": ""
   }
 }

@@ -1,1 +1,34 @@
-/home/fabian/.xprofile
+#!/bin/sh
+
+# --- Variables
+export XDG_SESSION_TYPE=x11
+export GDK_BACKEND=x11
+export QT_QPA_PLATFORMTHEME=qt5ct
+export EDITOR=lvim
+export PAGER=lvim
+export GTK_THEME=Nordic
+export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$HOME/.local/bin:$PATH"
+export LD_LIBRARY_PATH=/usr/local/lib
+export ZDOTDIR=$HOME/.config/zsh     
+export TERM=alacritty
+export LANG="en_US.utf8"
+
+# --- Startup services
+bluetoothctl power on &
+picom -b &
+unclutter --timeout 3 --start-hidden &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+gnome-keyring-daemon --start --components=pkcs11 &
+xset r rate 350 60 &
+xset s off -dpms &
+xsetroot -solid "#252a34" &
+mailspring -b &
+rumno-background &
+slstatus &
+setxkbmap us altgr-intl &
+redshift &
+
+# --- Background Applications
+insync start &
+/home/fabian/.dotfiles/scripts/utils/ferdi.sh &

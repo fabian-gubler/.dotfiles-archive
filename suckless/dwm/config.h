@@ -56,8 +56,8 @@ static const Layout layouts[] = {
 #define PrintScreen 0x0000ff61
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+	{ MODKEY|ShiftMask  ,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask,           KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
@@ -72,6 +72,8 @@ static const char *termcmd[] = { "alacritty", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
   { MODKEY,                       XK_v,      spawn,          SHCMD("networkmanager_dmenu")},
+  { MODKEY,                       XK_z,      spawn,          SHCMD("mpv /data/drive/sound/brown-noise.m4a")},
+  { MODKEY|ShiftMask,             XK_z,      spawn,          SHCMD("killall mpv")},
   { MODKEY,                       XK_g,      spawn,          SHCMD("mailspring")},
   { MODKEY,                       XK_w,      spawn,          SHCMD("firefox-developer-edition")},
   { MODKEY,                       XK_a,      spawn,          SHCMD("typora")},
@@ -83,8 +85,7 @@ static Key keys[] = {
   { MODKEY,                       XK_c,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/colorpicker.sh")},
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/dmenu-bluetooth")},
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("alacritty -e sc-im /data/drive/todo.sc")},
-	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("VBoxManage startvm 'Windows 10'")},
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("pavucontrol")},
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("spotify")},
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("alacritty -e ytfzf -t --preview-side=right")},
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
@@ -140,7 +141,7 @@ static Button buttons[] = {
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-	{ ClkClientWin,         ShiftMask,      Button1,        resizemouse,    {0} },
+	/* { ClkClientWin,         ShiftMask,      Button1,        resizemouse,    {0} }, */
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },

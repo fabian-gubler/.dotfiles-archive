@@ -6,6 +6,7 @@
 # SINK=$( pactl list short sinks | grep RUNNING | sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,' | head -n 1 )
 # --background-color 3742526F
 BIN="rumno -r 0.08 --icon-height 0.4 --bar-num-segments 10 --bar-segment-ratio 1.8"
+BIN2="rumno -r 0.08 --icon-height 0.4 --bar-num-segments 20 --bar-segment-ratio 1"
 
 
 # Define allowed parameters
@@ -46,12 +47,12 @@ case $1 in
         fi
         ;;
     $BRIGHTNESS_INC)
-        xbacklight -inc 10;
-        $BIN -b $( xbacklight -get ) ;
+        xbacklight -inc 5;
+        $BIN2 -b $( xbacklight -get ) ;
         ;;
     $BRIGHTNESS_DEC)
-        xbacklight -dec 10;
-        $BIN -b $( xbacklight -get ) ;
+        xbacklight -dec 5;
+        $BIN2 -b $( xbacklight -get ) ;
         ;;
     $SPOTIFY_NEXT)
         dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next;

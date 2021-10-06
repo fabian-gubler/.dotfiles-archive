@@ -23,21 +23,19 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+
 # Useful Functions
-source /home/fabian/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 source "$ZDOTDIR/zsh-functions"
 
 # Files to source
 zsh_add_file "zsh-aliases"
 
-
 # Plugins
-source /home/fabian/.dotfiles/zsh/plugins/z/zsh-z.plugin.zsh
 zsh_add_plugin "zsh-users/zsh-completions"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
-
+source /home/fabian/.dotfiles/zsh/plugins/z/zsh-z.plugin.zsh
 
 # Keybinds
 bindkey -e                        # emacs bindings
@@ -49,3 +47,6 @@ bindkey -s '^z' 'lvim $(fzf --layout=reverse)\n'
 bindkey "^[[1;5D" backward-word   # ctrl + m
 bindkey "^[[1;5C" forward-word    # ctrl + m
 bindkey "^[[3~" delete-char
+
+# FZF
+source /home/fabian/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
