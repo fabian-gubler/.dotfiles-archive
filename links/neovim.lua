@@ -31,7 +31,6 @@ lvim.plugins = {
   {"rbgrouleff/bclose.vim"},
   {"norcalli/nvim-colorizer.lua"},
   {"lukas-reineke/indent-blankline.nvim"},
-  {"cometsong/CommentFrame.vim"},
 }
 
 require'colorizer'.setup()
@@ -43,8 +42,10 @@ keymap('n', '<leader>a', ':CommentToggle<cr>', {})
 keymap('v', '<leader>a', ':CommentToggle<cr>', {})
 keymap('n', '<leader>u', '<cmd>UndotreeToggle<cr>', {})
 keymap('', ',', '<Plug>(easymotion-overwin-f2)', {})
+keymap('', ';', '<Plug>(easymotion-s)', {})
 keymap('', '/', '<Plug>(easymotion-sn)', {})
 keymap('n', 'q', ':q<cr>', {})
+
 -- Autocommands
 cmd 'autocmd CmdlineEnter /,? :set hlsearch'
 cmd 'autocmd CmdlineLeave /,? :set nohlsearch'

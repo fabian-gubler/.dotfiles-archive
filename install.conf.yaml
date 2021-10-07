@@ -9,8 +9,8 @@
 
     # SYSTEM ------------------------------------------------------
     ~/.config/zsh/.zshrc:                   zsh/.zshrc
-    ~/.config/zsh/zsh-aliases:              zsh/zsh-aliases
-    ~/.config/zsh/zsh-functions:            zsh/zsh-functions
+    ~/.config/zsh/alias:                    zsh/alias
+    ~/.config/zsh/functions:                zsh/functions
     ~/.config/zsh/pure:                     zsh/pure
     ~/.z:                                   zsh/.z
     ~/.config/alacritty:                    alacritty

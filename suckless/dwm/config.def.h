@@ -72,7 +72,7 @@ static const char *termcmd[] = { "alacritty", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
   { MODKEY,                       XK_v,      spawn,          SHCMD("networkmanager_dmenu")},
-  { MODKEY,                       XK_z,      spawn,          SHCMD("mpv /data/drive/sound/brown-noise.m4a")},
+  { MODKEY,                       XK_z,      spawn,          SHCMD("mpv --volume=50 /data/drive/sound/brown-noise.m4a")},
   { MODKEY|ShiftMask,             XK_z,      spawn,          SHCMD("killall mpv")},
   { MODKEY,                       XK_g,      spawn,          SHCMD("mailspring")},
   { MODKEY,                       XK_w,      spawn,          SHCMD("firefox-developer-edition")},

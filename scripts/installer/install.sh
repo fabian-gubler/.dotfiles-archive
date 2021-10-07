@@ -63,6 +63,7 @@ PRGS=(
     'exa'                         # Better ls
     'qt5ct'                       # Qt theming
     'adwaita-qt'                  # Adwaita dark
+    'tlp'                         # Battery optimization
 
     # UTILITIES ---------------------------------------
     'ranger'                      # File explorer
@@ -94,8 +95,9 @@ PRGS=(
     'alsa-utils'                  # For setting volume
     'bluez-utils'                 # Bluetooth support
     'bluez'                       # Bluetooth protocol
-    'bluetooth-autoconnect'       # Trusted connect
-    'pulseaudio-bluetooth'        # Bluetooth support
+    'pipewire'                    # Audio
+    'pipewire-pulse'              # Audio
+    'gst-plugin-pipewire'         # No idea
     'feh'                         # Image viewer
     'mpv'                         # Media player
     'pavucontrol'                 # GTK audio control
@@ -155,8 +157,10 @@ echo "FINAL SETUP AND CONFIGURATION"
 
 # Systemd
 sudo systemctl enable cups
-sudo systemctl enable bluetooth.service
-sudo systemctl enable pulseaudio-bluetooth-autoconnect
+sudo systemctl enable pipewire
+sudo systemctl enable pipewire-pulse
+sudo systemctl enable bluetooth
+sudo systemctl enable tlp
 
 # tty | add FONT=ter-p32b
 echo 'KEYMAP=de' | sudo tee /etc/vconsole.conf

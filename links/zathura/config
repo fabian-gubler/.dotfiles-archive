@@ -46,8 +46,8 @@ map [index] i navigate_index expand
 map [index] m navigate_index collapse
 
 # Bookmarks
-map [normal] a focus_inputbar ":bmark "
-map [normal] b focus_inputbar ":blist "
+map [normal] b focus_inputbar ":bmark "
+map [normal] a focus_inputbar ":blist "
 map [normal] d focus_inputbar ":bdelete "
 
 # Command Line
