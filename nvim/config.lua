@@ -1,16 +1,15 @@
--- Local
+-- TODO
+  -- Setup and Source own ColorScheme
+  -- Source Colemake Externally
+  -- Separate Lunarvim specific configuration
+
+-- Variables
 local o = vim.opt
 local g = vim.g
 local cmd = vim.cmd
 local keymap = vim.api.nvim_set_keymap
 local opt = { noremap = true }
 local home = os.getenv( "HOME" )
-
--- Global
-g.undotree_WindowLayout = 2
-g.auto_save = 1
-g.auto_save_silent = 1
-g.mapleader = ' '
 
 -- Options
 o.undodir = home .. '/.config/lvim/undodir'
@@ -20,22 +19,35 @@ o.ignorecase = true
 o.termguicolors = true
 o.colorcolumn = "80"
 
--- Additional Plugins
+-- Global
+g.undotree_WindowLayout = 2
+g.auto_save = 1
+g.auto_save_silent = 1
+g.mapleader = ' '
+
+-- Plugins
 lvim.plugins = {
   {"907th/vim-auto-save"},
-  {"shaunsingh/nord.nvim"},
   {"psliwka/vim-smoothie"},
   {"easymotion/vim-easymotion"},
   {"mbbill/undotree"},
-  {"francoiscabrol/ranger.vim"},
-  {"rbgrouleff/bclose.vim"},
   {"norcalli/nvim-colorizer.lua"},
   {"lukas-reineke/indent-blankline.nvim"},
 }
 
 require'colorizer'.setup()
 
--- Custom Keymappings
+-- Lunarvim
+lvim.colorscheme = "onedarker"
+lvim.format_on_save = false
+lvim.lint_on_save = false
+lvim.lsp.diagnostics.virtual_text = false
+lvim.builtin.dashboard.active = false
+lvim.builtin.terminal.active = true
+lvim.builtin.treesitter.highlight.enabled = true
+lvim.builtin.treesitter.ensure_installed = "maintained"
+
+-- Keymappings
 keymap('n', '<C-c>', ':split | terminal python3 %<cr>', {})
 keymap('n', '<C-s>', ':split | terminal parser %<cr>', {})
 keymap('n', '<leader>a', ':CommentToggle<cr>', {})
@@ -51,17 +63,6 @@ cmd 'autocmd CmdlineEnter /,? :set hlsearch'
 cmd 'autocmd CmdlineLeave /,? :set nohlsearch'
 cmd 'autocmd TermOpen * startinsert'
 cmd 'autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"'
-
--- Lunarvim
-lvim.colorscheme = "onedarker"
-lvim.format_on_save = false
-lvim.lint_on_save = false
-lvim.lsp.diagnostics.virtual_text = false
-lvim.builtin.dashboard.active = false
-lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
-lvim.builtin.treesitter.highlight.enabled = true
 
 -- Native
 cmd([[
@@ -147,6 +148,7 @@ keymap('', 'k', 'n', opt)
 -- Inner text objects (dip -> drp)
 keymap('o', 'r', 'i', opt)
 
+-- No Idea how this works
 cmd([[
   " Make insert/add work also in visual line mode
   xnoremap <silent> <expr> s (mode() =~# "[V]" ? "\<C-V>0o$I" : "I")

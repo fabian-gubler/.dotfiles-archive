@@ -66,7 +66,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
-static const char *termcmd[] = { "alacritty", NULL };
+static const char *termcmd[] = { "st", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
@@ -78,16 +78,16 @@ static Key keys[] = {
   { MODKEY,                       XK_w,      spawn,          SHCMD("firefox-developer-edition")},
   { MODKEY,                       XK_a,      spawn,          SHCMD("typora")},
   { MODKEY,                       XK_f,      spawn,          SHCMD("ferdi")},
-  { MODKEY,                       XK_Return, spawn,          SHCMD("alacritty -e tmuxdd")},
+  { MODKEY,                       XK_Return, spawn,          SHCMD("st -e tmuxdd")},
   { MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("pcmanfm")},
   { MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmlogout")},
   { MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dlay")},
   { MODKEY,                       XK_c,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/colorpicker.sh")},
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/dmenu-bluetooth")},
-	{ MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("alacritty -e sc-im /data/drive/todo.sc")},
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("st -e sc-im /data/drive/todo.sc")},
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("spotify")},
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("alacritty -e ytfzf -t --preview-side=right")},
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("st -e ytfzf -t --preview-side=right")},
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
   { MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = -1 } },
