@@ -3,6 +3,8 @@
 " --------------------------------------------------------------------------------"
 set tabopenpos related
 set hintchars arstneio
+set editorcmd st -e lvim
+
 bind d fillcmdline_notrail
 
 " Navigation
@@ -16,8 +18,12 @@ bind m scrollpx -50
 " Mode ignore
 bind <C-y> mode ignore
 
+set editorcmd st -e lvim -c 'set filetype=javascript'
+
 " Tabs
 bind --mode=browser <A-u> tabopen about:blank
+bind --mode=browser <A-v> editor
+bind --mode=browser <F2> fullscreen
 
 " Hinting
 bind s hint

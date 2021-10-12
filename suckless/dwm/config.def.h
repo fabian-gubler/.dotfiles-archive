@@ -75,7 +75,7 @@ static Key keys[] = {
   { MODKEY,                       XK_z,      spawn,          SHCMD("mpv --volume=50 /data/drive/sound/brown-noise.m4a")},
   { MODKEY|ShiftMask,             XK_z,      spawn,          SHCMD("killall mpv")},
   { MODKEY,                       XK_g,      spawn,          SHCMD("mailspring")},
-  { MODKEY,                       XK_w,      spawn,          SHCMD("firefox-developer-edition")},
+  { MODKEY,                       XK_w,      spawn,          SHCMD("firefox")},
   { MODKEY,                       XK_a,      spawn,          SHCMD("typora")},
   { MODKEY,                       XK_f,      spawn,          SHCMD("ferdi")},
   { MODKEY,                       XK_Return, spawn,          SHCMD("st -e tmuxdd")},

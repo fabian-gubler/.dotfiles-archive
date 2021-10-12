@@ -131,13 +131,13 @@
 }
 
 .TridactylStatusIndicator {    position: fixed !important;
-    bottom: 0 !important;
-    background: var(--tridactyl-bg) !important;
+    /* bottom: 0 !important;  */
+/*     background: var(--tridactyl-bg) !important; */
     border: unset !important;
-    border: 0px var(--base03) solid !important;
-    font-size: 14pt !important;
-    /*font-weight: 200 !important;*/
-    padding: 0.8ex !important;
+    /* border: 0px var(--base00) solid !important; */
+    font-size: 12pt !important;
+/*     font-weight: 200 !important; */
+/*     padding: 0.6ex !important; */
 }
 
 #completions .focused {    background: var(--base08);
@@ -147,10 +147,3 @@
 #completions .focused .url {    background: var(--base08);
     color: var(--base00);
 }
-/* #Ocean-normal { */
-/*  border-color: green !important; */
-/* } */
-
-/* #Ocean-insert { */
-/*  border-color: yellow !important; */
-/* } */

@@ -33,7 +33,7 @@ color     info                  white   color236
 ### MACROS
 #         key     action
 macro     v       set browser "mpv"; open-in-browser-and-mark-read ; set browser piper
-macro     f       set browser "firefox-developer-edition"; open-in-browser ; set browser pipe
+macro     f       set browser "firefox"; open-in-browser ; set browser pipe
 
 ### KEYBINDINGS
 unbind-key  RIGHT

@@ -18,6 +18,9 @@
   --animationSpeed  : 0s;
 }
 
+#tabbrowser-tabpanels{
+  background-color: #181a1b !important;
+}
 
 /* H I D I N G   E L E M E N T S */
 /* Comment or uncomment depending of what elements you want to hide */

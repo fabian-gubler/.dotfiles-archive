@@ -28,7 +28,7 @@ g.mapleader = ' '
 -- Plugins
 lvim.plugins = {
   {"907th/vim-auto-save"},
-  {"psliwka/vim-smoothie"},
+  {"karb94/neoscroll.nvim"},
   {"easymotion/vim-easymotion"},
   {"mbbill/undotree"},
   {"norcalli/nvim-colorizer.lua"},
@@ -36,6 +36,7 @@ lvim.plugins = {
 }
 
 require'colorizer'.setup()
+require('neoscroll').setup()
 
 -- Lunarvim
 lvim.colorscheme = "onedarker"
@@ -43,9 +44,14 @@ lvim.format_on_save = false
 lvim.lint_on_save = false
 lvim.lsp.diagnostics.virtual_text = false
 lvim.builtin.dashboard.active = false
+lvim.builtin.nvimtree.active = false
 lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.ensure_installed = "maintained"
+lvim.builtin.cmp.mapping["<Tab>"] = nil
+lvim.builtin.cmp.mapping["<S-Tab>"] = nil
+lvim.builtin.treesitter.indent.disable["1"] = "python"
+lvim.builtin.treesitter.indent.enable = true
 
 -- Keymappings
 keymap('n', '<C-c>', ':split | terminal python3 %<cr>', {})
@@ -82,6 +88,10 @@ lvim.builtin.which_key.mappings["f"] = {
   "<cmd>Telescope file_browser<cr>", "File browser"
 }
 
+lvim.builtin.which_key.mappings["y"] = {
+  ":%y+<cr>", "Yank to Clipboard"
+}
+
 lvim.builtin.which_key.mappings["t"] = {
   "<cmd>Telescope find_files<cr>", "Find files"
 }
@@ -89,7 +99,7 @@ lvim.builtin.which_key.mappings["t"] = {
 lvim.builtin.which_key.mappings["o"] = {
   name = "Open in",
   t = { ":!typora %<cr>", "Typora" },
-  f = { ":!firefox-developer-edition %<cr>", "Firefox" },
+  f = { ":!firefox %<cr>", "Firefox" },
 }
 
 -- COLEMAK REMAPPING ----------------------------------------------------------

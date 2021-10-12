@@ -26,14 +26,12 @@ zsh_add_file "alias"
 bindkey -e                        # emacs bindings
 bindkey -s '^f' 'ranger^M'        # ranger
 bindkey -s '^t' 'exa -a^M'        # extended ls
-bindkey -s '^b' 'cd -^M'          # back in history
-bindkey -s '^x' '^L'              # clear terminal
 bindkey -s '^p' 'ncpamixer^M'     # ncpamixer
+bindkey -s '^z' 'cd ~/.secrets/docs/ && devour zathura $(find * -type f | fzf --layout=reverse)^M'
+bindkey -s '^d' 'cd ~/.dotfiles/links/ && lvim $(find * -type f | fzf --layout=reverse)^M'
 bindkey "^[[1;5D" backward-word   # ctrl + m
 bindkey "^[[1;5C" forward-word    # ctrl + i
 bindkey "^[[3~" delete-char       # make delete work
-bindkey -s '^z' 'cd ~/.secrets/docs/ && devour zathura $(find * -type f | fzf --layout=reverse)^M'
-bindkey -s '^d' 'cd ~/.dotfiles/links/ && lvim $(find * -type f | fzf --layout=reverse)^M'
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-completions"

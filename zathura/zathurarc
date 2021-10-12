@@ -33,6 +33,8 @@ map h     search forward
 map k     search backward
 map n     navigate next
 map e     navigate previous
+map E     scroll page-top
+map N     scroll page-bottom
 map r     recolor
 map p     print
 map t     toggle_statusbar
