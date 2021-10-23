@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "LigaSFMonoNerdFont:pixelsize=22:antialias=true:autohint=true";
-static char *font2 = "Roboto Mono for Powerline:pixelsize=12:antialias=true:autohint=true";
+static char *font2 = "Symbola:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 12;
 
 /*

@@ -1,6 +1,6 @@
 -- TODO
   -- Setup and Source own ColorScheme
-  -- Source Colemake Externally
+  -- Source Colemak Externally
   -- Separate Lunarvim specific configuration
 
 -- Variables
@@ -24,6 +24,7 @@ g.undotree_WindowLayout = 2
 g.auto_save = 1
 g.auto_save_silent = 1
 g.mapleader = ' '
+g.EasyMotion_keys='arstneio, qwfpbjluy'
 
 -- Plugins
 lvim.plugins = {
@@ -32,7 +33,8 @@ lvim.plugins = {
   {"easymotion/vim-easymotion"},
   {"mbbill/undotree"},
   {"norcalli/nvim-colorizer.lua"},
-  {"lukas-reineke/indent-blankline.nvim"},
+  {"KabbAmine/zeavim.vim"},
+  {"lukas-reineke/indent-blankline.nvim"}
 }
 
 require'colorizer'.setup()
@@ -48,19 +50,17 @@ lvim.builtin.nvimtree.active = false
 lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.ensure_installed = "maintained"
-lvim.builtin.cmp.mapping["<Tab>"] = nil
-lvim.builtin.cmp.mapping["<S-Tab>"] = nil
 lvim.builtin.treesitter.indent.disable["1"] = "python"
 lvim.builtin.treesitter.indent.enable = true
+lvim.builtin.cmp.mapping["<Tab>"] = nil
+lvim.builtin.cmp.mapping["<S-Tab>"] = nil
+lvim.builtin.cmp.experimental.ghost_text = false
 
 -- Keymappings
-keymap('n', '<C-c>', ':split | terminal python3 %<cr>', {})
-keymap('n', '<C-s>', ':split | terminal parser %<cr>', {})
-keymap('n', '<leader>a', ':CommentToggle<cr>', {})
-keymap('v', '<leader>a', ':CommentToggle<cr>', {})
 keymap('n', '<leader>u', '<cmd>UndotreeToggle<cr>', {})
-keymap('', ',', '<Plug>(easymotion-overwin-f2)', {})
-keymap('', ';', '<Plug>(easymotion-s)', {})
+keymap('n', '<leader>a', '<cmd>lua require("Comment").toggle()<CR>', {})
+keymap('v', '<leader>a', '<ESC><CMD>lua ___comment_gc(vim.fn.visualmode())<CR>', {})
+keymap('', ',', '<Plug>(easymotion-s)', {})
 keymap('', '/', '<Plug>(easymotion-sn)', {})
 keymap('n', 'q', ':q<cr>', {})
 
@@ -88,6 +88,10 @@ lvim.builtin.which_key.mappings["f"] = {
   "<cmd>Telescope file_browser<cr>", "File browser"
 }
 
+lvim.builtin.which_key.mappings["r"] = {
+  ":split | terminal python3 %<cr>", "Run Python"
+}
+
 lvim.builtin.which_key.mappings["y"] = {
   ":%y+<cr>", "Yank to Clipboard"
 }
@@ -100,7 +104,22 @@ lvim.builtin.which_key.mappings["o"] = {
   name = "Open in",
   t = { ":!typora %<cr>", "Typora" },
   f = { ":!firefox %<cr>", "Firefox" },
+  s = { ":terminal live-server<cr>", "Server" },
 }
+
+-- nvim.cmp binding for autocomplete
+  -- Make update independent
+      -- ["<Right>"] = cmp.mapping(function(fallback)
+      --   if cmp.visible() then
+      --     cmp.select_next_item()
+      --     cmp.complete()
+      --   else
+      --     fallback()
+      --   end
+      -- end, {
+      --   "i",
+      --   "s",
+      -- }),
 
 -- COLEMAK REMAPPING ----------------------------------------------------------
 

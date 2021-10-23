@@ -15,14 +15,10 @@
 
   // Custom key binding, which will override the default ones.
   "keyBinding": {
-    "Show Status Bar": "F10"
-    "File Tree": "F5"
-    "Outline": "F4"
-    "YAML Front Matter": "Ctrl+m"
-    "Open Quickly...": "Ctrl+o"
-    "Open...": "Ctrl+p"
-    "Task List": "Ctrl+Shift+t"
-    "Insert Table": "Ctrl+t"
+    "Open Quickly...":      "Ctrl+o"
+    "Open...":              "Ctrl+p"
+    "Task List":            "Ctrl+Shift+t"
+    "Insert Table":         "Ctrl+t"
   },
 
   "monocolorEmoji": false, //default false. Only work for Windows

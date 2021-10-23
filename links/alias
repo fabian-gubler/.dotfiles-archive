@@ -1,4 +1,7 @@
 # Productivity
+alias yt="youtube-dl -f 'bestvideo[height<=720][fps<=?30]+bestaudio/best[height<=720]'"
+alias deploy="$HOME/.dotfiles/scripts/webdev/deploy.sh"
+alias code="cd /data/drive/cs-prep/freecodecamp/ && lvim /data/drive/cs-prep/freecodecamp/main.js"
 alias noise="mpv /data/drive/sound/brown-noise.m4a"
 alias .="exa -a"
 alias ..="cl .."

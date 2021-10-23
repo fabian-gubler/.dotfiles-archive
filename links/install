@@ -81,7 +81,6 @@ PRGS=(
     'baobab'                      # Disk space
     'unzip'                       # Unzip directories
     'tmux'                        # Terminal Multiplexer
-    'ncpamixer'                   # Cli Pavucontrol
 
     # WEB TOOLS ---------------------------------------
     'firefox'                     # Web browser
@@ -97,10 +96,10 @@ PRGS=(
     'bluez'                       # Bluetooth protocol
     'pipewire'                    # Audio
     'pipewire-pulse'              # Audio
-    'gst-plugin-pipewire'         # No idea
-    'feh'                         # Image viewer
+    'gst-plugin-pipewire'         # Required, no idea
+    'sxiv'                        # Image viewer
     'mpv'                         # Media player
-    'pavucontrol'                 # GTK audio control
+    'ncpamixer'                   # Cli Pavucontrol
 
     # PRODUCTIVITY ------------------------------------
     'mailspring'                  # Email Client 

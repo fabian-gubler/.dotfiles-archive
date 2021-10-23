@@ -32,7 +32,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class            instance    title       tags mask     isfloating   monitor    scratch key */
-	{ "Gimp",           NULL,       NULL,       0,            1,           -1,        0  },
+	{ "Gimp",           NULL,       NULL,       0,            0,           -1,        0  },
 	/* { "Firefox",        NULL,       NULL,       1 << 8,       0,           -1,        0  }, */
 };
 
@@ -79,6 +79,7 @@ static Key keys[] = {
   { MODKEY,                       XK_a,      spawn,          SHCMD("typora")},
   { MODKEY,                       XK_f,      spawn,          SHCMD("ferdi")},
   { MODKEY,                       XK_Return, spawn,          SHCMD("st -e tmuxdd")},
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("st")},
   { MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("pcmanfm")},
   { MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmlogout")},
   { MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dlay")},
@@ -95,7 +96,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_i,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ControlMask,           XK_n,      movestack,      {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_e,      movestack,      {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
@@ -141,7 +141,7 @@ static Button buttons[] = {
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-	/* { ClkClientWin,         ShiftMask,      Button1,        resizemouse,    {0} }, */
+	{ ClkClientWin,         MODKEY,      Button1,        resizemouse,    {0} },
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
