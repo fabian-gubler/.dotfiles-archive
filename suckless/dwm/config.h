@@ -80,6 +80,7 @@ static Key keys[] = {
   { MODKEY,                       XK_f,      spawn,          SHCMD("ferdi")},
   { MODKEY,                       XK_Return, spawn,          SHCMD("st -e tmuxdd")},
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("st")},
+	{ ShiftMask,                    XK_space,  spawn,          SHCMD("dunstctl close-all")},
   { MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("pcmanfm")},
   { MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmlogout")},
   { MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dlay")},
@@ -137,7 +138,6 @@ static Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
-	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },

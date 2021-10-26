@@ -24,7 +24,7 @@ g.undotree_WindowLayout = 2
 g.auto_save = 1
 g.auto_save_silent = 1
 g.mapleader = ' '
-g.EasyMotion_keys='arstneio, qwfpbjluy'
+g.EasyMotion_keys='arstdhneioqwfpluygmbjzxcvk1234567890,'
 
 -- Plugins
 lvim.plugins = {
@@ -34,14 +34,15 @@ lvim.plugins = {
   {"mbbill/undotree"},
   {"norcalli/nvim-colorizer.lua"},
   {"KabbAmine/zeavim.vim"},
-  {"lukas-reineke/indent-blankline.nvim"}
+  {"lukas-reineke/indent-blankline.nvim"},
+  {"shaunsingh/nord.nvim"}
 }
 
 require'colorizer'.setup()
 require('neoscroll').setup()
 
 -- Lunarvim
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "nord"
 lvim.format_on_save = false
 lvim.lint_on_save = false
 lvim.lsp.diagnostics.virtual_text = false

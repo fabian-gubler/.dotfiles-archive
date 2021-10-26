@@ -1,5 +1,6 @@
 # Productivity
 alias yt="youtube-dl -f 'bestvideo[height<=720][fps<=?30]+bestaudio/best[height<=720]'"
+alias nightlight="pkill -USR1 redshift"
 alias deploy="$HOME/.dotfiles/scripts/webdev/deploy.sh"
 alias code="cd /data/drive/cs-prep/freecodecamp/ && lvim /data/drive/cs-prep/freecodecamp/main.js"
 alias noise="mpv /data/drive/sound/brown-noise.m4a"
@@ -17,8 +18,6 @@ alias q="exit"
 alias zoomdl="zoomdl -u"
 alias monitor="autorandr --load monitor"
 alias laptop="autorandr --load laptop"
-alias night="redshift -O 4300"
-alias day="redshift -x"
 alias top="gotop -l minimal"
 alias xev="xev -event keyboard  | egrep -o 'keycode.*\)'"
 
