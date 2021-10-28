@@ -46,27 +46,34 @@ echo
 
 PRGS=(
 
-    # LANGUAGES ---------------------------------------
+    # LANGUAGES ---------------------------------------------------------------
     'python-pip'                  # Python packages
     'rust'                        # Programming language
 
-    # DEVELOPMENT -------------------------------------
-    'git'                         # Version control
+    # DEVELOPMENT -------------------------------------------------------------
     'neovim'                      # Text editor
     'typora'                      # Markdown editor
 
-    # SYSTEM ------------------------------------------
-    'alacritty'                   # Terminal
+    # COMMAND LINE TOOLS ------------------------------------------------------
     'zsh'                         # Shell
-    'lxappearance'                # GTK theme switcher
-    'wget'                        # Download web content
+    'tmux'                        # Terminal Multiplexer
+    'git'                         # Version control
+    'lazygit'                     # Git management
+    'zsa-wally-cli'               # Keyboard Layout
+    'gotop'                       # System monitoring
     'exa'                         # Better ls
+    'wget'                        # Download web content
+    'ranger'                      # File explorer
+    'dragon-drag-and-drop-git'    # Drag and drop
+
+    # SYSTEM ------------------------------------------------------------------
+    'alacritty'                   # Terminal
+    'lxappearance'                # GTK theme switcher
     'qt5ct'                       # Qt theming
     'adwaita-qt'                  # Adwaita dark
     'tlp'                         # Battery optimization
 
-    # UTILITIES ---------------------------------------
-    'ranger'                      # File explorer
+    # UTILITIES ---------------------------------------------------------------
     'ueberzug'                    # Image preview
     'xsane'                       # Scanning
     'qbittorrent'                 # Torrent client
@@ -74,23 +81,18 @@ PRGS=(
     'flameshot'                   # Screenshot tool
     'timeshift'                   # Backup snapshots
     'insync'                      # Cloud sync
-    'gotop-bin'                   # System monitoring
     'networkmanager-dmenu-git'    # Network manager
     'devour'                      # Swallow programs
-    'dragon-drag-and-drop-git'    # Drag and drop
     'baobab'                      # Disk space
     'unzip'                       # Unzip directories
-    'tmux'                        # Terminal Multiplexer
 
-    # WEB TOOLS ---------------------------------------
+    # WEB TOOLS ---------------------------------------------------------------
     'firefox'                     # Web browser
     'firefox-developer-edition'   # Web browser
     'firefox-tridactyl-native'    # Vim integration
-    'newsboat'                    # RSS Feed
-    'ytfzf'                       # YouTube search
     'ferdi'                       # Website Platform
 
-    # MEDIA -------------------------------------------
+    # MEDIA -------------------------------------------------------------------
     'alsa-utils'                  # For setting volume
     'bluez-utils'                 # Bluetooth support
     'bluez'                       # Bluetooth protocol
@@ -101,27 +103,21 @@ PRGS=(
     'mpv'                         # Media player
     'ncpamixer'                   # Cli Pavucontrol
 
-    # PRODUCTIVITY ------------------------------------
+    # PRODUCTIVITY ------------------------------------------------------------
     'mailspring'                  # Email Client 
     'anki'                        # Flashcard app
     'pcmanfm-gtk3'                # GTK file manager
     'zoom'                        # Virtual Classroom
     'teams'                       # Video Communication
-    'zsa-wally-cli'               # Keyboard Layout
     'masterpdfeditor'             # PDF editor (advanded)
     'okular'                      # PDF editor (light)
     'zathura'                     # PDF viewer
     'xournal'                     # PDF markup
 
-    # SC-IM Dependencies ------------------------------
-    'libxml2'
-    'libzip'
-    'gnuplot'
-    'libxlsxwriter'
-
-    # VIRTUALIZATION ----------------------------------
+    # VIRTUALIZATION ----------------------------------------------------------
     'virtualbox'                  # OS virtualization
-    'virtualbox-host-modules-arch'# Kernel modules
+    'virtualbox-host-dkms'        # Kernel modules
+    'virtualbox-guest-utils'      # Guest utilities
 )
 
 # Compare list with already installed packages

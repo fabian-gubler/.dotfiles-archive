@@ -1,4 +1,5 @@
 # Productivity
+alias lg="lazygit"
 alias yt="youtube-dl -f 'bestvideo[height<=720][fps<=?30]+bestaudio/best[height<=720]'"
 alias nightlight="pkill -USR1 redshift"
 alias deploy="$HOME/.dotfiles/scripts/webdev/deploy.sh"
