@@ -16,6 +16,7 @@ fixamo_quiet
 unbind h
 unbind d
 unbind D
+unbind b
 
 " Navigation
 bind <C-d> scrollline 30
@@ -36,7 +37,8 @@ bind --mode=browser <A-v> editor
 bind s hint
 bind S hint -b
 
-" --- Text Input --------------------------------------------------------------
+bind b fillcmdline bmarks
+--- Text Input --------------------------------------------------------------
 
 bind --mode=ex     <C-k> text.kill_line
 bind --mode=insert <C-k> text.kill_line

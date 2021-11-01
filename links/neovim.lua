@@ -4,6 +4,7 @@ local g = vim.g
 local cmd = vim.cmd
 local keymap = vim.api.nvim_set_keymap
 local home = os.getenv( "HOME" )
+  
 
 -- Set Additional Runtime Path
 o.rtp:append(home .. "/.dotfiles/nvim")
@@ -30,12 +31,12 @@ lvim.plugins = {
   {"easymotion/vim-easymotion"},
   {"mbbill/undotree"},
   {"norcalli/nvim-colorizer.lua"},
-  {"KabbAmine/zeavim.vim"},
   {"lukas-reineke/indent-blankline.nvim"},
-  {"shaunsingh/nord.nvim"}
+  {"shaunsingh/nord.nvim"},
 }
 
-require'colorizer'.setup()
+-- Setup
+require('colorizer').setup()
 require('neoscroll').setup()
 
 -- Lunarvim
@@ -85,16 +86,8 @@ lvim.keys.normal_mode["<S-i>"] = ":BufferNext<cr>"
 lvim.keys.normal_mode["<S-l>"] = nil
 
 -- Whichkey
-lvim.builtin.which_key.mappings["f"] = {
-  "<cmd>Telescope file_browser<cr>", "File browser"
-}
-
 lvim.builtin.which_key.mappings["r"] = {
   ":split | terminal python3 %<cr>", "Run Python"
-}
-
-lvim.builtin.which_key.mappings["y"] = {
-  ":%y+<cr>", "Yank to Clipboard"
 }
 
 lvim.builtin.which_key.mappings["t"] = {
@@ -107,17 +100,3 @@ lvim.builtin.which_key.mappings["o"] = {
   f = { ":!firefox %<cr>", "Firefox" },
   s = { ":terminal live-server<cr>", "Server" },
 }
-
--- nvim.cmp binding for autocomplete
-  -- Make update independent
-      -- ["<Right>"] = cmp.mapping(function(fallback)
-      --   if cmp.visible() then
-      --     cmp.select_next_item()
-      --     cmp.complete()
-      --   else
-      --     fallback()
-      --   end
-      -- end, {
-      --   "i",
-      --   "s",
-      -- }),

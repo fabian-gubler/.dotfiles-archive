@@ -13,6 +13,7 @@ export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
 export TERM=alacritty
 export LANG="en_US.utf8"
+export MOZ_USE_XINPUT2=1
 
 # --- Startup services
 bluetoothctl power on &
