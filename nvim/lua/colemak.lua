@@ -1,9 +1,6 @@
--- VARIABLES ------------------------------------------------------------------
 local cmd = vim.cmd
 local keymap = vim.api.nvim_set_keymap
 local opt = { noremap = true }
-
--- REMAPPING ------------------------------------------------------------------
 
 -- left, right, down, up
 keymap('', 'm', 'h', opt)
@@ -49,6 +46,9 @@ keymap('n', 'z', 'u', opt)
 keymap('x', 'z', ':<C-U>undo<cr>', opt)
 keymap('n', 'Z', '<C-R>', opt)
 keymap('x', 'Z', ':<C-U>redo<cr>', opt)
+
+-- folding
+keymap('', 'b', 'z', opt)
 
 -- Visual mode
 keymap('', 'a', 'v', opt)
