@@ -17,7 +17,6 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Plugins
-	-- Autopairs
   use 'shaunsingh/nord.nvim'
   use '907th/vim-auto-save'
   use 'easymotion/vim-easymotion'
@@ -43,6 +42,13 @@ return require('packer').startup(function(use)
     'numToStr/Comment.nvim',
     config = function()
         require('Comment').setup()
+    end
+}
+
+  use {
+    'windwp/nvim-autopairs',
+    config = function()
+        require('nvim-autopairs').setup()
     end
 }
 
