@@ -5,7 +5,6 @@
 /home/fabian/.config/polybar|44|1631235132
 /data/virtualbox/Windows 10|1|1635072044
 /data/drive/hsg/semester/handling/lectures|7|1635510090
-/home/fabian/.config/nvim|30|1635431415
 /home/fabian/.mozilla/firefox/u7my0den.default-release|3|1634034694
 /home/fabian/.dotfiles/mpv/scripts|1|1634214476
 /data/drive/hsg/semester|4|1633564816
@@ -14,9 +13,9 @@
 /home/fabian/.local/share/lunarvim/lvim/lua/lvim/core/lualine|4|1635252233
 /data/code/foundations/project-etch|1|1635255892
 /etc/modprobe.d|4|1632607055
-/home/fabian/.local/share/lunarvim/lvim/lua/lvim/core|9|1635799627
 /home/fabian/.dotfiles/X|4|1633446260
 /home/fabian/.secrets/docs|20|1635508982
+/home/fabian/.local/share/lunarvim/lvim/lua/lvim/core|11|1635859858
 /home/fabian/.dotfiles/system/rumno/build/target/release|5|1630629251
 /data|87|1634741123
 /etc/pam.d|6|1630364342
@@ -27,7 +26,7 @@
 /home/fabian/.secrets/mailspring|17|1632610288
 /data/dropbox|1|1632620146
 /home/fabian/.dotfiles/scripts|34|1634659628
-/home/fabian/code/mint-clone|46|1635791941
+/home/fabian/code/mint-clone|54|1635853170
 /home/fabian/.config/zsh/plugins/fzf-tab|7|1632784962
 /data/drive/cs-prep/crash-course|41|1633786366
 /data/drive/hsg/semester/webapps/demos/ChatAppStep3/src/app/components|1|1634657678
@@ -36,7 +35,7 @@
 /home/fabian/.dotfiles/system|5|1633445063
 /home/fabian/.ssh|4|1634115902
 /usr/lib/firmware/intel|21|1632605547
-/home/fabian/.dotfiles/nvim|11|1635430488
+/home/fabian/.dotfiles/nvim|13|1635940638
 /home/fabian/.config/dunst|1|1635164084
 /data/drive/cs-prep/computer-science/01 - Basics/programs|287|1633696310
 /usr/bin|7|1635006627
@@ -68,7 +67,6 @@
 /home/fabian/.dotfiles/suckless/st|107|1635072908
 /home/fabian/.dotfiles/links/firefox|2|1633873494
 /data/drive/hsg/semester/webapps/projects|9|1634658345
-/home/fabian/.config/nvim/lua|7|1635429514
 /home/fabian/.mozilla/firefox/u7my0den.default-release/chrome|12|1633896810
 /home/fabian/.local/share/lunarvim/lvim|49|1635799370
 /home/fabian/luabitop|3|1633622318
@@ -86,7 +84,7 @@
 /data/virtualbox|1|1635021789
 /data/drive/hsg/semester/webapps/demos/ChatAppStep3/src/app|1|1634657674
 /etc|13|1634135851
-/home/fabian/code/sandbox|2|1635791956
+/home/fabian/code/sandbox|26|1635940209
 /home/fabian/.dotfiles/system/rumno/build|5|1632607697
 /data/drive/cs-prep/crash-course/programs/chapter_10|4|1634661322
 /data/code/foundations|1|1635255885
@@ -113,6 +111,7 @@
 /data/drive|22|1635688649
 /home/fabian/.dotfiles/scripts/rofi|3|1631231218
 /home/fabian/.dotfiles/sc-im/build|7|1631407728
+/home/fabian/code/sandbox/css|4|1635938823
 /data/drive/hsg/semester/webapps/demos/ChatAppStep3/src|1|1634657671
 /home/fabian/.dotfiles/alacritty|10|1633446293
 /home/fabian/.dotfiles/system/rumno/build/res|1|1632607700
@@ -124,14 +123,13 @@
 /data/drive/hsg/semester/webapps/demos/ChatAppStep2|5|1634658682
 /data/drive/hsg/semester/webapps/projects/demo01/src/app|1|1634568315
 /data/drive/hsg/semester/webapps/demos/ChatAppStep3|4|1634657669
-/home/fabian/.dotfiles/ytfzf|2|1630633580
+/home/fabian/code|30|1635853171
 /home/fabian/.config/lvim|49|1635799291
-/home/fabian/code|27|1635791949
 /home/fabian/.local/share|5|1634738314
 /data/drive/cs-prep/crash-course/ressources|2|1633618373
 /home/fabian/.local/share/lunarvim/lvim/lua|16|1635799614
 /home|7|1630940675
-/home/fabian/.dotfiles/nvim/lua|8|1635431467
+/home/fabian/.dotfiles/nvim/lua|16|1635940660
 /home/fabian/.secrets|51|1634738314
 /home/fabian/.config/zsh|16|1632784496
 /usr/share/fonts/TTF|3|1634122601
@@ -155,4 +153,4 @@
 /usr/share/i18n/locales|3|1630338097
 /etc/profile.d|10|1630940727
 /data/drive/hsg/semester/handling|3|1632244432
-/home/fabian/.dotfiles|364|1635799958
+/home/fabian/.dotfiles|370|1635947547

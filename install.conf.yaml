@@ -25,8 +25,7 @@
     ~/.tmux.conf:                           tmux/.tmux.conf
 
     # UTILITIES ---------------------------------------------------
-    ~/.config/lvim/config.lua:              nvim/config.lua
-    ~/.local/share/lunarvim/lvim/lua/onedarker/palette.lua:  nvim/palette.lua
+    ~/.config/nvim:                         nvim
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
     ~/.config/Typora/themes/nord:           typora/nord
     ~/.config/Typora/themes/nord.css:       typora/nord.css
