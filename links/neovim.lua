@@ -11,7 +11,7 @@ o.relativenumber = true
 o.ignorecase = true
 o.termguicolors = true
 o.colorcolumn = "80"
-o.foldmethod = "marker"
+-- o.foldmethod = "marker"
 
 -- Native
 cmd([[

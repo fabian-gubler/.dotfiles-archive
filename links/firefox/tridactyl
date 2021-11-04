@@ -17,7 +17,6 @@ unbind h
 unbind d
 unbind D
 unbind b
-unbind u
 
 " Navigation
 bind <C-d> scrollline 30
@@ -40,7 +39,7 @@ bind S hint -b
 
 " Misc
 bind b fillcmdline bmarks
-bind z undo
+
 --- Text Input --------------------------------------------------------------
 
 bind --mode=ex     <C-k> text.kill_line
