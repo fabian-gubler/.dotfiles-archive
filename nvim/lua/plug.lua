@@ -10,16 +10,29 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Plugins
-    -- Lualine
-    -- Telescope
-    -- Completion
     -- Lsp
     -- Treesitter
+    -- Completion
 
   use 'shaunsingh/nord.nvim'
   use '907th/vim-auto-save'
   use 'easymotion/vim-easymotion'
   use 'lukas-reineke/indent-blankline.nvim'
+
+-- Nvim Tree
+	use {
+		'kyazdani42/nvim-tree.lua',
+		requires = 'kyazdani42/nvim-web-devicons',
+		config = function() require'nvim-tree'.setup {} 
+	end
+	}
+
+
+-- Telescope
+	use {
+	  'nvim-telescope/telescope.nvim',
+	  requires = { {'nvim-lua/plenary.nvim'} }
+	}
 
 -- Colorizer
 	use {

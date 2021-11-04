@@ -4,6 +4,7 @@ local home = os.getenv( "HOME" )
 local cmd = vim.cmd
 
 -- Global
+g.nvim_tree_quit_on_open = 1 
 g.mapleader = ' '
 g.undotree_WindowLayout = 2
 g.auto_save = 1
