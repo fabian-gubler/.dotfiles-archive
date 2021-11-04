@@ -13,6 +13,7 @@ g.nord_borders = 'true'
 
 -- Options
 o.relativenumber = true
+o.showmode = false
 o.cursorline = true
 o.swapfile = false
 o.splitbelow = true

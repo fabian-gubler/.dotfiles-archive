@@ -1,4 +1,4 @@
--- Install packer
+	-- Install packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -69,7 +69,19 @@ return require('packer').startup(function(use)
 		config = function()
         require('toggleterm').setup{
             open_mapping = [[<c-t>]],
-	}
+			direction = 'float',
+			float_opts = {
+			  -- border = 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
+			  border = "curved",
+			  -- width = <value>,
+			  -- height = <value>,
+			  winblend = 0,
+			  highlights = {
+				border = "Normal",
+				background = "Normal",
+			  },
+			}
+		}
     end
 }
 
