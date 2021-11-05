@@ -5,7 +5,6 @@ local cmd = vim.cmd
 
 -- Global
 g.nvim_tree_quit_on_open = 1 
-g.mapleader = ' '
 g.undotree_WindowLayout = 2
 g.auto_save = 1
 g.auto_save_silent = 1
@@ -15,7 +14,7 @@ g.nord_borders = 'true'
 -- Options
 o.relativenumber = true
 o.showmode = false
-o.cursorline = true
+o.cursorline = false
 o.swapfile = false
 o.splitbelow = true
 o.splitright = true
@@ -28,6 +27,7 @@ o.clipboard = "unnamedplus"
 o.smartindent = true
 o.wrap = false
 -- o.colorcolumn = "80"
+o.timeoutlen = 500
 
 -- Don't know yet
 local indent = 4

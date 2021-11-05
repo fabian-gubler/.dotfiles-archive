@@ -1,4 +1,4 @@
-	-- Install packer
+-- Bootstrap packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -7,17 +7,40 @@ end
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+	use 'wbthomason/packer.nvim'
 
-  -- Plugins
-    -- Lsp
-    -- Treesitter
-    -- Completion
+-- One line
+	use 'shaunsingh/nord.nvim'
+	use '907th/vim-auto-save'
+	use 'easymotion/vim-easymotion'
+	use 'lukas-reineke/indent-blankline.nvim'
 
-  use 'shaunsingh/nord.nvim'
-  use '907th/vim-auto-save'
-  use 'easymotion/vim-easymotion'
-  use 'lukas-reineke/indent-blankline.nvim'
+-- Treesitter
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate',
+		config = function() require'core.treesitter' end,
+	}
+
+-- LSP
+	-- use {
+	-- 	'neovim/nvim-lspconfig',
+	-- 	config = function() require('core.lsp') end,
+	-- 	requires = {'williamboman/nvim-lsp-installer'}
+	-- }
+	--
+	-- use {
+	-- 	'hrsh7th/nvim-cmp',
+	-- 	config = function ()
+	-- 		require('core.nvim-cmp')
+	-- 	end,
+	-- 	requires = {{'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'}, {'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-nvim-lua'}, {'hrsh7th/cmp-vsnip'}, {'kdheepak/cmp-latex-symbols'}}
+	-- }
+	--
+	-- use {
+	-- 	'hrsh7th/vim-vsnip',
+	-- 	requires = {{'rafamadriz/friendly-snippets'}}
+	-- }
 
 -- Nvim Tree
 	use {
@@ -37,8 +60,7 @@ return require('packer').startup(function(use)
 -- Colorizer
 	use {
 		'norcalli/nvim-colorizer.lua',
-		config = function()
-		require('colorizer').setup()
+		config = function() require('colorizer').setup()
 	end
 }
 
