@@ -1,9 +1,5 @@
--- Bubbles config for lualine
 -- Author: lokesh-krishna
--- MIT license, see LICENSE for more details.
 
-
--- stylua: ignore
 local colors = {
   nord   = '#434C5E',
   black  = '#2E3440',

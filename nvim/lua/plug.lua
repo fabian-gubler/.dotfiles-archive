@@ -6,10 +6,10 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
+-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
--- One line
+-- Simple Setup
 	use 'shaunsingh/nord.nvim'
 	use '907th/vim-auto-save'
 	use 'easymotion/vim-easymotion'
@@ -23,12 +23,12 @@ return require('packer').startup(function(use)
 	}
 
 -- LSP
-	-- use {
-	-- 	'neovim/nvim-lspconfig',
-	-- 	config = function() require('core.lsp') end,
-	-- 	requires = {'williamboman/nvim-lsp-installer'}
-	-- }
-	--
+	use {
+		'neovim/nvim-lspconfig',
+		config = function() require('core.lsp') end,
+		requires = {'williamboman/nvim-lsp-installer'}
+	}
+
 	-- use {
 	-- 	'hrsh7th/nvim-cmp',
 	-- 	config = function ()
@@ -42,7 +42,7 @@ return require('packer').startup(function(use)
 	-- 	requires = {{'rafamadriz/friendly-snippets'}}
 	-- }
 
--- Nvim Tree
+-- Tree
 	use {
 		'kyazdani42/nvim-tree.lua',
 		requires = 'kyazdani42/nvim-web-devicons',
@@ -71,7 +71,7 @@ return require('packer').startup(function(use)
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 }
 
--- Smooth Scroll
+-- Scrolling
 	use {
 		'karb94/neoscroll.nvim',
 		config = function()
@@ -119,5 +119,4 @@ return require('packer').startup(function(use)
 		}
     end
 }
-
 end)
