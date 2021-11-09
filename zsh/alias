@@ -1,3 +1,9 @@
+# Short form
+alias v="nvim"
+alias sv="sudoedit"
+alias t="todo.sh"
+alias pomo="pomogoro --config ~/.config/pomogoro/config.toml"
+
 # Productivity
 alias template="$HOME/.dotfiles/scripts/bash/template_maker.sh"
 alias lg="lazygit"
@@ -12,8 +18,6 @@ alias ...="cl ../.."
 alias gpush="git add . && git commit -m 'update' && git push"
 alias gclone="git clone"
 alias sound="sudo python3 $HOME/.dotfiles/scripts/utils/sound/applyimproved.py $HOME/.dotfiles/scripts/utils/sound/alc285.txt"
-alias v="nvim"
-alias sv="sudoedit"
 alias drive='lsblk'
 alias pls='sudo $(fc -ln -1)'
 alias q="exit"

@@ -10,6 +10,7 @@ zstyle :compinstall filename '/home/fabian/.config/zsh/.zshrc'
 autoload -U promptinit; promptinit
 prompt pure
 zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
+PURE_PROMPT_SYMBOL="❯"
 PURE_CMD_MAX_EXEC_TIME=99999999999999
 
 # Completion

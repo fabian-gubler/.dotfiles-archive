@@ -9,15 +9,15 @@ htmlPage() {
 cat << EOF >> index.html
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>${name}</title>
-    <link href="css/style.css" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <script src=”js/script.js”></script>
-  </body>
+	<head>
+		<title>${name}</title>
+		<link href="css/style.css" rel="stylesheet">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src=”js/script.js”></script>
+	</head>
+	<body>
+	</body>
 </html>
 EOF
 }

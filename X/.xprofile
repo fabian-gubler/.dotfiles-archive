@@ -4,8 +4,8 @@
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
 export QT_QPA_PLATFORMTHEME=qt5ct
-export EDITOR=lvim
-export PAGER=lvim
+export EDITOR=nvim
+export PAGER=nvim
 export GTK_THEME=Nordic
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$HOME/.local/bin:$PATH"
@@ -23,7 +23,7 @@ unclutter --timeout 3 --start-hidden &
 gnome-keyring-daemon --start --components=pkcs11 &
 xset r rate 350 60 &
 xset s off -dpms &
-xsetroot -solid "#252a34" &
+hsetroot -solid "#252a34" &
 mailspring -b &
 rumno-background &
 slstatus &

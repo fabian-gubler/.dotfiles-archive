@@ -13,7 +13,6 @@
     ~/.config/zsh/functions:                zsh/functions
     ~/.config/zsh/pure:                     zsh/pure
     ~/.z:                                   zsh/.z
-    ~/.config/alacritty:                    alacritty
     ~/.xprofile:                            X/.xprofile
     ~/.zprofile:                            X/.zprofile
     ~/.Xresources:                          X/.Xresources
@@ -22,10 +21,9 @@
     ~/.local/share/fonts:                   system/fonts
     ~/.config/keyboard.conf:                system/setxkbmap/keyboard.conf
     ~/.config/picom.conf:                   system/compositor/picom.conf
-    ~/.tmux.conf:                           tmux/.tmux.conf
+    ~/.tmux.conf:                           tmux/tmux.conf
 
     # UTILITIES ---------------------------------------------------
-    ~/.config/nvim:                         nvim
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
     ~/.config/Typora/themes/nord:           typora/nord
     ~/.config/Typora/themes/nord.css:       typora/nord.css
@@ -34,27 +32,19 @@
     ~/.config/qt5ct/qt5ct.conf:             system/qt/qt5ct.conf
     ~/.config/qt5ct/colors/nord.conf:       system/qt/nord.conf 
     ~/.config/dunst/dunstrc:                system/dunst/dunstrc
-    ~/.config/sc-im/scimrc:                 sc-im/scimrc
     ~/.newsboat/urls:                       newsboat/urls
     ~/.newsboat/config:                     newsboat/config
-    ~/.config/ytfzf:                        ytfzf
     ~/.themes/Nordic:                       system/gtk/Nordic
-    ~/.config/xournalpp:                    xournal
     ~/.config/Ferdi/recipes:                ferdi/recipes
     ~/.config/Ferdi/config:                 ferdi/config
     ~/.config/redshift:                     system/redshift
+    ~/.config/mpv:                          mpv
       
 
     # TOOLS -------------------------------------------------------
-    ~/.config/i3/config:                    archive/i3/config
-    ~/.config/polybar/config:               archive/polybar/config
-    ~/.config/polybar/launch.sh:            archive/polybar/launch.sh
-    ~/.config/polybar/modules.ini:          archive/polybar/modules.ini
     ~/.config/ranger/rc.conf:               ranger/rc.conf
     ~/.config/ranger/rifle.conf:            ranger/rifle.conf
     ~/.config/ranger/plugins:               ranger/plugins
-    ~/.config/rofi/config:                  archive/rofi/config
-    ~/.config/rofi/themes/minimal.rasi:     archive/rofi/minimal.rasi
     ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf
     ~/.config/autorandr/postswitch:         system/autorandr/postswitch
     ~/.config/zathura:                      zathura
@@ -67,10 +57,13 @@
     ~/.config/tridactyl/tridactylrc:        firefox/tridactylrc.vim
     ~/.config/tridactyl/themes/nord.css:    firefox/nord.css
 
-    # MEDIA -------------------------------------------------------
-    ~/.config/mpv:                          mpv
-    
     # SUDO --------------------------------------------------------
     /usr/local/bin/rumno:                   system/rumno/build/rumno
     /usr/local/bin/rumno-background:        system/rumno/build/rumno-background
-    /usr/local/bin/tmuxdd:                  tmux/tmuxdd
+    /usr/local/bin/tmuxdd:                  scripts/bash/tmuxdd
+
+    # ARCHIVED ----------------------------------------------------
+    ~/.config/alacritty:                    archive/alacritty
+    ~/.config/xournalpp:                    archive/xournal
+    ~/.config/rofi/config:                  archive/rofi/config
+    ~/.config/rofi/themes/minimal.rasi:     archive/rofi/minimal.rasi
