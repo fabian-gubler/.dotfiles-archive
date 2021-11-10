@@ -11,7 +11,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$HOME/.local/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
-export TERM=alacritty
+export TERM=st
 export LANG="en_US.utf8"
 export MOZ_USE_XINPUT2=1
 

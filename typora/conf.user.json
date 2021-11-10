@@ -19,6 +19,8 @@
     "Open...":              "Ctrl+p"
     "Task List":            "Ctrl+Shift+t"
     "Insert Table":         "Ctrl+t"
+	"Outline":				"Alt+."
+	"File Tree":			"Alt+,"
   },
 
   "monocolorEmoji": false, //default false. Only work for Windows

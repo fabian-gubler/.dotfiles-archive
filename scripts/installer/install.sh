@@ -65,6 +65,7 @@ PRGS=(
     'wget'                        # Download web content
     'ranger'                      # File explorer
     'dragon-drag-and-drop-git'    # Drag and drop
+	'todotxt'					  # Todo
 
     # SYSTEM ------------------------------------------------------------------
     'alacritty'                   # Terminal
@@ -132,16 +133,8 @@ done
 # ------------------------------------------------------
 
 echo
-echo "LUNARVIM: Single line install"
-
-# Single line command
-LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh) 
-
-# -----------------------------------------------------
-
-echo
 echo "Done!"
-echo "Script finished installation process"
+echo "All packages have been installed"
 echo
 
 # ------------------------------------------------------
@@ -156,9 +149,6 @@ sudo systemctl enable pipewire
 sudo systemctl enable pipewire-pulse
 sudo systemctl enable bluetooth
 sudo systemctl enable tlp
-
-# tty | add FONT=ter-p32b
-echo 'KEYMAP=de' | sudo tee /etc/vconsole.conf
 
 # Keyboard
 localectl set-x11-keymap us "" altgr-intl

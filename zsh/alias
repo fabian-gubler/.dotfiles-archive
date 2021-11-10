@@ -2,6 +2,7 @@
 alias v="nvim"
 alias sv="sudoedit"
 alias t="todo.sh"
+alias tv="nvim ~/.todo/todo.txt"
 alias pomo="pomogoro --config ~/.config/pomogoro/config.toml"
 
 # Productivity
