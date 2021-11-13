@@ -2,7 +2,7 @@
 HISTFILE=~/.config/zsh/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-export MANPAGER="lvim -c 'set ft=man' -"
+export MANPAGER="nvim -c 'set ft=man' -"
 
 # Pure Prompt
 fpath+=$HOME/.config/zsh/pure

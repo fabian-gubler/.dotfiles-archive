@@ -86,6 +86,7 @@ PRGS=(
     'devour'                      # Swallow programs
     'baobab'                      # Disk space
     'unzip'                       # Unzip directories
+	'freeoffice'				  # Office Suite
 
     # WEB TOOLS ---------------------------------------------------------------
     'firefox'                     # Web browser

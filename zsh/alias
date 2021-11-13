@@ -1,25 +1,21 @@
 # Short form
 alias v="nvim"
+alias zt="zathura"
 alias sv="sudoedit"
 alias t="todo.sh"
 alias tv="nvim ~/.todo/todo.txt"
-alias pomo="pomogoro --config ~/.config/pomogoro/config.toml"
 
 # Productivity
+alias pomo="pomogoro --config ~/.config/pomogoro/config.toml"
+alias study="pomogoro --config ~/.config/pomogoro/study.toml"
 alias template="$HOME/.dotfiles/scripts/bash/template_maker.sh"
-alias lg="lazygit"
-alias yt="youtube-dl -f 'bestvideo[height<=720][fps<=?30]+bestaudio/best[height<=720]'"
 alias nightlight="pkill -USR1 redshift"
 alias deploy="$HOME/.dotfiles/scripts/webdev/deploy.sh"
-alias code="cd /data/drive/cs-prep/freecodecamp/ && lvim /data/drive/cs-prep/freecodecamp/main.js"
-alias noise="mpv /data/drive/sound/brown-noise.m4a"
 alias .="exa -a"
 alias ..="cl .."
 alias ...="cl ../.."
 alias gpush="git add . && git commit -m 'update' && git push"
-alias gclone="git clone"
 alias sound="sudo python3 $HOME/.dotfiles/scripts/utils/sound/applyimproved.py $HOME/.dotfiles/scripts/utils/sound/alc285.txt"
-alias drive='lsblk'
 alias pls='sudo $(fc -ln -1)'
 alias q="exit"
 alias zoomdl="zoomdl -u"
@@ -42,10 +38,11 @@ alias large-dir="sudo du -ahx / | sort -rh | head -20"
 alias pacman='sudo pacman --color auto'
 alias update='yay -Syyu'
 
-# Spelling
-alias vim='nvim'
+# -------------------
+# Functions 
+# -------------------
 
-# More Complex
+# Directory
 cl() {
         cd "$@" && exa -a;
 }

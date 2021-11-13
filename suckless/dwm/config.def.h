@@ -66,30 +66,30 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
-static const char *termcmd[] = { "st", NULL };
+static const char *termcmd[] = { "alacritty", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-  { MODKEY,                       XK_v,      spawn,          SHCMD("networkmanager_dmenu")},
-  { MODKEY,                       XK_z,      spawn,          SHCMD("mpv --volume=50 /data/drive/sound/brown-noise.m4a")},
-  { MODKEY|ShiftMask,             XK_z,      spawn,          SHCMD("killall mpv")},
-  { MODKEY,                       XK_g,      spawn,          SHCMD("mailspring")},
-  { MODKEY,                       XK_w,      spawn,          SHCMD("firefox")},
-  { MODKEY,                       XK_a,      spawn,          SHCMD("typora")},
-  { MODKEY,                       XK_f,      spawn,          SHCMD("ferdi")},
-  { MODKEY,                       XK_Return, spawn,          SHCMD("alacritty -e tmuxdd")},
+	{ MODKEY,                       XK_v,      spawn,          SHCMD("networkmanager_dmenu")},
+	{ MODKEY,                       XK_z,      spawn,          SHCMD("mpv --volume=50 /data/drive/sound/brown-noise.m4a")},
+	{ MODKEY|ShiftMask,             XK_z,      spawn,          SHCMD("killall mpv")},
+	{ MODKEY,                       XK_g,      spawn,          SHCMD("mailspring")},
+	{ MODKEY,                       XK_w,      spawn,          SHCMD("firefox")},
+	{ MODKEY,                       XK_a,      spawn,          SHCMD("typora")},
+	{ MODKEY,                       XK_f,      spawn,          SHCMD("ferdi")},
+	{ MODKEY,                       XK_Return, spawn,          SHCMD("alacritty -e tmuxdd")},
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("alacritty")},
 	{ ShiftMask,                    XK_space,  spawn,          SHCMD("dunstctl close-all")},
-  { MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("pcmanfm")},
-  { MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmlogout")},
-  { MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dlay")},
-  { MODKEY,                       XK_c,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/colorpicker.sh")},
+	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("pcmanfm")},
+	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmlogout")},
+	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dlay")},
+	{ MODKEY,                       XK_c,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/colorpicker.sh")},
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/dmenu-bluetooth")},
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("spotify")},
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
-  { MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_m,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_i,      setmfact,       {.f = +0.05} },
@@ -120,14 +120,14 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-  { 0, XF86XK_AudioLowerVolume, spawn, SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh volume-dec")},
-	{ 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh volume-inc")},
-	{ 0, XF86XK_AudioMute, spawn, SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh volume-toggle")},
-	{ 0, XF86XK_AudioPlay, spawn, SHCMD("playerctl play-pause")},
-	{ 0, XF86XK_AudioNext, spawn, SHCMD("playerctl next")},
-  { 0, XF86XK_MonBrightnessUp, spawn, SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh brightness-inc")},
-	{ 0, XF86XK_MonBrightnessDown, spawn, SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh brightness-dec")},
-  { 0, PrintScreen,      spawn, SHCMD("flameshot gui")},
+	{ 0, XF86XK_AudioLowerVolume,	spawn,	   SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh volume-dec")},
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,	   SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh volume-inc")},
+	{ 0, XF86XK_AudioMute,			spawn,	   SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh volume-toggle")},
+	{ 0, XF86XK_AudioPlay,			spawn,	   SHCMD("playerctl play-pause")},
+	{ 0, XF86XK_AudioNext,			spawn,	   SHCMD("playerctl next")},
+	{ 0, XF86XK_MonBrightnessUp,	spawn,	   SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh brightness-inc")},
+	{ 0, XF86XK_MonBrightnessDown,	spawn,	   SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh brightness-dec")},
+	{ 0, PrintScreen,				spawn,	   SHCMD("flameshot gui")},
 };
 
 /* button definitions */

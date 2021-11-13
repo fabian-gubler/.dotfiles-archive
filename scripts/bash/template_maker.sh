@@ -11,10 +11,10 @@ cat << EOF >> index.html
 <html lang="en">
 	<head>
 		<title>${name}</title>
-		<link href="css/style.css" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src=”js/script.js”></script>
+		<script src=”script.js”></script>
 	</head>
 	<body>
 	</body>
@@ -22,10 +22,8 @@ cat << EOF >> index.html
 EOF
 }
 
-
 # Create Files and Directories
 mkdir ${name}
 cd ${name}
-mkdir css js
-touch index.html css/style.css js/script.js
+touch index.html style.css script.js
 htmlPage
