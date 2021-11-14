@@ -4,6 +4,7 @@ alias zt="zathura"
 alias sv="sudoedit"
 alias t="todo.sh"
 alias tv="nvim ~/.todo/todo.txt"
+alias bk="bookmark"
 
 # Productivity
 alias pomo="pomogoro --config ~/.config/pomogoro/config.toml"
