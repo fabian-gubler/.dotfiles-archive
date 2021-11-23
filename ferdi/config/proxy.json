@@ -54,5 +54,12 @@
     "port": "",
     "user": "",
     "password": ""
+  },
+  "b6bc00a2-5c3a-466a-a5b4-a712621324da": {
+    "isEnabled": false,
+    "host": "",
+    "port": "",
+    "user": "",
+    "password": ""
   }
 }
