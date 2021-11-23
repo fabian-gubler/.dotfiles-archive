@@ -35,8 +35,6 @@
     ~/.newsboat/urls:                       newsboat/urls
     ~/.newsboat/config:                     newsboat/config
     ~/.themes/Nordic:                       system/gtk/Nordic
-    ~/.config/Ferdi/recipes:                ferdi/recipes
-    ~/.config/Ferdi/config:                 ferdi/config
     ~/.config/redshift:                     system/redshift
     ~/.config/mpv:                          mpv
       
