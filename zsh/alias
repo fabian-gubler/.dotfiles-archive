@@ -6,6 +6,7 @@ alias t="todo.sh"
 alias tv="nvim ~/.todo/todo.txt"
 alias bk="bookmark"
 alias web="nvim -p *.html *.css *.js"
+alias n="neuron"
 
 # Productivity
 alias pomo="pomogoro --config ~/.config/pomogoro/config.toml"

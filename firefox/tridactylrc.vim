@@ -30,8 +30,9 @@ bind m scrollpx -50
 bind <C-y> mode ignore
 
 " Work everywhere
-bind --mode=browser <A-u> tabopen about:blank
 bind --mode=browser <A-v> editor
+bind --mode=browser <A-h> tabopen localhost:4000
+
 
 " Hinting
 bind s hint
