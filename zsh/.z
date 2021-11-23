@@ -2,7 +2,6 @@
 /home/fabian/.dotfiles/newsboat|4|1633444947
 /data/drive/hsg/semester/technologie/notes|5|1637669054
 /usr/share/vim/vimfiles/plugin|5|1636359589
-/etc|19|1636367423
 /home/fabian/.config/polybar|44|1631235132
 /home/fabian/.config/nvim|46|1637686523
 /data/drive/hsg/semester/handling/lectures|7|1635510090
@@ -29,9 +28,9 @@
 /etc/modprobe.d|4|1632607055
 /usr/share/fonts/TTF|3|1634122601
 /home/fabian/.dotfiles/X|4|1633446260
+/usr/local|2|1634122452
 /home/fabian/.todo|2|1637668516
 /home/fabian/.dotfiles/zsh|44|1637591806
-/usr/local|2|1634122452
 /home/fabian/.local/share/zathura|3|1633445029
 /home/fabian/.dotfiles/system/fonts|2|1633713035
 /home/fabian/.dotfiles/system/rumno/build/target/release|5|1630629251
@@ -50,10 +49,10 @@
 /home/fabian/.dotfiles/suckless/dmenu|17|1631728378
 /home/fabian/.dotfiles/system/rumno|21|1633701903
 /boot|9|1635008565
-/home/fabian/notes|26|1637684933
 /home/fabian/.dotfiles/scripts/rofi/rofi|4|1631231254
 /var/tmp|2|1631714463
 /home/fabian/.local/bin|42|1636371622
+/home/fabian/notes|27|1637686837
 /home/fabian/.dotfiles/suckless/slstatus|23|1637677355
 /boot/loader|7|1635008568
 /home/fabian/.dotfiles/scripts/webdev|13|1634893323
@@ -111,7 +110,7 @@
 /usr/bin|7|1635006627
 /etc/profile.d|10|1630940727
 /data/drive/hsg/semester/handling|3|1632244432
-/home/fabian/.dotfiles|412|1637676373
+/home/fabian/.dotfiles|413|1637686810
 /home/fabian/.dotfiles/scripts/installer|2|1633445175
 /home/fabian/.dotfiles/system/systemd|5|1630632735
 /home/fabian/.dotfiles/system/rumno/build/res|1|1632607700

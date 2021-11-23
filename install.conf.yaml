@@ -50,7 +50,6 @@
     ~/.config/zathura:                      zathura
     ~/.config/spicetify:                    spicetify
     ~/.config/ncpamixer.conf:               system/ncpamixer/ncpamixer.conf
-      
 
     # WEB TOOLS ---------------------------------------------------
     ~/.mozilla/firefox/u7my0den.default-release/chrome/userChrome.css: firefox/userChrome.css
