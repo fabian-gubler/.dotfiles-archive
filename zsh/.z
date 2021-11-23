@@ -3,7 +3,7 @@
 /data/drive/hsg/semester/technologie/notes|5|1637669054
 /usr/share/vim/vimfiles/plugin|5|1636359589
 /home/fabian/.config/polybar|44|1631235132
-/home/fabian/.config/nvim|55|1637690043
+/home/fabian/.config/nvim|56|1637691033
 /data/drive/hsg/semester/handling/lectures|7|1635510090
 /home/fabian/.local/share|5|1634738314
 /data/drive/notes|4|1631409116
@@ -14,7 +14,7 @@
 /data/drive/hsg/semester|5|1636361682
 /data/drive/backup|3|1636554845
 /home|8|1636025727
-/home/fabian/.config/nvim/lua/core|48|1637690020
+/home/fabian/.config/nvim/lua/core|52|1637691055
 /var/log|6|1637686701
 /home/fabian/.dotfiles/spicetify|16|1633701262
 /home/fabian/.dotfiles/scripts/utils/sound|24|1632606854
@@ -52,7 +52,7 @@
 /home/fabian/.dotfiles/scripts/rofi/rofi|4|1631231254
 /var/tmp|2|1631714463
 /home/fabian/.local/bin|42|1636371622
-/home/fabian/notes|62|1637690388
+/home/fabian/notes|6|1637691215
 /home/fabian/.dotfiles/suckless/slstatus|23|1637677355
 /boot/loader|7|1635008568
 /home/fabian/.dotfiles/scripts/webdev|13|1634893323
@@ -67,11 +67,9 @@
 /usr/local/bin|5|1631407518
 /home/fabian/.mozilla/firefox|16|1636554829
 /home/fabian/.local/share/nvim/site|8|1637676538
-/home/fabian/notes/.neuron/output|13|1637689536
 /home/fabian/.dotfiles/tmux|10|1636479549
 /etc/X11|5|1630194386
 /home/fabian/.dotfiles/dotbot/bin|1|1632786315
-/home/fabian/notes/.neuron|2|1637689394
 /home/fabian/.config/zsh/plugins|4|1632784411
 /usr/share/fonts|13|1630506628
 /data/drive/hsg/archive/semester-4/käuferverhalten|4|1635163454
@@ -80,9 +78,9 @@
 /home/fabian/.config/tridactyl|1|1637688607
 /|7|1632261278
 /data/drive/hsg/semester/webapps|25|1636644467
-/home/fabian/.config/nvim/lua|39|1637690335
 /home/fabian/.mozilla/firefox/u7my0den.default-release/chrome|12|1633896810
 /usr/share/nvim/runtime/plugin|1|1636393498
+/home/fabian/.config/nvim/lua|43|1637691035
 /home/fabian/downloads|169|1637668284
 /home/fabian/.config/nvim/plugin|1|1637676550
 /home/fabian/.ssh|4|1634115902
