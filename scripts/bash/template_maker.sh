@@ -14,7 +14,7 @@ cat << EOF >> index.html
 		<link href="style.css" rel="stylesheet">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="script.js"></script>
+		<script src="script.js" defer></script>
 	</head>
 	<body>
 	</body>
@@ -25,5 +25,5 @@ EOF
 # Create Files and Directories
 mkdir ${name}
 cd ${name}
-touch index.html style.css script.js
+touch index.html style.css script.js package.json
 htmlPage
