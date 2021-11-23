@@ -9,7 +9,6 @@ alias web="nvim -p *.html *.css *.js"
 
 # Productivity
 alias pomo="pomogoro --config ~/.config/pomogoro/config.toml"
-alias study="pomogoro --config ~/.config/pomogoro/study.toml"
 alias template="$HOME/.dotfiles/scripts/bash/template_maker.sh"
 alias nightlight="pkill -USR1 redshift"
 alias deploy="$HOME/.dotfiles/scripts/webdev/deploy.sh"
