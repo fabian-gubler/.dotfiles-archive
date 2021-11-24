@@ -14,11 +14,11 @@
 /data/drive/hsg/semester|5|1636361682
 /data/drive/backup|3|1636554845
 /home|8|1636025727
-/home/fabian/.config/nvim/lua/core|52|1637691055
+/home/fabian/.config/nvim/lua/core|56|1637705645
 /var/log|6|1637686701
 /home/fabian/.dotfiles/spicetify|16|1633701262
 /home/fabian/.dotfiles/scripts/utils/sound|24|1632606854
-/home/fabian/.dotfiles/scripts/bash|108|1637703853
+/home/fabian/.dotfiles/scripts/bash|122|1637706034
 /etc/fonts|6|1630506965
 /home/fabian/go|1|1636469220
 /home/fabian/.dotfiles/scripts/utils|128|1636838933
@@ -34,9 +34,9 @@
 /home/fabian/.dotfiles/system/rumno/build/target/release|5|1630629251
 /home/fabian/.dotfiles/system/fonts|2|1633713035
 /home/fabian/.local/share/zathura|3|1633445029
+/data|111|1637706306
 /home/fabian/.dotfiles/system/compositor|24|1636467357
 /home/fabian/.dotfiles/ranger|8|1634567563
-/data|109|1637678896
 /etc/pam.d|6|1630364342
 /home/fabian/.dotfiles/spicetify/Custom/Assets|1|1632626131
 /home/fabian/.config/sc-im|32|1630358398
@@ -58,6 +58,7 @@
 /home/fabian/.dotfiles/scripts/webdev|13|1634893323
 /home/fabian/.secrets/mailspring|17|1632610288
 /data/website/app|1|1637595854
+/data/test|23|1637706778
 /home/fabian/.dotfiles/zathura|2|1633444755
 /home/fabian/.dotfiles/system/ncpamixer|2|1632859752
 /data/website/src|4|1637596033
@@ -97,7 +98,7 @@
 /data/drive|39|1637668655
 /home/fabian/.dotfiles/suckless/slock|17|1631719049
 /home/fabian/.dotfiles/suckless/dwm|813|1637704377
-/data/sandbox|1|1637678900
+/data/sandbox|6|1637706007
 /home/fabian/.newsboat|9|1630423724
 /home/fabian/.config/ranger|3|1632614730
 /home/fabian/.dotfiles/scripts/rofi|3|1631231218

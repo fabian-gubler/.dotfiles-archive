@@ -22,8 +22,25 @@ cat << EOF >> index.html
 EOF
 }
 
+cssPage() {
+cat << EOF >> style.scss
+@use 'nord' as *;
+body {
+	background: \$nord0;
+}
+EOF
+}
+
+nordPage() {
+cat << EOF >> _nord.scss
+\$nord0: black; 
+EOF
+}
+
 # Create Files and Directories
 mkdir ${name}
 cd ${name}
-touch index.html style.css script.js package.json
+touch index.html style.scss _nord.scss script.js package.json
 htmlPage
+cssPage
+nordPage

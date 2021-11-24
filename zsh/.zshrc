@@ -13,9 +13,6 @@ zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
 PURE_PROMPT_SYMBOL="❯"
 PURE_CMD_MAX_EXEC_TIME=99999999999999
 
-# Hooks
-autoload -Uz add-zsh-hook
-
 # Completion
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '/home/fabian/.config/zsh/.zshrc'
