@@ -6,7 +6,7 @@ tmux new-session -d -s $session
 window=1
 tmux rename-window -t $session:$window 'live-server'
 tmux send-keys -t $session:$window "cd $cwd" C-m C-l
-tmux send-keys -t $session:$window 'live-server' C-m
+tmux send-keys -t $session:$window 'live-server --port=5000' C-m
 
 window=2
 tmux new-window -t $session:$window -n 'scss'

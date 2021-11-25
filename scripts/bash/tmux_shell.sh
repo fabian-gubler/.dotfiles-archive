@@ -3,4 +3,4 @@
 path=~/.dotfiles/scripts/tmux
 
 cd $path
-./$(cd $path && fzf --reverse)
+./$(cd $path && fzf --reverse --margin=1)
