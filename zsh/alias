@@ -7,7 +7,7 @@ alias tv="nvim ~/.todo/todo.txt"
 alias bk="bookmark"
 alias web="nvim -p *.html *.scss *.js"
 alias n="neuron"
-alias notes="$HOME/.dotfiles/scripts/bash/tmux_notes.sh"
+alias server="$HOME/.dotfiles/scripts/bash/server.sh"
 
 # Productivity
 alias pomo="pomogoro --config ~/.config/pomogoro/config.toml"
