@@ -16,7 +16,7 @@
 /data/drive/hsg/semester|5|1636361682
 /data/drive/backup|3|1636554845
 /home|8|1636025727
-/data/restaurant|1|1637854830
+/data/restaurant|12|1637857532
 /home/fabian/.config/nvim/lua/core|59|1637840970
 /var/log|6|1637686701
 /home/fabian/.dotfiles/spicetify|16|1633701262
@@ -28,6 +28,7 @@
 /home/fabian/.secrets|51|1634738314
 /data/drive/hsg/semester/technologie|9|1636645550
 /home/fabian/.config/zsh|16|1632784496
+/home/fabian/.npm|8|1637857500
 /etc/modprobe.d|4|1632607055
 /usr/share/fonts/TTF|3|1634122601
 /home/fabian/.dotfiles/X|4|1633446260
@@ -38,16 +39,18 @@
 /home/fabian/.dotfiles/system/rumno/build/target/release|5|1630629251
 /home/fabian/.dotfiles/system/fonts|2|1633713035
 /home/fabian/.local/share/zathura|3|1633445029
-/data|133|1637855000
 /home/fabian/.dotfiles/system/compositor|24|1636467357
 /home/fabian/.dotfiles/ranger|8|1634567563
+/data|137|1638030895
 /etc/pam.d|6|1630364342
 /home/fabian/.dotfiles/spicetify/Custom/Assets|1|1632626131
 /home/fabian/.config/sc-im|32|1630358398
+/data/Demos/ChatAppStep4|4|1638031007
 /home/fabian/.dotfiles/tmux/nord-tmux/src|1|1636026639
 /home/fabian/.dotfiles/system/fonts/apple/SFMono-Nerd-Font-Ligaturized|3|1633713056
 /home/fabian/.dotfiles/spicetify/Extensions|27|1634034492
 /home/fabian/.dotfiles/suckless/dwm/patches|27|1637704300
+/data/Demos/ChatAppStep6|4|1638031201
 /boot/loader/entries|9|1636634029
 /boot|9|1635008565
 /home/fabian/.dotfiles/system/rumno|21|1633701903
@@ -75,6 +78,7 @@
 /data/drive/hsg/archive/semester-4/käuferverhalten|4|1635163454
 /usr/share/fonts|13|1630506628
 /home/fabian/.config/zsh/plugins|4|1632784411
+/data/Personal|16|1638031205
 /home/fabian/.dotfiles/suckless/st|107|1635072908
 /home/fabian/.config/tridactyl|2|1637851975
 /data/drive/hsg/semester/webapps|25|1636644467
@@ -105,6 +109,7 @@
 /home/fabian/.dotfiles/mpv|13|1636371006
 /home/fabian/.dotfiles/firefox|18|1636038094
 /home/fabian/.themes|5|1631408127
+/data/Demos|1|1638030897
 /usr/share/i18n/locales|3|1630338097
 /etc/profile.d|10|1630940727
 /usr/bin|7|1635006627
