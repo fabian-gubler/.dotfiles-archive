@@ -35,6 +35,7 @@
 /home/fabian/.npm|8|1637857500
 /usr/share/fonts/TTF|3|1634122601
 /home/fabian/.dotfiles/X|4|1633446260
+/data/todo|13|1638132971
 /home/fabian/.todo|2|1637668516
 /home/fabian/.dotfiles/scripts/tmux|36|1637842629
 /usr/local|2|1634122452
@@ -42,7 +43,7 @@
 /home/fabian/.dotfiles/system/rumno/build/target/release|5|1630629251
 /home/fabian/.dotfiles/system/fonts|2|1633713035
 /home/fabian/.local/share/zathura|3|1633445029
-/data|157|1638123245
+/data|159|1638131992
 /home/fabian/.dotfiles/system/compositor|24|1636467357
 /home/fabian/.dotfiles/ranger|8|1634567563
 /etc/pam.d|6|1630364342
@@ -115,9 +116,9 @@
 /home/fabian/.dotfiles/mpv|13|1636371006
 /home/fabian/.dotfiles/firefox|18|1636038094
 /home/fabian/.themes|5|1631408127
+/data/test-project|13|1638130672
 /usr/share/i18n/locales|3|1630338097
 /data/Demos|4|1638040498
-/data/test-project|12|1638123661
 /etc/profile.d|10|1630940727
 /usr/bin|7|1635006627
 /data/drive/hsg/semester/handling|3|1632244432
