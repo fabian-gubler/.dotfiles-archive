@@ -22,8 +22,8 @@
 /var/log|6|1637686701
 /home/fabian/.dotfiles/spicetify|16|1633701262
 /home/fabian/.dotfiles/scripts/utils/sound|24|1632606854
+/home/fabian/.dotfiles/scripts/bash|203|1638183587
 /data/Personal/src/app/message|2|1638041278
-/home/fabian/.dotfiles/scripts/bash|202|1637851808
 /etc/fonts|6|1630506965
 /home/fabian/go|1|1636469220
 /home/fabian/.dotfiles/scripts/utils|128|1636838933
@@ -34,8 +34,8 @@
 /home/fabian/.npm|8|1637857500
 /etc/modprobe.d|4|1632607055
 /usr/share/fonts/TTF|3|1634122601
+/data/todo|29|1638183127
 /home/fabian/.dotfiles/X|4|1633446260
-/data/todo|24|1638179127
 /home/fabian/.dotfiles/zsh|45|1637704655
 /usr/local|2|1634122452
 /home/fabian/.dotfiles/scripts/tmux|36|1637842629
