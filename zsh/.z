@@ -34,8 +34,8 @@
 /etc/modprobe.d|4|1632607055
 /home/fabian/.npm|8|1637857500
 /usr/share/fonts/TTF|3|1634122601
-/data/todo|32|1638212609
 /home/fabian/.dotfiles/X|4|1633446260
+/data/todo|38|1638221234
 /home/fabian/.todo|3|1638212619
 /usr/local|2|1634122452
 /home/fabian/.dotfiles/zsh|45|1637704655
@@ -107,8 +107,8 @@
 /home/fabian/.dotfiles/suckless/dwm|821|1637829875
 /home/fabian/.dotfiles/suckless/slock|17|1631719049
 /data/drive|48|1638212728
-/data/sandbox|59|1637853566
 /data/sandbox/.sass-cache|1|1637852078
+/data/sandbox|75|1638223132
 /home/fabian/.newsboat|9|1630423724
 /home/fabian/.config/ranger|3|1632614730
 /home/fabian/.dotfiles/scripts/rofi|3|1631231218
