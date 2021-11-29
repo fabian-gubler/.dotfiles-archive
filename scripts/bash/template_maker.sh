@@ -12,6 +12,7 @@ cat << EOF >> index.html
 	<head>
 		<title>${name}</title>
 		<link href="style.css" rel="stylesheet">
+		<link rel="shortcut icon" type="image/jpg" href="https://img.icons8.com/material-rounded/50/000000/bookmark-ribbon.png"/>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="script.js" defer></script>
@@ -27,5 +28,3 @@ mkdir ${name}
 cd ${name}
 touch index.html style.scss script.js package.json
 htmlPage
-cssPage
-nordPage
