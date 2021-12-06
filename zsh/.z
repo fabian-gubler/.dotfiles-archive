@@ -45,9 +45,9 @@
 /home/fabian/.local/share/zathura|3|1633445029
 /home/fabian/.dotfiles/system/fonts|2|1633713035
 /home/fabian/.dotfiles/system/rumno/build/target/release|5|1630629251
-/data|169|1638786942
 /home/fabian/.dotfiles/ranger|8|1634567563
 /home/fabian/.dotfiles/system/compositor|24|1636467357
+/data|170|1638803883
 /home/fabian/.dotfiles/spicetify/Custom/Assets|1|1632626131
 /etc/pam.d|6|1630364342
 /data/test-project/dist|5|1638123604
@@ -87,9 +87,10 @@
 /usr/share/fonts|13|1630506628
 /data/drive/hsg/archive/semester-4/käuferverhalten|4|1635163454
 /home/fabian/.dotfiles/zsh/plugins|12|1637590314
+/data/personal-unichat/src/app|1|1638804049
 /home/fabian/.dotfiles/suckless/st|107|1635072908
 /home/fabian/.config/tridactyl|3|1638114436
-/data/drive/hsg/semester/webapps|28|1638204641
+/data/drive/hsg/semester/webapps|30|1638803876
 /|7|1632261278
 /home/fabian/.config/nvim/lua|50|1638298245
 /home/fabian/.mozilla/firefox/u7my0den.default-release/chrome|12|1633896810
@@ -97,7 +98,7 @@
 /home/fabian/downloads|173|1638293973
 /home/fabian/.ssh|4|1634115902
 /home/fabian/.dotfiles/system|6|1636034935
-/home/fabian/.config/pomogoro|23|1638778781
+/home/fabian/.config/pomogoro|24|1638803861
 /home/fabian/.dotfiles/system/dunst|9|1636467159
 /usr/lib/firmware/intel|21|1632605547
 /home/fabian/.config|32|1637668309
@@ -111,7 +112,7 @@
 /data/drive|49|1638340172
 /data/sandbox|33|1638793679
 /home/fabian/.newsboat|9|1630423724
-/data/personal-unichat|13|1638204744
+/data/personal-unichat|18|1638803946
 /home/fabian/.dotfiles/firefox|18|1636038094
 /home/fabian/.dotfiles/mpv|13|1636371006
 /home/fabian/.dotfiles/scripts/rofi|3|1631231218
