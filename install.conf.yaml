@@ -12,7 +12,6 @@
     ~/.config/zsh/alias:                    zsh/alias
     ~/.config/zsh/functions:                zsh/functions
     ~/.config/zsh/pure:                     zsh/pure
-    ~/.z:                                   zsh/.z
     ~/.xprofile:                            X/.xprofile
     ~/.zprofile:                            X/.zprofile
     ~/.Xresources:                          X/.Xresources
