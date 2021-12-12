@@ -1,5 +1,6 @@
 # Short form
 alias v="nvim"
+alias p="python3"
 alias zt="zathura"
 alias sv="sudoedit"
 alias t="todo.sh"
