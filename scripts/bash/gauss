@@ -1,0 +1,2 @@
+cd /analytics/app
+./gauss -stylesheet style.qss
