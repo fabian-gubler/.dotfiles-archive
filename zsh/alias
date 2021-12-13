@@ -1,7 +1,7 @@
 # Short form
 alias v="nvim"
 alias p="python3"
-alias gauss="/data/drive/hsg/semester/analytics/gauss/bin/gauss"
+alias tgauss="/analytics/app/tgauss"
 alias zt="zathura"
 alias sv="sudoedit"
 alias t="todo.sh"
