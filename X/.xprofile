@@ -28,7 +28,7 @@ mailspring -b &
 rumno-background &
 # slstatus &
 setxkbmap us altgr-intl &
-redshift &
+redshift -l 47.66667:8.98333 &
 
 # --- Background Applications
 insync start &
