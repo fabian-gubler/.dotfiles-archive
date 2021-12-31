@@ -32,4 +32,5 @@ redshift &
 
 # --- Background Applications
 insync start &
-/home/fabian/.dotfiles/scripts/utils/ferdi.sh &
+signal-desktop --start-in-tray --no-sandbox &
+# /home/fabian/.dotfiles/scripts/utils/ferdi.sh &
