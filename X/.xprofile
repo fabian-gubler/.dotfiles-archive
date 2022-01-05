@@ -1,5 +1,9 @@
 #!/bin/sh
 
+xrandr --setprovideroutputsource modesetting NVIDIA-0 &
+xrandr --auto &
+xrandr --dpi 96 &
+
 # --- Variables
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
@@ -23,7 +27,7 @@ unclutter --timeout 3 --start-hidden &
 gnome-keyring-daemon --start --components=pkcs11 &
 xset r rate 350 60 &
 xset s off -dpms &
-hsetroot -solid "#252a34" &
+xsetroot -solid "#252a34" &
 mailspring -b &
 rumno-background &
 # slstatus &
