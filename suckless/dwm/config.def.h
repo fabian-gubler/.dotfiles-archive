@@ -4,7 +4,7 @@
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int gappx     = 10;       /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 0;        /* 0 means no bar */
+static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "SFMono:size=11" };
 static const char col_gray1[]       = "#252A34";
@@ -71,7 +71,7 @@ static const char *termcmd[] = { "alacritty", NULL };
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_v,      spawn,          SHCMD("networkmanager_dmenu")},
+	{ MODKEY,                       XK_v,      spawn,          SHCMD("networkmanager_dmenu -l 30")},
 	{ MODKEY,                       XK_z,      spawn,          SHCMD("mpv --volume=50 /data/drive/sound/brown-noise.m4a")},
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          SHCMD("killall mpv")},
 	{ MODKEY,                       XK_g,      spawn,          SHCMD("mailspring")},
@@ -82,12 +82,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          SHCMD("alacritty -e tmuxdd")},
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("alacritty")},
 	// { ShiftMask,                    XK_space,  spawn,          SHCMD("dunstctl close-all")},
-	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("pcmanfm")},
+	// { MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("pcmanfm")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmlogout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dlay")},
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/colorpicker.sh")},
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/utils/dmenu-bluetooth")},
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("spotify")},
+	{ MODKEY|ShiftMask,             XK_g,      spawn,          SHCMD("spotify")},
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
