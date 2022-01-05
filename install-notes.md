@@ -20,6 +20,7 @@ Handle Lid
 - Proton VPN
 
 # System Utilities 
+- xclip
 - Pavucontrol
 - Unclutter
 - Unattended upgrades

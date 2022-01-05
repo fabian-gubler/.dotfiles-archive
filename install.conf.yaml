@@ -26,11 +26,12 @@
     ~/.config/qt5ct/qt5ct.conf:             system/qt/qt5ct.conf
     ~/.config/qt5ct/colors/nord.conf:       system/qt/nord.conf 
     ~/.config/dunst/dunstrc:                system/dunst/dunstrc
-    ~/.newsboat/urls:                       newsboat/urls
-    ~/.newsboat/config:                     newsboat/config
     ~/.themes/Nordic:                       system/gtk/Nordic
     ~/.config/redshift:                     system/redshift
     ~/.config/mpv:                          mpv
+    ~/.local/bin/rumno:                     system/rumno/build/rumno
+    ~/.local/bin/rumno-background:          system/rumno/build/rumno-background
+    ~/.local/bin/tmuxdd:                    scripts/bash/tmuxdd
       
 
     # TOOLS -------------------------------------------------------
@@ -40,18 +41,12 @@
     ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf
     ~/.config/autorandr/postswitch:         system/autorandr/postswitch
     ~/.config/zathura:                      zathura
-    ~/.config/spicetify:                    spicetify
-    ~/.config/ncpamixer.conf:               system/ncpamixer/ncpamixer.conf
 
     # WEB TOOLS ---------------------------------------------------
     ~/.mozilla/firefox/u7my0den.default-release/chrome/userChrome.css: firefox/userChrome.css
     ~/.config/tridactyl/tridactylrc:        firefox/tridactylrc.vim
     ~/.config/tridactyl/themes/nord.css:    firefox/nord.css
 
-    # SUDO --------------------------------------------------------
-    /usr/local/bin/rumno:                   system/rumno/build/rumno
-    /usr/local/bin/rumno-background:        system/rumno/build/rumno-background
-    /usr/local/bin/tmuxdd:                  scripts/bash/tmuxdd
 
     # ARCHIVED ----------------------------------------------------
     ~/.config/alacritty:                    archive/alacritty

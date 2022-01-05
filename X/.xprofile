@@ -9,6 +9,7 @@ export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
 export QT_QPA_PLATFORMTHEME=qt5ct
 export EDITOR=nvim
+export SUDO_EDITOR=nvim
 export PAGER=nvim
 export GTK_THEME=Nordic
 export XDG_CONFIG_HOME="$HOME/.config"

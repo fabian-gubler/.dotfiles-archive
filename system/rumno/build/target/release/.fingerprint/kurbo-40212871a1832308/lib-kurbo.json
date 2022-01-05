@@ -1,1 +1,0 @@
-{"rustc":9524402182923608514,"features":"[]","target":13742130823282879569,"profile":2285152228202085614,"path":15394722262746601739,"deps":[[4889541675595932199,"arrayvec",false,18192719341206037705]],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/kurbo-40212871a1832308/dep-lib-kurbo"}}],"rustflags":[],"metadata":17338794114126211772,"config":0,"compile_kind":0}

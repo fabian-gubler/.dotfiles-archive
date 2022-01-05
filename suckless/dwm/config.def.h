@@ -81,7 +81,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("signal-desktop")},
 	{ MODKEY,                       XK_Return, spawn,          SHCMD("alacritty -e tmuxdd")},
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("alacritty")},
-	{ ShiftMask,                    XK_space,  spawn,          SHCMD("dunstctl close-all")},
+	// { ShiftMask,                    XK_space,  spawn,          SHCMD("dunstctl close-all")},
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("pcmanfm")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmlogout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dlay")},
