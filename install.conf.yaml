@@ -8,18 +8,13 @@
 - link:
 
     # SYSTEM ------------------------------------------------------
-    ~/.config/zsh/.zshrc:                   zsh/.zshrc
-    ~/.config/zsh/alias:                    zsh/alias
-    ~/.config/zsh/functions:                zsh/functions
-    ~/.config/zsh/pure:                     zsh/pure
+    ~/.config/zsh:                          zsh
     ~/.xprofile:                            X/.xprofile
     ~/.zprofile:                            X/.zprofile
     ~/.Xresources:                          X/.Xresources
     ~/.xinitrc:                             X/.xinitrc
-    ~/.config/user-dirs.conf:               X/user-dirs.conf
     ~/.local/share/fonts:                   system/fonts
     ~/.config/keyboard.conf:                system/setxkbmap/keyboard.conf
-    ~/.config/picom.conf:                   system/compositor/picom.conf
     ~/.tmux.conf:                           tmux/tmux.conf
 
     # UTILITIES ---------------------------------------------------

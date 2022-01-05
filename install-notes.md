@@ -23,6 +23,7 @@ Handle Lid
 - Pavucontrol
 - Unclutter
 - Unattended upgrades
+- FZF
 
 # Neovim Install
 make CMAKE_BUILD_TYPE=RelWithDebInfo

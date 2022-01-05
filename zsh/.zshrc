@@ -5,8 +5,8 @@ SAVEHIST=10000
 export MANPAGER="nvim -c 'set ft=man' -"
 
 # Pure Prompt
-fpath+=$HOME/.config/zsh/pure
-zstyle :compinstall filename '/home/fabian/.config/zsh/.zshrc'
+fpath+=$HOME/.dotfiles/zsh/pure
+zstyle :compinstall filename '/home/fabian/.dotfiles/zsh/.zshrc'
 autoload -U promptinit; promptinit
 prompt pure
 zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
@@ -15,7 +15,7 @@ PURE_CMD_MAX_EXEC_TIME=99999999999999
 
 # Completion
 zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/home/fabian/.config/zsh/.zshrc'
+zstyle :compinstall filename '/home/fabian/.dotfiles/zsh/.zshrc'
 autoload -Uz compinit
 compinit
 
@@ -39,5 +39,5 @@ zsh_add_plugin "zsh-users/zsh-completions"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
-source /home/fabian/.dotfiles/zsh/plugins/z/zsh-z.plugin.zsh
-# source /home/fabian/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
+zsh_add_plugin "Aloxaf/fzf-tab"
+zsh_add_plugin "agkozak/zsh-z"
