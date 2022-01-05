@@ -30,10 +30,6 @@ bind m scrollpx -50
 bind <C-y> mode ignore
 
 " Work everywhere
-bind --mode=browser <A-v> editor
-bind --mode=browser <A-h> open localhost:4000
-bind --mode=browser <A-k> open localhost:5000
-
 
 " Hinting
 bind s hint
