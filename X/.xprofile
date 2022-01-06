@@ -18,6 +18,9 @@ export ZDOTDIR=$HOME/.config/zsh
 export TERM=alacritty
 export LANG="en_US.utf8"
 export MOZ_USE_XINPUT2=1
+export $(dbus-launch)
+
+# export SSH_AUTH_SOCK
 
 # --- Startup services
 bluetoothctl power on &
@@ -29,3 +32,8 @@ xsetroot -solid "#252a34" &
 rumno-background &
 setxkbmap us altgr-intl &
 redshift -l 47.66667:8.98333 &
+
+# --- Keyring
+# eval $(gnome-keyring-daemon --start)
+# /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+

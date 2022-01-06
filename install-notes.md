@@ -1,3 +1,5 @@
+VPN Configuration
+https://www.smarthomebeginner.com/configure-openvpn-to-autostart-linux/
 # Folder structure
 - Config
 - Scripts
@@ -25,7 +27,6 @@ PRGS=(
     'dragon-drag-and-drop-git'    # Drag and drop
 
     # SYSTEM ------------------------------------------------------------------
-	'gnome-keyring'				  # Keyring
 	'firmware-iwlwifi'		      # Bluetooth
 	'fzf'						  # Fuzzy finder
 	'redshift'					  # Night filter
