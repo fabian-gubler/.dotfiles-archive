@@ -1,8 +1,7 @@
-VPN Configuration
-https://www.smarthomebeginner.com/configure-openvpn-to-autostart-linux/
 # Folder structure
 - Config
 - Scripts
+- Secrets
 - Installer
 
 NODE=(
@@ -10,8 +9,20 @@ NODE=(
 	'create-react-app'
 )
 
+# Useful Information
+VPN Configuration
+- https://www.smarthomebeginner.com/configure-openvpn-to-autostart-linux/
 
 PRGS=(
+
+    # VIRTUAL MACHINES --------------------------------------------------------
+
+	'qemu-system'
+	'libvirt-daemon-system'
+	'virt-manager'
+
+    # LANGUAGES ---------------------------------------------------------------
+	'golang'
 
     # COMMAND LINE TOOLS ------------------------------------------------------
     'python3-pip'                 # Python packages
