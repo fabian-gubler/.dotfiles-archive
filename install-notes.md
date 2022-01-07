@@ -92,3 +92,9 @@ mv dragon ~/.local/bin
 'gotop'                       # System monitoring
 	https://github.com/xxxserxxx/gotop/releases
 	mv gotop ~/.local/bin
+
+# Zotero
+wget -qO- https://downloads.sourceforge.net/project/zotero-deb/install.sh | sudo bash
+sudo apt update
+sudo apt install zotero
+
