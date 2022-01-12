@@ -7,6 +7,8 @@
 NODE=(
 	'npm'						# Package manager
 	'create-react-app'
+	'express-generator'
+	'tailwindcss'
 )
 
 # Useful Information
@@ -66,10 +68,20 @@ DEB=(
 )
 
 # Typora 
+# https://support.typora.io/Typora-on-Linux/
 wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 sudo add-apt-repository 'deb https://typora.io/linux ./'
-sudo apt-get update
-sudo apt-get install typora
+sudo apt update
+sudo apt install typora
+
+# Signal
+# https://signal.org/download/linux/
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
+sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+sudo apt update
+sudo apt install signal-desktop
 
 # Alacritty
 cargo install alacritty
@@ -84,6 +96,7 @@ git clone https://github.com/mwh/dragon
 cd dragon
 make
 mv dragon ~/.local/bin
+
 
 # Neovim
 ???
