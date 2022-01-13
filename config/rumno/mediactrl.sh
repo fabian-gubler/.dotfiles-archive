@@ -42,8 +42,7 @@ case $1 in
             $BIN  -v $NOW;
         else
             $BIN  -v $NOW;
-            rumno --custom-symbol $HOME/.dotfiles/system/rumno/build/res/volume_alt.svg;
-        fi
+		fi
         ;;
     $BRIGHTNESS_INC)
         xbacklight -inc 5;

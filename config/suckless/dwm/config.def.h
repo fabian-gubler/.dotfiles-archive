@@ -121,13 +121,13 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,	   SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh volume-dec")},
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,	   SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh volume-inc")},
-	{ 0, XF86XK_AudioMute,			spawn,	   SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh volume-toggle")},
+	{ 0, XF86XK_AudioLowerVolume,	spawn,	   SHCMD("$HOME/.dotfiles/config/rumno/mediactrl.sh volume-dec")},
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,	   SHCMD("$HOME/.dotfiles/config/rumno/mediactrl.sh volume-inc")},
+	{ 0, XF86XK_AudioMute,			spawn,	   SHCMD("$HOME/.dotfiles/config/rumno/mediactrl.sh volume-toggle")},
 	{ 0, XF86XK_AudioPlay,			spawn,	   SHCMD("playerctl play-pause")},
 	{ 0, XF86XK_AudioNext,			spawn,	   SHCMD("playerctl next")},
-	{ 0, XF86XK_MonBrightnessUp,	spawn,	   SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh brightness-inc")},
-	{ 0, XF86XK_MonBrightnessDown,	spawn,	   SHCMD("$HOME/.dotfiles/system/rumno/mediactrl.sh brightness-dec")},
+	{ 0, XF86XK_MonBrightnessUp,	spawn,	   SHCMD("$HOME/.dotfiles/config/rumno/mediactrl.sh brightness-inc")},
+	{ 0, XF86XK_MonBrightnessDown,	spawn,	   SHCMD("$HOME/.dotfiles/config/rumno/mediactrl.sh brightness-dec")},
 	{ 0, PrintScreen,				spawn,	   SHCMD("flameshot gui")},
 };
 

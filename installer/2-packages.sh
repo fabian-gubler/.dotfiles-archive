@@ -11,6 +11,8 @@ PACKAGES=(
 	'adwaita-qt'				# Adwaita dark
 	'qt5ct'						# Qt theming
 	'xclip'						# Clipboard
+	'xbacklight'				# Screen Brightness
+	'picom'						# Compositor
 	'openvpn'					# VPN client
 	'arandr'					# Xrandr frontend
 

@@ -22,11 +22,12 @@ export MOZ_USE_XINPUT2=1
 
 # --- Startup services
 bluetoothctl power on &
-unclutter --timeout 3 --start-hidden &
+unclutter &
 gnome-keyring-daemon --start --components=pkcs11 &
 xset r rate 350 60 &
 xset s off -dpms &
-xsetroot -solid "#252a34" &
+picom --config ~/.dotfiles/config/picom/picom.conf &
+hsetroot -solid "#252a34" &
 rumno-background &
 setxkbmap us altgr-intl &
 redshift -l 47.66667:8.98333 &

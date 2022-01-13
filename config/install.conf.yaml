@@ -30,8 +30,8 @@
     ~/.themes/Nordic:                       gtk/Nordic
     ~/.config/redshift:                     redshift
     ~/.config/mpv:                          mpv
-    # ~/.local/bin/rumno:                     rumno/build/rumno
-    # ~/.local/bin/rumno-background:          rumno/build/rumno-background
+    ~/.local/bin/rumno:                     rumno/build/rumno
+    ~/.local/bin/rumno-background:          rumno/build/rumno-background
 
     # TOOLS -------------------------------------------------------
     ~/.config/ranger/rc.conf:               ranger/rc.conf
