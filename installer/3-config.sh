@@ -45,6 +45,7 @@ virsh net-define /usr/share/libvirt/networks/default.xml
 virsh net-autostart default
 virsh net-start default
 
+# Pipewire | https://wiki.debian.org/PipeWire
 # ------------------------------------------------------
 # --- NPM ----------------------------------------------
 # ------------------------------------------------------
