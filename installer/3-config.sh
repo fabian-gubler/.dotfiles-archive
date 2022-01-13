@@ -34,5 +34,11 @@ make
 # ???
 
 # --- Configuration ---
+# dotfiles
 cd ~/.dotfiles/
 ./install
+
+# virtual machine
+virsh net-define /usr/share/libvirt/networks/default.xml
+virsh net-autostart default
+virsh net-start default

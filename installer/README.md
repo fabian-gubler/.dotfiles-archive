@@ -1,22 +1,15 @@
 # Installation
 
 ```bash
-# install git
+# Install Git
 sudo apt install git
 
-# clone repository
+# Clone Repository
 git clone https://github.com/fabian-gubler/.dotfiles.git
 
-# go into installer directory
+# Run Scripts
 cd ~/.dotfiles/installer
-
-# base install
-./1-base.sh
-
-# packages (optional: reboot)
-./2-packages.sh
-
-# configuration
-./3-config.sh
+sudo bash 1-base.sh
+sudo bash 2-packages.sh
+sudo bash 3-config.sh
 ```
-
