@@ -1,4 +1,9 @@
-# sudo apt update
+
+cp /etc/apt/sources.list /etc/apt/sources.list.bak
+ln -s ~/.dotfiles/installer/sources.list /etc/apt/sources.list
+
+# Keys
+wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 
 PACKAGES=(
     # VIRTUAL MACHINES --------------------------------------------------------
@@ -46,10 +51,9 @@ PACKAGES=(
     'pavucontrol'                 # Audio Control
     'sxiv'                        # Image viewer
     'mpv'                         # Media player
-
 )
 
-for PKG in $PACKAGES; do
+for PKG in "${PACKAGES[@]}"; do
     echo "INSTALLING: $PKG"
-    sudo sudo -u $USER apt install "$PKG" 
+    sudo sudo -u $USER apt install "$PKG"
 done
