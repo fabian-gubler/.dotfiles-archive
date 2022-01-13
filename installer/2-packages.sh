@@ -14,6 +14,7 @@ PACKAGES=(
 	'qt5ct'                       # Qt theming
 	'xclip'					      # Clipboard
 	'openvpn'					  # VPN client
+	'arandr'				      # xrandr frontend
 
     # COMMAND LINE  -----------------------------------------------------------
 	'golang'					  # Programming Language
