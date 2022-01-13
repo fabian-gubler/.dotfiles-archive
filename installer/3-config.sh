@@ -44,3 +44,23 @@ cd ~/.dotfiles/config
 virsh net-define /usr/share/libvirt/networks/default.xml
 virsh net-autostart default
 virsh net-start default
+
+# ------------------------------------------------------
+# --- NPM ----------------------------------------------
+# ------------------------------------------------------
+
+# Nodejs v17
+sudo curl -fsSL https://deb.nodesource.com/setup_17.x | sudo bash -
+sudo apt install -y nodejs
+
+# Node Packages
+NODE=(
+	'create-react-app'			# React application
+	'express-generator'			# Express application
+	'tailwindcss'				# Styling
+)
+
+for PKG in "${NODE[@]}"; do
+    echo "INSTALLING: $PKG"
+    sudo sudo npm install -g "$PKG"
+done

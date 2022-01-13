@@ -3,7 +3,7 @@
 # --- Monitor Setup
 xrandr --setprovideroutputsource modesetting NVIDIA-0 &
 xrandr --auto &
-xrandr --dpi 96 &
+xrandr --dpi 110 &
 
 # --- Variables
 export XDG_SESSION_TYPE=x11
@@ -30,3 +30,4 @@ xsetroot -solid "#252a34" &
 rumno-background &
 setxkbmap us altgr-intl &
 redshift -l 47.66667:8.98333 &
+signal-desktop --start-in-tray --no-sandbox &

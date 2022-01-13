@@ -1,6 +1,3 @@
-! Dpi Setting
-Xft.dpi: 100
-
 ! Nord Theme
 #define nord0 #2E3440
 #define nord1 #3B4252

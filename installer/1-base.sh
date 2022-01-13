@@ -9,9 +9,9 @@ sudo make clean install
 cd ~/.dotfiles/suckless/dmenu
 sudo make clean install
 
-# startup
-cd ~/.dotfiles/installer/xorg/
-ln -s .xinitrc ~/.xinitrc
-ln -s .xprofile ~/.xprofile
-ln -s .Xresources ~/.Xresources
-ln -s .zprofile ~/.zprofile
+# startup files
+cd ~/.dotfiles/config/xorg/
+cp .xinitrc ~/.xinitrc
+cp .xprofile ~/.xprofile
+cp .Xresources ~/.Xresources
+cp .zprofile ~/.zprofile
