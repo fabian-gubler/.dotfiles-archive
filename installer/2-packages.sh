@@ -1,10 +1,3 @@
-
-cp /etc/apt/sources.list /etc/apt/sources.list.bak
-ln -s ~/.dotfiles/installer/sources.list /etc/apt/sources.list
-
-# Keys
-wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
-
 PACKAGES=(
     # VIRTUAL MACHINES --------------------------------------------------------
 	'qemu-system'
@@ -52,6 +45,9 @@ PACKAGES=(
     'sxiv'                        # Image viewer
     'mpv'                         # Media player
 )
+
+sudo apt update
+sudo apt upgrade
 
 for PKG in "${PACKAGES[@]}"; do
     echo "INSTALLING: $PKG"
