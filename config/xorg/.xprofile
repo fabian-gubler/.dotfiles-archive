@@ -21,6 +21,7 @@ export LANG="en_US.utf8"
 export MOZ_USE_XINPUT2=1
 
 # --- Startup services
+exec systemctl --user import-environment &
 bluetoothctl power on &
 unclutter &
 gnome-keyring-daemon --start --components=pkcs11 &
