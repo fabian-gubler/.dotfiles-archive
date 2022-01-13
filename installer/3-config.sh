@@ -37,7 +37,7 @@ make
 # ------------------------------------------------------
 
 # Dotfiles
-cd ~/.dotfiles/
+cd ~/.dotfiles/config
 ./install
 
 # Virtual Machine
