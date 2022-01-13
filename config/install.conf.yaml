@@ -1,0 +1,50 @@
+- defaults:
+    link:
+      create: true    # Create parent directories as needed
+      force: true     # Removes the old target and forces a new link
+
+- clean: ['~']
+
+- link:
+
+    # SYSTEM ------------------------------------------------------
+    ~/.config/zsh:                          zsh
+    ~/.local/share/fonts:                   fonts
+    ~/.config/keyboard.conf:                setxkbmap/keyboard.conf
+    ~/.tmux.conf:                           tmux/tmux.conf
+    ~/.local/bin/tmuxdd:                    tmux/tmuxdd
+
+    # UTILITIES ---------------------------------------------------
+    ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
+    ~/.config/Typora/themes/nord:           typora/nord
+    ~/.config/Typora/themes/nord.css:       typora/nord.css
+    ~/.config/gtk-3.0/settings.ini:         gtk/settings.ini
+    ~/.gtkrc-2.0:                           gtk/.gtkrc-2.0
+    ~/.config/qt5ct/qt5ct.conf:             qt/qt5ct.conf
+    ~/.config/qt5ct/colors/nord.conf:       qt/nord.conf 
+    ~/.themes/Nordic:                       gtk/Nordic
+    ~/.config/redshift:                     redshift
+    ~/.config/mpv:                          mpv
+    ~/.local/bin/rumno:                     rumno/build/rumno
+    ~/.local/bin/rumno-background:          rumno/build/rumno-background
+
+    # TOOLS -------------------------------------------------------
+    ~/.config/ranger/rc.conf:               ranger/rc.conf
+    ~/.config/ranger/rifle.conf:            ranger/rifle.conf
+    ~/.config/ranger/plugins:               ranger/plugins
+    ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf
+    ~/.config/zathura:                      zathura
+
+    # WEB TOOLS ---------------------------------------------------
+    ~/.mozilla/firefox/u7my0den.default-release/chrome/userChrome.css: firefox/userChrome.css
+    ~/.config/tridactyl/tridactylrc:        firefox/tridactylrc.vim
+    ~/.config/tridactyl/themes/nord.css:    firefox/nord.css
+
+
+    # ARCHIVED ----------------------------------------------------
+    # ~/.config/alacritty:                    .archive/alacritty
+    # ~/.config/xournalpp:                    .archive/xournal
+    # ~/.config/rofi/config:                  .archive/rofi/config
+    # ~/.config/rofi/themes/minimal.rasi:     .archive/rofi/minimal.rasi
+    # ~/.config/autorandr/postswitch:         .archive/autorandr/postswitch
+    # ~/.config/dunst/dunstrc:                .archive/dunst/dunstrc
