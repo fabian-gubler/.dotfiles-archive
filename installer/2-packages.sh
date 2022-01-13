@@ -5,14 +5,14 @@ PACKAGES=(
 	'virt-manager'
 
 	# SYSTEM ------------------------------------------------------------------
-	'firmware-iwlwifi'		      # Bluetooth
-	'fzf'						  # Fuzzy finder
-	'redshift'					  # Night filter
-	'adwaita-qt'                  # Adwaita dark
-	'qt5ct'                       # Qt theming
-	'xclip'					      # Clipboard
-	'openvpn'					  # VPN client
-	'arandr'				      # xrandr frontend
+	'firmware-iwlwifi'			# Bluetooth
+	'fzf'						# Fuzzy finder
+	'redshift'					# Night filter
+	'adwaita-qt'				# Adwaita dark
+	'qt5ct'						# Qt theming
+	'xclip'						# Clipboard
+	'openvpn'					# VPN client
+	'arandr'					# Xrandr frontend
 
 	# COMMAND LINE  -----------------------------------------------------------
 	'golang'					  # Programming Language
