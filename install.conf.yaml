@@ -8,48 +8,43 @@
 - link:
 
     # SYSTEM ------------------------------------------------------
-    ~/.config/zsh:                          zsh
-    ~/.xprofile:                            X/.xprofile
-    ~/.zprofile:                            X/.zprofile
-    ~/.Xresources:                          X/.Xresources
-    ~/.xinitrc:                             X/.xinitrc
-    ~/.local/share/fonts:                   system/fonts
-    ~/.config/keyboard.conf:                system/setxkbmap/keyboard.conf
-    ~/.tmux.conf:                           tmux/tmux.conf
+    ~/.config/zsh:                          config/zsh
+    ~/.local/share/fonts:                   config/fonts
+    ~/.config/keyboard.conf:                config/setxkbmap/keyboard.conf
+    ~/.tmux.conf:                           config/tmux/tmux.conf
 
     # UTILITIES ---------------------------------------------------
-    ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
-    ~/.config/Typora/themes/nord:           typora/nord
-    ~/.config/Typora/themes/nord.css:       typora/nord.css
-    ~/.config/gtk-3.0/settings.ini:         system/gtk/settings.ini
-    ~/.gtkrc-2.0:                           system/gtk/.gtkrc-2.0
-    ~/.config/qt5ct/qt5ct.conf:             system/qt/qt5ct.conf
-    ~/.config/qt5ct/colors/nord.conf:       system/qt/nord.conf 
-    ~/.config/dunst/dunstrc:                system/dunst/dunstrc
-    ~/.themes/Nordic:                       system/gtk/Nordic
-    ~/.config/redshift:                     system/redshift
-    ~/.config/mpv:                          mpv
-    ~/.local/bin/rumno:                     system/rumno/build/rumno
-    ~/.local/bin/rumno-background:          system/rumno/build/rumno-background
+    ~/.config/Typora/conf/conf.user.json:   config/typora/conf.user.json
+    ~/.config/Typora/themes/nord:           config/typora/nord
+    ~/.config/Typora/themes/nord.css:       config/typora/nord.css
+    ~/.config/gtk-3.0/settings.ini:         config/gtk/settings.ini
+    ~/.gtkrc-2.0:                           config/gtk/.gtkrc-2.0
+    ~/.config/qt5ct/qt5ct.conf:             config/qt/qt5ct.conf
+    ~/.config/qt5ct/colors/nord.conf:       config/qt/nord.conf 
+    ~/.themes/Nordic:                       config/gtk/Nordic
+    ~/.config/redshift:                     config/redshift
+    ~/.config/mpv:                          config/mpv
+    ~/.local/bin/rumno:                     config/rumno/build/rumno
+    ~/.local/bin/rumno-background:          config/rumno/build/rumno-background
     ~/.local/bin/tmuxdd:                    scripts/bash/tmuxdd
-      
 
     # TOOLS -------------------------------------------------------
-    ~/.config/ranger/rc.conf:               ranger/rc.conf
-    ~/.config/ranger/rifle.conf:            ranger/rifle.conf
-    ~/.config/ranger/plugins:               ranger/plugins
-    ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf
-    ~/.config/autorandr/postswitch:         system/autorandr/postswitch
-    ~/.config/zathura:                      zathura
+    ~/.config/ranger/rc.conf:               config/ranger/rc.conf
+    ~/.config/ranger/rifle.conf:            config/ranger/rifle.conf
+    ~/.config/ranger/plugins:               config/ranger/plugins
+    ~/.config/qBittorrent/qBittorrent.conf: config/qBittorrent/qBittorrent.conf
+    ~/.config/zathura:                      config/zathura
 
     # WEB TOOLS ---------------------------------------------------
-    ~/.mozilla/firefox/u7my0den.default-release/chrome/userChrome.css: firefox/userChrome.css
-    ~/.config/tridactyl/tridactylrc:        firefox/tridactylrc.vim
-    ~/.config/tridactyl/themes/nord.css:    firefox/nord.css
+    ~/.mozilla/firefox/u7my0den.default-release/chrome/userChrome.css: config/firefox/userChrome.css
+    ~/.config/tridactyl/tridactylrc:        config/firefox/tridactylrc.vim
+    ~/.config/tridactyl/themes/nord.css:    config/firefox/nord.css
 
 
     # ARCHIVED ----------------------------------------------------
-    ~/.config/alacritty:                    archive/alacritty
-    ~/.config/xournalpp:                    archive/xournal
-    ~/.config/rofi/config:                  archive/rofi/config
-    ~/.config/rofi/themes/minimal.rasi:     archive/rofi/minimal.rasi
+    # ~/.config/alacritty:                    config/.archive/alacritty
+    # ~/.config/xournalpp:                    config/.archive/xournal
+    # ~/.config/rofi/config:                  config/.archive/rofi/config
+    # ~/.config/rofi/themes/minimal.rasi:     config/.archive/rofi/minimal.rasi
+    # ~/.config/autorandr/postswitch:         config/.archive/autorandr/postswitch
+    # ~/.config/dunst/dunstrc:                config/.archive/dunst/dunstrc
