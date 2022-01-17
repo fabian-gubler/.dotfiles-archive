@@ -25,6 +25,11 @@ git clone https://github.com/mwh/dragon ~/Downloads/dragon
 cd ~/Downloads/dragon
 make
 
+# Devour
+git clone https://github.com/salman-abedin/devour.git ~/Downloads/devour
+cd ~/Downloads/devour
+sudo make install
+
 # ZSA wally cli
 # ???
 
