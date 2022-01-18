@@ -53,7 +53,7 @@ map [normal] a focus_inputbar ":blist "
 map [normal] d focus_inputbar ":bdelete "
 
 # Command Line
-map o     feedkeys ":exec okular $FILE<Return>"
+# map o     feedkeys ":exec okular $FILE<Return>"
 map M     feedkeys ":exec masterpdfeditor5 $FILE<Return>"
 
 # Base16 Nord
