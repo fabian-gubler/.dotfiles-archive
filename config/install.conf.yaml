@@ -20,6 +20,7 @@
 
     # UTILITIES ---------------------------------------------------
     ~/.config/alacritty:                    alacritty
+    ~/.newsboat:                            newsboat
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
     ~/.config/Typora/themes/nord:           typora/nord
     ~/.config/Typora/themes/nord.css:       typora/nord.css
