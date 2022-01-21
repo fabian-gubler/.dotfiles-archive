@@ -1,6 +1,7 @@
 # Short form
 alias v="nvim"
 alias d="devour"
+alias yt-audio="yt-dlp --extract-audio --audio-format mp3"
 alias fox="firefox-esr"
 alias p="python3"
 alias tgauss="/analytics/app/tgauss"
