@@ -1,5 +1,7 @@
 # Short form
 alias v="nvim"
+alias d="devour"
+alias fox="firefox-esr"
 alias p="python3"
 alias tgauss="/analytics/app/tgauss"
 alias zt="zathura"
@@ -9,7 +11,6 @@ alias tv="nvim /data/drive/todo.txt"
 alias pv="nvim ~/.config/pomogoro/pomo.txt"
 alias pl="nvim ~/.config/pomogoro/pomogoro.log"
 alias bk="bookmark"
-alias web="nvim -p *.html *.scss *.js"
 alias n="neuron"
 alias server="$HOME/.dotfiles/scripts/bash/server.sh"
 
