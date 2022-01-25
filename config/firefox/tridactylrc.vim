@@ -54,6 +54,7 @@ bind --mode=input  <A-BS> text.backward_kill_word
 " Auto Ignore
 blacklistadd calendar.google.com
 blacklistadd docs.google.com
+blacklistadd mail.protonmail.com
 
 " Only hint search results on Google & YouTube
 bindurl www.google.com s hint -Jc #search div:not(.action-menu) > a
