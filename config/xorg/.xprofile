@@ -23,7 +23,7 @@ export MOZ_USE_XINPUT2=1
 # --- Startup services
 exec systemctl --user import-environment &
 bluetoothctl power on &
-unclutter &
+unclutter -idle 1 &
 gnome-keyring-daemon --start --components=pkcs11 &
 xset r rate 350 60 &
 xset s off -dpms &
