@@ -51,11 +51,12 @@ virsh net-autostart default
 virsh net-start default
 
 # Pipewire | https://wiki.debian.org/PipeWire
+
 # ------------------------------------------------------
 # --- NPM ----------------------------------------------
 # ------------------------------------------------------
 
-# Nodejs v17
+# Nodejs v17 | https://github.com/nodesource/distributions/blob/master/README.md
 sudo curl -fsSL https://deb.nodesource.com/setup_17.x | sudo bash -
 sudo apt install -y nodejs
 

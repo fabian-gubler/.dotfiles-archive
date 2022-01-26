@@ -1,3 +1,5 @@
+# TODO: Backports (tmux)
+
 PACKAGES=(
 	# VIRTUAL MACHINES --------------------------------------------------------
 	'qemu-system'
@@ -48,6 +50,7 @@ PACKAGES=(
 	'mpv'                         # Media player
 )
 
+# INSTALLATION
 sudo apt update
 sudo apt upgrade
 

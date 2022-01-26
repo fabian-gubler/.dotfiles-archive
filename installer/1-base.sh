@@ -1,15 +1,15 @@
-# base packages
+# BASE PACKAGES
 sudo apt install make gcc libx11-dev libxft-dev libxinerama-dev xorg
 
-# dwm
+# DWM
 cd ~/.dotfiles/suckless/dwm
 sudo make clean install
 
-# dmenu
+# DMENU
 cd ~/.dotfiles/suckless/dmenu
 sudo make clean install
 
-# startup files
+# STARTUP FILES
 cd ~/.dotfiles/config/xorg/
 cp .xinitrc ~/.xinitrc
 cp .xprofile ~/.xprofile
