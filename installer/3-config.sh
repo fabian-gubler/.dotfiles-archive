@@ -30,6 +30,9 @@ git clone https://github.com/salman-abedin/devour.git ~/Downloads/devour
 cd ~/Downloads/devour
 sudo make install
 
+# Nextcloud
+sudo add-apt-repository ppa:nextcloud-devs/client
+sudo apt install nextcloud-desktop
 # ZSA wally cli
 # ???
 
