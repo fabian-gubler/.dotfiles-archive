@@ -30,6 +30,7 @@ PACKAGES=(
 	'ranger'                      # File explorer
 	'devour'                      # Swallow programs
 	'unzip'                       # Unzip directories
+	'todotxt-cli'				  # Todo List
 
 	# APPLICATIONS ------------------------------------------------------------
 	'qbittorrent'                 # Torrent client
