@@ -36,6 +36,14 @@ sudo apt install nextcloud-desktop
 # ZSA wally cli
 # ???
 
+# Printer | Might require: sudo apt install hplip
+# mkdir -p ~/HP-Laser
+# cd ~/HP-Laser
+# wget https://ftp.hp.com/pub/softlib/software13/printers/CLP150/uld-hp_V1.00.39.12_00.15.tar.gz
+# tar -xf  uld-hp_V1.00.39.12_00.15.tar.gz
+# cd ~/HP-Laser/uld
+# sudo ./install-printer.sh
+
 # Gotop | move to secrets
 # 	https://github.com/xxxserxxx/gotop/releases
 # 	mv gotop ~/.local/bin
