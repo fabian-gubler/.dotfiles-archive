@@ -48,6 +48,12 @@ sudo apt install nextcloud-desktop
 # 	https://github.com/xxxserxxx/gotop/releases
 # 	mv gotop ~/.local/bin
 
+# VPN setup | https://protonvpn.com/support/linux-openvpn/
+# 1. install nm-applet & network-manager-openvpn-gnome
+# 2. run nm-connection-editor
+# 3. Add according to guide
+# 4. Connect via applet
+
 # ------------------------------------------------------
 # --- Configuration ------------------------------------
 # ------------------------------------------------------

@@ -34,3 +34,9 @@ setxkbmap us altgr-intl &
 redshift -l 47.66667:8.98333 &
 signal-desktop --start-in-tray --no-sandbox &
 nextcloud &
+nm-applet &
+
+# --- Keyring
+export $(dbus-launch)
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
