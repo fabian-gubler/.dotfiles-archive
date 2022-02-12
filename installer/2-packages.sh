@@ -42,6 +42,7 @@ PACKAGES=(
 	'firefox-esr'                 # Web browser
 	'anki'                        # Flashcard app
 	'zathura'                     # PDF viewer
+	'gnome-themes-extra'		  # For GTK Applications
 
 	# MEDIA -------------------------------------------------------------------
 	'bluez'                       # Bluetooth protocol
