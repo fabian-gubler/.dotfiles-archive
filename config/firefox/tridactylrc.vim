@@ -17,6 +17,9 @@ unbind h
 unbind d
 unbind D
 unbind b
+unbind <<
+unbind >>
+
 
 " Navigation
 bind <C-d> scrollline 30

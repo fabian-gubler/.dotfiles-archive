@@ -31,6 +31,7 @@ PACKAGES=(
 	'devour'                      # Swallow programs
 	'unzip'                       # Unzip directories
 	'todotxt-cli'				  # Todo List
+	'latexmk'					  # Latex
 
 	# APPLICATIONS ------------------------------------------------------------
 	'qbittorrent'                 # Torrent client
