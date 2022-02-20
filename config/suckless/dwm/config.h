@@ -78,6 +78,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("firefox")},
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("brave")},
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("typora")},
+	{ MODKEY,                       XK_r,      spawn,          SHCMD("pavucontrol")},
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("signal-desktop")},
 	{ MODKEY,                       XK_Return, spawn,          SHCMD("alacritty -e tmuxdd")},
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("alacritty")},

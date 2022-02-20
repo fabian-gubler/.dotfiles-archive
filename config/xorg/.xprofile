@@ -33,6 +33,7 @@ rumno-background &
 setxkbmap us altgr-intl &
 redshift -l 47.66667:8.98333 &
 signal-desktop --start-in-tray --no-sandbox &
+xinput set-int-prop 20 "Device Enabled" 8 0 &
 nextcloud &
 
 # --- Keyring
