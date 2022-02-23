@@ -8,6 +8,7 @@
 # --- Variables
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
+export GTK_USE_PORTAL=0
 export QT_QPA_PLATFORMTHEME=qt5ct
 export EDITOR=nvim
 export PAGER=nvim
