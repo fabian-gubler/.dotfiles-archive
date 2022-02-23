@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # --- Monitor Setup
-xrandr --setprovideroutputsource modesetting NVIDIA-0 &
-xrandr --auto &
-xrandr --dpi 110 &
+# xrandr --setprovideroutputsource modesetting NVIDIA-0 &
+# xrandr --auto &
+# xrandr --dpi 110 &
 
 # --- Variables
 export XDG_SESSION_TYPE=x11
