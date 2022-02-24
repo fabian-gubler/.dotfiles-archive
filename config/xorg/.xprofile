@@ -20,6 +20,7 @@ export ZDOTDIR=$HOME/.config/zsh
 export TERM=alacritty
 export LANG="en_US.utf8"
 export MOZ_USE_XINPUT2=1
+export PYTHONPATH=":/home/fabian/code/smart-factory-python"
 
 # --- Startup services
 exec systemctl --user import-environment &
