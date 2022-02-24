@@ -1,42 +1,40 @@
 #!/bin/sh
 
-# --- Monitor Setup
-# xrandr --setprovideroutputsource modesetting NVIDIA-0 &
-# xrandr --auto &
-# xrandr --dpi 110 &
-
-# --- Variables
+# --- Display
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
-export GTK_USE_PORTAL=0
-export QT_QPA_PLATFORMTHEME=qt5ct
-export EDITOR=nvim
-export PAGER=nvim
+export GTK_USE_PORTAL=1
 export GTK_THEME=Nordic
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+# --- Path
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="/usr/sbin:/home/fabian/.cargo/bin:/home/fabian/.local/bin:$PATH"
+export PYTHONPATH=":/home/fabian/code/smart-factory-python"
 export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
+
+# --- Preferences
+export EDITOR=nvim
+export PAGER=nvim
 export TERM=alacritty
 export LANG="en_US.utf8"
 export MOZ_USE_XINPUT2=1
-export PYTHONPATH=":/home/fabian/code/smart-factory-python"
 
-# --- Startup services
+# --- Startup
 exec systemctl --user import-environment &
 bluetoothctl power on &
-unclutter -idle 1 &
-gnome-keyring-daemon --start --components=pkcs11 &
+unclutter -idle 1 & # hide mouse pointer
+gnome-keyring-daemon --start --components=pkcs11 & # keyring
 xset r rate 350 60 &
 xset s off -dpms &
-picom --config ~/.dotfiles/config/picom/picom.conf &
-hsetroot -solid "#252a34" &
-rumno-background &
-setxkbmap us altgr-intl &
-redshift -l 47.66667:8.98333 &
-signal-desktop --start-in-tray --no-sandbox &
-xinput set-int-prop 20 "Device Enabled" 8 0 &
-nextcloud &
+picom --config ~/.dotfiles/config/picom/picom.conf & # compositor
+hsetroot -solid "#252a34" & # solid background
+rumno-background & # daemon for audio control
+setxkbmap us altgr-intl & # us layout with umlaut
+redshift -l 47.66667:8.98333 & # night light with coordinates
+xinput set-int-prop 20 "Device Enabled" 8 0 & # disables internal keyboard
+nextcloud & # cloud provider
 
 # --- Keyring
 eval $(gnome-keyring-daemon --start)
