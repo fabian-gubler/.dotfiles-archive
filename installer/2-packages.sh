@@ -1,10 +1,6 @@
 # TODO: Backports (tmux)
 
 PACKAGES=(
-	# VIRTUAL MACHINES --------------------------------------------------------
-	'qemu-system'
-	'libvirt-daemon-system'
-	'virt-manager'
 
 	# SYSTEM ------------------------------------------------------------------
 	'firmware-iwlwifi'			# Bluetooth
@@ -17,6 +13,7 @@ PACKAGES=(
 	'picom'						# Compositor
 	'openvpn'					# VPN client
 	'arandr'					# Xrandr frontend
+	'nm-connection-editor'		# Manage Networks
 
 	# COMMAND LINE  -----------------------------------------------------------
 	'golang'					  # Programming Language
@@ -43,7 +40,6 @@ PACKAGES=(
 	'firefox-esr'                 # Web browser
 	'anki'                        # Flashcard app
 	'zathura'                     # PDF viewer
-	'gnome-themes-extra'		  # For GTK Applications
 
 	# MEDIA -------------------------------------------------------------------
 	'bluez'                       # Bluetooth protocol
@@ -51,6 +47,12 @@ PACKAGES=(
 	'pavucontrol'                 # Audio Control
 	'sxiv'                        # Image viewer
 	'mpv'                         # Media player
+
+	# VIRTUAL MACHINES --------------------------------------------------------
+	'qemu'
+	'virt-manager'
+	'bridge-utils'
+
 )
 
 # INSTALLATION
