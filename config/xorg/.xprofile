@@ -20,6 +20,7 @@ export PAGER=nvim
 export TERM=alacritty
 export LANG="en_US.utf8"
 export MOZ_USE_XINPUT2=1
+unset MAILCHECK
 
 # --- Startup
 exec systemctl --user import-environment &
