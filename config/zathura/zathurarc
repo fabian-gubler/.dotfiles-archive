@@ -54,7 +54,7 @@ map [index] m navigate_index collapse
 # Bookmarks
 map [normal] b focus_inputbar ":bmark "
 map [normal] a focus_inputbar ":blist "
-map [normal] d focus_inputbar ":bdelete "
+map [normal] B focus_inputbar ":bdelete "
 
 # Command Line
 # map o     feedkeys ":exec okular $FILE<Return>"
