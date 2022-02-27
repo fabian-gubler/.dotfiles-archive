@@ -75,7 +75,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("networkmanager_dmenu -l 30")},
 	{ MODKEY,                       XK_z,      spawn,          SHCMD("mpv --volume=50 /data/drive/sound/brown-noise.m4a")},
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          SHCMD("killall mpv")},
-	{ MODKEY,                       XK_w,      spawn,          SHCMD("firefox")},
+	{ MODKEY,                       XK_w,      spawn,          SHCMD("GTK_USE_PORTAL=0 firefox")},
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("brave")},
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("typora")},
 	{ MODKEY,                       XK_r,      spawn,          SHCMD("pavucontrol")},
