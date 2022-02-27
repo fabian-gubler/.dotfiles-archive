@@ -29,6 +29,7 @@ PACKAGES=(
 	'unzip'                       # Unzip directories
 	'todotxt-cli'				  # Todo List
 	'latexmk'					  # Latex
+	'imagemagick'				  # File conversion
 
 	# APPLICATIONS ------------------------------------------------------------
 	'qbittorrent'                 # Torrent client
