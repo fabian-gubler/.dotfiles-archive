@@ -21,6 +21,7 @@
     "Insert Table":         "Ctrl+t"
 	"Outline":				"Alt+."
 	"File Tree":			"Alt+,"
+	"Unordered List":		"Alt+l"
   },
 
   "monocolorEmoji": false, //default false. Only work for Windows
