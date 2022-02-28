@@ -10,7 +10,6 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # --- Path
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="/usr/sbin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/go/bin"
-export PYTHONPATH=":/home/fabian/code/smart-factory-python"
 export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
 
