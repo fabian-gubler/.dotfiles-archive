@@ -45,6 +45,7 @@ PACKAGES=(
 	'firefox-esr'                 # Web browser
 	'anki'                        # Flashcard app
 	'zathura'                     # PDF viewer
+	'okular'					  # PDF Editor
 
 	# MEDIA -------------------------------------------------------------------
 	'bluez'                       # Bluetooth protocol
