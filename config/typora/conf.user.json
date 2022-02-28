@@ -15,6 +15,7 @@
 
   // Custom key binding, which will override the default ones.
   "keyBinding": {
+	"Auto":					"Ctrl+Shift+P"
     "Open Quickly...":      "Ctrl+o"
     "Open...":              "Ctrl+p"
     "Task List":            "Ctrl+Shift+t"
