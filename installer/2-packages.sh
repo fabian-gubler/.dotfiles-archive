@@ -32,7 +32,8 @@ PACKAGES=(
 	'devour'                      # Swallow programs
 	'unzip'                       # Unzip directories
 	'todotxt-cli'				  # Todo List
-	'latexmk'					  # Latex
+	'latexmk'					  # Latex Compiler
+	'texlive-full'				  # Latex Packages
 	'imagemagick'				  # File conversion
 
 	# APPLICATIONS ------------------------------------------------------------
