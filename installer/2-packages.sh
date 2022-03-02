@@ -1,8 +1,8 @@
-# TODO: Backports (tmux)
+# -----------------------------------------------------------------------------
+# DEBIAN PACKAGES
+# -----------------------------------------------------------------------------
 
-# -----------------------------------------------------------------------------
-# DEB PACKAGES
-# -----------------------------------------------------------------------------
+# TODO: Backports: tmux
 
 PACKAGES=(
 
@@ -24,24 +24,20 @@ PACKAGES=(
 	'python3-pip'                 # Python Package Manager
 	'zsh'                         # Shell
 	'tmux'                        # Terminal Multiplexer
-	'git'                         # Version control
 	'exa'                         # Better ls
 	'wget'                        # Download web content
-	'curl'						  # ""
 	'ranger'                      # File explorer
 	'devour'                      # Swallow programs
 	'unzip'                       # Unzip directories
 	'todotxt-cli'				  # Todo List
-	'latexmk'					  # Latex Compiler
 	'texlive-full'				  # Latex Packages
-	'imagemagick'				  # File conversion
+	'ncdu'						  # Disk space
 
 	# APPLICATIONS ------------------------------------------------------------
 	'qbittorrent'                 # Torrent client
 	'xsane'                       # Scanning
 	'unclutter'                   # Mouse timeout
 	'timeshift'                   # Backup snapshots
-	'baobab'                      # Disk space
 	'firefox-esr'                 # Web browser
 	'anki'                        # Flashcard app
 	'zathura'                     # PDF viewer
@@ -57,7 +53,6 @@ PACKAGES=(
 	'qemu'
 	'virt-manager'
 	'bridge-utils'
-
 )
 
 # INSTALLATION

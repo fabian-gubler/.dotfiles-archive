@@ -22,8 +22,13 @@ done
 # MISC PACKAGES
 # -----------------------------------------------------------------------------
 
-# Gotop
-go get github.com/cjbassi/gotop
+# TODO: Gotop | https://github.com/cjbassi/gotop
+# TODO: ZSA wally cli | https://github.com/zsa/wally/wiki/Linux-install
+# TODO: VPN setup | https://protonvpn.com/support/linux-openvpn/
+	# 1. network-manager-openvpn-gnome
+	# 2. run nm-connection-editor
+	# 3. Add according to guide
+	# 4. Connect via networkmanager-dmenu
 
 # Typora | https://support.typora.io/Typora-on-Linux/
 wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
@@ -57,8 +62,6 @@ sudo make install
 sudo add-apt-repository ppa:nextcloud-devs/client
 sudo apt install nextcloud-desktop
 
-# ZSA wally cli | https://github.com/zsa/wally/wiki/Linux-install
-
 # Only Office | https://www.onlyoffice.com/de/download-desktop.aspx?from=desktop
 wget -O /tmp/onlyoffice.deb https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb
 sudo apt install /tmp/onlyoffice.deb
@@ -67,15 +70,11 @@ sudo apt install /tmp/onlyoffice.deb
 wget -O /tmp/masterpdf.deb https://code-industry.net/public/master-pdf-editor-5.8.33-qt5.x86_64.deb
 sudo apt install /tmp/masterpdf.deb
 
-# VPN setup | https://protonvpn.com/support/linux-openvpn/
-# 1. network-manager-openvpn-gnome
-# 2. run nm-connection-editor
-# 3. Add according to guide
-# 4. Connect via networkmanager-dmenu
+# -----------------------------------------------------------------------------
+# CONFIGURATION 
+# -----------------------------------------------------------------------------
 
-# ------------------------------------------------------
-# --- Configuration ------------------------------------
-# ------------------------------------------------------
+# TODO: Pipewire | https://wiki.debian.org/PipeWire
 
 # Dotfiles
 cd ~/.dotfiles/config
@@ -86,4 +85,3 @@ virsh net-define /usr/share/libvirt/networks/default.xml
 virsh net-autostart default
 virsh net-start default
 
-# Pipewire | https://wiki.debian.org/PipeWire

@@ -1,4 +1,11 @@
-# BASE PACKAGES
+# -----------------------------------------------------------------------------
+# BASE UTILITES
+# -----------------------------------------------------------------------------
+
+# TODO: Clone Directory with Github Credentials
+# TODO: Copy Apt Sources List
+
+# PACKAGES
 sudo apt install make gcc libx11-dev libxft-dev libxinerama-dev xorg
 
 # DWM
