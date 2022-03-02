@@ -9,9 +9,8 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 # --- Path
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="/usr/sbin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/go/bin"
+export PATH="/usr/sbin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin"
 export LD_LIBRARY_PATH=/usr/local/lib
-export ZDOTDIR=$HOME/.config/zsh     
 
 # --- Preferences
 export EDITOR=nvim
@@ -19,7 +18,6 @@ export PAGER=nvim
 export TERM=alacritty
 export LANG="en_US.utf8"
 export MOZ_USE_XINPUT2=1
-unset MAILCHECK
 
 # --- Startup
 exec systemctl --user import-environment &
@@ -30,6 +28,7 @@ xset r rate 350 60 &
 xset s off -dpms &
 picom --config ~/.dotfiles/config/picom/picom.conf & # compositor
 hsetroot -solid "#252a34" & # solid background
+xsetroot -name "" # dwm empty bar (right side)
 rumno-background & # daemon for audio control
 setxkbmap us altgr-intl & # us layout with umlaut
 redshift -l 47.66667:8.98333 & # night light with coordinates
