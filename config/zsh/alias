@@ -31,7 +31,7 @@ alias q="exit"
 alias zoomdl="zoomdl -u"
 alias monitor="autorandr --load monitor"
 alias laptop="autorandr --load laptop"
-alias top="gotop -m"
+alias top="gotop -l minimal"
 alias xev="xev -event keyboard  | egrep -o 'keycode.*\)'"
 
 # File Operations
