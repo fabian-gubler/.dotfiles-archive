@@ -72,7 +72,6 @@ static const char *termcmd[] = { "alacritty", NULL };
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_v,      spawn,          SHCMD("networkmanager_dmenu -l 30")},
 	{ MODKEY,                       XK_z,      spawn,          SHCMD("mpv --volume=50 /data/drive/sound/brown-noise.m4a")},
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          SHCMD("killall mpv")},
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("GTK_USE_PORTAL=0 firefox")},
@@ -82,9 +81,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("signal-desktop")},
 	{ MODKEY,                       XK_Return, spawn,          SHCMD("alacritty -e tmuxdd")},
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("alacritty")},
-	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dmlogout")},
-	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dlayout")},
-	{ MODKEY,                       XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/dbluetooth")},
+	{ MODKEY,                       XK_v,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/network -l 30")},
+	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
+	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
+	{ MODKEY,                       XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/bluetooth")},
 	{ MODKEY,						XK_g,      spawn,          SHCMD("spotify")},
 	{ 0, XF86XK_AudioLowerVolume,	spawn,	   SHCMD("$HOME/.dotfiles/config/rumno/mediactrl.sh volume-dec")},
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,	   SHCMD("$HOME/.dotfiles/config/rumno/mediactrl.sh volume-inc")},

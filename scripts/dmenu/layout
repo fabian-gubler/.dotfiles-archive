@@ -1,0 +1,11 @@
+#!/bin/sh
+
+choices="main\nde\nen"
+
+chosen=$(echo "$choices" | dmenu -i -p "Keyboard Layout:")
+
+case "$chosen" in
+	main) setxkbmap us altgr-intl;;
+	de) setxkbmap de;;
+	en) setxkbmap us;;
+esac

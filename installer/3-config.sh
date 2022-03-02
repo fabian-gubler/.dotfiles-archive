@@ -57,9 +57,7 @@ sudo make install
 sudo add-apt-repository ppa:nextcloud-devs/client
 sudo apt install nextcloud-desktop
 
-# ZSA wally cli
-go get -u github.com/zsa/wally-cli
-# ???
+# ZSA wally cli | https://github.com/zsa/wally/wiki/Linux-install
 
 # Only Office | https://www.onlyoffice.com/de/download-desktop.aspx?from=desktop
 wget -O /tmp/onlyoffice.deb https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb

@@ -40,7 +40,6 @@ PACKAGES=(
 	'qbittorrent'                 # Torrent client
 	'xsane'                       # Scanning
 	'unclutter'                   # Mouse timeout
-	'flameshot'                   # Screenshot tool
 	'timeshift'                   # Backup snapshots
 	'baobab'                      # Disk space
 	'firefox-esr'                 # Web browser
