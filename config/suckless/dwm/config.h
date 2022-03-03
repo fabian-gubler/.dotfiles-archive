@@ -80,7 +80,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          SHCMD("pavucontrol")},
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("signal-desktop")},
 	{ MODKEY,                       XK_Return, spawn,          SHCMD("alacritty -e tmuxdd")},
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("alacritty")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/network -l 30")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
