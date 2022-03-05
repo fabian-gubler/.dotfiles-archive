@@ -19,9 +19,13 @@ PACKAGES=(
 	'arandr'					# Xrandr frontend
 	'nm-connection-editor'		# Manage Networks
 
-	# COMMAND LINE  -----------------------------------------------------------
-	'golang'					  # Programming Language
+	# PROGRAMMING LANGUAGES  --------------------------------------------------
+	'lua5.3'					  # Lua
+	'luarocks'					  # Lua Package Manager
+	'golang'					  # Go
 	'python3-pip'                 # Python Package Manager
+
+	# COMMAND LINE  -----------------------------------------------------------
 	'zsh'                         # Shell
 	'tmux'                        # Terminal Multiplexer
 	'exa'                         # Better ls
