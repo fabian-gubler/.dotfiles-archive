@@ -33,6 +33,7 @@ bindkey "^[[1;5D" backward-word   # ctrl + m
 bindkey "^[[1;5C" forward-word    # ctrl + i
 bindkey "^[[3~" delete-char       # make delete work
 
+
 # Plugins
 zsh_add_plugin "zsh-users/zsh-completions"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
