@@ -23,8 +23,9 @@
 
 # Global options
 set guioptions none
-set statusbar-v-padding 2
-set statusbar-h-padding 8
+set font "monospace 15"
+set statusbar-v-padding 15
+set statusbar-h-padding 50
 set show-scrollbars false
 set selection-clipboard clipboard
 
