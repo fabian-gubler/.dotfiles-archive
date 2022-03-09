@@ -1,5 +1,24 @@
---- dwm.c
-+++ dwm.c
+diff --git a/config.def.h b/config.def.h
+index a2ac963..e8c0978 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -26,9 +26,9 @@ static const Rule rules[] = {
+ 	 *	WM_CLASS(STRING) = instance, class
+ 	 *	WM_NAME(STRING) = title
+ 	 */
+-	/* class      instance    title       tags mask     isfloating   monitor */
+-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
++	/* class      instance    title       tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
++	{ "Gimp",     NULL,       NULL,       0,            1,           -1,        50,50,500,500,        5 },
++	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1,        50,50,500,500,        5 },
+ };
+ 
+ /* layout(s) */
+diff --git a/dwm.c b/dwm.c
+index 5e4d494..a03ca15 100644
+--- a/dwm.c
++++ b/dwm.c
 @@ -93,6 +93,8 @@ struct Client {
  	int bw, oldbw;
  	unsigned int tags;
@@ -47,3 +66,6 @@
  	XConfigureWindow(dpy, c->win, CWX|CWY|CWWidth|CWHeight|CWBorderWidth, &wc);
  	configure(c);
  	XSync(dpy, False);
+-- 
+2.32.0
+
