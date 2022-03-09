@@ -1,13 +1,14 @@
 --- dwm.c
 +++ dwm.c
-@@ -1057,6 +1058,10 @@ manage(Window w, XWindowAttributes *wa)
- 	updatewindowtype(c);
- 	updatesizehints(c);
- 	updatewmhints(c);
-+	c->sfx = c->x;
-+	c->sfy = c->y;
-+	c->sfw = c->w;
-+	c->sfh = c->h;
- 	XSelectInput(dpy, w, EnterWindowMask|FocusChangeMask|PropertyChangeMask|StructureNotifyMask);
- 	grabbuttons(c, 0);
- 	if (!c->isfloating)
+@@ -1296,7 +1310,10 @@ resizeclient(Client *c, int x, int y, int w, int h)
+ 	c->oldy = c->y; c->y = wc.y = y;
+ 	c->oldw = c->w; c->w = wc.width = w;
+ 	c->oldh = c->h; c->h = wc.height = h;
+-	wc.border_width = c->bw;
++	if (c->isfloating && c->hasfloatbw && !c->isfullscreen)
++		wc.border_width = c->floatborderpx;
++	else
++		wc.border_width = c->bw;
+ 	XConfigureWindow(dpy, c->win, CWX|CWY|CWWidth|CWHeight|CWBorderWidth, &wc);
+ 	configure(c);
+ 	XSync(dpy, False);
