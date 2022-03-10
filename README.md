@@ -1,3 +1,9 @@
+# Dotfiles for my Linux installation
+This repository is separated into three components:
+- **config:** all configuration files for my favorite programs
+- **installer:** installing packages for freshly installed system
+- **scripts:** for personal use
+
 # Installation
 
 ```bash
