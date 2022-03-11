@@ -8,7 +8,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 # --- Path
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="/usr/sbin:/home/fabian/.cargo/bin:/home/fabian/.local/bin:$PATH"
+export PATH="/usr/sbin:/home/fabian/go/bin:/home/fabian/.cargo/bin:/home/fabian/.local/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
 
