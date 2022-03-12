@@ -43,7 +43,6 @@ PACKAGES=(
 	'unclutter'                   # Mouse timeout
 	'timeshift'                   # Backup snapshots
 	'firefox-esr'                 # Web browser
-	'anki'                        # Flashcard app
 	'zathura'                     # PDF viewer
 
 	# MEDIA -------------------------------------------------------------------

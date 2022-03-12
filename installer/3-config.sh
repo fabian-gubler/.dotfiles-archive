@@ -42,6 +42,7 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
 sudo apt update && sudo apt install signal-desktop
 
+
 # Alacritty | https://github.com/alacritty/alacritty/blob/master/INSTALL.md
 cargo install alacritty
 
@@ -85,3 +86,8 @@ virsh net-define /usr/share/libvirt/networks/default.xml
 virsh net-autostart default
 virsh net-start default
 
+# -----------------------------------------------------------------------------
+# CUSTOM INSTALL 
+# -----------------------------------------------------------------------------
+
+# Anki | https://docs.ankiweb.net/platform/linux/installing.html
