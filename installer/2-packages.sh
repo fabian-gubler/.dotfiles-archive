@@ -18,12 +18,15 @@ PACKAGES=(
 	'openvpn'					# VPN client
 	'arandr'					# Xrandr frontend
 	'nm-connection-editor'		# Manage Networks
+	'gnome-keyring'				# Keyring Daemon
+	'seahorse'					# Keyring Gui
+	'libsecret'					# Keyring Tool
+
 
 	# PROGRAMMING LANGUAGES  --------------------------------------------------
 	'lua5.3'					  # Lua
 	'luarocks'					  # Lua Package Manager
 	'golang'					  # Go
-	'python3-pip'                 # Python Package Manager
 
 	# COMMAND LINE  -----------------------------------------------------------
 	'zsh'                         # Shell
@@ -43,6 +46,7 @@ PACKAGES=(
 	'unclutter'                   # Mouse timeout
 	'timeshift'                   # Backup snapshots
 	'firefox-esr'                 # Web browser
+	'chromium'					  # Web browser (Backup)
 	'zathura'                     # PDF viewer
 
 	# MEDIA -------------------------------------------------------------------

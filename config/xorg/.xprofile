@@ -15,6 +15,7 @@ export ZDOTDIR=$HOME/.config/zsh
 # --- Preferences
 export EDITOR=nvim
 export PAGER=nvim
+export MANPAGER=less
 export TERM=alacritty
 export LANG="en_US.utf8"
 export MOZ_USE_XINPUT2=1
@@ -22,12 +23,12 @@ export MOZ_USE_XINPUT2=1
 # --- Keyring
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
+export GPG_AGENT_INFO
 
 # --- Startup
 exec systemctl --user import-environment &
 bluetoothctl power on &
 unclutter -idle 1 & # hide mouse pointer
-# gnome-keyring-daemon --start --components=pkcs11 & # keyring
 xset r rate 350 60 &
 xset s off -dpms &
 picom --config ~/.dotfiles/config/picom/picom.conf & # compositor
@@ -37,4 +38,4 @@ rumno-background & # daemon for audio control
 setxkbmap us altgr-intl & # us layout with umlaut
 redshift -l 47.66667:8.98333 & # night light with coordinates
 xinput set-int-prop 20 "Device Enabled" 8 0 & # disables internal keyboard
-# nextcloud & # cloud provider
+nextcloud & # cloud provider

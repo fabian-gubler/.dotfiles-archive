@@ -7,15 +7,36 @@ sudo curl -fsSL https://deb.nodesource.com/setup_17.x | sudo bash -
 sudo apt install -y nodejs
 
 # Node Packages
-NODE=(
+PKG_NODE=(
 	'create-react-app'			# React application
 	'express-generator'			# Express application
 	'tailwindcss'				# Styling
 )
 
-for PKG in "${NODE[@]}"; do
+# Installation Loop
+for PKG in "${PKG_NODE[@]}"; do
     echo "INSTALLING: $PKG"
     sudo sudo npm install -g "$PKG"
+done
+
+# -----------------------------------------------------------------------------
+# PYTHON PACKAGES
+# -----------------------------------------------------------------------------
+
+sudo apt install python3-pip
+
+# Python Packages
+PKG_PYTHON=(
+	'youtube-dl'				# Download YouTube Videos
+	'ueberzug'					# Display Images
+	'flake8'					# Python Linter
+	'black'						# Python Formatter
+)
+
+# Installation Loop
+for PKG in "${PKG_PYHON[@]}"; do
+    echo "INSTALLING: $PKG"
+    sudo sudo pip install "$PKG"
 done
 
 # -----------------------------------------------------------------------------
@@ -23,7 +44,9 @@ done
 # -----------------------------------------------------------------------------
 
 # TODO: Gotop | https://github.com/cjbassi/gotop
+
 # TODO: ZSA wally cli | https://github.com/zsa/wally/wiki/Linux-install
+
 # TODO: VPN setup | https://protonvpn.com/support/linux-openvpn/
 	# 1. network-manager-openvpn-gnome
 	# 2. run nm-connection-editor
@@ -71,20 +94,7 @@ sudo apt install /tmp/onlyoffice.deb
 wget -O /tmp/masterpdf.deb https://code-industry.net/public/master-pdf-editor-5.8.33-qt5.x86_64.deb
 sudo apt install /tmp/masterpdf.deb
 
-# -----------------------------------------------------------------------------
-# CONFIGURATION 
-# -----------------------------------------------------------------------------
-
 # TODO: Pipewire | https://wiki.debian.org/PipeWire
-
-# Dotfiles
-cd ~/.dotfiles/config
-./install
-
-# Virtual Machine
-virsh net-define /usr/share/libvirt/networks/default.xml
-virsh net-autostart default
-virsh net-start default
 
 # -----------------------------------------------------------------------------
 # CUSTOM INSTALL 
