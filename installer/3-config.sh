@@ -43,7 +43,6 @@ done
 # MISC PACKAGES
 # -----------------------------------------------------------------------------
 
-# TODO: Gotop | https://github.com/cjbassi/gotop
 
 # TODO: ZSA wally cli | https://github.com/zsa/wally/wiki/Linux-install
 
@@ -52,6 +51,14 @@ done
 	# 2. run nm-connection-editor
 	# 3. Add according to guide
 	# 4. Connect via networkmanager-dmenu
+
+# Golang
+wget https://golang.org/dl/go1.17.linux-amd64.tar.gz
+sudo tar -zxvf go1.17.linux-amd64.tar.gz -C /usr/local/
+
+# Gotop | https://github.com/cjbassi/gotop
+wget https://github.com/xxxserxxx/gotop/releases/download/v4.1.1/gotop_v4.1.1_linux_amd64.tgz
+sudo tar -xvzf gotop_v4.1.1_linux_amd64.tgz -C /usr/local/bin
 
 # Typora | https://support.typora.io/Typora-on-Linux/
 wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
