@@ -89,6 +89,13 @@ git clone https://github.com/salman-abedin/devour.git /tmp/devour
 cd /tmp/devour
 sudo make install
 
+# Bluetooth Autoconnect
+git clone https://github.com/jrouleau/bluetooth-autoconnect /tmp/bluetooth-autoconnect
+mv /tmp/bluetooth-autoconnect
+sudo mv bluetooth-autoconnect.service /etc/systemd/system/
+sudo mv bluetooth-autoconnect /usr/bin/
+sudo systemctl enable bluetooth-autoconnect.service
+
 # Nextcloud
 sudo add-apt-repository ppa:nextcloud-devs/client
 sudo apt install nextcloud-desktop
