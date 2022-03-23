@@ -1,5 +1,5 @@
 # General
-HISTFILE=~/.config/zsh/.histfile
+HISTFILE=~/dotfiles/config/zsh/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 export MANPAGER="nvim -c 'set ft=man' -"

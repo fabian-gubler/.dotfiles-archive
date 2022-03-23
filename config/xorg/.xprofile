@@ -38,4 +38,4 @@ rumno-background & # daemon for audio control
 setxkbmap us altgr-intl & # us layout with umlaut
 redshift -l 47.66667:8.98333 & # night light with coordinates
 xinput set-int-prop 20 "Device Enabled" 8 0 & # disables internal keyboard
-nextcloud & # cloud provider
+# nextcloud & # cloud provider
