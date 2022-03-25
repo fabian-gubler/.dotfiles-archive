@@ -33,9 +33,11 @@ xset r rate 350 60 &
 xset s off -dpms &
 picom --config ~/.dotfiles/config/picom/picom.conf & # compositor
 hsetroot -solid "#252a34" & # solid background
-xsetroot -name " " & # dwm empty bar (right side)
 rumno-background & # daemon for audio control
 setxkbmap us altgr-intl & # us layout with umlaut
 redshift -l 47.66667:8.98333 & # night light with coordinates
 xinput set-int-prop 20 "Device Enabled" 8 0 & # disables internal keyboard
 # nextcloud & # cloud provider
+
+# --- Scripts
+/home/fabian/.dotfiles/scripts/utils/battery-indicator.sh &

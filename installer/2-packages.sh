@@ -14,6 +14,7 @@ PACKAGES=(
 	'qt5ct'						# Qt theming
 	'xclip'						# Clipboard
 	'xbacklight'				# Screen Brightness
+	'acpi'						# Battery info
 	'picom'						# Compositor
 	'openvpn'					# VPN client
 	'arandr'					# Xrandr frontend
