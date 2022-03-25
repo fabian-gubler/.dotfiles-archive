@@ -1,25 +1,26 @@
 #!/bin/sh
-STATUS=$(acpi -b)
 BATT=$(cat /sys/class/power_supply/BAT0/capacity)
-TEXT="Discharging"
+SUBSTR='Discharging'
 
 while true
  do
-	# # if [ "$BATT" -gt 30 ]
-	# if [ "$STATUS" == *"$TEXT"* ]
-	# then
-	# 	# xsetroot -name " "
-	# 	echo "discharging"
-	# else
-	# 	# xsetroot -name "$BATT% "
-	# 	echo "charging"
-	# fi
-	case $TEXT in
 
-	  *"$STATUS"*)
-		echo -n "String is there."
+	# battery state
+	OUTPUT=$(acpi -b)
+
+	# check whether discharging
+	case $OUTPUT in
+
+		*"$SUBSTR"*)
+		# print battery level
+		xsetroot -name "$BATT% "
+		sleep 1
+		continue
 		;;
 	esac
-    sleep [10]
+
+	# print nothing if charging
+	xsetroot -name " "
+    sleep 1
  done
 
