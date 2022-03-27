@@ -1,7 +1,3 @@
-[submodule "config/gtk/Nordic"]
-	path = config/gtk/Nordic
-	url = https://github.com/EliverLara/Nordic
-
 # ZSH PLUGINS
 [submodule "config/zsh/pure"]
 	path = config/zsh/pure
@@ -24,9 +20,17 @@
 [submodule "config/zsh/plugins/zsh-z"]
 	path = config/zsh/plugins/zsh-z
 	url = https://github.com/agkozak/zsh-z
+
+# RANGER PLUGINS
 [submodule "config/ranger/plugins/ranger-archives"]
 	path = config/ranger/plugins/ranger-archives
 	url = https://github.com/maximtrp/ranger-archives
 [submodule "config/ranger/plugins/ranger_devicons"]
 	path = config/ranger/plugins/ranger_devicons
 	url = https://github.com/alexanderjeurissen/ranger_devicons
+
+# OTHER
+[submodule "config/gtk/Nordic"]
+	path = config/gtk/Nordic
+	url = https://github.com/EliverLara/Nordic
+
