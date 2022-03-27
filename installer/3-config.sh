@@ -15,7 +15,7 @@ BACKPORTS=(
 # Installation Loop
 for PKG in "${BACKPORTS[@]}"; do
     echo "INSTALLING: $PKG"
-    sudo apt -t bullseye-backports install "$PKG"
+    sudo apt -t bullseye-backports install -y "$PKG"
 done
 
 # -----------------------------------------------------------------------------
@@ -43,7 +43,7 @@ done
 # PYTHON PACKAGES
 # -----------------------------------------------------------------------------
 
-sudo apt install python3-pip
+sudo apt install -y python3-pip
 
 # Python Packages
 PKG_PYTHON=(
@@ -83,14 +83,14 @@ sudo tar -xvzf gotop_v4.1.1_linux_amd64.tgz -C /usr/local/bin
 # Typora | https://support.typora.io/Typora-on-Linux/
 wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 sudo add-apt-repository 'deb https://typora.io/linux ./'
-sudo apt update && sudo apt install typora
+sudo apt update && sudo apt install -y typora
 
 # Signal | https://signal.org/download/linux/
-wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
-cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
-echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
-sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
-sudo apt update && sudo apt install signal-desktop
+# wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+# cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+# echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
+# sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+# sudo apt update && sudo apt install -y signal-desktop
 
 # Alacritty | https://github.com/alacritty/alacritty/blob/master/INSTALL.md
 cargo install alacritty
@@ -111,26 +111,26 @@ sudo make install
 # Zotero
 wget -qO- https://zotero.retorque.re/file/apt-package-archive/install.sh | sudo bash
 sudo apt update
-sudo apt install zotero
+sudo apt install -y zotero
 
 # Bluetooth Autoconnect
-git clone https://github.com/jrouleau/bluetooth-autoconnect /tmp/bluetooth-autoconnect
-mv /tmp/bluetooth-autoconnect
-sudo mv bluetooth-autoconnect.service /etc/systemd/system/
-sudo mv bluetooth-autoconnect /usr/bin/
-sudo systemctl enable bluetooth-autoconnect.service
+# git clone https://github.com/jrouleau/bluetooth-autoconnect /tmp/bluetooth-autoconnect
+# mv /tmp/bluetooth-autoconnect
+# sudo mv bluetooth-autoconnect.service /etc/systemd/system/
+# sudo mv bluetooth-autoconnect /usr/bin/
+# sudo systemctl enable bluetooth-autoconnect.service
 
 # Nextcloud
 sudo add-apt-repository ppa:nextcloud-devs/client
-sudo apt install nextcloud-desktop
+sudo apt install -y nextcloud-desktop
 
 # Only Office | https://www.onlyoffice.com/de/download-desktop.aspx?from=desktop
 wget -O /tmp/onlyoffice.deb https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb
-sudo apt install /tmp/onlyoffice.deb
+sudo apt install -y /tmp/onlyoffice.deb
 
 # Master PDF Editor | https://code-industry.net/free-pdf-editor/
 wget -O /tmp/masterpdf.deb https://code-industry.net/public/master-pdf-editor-5.8.33-qt5.x86_64.deb
-sudo apt install /tmp/masterpdf.deb
+sudo apt install -y /tmp/masterpdf.deb
 
 # Anki | https://docs.ankiweb.net/platform/linux/installing.html
 wget -O /tmp/anki.tar.bz2 https://apps.ankiweb.net/downloads/archive/anki-2.1.49-linux.tar.bz2

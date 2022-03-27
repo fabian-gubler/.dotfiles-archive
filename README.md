@@ -11,7 +11,7 @@ This repository is separated into three components:
 sudo apt install git
 
 # Clone Repository
-git clone https://github.com/fabian-gubler/.dotfiles.git ~/.dotfiles
+git clone https://github.com/fabian-gubler/.dotfiles.git /home/fabian/.dotfiles
 
 # Run Installer Scripts
 cd ~/.dotfiles/installer
