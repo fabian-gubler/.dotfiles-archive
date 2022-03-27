@@ -10,6 +10,7 @@ PACKAGES=(
 	'fzf'						# Fuzzy finder
 	'redshift'					# Night filter
 	'adwaita-qt'				# Adwaita dark
+	'hsetroot'					# Solid background
 	'qt5ct'						# Qt theming
 	'xclip'						# Clipboard
 	'xbacklight'				# Screen Brightness
@@ -17,10 +18,9 @@ PACKAGES=(
 	'picom'						# Compositor
 	'openvpn'					# VPN client
 	'arandr'					# Xrandr frontend
-	'nm-connection-editor'		# Manage Networks
+	'network-manager-gnome'		# Manage Networks
 	'gnome-keyring'				# Keyring Daemon
 	'seahorse'					# Keyring Gui
-	'libsecret'					# Keyring Tool
 
 
 	# PROGRAMMING LANGUAGES  --------------------------------------------------
@@ -35,7 +35,6 @@ PACKAGES=(
 	'exa'                         # Better ls
 	'wget'                        # Download web content
 	'ranger'                      # File explorer
-	'devour'                      # Swallow programs
 	'unzip'                       # Unzip directories
 	'todotxt-cli'				  # Todo List
 	'texlive-full'				  # Latex Packages
@@ -62,6 +61,9 @@ PACKAGES=(
 	# 'virt-manager'
 	# 'bridge-utils'
 )
+
+# SOURCES
+sudo ln -s /home/fabian/.dotfiles/installer/sources.list /etc/apt/
 
 # INSTALLATION
 sudo apt update

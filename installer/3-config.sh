@@ -2,10 +2,6 @@
 # BACKPORTS
 # -----------------------------------------------------------------------------
 
-# Add Backports to sources.list
-echo "deb http://deb.debian.org/debian bullseye-backports main" | sudo tee -a /etc/apt/sources.list
-sudo apt update
-
 # Packages
 BACKPORTS=(
 	'tmux'					# Terminal Multiplexer
