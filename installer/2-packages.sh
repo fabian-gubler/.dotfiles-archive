@@ -50,11 +50,12 @@ PACKAGES=(
 	'zathura'                     # PDF viewer
 
 	# MEDIA -------------------------------------------------------------------
-	'bluez'                       # Bluetooth protocol
-	'pipewire'                    # Audio
-	'pavucontrol'                 # Audio Control
-	'sxiv'                        # Image viewer
-	'mpv'                         # Media player
+	'bluez'						# Bluetooth protocol
+	'pipewire'					# Audio
+	'pavucontrol'				# GTK Audio Control
+	'ncpamixer'					# CLI Audio Control
+	'sxiv'                      # Image viewer
+	'mpv'                       # Media player
 
 	# VIRTUAL MACHINES --------------------------------------------------------
 	# 'qemu'

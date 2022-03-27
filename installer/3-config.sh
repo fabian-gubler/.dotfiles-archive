@@ -73,6 +73,10 @@ done
 wget -O /tmp/nvim.deb https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb 
 sudo apt install /tmp/nvim.deb
 
+# Rumno | https://gitlab.com/natjo/rumno
+cd /home/fabian/.dotfiles/config/rumno/build/
+cargo build --release
+
 # Golang
 wget https://golang.org/dl/go1.17.linux-amd64.tar.gz
 sudo tar -zxvf go1.17.linux-amd64.tar.gz -C /usr/local/
@@ -85,13 +89,6 @@ sudo tar -xvzf gotop_v4.1.1_linux_amd64.tgz -C /usr/local/bin
 wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 sudo add-apt-repository 'deb https://typora.io/linux ./'
 sudo apt update && sudo apt install -y typora
-
-# Signal | https://signal.org/download/linux/
-# wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
-# cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
-# echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
-# sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
-# sudo apt update && sudo apt install -y signal-desktop
 
 # Alacritty | https://github.com/alacritty/alacritty/blob/master/INSTALL.md
 sudo apt remove rustc
@@ -117,13 +114,6 @@ wget -qO- https://zotero.retorque.re/file/apt-package-archive/install.sh | sudo 
 sudo apt update
 sudo apt install -y zotero
 
-# Bluetooth Autoconnect
-# git clone https://github.com/jrouleau/bluetooth-autoconnect /tmp/bluetooth-autoconnect
-# mv /tmp/bluetooth-autoconnect
-# sudo mv bluetooth-autoconnect.service /etc/systemd/system/
-# sudo mv bluetooth-autoconnect /usr/bin/
-# sudo systemctl enable bluetooth-autoconnect.service
-
 # Nextcloud
 sudo add-apt-repository ppa:nextcloud-devs/client
 sudo apt install -y nextcloud-desktop
@@ -142,9 +132,30 @@ sudo tar xjf /tmp/anki.tar.bz2
 cd /tmp/anki-2.1.49-linux
 sudo ./install.sh
 
+# ZSH Default Shell
+chsh -s $(which zsh)
+
+# -----------------------------------------------------------------------------
+# ARCHIVED
+# -----------------------------------------------------------------------------
+
+# Bluetooth Autoconnect
+# git clone https://github.com/jrouleau/bluetooth-autoconnect /tmp/bluetooth-autoconnect
+# mv /tmp/bluetooth-autoconnect
+# sudo mv bluetooth-autoconnect.service /etc/systemd/system/
+# sudo mv bluetooth-autoconnect /usr/bin/
+# sudo systemctl enable bluetooth-autoconnect.service
+
 # Pipewire | https://wiki.debian.org/PipeWire
 # sudo touch /etc/pipewire/media-session.d/with-pulseaudio
 # sudo cp /usr/share/doc/pipewire/examples/systemd/user/pipewire-pulse.* /etc/systemd/user/
 # systemctl --user daemon-reload
 # systemctl --user --now disable pulseaudio.service pulseaudio.socket
 # systemctl --user --now enable pipewire pipewire-pulse
+
+# Signal | https://signal.org/download/linux/
+# wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+# cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+# echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
+# sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+# sudo apt update && sudo apt install -y signal-desktop

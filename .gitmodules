@@ -34,3 +34,6 @@
 	path = config/gtk/Nordic
 	url = https://github.com/EliverLara/Nordic
 
+[submodule "config/rumno/build"]
+	path = config/rumno/build
+	url = https://gitlab.com/natjo/rumno
