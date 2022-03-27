@@ -17,12 +17,12 @@ cd ~/.dotfiles/suckless/dwm
 sudo make clean install
 
 # DMENU
-cd ~/.dotfiles/suckless/dmenu
+cd /home/fabian/.dotfiles/suckless/dmenu
 sudo make clean install
 
 # STARTUP FILES
-cd ~/.dotfiles/config/xorg/
-cp .xinitrc ~/.xinitrc
-cp .xprofile ~/.xprofile
-cp .Xresources ~/.Xresources
-cp .zprofile ~/.zprofile
+cd /home/fabian/.dotfiles/config/xorg/
+cp .xinitrc /home/fabian/.xinitrc
+cp .xprofile /home/fabian/.xprofile
+cp .Xresources /home/fabian/.Xresources
+cp .zprofile /home/fabian/.zprofile
