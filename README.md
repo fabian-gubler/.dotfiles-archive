@@ -13,7 +13,7 @@ sudo apt install git
 # Clone Repository
 git clone https://github.com/fabian-gubler/.dotfiles.git ~/.dotfiles
 
-# Run Intaller Scripts
+# Run Installer Scripts
 cd ~/.dotfiles/installer
 sudo bash 1-base.sh
 sudo bash 2-packages.sh
