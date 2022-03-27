@@ -47,6 +47,7 @@ sudo apt install -y python3-pip
 
 # Python Packages
 PKG_PYTHON=(
+	'dotbot'					# Config files bootstrap
 	'youtube-dl'				# Download YouTube Videos
 	'ueberzug'					# Display Images
 	'flake8'					# Python Linter
