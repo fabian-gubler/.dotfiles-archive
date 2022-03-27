@@ -13,11 +13,11 @@ sudo apt upgrade
 sudo apt install make gcc libx11-dev libxft-dev libxinerama-dev xorg
 
 # DWM
-cd /home/fabian/.dotfiles/suckless/dwm
+cd /home/fabian/.dotfiles/config/suckless/dwm
 sudo make clean install
 
 # DMENU
-cd /home/fabian/.dotfiles/suckless/dmenu
+cd /home/fabian/.dotfiles/config/suckless/dmenu
 sudo make clean install
 
 # STARTUP FILES
