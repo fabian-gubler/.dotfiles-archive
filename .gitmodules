@@ -1,3 +1,6 @@
 [submodule "config/gtk/Nordic"]
 	path = config/gtk/Nordic
 	url = https://github.com/EliverLara/Nordic
+[submodule "config/zsh/--force"]
+	path = config/zsh/--force
+	url = https://github.com/sindresorhus/pure
