@@ -93,6 +93,9 @@ sudo apt update && sudo apt install -y typora
 # sudo apt update && sudo apt install -y signal-desktop
 
 # Alacritty | https://github.com/alacritty/alacritty/blob/master/INSTALL.md
+sudo apt remove rustc
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+sudo apt install -y cmake
 cargo install alacritty
 
 # Network manager

@@ -27,6 +27,7 @@ PACKAGES=(
 	'lua5.3'					  # Lua
 	'luarocks'					  # Lua Package Manager
 	'golang'					  # Go
+	'cargo'						# Rust Package Manager
 
 	# COMMAND LINE  -----------------------------------------------------------
 	'zsh'                         # Shell

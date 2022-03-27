@@ -18,4 +18,8 @@ cd ~/.dotfiles/installer
 sudo bash 1-base.sh
 sudo bash 2-packages.sh
 sudo bash 3-config.sh
+
+# Configuration
+cd ~/.dotfiles/config
+sudo bash install
 ```
