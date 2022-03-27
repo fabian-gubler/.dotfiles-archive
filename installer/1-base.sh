@@ -6,7 +6,8 @@
 # TODO: Copy Apt Sources List
 
 # Upgrade
-sudo apt update & sudo apt upgrade
+sudo apt update
+sudo apt upgrade
 
 # PACKAGES
 sudo apt install make gcc libx11-dev libxft-dev libxinerama-dev xorg
