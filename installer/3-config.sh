@@ -69,6 +69,10 @@ done
 	# 3. Add according to guide
 	# 4. Connect via networkmanager-dmenu
 
+# Neovim | https://github.com/neovim/neovim/releases
+wget -O /tmp/nvim.deb https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb 
+sudo apt install /tmp/nvim.deb
+
 # Golang
 wget https://golang.org/dl/go1.17.linux-amd64.tar.gz
 sudo tar -zxvf go1.17.linux-amd64.tar.gz -C /usr/local/
