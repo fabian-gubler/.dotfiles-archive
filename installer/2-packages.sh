@@ -2,7 +2,6 @@
 # DEBIAN PACKAGES
 # -----------------------------------------------------------------------------
 
-# TODO: Backports: tmux
 
 PACKAGES=(
 
@@ -58,9 +57,9 @@ PACKAGES=(
 	'mpv'                         # Media player
 
 	# VIRTUAL MACHINES --------------------------------------------------------
-	'qemu'
-	'virt-manager'
-	'bridge-utils'
+	# 'qemu'
+	# 'virt-manager'
+	# 'bridge-utils'
 )
 
 # INSTALLATION
@@ -69,5 +68,5 @@ sudo apt upgrade
 
 for PKG in "${PACKAGES[@]}"; do
     echo "INSTALLING: $PKG"
-    sudo sudo -u $USER apt install "$PKG"
+    sudo sudo -u $USER apt install -y "$PKG" 
 done
