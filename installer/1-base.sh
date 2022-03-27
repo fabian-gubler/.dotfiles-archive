@@ -10,7 +10,7 @@ sudo apt update
 sudo apt upgrade
 
 # PACKAGES
-sudo apt install make gcc libx11-dev libxft-dev libxinerama-dev xorg
+sudo apt install -y make gcc libx11-dev libxft-dev libxinerama-dev xorg
 
 # DWM
 cd /home/fabian/.dotfiles/config/suckless/dwm
