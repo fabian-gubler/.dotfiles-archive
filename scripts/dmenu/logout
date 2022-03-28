@@ -17,8 +17,9 @@ export OUTPUT
 
 # An array of options to choose.
 declare -a options=(
-"Suspend"
+"Hibernate"
 "Shutdown"
+"Suspend"
 "Reboot"
 "Lock"
 )
@@ -41,6 +42,9 @@ case $choice in
     'Reboot')
         systemctl reboot
         ;;
+	'Hibernate')
+		systemctl hibernate
+		;;
     'Shutdown')
         systemctl poweroff
         ;;

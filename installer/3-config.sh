@@ -73,9 +73,6 @@ done
 wget -O /tmp/nvim.deb https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb 
 sudo apt install /tmp/nvim.deb
 
-# Rumno | https://gitlab.com/natjo/rumno
-cd /home/fabian/.dotfiles/config/rumno/build/
-cargo build --release
 
 # Golang
 wget https://golang.org/dl/go1.17.linux-amd64.tar.gz
@@ -93,8 +90,13 @@ sudo apt update && sudo apt install -y typora
 # Alacritty | https://github.com/alacritty/alacritty/blob/master/INSTALL.md
 sudo apt remove rustc
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# add all dependencies!
 sudo apt install -y cmake
 cargo install alacritty
+
+# Rumno | https://gitlab.com/natjo/rumno
+cd /home/fabian/.dotfiles/config/rumno/build/
+cargo build --release
 
 # Network manager
 git clone https://github.com/firecat53/networkmanager-dmenu $HOME/.local/bin/networkmanager-dmenu

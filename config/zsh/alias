@@ -1,21 +1,13 @@
 # Short form
 alias v="nvim"
 alias d="devour"
-alias yt-audio="yt-dlp --extract-audio --audio-format mp3"
 alias lg="lazygit"
-alias publish="/data/thesis/publish.sh"
 alias p="python3"
-alias tgauss="/analytics/app/tgauss"
 alias zt="devour zathura"
 alias mt="devour masterpdfeditor5"
 alias sv="sudoedit"
-alias t="todo-txt -d /data/nextcloud/todo/config"
-alias tv="nvim -c 'sort' /data/nextcloud/todo/todo.txt"
-alias pv="nvim ~/.config/pomogoro/pomo.txt"
-alias pl="nvim ~/.config/pomogoro/pomogoro.log"
-alias bk="bookmark"
-alias n="neuron"
-alias server="$HOME/.dotfiles/scripts/bash/server.sh"
+alias t="todo-txt -d /home/fabian/nextcloud/todo/config"
+alias tv="nvim -c 'sort' /home/fabian/nextcloud/todo/todo.txt"
 
 # Productivity
 alias pomo="pomogoro --config ~/.config/pomogoro/config.toml"

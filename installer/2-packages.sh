@@ -3,6 +3,7 @@
 # -----------------------------------------------------------------------------
 
 # SOURCES
+sudo rm /etc/apt/sources.list
 sudo ln -s /home/fabian/.dotfiles/installer/sources.list /etc/apt/
 
 PACKAGES=(
