@@ -32,7 +32,7 @@ done
 #     python3 -m pip install -U "$PKG"
 # done
 
-python3 -m pip insatll -U dotbot yt-dlp ueberzug flake8 black
+python3 -m pip install -U dotbot yt-dlp ueberzug flake8 black
 
 # -----------------------------------------------------------------------------
 # RUST PACKAGES
@@ -86,9 +86,8 @@ cd /tmp/devour
 sudo make install
 
 # Zotero
-wget -qO- https://zotero.retorque.re/file/apt-package-archive/install.sh | sudo bash
-sudo apt update
-sudo apt install -y zotero
+# wget https://www.zotero.org/download/client/dl?channel=release&platform=linux-x86_64&version=6.0.4
+# sudo tar -xvzf 
 
 # Only Office | https://www.onlyoffice.com/de/download-desktop.aspx?from=desktop
 wget -O /tmp/onlyoffice.rpm https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm
