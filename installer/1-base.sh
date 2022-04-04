@@ -9,7 +9,7 @@ sudo dnf update
 sudo dnf upgrade
 
 # PACKAGES
-sudo dnf install -y xorg-x11-server-Xorg  
+# sudo dnf install -y xorg-x11-server-Xorg xorg-x11-xinit  libX11-devel libXft-devel libXinerama-devel
 
 # DWM
 cd /home/fabian/.dotfiles/config/suckless/dwm

@@ -7,9 +7,10 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 
 
 GROUPS=(
-	'@networkmanager-submodules'
-	'@virtualization'
-	'@sound-and-video'
+	'networkmanager-submodules'
+	'virtualization'
+	'sound-and-video'
+	'x-software-development'
 )
 
 
