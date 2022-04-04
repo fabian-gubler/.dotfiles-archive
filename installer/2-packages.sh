@@ -1,5 +1,5 @@
 # Third-Party Sources
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # -----------------------------------------------------------------------------
 # FEDORA PACKAGES
@@ -10,9 +10,14 @@ GROUPS=(
 	'networkmanager-submodules'
 	'virtualization'
 	'sound-and-video'
-	'x-software-development'
 )
 
+
+# Install
+for GRP in "${GROUPS[@]}"; do
+    echo "INSTALLING: $GRP"
+    sudo dnf group install -y "$GRP" 
+done
 
 PACKAGES=(
 
@@ -32,9 +37,10 @@ PACKAGES=(
 	'nextcloud'					# Cloud
 
 	# PROGRAMMING LANGUAGES  --------------------------------------------------
-	'lua'						# Lua Language
-	'rust'						# Rust Language
-	'golang'					# Go Language
+	'nodejs'					# Node
+	'lua'						# Lua
+	'rust'						# Rust
+	'golang'					# Go
 	'cargo'						# Rust Package Manager
 
 	# COMMAND LINE  -----------------------------------------------------------
@@ -62,13 +68,8 @@ PACKAGES=(
 	'mpv'                       # Media player
 )
 
-# Packages
+# Install
 for PKG in "${PACKAGES[@]}"; do
     echo "INSTALLING: $PKG"
-    sudo sudo -u $USER apt install -y "$PKG" 
-done
-
-for GRP in "${GROUPS[@]}"; do
-    echo "INSTALLING: $GRP"
-    sudo sudo -u $USER apt install -y "$GRP" 
+    sudo dnf install -y "$PKG" 
 done

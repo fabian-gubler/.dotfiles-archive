@@ -3,7 +3,7 @@
 # -----------------------------------------------------------------------------
 
 # Nodejs v17 | https://github.com/nodesource/distributions/blob/master/README.md
-curl -fsSL https://rpm.nodesource.com/setup_17.x | sudo bash -
+# curl -fsSL https://rpm.nodesource.com/setup_17.x | sudo bash -
 
 # Node Packages
 PKG_NODE=(
