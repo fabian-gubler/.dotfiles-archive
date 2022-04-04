@@ -3,14 +3,13 @@
 # -----------------------------------------------------------------------------
 
 # TODO: Clone Directory with Github Credentials
-# TODO: Copy Apt Sources List
 
 # Upgrade
-sudo apt update
-sudo apt upgrade
+sudo dnf update
+sudo dnf upgrade
 
 # PACKAGES
-sudo apt install -y make gcc libx11-dev libxft-dev libxinerama-dev xorg
+sudo dnf install -y xorg-x11-server-Xorg  
 
 # DWM
 cd /home/fabian/.dotfiles/config/suckless/dwm
@@ -26,3 +25,4 @@ cp .xinitrc /home/fabian/.xinitrc
 cp .xprofile /home/fabian/.xprofile
 cp .Xresources /home/fabian/.Xresources
 cp .zprofile /home/fabian/.zprofile
+

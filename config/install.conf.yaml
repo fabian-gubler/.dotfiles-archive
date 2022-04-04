@@ -20,6 +20,7 @@
 
     # UTILITIES ---------------------------------------------------
     ~/.config/alacritty:                    alacritty
+    ~/.config/kitty:                        kitty
     ~/.newsboat:                            newsboat
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
     ~/.config/Typora/themes/nord:           typora/nord
@@ -31,8 +32,8 @@
     ~/.themes/Nordic:                       gtk/Nordic
     ~/.config/redshift:                     redshift
     ~/.config/mpv:                          mpv
-    ~/.local/bin/rumno:                     rumno/build/target/release/rumno
-    ~/.local/bin/rumno-background:          rumno/build/target/release/rumno-background
+    # ~/.local/bin/rumno:                     rumno/build/target/release/rumno
+    # ~/.local/bin/rumno-background:          rumno/build/target/release/rumno-background
 
     # TOOLS -------------------------------------------------------
     ~/.config/ranger/rc.conf:               ranger/rc.conf

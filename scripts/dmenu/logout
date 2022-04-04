@@ -17,9 +17,9 @@ export OUTPUT
 
 # An array of options to choose.
 declare -a options=(
+"Suspend"
 "Hibernate"
 "Shutdown"
-"Suspend"
 "Reboot"
 "Lock"
 )

@@ -1,75 +1,73 @@
+# Third-Party Sources
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
 # -----------------------------------------------------------------------------
-# DEBIAN PACKAGES
+# FEDORA PACKAGES
 # -----------------------------------------------------------------------------
 
-# SOURCES
-sudo rm /etc/apt/sources.list
-sudo ln -s /home/fabian/.dotfiles/installer/sources.list /etc/apt/
+
+GROUPS=(
+	'@networkmanager-submodules'
+	'@virtualization'
+	'@sound-and-video'
+)
+
 
 PACKAGES=(
 
 	# SYSTEM ------------------------------------------------------------------
-	'firmware-iwlwifi'			# Bluetooth
 	'fzf'						# Fuzzy finder
 	'redshift'					# Night filter
-	'adwaita-qt'				# Adwaita dark
+	'adwaita-qt5'				# Adwaita dark
 	'hsetroot'					# Solid background
 	'qt5ct'						# Qt theming
 	'xclip'						# Clipboard
 	'xbacklight'				# Screen Brightness
 	'acpi'						# Battery info
 	'picom'						# Compositor
-	'openvpn'					# VPN client
 	'arandr'					# Xrandr frontend
-	'network-manager-gnome'		# Manage Networks
 	'gnome-keyring'				# Keyring Daemon
 	'seahorse'					# Keyring Gui
-
+	'nextcloud'					# Cloud
 
 	# PROGRAMMING LANGUAGES  --------------------------------------------------
-	'lua5.3'					# Lua
-	'luarocks'					# Lua Package Manager
+	'lua'						# Lua Language
+	'rust'						# Rust Language
+	'golang'					# Go Language
 	'cargo'						# Rust Package Manager
 
 	# COMMAND LINE  -----------------------------------------------------------
-	'zsh'                       # Shell
+	'neovim'					# Tex editor
+	'zsh'						# Shell
+	'kitty'						# Terminal
+	'alacritty'					# Fallback Terminal
 	'tmux'                      # Terminal Multiplexer
 	'exa'                       # Better ls
-	'wget'                      # Download web content
 	'ranger'                    # File explorer
-	'unzip'                     # Unzip directories
-	'todotxt-cli'				# Todo List
-	'texlive-full'				# Latex Packages
+	'texlive'					# Latex Packages
 	'ncdu'						# Disk space
+	'newsboat'					# RSS Reader
 
 	# APPLICATIONS ------------------------------------------------------------
 	'qbittorrent'               # Torrent client
 	'xsane'                     # Scanning
-	'unclutter'                 # Mouse timeout
+	'unclutter-xfixes'          # Mouse timeout
 	'timeshift'                 # Backup snapshots
-	'firefox-esr'               # Web browser
+	'firefox'					# Web browser
+	'anki'						# Flashcard spaced repetition
 	'chromium'					# Web browser (Backup)
 	'zathura'                   # PDF viewer
-
-	# MEDIA -------------------------------------------------------------------
-	'bluez'						# Bluetooth protocol
-	'pipewire'					# Audio
-	'pavucontrol'				# GTK Audio Control
-	'ncpamixer'					# CLI Audio Control
 	'sxiv'                      # Image viewer
 	'mpv'                       # Media player
-
-	# VIRTUAL MACHINES --------------------------------------------------------
-	# 'qemu'
-	# 'virt-manager'
-	# 'bridge-utils'
 )
 
-# INSTALLATION
-sudo apt update
-sudo apt upgrade
-
+# Packages
 for PKG in "${PACKAGES[@]}"; do
     echo "INSTALLING: $PKG"
     sudo sudo -u $USER apt install -y "$PKG" 
+done
+
+for GRP in "${GROUPS[@]}"; do
+    echo "INSTALLING: $GRP"
+    sudo sudo -u $USER apt install -y "$GRP" 
 done

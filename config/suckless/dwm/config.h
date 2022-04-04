@@ -34,7 +34,6 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1,        50,50,500,500,        5 },
 	{ "Firefox",  NULL,       NULL,       0,			0,           -1,        50,50,500,500,        0 },
 };
 
@@ -67,7 +66,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
-static const char *termcmd[] = { "alacritty", NULL };
+static const char *termcmd[] = { "kitty", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
@@ -78,7 +77,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("brave")},
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("typora")},
 	{ MODKEY,                       XK_r,      spawn,          SHCMD("pavucontrol")},
-	{ MODKEY,                       XK_Return, spawn,          SHCMD("alacritty -e tmuxdd")},
+	{ MODKEY,                       XK_Return, spawn,          SHCMD("kitty tmuxdd")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/network -l 30")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},

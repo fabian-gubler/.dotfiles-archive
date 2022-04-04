@@ -1,5 +1,6 @@
 # Short form
 alias v="nvim"
+alias rand="autorandr"
 alias d="devour"
 alias lg="lazygit"
 alias p="python3"
@@ -7,6 +8,8 @@ alias zt="devour zathura"
 alias mt="devour masterpdfeditor5"
 alias sv="sudoedit"
 alias t="todo-txt -d /home/fabian/nextcloud/todo/config"
+alias td="todo-txt -d /home/fabian/nextcloud/todo/config-dev"
+alias tdv="nvim -c 'sort' /home/fabian/nextcloud/todo/todo-dev.txt"
 alias tv="nvim -c 'sort' /home/fabian/nextcloud/todo/todo.txt"
 
 # Productivity
@@ -22,8 +25,6 @@ alias sound="sudo python3 $HOME/.dotfiles/scripts/utils/sound/applyimproved.py $
 alias pls='sudo $(fc -ln -1)'
 alias q="exit"
 alias zoomdl="zoomdl -u"
-alias monitor="autorandr --load monitor"
-alias laptop="autorandr --load laptop"
 alias top="gotop -l minimal"
 alias xev="xev -event keyboard  | egrep -o 'keycode.*\)'"
 

@@ -1,32 +1,13 @@
 # -----------------------------------------------------------------------------
-# BACKPORTS
-# -----------------------------------------------------------------------------
-
-# Packages
-BACKPORTS=(
-	'tmux'					# Terminal Multiplexer
-
-)
-
-# Installation Loop
-for PKG in "${BACKPORTS[@]}"; do
-    echo "INSTALLING: $PKG"
-    sudo apt -t bullseye-backports install -y "$PKG"
-done
-
-# -----------------------------------------------------------------------------
 # NODE PACKAGES
 # -----------------------------------------------------------------------------
 
 # Nodejs v17 | https://github.com/nodesource/distributions/blob/master/README.md
-sudo curl -fsSL https://deb.nodesource.com/setup_17.x | sudo bash -
-sudo apt install -y nodejs
+curl -fsSL https://rpm.nodesource.com/setup_17.x | sudo bash -
 
 # Node Packages
 PKG_NODE=(
 	'create-react-app'			# React application
-	'express-generator'			# Express application
-	'tailwindcss'				# Styling
 )
 
 # Installation Loop
@@ -39,12 +20,13 @@ done
 # PYTHON PACKAGES
 # -----------------------------------------------------------------------------
 
-sudo apt install -y python3-pip
+# !!!
+# sudo apt install -y python3-pip
 
 # Python Packages
 PKG_PYTHON=(
 	'dotbot'					# Config files bootstrap
-	'youtube-dl'				# Download YouTube Videos
+	'yt-dlp'					# Download YouTube Videos
 	'ueberzug'					# Display Images
 	'flake8'					# Python Linter
 	'black'						# Python Formatter
@@ -53,7 +35,22 @@ PKG_PYTHON=(
 # Installation Loop
 for PKG in "${PKG_PYHON[@]}"; do
     echo "INSTALLING: $PKG"
-    sudo sudo pip install "$PKG"
+    python3 -m pip install -U "$PKG"
+done
+
+# -----------------------------------------------------------------------------
+# RUST PACKAGES
+# -----------------------------------------------------------------------------
+
+# Packages
+PKG_CARGO=(
+	'stylua'				# Lua formatter
+)
+
+# Installation Loop
+for PKG in "${PKG_CARGO[@]}"; do
+    echo "INSTALLING: $PKG"
+    cargo install "$PKG"
 done
 
 # -----------------------------------------------------------------------------
@@ -69,15 +66,6 @@ done
 	# 3. Add according to guide
 	# 4. Connect via networkmanager-dmenu
 
-# Neovim | https://github.com/neovim/neovim/releases
-wget -O /tmp/nvim.deb https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb 
-sudo apt install /tmp/nvim.deb
-
-
-# Golang
-wget https://golang.org/dl/go1.17.linux-amd64.tar.gz
-sudo tar -zxvf go1.17.linux-amd64.tar.gz -C /usr/local/
-
 # Gotop | https://github.com/cjbassi/gotop
 wget https://github.com/xxxserxxx/gotop/releases/download/v4.1.1/gotop_v4.1.1_linux_amd64.tgz
 sudo tar -xvzf gotop_v4.1.1_linux_amd64.tgz -C /usr/local/bin
@@ -87,18 +75,13 @@ wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
 sudo add-apt-repository 'deb https://typora.io/linux ./'
 sudo apt update && sudo apt install -y typora
 
-# Alacritty | https://github.com/alacritty/alacritty/blob/master/INSTALL.md
-sudo apt remove rustc
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-# add all dependencies!
-sudo apt install -y cmake
-cargo install alacritty
+# Todo TXT | https://github.com/todotxt/todo.txt-cli
+sudo git clone https://github.com/todotxt/todo.txt-cli todotxt
+cd todotxt
+make
+make install
 
-# Rumno | https://gitlab.com/natjo/rumno
-cd /home/fabian/.dotfiles/config/rumno/build/
-cargo build --release
-
-# Network manager
+# Network manager Dmenu
 git clone https://github.com/firecat53/networkmanager-dmenu $HOME/.local/bin/networkmanager-dmenu
 
 # Dragon
@@ -116,10 +99,6 @@ wget -qO- https://zotero.retorque.re/file/apt-package-archive/install.sh | sudo 
 sudo apt update
 sudo apt install -y zotero
 
-# Nextcloud
-sudo add-apt-repository ppa:nextcloud-devs/client
-sudo apt install -y nextcloud-desktop
-
 # Only Office | https://www.onlyoffice.com/de/download-desktop.aspx?from=desktop
 wget -O /tmp/onlyoffice.deb https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb
 sudo apt install -y /tmp/onlyoffice.deb
@@ -128,14 +107,16 @@ sudo apt install -y /tmp/onlyoffice.deb
 wget -O /tmp/masterpdf.deb https://code-industry.net/public/master-pdf-editor-5.8.33-qt5.x86_64.deb
 sudo apt install -y /tmp/masterpdf.deb
 
-# Anki | https://docs.ankiweb.net/platform/linux/installing.html
-wget -O /tmp/anki.tar.bz2 https://apps.ankiweb.net/downloads/archive/anki-2.1.49-linux.tar.bz2
-sudo tar xjf /tmp/anki.tar.bz2
-cd /tmp/anki-2.1.49-linux
-sudo ./install.sh
+# -----------------------------------------------------------------------------
+# Options
+# -----------------------------------------------------------------------------
 
 # ZSH Default Shell
-chsh -s $(which zsh)
+sudo kitty chsh -s $(which zsh)
+
+# Crontabs
+(crontab -l 2>/dev/null; echo "0 * * * * cd ~/.dotfiles && git add . && git commit -m"automated update" && git push origin main") | crontab -
+(crontab -l 2>/dev/null; echo "0 * * * * cd ~/.config/nvim && git add . && git commit -m"automated update" && git push origin main"automated update" && git push origin main") | crontab -
 
 # -----------------------------------------------------------------------------
 # ARCHIVED

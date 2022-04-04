@@ -1,23 +1,22 @@
-#!/bin/sh
-BATT=$(cat /sys/class/power_supply/BAT0/capacity)
-SUBSTR='Discharging'
+#!/bin/bash
 
 while true
  do
 
+	# battery level
+	BATT=$(cat /sys/class/power_supply/BAT0/capacity)
+
 	# battery state
-	OUTPUT=$(acpi -b)
+	STATUS=$(cat /sys/class/power_supply/BAT0/status)
 
 	# check whether discharging
-	case $OUTPUT in
-
-		*"$SUBSTR"*)
+	if [[ $STATUS = "Discharging" ]]
+	then
 		# print battery level
 		xsetroot -name "$BATT% "
 		sleep 1
 		continue
-		;;
-	esac
+	fi
 
 	# print nothing if charging
 	xsetroot -name " "
