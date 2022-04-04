@@ -10,9 +10,6 @@ This repository is separated into three components:
 # Install Git
 sudo dnf install git
 
-# Create User
-useradd fabian
-
 # Clone Repository
 git clone --recursive https://github.com/fabian-gubler/.dotfiles.git /home/fabian/.dotfiles
 

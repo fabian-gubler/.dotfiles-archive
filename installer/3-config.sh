@@ -70,11 +70,6 @@ done
 wget https://github.com/xxxserxxx/gotop/releases/download/v4.1.1/gotop_v4.1.1_linux_amd64.tgz
 sudo tar -xvzf gotop_v4.1.1_linux_amd64.tgz -C /usr/local/bin
 
-# Typora | https://support.typora.io/Typora-on-Linux/
-wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
-sudo add-apt-repository 'deb https://typora.io/linux ./'
-sudo apt update && sudo apt install -y typora
-
 # Todo TXT | https://github.com/todotxt/todo.txt-cli
 sudo git clone https://github.com/todotxt/todo.txt-cli todotxt
 cd todotxt
@@ -100,12 +95,12 @@ sudo apt update
 sudo apt install -y zotero
 
 # Only Office | https://www.onlyoffice.com/de/download-desktop.aspx?from=desktop
-wget -O /tmp/onlyoffice.deb https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb
-sudo apt install -y /tmp/onlyoffice.deb
+wget -O /tmp/onlyoffice.rpm https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm
+sudo dnf install -y /tmp/onlyoffice.rpm
 
 # Master PDF Editor | https://code-industry.net/free-pdf-editor/
-wget -O /tmp/masterpdf.deb https://code-industry.net/public/master-pdf-editor-5.8.33-qt5.x86_64.deb
-sudo apt install -y /tmp/masterpdf.deb
+wget -O /tmp/masterpdf.rpm https://code-industry.net/public/master-pdf-editor-5.8.46-qt5.x86_64.rpm
+sudo dnf install -y /tmp/masterpdf.rpm
 
 # -----------------------------------------------------------------------------
 # Options
@@ -117,28 +112,3 @@ sudo kitty chsh -s $(which zsh)
 # Crontabs
 (crontab -l 2>/dev/null; echo "0 * * * * cd ~/.dotfiles && git add . && git commit -m"automated update" && git push origin main") | crontab -
 (crontab -l 2>/dev/null; echo "0 * * * * cd ~/.config/nvim && git add . && git commit -m"automated update" && git push origin main"automated update" && git push origin main") | crontab -
-
-# -----------------------------------------------------------------------------
-# ARCHIVED
-# -----------------------------------------------------------------------------
-
-# Bluetooth Autoconnect
-# git clone https://github.com/jrouleau/bluetooth-autoconnect /tmp/bluetooth-autoconnect
-# mv /tmp/bluetooth-autoconnect
-# sudo mv bluetooth-autoconnect.service /etc/systemd/system/
-# sudo mv bluetooth-autoconnect /usr/bin/
-# sudo systemctl enable bluetooth-autoconnect.service
-
-# Pipewire | https://wiki.debian.org/PipeWire
-# sudo touch /etc/pipewire/media-session.d/with-pulseaudio
-# sudo cp /usr/share/doc/pipewire/examples/systemd/user/pipewire-pulse.* /etc/systemd/user/
-# systemctl --user daemon-reload
-# systemctl --user --now disable pulseaudio.service pulseaudio.socket
-# systemctl --user --now enable pipewire pipewire-pulse
-
-# Signal | https://signal.org/download/linux/
-# wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
-# cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
-# echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
-# sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
-# sudo apt update && sudo apt install -y signal-desktop
