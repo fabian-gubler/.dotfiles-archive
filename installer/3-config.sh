@@ -2,9 +2,6 @@
 # NODE PACKAGES
 # -----------------------------------------------------------------------------
 
-# Nodejs v17 | https://github.com/nodesource/distributions/blob/master/README.md
-# curl -fsSL https://rpm.nodesource.com/setup_17.x | sudo bash -
-
 # Node Packages
 PKG_NODE=(
 	'create-react-app'			# React application
@@ -20,23 +17,22 @@ done
 # PYTHON PACKAGES
 # -----------------------------------------------------------------------------
 
-# !!!
-# sudo apt install -y python3-pip
-
 # Python Packages
-PKG_PYTHON=(
-	'dotbot'					# Config files bootstrap
-	'yt-dlp'					# Download YouTube Videos
-	'ueberzug'					# Display Images
-	'flake8'					# Python Linter
-	'black'						# Python Formatter
-)
+# PKG_PYTHON=(
+# 	'dotbot'					# Config files bootstrap
+# 	'yt-dlp'					# Download YouTube Videos
+# 	'ueberzug'					# Display Images
+# 	'flake8'					# Python Linter
+# 	'black'						# Python Formatter
+# )
 
 # Installation Loop
-for PKG in "${PKG_PYHON[@]}"; do
-    echo "INSTALLING: $PKG"
-    python3 -m pip install -U "$PKG"
-done
+# for PKG in "${PKG_PYHON[@]}"; do
+#     echo "INSTALLING: $PKG"
+#     python3 -m pip install -U "$PKG"
+# done
+
+python3 -m pip insatll -U dotbot yt-dlp ueberzug flake8 black
 
 # -----------------------------------------------------------------------------
 # RUST PACKAGES

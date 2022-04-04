@@ -32,7 +32,7 @@ unclutter -idle 1 & # hide mouse pointer
 xset r rate 350 60 &
 xset s off -dpms &
 picom --config ~/.dotfiles/config/picom/picom.conf & # compositor
-hsetroot -solid "#252a34" & # solid background
+xsetroot -solid "#252a34" & # solid background
 rumno-background & # daemon for audio control
 setxkbmap us altgr-intl & # us layout with umlaut
 redshift -l 47.66667:8.98333 & # night light with coordinates

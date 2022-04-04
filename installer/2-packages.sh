@@ -25,7 +25,7 @@ PACKAGES=(
 	'fzf'						# Fuzzy finder
 	'redshift'					# Night filter
 	'adwaita-qt5'				# Adwaita dark
-	'hsetroot'					# Solid background
+	'xsetroot'					# Solid background
 	'qt5ct'						# Qt theming
 	'xclip'						# Clipboard
 	'xbacklight'				# Screen Brightness
@@ -41,6 +41,7 @@ PACKAGES=(
 	'lua'						# Lua
 	'rust'						# Rust
 	'golang'					# Go
+	'python3-pip'				# Python Package Manager
 	'cargo'						# Rust Package Manager
 
 	# COMMAND LINE  -----------------------------------------------------------
