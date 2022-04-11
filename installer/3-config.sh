@@ -5,6 +5,7 @@
 # Node Packages
 PKG_NODE=(
 	'create-react-app'			# React application
+	'mdanki'					# Create Flashcards in Markdown
 )
 
 # Installation Loop
@@ -53,6 +54,9 @@ done
 # MISC PACKAGES
 # -----------------------------------------------------------------------------
 
+# TODO FEDORA
+	# Dragon
+	# Masterpdfeditor
 
 # TODO: ZSA wally cli | https://github.com/zsa/wally/wiki/Linux-install
 
@@ -63,22 +67,22 @@ done
 	# 4. Connect via networkmanager-dmenu
 
 # Gotop | https://github.com/cjbassi/gotop
-wget https://github.com/xxxserxxx/gotop/releases/download/v4.1.1/gotop_v4.1.1_linux_amd64.tgz
-sudo tar -xvzf gotop_v4.1.1_linux_amd64.tgz -C /usr/local/bin
+wget -O /tmp/gotop.tgz https://github.com/xxxserxxx/gotop/releases/download/v4.1.1/gotop_v4.1.1_linux_amd64.tgz
+sudo tar -xvzf /tmp/gotop.tgz -C /usr/local/bin
 
 # Todo TXT | https://github.com/todotxt/todo.txt-cli
-sudo git clone https://github.com/todotxt/todo.txt-cli todotxt
-cd todotxt
-make
-make install
+sudo git clone https://github.com/todotxt/todo.txt-cli /tmp/todotxt
+cd /tmp/todotxt
+sudo make
+sudo make install
 
 # Network manager Dmenu
-git clone https://github.com/firecat53/networkmanager-dmenu $HOME/.local/bin/networkmanager-dmenu
+git clone https://github.com/firecat53/networkmanager-dmenu /usr/local/bin/networkmanager-dmenu
 
 # Dragon
 git clone https://github.com/mwh/dragon /tmp/dragon
 cd /tmp/dragon
-make
+sudo make
 
 # Devour
 git clone https://github.com/salman-abedin/devour.git /tmp/devour
@@ -107,3 +111,13 @@ sudo kitty chsh -s $(which zsh)
 # Crontabs
 (crontab -l 2>/dev/null; echo "0 * * * * cd ~/.dotfiles && git add . && git commit -m"automated update" && git push origin main") | crontab -
 (crontab -l 2>/dev/null; echo "0 * * * * cd ~/.config/nvim && git add . && git commit -m"automated update" && git push origin main"automated update" && git push origin main") | crontab -
+
+# Systemd
+systemctl --user enable mpd
+systemctl --user enable mpDris2
+
+# Root Systemd
+sudo systemctl enable tlp.service
+
+# Test if necessary
+sudo usermod -aG audio fabian

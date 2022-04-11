@@ -1,5 +1,6 @@
 # Short form
 alias v="nvim"
+alias python="python3.8"
 alias rand="autorandr"
 alias d="devour"
 alias lg="lazygit"

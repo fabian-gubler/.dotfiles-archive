@@ -16,7 +16,6 @@
     ~/.xprofile:                            xorg/.xprofile
     ~/.xinitrc:                             xorg/.xinitrc
     ~/.Xressources:                         xorg/.Xresources
-    ~/.zprofile:                            xorg/.zprofile
 
     # UTILITIES ---------------------------------------------------
     ~/.config/alacritty:                    alacritty
@@ -32,6 +31,8 @@
     ~/.themes/Nordic:                       gtk/Nordic
     ~/.config/redshift:                     redshift
     ~/.config/mpv:                          mpv
+    ~/.config/mpd:                          mpd
+    ~/.ncmpcpp:                             ncmpcpp
     # ~/.local/bin/rumno:                     rumno/build/target/release/rumno
     # ~/.local/bin/rumno-background:          rumno/build/target/release/rumno-background
 
@@ -41,6 +42,7 @@
     ~/.config/ranger/plugins:               ranger/plugins
     ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf
     ~/.config/zathura:                      zathura
+    ~/.config/xournalpp:                    xournal
 
     # WEB TOOLS ---------------------------------------------------
     ~/.mozilla/firefox/138vuqoq.default-esr/chrome/userChrome.css: firefox/userChrome.css
@@ -49,7 +51,6 @@
 
 
     # ARCHIVED ----------------------------------------------------
-    # ~/.config/xournalpp:                    .archive/xournal
     # ~/.config/rofi/config:                  .archive/rofi/config
     # ~/.config/rofi/themes/minimal.rasi:     .archive/rofi/minimal.rasi
     # ~/.config/autorandr/postswitch:         .archive/autorandr/postswitch

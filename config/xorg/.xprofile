@@ -8,7 +8,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 # --- Path
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="/usr/sbin:/usr/local/go/bin:/home/fabian/.cargo/bin:/home/fabian/.local/bin:$PATH"
+export PATH="/usr/sbin:/usr/local/go/bin:/home/fabian/go/bin:/home/fabian/.cargo/bin:/home/fabian/.local/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
 
@@ -32,11 +32,12 @@ unclutter -idle 1 & # hide mouse pointer
 xset r rate 350 60 &
 xset s off -dpms &
 picom --config ~/.dotfiles/config/picom/picom.conf & # compositor
-xsetroot -solid "#252a34" & # solid background
+hsetroot -solid "#252a34" & # solid background
 rumno-background & # daemon for audio control
 setxkbmap us altgr-intl & # us layout with umlaut
 redshift -l 47.66667:8.98333 & # night light with coordinates
 xinput set-int-prop 20 "Device Enabled" 8 0 & # disables internal keyboard
+mpDris2 &
 # nextcloud & # cloud provider
 
 # --- Scripts
