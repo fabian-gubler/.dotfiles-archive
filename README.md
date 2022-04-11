@@ -7,11 +7,11 @@ This repository is separated into three components:
 # Installation
 
 ```bash
-# Run Installer Scripts
+# Run Individual Installer Scripts
 cd ~/.dotfiles/installer
 sudo bash 1-base.sh
 sudo bash 2-packages.sh
-sudo bash 3-config.sh
+sudo bash 3-advanced.sh
 
 # Configuration
 cd ~/.dotfiles/config
