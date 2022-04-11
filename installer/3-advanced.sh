@@ -21,6 +21,7 @@ done
 # Python Packages
 # PKG_PYTHON=(
 # 	'dotbot'					# Config files bootstrap
+#	'autorandr'					# Monitor management
 # 	'yt-dlp'					# Download YouTube Videos
 # 	'ueberzug'					# Display Images
 # 	'flake8'					# Python Linter
@@ -33,7 +34,7 @@ done
 #     python3 -m pip install -U "$PKG"
 # done
 
-python3 -m pip install -U dotbot yt-dlp ueberzug flake8 black
+python3 -m pip install -U dotbot yt-dlp ueberzug flake8 black autorandr
 
 # -----------------------------------------------------------------------------
 # RUST PACKAGES
@@ -49,6 +50,14 @@ for PKG in "${PKG_CARGO[@]}"; do
     echo "INSTALLING: $PKG"
     cargo install "$PKG"
 done
+
+# -----------------------------------------------------------------------------
+# SIMLINK DIRECTORIES
+# -----------------------------------------------------------------------------
+
+ln -s ~/nextcloud/applications/.zotero ~/ # 6.0.4
+ln -s ~/nextcloud/applications/.mozilla ~/ # 91.7.0esr
+ln -s ~/nextcloud/applications/Anki2 ~/.local/share/Anki2 # 2.1.49
 
 # -----------------------------------------------------------------------------
 # MISC PACKAGES
@@ -90,15 +99,26 @@ cd /tmp/devour
 sudo make install
 
 # Zotero
-# wget https://www.zotero.org/download/client/dl?channel=release&platform=linux-x86_64&version=6.0.4
-# sudo tar -xvzf 
+wget -O /tmp/zotero.tar.bz2 "https://www.zotero.org/download/client/dl?channel=release&platform=linux-x86_64&version=6.0.4"
+cd /tmp
+sudo tar xfvj zotero.tar.bz2
+sudo cp -r Zotero_linux-x86_64 /opt/zotero
+sudo ln -s /opt/zotero/zotero /usr/bin/
+
+# Typora
+wget -O ~/Downloads/typora.tar.gz "https://download.typora.io/linux/Typora-linux-x64.tar.gz"
+cd ~/Downloads
+sudo tar xfvz typora.tar.gz
+cd bin
+sudo cp -r Typora-linux-x64 /opt/typora
+sudo ln -s /opt/typora/Typora /usr/bin/typora
 
 # Only Office | https://www.onlyoffice.com/de/download-desktop.aspx?from=desktop
-wget -O /tmp/onlyoffice.rpm https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm
+wget -O /tmp/onlyoffice.rpm "https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm"
 sudo dnf install -y /tmp/onlyoffice.rpm
 
 # Master PDF Editor | https://code-industry.net/free-pdf-editor/
-wget -O /tmp/masterpdf.rpm https://code-industry.net/public/master-pdf-editor-5.8.46-qt5.x86_64.rpm
+wget -O /tmp/masterpdf.rpm "https://code-industry.net/public/master-pdf-editor-5.8.46-qt5.x86_64.rpm"
 sudo dnf install -y /tmp/masterpdf.rpm
 
 # -----------------------------------------------------------------------------

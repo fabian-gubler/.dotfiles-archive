@@ -16,6 +16,7 @@
     ~/.xprofile:                            xorg/.xprofile
     ~/.xinitrc:                             xorg/.xinitrc
     ~/.Xressources:                         xorg/.Xresources
+    ~/.config/autorandr:                    autorandr
 
     # UTILITIES ---------------------------------------------------
     ~/.config/alacritty:                    alacritty

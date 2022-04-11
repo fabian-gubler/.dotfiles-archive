@@ -2,26 +2,19 @@
 # Install Script
 # -----------------------------------------------------------------------------
 # TODO: Automatic Updates | https://fedoraproject.org/wiki/AutoUpdates
-# TODO: Autorandr with Profiles
 # TODO: Adding Swap Space for hibernation (~10GB)
+
 # TODO: Status Bar DWM
 	# - nm-applet
 	# - protonvpn
-# TODO: Check out Flatpack | 
-	# Learn: https://flatpak.org/
-	# Setup: https://flatpak.org/setup/Fedora
-	# - Zotero
-	# - Typora
 
 # -----------------------------------------------------------------------------
 # Post Install Script
 # -----------------------------------------------------------------------------
+# NOTE: A normal symlink would be even easier
 # NOTE: Dotbot with Nextcloud could solve all these
 
-# TODO: Networking: Transfer Passwords (Dotbot with Nextcloud?)
-# TODO: Anki Transfer Settings & Addons (maybe with addon file)
-# TODO: Zotero Transfer Folder
-# TODO: Either Mozilla folder, or individual pref.js file + sync
+# TODO: Networking: Transfer Passwords 
 
 # -----------------------------------------------------------------------------
 # Low Priority, Do after Installed
@@ -29,9 +22,7 @@
 # TODO: TLP Configuration
 # TODO: Printing Dependencies
 
-
 # -----------------------------------------------------------------------------
-
 # RPM Fusion
 sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm 
 sudo dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -40,21 +31,20 @@ sudo dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfr
 # FEDORA PACKAGES
 # -----------------------------------------------------------------------------
 
-# GROUPS=(
-# 	'networkmanager-submodules'
-# 	'virtualization'
-# 	'sound-and-video'
-# )
-
+GROUPS=(
+	'networkmanager-submodules'
+	'virtualization'
+	'sound-and-video'
+)
 
 # Install
-# for GRP in "${GROUPS[@]}"; do
-#     echo "INSTALLING: $GRP"
-#     sudo dnf group install -y "$GRP" 
-# done
+for PKG in "${GROUPS[@]}"; do
+    echo "INSTALLING: $PKG"
+    sudo dnf group install -y "$PKG"
+done
 
 # GROUPS
-sudo dnf group install -y networkmanager-submodules virtualization sound-and-video
+# sudo dnf group install -y networkmanager-submodules virtualization sound-and-video
 
 PACKAGES=(
 
@@ -73,6 +63,7 @@ PACKAGES=(
 	'picom'						# Compositor
 	'arandr'					# Xrandr frontend
 	'gnome-keyring'				# Keyring Daemon
+	'network-manager-applet'	# Network Interface
 	'seahorse'					# Keyring Gui
 	'nextcloud-client'			# Cloud
 
