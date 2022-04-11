@@ -6,7 +6,7 @@ GROUPS=(
 
 for PKG in "${GROUPS[@]}"; do
     echo "INSTALLING: $PKG"
-    # echo "$PKG" 
+    sudo dnf group install -y "$PKG"
 done
 # GROUPS
 # sudo dnf group install -y networkmanager-submodules virtualization sound-and-video
