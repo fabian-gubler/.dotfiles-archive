@@ -3,18 +3,7 @@
 # -----------------------------------------------------------------------------
 # TODO: Automatic Updates | https://fedoraproject.org/wiki/AutoUpdates
 # TODO: Adding Swap Space for hibernation (~10GB)
-
-# TODO: Status Bar DWM
-	# - nm-applet
-	# - protonvpn
-
-# -----------------------------------------------------------------------------
-# Post Install Script
-# -----------------------------------------------------------------------------
-# NOTE: A normal symlink would be even easier
-# NOTE: Dotbot with Nextcloud could solve all these
-
-# TODO: Networking: Transfer Passwords 
+# TODO: Status Bar: Protonvpn
 
 # -----------------------------------------------------------------------------
 # Low Priority, Do after Installed
@@ -38,12 +27,12 @@ GROUPS=(
 )
 
 # Install
-for PKG in "${GROUPS[@]}"; do
-    echo "INSTALLING: $PKG"
-    sudo dnf group install -y "$PKG"
+for pkg in "${GROUPS[@]}"; do
+    echo "INSTALLING: $pkg"
+    sudo dnf group install -y "$pkg"
 done
 
-# GROUPS
+# FALLBACK: 
 # sudo dnf group install -y networkmanager-submodules virtualization sound-and-video
 
 PACKAGES=(
@@ -82,6 +71,7 @@ PACKAGES=(
 	'alacritty'					# Fallback Terminal
 	'tmux'                      # Terminal Multiplexer
 	'exa'                       # Better ls
+	'ripgrep'					# Needed for Telescope
 	'ranger'                    # File explorer
 	'texlive'					# Latex Packages
 	'ncdu'						# Disk space
@@ -105,8 +95,13 @@ PACKAGES=(
 	'mpv'                       # Media player
 )
 
-# Install
-for PKG in "${PACKAGES[@]}"; do
-    echo "INSTALLING: $PKG"
-    sudo dnf install -y "$PKG" 
+# Install Loop
+for pkg in "${PACKAGES[@]}"; do
+    if command -v $pkg &> /dev/null
+	then
+        echo -e "$pkg is already installed"
+    else
+		echo "installing: $pkg"
+		sudo dnf install -y "$pkg"
+	fi
 done

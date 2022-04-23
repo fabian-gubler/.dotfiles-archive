@@ -13,8 +13,8 @@ export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
 
 # --- Preferences
-export EDITOR=nvim
-export PAGER=nvim
+export EDITOR=less
+export PAGER=less
 export MANPAGER=less
 export TERM=alacritty
 export LANG="en_US.utf8"
@@ -35,7 +35,8 @@ picom --config ~/.dotfiles/config/picom/picom.conf & # compositor
 hsetroot -solid "#252a34" & # solid background
 rumno-background & # daemon for audio control
 setxkbmap us altgr-intl & # us layout with umlaut
-redshift -l 47.66667:8.98333 & # night light with coordinates
+nm-applet &
+redshiftshift -l 47.66667:8.98333 & # night light with coordinates
 xinput set-int-prop 20 "Device Enabled" 8 0 & # disables internal keyboard
 mpDris2 &
 # nextcloud & # cloud provider

@@ -13,7 +13,7 @@ while true
 	if [[ $STATUS = "Discharging" ]]
 	then
 		# print battery level
-		xsetroot -name "$BATT% "
+		xsetroot -name "  $BATT% "
 		sleep 1
 		continue
 	fi

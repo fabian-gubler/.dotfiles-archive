@@ -9,9 +9,9 @@ PKG_NODE=(
 )
 
 # Installation Loop
-for PKG in "${PKG_NODE[@]}"; do
-    echo "INSTALLING: $PKG"
-    sudo npm install -g "$PKG"
+for pkg in "${PKG_NODE[@]}"; do
+    echo "INSTALLING: $pkg"
+    sudo npm install -g "$pkg"
 done
 
 # -----------------------------------------------------------------------------
@@ -19,22 +19,22 @@ done
 # -----------------------------------------------------------------------------
 
 # Python Packages
-# PKG_PYTHON=(
-# 	'dotbot'					# Config files bootstrap
-#	'autorandr'					# Monitor management
-# 	'yt-dlp'					# Download YouTube Videos
-# 	'ueberzug'					# Display Images
-# 	'flake8'					# Python Linter
-# 	'black'						# Python Formatter
-# )
+PKG_PYTHON=(
+	'dotbot'					# Config files bootstrap
+	'autorandr'					# Monitor management
+	'yt-dlp'					# Download YouTube Videos
+	'ueberzug'					# Display Images
+	'flake8'					# Python Linter
+	'black'						# Python Formatter
+)
 
 # Installation Loop
-# for PKG in "${PKG_PYHON[@]}"; do
-#     echo "INSTALLING: $PKG"
-#     python3 -m pip install -U "$PKG"
-# done
+for pkg in "${PKG_PYHON[@]}"; do
+    echo "INSTALLING: $pkg"
+    python3 -m pip install -U "$pkg"
+done
 
-python3 -m pip install -U dotbot yt-dlp ueberzug flake8 black autorandr
+# python3 -m pip install -U dotbot yt-dlp ueberzug flake8 black autorandr
 
 # -----------------------------------------------------------------------------
 # RUST PACKAGES
@@ -46,18 +46,30 @@ PKG_CARGO=(
 )
 
 # Installation Loop
-for PKG in "${PKG_CARGO[@]}"; do
-    echo "INSTALLING: $PKG"
-    cargo install "$PKG"
+for pkg in "${PKG_CARGO[@]}"; do
+    echo "INSTALLING: $pkg"
+    cargo install "$pkg"
 done
 
 # -----------------------------------------------------------------------------
 # SIMLINK DIRECTORIES
 # -----------------------------------------------------------------------------
 
+# zotero
+rm -rf ~/.zotero
 ln -s ~/nextcloud/applications/.zotero ~/ # 6.0.4
+
+# firefox
+rm -rf ~/.mozilla
 ln -s ~/nextcloud/applications/.mozilla ~/ # 91.7.0esr
-ln -s ~/nextcloud/applications/Anki2 ~/.local/share/Anki2 # 2.1.49
+
+# anki
+rm -rf ~/.local/share/Anki2
+ln -s ~/nextcloud/applications/Anki2 ~/.local/share/ # 2.1.49
+
+# network passwords
+sudo rm -rf /etc/NetworkManager/system-connections
+sudo ln -s ~/nextcloud/applications/system-connections /etc/NetworkManager/system-connections
 
 # -----------------------------------------------------------------------------
 # MISC PACKAGES
@@ -74,6 +86,12 @@ ln -s ~/nextcloud/applications/Anki2 ~/.local/share/Anki2 # 2.1.49
 	# 2. run nm-connection-editor
 	# 3. Add according to guide
 	# 4. Connect via networkmanager-dmenu
+
+
+# Protonvpn
+wget -o /tmp/proton.rpm "https://protonvpn.com/download/protonvpn-stable-release-1.0.1-1.noarch.rpm"
+sudo dnf install libappindicator-gtk3 gnome-tweaks gnome-shell-extension-appindicator
+sudo dnf install -y /tmp/proton.rpm
 
 # Gotop | https://github.com/cjbassi/gotop
 wget -O /tmp/gotop.tgz https://github.com/xxxserxxx/gotop/releases/download/v4.1.1/gotop_v4.1.1_linux_amd64.tgz
