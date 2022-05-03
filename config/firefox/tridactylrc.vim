@@ -74,6 +74,10 @@ unbindurl youtube.com f
 unbindurl youtube.com p
 unbindurl youtube.com c
 
+" Coursera
+unbindurl coursera.org k
+unbindurl coursera.org f
+
 " Google Drive
 unbindurl drive.google.com j
 unbindurl drive.google.com k

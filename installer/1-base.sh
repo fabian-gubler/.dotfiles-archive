@@ -38,6 +38,10 @@ sudo make clean install
 cd /home/fabian/.dotfiles/config/suckless/dmenu
 sudo make clean install
 
+# SLOCK
+cd /home/fabian/.dotfiles/config/suckless/slock
+sudo make clean install
+
 # STARTUP FILES
 cd /home/fabian/.dotfiles/config/xorg/
 cp .xinitrc /home/fabian/.xinitrc

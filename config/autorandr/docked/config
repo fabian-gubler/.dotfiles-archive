@@ -2,7 +2,13 @@ output DP1
 off
 output DP2
 off
+output DP2-2
+off
+output DP2-3
+off
 output DP3
+off
+output DP3-1
 off
 output DP3-2
 off
@@ -14,7 +20,7 @@ output VIRTUAL1
 off
 output eDP1
 off
-output DP3-1
+output DP2-1
 crtc 0
 mode 3440x1440
 pos 0x0

@@ -3,14 +3,22 @@
 # -----------------------------------------------------------------------------
 # TODO: Automatic Updates | https://fedoraproject.org/wiki/AutoUpdates
 # TODO: Adding Swap Space for hibernation (~10GB)
-# TODO: Status Bar: Protonvpn
+
+# TODO: Firefox
+	# create user-defined profile or regular expression
+	# prefs.js
+
+# TODO: Debug Packages
+	# Dragon
+	# Masterpdfeditor
+
+# TODO: ZSA wally cli | https://github.com/zsa/wally/wiki/Linux-install
 
 # -----------------------------------------------------------------------------
 # Low Priority, Do after Installed
 # -----------------------------------------------------------------------------
 # TODO: TLP Configuration
 # TODO: Printing Dependencies
-
 # -----------------------------------------------------------------------------
 # RPM Fusion
 sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm 

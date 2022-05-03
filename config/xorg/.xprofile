@@ -11,9 +11,10 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="/usr/sbin:/usr/local/go/bin:/home/fabian/go/bin:/home/fabian/.cargo/bin:/home/fabian/.local/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
+export ANKI_BASE="/home/fabian/nextcloud/applications/anki-data"
 
 # --- Preferences
-export EDITOR=less
+export EDITOR=nvim
 export PAGER=less
 export MANPAGER=less
 export TERM=alacritty
@@ -35,11 +36,12 @@ picom --config ~/.dotfiles/config/picom/picom.conf & # compositor
 hsetroot -solid "#252a34" & # solid background
 rumno-background & # daemon for audio control
 setxkbmap us altgr-intl & # us layout with umlaut
-nm-applet &
+nm-applet & # network applet
+flameshot & # screenshot applet
 redshiftshift -l 47.66667:8.98333 & # night light with coordinates
 xinput set-int-prop 20 "Device Enabled" 8 0 & # disables internal keyboard
 mpDris2 &
-# nextcloud & # cloud provider
 
 # --- Scripts
 /home/fabian/.dotfiles/scripts/utils/battery-indicator.sh &
+/home/fabian/.dotfiles/scripts/utils/battery-notifier.sh &

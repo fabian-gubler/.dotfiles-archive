@@ -63,35 +63,17 @@ ln -s ~/nextcloud/applications/.zotero ~/ # 6.0.4
 rm -rf ~/.mozilla
 ln -s ~/nextcloud/applications/.mozilla ~/ # 91.7.0esr
 
-# anki
-rm -rf ~/.local/share/Anki2
-ln -s ~/nextcloud/applications/Anki2 ~/.local/share/ # 2.1.49
-
-# network passwords
-sudo rm -rf /etc/NetworkManager/system-connections
-sudo ln -s ~/nextcloud/applications/system-connections /etc/NetworkManager/system-connections
-
 # -----------------------------------------------------------------------------
 # MISC PACKAGES
 # -----------------------------------------------------------------------------
 
-# TODO FEDORA
-	# Dragon
-	# Masterpdfeditor
-
-# TODO: ZSA wally cli | https://github.com/zsa/wally/wiki/Linux-install
-
-# TODO: VPN setup | https://protonvpn.com/support/linux-openvpn/
-	# 1. network-manager-openvpn-gnome
-	# 2. run nm-connection-editor
-	# 3. Add according to guide
-	# 4. Connect via networkmanager-dmenu
-
 
 # Protonvpn
-wget -o /tmp/proton.rpm "https://protonvpn.com/download/protonvpn-stable-release-1.0.1-1.noarch.rpm"
+cd /tmp
+wget "https://protonvpn.com/download/protonvpn-stable-release-1.0.1-1.noarch.rpm"
 sudo dnf install libappindicator-gtk3 gnome-tweaks gnome-shell-extension-appindicator
-sudo dnf install -y /tmp/proton.rpm
+sudo dnf install -y /tmp/protonvpn-stable-release-1.0.1-1.noarch.rpm
+sudo dnf install protonvpn-cli
 
 # Gotop | https://github.com/cjbassi/gotop
 wget -O /tmp/gotop.tgz https://github.com/xxxserxxx/gotop/releases/download/v4.1.1/gotop_v4.1.1_linux_amd64.tgz
@@ -149,6 +131,7 @@ sudo kitty chsh -s $(which zsh)
 # Crontabs
 (crontab -l 2>/dev/null; echo "0 * * * * cd ~/.dotfiles && git add . && git commit -m"automated update" && git push origin main") | crontab -
 (crontab -l 2>/dev/null; echo "0 * * * * cd ~/.config/nvim && git add . && git commit -m"automated update" && git push origin main"automated update" && git push origin main") | crontab -
+(crontab -l 2>/dev/null; echo "*/1 * * * * ~/.dotfiles/scripts/utils/battery-notifier.sh") | crontab -
 
 # Systemd
 systemctl --user enable mpd

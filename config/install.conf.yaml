@@ -33,6 +33,7 @@
     ~/.config/redshift:                     redshift
     ~/.config/mpv:                          mpv
     ~/.config/mpd:                          mpd
+    ~/.config/mpDris2:                      mpDris2
     ~/.ncmpcpp:                             ncmpcpp
     # ~/.local/bin/rumno:                     rumno/build/target/release/rumno
     # ~/.local/bin/rumno-background:          rumno/build/target/release/rumno-background
