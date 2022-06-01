@@ -160,6 +160,8 @@
     mouse_middle_click = do_action
     mouse_right_click = close_all
 
+	close = ctrl+space
+
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
 [experimental]

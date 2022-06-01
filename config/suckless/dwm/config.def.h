@@ -95,6 +95,7 @@ static Key keys[] = {
 	{ 0, XF86XK_MonBrightnessUp,	spawn,	   SHCMD("$HOME/.dotfiles/config/rumno/mediactrl.sh brightness-inc")},
 	{ 0, XF86XK_MonBrightnessDown,	spawn,	   SHCMD("$HOME/.dotfiles/config/rumno/mediactrl.sh brightness-dec")},
 	{ 0, PrintScreen,				spawn,	   SHCMD("flameshot gui")},
+	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},
 
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
