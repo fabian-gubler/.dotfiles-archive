@@ -17,3 +17,7 @@ sudo bash 3-advanced.sh
 cd ~/.dotfiles/config
 dotbot -c install.conf.yaml
 ```
+
+# Todo
+Plug an Play as a focus -> Config is on top of (not replacing) defaults
+> Colemak Modifications for default vim Bindings

@@ -14,8 +14,8 @@
   <property name="zoomStep" value="10.00000000"/>
   <property name="zoomStepScroll" value="2.00000000"/>
   <property name="displayDpi" value="72"/>
-  <property name="mainWndWidth" value="1874"/>
-  <property name="mainWndHeight" value="1392"/>
+  <property name="mainWndWidth" value="3440"/>
+  <property name="mainWndHeight" value="1418"/>
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="true"/>
   <property name="showSidebar" value="false"/>
@@ -90,7 +90,7 @@
   <property name="strokeFilterIgnoreTime" value="150"/>
   <property name="strokeFilterIgnoreLength" value="2.00000000"/>
   <property name="strokeFilterSuccessiveTime" value="500"/>
-  <property name="strokeFilterEnabled" value="true"/>
+  <property name="strokeFilterEnabled" value="false"/>
   <property name="doActionOnStrokeFiltered" value="true"/>
   <property name="trySelectOnStrokeFiltered" value="false"/>
   <property name="snapRecognizedShapesEnabled" value="false"/>
@@ -111,7 +111,7 @@
   <property name="latexSettings.autoCheckDependencies" value="true"/>
   <property name="latexSettings.globalTemplatePath" value="/usr/share/xournalpp/resources/default_template.tex"/>
   <property name="latexSettings.genCmd" value="pdflatex -halt-on-error -interaction=nonstopmode '{}'"/>
-  <property name="font" font="SF Pro Text Bold" size="13.00000000"/>
+  <property name="font" font="SF Pro Text" size="13.00000000"/>
   <data name="buttonConfig">
     <data name="default">
       <attribute name="color" type="hex" value="ff142e9a"/>
@@ -149,11 +149,27 @@
       <attribute name="deviceClass" type="int" value="1"/>
       <attribute name="deviceSource" type="int" value="6"/>
     </data>
+    <data name="ELAN0406:00 04F3:30A6 Mouse">
+      <attribute name="deviceClass" type="int" value="1"/>
+      <attribute name="deviceSource" type="int" value="0"/>
+    </data>
+    <data name="ELAN0406:00 04F3:30A6 Touchpad">
+      <attribute name="deviceClass" type="int" value="1"/>
+      <attribute name="deviceSource" type="int" value="6"/>
+    </data>
     <data name="Logitech USB Receiver Consumer Control">
       <attribute name="deviceClass" type="int" value="1"/>
       <attribute name="deviceSource" type="int" value="0"/>
     </data>
     <data name="Logitech USB Receiver Mouse">
+      <attribute name="deviceClass" type="int" value="1"/>
+      <attribute name="deviceSource" type="int" value="0"/>
+    </data>
+    <data name="Razer Razer Blade">
+      <attribute name="deviceClass" type="int" value="1"/>
+      <attribute name="deviceSource" type="int" value="0"/>
+    </data>
+    <data name="Razer Razer Blade Consumer Control">
       <attribute name="deviceClass" type="int" value="1"/>
       <attribute name="deviceSource" type="int" value="0"/>
     </data>
@@ -238,8 +254,8 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="pen">
-      <attribute name="color" type="hex" value="ffffff"/>
-      <attribute name="drawingType" type="string" value="default"/>
+      <attribute name="color" type="hex" value="00ff00"/>
+      <attribute name="drawingType" type="string" value="rectangle"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
       <attribute name="size" type="string" value="MEDIUM"/>
@@ -261,7 +277,7 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="text">
-      <attribute name="color" type="hex" value="000000"/>
+      <attribute name="color" type="hex" value="ff0000"/>
       <attribute name="drawingType" type="string" value="strokeRecognizer"/>
     </data>
     <data name="verticalSpace">
