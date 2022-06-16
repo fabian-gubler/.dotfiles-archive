@@ -16,7 +16,12 @@ export ANKI_BASE="/home/fabian/nextcloud/applications/anki-data"
 # --- Preferences
 export EDITOR=nvim
 export PAGER=less
-export MANPAGER=less
+# export MANPAGER=less
+
+# if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
+#   export MANPAGER="/usr/local/bin/nvr -c 'Man!' -o -"
+# fi
+
 export TERM=alacritty
 export LANG="en_US.utf8"
 export MOZ_USE_XINPUT2=1

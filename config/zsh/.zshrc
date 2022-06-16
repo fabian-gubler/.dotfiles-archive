@@ -2,7 +2,13 @@
 HISTFILE=~/.dotfiles/config/zsh/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-export MANPAGER="nvim -c 'set ft=man' -"
+export MANPAGER='nvim +Man!'
+
+
+# if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
+#   export MANPAGER="/home/fabian/.local/bin/nvr -c 'Man!' -o -"
+# fi
+
 
 # Pure Prompt
 fpath+=$HOME/.dotfiles/config/zsh/pure
