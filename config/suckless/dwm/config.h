@@ -81,6 +81,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("GTK_USE_PORTAL=0 firefox")},
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("brave")},
 	{ MODKEY,                       XK_r,      spawn,          SHCMD("pavucontrol")},
+	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_Return, spawn,          SHCMD("kitty tmuxdd")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/network -l 30")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
@@ -98,7 +99,7 @@ static Key keys[] = {
 	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},
 
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run -i")},
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
     { MODKEY,						XK_a,      togglesystray,  {0} },

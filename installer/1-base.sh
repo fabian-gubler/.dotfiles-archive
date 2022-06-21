@@ -14,21 +14,22 @@ sudo dnf upgrade
 # NOTE: Nextcloud install + Dotbot for ssh file transfer
 
 # start ssh-agent
-eval "$(ssh-agent -s)"
+# eval "$(ssh-agent -s)"
 
 # add key
-ssh-add ~/.ssh/id_ed25519
+# ssh-add ~/.ssh/id_ed25519
 
 # clone repo
-sudo dnf install git
-git clone --recursive git@github.com:fabian-gubler/.dotfiles.git /home/fabian/.dotfiles
+# sudo dnf install git
+# git clone --recursive git@github.com:fabian-gubler/.dotfiles.git /home/fabian/.dotfiles
 
 # -----------------------------------------------------------------------------
 # BASE UTILITES
 # -----------------------------------------------------------------------------
 
 # PACKAGES
-sudo dnf install -y xorg-x11-server-Xorg xorg-x11-xinit make gcc libX11-devel libXft-devel libXinerama-devel
+# sudo dnf install -y xorg-x11-server-Xorg xorg-x11-xinit make gcc libX11-devel libXft-devel libXinerama-devel
+sudo apt install -y xorg make gcc libx11-dev libxft-dev libxinerama-dev
 
 # DWM
 cd /home/fabian/.dotfiles/config/suckless/dwm

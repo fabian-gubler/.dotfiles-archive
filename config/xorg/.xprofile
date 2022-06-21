@@ -25,6 +25,7 @@ export PAGER=less
 export TERM=alacritty
 export LANG="en_US.utf8"
 export MOZ_USE_XINPUT2=1
+export MSFLOGO=~/.msf4/logos/custom.txt
 
 # --- Keyring
 eval $(gnome-keyring-daemon --start)
@@ -44,6 +45,7 @@ setxkbmap us altgr-intl & # us layout with umlaut
 nm-applet & # network applet
 flameshot & # screenshot applet
 redshiftshift -l 47.66667:8.98333 & # night light with coordinates
+clipmenud & # clipboard manager
 xinput set-int-prop 20 "Device Enabled" 8 0 & # disables internal keyboard
 mpDris2 &
 
