@@ -14,11 +14,8 @@ bash bin/install.sh
 bash config/configure.sh
 ```
 
-# Todo Config
-Plug an Play as a focus -> Config is on top of (not replacing) defaults
-> Colemak Modifications for default vim Bindings
-
-# Todo Ansible
+# Todo 
+- SSH Setup (Github)
 - Add fedora version 36 as variable for rpmfusion
 - Automatic Updates | https://fedoraproject.org/wiki/AutoUpdates
 - Firefox
@@ -27,4 +24,3 @@ Plug an Play as a focus -> Config is on top of (not replacing) defaults
 	- prefs.js
 - ZSA wally cli | https://github.com/zsa/wally/wiki/Linux-install
 - TLP Configuration
-

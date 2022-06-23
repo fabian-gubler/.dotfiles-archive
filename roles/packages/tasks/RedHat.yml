@@ -154,3 +154,17 @@
     chdir: "{{ ansible_user_dir }}/.local/share/devour"
     target: install
   become: true
+
+
+# Advanced
+#
+- name: Install automatic updates
+  package:
+    name: dnf-automatic
+    state: present
+  become: true
+
+- name: Enable automatic updates
+  systemd:
+    name: tlp
+    enabled: yes
