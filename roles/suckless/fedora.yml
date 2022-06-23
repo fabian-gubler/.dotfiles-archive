@@ -10,5 +10,6 @@
       - make
       - gcc
       - mesa-dri-drivers
+      - htop
     state: present
   become: yes
