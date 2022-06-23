@@ -1,7 +1,15 @@
 ---
 # - include_tasks: '{{ ansible_os_family }}.yml'
 
-- name: install system packages
+- name: Add the rpmfusion repo packages
+  dnf:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_current }}.noarch.rpm
+    - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_current }}.noarch.rpm
+
+- name: Install system packages
   package:
     name:
       - tar
@@ -14,7 +22,7 @@
     state: present
   become: true
 
-- name: install cli tools
+- name: Install cli tools
   package:
     name:
       - neovim
@@ -29,7 +37,7 @@
     state: present
   become: true
 
-- name: install applications
+- name: Install applications
   package:
     name:
       - firefox
