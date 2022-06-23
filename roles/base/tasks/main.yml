@@ -32,9 +32,10 @@
 
 - name: link xinitrc
   file:
-    dest: "{{ ansible_user_dir }}/.xinitrc"
     src: ".xinitrc"
+    dest: "{{ ansible_user_dir }}/.xinitrc"
     state: link
+    force: yes
 
 - name: link xprofile
   file:
