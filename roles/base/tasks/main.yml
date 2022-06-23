@@ -30,11 +30,12 @@
     target: install
   become: yes
 
-# - name: link xinitrc
-#   file:
-#     src: ".xinitrc"
-#     dest: "{{ ansible_user_dir }}/.xinitrc"
-#     state: link
+- name: link xinitrc
+  file:
+    src: ".xinitrc"
+    dest: "{{ ansible_user_dir }}/.xinitrc"
+    state: link
+    force: yes
 
 - name: link xprofile
   file:
