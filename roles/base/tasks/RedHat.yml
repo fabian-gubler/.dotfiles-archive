@@ -11,4 +11,4 @@
       - gcc
       - mesa-dri-drivers
     state: present
-  become: yes
+  become: true

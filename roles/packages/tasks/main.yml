@@ -5,14 +5,6 @@
   package:
     name:
       - tar
-      - fzf
-    state: present
-  become: true
-
-- name: install system packages
-  packgage:
-    name:
-      - tar
       - wget
       - curl
       - xclip
