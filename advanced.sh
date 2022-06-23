@@ -41,20 +41,6 @@ done
 rm -rf ~/.mozilla
 ln -s ~/nextcloud/applications/.mozilla ~/ # 91.7.0esr
 
-# -----------------------------------------------------------------------------
-# MISC PACKAGES
-# -----------------------------------------------------------------------------
-
-# Gotop | https://github.com/cjbassi/gotop
-wget -O /tmp/gotop.tgz https://github.com/xxxserxxx/gotop/releases/download/v4.1.1/gotop_v4.1.1_linux_amd64.tgz
-sudo tar -xvzf /tmp/gotop.tgz -C /usr/local/bin
-
-
-# Devour
-# git clone https://github.com/salman-abedin/devour.git /tmp/devour
-# cd /tmp/devour
-# sudo make install
-
 # Typora
 wget -O ~/Downloads/typora.tar.gz "https://download.typora.io/linux/Typora-linux-x64.tar.gz"
 cd ~/Downloads
