@@ -1,30 +1,48 @@
-- include_tasks: "{{ ansible_os_family }}.yml"
+---
+# - include_tasks: "{{ ansible_os_family }}.yml"
 
 - name: create .local/bin directory
   file:
     path: ~/.local/bin
     state: directory
 
-- name: install dwm
+- name: compile dwm
   make:
     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dwm"
     target: install
   become: yes
 
-- name: install dmenu
+- name: compile dmenu
   make:
     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dmenu"
     target: install
   become: yes
-    
-- name: install slock
+   
+- name: compile slock
   make:
     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/slock"
     target: install
   become: yes
 
-- name: install tabbed
+- name: compile tabbed
   make:
     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/tabbed"
     target: install
   become: yes
+
+# TODO: Make symlinks instead of copying
+
+# - name: copy xinitrc
+#   ansible.builtin.copy:
+#     dest: "{{ ansible_user_dir }}/.xinitrc"
+#     src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.xinitrc"
+#
+# - name: copy xprofile
+#   ansible.builtin.copy:
+#     dest: "{{ ansible_user_dir }}/.xprofile"
+#     src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.xprofile"
+#
+# - name: copy Xresources
+#   ansible.builtin.copy:
+#     dest: "{{ ansible_user_dir }}/.Xresources"
+#     src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.Xresources"
