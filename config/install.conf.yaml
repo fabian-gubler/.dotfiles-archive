@@ -13,9 +13,6 @@
     ~/.config/keyboard.conf:                setxkbmap/keyboard.conf
     ~/.tmux.conf:                           tmux/tmux.conf
     ~/.local/bin/tmuxdd:                    tmux/tmuxdd
-    ~/.xprofile:                            xorg/.xprofile
-    ~/.xinitrc:                             xorg/.xinitrc
-    ~/.Xressources:                         xorg/.Xresources
     ~/.config/autorandr:                    autorandr
 
     # UTILITIES ---------------------------------------------------

@@ -37,3 +37,6 @@
 [submodule "config/rumno/repo"]
 	path = config/rumno/repo
 	url = https://gitlab.com/natjo/rumno
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
