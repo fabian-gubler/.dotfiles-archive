@@ -8,7 +8,7 @@
 - name: add the rpmfusion repo packages
   become: true
   dnf:
-    name: "{{ links }}"
+    name: "{{ items }}"
     state: present
     disable_gpg_check: yes
   with_items:
