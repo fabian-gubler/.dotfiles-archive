@@ -97,3 +97,9 @@
   git:
     repo: https://github.com/todotxt/todo.txt-cli.git
     dest: "{{ ansible_user_dir }}/.local/share/todotxt"
+    update: no
+  make:
+    chdir: "{{ ansible_user_dir }}/.local/share/todotxt"
+    target: install
+  become: true
+
