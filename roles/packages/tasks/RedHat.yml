@@ -71,6 +71,7 @@
   become: true
   dnf:
     name: 'https://protonvpn.com/download/protonvpn-stable-release-1.0.1-1.noarch.rpm'
+    disable_gpg_check: yes
     state: present
 
 # TODO: Add rpmfusion repos
