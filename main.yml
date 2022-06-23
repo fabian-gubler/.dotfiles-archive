@@ -1,9 +1,4 @@
 ---
-
-# Ansible
-# Git
-# SSH
-
 - hosts: localhost
   # roles:
   #   - xorg
