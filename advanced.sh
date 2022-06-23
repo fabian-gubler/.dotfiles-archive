@@ -99,9 +99,9 @@ sudo ln -s /opt/typora/Typora /usr/bin/typora
 wget -O /tmp/onlyoffice.rpm "https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm"
 sudo dnf install -y /tmp/onlyoffice.rpm
 
-# Master PDF Editor | https://code-industry.net/free-pdf-editor/
-wget -O /tmp/masterpdf.rpm "https://code-industry.net/public/master-pdf-editor-5.8.46-qt5.x86_64.rpm"
-sudo dnf install -y /tmp/masterpdf.rpm
+# # Master PDF Editor | https://code-industry.net/free-pdf-editor/
+# wget -O /tmp/masterpdf.rpm "https://code-industry.net/public/master-pdf-editor-5.8.46-qt5.x86_64.rpm"
+# sudo dnf install -y /tmp/masterpdf.rpm
 
 # -----------------------------------------------------------------------------
 # Options
