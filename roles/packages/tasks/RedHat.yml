@@ -33,7 +33,6 @@
 - name: Install cli tools
   package:
     name:
-      - mpd
       - ncmpcpp
       - playerctl
       - mpdris2
@@ -42,20 +41,21 @@
     state: present
   become: true
 
-# - name: install cli tools
-#   ansible.builtin.packgage:
-#     name:
-#     state: present
-#     become: yes
-#
-# - name: install applications
-#   ansible.builtin.packgage:
-#     name:
-#       # - mpv
-#       - qbittorrent
-#       - xournalpp
-#       - xsane
-#       - timeshift
-#       - anki
-#     state: present
-#     become: yes
+- name: Install applications
+  package:
+    name:
+      - qbittorrent
+      - xournalpp
+      - xsane
+      - timeshift
+      - anki
+    state: present
+  become: true
+
+- name: Install non free packages
+  package:
+    name:
+      - mpv
+      - mpd
+    state: present
+  become: true
