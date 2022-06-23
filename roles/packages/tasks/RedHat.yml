@@ -1,4 +1,9 @@
 ---
+
+- name: get fedora version
+  shell: rpm -E %fedora
+  register: fedora_current
+
 - name: add the rpmfusion repo packages
   become: true
   dnf:
@@ -6,10 +11,8 @@
     state: present
     disable_gpg_check: yes
   with_items:
-    # - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-36.noarch.rpm
-    # - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-36.noarch.rpm
-    - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-    - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+    - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_current }}.noarch.rpm
+    - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_current }}.noarch.rpm
 
 # ---
 # Install dnf packages
