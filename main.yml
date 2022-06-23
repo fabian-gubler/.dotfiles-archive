@@ -1,11 +1,5 @@
 ---
 - hosts: localhost
-  connection: local
-  # roles:
-  #   - xorg
-  #   - suckless
-  #   - general
-  #
   tasks:
     - name: Set roles
       set_fact:
