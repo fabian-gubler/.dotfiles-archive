@@ -36,15 +36,20 @@
     dest: "{{ ansible_user_dir }}/.xinitrc"
     state: link
     force: yes
+    follow: false
 
 - name: link xprofile
   file:
     src: ".xprofile"
     dest: "{{ ansible_user_dir }}/.xprofile"
     state: link
+    force: yes
+    follow: false
 
 - name: link Xresources
   file:
     src: ".Xresources"
     dest: "{{ ansible_user_dir }}/.Xresources"
     state: link
+    force: yes
+    follow: false
