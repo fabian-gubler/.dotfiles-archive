@@ -30,4 +30,4 @@ cd "$DOTFILES_DIR"
 ansible-playbook "$DOTFILES_DIR/main.yml" --ask-become-pass
 
 # run dotbot
-$DOTFILES_DIR/config/configure.sh
+# $DOTFILES_DIR/config/configure.sh
