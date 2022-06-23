@@ -27,4 +27,4 @@ fi
 cd "$DOTFILES_DIR"
 
 # run the playbook
-ansible-playbook --diff "$DOTFILES_DIR/main.yml" --ask-become-pass
+ansible-playbook --diff "$DOTFILES_DIR/main.yml"
