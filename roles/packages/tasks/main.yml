@@ -11,7 +11,7 @@
       - xsetroot
       - fzf
 	  - unclutter-xfixes
-    state: latest
+    state: present
     become: yes
 
 - name: install cli tools
@@ -26,7 +26,7 @@
       - ripgrep
       - ranger
       - ncdu
-    state: latest
+    state: present
     become: yes
 
 - name: install applications
@@ -37,6 +37,6 @@
 	  - zathura
 	  - sxiv
 	  - mpv
-    state: latest
+    state: present
     become: yes
 

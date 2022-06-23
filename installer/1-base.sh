@@ -1,10 +1,3 @@
-# Installation Instructions
-	# Download <Everything Netinstall> ISO
-	# Choose <Swiss German> Keyboard layout
-	# Choose <Custom Operating System>
-	# Select Package Groups <NetworkManager> and <Standard>
-	# Create user <fabian>
-	# ... Reboot
 
 # -----------------------------------------------------------------------------
 # SSH & CLONE REPOSITORIES

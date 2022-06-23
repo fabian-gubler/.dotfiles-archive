@@ -8,7 +8,7 @@
       - golang
       - python3-pip
       - cargo
-    state: latest
+    state: present
     become: yes
 
 - name: install system packages
@@ -26,7 +26,7 @@
       - network-manager-applet
       - seahorse
       - nextcloud-client
-    state: latest
+    state: present
     become: yes
 
 - name: install cli tools
@@ -38,7 +38,7 @@
       - mpdris2
       - texlive
       - newsboat
-    state: latest
+    state: present
     become: yes
 
 - name: install applications
@@ -49,5 +49,5 @@
 	  - xsane
 	  - timeshift
 	  - anki
-    state: latest
+    state: present
     become: yes
