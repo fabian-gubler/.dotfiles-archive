@@ -32,10 +32,10 @@
 - name: install applications
   packgage:
     name:
-	  - firefox
-	  - chromium
-	  - zathura
-	  - sxiv
-	  - mpv
+      - firefox
+      - chromium
+      - zathura
+      - sxiv
+      - mpv
     state: present
     become: yes
