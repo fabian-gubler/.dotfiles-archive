@@ -29,4 +29,3 @@
     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/tabbed"
     target: install
   become: yes
-
