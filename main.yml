@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
+  vars:
+    fedora_current: 36
 
   tasks:
     - name: Set roles
