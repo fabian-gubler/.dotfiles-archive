@@ -27,4 +27,4 @@ fi
 cd "$DOTFILES_DIR"
 
 # run the playbook
-ansible-playbook --diff "$DOTFILES_DIR/main.yml"
+ansible-playbook --diff "$DOTFILES_DIR/main.yml" --ask-sudo-pass
