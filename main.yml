@@ -1,68 +1,47 @@
 ---
 - hosts: localhost
+  connection: local
   # roles:
   #   - xorg
   #   - suckless
   #   - general
-
+  #
   tasks:
-  - name: create .local/bin directory
-    file:
-      path: ~/.local/bin
-      state: directory
+    - name: set roles
+      set_fact:
+        roles: "{{ ansible_run_tags != ['all'] and ansible_run_tags or default_roles | difference(exclude_roles | default([])) }}"
+      tags:
+        - always
 
-  - name: install basic desktop
-    package:
-      name:
-        - xorg-x11-server-Xorg
-        - xorg-x11-xinit
-        - libX11-devel
-        - libXft-devel
-        - libXinerama-devel
-        - make
-        - gcc
-        - mesa-dri-drivers
-        - xsetroot
-      state: present
-    become: yes
+    - name: Display roles
+      debug: "var=roles"
+      tags:
+        - always
 
-  - name: compile dwm
-    make:
-      chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dwm"
-      target: install
-    become: yes
+    - name: Run roles
+      include_role:
+        apply:
+          tags:
+            - "{{ roles_item }}"
+        name: "{{ roles_item }}"
+      loop_control:
+        loop_var: roles_item
+      with_items: "{{ roles }}"
+      tags:
+        - always
 
-  - name: compile dmenu
-    make:
-      chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dmenu"
-      target: install
-    become: yes
-     
-  - name: compile slock
-    make:
-      chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/slock"
-      target: install
-    become: yes
+  # - name: install basic desktop
+  #   package:
+  #     name:
+  #       - xorg-x11-server-Xorg
+  #       - xorg-x11-xinit
+  #       - libX11-devel
+  #       - libXft-devel
+  #       - libXinerama-devel
+  #       - make
+  #       - gcc
+  #       - mesa-dri-drivers
+  #       - xsetroot
+  #     state: present
+  #   become: yes
 
-  - name: compile tabbed
-    make:
-      chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/tabbed"
-      target: install
-    become: yes
-
-  # TODO: Make symlinks instead of copying
-
-  - name: copy xinitrc
-    ansible.builtin.copy:
-      dest: "{{ ansible_user_dir }}/.xinitrc"
-      src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.xinitrc"
-
-  - name: copy xprofile
-    ansible.builtin.copy:
-      dest: "{{ ansible_user_dir }}/.xprofile"
-      src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.xprofile"
-
-  - name: copy Xresources
-    ansible.builtin.copy:
-      dest: "{{ ansible_user_dir }}/.Xresources"
-      src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.Xresources"
