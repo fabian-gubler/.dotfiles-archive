@@ -27,6 +27,7 @@
       - network-manager-applet
       - seahorse
       - nextcloud-client
+      - autorandr
     state: present
   become: true
 
@@ -38,6 +39,8 @@
       - mpdris2
       - texlive
       - newsboat
+      - youtube-dl
+      - protonvpn-cli
     state: present
   become: true
 
@@ -51,6 +54,11 @@
       - anki
     state: present
   become: true
+
+- name: install nginx rpm from a remote repo
+  dnf:
+    name: 'https://protonvpn.com/download/protonvpn-stable-release-1.0.1-1.noarch.rpm'
+    state: present
 
 # TODO: Add rpmfusion repos
 

@@ -1,18 +1,18 @@
-# -----------------------------------------------------------------------------
-# NODE PACKAGES
-# -----------------------------------------------------------------------------
-
-# Node Packages
-PKG_NODE=(
-	'create-react-app'			# React application
-	'mdanki'					# Create Flashcards in Markdown
-)
-
-# Installation Loop
-for pkg in "${PKG_NODE[@]}"; do
-    echo "INSTALLING: $pkg"
-    sudo npm install -g "$pkg"
-done
+# TODO: Automatic Updates | https://fedoraproject.org/wiki/AutoUpdates
+# TODO: Adding Swap Space for hibernation (~10GB)
+#
+# TODO: Firefox
+# 	# create user-defined profile or regular expression
+# 	# prefs.js
+#
+# TODO: Debug Packages
+# 	# Dragon
+# 	# Masterpdfeditor
+#
+# TODO: ZSA wally cli | https://github.com/zsa/wally/wiki/Linux-install
+#
+# TODO: TLP Configuration
+# TODO: Printing Dependencies
 
 # -----------------------------------------------------------------------------
 # PYTHON PACKAGES
@@ -20,9 +20,6 @@ done
 
 # Python Packages
 PKG_PYTHON=(
-	'dotbot'					# Config files bootstrap
-	'autorandr'					# Monitor management
-	'yt-dlp'					# Download YouTube Videos
 	'ueberzug'					# Display Images
 	'flake8'					# Python Linter
 	'black'						# Python Formatter
@@ -35,21 +32,6 @@ for pkg in "${PKG_PYHON[@]}"; do
 done
 
 # python3 -m pip install -U dotbot yt-dlp ueberzug flake8 black autorandr
-
-# -----------------------------------------------------------------------------
-# RUST PACKAGES
-# -----------------------------------------------------------------------------
-
-# Packages
-PKG_CARGO=(
-	'stylua'				# Lua formatter
-)
-
-# Installation Loop
-for pkg in "${PKG_CARGO[@]}"; do
-    echo "INSTALLING: $pkg"
-    cargo install "$pkg"
-done
 
 # -----------------------------------------------------------------------------
 # SIMLINK DIRECTORIES
@@ -67,8 +49,8 @@ ln -s ~/nextcloud/applications/.mozilla ~/ # 91.7.0esr
 # MISC PACKAGES
 # -----------------------------------------------------------------------------
 
-
 # Protonvpn
+# NOTE: Protonvpn cli available on repo
 cd /tmp
 wget "https://protonvpn.com/download/protonvpn-stable-release-1.0.1-1.noarch.rpm"
 sudo dnf install libappindicator-gtk3 gnome-tweaks gnome-shell-extension-appindicator
@@ -139,6 +121,3 @@ systemctl --user enable mpDris2
 
 # Root Systemd
 sudo systemctl enable tlp.service
-
-# Test if necessary
-sudo usermod -aG audio fabian
