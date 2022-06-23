@@ -1,6 +1,6 @@
 ---
 - name: install basic desktop
-  package:
+  ansible.builtin.package:
     name:
       - xorg-x11-server-Xorg
       - xorg-x11-xinit
