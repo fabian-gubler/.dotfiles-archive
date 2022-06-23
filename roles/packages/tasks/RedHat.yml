@@ -1,10 +1,4 @@
 ---
-- name: Enable automatic updates
-  become: true
-  systemd:
-    name: tlp
-    enabled: yes
-
 - name: add the rpmfusion repo packages
   become: true
   dnf:
@@ -12,8 +6,10 @@
     state: present
     disable_gpg_check: yes
   with_items:
-    - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-36.noarch.rpm
-    - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-36.noarch.rpm
+    # - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-36.noarch.rpm
+    # - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-36.noarch.rpm
+    - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+    - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # ---
 # Install dnf packages
@@ -162,10 +158,15 @@
 
 
 # Advanced
-#
+
 - name: Install automatic updates
   package:
     name: dnf-automatic
     state: present
   become: true
 
+- name: Enable automatic updates
+  become: true
+  systemd:
+    name: tlp
+    enabled: yes

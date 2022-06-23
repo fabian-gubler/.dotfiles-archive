@@ -17,7 +17,6 @@ bash config/configure.sh
 # Todo 
 - SSH Setup (Github)
 - Add fedora version 36 as variable for rpmfusion
-- Automatic Updates | https://fedoraproject.org/wiki/AutoUpdates
 - Firefox
 	- NOTE: Test Upload speed of mozilla dir to nextcloud (easiest option)
 	- create user-defined profile or regular expression
