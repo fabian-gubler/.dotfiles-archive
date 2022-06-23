@@ -1,5 +1,12 @@
 ---
 
+- name: installing python packages
+  pip:
+    name:
+      - ueberzug
+      - flake8
+      - black
+
 - name: add the rpmfusion repo packages
   become: true
   dnf:
