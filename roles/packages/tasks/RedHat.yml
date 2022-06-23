@@ -40,7 +40,7 @@
       - texlive
       - newsboat
       - youtube-dl
-      - protonvpn-cli
+      # - protonvpn-cli
     state: present
   become: true
 
@@ -55,7 +55,7 @@
     state: present
   become: true
 
-- name: install nginx rpm from a remote repo
+- name: install protonvpn rpm from a remote repo
   dnf:
     name: 'https://protonvpn.com/download/protonvpn-stable-release-1.0.1-1.noarch.rpm'
     state: present
