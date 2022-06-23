@@ -51,7 +51,6 @@
       - texlive
       - newsboat
       - youtube-dl
-      # - protonvpn-cli
     state: present
   become: true
 
@@ -74,7 +73,12 @@
     disable_gpg_check: yes
     state: present
 
-# TODO: Add rpmfusion repos
+- name: install masterpdfeditor rpm from a remote repo
+  become: true
+  dnf:
+    name: 'https://code-industry.net/public/master-pdf-editor-5.8.46-qt5.x86_64.rpm'
+    # disable_gpg_check: yes
+    state: present
 
 # - name: Install non free packages
 #   package:
