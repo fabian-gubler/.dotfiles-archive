@@ -1,4 +1,9 @@
 ---
+- name: Enable automatic updates
+  become: true
+  systemd:
+    name: tlp
+    enabled: yes
 
 - name: add the rpmfusion repo packages
   become: true
@@ -164,8 +169,3 @@
     state: present
   become: true
 
-- name: Enable automatic updates
-  become: true
-  systemd:
-    name: tlp
-    enabled: yes
