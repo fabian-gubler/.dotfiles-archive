@@ -7,8 +7,9 @@
 
 - name: add the rpmfusion repo packages
   become: true
+  fedora_current: 36
   dnf:
-    name: "{{ item }}"
+    name: "{{ links }}"
     state: present
     disable_gpg_check: yes
   with_items:
