@@ -1,6 +1,4 @@
 ---
-- name: add the rpmfusion packages
-  command: sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 - name: install programming languages
   ansible.builtin.packgage:
