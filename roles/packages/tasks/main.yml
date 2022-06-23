@@ -1,18 +1,18 @@
 ---
-- include_tasks: '{{ ansible_os_family }}.yml'
-#
-# - name: install system packages
-#   packgage:
-#     name:
-#       - tar
-#       - wget
-#       - curl
-#       - xclip
-#       - xsetroot
-#       - fzf
-#       - unclutter-xfixes
-#     state: present
-#     become: yes
+# - include_tasks: '{{ ansible_os_family }}.yml'
+
+- name: install system packages
+  packgage:
+    name:
+      - tar
+      - wget
+      - curl
+      - xclip
+      - xsetroot
+      - fzf
+      - unclutter-xfixes
+    state: present
+    become: yes
 #
 # - name: install cli tools
 #   packgage:
