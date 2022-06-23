@@ -14,7 +14,7 @@
     state: present
   become: true
 
-- name: install system packages
+- name: install cli tools
   package:
     name:
       - neovim
@@ -29,14 +29,13 @@
     state: present
   become: true
 
-#
-# - name: install applications
-#   packgage:
-#     name:
-#       - firefox
-#       - chromium
-#       - zathura
-#       - sxiv
-#       - mpv
-#     state: present
-#   become: true
+- name: install applications
+  package:
+    name:
+      - firefox
+      - chromium
+      - zathura
+      - sxiv
+      - mpv
+    state: present
+  become: true
