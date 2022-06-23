@@ -1,6 +1,6 @@
 ---
 # - include_tasks: '{{ ansible_os_family }}.yml'
-
+#
 # - name: install system packages
 #   packgage:
 #     name:
@@ -14,28 +14,28 @@
 #     state: present
 #     become: yes
 #
-- name: install cli tools
-  packgage:
-    name:
-      - neovim
-      - zsh
-      - kitty
-      - alacritty
-      - tmux
-      - exa
-      - ripgrep
-      - ranger
-      - ncdu
-    state: present
-    become: yes
-
-- name: install applications
-  packgage:
-    name:
-      - firefox
-      - chromium
-      - zathura
-      - sxiv
-      - mpv
-    state: present
-    become: yes
+# - name: install cli tools
+#   packgage:
+#     name:
+#       - neovim
+#       - zsh
+#       - kitty
+#       - alacritty
+#       - tmux
+#       - exa
+#       - ripgrep
+#       - ranger
+#       - ncdu
+#     state: present
+#     become: yes
+#
+# - name: install applications
+#   packgage:
+#     name:
+#       - firefox
+#       - chromium
+#       - zathura
+#       - sxiv
+#       - mpv
+#     state: present
+#     become: yes
