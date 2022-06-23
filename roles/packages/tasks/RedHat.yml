@@ -1,21 +1,5 @@
 ---
 
-# Typora
-- name: Check if typora installed
-  shell: command -v cat >/dev/null 2>&1
-  register: typora_installed
-  ignore_errors: true 
-
-
-- debug: msg={{ is_rvm_exist.rc }}
-
-# - name: download typora
-#   ansible.builtin.get_url:
-#     url: https://download.typora.io/linux/Typora-linux-x64.tar.gz
-#     dest: "{{ ansible_user_dir }}/.local/share/typora"
-#   when: typora
-
-
 - name: add the rpmfusion repo packages
   become: true
   dnf:
@@ -26,7 +10,9 @@
     - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-36.noarch.rpm
     - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-36.noarch.rpm
 
-# Install packages
+# ---
+# Install dnf packages
+# ---
 
 - name: Install programming languages
   package:
@@ -85,7 +71,9 @@
     state: present
   become: true
 
+# ---
 # RPM Remote Repositories
+# ---
 
 - name: Install protonvpn
   become: true
@@ -115,7 +103,10 @@
     disable_gpg_check: yes
     state: present
 
+# ---
 # Git Repositories
+# ---
+
 - name: clone dmenu networkmanager
   git:
     repo: https://github.com/firecat53/networkmanager-dmenu.git
@@ -156,4 +147,3 @@
     chdir: "{{ ansible_user_dir }}/.local/share/devour"
     target: install
   become: true
-
