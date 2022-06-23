@@ -53,19 +53,13 @@ ln -s ~/nextcloud/applications/.mozilla ~/ # 91.7.0esr
 wget -O /tmp/gotop.tgz https://github.com/xxxserxxx/gotop/releases/download/v4.1.1/gotop_v4.1.1_linux_amd64.tgz
 sudo tar -xvzf /tmp/gotop.tgz -C /usr/local/bin
 
-# Todo TXT | https://github.com/todotxt/todo.txt-cli
-sudo git clone https://github.com/todotxt/todo.txt-cli /tmp/todotxt
-cd /tmp/todotxt
-sudo make
-sudo make install
-
 # Network manager Dmenu
 git clone https://github.com/firecat53/networkmanager-dmenu /usr/local/bin/networkmanager-dmenu
 
 # Dragon
-git clone https://github.com/mwh/dragon /tmp/dragon
-cd /tmp/dragon
-sudo make
+# git clone https://github.com/mwh/dragon /tmp/dragon
+# cd /tmp/dragon
+# sudo make
 
 # Devour
 git clone https://github.com/salman-abedin/devour.git /tmp/devour

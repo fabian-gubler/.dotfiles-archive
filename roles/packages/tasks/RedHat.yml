@@ -92,6 +92,11 @@
     state: present
 
 # Git Repositories
+- name: clone dmenu networkmanager
+  git:
+    repo: https://github.com/firecat53/networkmanager-dmenu.git
+    dest: "{{ ansible_user_dir }}/.local/bin/networkmanager-dmenu"
+    update: no
 
 - name: clone todotxt
   git:
@@ -102,5 +107,17 @@
 - name: compile todotxt
   make:
     chdir: "{{ ansible_user_dir }}/.local/share/todotxt"
+    target: install
+  become: true
+
+- name: clone dragon
+  git:
+    repo: https://github.com/mwh/dragon.git
+    dest: "{{ ansible_user_dir }}/.local/share/dragon"
+    update: no
+
+- name: compile dragon
+  make:
+    chdir: "{{ ansible_user_dir }}/.local/share/dragon"
     target: install
   become: true
