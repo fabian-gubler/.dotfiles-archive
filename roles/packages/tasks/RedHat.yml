@@ -3,6 +3,7 @@
 - name: get fedora version
   shell: rpm -E %fedora
   register: fedora_current
+  ignore_errors: true
 
 - name: add the rpmfusion repo packages
   become: true
