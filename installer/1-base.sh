@@ -1,3 +1,7 @@
+# Installation Instructino
+	# Choose Custom Operating System
+	# Select NetworkManager and Standard
+
 # Add User to Sudoers
 # sudo useradd -m fabian
 # sudo passwd fabian
@@ -6,6 +10,8 @@
 # Upgrade
 # sudo dnf update
 # sudo dnf upgrade
+
+# NOTE: By installing firefox -> gtk & pipewire
 
 # -----------------------------------------------------------------------------
 # SSH & CLONE REPOSITORIES
@@ -30,7 +36,9 @@
 # -----------------------------------------------------------------------------
 
 # PACKAGES
-sudo dnf install -y xorg-x11-server-Xorg xorg-x11-xinit make gcc libX11-devel libXft-devel libXinerama-devel xrandr
+sudo dnf install -y xorg-x11-server-Xorg xorg-x11-xinit libX11-devel libXft-devel libXinerama-devel
+sudo dnf install -y make gcc mesa-dri-drivers
+
 # sudo apt install -y xorg libx11-dev libxft-dev libxinerama-dev
 
 # DWM
