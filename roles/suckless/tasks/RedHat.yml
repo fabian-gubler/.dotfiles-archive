@@ -1,6 +1,6 @@
 ---
 - name: install basic desktop
-  ansible.builtin.package:
+  package:
     name:
       - xorg-x11-server-Xorg
       - xorg-x11-xinit
@@ -11,5 +11,5 @@
       - gcc
       - mesa-dri-drivers
       - htop
-    state: present
+    state: latest
   become: yes
