@@ -10,46 +10,46 @@
       - python3-pip
       - cargo
     state: present
-    become: yes
+  become: true
 
-- name: install system packages
-  ansible.builtin.packgage:
-    name:
-      - redshift
-      - adwaitaqt5
-      - qt5ct
-      - xbacklight
-      - acpi
-      - tlp
-      - picom
-      - arandr
-      - gnome-keyring
-      - network-manager-applet
-      - seahorse
-      - nextcloud-client
-    state: present
-    become: yes
-
-- name: install cli tools
-  ansible.builtin.packgage:
-    name:
-      - mpd
-      - ncmpcpp
-      - playerctl
-      - mpdris2
-      - texlive
-      - newsboat
-    state: present
-    become: yes
-
-- name: install applications
-  ansible.builtin.packgage:
-    name:
-      # - mpv
-      - qbittorrent
-      - xournalpp
-      - xsane
-      - timeshift
-      - anki
-    state: present
-    become: yes
+# - name: install system packages
+#   ansible.builtin.packgage:
+#     name:
+#       - redshift
+#       - adwaitaqt5
+#       - qt5ct
+#       - xbacklight
+#       - acpi
+#       - tlp
+#       - picom
+#       - arandr
+#       - gnome-keyring
+#       - network-manager-applet
+#       - seahorse
+#       - nextcloud-client
+#     state: present
+#     become: yes
+#
+# - name: install cli tools
+#   ansible.builtin.packgage:
+#     name:
+#       - mpd
+#       - ncmpcpp
+#       - playerctl
+#       - mpdris2
+#       - texlive
+#       - newsboat
+#     state: present
+#     become: yes
+#
+# - name: install applications
+#   ansible.builtin.packgage:
+#     name:
+#       # - mpv
+#       - qbittorrent
+#       - xournalpp
+#       - xsane
+#       - timeshift
+#       - anki
+#     state: present
+#     become: yes
