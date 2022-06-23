@@ -19,8 +19,7 @@
   - name: install dwm
     make:
       chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dwm"
-      target: all
-      file: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dwm/Makefile"
+      target: install
     become: yes
 
   # - name: install dmenu
