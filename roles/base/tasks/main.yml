@@ -10,22 +10,22 @@
   make:
     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dwm"
     target: install
-  become: yes
+  become: true
 
 - name: compile dmenu
   make:
     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dmenu"
     target: install
-  become: yes
+  become: true
    
 - name: compile slock
   make:
     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/slock"
     target: install
-  become: yes
+  become: true
 
 - name: compile tabbed
   make:
     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/tabbed"
     target: install
-  become: yes
+  become: true
