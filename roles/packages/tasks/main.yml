@@ -1,4 +1,6 @@
 ---
+# - include_tasks: '{{ ansible_os_family }}.yml'
+
 - name: install system packages
   package:
     name:
@@ -7,57 +9,41 @@
     state: present
   become: true
 
-# ---
-# - name: install basic desktop
-#   package:
-#     name:
-#       - xorg-x11-server-Xorg
-#       - xorg-x11-xinit
-#       - libX11-devel
-#       - libXft-devel
-#       - libXinerama-devel
-#       - make
-#       - gcc
-#       - mesa-dri-drivers
-#     state: present
-#   become: true
-# - include_tasks: '{{ ansible_os_family }}.yml'
-#
-# - name: install system packages
-#   packgage:
-#     name:
-#       - tar
-#       - wget
-#       - curl
-#       - xclip
-#       - xsetroot
-#       - fzf
-#       - unclutter-xfixes
-#     state: present
-#     become: yes
-#
-# - name: install cli tools
-#   packgage:
-#     name:
-#       - neovim
-#       - zsh
-#       - kitty
-#       - alacritty
-#       - tmux
-#       - exa
-#       - ripgrep
-#       - ranger
-#       - ncdu
-#     state: present
-#     become: yes
-#
-# - name: install applications
-#   packgage:
-#     name:
-#       - firefox
-#       - chromium
-#       - zathura
-#       - sxiv
-#       - mpv
-#     state: present
-#     become: yes
+- name: install system packages
+  packgage:
+    name:
+      - tar
+      - wget
+      - curl
+      - xclip
+      - xsetroot
+      - fzf
+      - unclutter-xfixes
+    state: present
+  become: true
+
+- name: install cli tools
+  packgage:
+    name:
+      - neovim
+      - zsh
+      - kitty
+      - alacritty
+      - tmux
+      - exa
+      - ripgrep
+      - ranger
+      - ncdu
+    state: present
+  become: true
+
+- name: install applications
+  packgage:
+    name:
+      - firefox
+      - chromium
+      - zathura
+      - sxiv
+      - mpv
+    state: present
+  become: yes
