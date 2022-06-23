@@ -14,20 +14,20 @@
     state: present
   become: true
 
-# - name: install cli tools
-#   packgage:
-#     name:
-#       - neovim
-#       - zsh
-#       - kitty
-#       - alacritty
-#       - tmux
-#       - exa
-#       - ripgrep
-#       - ranger
-#       - ncdu
-#     state: present
-#   become: true
+- name: install cli tools
+  packgage:
+    name:
+      - neovim
+      - zsh
+      - kitty
+      - alacritty
+      - tmux
+      - exa
+      - ripgrep
+      - ranger
+      - ncdu
+    state: present
+  become: true
 #
 # - name: install applications
 #   packgage:
