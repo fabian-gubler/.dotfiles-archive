@@ -41,7 +41,7 @@ xset s off -dpms &
 picom --config ~/.dotfiles/config/picom/picom.conf & # compositor
 hsetroot -solid "#252a34" & # solid background
 rumno-background & # daemon for audio control
-setxkbmap us altgr-intl & # us layout with umlaut
+setxkbmap ch & # us layout with umlaut
 nm-applet & # network applet
 flameshot & # screenshot applet
 redshiftshift -l 47.66667:8.98333 & # night light with coordinates
