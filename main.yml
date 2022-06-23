@@ -13,8 +13,8 @@
 
     - name: Run roles
       include_role:
-        - base
-        - xorg
-        - packages
+        - name: base
+        - name: xorg
+        - name: packages
       #   name: "{{ item }}"
       # with_items: "{{ roles }}"
