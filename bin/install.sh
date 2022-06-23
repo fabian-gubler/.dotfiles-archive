@@ -28,3 +28,6 @@ cd "$DOTFILES_DIR"
 
 # run the playbook
 ansible-playbook "$DOTFILES_DIR/main.yml" --ask-become-pass
+
+# run dotbot
+$DOTFILES_DIR/config/configure.sh

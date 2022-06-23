@@ -52,10 +52,12 @@
     state: present
   become: true
 
-- name: Install non free packages
-  package:
-    name:
-      - mpv
-      - mpd
-    state: present
-  become: true
+# TODO: Add rpmfusion repos
+
+# - name: Install non free packages
+#   package:
+#     name:
+#       - mpv
+#       - mpd
+#     state: present
+#   become: true
