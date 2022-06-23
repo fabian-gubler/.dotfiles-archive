@@ -4,6 +4,7 @@
   package:
     name:
       - tar
+      - fzf
   state: present
   become: true
 
