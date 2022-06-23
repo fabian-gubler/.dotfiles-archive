@@ -1,7 +1,7 @@
 ---
 
-- name: install programming languages
-  ansible.builtin.packgage:
+- name: Install programming languages
+  package:
     name:
       - nodejs
       - lua
@@ -11,7 +11,7 @@
       - cargo
     state: present
   become: true
-
+    
 # - name: install system packages
 #   ansible.builtin.packgage:
 #     name:
