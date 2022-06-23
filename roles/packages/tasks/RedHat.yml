@@ -10,6 +10,8 @@
     - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-36.noarch.rpm
     - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-36.noarch.rpm
 
+# Install packages
+
 - name: Install programming languages
   package:
     name:
@@ -66,24 +68,32 @@
     state: present
   become: true
 
+# RPM Remote Repositories
 
-- name: install protonvpn rpm from a remote repo
+- name: Install protonvpn
   become: true
   dnf:
     name: 'https://protonvpn.com/download/protonvpn-stable-release-1.0.1-1.noarch.rpm'
     disable_gpg_check: yes
     state: present
 
-- name: install masterpdfeditor rpm from a remote repo
+- name: Install masterpdfeditor
   become: true
   dnf:
     name: 'https://code-industry.net/public/master-pdf-editor-5.8.46-qt5.x86_64.rpm'
     disable_gpg_check: yes
     state: present
 
-- name: install onlyoffice rpm from a remote repo
+- name: Install onlyoffice
   become: true
   dnf:
     name: 'https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm'
     disable_gpg_check: yes
     state: present
+
+# Git Repositories
+
+- name: clone repo
+  git:
+    repo: https://github.com/todotxt/todo.txt-cli.git
+    dest: "{{ ansible_user_dir }}/.local/share/todotxt"
