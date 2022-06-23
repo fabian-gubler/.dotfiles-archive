@@ -57,18 +57,17 @@
 
   # TODO: Make symlinks instead of copying
 
-  - name: Copy xinitrc
+  - name: copy xinitrc
     ansible.builtin.copy:
       dest: "{{ ansible_user_dir }}/.xinitrc"
       src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.xinitrc"
 
-  - name: Copy xprofile
+  - name: copy xprofile
     ansible.builtin.copy:
       dest: "{{ ansible_user_dir }}/.xprofile"
       src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.xprofile"
 
-  - name: Copy Xresources
+  - name: copy Xresources
     ansible.builtin.copy:
       dest: "{{ ansible_user_dir }}/.Xresources"
       src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.Xresources"
-
