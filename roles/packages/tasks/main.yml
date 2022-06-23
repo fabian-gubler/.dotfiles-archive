@@ -2,7 +2,7 @@
 - include_tasks: "{{ ansible_os_family }}.yml"
 
 - name: install system packages
-  ansible.builtin.packgage:
+  packgage:
     name:
       - tar
       - wget
@@ -10,12 +10,12 @@
       - xclip
       - xsetroot
       - fzf
-	  - unclutter-xfixes
+      - unclutter-xfixes
     state: present
     become: yes
 
 - name: install cli tools
-  ansible.builtin.packgage:
+  packgage:
     name:
       - neovim
       - zsh
@@ -30,7 +30,7 @@
     become: yes
 
 - name: install applications
-  ansible.builtin.packgage:
+  packgage:
     name:
 	  - firefox
 	  - chromium
@@ -39,4 +39,3 @@
 	  - mpv
     state: present
     become: yes
-
