@@ -93,13 +93,14 @@
 
 # Git Repositories
 
-- name: clone repo
+- name: clone todotxt
   git:
     repo: https://github.com/todotxt/todo.txt-cli.git
     dest: "{{ ansible_user_dir }}/.local/share/todotxt"
     update: no
+
+- name: compile todotxt
   make:
     chdir: "{{ ansible_user_dir }}/.local/share/todotxt"
     target: install
   become: true
-
