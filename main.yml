@@ -1,6 +1,5 @@
 ---
 - hosts: localhost
-  become: yes
 
   tasks:
     - name: Set roles
