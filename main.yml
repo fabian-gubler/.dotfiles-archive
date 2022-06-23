@@ -1,7 +1,5 @@
 ---
 - hosts: localhost
-  vars_files:
-    - variables/versions.yml
 
   tasks:
     - name: Set roles
