@@ -1,18 +1,18 @@
 ---
 - name: link xinitrc
   file:
-    src: "{{ ansible_user_dir }}/.dotfiles/roles/xorg/files/.xinitrc"
+    src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.xinitrc"
     dest: "{{ ansible_user_dir }}/.xinitrc"
     state: link
 
 - name: link xprofile
   file:
-    src: ".xprofile"
+    src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.xprofile"
     dest: "{{ ansible_user_dir }}/.xprofile"
     state: link
 
 - name: link Xresources
   file:
-    src: ".Xresources"
+    src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.Xresources"
     dest: "{{ ansible_user_dir }}/.Xresources"
     state: link
