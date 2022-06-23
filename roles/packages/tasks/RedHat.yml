@@ -16,7 +16,7 @@
   package:
     name:
       - redshift
-      - adwaitaqt5
+      - adwaita-qt5
       - qt5ct
       - xbacklight
       - acpi
