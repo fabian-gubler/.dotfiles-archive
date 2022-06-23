@@ -22,21 +22,21 @@
       target: install
     become: yes
 
-  # - name: install dmenu
-  #   make:
-  #     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dmenu"
-  #     target: install
-  #   become: yes
-  #     
+  - name: install dmenu
+    make:
+      chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dmenu"
+      target: install
+    become: yes
+     
   - name: install slock
     make:
       chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/slock"
       target: install
     become: yes
-  #
-  # - name: install tabbed
-  #   make:
-  #     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/tabbed"
-  #     target: install
-  #   become: yes
-  #
+
+  - name: install tabbed
+    make:
+      chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/tabbed"
+      target: install
+    become: yes
+
