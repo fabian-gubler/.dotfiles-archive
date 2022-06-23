@@ -86,10 +86,10 @@
     disable_gpg_check: yes
     state: present
 
-# - name: Install non free packages
-#   package:
-#     name:
-#       - mpv
-#       - mpd
-#     state: present
-#   become: true
+- name: Install non free packages
+  package:
+    name:
+      - mpv
+      - mpd
+    state: present
+  become: true
