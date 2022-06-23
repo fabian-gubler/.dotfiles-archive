@@ -24,3 +24,13 @@ Plug an Play as a focus -> Config is on top of (not replacing) defaults
 
 # Todo Ansible
 - Add fedora version 36 as variable for rpmfusion
+
+TODO: Automatic Updates | https://fedoraproject.org/wiki/AutoUpdates
+TODO: Firefox
+	NOTE: Test Upload speed of mozilla dir to nextcloud (easiest option)
+	create user-defined profile or regular expression
+	prefs.js
+
+TODO: ZSA wally cli | https://github.com/zsa/wally/wiki/Linux-install
+TODO: TLP Configuration
+
