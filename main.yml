@@ -1,0 +1,13 @@
+---
+
+# Ansible
+# Git
+# SSH
+
+- name:
+  hosts: localhost
+  roles:
+    - xorg
+    - suckless
+    - general
+

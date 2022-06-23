@@ -5,7 +5,7 @@ choices="main\nde\nen"
 chosen=$(echo "$choices" | dmenu -i -p "Keyboard Layout:")
 
 case "$chosen" in
-	main) setxkbmap us altgr-intl;;
+	main) setxkbmap ch;;
 	de) setxkbmap de;;
 	en) setxkbmap us;;
 esac

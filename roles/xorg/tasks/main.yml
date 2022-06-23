@@ -1,0 +1,22 @@
+---
+- name: Install xorg packages
+  become: yes
+  package:
+    name:
+      - xorg
+    state: present
+
+- name: Copy xinitrc
+  ansible.builtin.copy:
+    dest: "{{ ansible_user_dir }}/.xinitrc"
+    src: ".xinitrc"
+
+- name: Copy xprofile
+  ansible.builtin.copy:
+    dest: "{{ ansible_user_dir }}/.xprofile"
+    src: ".xprofile"
+
+- name: Copy Xresources
+  ansible.builtin.copy:
+    dest: "{{ ansible_user_dir }}/.Xresources"
+    src: ".Xresources"

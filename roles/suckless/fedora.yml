@@ -1,0 +1,10 @@
+---
+- name: install suckless dependencies
+  package:
+    name:
+      - xorg
+      - libX11-devel
+      - libXft-devel
+      - libXinerama-devel
+    state: present
+  become: yes

@@ -1,9 +1,11 @@
 # Add User to Sudoers
-sudo usermod -aG wheel fabian
+# sudo useradd -m fabian
+# sudo passwd fabian
+# sudo usermod -aG wheel fabian
 
 # Upgrade
-sudo dnf update
-sudo dnf upgrade
+# sudo dnf update
+# sudo dnf upgrade
 
 # -----------------------------------------------------------------------------
 # SSH & CLONE REPOSITORIES
@@ -28,8 +30,8 @@ sudo dnf upgrade
 # -----------------------------------------------------------------------------
 
 # PACKAGES
-# sudo dnf install -y xorg-x11-server-Xorg xorg-x11-xinit make gcc libX11-devel libXft-devel libXinerama-devel
-sudo apt install -y xorg make gcc libx11-dev libxft-dev libxinerama-dev
+sudo dnf install -y xorg-x11-server-Xorg xorg-x11-xinit make gcc libX11-devel libXft-devel libXinerama-devel
+# sudo apt install -y xorg libx11-dev libxft-dev libxinerama-dev
 
 # DWM
 cd /home/fabian/.dotfiles/config/suckless/dwm
@@ -48,5 +50,3 @@ cd /home/fabian/.dotfiles/config/xorg/
 cp .xinitrc /home/fabian/.xinitrc
 cp .xprofile /home/fabian/.xprofile
 cp .Xresources /home/fabian/.Xresources
-cp .zprofile /home/fabian/.zprofile
-

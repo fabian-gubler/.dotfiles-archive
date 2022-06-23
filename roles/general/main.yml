@@ -1,0 +1,42 @@
+---
+- include_tasks: "{{ ansible_os_family }}.yml"
+
+- name: install system packages
+  ansible.builtin.packgage:
+    name:
+      - tar
+      - wget
+      - curl
+      - xclip
+      - xsetroot
+      - fzf
+	  - unclutter-xfixes
+    state: latest
+    become: yes
+
+- name: install cli tools
+  ansible.builtin.packgage:
+    name:
+      - neovim
+      - zsh
+      - kitty
+      - alacritty
+      - tmux
+      - exa
+      - ripgrep
+      - ranger
+      - ncdu
+    state: latest
+    become: yes
+
+- name: install applications
+  ansible.builtin.packgage:
+    name:
+	  - firefox
+	  - chromium
+	  - zathura
+	  - sxiv
+	  - mpv
+    state: latest
+    become: yes
+

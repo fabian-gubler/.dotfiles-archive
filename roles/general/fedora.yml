@@ -1,0 +1,53 @@
+---
+- name: install programming languages
+  ansible.builtin.packgage:
+    name:
+      - nodejs
+      - lua
+      - rust
+      - golang
+      - python3-pip
+      - cargo
+    state: latest
+    become: yes
+
+- name: install system packages
+  ansible.builtin.packgage:
+    name:
+      - redshift
+      - adwaitaqt5
+      - qt5ct
+      - xbacklight
+      - acpi
+      - tlp
+      - picom
+      - arandr
+      - gnome-keyring
+      - network-manager-applet
+      - seahorse
+      - nextcloud-client
+    state: latest
+    become: yes
+
+- name: install cli tools
+  ansible.builtin.packgage:
+    name:
+      - mpd
+      - ncmpcpp
+      - playerctl
+      - mpdris2
+      - texlive
+      - newsboat
+    state: latest
+    become: yes
+
+- name: install applications
+  ansible.builtin.packgage:
+    name:
+      - qbittorrent
+	  - xournalpp
+	  - xsane
+	  - timeshift
+	  - anki
+    state: latest
+    become: yes
