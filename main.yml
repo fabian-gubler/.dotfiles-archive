@@ -13,11 +13,15 @@
 
     - name: Run roles
       include_role:
-        name: 
-          - base
-          - xorg
-          - packages
-        # - name: xorg
+        name: '{{ roleinputvar }}'
+      loop:
+        - base
+        - xorg
+        - packages
+      loop_control:
+        loop_var: roleinputvar
+        # name: base
+        # name: xorg
         # - name: packages
       #   name: "{{ item }}"
       # with_items: "{{ roles }}"
