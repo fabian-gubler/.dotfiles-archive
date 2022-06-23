@@ -28,11 +28,11 @@
   #     target: install
   #   become: yes
   #     
-  # - name: install slock
-  #   make:
-  #     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/slock"
-  #     target: install
-  #   become: yes
+  - name: install slock
+    make:
+      chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/slock"
+      target: install
+    become: yes
   #
   # - name: install tabbed
   #   make:
