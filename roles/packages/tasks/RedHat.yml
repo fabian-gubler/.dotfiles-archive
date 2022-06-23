@@ -12,33 +12,39 @@
     state: present
   become: true
     
-# - name: install system packages
-#   ansible.builtin.packgage:
-#     name:
-#       - redshift
-#       - adwaitaqt5
-#       - qt5ct
-#       - xbacklight
-#       - acpi
-#       - tlp
-#       - picom
-#       - arandr
-#       - gnome-keyring
-#       - network-manager-applet
-#       - seahorse
-#       - nextcloud-client
-#     state: present
-#     become: yes
-#
+- name: Install system packages
+  package:
+    name:
+      - redshift
+      - adwaitaqt5
+      - qt5ct
+      - xbacklight
+      - acpi
+      - tlp
+      - picom
+      - arandr
+      - gnome-keyring
+      - network-manager-applet
+      - seahorse
+      - nextcloud-client
+    state: present
+  become: true
+
+- name: Install cli tools
+  package:
+    name:
+      - mpd
+      - ncmpcpp
+      - playerctl
+      - mpdris2
+      - texlive
+      - newsboat
+    state: present
+  become: true
+
 # - name: install cli tools
 #   ansible.builtin.packgage:
 #     name:
-#       - mpd
-#       - ncmpcpp
-#       - playerctl
-#       - mpdris2
-#       - texlive
-#       - newsboat
 #     state: present
 #     become: yes
 #
