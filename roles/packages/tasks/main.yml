@@ -1,13 +1,28 @@
 ---
-# - include_tasks: '{{ ansible_os_family }}.yml'
 - name: install system packages
   package:
     name:
       - tar
       - fzf
-  state: present
+    state: present
   become: true
 
+# ---
+# - name: install basic desktop
+#   package:
+#     name:
+#       - xorg-x11-server-Xorg
+#       - xorg-x11-xinit
+#       - libX11-devel
+#       - libXft-devel
+#       - libXinerama-devel
+#       - make
+#       - gcc
+#       - mesa-dri-drivers
+#     state: present
+#   become: true
+# - include_tasks: '{{ ansible_os_family }}.yml'
+#
 # - name: install system packages
 #   packgage:
 #     name:
