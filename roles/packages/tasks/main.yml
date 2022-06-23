@@ -14,8 +14,8 @@
     state: present
   become: true
 
-- name: install cli tools
-  packgage:
+- name: install system packages
+  package:
     name:
       - neovim
       - zsh
@@ -28,6 +28,7 @@
       - ncdu
     state: present
   become: true
+
 #
 # - name: install applications
 #   packgage:
