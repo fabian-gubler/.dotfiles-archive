@@ -1,10 +1,14 @@
 ---
-- name: install suckless dependencies
+- name: install basic desktop
   package:
     name:
-      - xorg
+      - xorg-x11-server-Xorg
+      - xorg-x11-xinit
       - libX11-devel
       - libXft-devel
       - libXinerama-devel
+      - make
+      - gcc
+      - mesa-dri-drivers
     state: present
   become: yes

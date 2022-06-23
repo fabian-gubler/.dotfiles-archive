@@ -30,18 +30,4 @@
       tags:
         - always
 
-  # - name: install basic desktop
-  #   package:
-  #     name:
-  #       - xorg-x11-server-Xorg
-  #       - xorg-x11-xinit
-  #       - libX11-devel
-  #       - libXft-devel
-  #       - libXinerama-devel
-  #       - make
-  #       - gcc
-  #       - mesa-dri-drivers
-  #       - xsetroot
-  #     state: present
-  #   become: yes
 
