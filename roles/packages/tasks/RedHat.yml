@@ -6,8 +6,9 @@
   register: typora_installed
   ignore_errors: true 
 
-- debug: msg="{{ typora_installed }}
-#
+
+- debug: msg={{ is_rvm_exist.rc }}
+
 # - name: download typora
 #   ansible.builtin.get_url:
 #     url: https://download.typora.io/linux/Typora-linux-x64.tar.gz
