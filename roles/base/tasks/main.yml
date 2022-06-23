@@ -30,19 +30,20 @@
     target: install
   become: yes
 
-# TODO: Make symlinks instead of copying
+- name: link xinitrc
+  file:
+    src: ".xinitrc"
+    dest: "{{ ansible_user_dir }}/.xinitrc"
+    state: link
 
-# - name: copy xinitrc
-#   ansible.builtin.copy:
-#     dest: "{{ ansible_user_dir }}/.xinitrc"
-#     src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.xinitrc"
-#
-# - name: copy xprofile
-#   ansible.builtin.copy:
-#     dest: "{{ ansible_user_dir }}/.xprofile"
-#     src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.xprofile"
-#
-# - name: copy Xresources
-#   ansible.builtin.copy:
-#     dest: "{{ ansible_user_dir }}/.Xresources"
-#     src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.Xresources"
+- name: link xprofile
+  file:
+    src: ".xprofile"
+    dest: "{{ ansible_user_dir }}/.xprofile"
+    state: link
+
+- name: link Xresources
+  file:
+    src: ".Xresources"
+    dest: "{{ ansible_user_dir }}/.Xresources"
+    state: link

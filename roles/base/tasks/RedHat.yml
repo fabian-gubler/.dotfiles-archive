@@ -10,6 +10,5 @@
       - make
       - gcc
       - mesa-dri-drivers
-      - htop
-    state: latest
+    state: present
   become: yes
