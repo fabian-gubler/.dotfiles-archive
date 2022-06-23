@@ -30,7 +30,7 @@
 # -----------------------------------------------------------------------------
 
 # PACKAGES
-sudo dnf install -y xorg-x11-server-Xorg xorg-x11-xinit make gcc libX11-devel libXft-devel libXinerama-devel
+sudo dnf install -y xorg-x11-server-Xorg xorg-x11-xinit make gcc libX11-devel libXft-devel libXinerama-devel xrandr
 # sudo apt install -y xorg libx11-dev libxft-dev libxinerama-dev
 
 # DWM
@@ -42,8 +42,8 @@ cd /home/fabian/.dotfiles/config/suckless/dmenu
 sudo make clean install
 
 # SLOCK
-cd /home/fabian/.dotfiles/config/suckless/slock
-sudo make clean install
+# cd /home/fabian/.dotfiles/config/suckless/slock
+# sudo make clean install
 
 # STARTUP FILES
 cd /home/fabian/.dotfiles/config/xorg/
