@@ -18,6 +18,9 @@ cd ~/.dotfiles/config
 dotbot -c install.conf.yaml
 ```
 
-# Todo
+# Todo Config
 Plug an Play as a focus -> Config is on top of (not replacing) defaults
 > Colemak Modifications for default vim Bindings
+
+# Todo Ansible
+- Add fedora version 36 as variable for rpmfusion
