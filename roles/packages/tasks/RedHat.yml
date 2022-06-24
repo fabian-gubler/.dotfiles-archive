@@ -119,6 +119,7 @@
     repo: https://github.com/firecat53/networkmanager-dmenu.git
     dest: "{{ ansible_user_dir }}/.local/bin/networkmanager-dmenu"
     update: no
+
 - name: clone todotxt
   git:
     repo: https://github.com/todotxt/todo.txt-cli.git
@@ -155,3 +156,26 @@
     target: install
   become: true
 
+- name: clone clipmenu
+  git:
+    repo: https://github.com/cdown/clipmenu
+    dest: "{{ ansible_user_dir }}/.local/share/clipmenu"
+    update: no
+
+- name: compile clipmenu
+  make:
+    chdir: "{{ ansible_user_dir }}/.local/share/clipmenu"
+    target: install
+  become: true
+
+- name: clone clipnotify
+  git:
+    repo: https://github.com/cdown/clipnotify
+    dest: "{{ ansible_user_dir }}/.local/share/clipnotify"
+    update: no
+
+- name: compile clipnotify
+  make:
+    chdir: "{{ ansible_user_dir }}/.local/share/clipnotify"
+    target: install
+  become: true
