@@ -2,6 +2,7 @@
 - name: install basic desktop
   package:
     name:
+      - rc
       - xorg-x11-server-Xorg
       - xorg-x11-xinit
       - libX11-devel

@@ -20,6 +20,7 @@
 # Install dnf packages
 # ---
 #
+
 - name: Install programming languages
   package:
     name:
@@ -42,7 +43,6 @@
 - name: Install system packages
   package:
     name:
-      - rc
       - redshift
       - adwaita-qt5
       - qt5ct
