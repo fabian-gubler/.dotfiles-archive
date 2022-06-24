@@ -11,10 +11,10 @@
     - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm
 
 - name: Upgrade all packages
-  become: true
   ansible.builtin.dnf:
     name: "*"
     state: latest
+  become: true
 
 # ---
 # Install dnf packages
