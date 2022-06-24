@@ -14,13 +14,6 @@
 # Install dnf packages
 # ---
 #
-- name: Installing python packages
-  pip:
-    name:
-      - ueberzug
-      - flake8
-      - black
-
 - name: Install programming languages
   package:
     name:
@@ -33,6 +26,13 @@
     state: present
   become: true
     
+- name: Installing python packages
+  pip:
+    name:
+      - ueberzug
+      - flake8
+      - black
+
 - name: Install system packages
   package:
     name:
