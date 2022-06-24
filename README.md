@@ -14,12 +14,7 @@ bash bin/install.sh
 bash config/configure.sh
 ```
 
-# Todo 
+# Todo Later
 - SSH Setup (Github)
-- Add fedora version 36 as variable for rpmfusion
-- Firefox
-	- NOTE: Test Upload speed of mozilla dir to nextcloud (easiest option)
-	- create user-defined profile or regular expression
-	- prefs.js
 - ZSA wally cli | https://github.com/zsa/wally/wiki/Linux-install
 - TLP Configuration
