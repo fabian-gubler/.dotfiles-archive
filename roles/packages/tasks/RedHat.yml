@@ -10,6 +10,11 @@
     - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm
     - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm
 
+
+- name: update repositories sources
+  become: true
+  shell: dnf update
+
 # ---
 # Install dnf packages
 # ---
@@ -50,6 +55,7 @@
       - nextcloud-client
       - autorandr
       - gtk3
+      - gtk3-devel
     state: present
   become: true
 
