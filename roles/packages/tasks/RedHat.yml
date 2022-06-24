@@ -82,6 +82,7 @@
       - anki
       - mpv
       - mpd
+      - flameshot
     state: present
   become: true
 
