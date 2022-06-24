@@ -13,7 +13,7 @@
 
 - name: update repositories sources
   become: true
-  shell: dnf update
+  shell: dnf upgrade
 
 # ---
 # Install dnf packages
