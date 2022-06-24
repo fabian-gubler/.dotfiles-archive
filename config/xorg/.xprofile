@@ -11,7 +11,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="/usr/sbin:/usr/local/go/bin:/home/fabian/go/bin:/home/fabian/.cargo/bin:/home/fabian/.local/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
-export ANKI_BASE="/home/fabian/nextcloud/applications/anki-data"
+export ANKI_BASE="/home/fabian/nextcloud/apps/anki-data"
 
 # --- Preferences
 export EDITOR=nvim

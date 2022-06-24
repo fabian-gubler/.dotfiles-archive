@@ -18,4 +18,4 @@ bash config/configure.sh
 - SSH Setup (Github)
 - ZSA wally cli | https://github.com/zsa/wally/wiki/Linux-install
 - TLP Configuration
-- Symlink .mozilla directory
+- Symlink .mozilla directory (in configure.sh)
