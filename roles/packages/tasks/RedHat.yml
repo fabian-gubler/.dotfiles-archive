@@ -29,7 +29,6 @@
 - name: Installing python packages
   pip:
     name: 
-      # - ueberzug
       - flake8
       - black
     state: present
