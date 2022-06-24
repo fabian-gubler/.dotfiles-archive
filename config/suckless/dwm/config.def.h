@@ -76,18 +76,15 @@ static const char *termcmd[] = { "kitty", NULL };
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_z,      spawn,          SHCMD("mpv --volume=50 /data/drive/sound/brown-noise.m4a")},
-	{ MODKEY|ShiftMask,             XK_z,      spawn,          SHCMD("killall mpv")},
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("GTK_USE_PORTAL=0 firefox")},
-	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("brave")},
-	{ MODKEY,                       XK_r,      spawn,          SHCMD("pavucontrol")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_Return, spawn,          SHCMD("kitty tmuxdd")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/network -l 30")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/bluetooth")},
-	{ MODKEY,						XK_g,      spawn,          SHCMD("spotify")},
+	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},
+	{ 0, PrintScreen,				spawn,	   SHCMD("flameshot gui")},
 	{ 0, XF86XK_AudioLowerVolume,	spawn,	   SHCMD("$HOME/.dotfiles/config/rumno/mediactrl.sh volume-dec")},
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,	   SHCMD("$HOME/.dotfiles/config/rumno/mediactrl.sh volume-inc")},
 	{ 0, XF86XK_AudioMute,			spawn,	   SHCMD("$HOME/.dotfiles/config/rumno/mediactrl.sh volume-toggle")},
@@ -95,8 +92,6 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioNext,			spawn,	   SHCMD("playerctl --player=mpd next")},
 	{ 0, XF86XK_MonBrightnessUp,	spawn,	   SHCMD("$HOME/.dotfiles/config/rumno/mediactrl.sh brightness-inc")},
 	{ 0, XF86XK_MonBrightnessDown,	spawn,	   SHCMD("$HOME/.dotfiles/config/rumno/mediactrl.sh brightness-dec")},
-	{ 0, PrintScreen,				spawn,	   SHCMD("flameshot gui")},
-	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},
 
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run -i")},
