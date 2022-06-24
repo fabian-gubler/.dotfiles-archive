@@ -44,6 +44,7 @@
     ~/.config/xournalpp:                    xournal
 
     # WEB TOOLS ---------------------------------------------------
+    ~/.mozilla/firefox/jg1uh0e6.default-esr/chrome/userChrome.css: firefox/userChrome.css
     ~/.config/tridactyl/tridactylrc:        firefox/tridactylrc.vim
     ~/.config/tridactyl/themes/nord.css:    firefox/nord.css
 
