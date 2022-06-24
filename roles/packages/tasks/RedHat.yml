@@ -155,17 +155,3 @@
     target: install
   become: true
 
-
-# Advanced
-
-- name: Install automatic updates
-  package:
-    name: dnf-automatic
-    state: present
-  become: true
-
-- name: Enable automatic updates
-  become: true
-  systemd:
-    name: tlp
-    enabled: yes
