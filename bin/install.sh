@@ -27,4 +27,4 @@ fi
 cd "$DOTFILES_DIR"
 
 # run the playbook
-ansible-playbook "$DOTFILES_DIR/main.yml" --ask-become-pass --verbose
+ansible-playbook "$DOTFILES_DIR/main.yml" --ask-become-pass
