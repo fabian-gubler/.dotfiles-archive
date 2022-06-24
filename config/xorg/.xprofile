@@ -1,33 +1,26 @@
 #!/bin/sh
 
-# --- Display
+# Display
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
 export GTK_THEME=Nordic
 export QT_QPA_PLATFORMTHEME=qt5ct
 
-# --- Path
+# Paths
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="/usr/sbin:/usr/local/go/bin:/home/fabian/go/bin:/home/fabian/.cargo/bin:/home/fabian/.local/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
 export ANKI_BASE="/home/fabian/nextcloud/apps/anki-data"
 
-# --- Preferences
+# Preferences
 export EDITOR=nvim
-export PAGER=less
-# export MANPAGER=less
-
-# if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
-#   export MANPAGER="/usr/local/bin/nvr -c 'Man!' -o -"
-# fi
-
 export TERM=alacritty
 export LANG="en_US.utf8"
 export MOZ_USE_XINPUT2=1
 export MSFLOGO=~/.msf4/logos/custom.txt
 
-# --- Keyring
+# Keyring
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 export GPG_AGENT_INFO

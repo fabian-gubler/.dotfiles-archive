@@ -88,10 +88,10 @@
   become: true
 
 - name: Install firefox
-  become: true
   dnf:
     name: firefox
     disable_gpg_check: yes
+  become: true
 
 # ---
 # RPM Remote Repositories
