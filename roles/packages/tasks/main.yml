@@ -32,7 +32,6 @@
 - name: Install applications
   package:
     name:
-      - firefox
       - chromium
       - zathura
       - sxiv
