@@ -76,7 +76,7 @@ static const char *termcmd[] = { "kitty", NULL };
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_w,      spawn,          SHCMD("GTK_USE_PORTAL=0 firefox")},
+	{ MODKEY,                       XK_w,      spawn,          SHCMD("firefox -P main")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_Return, spawn,          SHCMD("kitty tmuxdd")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/network -l 30")},

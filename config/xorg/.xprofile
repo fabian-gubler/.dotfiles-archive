@@ -26,17 +26,16 @@ export SSH_AUTH_SOCK
 export GPG_AGENT_INFO
 
 # --- Startup
-exec systemctl --user import-environment &
-bluetoothctl power on &
+systemctl --user import-environment &
+bluetoothctl power on & # enable bluetooth
 unclutter -idle 1 & # hide mouse pointer
-xset r rate 350 60 &
-xset s off -dpms &
+xset r rate 350 60 & # monitor
+xset s off -dpms & # monitor
 picom --config ~/.dotfiles/config/picom/picom.conf & # compositor
-hsetroot -solid "#252a34" & # solid background
 xsetroot -solid "#252a34" & # solid background
-nextcloud &
+nextcloud & # establish connection to cloud server
 rumno-background & # daemon for audio control
-setxkbmap ch & # us layout with umlaut
+setxkbmap ch & # swiss german keyboard layout
 nm-applet & # network applet
 flameshot & # screenshot applet
 redshiftshift -l 47.66667:8.98333 & # night light with coordinates

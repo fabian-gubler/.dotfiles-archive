@@ -58,6 +58,7 @@
       - autorandr
       - gtk3
       - gtk3-devel
+      - dunst
       - xsel
     state: present
   become: true
@@ -78,6 +79,7 @@
   package:
     name:
       - qbittorrent
+      - pavucontrol
       - xournalpp
       - xsane
       - timeshift
