@@ -52,6 +52,7 @@
       - picom
       - arandr
       - gnome-keyring
+      - gnome-keyring-pam
       - network-manager-applet
       - seahorse
       - nextcloud-client
@@ -60,6 +61,7 @@
       - gtk3-devel
       - dunst
       - xsel
+      - imlib2-devel # needed for hsetroot
     state: present
   become: true
 
@@ -186,6 +188,17 @@
     target: install
   become: true
 
+- name: clone hsetroot
+  git:
+    repo: https://github.com/himdel/hsetroot
+    dest: "{{ ansible_user_dir }}/.local/share/hsetroot"
+    update: no
+
+- name: compile hsetroot
+  make:
+    chdir: "{{ ansible_user_dir }}/.local/share/hsetroot"
+    target: install
+  become: true
 - name: clone clipmenu
   git:
     repo: https://github.com/cdown/clipmenu

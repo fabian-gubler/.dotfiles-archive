@@ -44,7 +44,6 @@
     ~/.config/xournalpp:                    xournal
 
     # WEB TOOLS ---------------------------------------------------
-    ~/.mozilla/firefox/jg1uh0e6.default-esr/chrome/userChrome.css: firefox/userChrome.css
     ~/.config/tridactyl/tridactylrc:        firefox/tridactylrc.vim
     ~/.config/tridactyl/themes/nord.css:    firefox/nord.css
 
@@ -53,4 +52,4 @@
     # ~/.config/rofi/config:                  .archive/rofi/config
     # ~/.config/rofi/themes/minimal.rasi:     .archive/rofi/minimal.rasi
     # ~/.config/autorandr/postswitch:         .archive/autorandr/postswitch
-    # ~/.config/dunst/dunstrc:                .archive/dunst/dunstrc
+    ~/.config/dunst:                        dunst

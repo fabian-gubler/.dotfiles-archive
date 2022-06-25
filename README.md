@@ -18,3 +18,7 @@ bash config/configure.sh
 - SSH Setup (Github)
 - ZSA wally cli | https://github.com/zsa/wally/wiki/Linux-install
 - TLP Configuration
+
+# Done but not in ansible
+- PAM Keyring | https://nurdletech.com/linux-notes/agents/keyring.html
+- Change what Closing lid does | sv /etc/systemd/logind.conf

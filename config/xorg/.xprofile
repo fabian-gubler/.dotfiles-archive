@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Display
+export EDITOR=nvim
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
 export GTK_THEME=Nordic
@@ -13,17 +14,7 @@ export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
 export ANKI_BASE="/home/fabian/nextcloud/apps/anki-data"
 
-# Preferences
-export EDITOR=nvim
-export TERM=alacritty
-export LANG="en_US.utf8"
-export MOZ_USE_XINPUT2=1
-export MSFLOGO=~/.msf4/logos/custom.txt
-
-# Keyring
-eval $(gnome-keyring-daemon --start)
-export SSH_AUTH_SOCK
-export GPG_AGENT_INFO
+/home/fabian/nextcloud/apps/keyring.sh &
 
 # --- Startup
 systemctl --user import-environment &
@@ -32,8 +23,8 @@ unclutter -idle 1 & # hide mouse pointer
 xset r rate 350 60 & # monitor
 xset s off -dpms & # monitor
 picom --config ~/.dotfiles/config/picom/picom.conf & # compositor
-xsetroot -solid "#252a34" & # solid background
-nextcloud & # establish connection to cloud server
+hsetroot -solid "#252a34" & # solid background
+nextcloud --background & # establish connection to cloud server
 rumno-background & # daemon for audio control
 setxkbmap ch & # swiss german keyboard layout
 nm-applet & # network applet
