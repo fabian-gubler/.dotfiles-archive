@@ -14,26 +14,24 @@ export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
 export ANKI_BASE="/home/fabian/nextcloud/apps/anki-data"
 
-/home/fabian/nextcloud/apps/keyring.sh &
 
 # --- Startup
-systemctl --user import-environment &
-bluetoothctl power on & # enable bluetooth
 unclutter -idle 1 & # hide mouse pointer
-xset r rate 350 60 & # monitor
-xset s off -dpms & # monitor
-picom --config ~/.dotfiles/config/picom/picom.conf & # compositor
+xset s off -dpms & # monitor always on
+picom --config ~/.dotfiles/config/picom/picom.conf & # window compositor
 hsetroot -solid "#252a34" & # solid background
 nextcloud --background & # establish connection to cloud server
-rumno-background & # daemon for audio control
-setxkbmap ch & # swiss german keyboard layout
 nm-applet & # network applet
 flameshot & # screenshot applet
-redshiftshift -l 47.66667:8.98333 & # night light with coordinates
-clipmenud & # clipboard manager
-xinput set-int-prop 20 "Device Enabled" 8 0 & # disables internal keyboard
-mpDris2 &
+clipmenud & # clipboard manager daemon
+
+# mpDris2 &
+# rumno-background & # daemon for audio control
+# setxkbmap ch & # swiss german keyboard layout
+# redshiftshift -l 47.66667:8.98333 & # night light with coordinates
+# bluetoothctl power on & # enable bluetooth
 
 # --- Scripts
+/home/fabian/nextcloud/apps/keyring.sh &
 /home/fabian/.dotfiles/scripts/utils/battery-indicator.sh &
 /home/fabian/.dotfiles/scripts/utils/battery-notifier.sh &

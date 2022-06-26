@@ -7,6 +7,9 @@ This repository is separated into three primary components:
 # Installation
 
 ```bash
+# Clone dotfiles repository
+git clone --recursive https://github.com/fabian-gubler/.dotfiles
+
 # Run Ansible Playbooks
 bash bin/install.sh
 
