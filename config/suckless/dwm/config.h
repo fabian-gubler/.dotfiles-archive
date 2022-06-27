@@ -78,7 +78,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("firefox -P main")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
-	{ MODKEY,                       XK_Return, spawn,          SHCMD("kitty tmuxdd")},
+	{ MODKEY,                       XK_Return, spawn,          SHCMD("kitty $HOME/.dotfiles/scripts/utils/tmuxdd")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/network -l 30")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
