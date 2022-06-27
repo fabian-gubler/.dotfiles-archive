@@ -7,4 +7,3 @@
       - firefox-esr
     state: present
   become: true
-
