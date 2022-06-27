@@ -4,11 +4,13 @@ set -e
 DOTFILES_DIR="$HOME/.dotfiles"
 SSH_DIR="$HOME/.ssh"
 EMAIL="fabian.gubler@proton.me"
+# DISTRO=$(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release)
 DISTRO=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
+echo $DISTRO
 
 # install ansible
 if ! [ -x "$(command -v ansible)" ]; then
-	if [[ ${DISTRO} = "Fedora Linux"* ]]; then
+	if [  -n "$(uname -a | grep fedora)" ]; then
 		sudo dnf install ansible -y
 	else
 		sudo apt install ansible -y
