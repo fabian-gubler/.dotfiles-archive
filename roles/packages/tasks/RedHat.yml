@@ -53,6 +53,7 @@
       - tlp
       - picom
       - arandr
+      - alacritty
       - gnome-keyring
       - gnome-keyring-pam
       - network-manager-applet
