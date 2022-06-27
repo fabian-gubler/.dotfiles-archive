@@ -4,6 +4,7 @@
   package:
     name:
       - hsetroot
+      - firefox-esr
     state: present
   become: true
 
