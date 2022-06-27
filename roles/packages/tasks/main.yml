@@ -8,6 +8,7 @@
       - wget
       - curl
       - xclip
+      - arandr
       - fzf
       - unclutter-xfixes
     state: present

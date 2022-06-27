@@ -7,3 +7,12 @@
       - firefox-esr
     state: present
   become: true
+
+- name: Install guest additions
+  package:
+    name:
+      - virtualbox-guest-additions-iso
+      - virtualbox-guest-x11
+    state: present
+  become: true
+

@@ -52,7 +52,6 @@
       - acpi
       - tlp
       - picom
-      - arandr
       - alacritty
       - gnome-keyring
       - gnome-keyring-pam
