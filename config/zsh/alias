@@ -2,6 +2,7 @@
 alias time="date '+%T'"
 alias v="nvim"
 alias d="devour"
+alias fzf="fzf -i"
 alias lg="lazygit"
 alias ran="autorandr"
 alias alarm="~/.dotfiles/scripts/utils/alarm.sh"

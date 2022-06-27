@@ -2,6 +2,7 @@
 - name: install suckless dependencies
   package:
     name:
+      - xorg
       - libx11-dev
       - libxft-dev
       - libxinerama-dev

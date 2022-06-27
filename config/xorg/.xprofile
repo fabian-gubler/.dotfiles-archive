@@ -5,7 +5,7 @@ export EDITOR=nvim
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
 export GTK_THEME=Nordic
-export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=qt6ct
 
 # Paths
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -14,8 +14,7 @@ export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
 export ANKI_BASE="/home/fabian/nextcloud/apps/anki-data"
 
-
-# --- Startup
+# Startup
 unclutter -idle 1 & # hide mouse pointer
 xset s off -dpms & # monitor always on
 picom --config ~/.dotfiles/config/picom/picom.conf & # window compositor
@@ -24,14 +23,11 @@ nextcloud --background & # establish connection to cloud server
 nm-applet & # network applet
 flameshot & # screenshot applet
 clipmenud & # clipboard manager daemon
+redshift -l 47.66667:8.98333 & # night light with coordinates
 
 # mpDris2 &
-# rumno-background & # daemon for audio control
-# setxkbmap ch & # swiss german keyboard layout
-# redshiftshift -l 47.66667:8.98333 & # night light with coordinates
-# bluetoothctl power on & # enable bluetooth
 
-# --- Scripts
+# Scripts
 /home/fabian/nextcloud/apps/keyring.sh &
 /home/fabian/.dotfiles/scripts/utils/battery-indicator.sh &
 /home/fabian/.dotfiles/scripts/utils/battery-notifier.sh &
