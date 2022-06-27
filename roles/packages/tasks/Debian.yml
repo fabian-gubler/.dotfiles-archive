@@ -1,0 +1,9 @@
+---
+
+- name: Install packages
+  package:
+    name:
+      - hsetroot
+    state: present
+  become: true
+
