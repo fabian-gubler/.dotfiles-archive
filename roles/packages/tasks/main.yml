@@ -19,7 +19,6 @@
       - neovim
       - zsh
       - kitty
-      - alacritty
       - tmux
       - exa
       - ripgrep
