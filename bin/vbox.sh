@@ -1,5 +1,11 @@
 # Installing Virtualbox Guest Additions
 
-sudo mount -r /dev/cdrom /media
-cd /media
-sudo ./VBoxLinuxAdditions.run
+# Manual
+sudo apt install virtualbox-guest-additions-iso -y
+sudo mkdir -p /mnt/cdrom && sudo mount /usr/share/virtualbox/VBoxGuestAdditions.iso /mnt/cdrom
+cd /mnt/cdrom && sudo sh ./VBoxLinuxAdditions.run
+
+
+# sudo mount -r /dev/cdrom /media
+# cd /media
+# sudo ./VBoxLinuxAdditions.run
