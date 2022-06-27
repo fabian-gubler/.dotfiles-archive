@@ -6,10 +6,20 @@
     path: ~/.local/bin
     state: directory
 
+- name: build dwm
+  make:
+    chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dwm"
+  become: true
+
 - name: compile dwm
   make:
     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dwm"
     target: install
+  become: true
+
+- name: build dmenu
+  make:
+    chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dmenu"
   become: true
 
 - name: compile dmenu
