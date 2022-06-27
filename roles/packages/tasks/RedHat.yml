@@ -45,6 +45,7 @@
 - name: Install system packages
   package:
     name:
+      - neovim
       - redshift
       - adwaita-qt6
       - qt6ct

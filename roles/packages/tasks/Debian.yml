@@ -8,11 +8,6 @@
     state: present
   become: true
 
-- name: Install guest additions
-  package:
-    name:
-      - virtualbox-guest-additions-iso
-      - virtualbox-guest-x11
-    state: present
-  become: true
-
+- name: Install neovim
+  ansible.builtin.apt:
+    deb: https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb

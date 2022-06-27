@@ -17,7 +17,6 @@
 - name: Install cli tools
   package:
     name:
-      - neovim
       - zsh
       - kitty
       - tmux
