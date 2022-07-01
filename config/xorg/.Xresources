@@ -38,3 +38,20 @@
 *.color13: nord15
 *.color14: nord7
 *.color15: nord6
+
+! DWM Nord
+! dwm.normbgcolor: #252A34
+! dwm.normbordercolor: #5E81AC
+! dwm.normfgcolor: #bbbbbb
+! dwm.selfgcolor: #D8DEE9
+! dwm.selbordercolor: #5e81ac
+! dwm.selbgcolor: #434C5E
+
+! DWM Gruv
+dwm.normbgcolor: #282828
+dwm.normbordercolor: #928374
+dwm.normfgcolor: #d5c4a1
+dwm.selfgcolor: #fbf1c7
+dwm.selbordercolor: #B8BB26
+dwm.selbgcolor: #3c3836
+
