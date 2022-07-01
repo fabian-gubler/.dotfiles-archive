@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ID=pf0yzukt
-SRC=/home/fabian/nextcloud/apps/firefox
+SRC=/home/kali/.dotfiles/config/firefox-kali
 DEST=/home/fabian/.mozilla/firefox/${ID}.main
 
 rm -rf $DEST/chrome
