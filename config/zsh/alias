@@ -1,5 +1,5 @@
 # Short form
-alias time="date '+%T'"
+alias pres="date '+%T'"
 alias v="nvim"
 alias d="devour"
 alias fzf="fzf -i"

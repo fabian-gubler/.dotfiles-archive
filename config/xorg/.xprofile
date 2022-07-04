@@ -9,7 +9,7 @@ export QT_QPA_PLATFORMTHEME=qt6ct
 
 # Paths
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="/usr/sbin:/usr/local/go/bin:/home/fabian/go/bin:/home/fabian/.cargo/bin:/home/fabian/.local/bin:$PATH"
+export PATH="/usr/sbin:/usr/local/go/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
 export ANKI_BASE="/home/fabian/nextcloud/apps/anki-data"
@@ -18,7 +18,7 @@ export ANKI_BASE="/home/fabian/nextcloud/apps/anki-data"
 unclutter -idle 1 & # hide mouse pointer
 xset s off -dpms & # monitor always on
 picom --config ~/.dotfiles/config/picom/picom.conf & # window compositor
-hsetroot -solid "#252a34" & # solid background
+hsetroot -solid "#252A34" & # solid background
 nextcloud --background & # establish connection to cloud server
 nm-applet & # network applet
 flameshot & # screenshot applet
@@ -27,6 +27,9 @@ redshift -l 47.66667:8.98333 & # night light with coordinates
 xbindkeys & # playerctl with headphones
 mpd & # music player daemon
 mpDris2 & # playerctl for mpd
+xsetroot -name "kali"
+
+# mpDris2 &
 
 # Scripts
 /home/kali/.dotfiles/bin/res.sh
