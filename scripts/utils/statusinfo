@@ -1,0 +1,14 @@
+#!/bin/bash
+
+guest=$(sudo dmidecode -t system | grep 'Product' | awk {'print $3'})
+
+if [ $guest = "VirtualBox" ]; then
+	xsetroot -name "$guest"
+	echo $guest
+else
+	xsetroot -name " "
+	echo "not in a vm"
+fi
+
+
+
