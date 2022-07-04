@@ -28,7 +28,8 @@ xbindkeys & # playerctl with headphones
 mpd & # music player daemon
 mpDris2 & # playerctl for mpd
 
-if ! command -v apt &> /dev/null
+# Kali 
+if command -v apt &> /dev/null
 then
 	xsetroot -name "kali"
 fi
