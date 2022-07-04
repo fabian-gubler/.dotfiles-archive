@@ -14,3 +14,10 @@
     dest: "{{ ansible_user_dir }}/.local/bin/tmuxdd"
     state: link
 
+- name: link statusinfo
+  become: true
+  file:
+    src: "{{ ansible_user_dir }}/.dotfiles/scripts/utils/statusinfo"
+    dest: "/usr/bin/statusinfo"
+    state: link
+

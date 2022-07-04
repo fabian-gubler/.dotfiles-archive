@@ -28,13 +28,10 @@ mpd & # music player daemon
 mpDris2 & # playerctl for mpd
 
 # Virtual machine
-# if command -v apt &> /dev/null; then
-# 	xsetroot -name "kali"
-# fi
-
-if dmesg | grep -i hypervisor; then
-	xsetroot -name "kali"
+if command -v apt &> /dev/null; then
+	xsetroot -name "virtual machine"
 fi
+
 
 # Scripts
 /home/kali/.dotfiles/bin/res.sh
