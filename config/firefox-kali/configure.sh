@@ -11,6 +11,3 @@ ln -sf $SRC/extension-settings.json $DEST/extension-settings.json
 
 rm -rf $DEST/extensions
 ln -s $SRC/extensions $DEST/extensions
-
-# Stop tracking
-git rm -r --cached $SRC
