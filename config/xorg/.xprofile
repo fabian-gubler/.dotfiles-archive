@@ -14,11 +14,10 @@ export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
 export ANKI_BASE="/home/fabian/nextcloud/apps/anki-data"
 
-# Startup
 unclutter -idle 1 & # hide mouse pointer
-xset s off -dpms & # monitor always on
-picom --config ~/.dotfiles/config/picom/picom.conf & # window compositor
+picom --config $HOME/.dotfiles/config/picom/picom.conf & # window compositor
 hsetroot -solid "#252A34" & # solid background
+xset s off -dpms & # monitor always on
 nextcloud --background & # establish connection to cloud server
 nm-applet & # network applet
 flameshot & # screenshot applet
@@ -28,9 +27,12 @@ xbindkeys & # playerctl with headphones
 mpd & # music player daemon
 mpDris2 & # playerctl for mpd
 
-# Kali 
-if command -v apt &> /dev/null
-then
+# Virtual machine
+# if command -v apt &> /dev/null; then
+# 	xsetroot -name "kali"
+# fi
+
+if dmesg | grep -i hypervisor; then
 	xsetroot -name "kali"
 fi
 

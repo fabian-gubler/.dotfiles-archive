@@ -47,7 +47,6 @@
       - xbacklight
       - acpi
       - tlp
-      - picom
       - alacritty
       - gnome-keyring
       - gnome-keyring-pam
