@@ -31,6 +31,7 @@
     ~/.config/redshift:                     redshift
     ~/.config/mpv:                          mpv
     ~/.config/mpd:                          mpd
+    ~/.xbindkeysrc:                         xbindkeys/.xbindkeysrc
     ~/.config/mpDris2:                      mpDris2
     ~/.ncmpcpp:                             ncmpcpp
     # ~/.local/bin/rumno:                     rumno/build/target/release/rumno

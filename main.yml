@@ -1,23 +1,8 @@
 ---
 - hosts: localhost
-  vars:
-    fedora_current: 36
-
-  tasks:
-    - name: Set roles
-      set_fact:
-        roles: "{{ default_roles | difference(exclude_roles | default([])) }}"
-
-    - name: Display roles
-      debug: "var=roles"
-
-    - name: Run roles
-      include_role:
-        name: '{{ input }}'
-      loop:
-        - base
-        - xorg
-        - packages
-        - custom
-      loop_control:
-        loop_var: input
+  roles:
+    - { role: base, tags: base }
+    - { role: xorg, tags: xorg }
+    - { role: packages, tags: packages }
+    - { role: build, tags: build }
+    - { role: custom, tags: custom }

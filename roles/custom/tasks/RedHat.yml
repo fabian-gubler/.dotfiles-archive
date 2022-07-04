@@ -11,3 +11,30 @@
   systemd:
     name: tlp
     enabled: yes
+
+- name: clone dmenu bluetooth-autoconnect
+  git:
+    repo: https://github.com/jrouleau/bluetooth-autoconnect
+    dest: "{{ ansible_user_dir }}/.local/share/bluetooth-autoconnect"
+    update: no
+
+- name: link bluetooth-autoconnect
+  become: true
+  file:
+    src: "{{ ansible_user_dir }}/.local/share/bluetooth-autoconnect/bluetooth-autoconnect"
+    dest: "/usr/bin/bluetooth-autoconnect"
+    state: link
+
+- name: link bluetooth-autoconnect.service
+  become: true
+  file:
+    src: "{{ ansible_user_dir }}/.local/share/bluetooth-autoconnect/bluetooth-autoconnect.service"
+    dest: "/etc/systemd/user/bluetooth-autoconnect.service"
+    state: link
+
+- name: enable bluetooth-autoconnect
+  systemd:
+    name: bluetooth-autoconnect
+    state: started
+    scope: user
+    enabled: yes

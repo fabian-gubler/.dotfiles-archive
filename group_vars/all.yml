@@ -1,5 +1,0 @@
-default_roles:
-  - base
-  - xorg
-  - packages
-  - custom

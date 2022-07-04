@@ -17,6 +17,7 @@ unbind h
 unbind d
 unbind D
 unbind b
+unbind u
 unbind <<
 unbind >>
 

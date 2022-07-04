@@ -16,11 +16,6 @@
     state: latest
   become: true
 
-# ---
-# Install dnf packages
-# ---
-#
-
 - name: Install programming languages
   package:
     name:
@@ -72,12 +67,21 @@
 - name: Install cli tools
   package:
     name:
-      - ncmpcpp
-      - playerctl
-      - mpdris2
       - texlive
       - newsboat
       - youtube-dl
+    state: present
+  become: true
+
+- name: Multimedia Package
+  package:
+    name:
+      - mpv
+      - mpd
+      - mpdris2
+      - ncmpcpp
+      - playerctl
+      - xbindkeys
     state: present
   become: true
 
@@ -92,8 +96,6 @@
       - xsane
       - timeshift
       - anki
-      - mpv
-      - mpd
       - flameshot
     state: present
   become: true
@@ -143,83 +145,3 @@
     disable_gpg_check: yes
     state: present
 
-# ---
-# Git Repositories
-# ---
-
-- name: clone dmenu networkmanager
-  git:
-    repo: https://github.com/firecat53/networkmanager-dmenu.git
-    dest: "{{ ansible_user_dir }}/.local/bin/networkmanager-dmenu"
-    update: no
-
-- name: clone todotxt
-  git:
-    repo: https://github.com/todotxt/todo.txt-cli.git
-    dest: "{{ ansible_user_dir }}/.local/share/todotxt"
-    update: no
-
-- name: compile todotxt
-  make:
-    chdir: "{{ ansible_user_dir }}/.local/share/todotxt"
-    target: install
-  become: true
-
-- name: clone dragon
-  git:
-    repo: https://github.com/mwh/dragon.git
-    dest: "{{ ansible_user_dir }}/.local/share/dragon"
-    update: no
-
-- name: compile dragon
-  make:
-    chdir: "{{ ansible_user_dir }}/.local/share/dragon"
-    target: install
-  become: true
-
-- name: clone devour
-  git:
-    repo: https://github.com/salman-abedin/devour.git    
-    dest: "{{ ansible_user_dir }}/.local/share/devour"
-    update: no
-
-- name: compile devour
-  make:
-    chdir: "{{ ansible_user_dir }}/.local/share/devour"
-    target: install
-  become: true
-
-- name: clone clipnotify
-  git:
-    repo: https://github.com/cdown/clipnotify
-    dest: "{{ ansible_user_dir }}/.local/share/clipnotify"
-    update: no
-
-- name: compile clipnotify
-  make:
-    chdir: "{{ ansible_user_dir }}/.local/share/clipnotify"
-    target: install
-  become: true
-
-- name: clone hsetroot
-  git:
-    repo: https://github.com/himdel/hsetroot
-    dest: "{{ ansible_user_dir }}/.local/share/hsetroot"
-    update: no
-
-- name: compile hsetroot
-  make:
-    chdir: "{{ ansible_user_dir }}/.local/share/hsetroot"
-    target: install
-  become: true
-- name: clone clipmenu
-  git:
-    repo: https://github.com/cdown/clipmenu
-    dest: "{{ ansible_user_dir }}/.local/share/clipmenu"
-    update: no
-
-- name: compile clipmenu
-  make:
-    chdir: "{{ ansible_user_dir }}/.local/share/clipmenu"
-    target: install
-  become: true

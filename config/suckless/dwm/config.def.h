@@ -56,9 +56,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#include <X11/XF86keysym.h>
 #define MODKEY Mod4Mask
-#define PrintScreen 0x0000ff61
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,				KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -70,7 +68,6 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-// static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[] = { "kitty", NULL };
 
@@ -82,16 +79,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          SHCMD("kitty $HOME/.dotfiles/scripts/utils/tmuxdd")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/network -l 30")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
+	{ MODKEY,                       XK_r,      spawn,          SHCMD("/usr/bin/bluetooth-autoconnect")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/bluetooth")},
 	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},
-	{ 0, PrintScreen,				spawn,	   SHCMD("flameshot gui")},
-	{ 0, XF86XK_AudioLowerVolume,	spawn,	   SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%")},
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,	   SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%")},
-	{ 0, XF86XK_AudioMute,			spawn,	   SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle")},
-	{ 0, XF86XK_AudioPlay,			spawn,	   SHCMD("playerctl play-pause")},
-	{ 0, XF86XK_MonBrightnessUp,	spawn,	   SHCMD("brightnessctl set 10%+")},
-	{ 0, XF86XK_MonBrightnessDown,	spawn,	   SHCMD("brightnessctl set 10%-")},
 
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run -i")},

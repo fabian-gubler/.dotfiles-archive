@@ -24,8 +24,9 @@ nm-applet & # network applet
 flameshot & # screenshot applet
 clipmenud & # clipboard manager daemon
 redshift -l 47.66667:8.98333 & # night light with coordinates
-
-# mpDris2 &
+xbindkeys & # playerctl with headphones
+mpd & # music player daemon
+mpDris2 & # playerctl for mpd
 
 # Scripts
 /home/kali/.dotfiles/bin/res.sh
