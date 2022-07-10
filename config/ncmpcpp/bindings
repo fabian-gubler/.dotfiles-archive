@@ -33,3 +33,6 @@ def_key "right"
 
 def_key "left"
   previous_screen
+
+def_key "s"
+  set_volume

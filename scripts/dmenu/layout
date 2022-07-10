@@ -2,7 +2,7 @@
 
 choices="main\nde\nen"
 
-chosen=$(echo "$choices" | dmenu -i -p "Keyboard Layout:")
+chosen=$(echo -e "$choices" | dmenu -i -p "Keyboard Layout:")
 
 case "$chosen" in
 	main) setxkbmap ch;;

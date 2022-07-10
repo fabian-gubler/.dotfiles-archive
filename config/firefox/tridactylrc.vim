@@ -1,7 +1,7 @@
 " Single point of truth
 sanitize tridactyllocal tridactylsync
 
-" ---  Global Bindings" -------------------------------------------------------
+" ---  Global Settings -------------------------------------------------------
 
 set tabopenpos related
 set hintchars arstneio
@@ -25,22 +25,13 @@ unbind >>
 " Navigation
 bind <C-d> scrollline 30
 bind <C-u> scrollline -30
-bind n scrollline 10
-bind e scrollline -10
-bind i scrollpx 50
-bind m scrollpx -50
 
 " Mode ignore
 bind <C-y> mode ignore
 
-" Work everywhere
-
 " Hinting
 bind s hint
 bind S hint -b
-
-" Misc
-bind b fillcmdline bmarks
 
 --- Text Input --------------------------------------------------------------
 
