@@ -26,6 +26,7 @@ redshift -l 47.66667:8.98333 & # night light with coordinates
 xbindkeys & # playerctl with headphones
 mpd & # music player daemon
 mpDris2 & # playerctl for mpd
+xrandr --output HDMI-1-1 --auto --left-of eDP-1
 
 # Virtual machine
 if command -v apt &> /dev/null; then
