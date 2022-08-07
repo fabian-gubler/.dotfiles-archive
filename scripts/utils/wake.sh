@@ -2,6 +2,7 @@
 TIME=$1
 
 # Check Speaker (2 Seconds)
+pactl set-sink-volume @DEFAULT_SINK@ 50%
 mpv --length=2 ~/nextcloud/music/resonance.opus
 
 # Alarm at time
