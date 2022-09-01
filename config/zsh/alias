@@ -1,5 +1,6 @@
 # Short form
 alias dnow="date '+%T'"
+alias notes="~/.dotfiles/scripts/utils/tmux-windowizer"
 alias v="nvim"
 alias d="devour"
 alias fzf="fzf -i"

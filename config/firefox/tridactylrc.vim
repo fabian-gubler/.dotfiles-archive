@@ -18,6 +18,7 @@ unbind d
 unbind D
 unbind b
 unbind u
+unbind f
 unbind <<
 unbind >>
 
