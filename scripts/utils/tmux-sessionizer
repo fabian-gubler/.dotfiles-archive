@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/nextcloud/mcs/core ~/nextcloud/mcs/electives ~/nextcloud/mcs/context -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/notebooks ~/nextcloud/mcs/core ~/nextcloud/mcs/electives ~/nextcloud/mcs/context -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then

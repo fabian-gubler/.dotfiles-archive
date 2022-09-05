@@ -22,25 +22,18 @@
 # zoom                Zoom in or out
 
 # Global options
-set guioptions none
-set font "monospace 15"
-set statusbar-v-padding 15
-set statusbar-h-padding 50
+set font "monospace 18"
 set show-scrollbars false
 set selection-clipboard clipboard
 
 # Bindings
-map h     search forward
-map k     search backward
-map N     navigate next
-map E     navigate previous
-# map E     scroll page-top
-# map N     scroll page-bottom
+map <C-n>     navigate next
+map <C-p>     navigate previous
 map r     recolor
 map P     print
 map t     toggle_statusbar
-map [normal] s adjust_window best-fit
-map [normal] S adjust_window width
+map [normal] 0 adjust_window width
+map [normal] 1 adjust_window best-fit
 
 # Synctex | Sync Latex
 set synctex true
@@ -58,11 +51,9 @@ map [normal] a focus_inputbar ":blist "
 map [normal] B focus_inputbar ":bdelete "
 
 # Command Line
-# map o     feedkeys ":exec okular $FILE<Return>"
-map o     feedkeys ":exec masterpdfeditor5 $FILE<Return>"
+map o     feedkeys ":exec okular $FILE<Return>"
 
 # Base16 Nord
-# set recolor                     "true"
 set recolor-keephue             "true"
 set recolor-lightcolor          "#2E3440"
 set recolor-darkcolor           "#ECEFF4"

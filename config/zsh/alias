@@ -1,17 +1,16 @@
-# Short form
+# Abbreviations
 alias dnow="date '+%T'"
-alias notes="~/.dotfiles/scripts/utils/tmux-windowizer"
 alias v="nvim"
-alias d="devour"
+alias sv="sudoedit"
 alias fzf="fzf -i"
 alias lg="lazygit"
 alias ran="autorandr"
+
+# Scripts
+alias notes="~/.dotfiles/scripts/utils/tmux-windowizer"
 alias blank="xrandr --output HDMI-1-1 --brightness 0; read ans; xrandr --output HDMI-1-1 --brightness 1; xset s off -dpms"
 alias alarm="~/.dotfiles/scripts/utils/alarm.sh"
 alias wake="~/.dotfiles/scripts/utils/wake.sh"
-alias zt="devour zathura"
-alias mt="devour masterpdfeditor5"
-alias sv="sudoedit"
 
 # Todo
 alias t="todo.sh -d /home/fabian/nextcloud/todo/config"

@@ -17,6 +17,7 @@
     # UTILITIES ---------------------------------------------------
     ~/.config/alacritty:                    alacritty
     ~/.config/kitty:                        kitty
+    ~/.config/sioyek:                       sioyek
     ~/.newsboat:                            newsboat
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
     ~/.config/Typora/themes/nord:           typora/nord

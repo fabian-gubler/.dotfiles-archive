@@ -5,10 +5,8 @@ sanitize tridactyllocal tridactylsync
 
 set tabopenpos related
 set hintchars arstneio
-set editorcmd st -e lvim
 set smoothscroll true
 set hintdelay 100
-set editorcmd st -e lvim -c 'set filetype=javascript'
 colourscheme nord
 fixamo_quiet
 
@@ -18,10 +16,10 @@ unbind d
 unbind D
 unbind b
 unbind u
-unbind f
+unbind s
+unbind S
 unbind <<
 unbind >>
-
 
 " Navigation
 bind <C-d> scrollline 30
@@ -29,10 +27,6 @@ bind <C-u> scrollline -30
 
 " Mode ignore
 bind <C-y> mode ignore
-
-" Hinting
-bind s hint
-bind S hint -b
 
 --- Text Input --------------------------------------------------------------
 
@@ -42,8 +36,6 @@ bind --mode=input  <C-k> text.kill_line
 bind --mode=ex     <C-u> text.backward_kill_line
 bind --mode=insert <C-u> text.backward_kill_line
 bind --mode=input  <C-u> text.backward_kill_line
-bind --mode=insert <A-BS> text.backward_kill_word
-bind --mode=input  <A-BS> text.backward_kill_word
 
 " ---  Url Specific Bindings" -------------------------------------------------
 
@@ -53,11 +45,9 @@ blacklistadd docs.google.com
 blacklistadd mail.protonmail.com
 blacklistadd calendar.protonmail.com
 
-" Only hint search results on Google & YouTube
+" Only hint search results on Google
 bindurl www.google.com s hint -Jc #search div:not(.action-menu) > a
 bindurl www.google.com S hint -Jbc #search div:not(.action-menu) > a
-bindurl www.youtube.com s hint -J
-bindurl www.youtube.com S hint -Jb
 
 " YouTube
 unbindurl youtube.com j
@@ -70,11 +60,3 @@ unbindurl youtube.com c
 " Coursera
 unbindurl coursera.org k
 unbindurl coursera.org f
-
-" Google Drive
-unbindurl drive.google.com j
-unbindurl drive.google.com k
-unbindurl drive.google.com m
-
-" Google Docs
-unbindurl docs.google.com u
