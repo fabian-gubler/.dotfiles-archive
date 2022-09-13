@@ -11,7 +11,7 @@ This repository is separated into three primary components:
 git clone --recursive https://github.com/fabian-gubler/.dotfiles
 
 # Run Ansible Playbooks
-bash bin/install.sh
+bash scripts/install.sh
 
 # Dotfiles Configuration
 bash config/configure.sh
