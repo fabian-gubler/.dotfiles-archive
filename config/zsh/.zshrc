@@ -1,14 +1,8 @@
 # General
-HISTFILE=~/.dotfiles/config/zsh/.histfile
+HISTFILE=~/.otfiles/config/zsh/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 export MANPAGER='nvim +Man!'
-
-
-# if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
-#   export MANPAGER="/home/fabian/.local/bin/nvr -c 'Man!' -o -"
-# fi
-
 
 # Pure Prompt
 fpath+=$HOME/.dotfiles/config/zsh/pure
@@ -36,7 +30,8 @@ bindkey -s '^t' 'exa -a^M'        # extended ls
 bindkey "^[[1;5D" backward-word   # ctrl + m
 bindkey "^[[1;5C" forward-word    # ctrl + i
 bindkey "^[[3~" delete-char       # make delete work
-
+bindkey "^[[1~" beginning-of-line # home
+bindkey "^[[4~" end-of-line		  # end
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-completions"

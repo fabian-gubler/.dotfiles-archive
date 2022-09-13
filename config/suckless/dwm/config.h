@@ -76,8 +76,9 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("firefox -P main")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
+	{ MODKEY,                       XK_g,      spawn,          SHCMD("sioyek")},
+	{ MODKEY,                       XK_v,      spawn,          SHCMD("spotify --force-device-scale-factor=2")},
 	{ MODKEY,                       XK_Return, spawn,          SHCMD("kitty $HOME/.dotfiles/scripts/utils/tmuxdd")},
-	{ MODKEY,                       XK_v,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/network -l 30")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY,                       XK_r,      spawn,          SHCMD("/usr/bin/bluetooth-autoconnect")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},

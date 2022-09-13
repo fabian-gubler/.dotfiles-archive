@@ -32,13 +32,16 @@
     ~/.config/redshift:                     redshift
     ~/.config/mpv:                          mpv
     ~/.config/mpd:                          mpd
-    ~/.xbindkeysrc:                         xbindkeys/.xbindkeysrc
+    ~/.xbindkeysrc:                         xutils/.xbindkeysrc
+    ~/.config/mimeapps.list:                xutils/mimeapps.list
     ~/.config/mpDris2:                      mpDris2
     ~/.ncmpcpp:                             ncmpcpp
     # ~/.local/bin/rumno:                     rumno/build/target/release/rumno
     # ~/.local/bin/rumno-background:          rumno/build/target/release/rumno-background
 
     # TOOLS -------------------------------------------------------
+    ~/.spicetify/Extensions/keyboardShortcut.js: spicetify/keyboardShortcut.js
+    ~/.config/spicetify/config-xpui.ini:    spicetify/config-xpui.ini
     ~/.config/ranger/rc.conf:               ranger/rc.conf
     ~/.config/ranger/rifle.conf:            ranger/rifle.conf
     ~/.config/ranger/plugins:               ranger/plugins

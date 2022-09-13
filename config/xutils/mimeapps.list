@@ -1,0 +1,4 @@
+
+[Default Applications]
+x-scheme-handler/postman=Postman.desktop
+image/png=sxiv.desktop

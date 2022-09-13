@@ -7,10 +7,11 @@ set tabopenpos related
 set hintchars arstneio
 set smoothscroll true
 set hintdelay 100
-colourscheme nord
 fixamo_quiet
 
 " Unbind
+unbind j
+unbind k
 unbind h
 unbind d
 unbind D
@@ -18,15 +19,14 @@ unbind b
 unbind u
 unbind s
 unbind S
-unbind <<
-unbind >>
+unbind <
+unbind >
+unbind a
+unbind A
 
 " Navigation
-bind <C-d> scrollline 30
-bind <C-u> scrollline -30
-
-" Mode ignore
-bind <C-y> mode ignore
+bind <C-d> scrollline 15
+bind <C-u> scrollline -15
 
 --- Text Input --------------------------------------------------------------
 
@@ -40,22 +40,17 @@ bind --mode=input  <C-u> text.backward_kill_line
 " ---  Url Specific Bindings" -------------------------------------------------
 
 " Auto Ignore
-blacklistadd calendar.google.com
 blacklistadd docs.google.com
-blacklistadd mail.protonmail.com
-blacklistadd calendar.protonmail.com
 
-" Only hint search results on Google
-bindurl www.google.com s hint -Jc #search div:not(.action-menu) > a
-bindurl www.google.com S hint -Jbc #search div:not(.action-menu) > a
+" Protonmail
+unbindurl proton.me t
+unbindurl proton.me /
 
 " YouTube
-unbindurl youtube.com j
 unbindurl youtube.com l
-unbindurl youtube.com k
 unbindurl youtube.com f
-unbindurl youtube.com p
 unbindurl youtube.com c
+unbindurl youtube.com t
 
 " Coursera
 unbindurl coursera.org k

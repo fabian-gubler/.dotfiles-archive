@@ -26,7 +26,6 @@
       - python3-pip
       - cargo
       - java-latest-openjdk
-      - java-latest-openjdk-devel
     state: present
   become: true
     
@@ -42,8 +41,6 @@
     name:
       - neovim
       - redshift
-      - adwaita-qt6
-      - qt6ct
       - xbacklight
       - acpi
       - tlp
@@ -55,7 +52,6 @@
       - nextcloud-client
       - autorandr
       - gtk3
-      - gtk3-devel
       - dunst
       - xsel
       - xset

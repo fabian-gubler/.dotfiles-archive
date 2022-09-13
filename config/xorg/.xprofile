@@ -24,6 +24,7 @@ flameshot & # screenshot applet
 clipmenud & # clipboard manager daemon
 redshift -l 47.66667:8.98333 & # night light with coordinates
 xbindkeys & # playerctl with headphones
+xmodmap ~/.Xmodmap # keyset
 mpd & # music player daemon
 mpDris2 & # playerctl for mpd
 xrandr --output HDMI-1-1 --auto --left-of eDP-1
@@ -38,4 +39,4 @@ fi
 /home/kali/.dotfiles/bin/res.sh
 /home/fabian/nextcloud/apps/keyring.sh &
 /home/fabian/.dotfiles/scripts/utils/battery-indicator.sh &
-/home/fabian/.dotfiles/scripts/utils/battery-notifier.sh &
+# /home/fabian/.dotfiles/scripts/utils/battery-notifier.sh &

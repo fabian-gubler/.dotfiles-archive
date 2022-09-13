@@ -17,11 +17,11 @@ export OUTPUT
 
 # An array of options to choose.
 declare -a options=(
+"Lock"
 "Suspend"
-"Hibernate"
 "Shutdown"
 "Reboot"
-"Lock"
+"Hibernate"
 )
 
 output(){

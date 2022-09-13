@@ -16,3 +16,10 @@
     src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.Xresources"
     dest: "{{ ansible_user_dir }}/.Xresources"
     state: link
+
+- name: link Xmodmap
+  file:
+    src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.Xmodmap"
+    dest: "{{ ansible_user_dir }}/.Xmodmap"
+    state: link
+

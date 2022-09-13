@@ -21,3 +21,6 @@
     dest: "/usr/bin/statusinfo"
     state: link
 
+- name: gtk file chooser window size
+  ansible.builtin.shell:
+    cmd: gsettings set org.gtk.Settings.FileChooser window-size '(1200, 800)'
