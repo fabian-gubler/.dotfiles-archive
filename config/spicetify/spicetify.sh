@@ -8,7 +8,7 @@ sudo chmod 777 /usr/share/spotify-client -R
 cd ~/.spicetify
 
 # add extensions
-./spicetify config extensions keyboardshortcut.js
+./spicetify config extensions keyboardShortcut.js
 
 # backup and apply
 ./spicetify backup apply

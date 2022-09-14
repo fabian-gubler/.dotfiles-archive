@@ -25,7 +25,7 @@
       - golang
       - python3-pip
       - cargo
-      - java-latest-openjdk
+
     state: present
   become: true
     
@@ -34,6 +34,19 @@
     name: 
       - flake8
       - black
+      - mkdocs
+      - mkdocs-material
+    state: present
+- name: Install python packages (data science)
+  pip:
+    name:
+      - pynvim
+      - jupyter-client
+      - ueberzug
+      - ipykernel
+      - tensorflow
+      - numpy
+      - matplotlib
     state: present
 
 - name: Install system packages
@@ -42,6 +55,7 @@
       - neovim
       - redshift
       - xbacklight
+      - brightnessctl
       - acpi
       - tlp
       - alacritty

@@ -12,6 +12,9 @@
       - fzf
       - unclutter-xfixes
       - picom
+      - gtk3-devel
+      - g++
+      - xsetroot
     state: present
   become: true
 

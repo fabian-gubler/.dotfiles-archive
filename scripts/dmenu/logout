@@ -21,7 +21,6 @@ declare -a options=(
 "Suspend"
 "Shutdown"
 "Reboot"
-"Hibernate"
 )
 
 output(){
