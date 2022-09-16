@@ -40,6 +40,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
 	{ "Firefox",  NULL,       NULL,       0,			0,           -1,        50,50,500,500,        0 },
+	{ "Firefox",  NULL,       "Save As",  0,			0,           -1,        50,50,500,500,        0 },
 };
 
 /* layout(s) */

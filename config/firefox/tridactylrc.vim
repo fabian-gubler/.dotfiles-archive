@@ -24,6 +24,10 @@ unbind >
 unbind a
 unbind A
 
+" Aliases
+command tcr tabclosealltoright
+command tcl tabclosealltoleft
+
 " Navigation
 bind <C-d> scrollline 15
 bind <C-u> scrollline -15

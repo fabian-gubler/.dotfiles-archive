@@ -7,7 +7,6 @@
       - tar
       - wget
       - curl
-      - xclip
       - arandr
       - fzf
       - unclutter-xfixes
@@ -15,6 +14,8 @@
       - gtk3-devel
       - g++
       - xsetroot
+      - xprop
+      - xclip
     state: present
   become: true
 

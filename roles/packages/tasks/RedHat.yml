@@ -36,7 +36,9 @@
       - black
       - mkdocs
       - mkdocs-material
+      - markdown-anki-decks
     state: present
+
 - name: Install python packages (data science)
   pip:
     name:
@@ -104,7 +106,6 @@
       - xournalpp
       - xsane
       - timeshift
-      - anki
       - flameshot
     state: present
   become: true
