@@ -71,6 +71,7 @@
       - dunst
       - xsel
       - xset
+      - mediawriter
       - imlib2-devel # needed for hsetroot
     state: present
   become: true

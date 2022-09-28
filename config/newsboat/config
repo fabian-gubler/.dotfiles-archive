@@ -13,7 +13,6 @@ reload-time         2
 reload-threads      100
 
 #                   statement
-browser             "devour mpv --no-sub-visibility"
 pager               "$PAGER"
 
 ### UI
@@ -32,7 +31,7 @@ color     info                  white   color236
 
 ### MACROS
 #         key     action
-macro     v       set browser "mpv"; open-in-browser-and-mark-read ; set browser piper
+macro     m       set browser "mpv"; open-in-browser ; set browser piper
 macro     f       set browser "firefox"; open-in-browser ; set browser pipe
 
 ### KEYBINDINGS
@@ -40,15 +39,10 @@ unbind-key  RIGHT
 unbind-key  LEFT
 
 #         key     action
-bind-key  e       up
-bind-key  n       down
+bind-key  SPACE   macro-prefix
 bind-key  G       end
 bind-key  g       home
 bind-key  a       toggle-article-read 
-bind-key  i       open
 bind-key  RIGHT   open
-bind-key  m       quit
 bind-key  LEFT    quit
-bind-key  SPACE   macro-prefix
-bind-key  o       open-in-browser-and-mark-read
 bind-key  q       hard-quit 

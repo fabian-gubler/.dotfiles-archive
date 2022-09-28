@@ -1,22 +1,8 @@
 #!/usr/bin/env bash
 
-if ! [[ -n "$(ls -A mkdocs.yml 2>/dev/null)" ]]; then
-	echo "error: directory does not contain mkdocs.yml file"
-	exit
-fi
+cd ~/nextcloud/mcs/
 
 session_name=$(tmux display-message -p "#S")
 window_name="server"
 target="$session_name:server"
 
-if ! tmux has-session -t $target 2> /dev/null; then
-	tmux neww -dn notes
-	tmux neww -dn server
-fi
-
-shift
-tmux send-keys -t $session_name:server "mkdocs serve" Enter
-tmux send-keys -t $session_name:notes "nvim docs" Enter
-
-sleep 1
-firefox http://127.0.0.1:8000/

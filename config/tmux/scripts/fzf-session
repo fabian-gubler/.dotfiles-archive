@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# save selection into variable
+SELECTION=$(tmux list-sessions | sed -E 's/:.*$//' | fzf -m --reverse)
+
+# exit if no selection
+if [[ -z $SELECTION ]]; then
+	exit
+fi
+
+# session actions based on argument
+case "$1" in
+  "-switch")
+	  tmux switch-client -t $SELECTION
+    ;;
+  "-kill")
+	  tmux kill-session -t $SELECTION
+    ;;
+  *)
+    echo "You have failed to specify what to do"
+    exit 1
+    ;;
+esac

@@ -19,8 +19,6 @@ unbind b
 unbind u
 unbind s
 unbind S
-unbind <
-unbind >
 unbind a
 unbind A
 
@@ -55,6 +53,7 @@ unbindurl youtube.com l
 unbindurl youtube.com f
 unbindurl youtube.com c
 unbindurl youtube.com t
+
 
 " Coursera
 unbindurl coursera.org k

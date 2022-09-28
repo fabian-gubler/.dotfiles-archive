@@ -25,6 +25,8 @@ redshift -l 47.66667:8.98333 & # night light with coordinates
 xbindkeys & # playerctl with headphones
 xmodmap ~/.Xmodmap # keyset
 mpd & # music player daemon
+flatpak run org.signal.Signal --start-in-tray --no-sandbox &
+
 # xrandr --output HDMI-1-1 --auto --left-of eDP-1
 
 # Virtual machine
