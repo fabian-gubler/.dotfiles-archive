@@ -15,6 +15,7 @@
     ~/.local/bin/tmuxdd:                    tmux/tmuxdd
 
     # UTILITIES ---------------------------------------------------
+    ~/.config/khal:                         khal  
     ~/.config/alacritty:                    alacritty
     ~/.config/kitty:                        kitty
     ~/.config/sioyek:                       sioyek
