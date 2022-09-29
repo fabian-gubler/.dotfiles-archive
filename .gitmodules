@@ -41,3 +41,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "config/gtk/qbittorrent"]
+	path = config/gtk/qbittorrent
+	url = https://github.com/dracula/qbittorrent
