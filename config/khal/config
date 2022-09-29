@@ -1,15 +1,29 @@
 [calendars]
 
-[[private]]
-path = /home/fabian/.local/share/khal/calendars/private
+[[pers]]
+path = ~/nextcloud/todo/pers
 type = calendar
+color = dark blue
+
+[[uni]]
+path = ~/nextcloud/todo/uni
+type = calendar
+color = dark green
+
+[[task]]
+path = ~/nextcloud/todo/task
+type = calendar
+color = light red
 
 [locale]
 timeformat = %H:%M
-dateformat = %d/%m/%Y
+dateformat = %d.%m.
 longdateformat = %d/%m/%Y
 datetimeformat = %d/%m/%Y %H:%M
 longdatetimeformat = %d/%m/%Y %H:%M
 
 [default]
-default_calendar = private
+default_calendar = pers
+
+[view]
+blank_line_before_day = True
