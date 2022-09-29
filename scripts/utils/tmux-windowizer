@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-cd ~/nextcloud/mcs/
-
-session_name=$(tmux display-message -p "#S")
-window_name="server"
-target="$session_name:server"
-
