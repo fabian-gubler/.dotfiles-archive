@@ -16,6 +16,7 @@
       - xsetroot
       - xprop
       - xclip
+      - poppler-utils # pdfunite
     state: present
   become: true
 

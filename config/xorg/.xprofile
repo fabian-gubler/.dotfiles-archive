@@ -6,6 +6,7 @@ export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
 export GTK_THEME=Nordic
 export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_SCALE_FACTOR=1.5
 
 # Paths
 export XDG_CONFIG_HOME="$HOME/.config"

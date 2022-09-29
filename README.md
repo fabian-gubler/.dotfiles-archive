@@ -18,9 +18,6 @@ bash config/configure.sh
 ```
 # Done but not in ansible
 - PAM Keyring | https://nurdletech.com/linux-notes/agents/keyring.html
-- Change what Closing lid does | sv /etc/systemd/logind.conf
 
 # Todo Later
 - SSH Setup (Github)
-- TLP Configuration
-

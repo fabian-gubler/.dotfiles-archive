@@ -29,7 +29,7 @@
     state: present
   become: true
     
-- name: Installing python packages
+- name: Install python packages
   pip:
     name: 
       - mkdocs
@@ -38,18 +38,47 @@
       - khal
     state: present
 
-- name: Install python packages (data science)
-  pip:
-    name:
-      - pynvim
-      - jupyter-client
-      - ueberzug
-      - ipykernel
-      - tensorflow
-      - numpy
-      - matplotlib
-    state: present
+- name: add the flathub flatpak repository
+  ansible.builtin.shell:
+    cmd: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+- name: Install flatpak packages
+  community.general.flatpak:
+    name:
+      - com.github.ahrm.sioyek
+      - org.signal.Signal
+      - io.typora.Typora
+
+- name: link typora
+  file:
+    src: "/var/lib/flatpak/exports/bin/io.typora.Typora"
+    dest: "$HOME/.local/bin/typora"
+    state: link
+
+- name: link signal
+  file:
+    src: "/var/lib/flatpak/exports/bin/org.signal.Signal"
+    dest: "$HOME/.local/bin/signal"
+    state: link
+
+- name: link sioyek
+  file:
+    src: "/var/lib/flatpak/exports/bin/com.github.ahrm.sioyek"
+    dest: "$HOME/.local/bin/sioyek"
+    state: link
+
+# - name: Install python packages (data science)
+#   pip:
+#     name:
+#       - pynvim
+#       - jupyter-client
+#       - ueberzug
+#       - ipykernel
+#       - tensorflow
+#       - numpy
+#       - matplotlib
+#     state: present
+#
 - name: Install system packages
   package:
     name:
@@ -99,6 +128,7 @@
 - name: Install applications
   package:
     name:
+      - lpf-spotify-client
       - qbittorrent
       - pavucontrol
       - VirtualBox

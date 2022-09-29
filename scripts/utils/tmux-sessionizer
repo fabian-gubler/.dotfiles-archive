@@ -5,7 +5,6 @@ if ! tmux has-session -t="docs" 2> /dev/null; then
     tmux new-session -ds "docs"
 	tmux new-window -n mkdocs  -t docs
 	tmux send-keys -t docs:mkdocs "cd $HOME/nextcloud/mcs/ && mkdocs serve" ENTER
-	tmux send-keys -t docs:zsh "cd ~/nextcloud/mcs/ && nvim docs/index.md" Enter
 fi
 
 # select dir
@@ -31,6 +30,7 @@ fi
 
 # open notes
 tmux send-keys -t $selected_name:notes "cd $HOME/nextcloud/mcs/docs/$selected_name && nvim ." Enter
+tmux send-keys -t docs:zsh "cd ~/nextcloud/mcs/ && nvim docs/index.md" Enter
 
 
 tmux switch-client -t $selected_name

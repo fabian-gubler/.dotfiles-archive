@@ -24,3 +24,8 @@
 - name: gtk file chooser window size
   ansible.builtin.shell:
     cmd: gsettings set org.gtk.Settings.FileChooser window-size '(1200, 800)'
+
+- name: install gotop
+  ansible.builtin.shell:
+    cmd: go install github.com/xxxserxxx/gotop/v4/cmd/gotop@latest
+
