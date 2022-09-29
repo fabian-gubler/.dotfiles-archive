@@ -37,6 +37,7 @@
       - mkdocs
       - mkdocs-material
       - markdown-anki-decks
+      - khal
     state: present
 
 - name: Install python packages (data science)
