@@ -32,11 +32,10 @@
 - name: Installing python packages
   pip:
     name: 
-      - flake8
-      - black
       - mkdocs
       - mkdocs-material
       - markdown-anki-decks
+      - khal
     state: present
 
 - name: Install python packages (data science)
