@@ -29,3 +29,8 @@
   ansible.builtin.shell:
     cmd: go install github.com/xxxserxxx/gotop/v4/cmd/gotop@latest
 
+- name: install spicetify
+  ansible.builtin.shell:
+    cmd: curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
+
+

@@ -1,4 +1,4 @@
-#files: 969	version: 5.8.1
+#files: 974	version: 5.8.1
 
 _comps=(
 '-' '_precommand'
@@ -961,6 +961,7 @@ _comps=(
 'nocorrect' '_precommand'
 'noglob' '_precommand'
 'nohup' '_precommand'
+'notmuch' '_notmuch'
 'nova' '_openstack'
 'npm' '_npm'
 'ns' '_hosts'
@@ -995,6 +996,7 @@ _comps=(
 'pandoc' '_pandoc'
 '-parameter-' '_parameter'
 'parsehdlist' '_urpmi'
+'pass' '_pass'
 'passwd' '_users'
 'paste' '_paste'
 'patch' '_patch'
@@ -1601,6 +1603,8 @@ _comps=(
 'whom' '_mh'
 'wiggle' '_wiggle'
 'wipefs' '_wipefs'
+'wl-copy' '_wl-copy'
+'wl-paste' '_wl-paste'
 'wodim' '_cdrecord'
 'wpa_cli' '_wpa_cli'
 'write' '_users_on'
@@ -1775,6 +1779,7 @@ _services=(
 
 _patcomps=(
 '*/(init|rc[0-9S]#).d/*' '_init_d'
+'notmuch-*' '_notmuch'
 )
 
 _postpatcomps=(
@@ -1838,13 +1843,14 @@ bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
 autoload -Uz _alacritty _bluetoothctl _bootctl _busctl _bwrap \
-            _cargo _coredumpctl _curl _exa _firewalld \
-            _flameshot _flatpak _hostnamectl _journalctl _kernel-install \
-            _libinput _localectl _loginctl _mercurial _mpv \
-            _networkctl _playerctl _resolvectl _rg _sd_hosts_or_user_at_host \
-            _sd_machines _sd_outputmodes _sd_unit_files _systemctl _systemd \
-            _systemd-analyze _systemd-delta _systemd-inhibit _systemd-path _systemd-run \
-            _systemd-tmpfiles _timedatectl _udevadm _youtube-dl _yt-dlp \
+            _cargo _coredumpctl _curl _email-notmuch _exa \
+            _firewalld _flameshot _flatpak _hostnamectl _journalctl \
+            _kernel-install _libinput _localectl _loginctl _mercurial \
+            _mpv _networkctl _notmuch _pass _playerctl \
+            _resolvectl _rg _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes \
+            _sd_unit_files _systemctl _systemd _systemd-analyze _systemd-delta \
+            _systemd-inhibit _systemd-path _systemd-run _systemd-tmpfiles _timedatectl \
+            _udevadm _wl-copy _wl-paste _youtube-dl _yt-dlp \
             _a2ps _a2utils _aap _abcde _absolute_command_paths \
             _ack _acpi _acpitool _acroread _adb \
             _add-zle-hook-widget _add-zsh-hook _alias _aliases _all_labels \

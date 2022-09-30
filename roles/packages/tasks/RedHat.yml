@@ -16,6 +16,11 @@
     state: latest
   become: true
 
+- name: Install latex packages
+  package:
+    name:
+      - latexmk
+
 - name: Install programming languages
   package:
     name:
@@ -48,23 +53,31 @@
       - com.github.ahrm.sioyek
       - org.signal.Signal
       - io.typora.Typora
+      - com.spotify.Client
+    method: user
 
 - name: link typora
   file:
-    src: "/var/lib/flatpak/exports/bin/io.typora.Typora"
+    src: "$HOME/.local/share/flatpak/exports/bin/io.typora.Typora"
     dest: "$HOME/.local/bin/typora"
     state: link
 
 - name: link signal
   file:
-    src: "/var/lib/flatpak/exports/bin/org.signal.Signal"
+    src: "$HOME/.local/share/flatpak/exports/bin/org.signal.Signal"
     dest: "$HOME/.local/bin/signal"
     state: link
 
 - name: link sioyek
   file:
-    src: "/var/lib/flatpak/exports/bin/com.github.ahrm.sioyek"
+    src: "$HOME/.local/share/flatpak/app/com.github.ahrm.sioyek/x86_64/stable/active/files/sioyek/sioyek"
     dest: "$HOME/.local/bin/sioyek"
+    state: link
+
+- name: link spotify
+  file:
+    src: "$HOME/.local/share/flatpak/exports/bin/com.spotify.Client"
+    dest: "$HOME/.local/bin/spotify"
     state: link
 
 # - name: Install python packages (data science)

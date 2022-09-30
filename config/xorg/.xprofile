@@ -1,20 +1,23 @@
 #!/bin/sh
 
-# Display
+# general
 export EDITOR=nvim
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
+
+# theme
 export GTK_THEME=Nordic
 export QT_QPA_PLATFORMTHEME=qt6ct
 export QT_SCALE_FACTOR=1.5
 
-# Paths
+# paths
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="/usr/sbin:/usr/local/go/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/.spicetify:$PATH"
+export PATH="/usr/sbin:/usr/local/go/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/bin::$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
 export ANKI_BASE="/home/fabian/nextcloud/apps/anki-data"
 
+# startup
 unclutter -idle 1 & # hide mouse pointer
 picom --config $HOME/.dotfiles/config/picom/picom.conf & # window compositor
 hsetroot -solid "#252A34" & # solid background
@@ -27,17 +30,11 @@ xbindkeys & # playerctl with headphones
 xmodmap ~/.Xmodmap # keyset
 mpd & # music player daemon
 flatpak run org.signal.Signal --start-in-tray --no-sandbox &
+protonmail-bridge --no-window &
 
-# xrandr --output HDMI-1-1 --auto --left-of eDP-1
+# keyring
+dbus-update-activation-environment --all &
+$HOME/nextcloud/apps/keyring.sh &
 
-# Virtual machine
-if command -v apt &> /dev/null; then
-	xsetroot -name "virtual machine"
-fi
-
-# Keyring
-dbus-update-activation-environment --all
-/home/fabian/nextcloud/apps/keyring.sh &
-
-# Scripts
+# scripts
 /home/fabian/.dotfiles/scripts/utils/battery-indicator.sh &

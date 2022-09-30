@@ -15,10 +15,11 @@
     ~/.local/bin/tmuxdd:                    tmux/tmuxdd
 
     # UTILITIES ---------------------------------------------------
+    ~/.latexmkrc:                           latex/.latexmkrc
+    ~/.mutt/muttrc:                         neomutt/muttrc
     ~/.config/khal:                         khal  
     ~/.config/alacritty:                    alacritty
     ~/.config/kitty:                        kitty
-    ~/.config/sioyek:                       sioyek
     ~/.newsboat:                            newsboat
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
     ~/.config/Typora/themes/nord:           typora/nord
@@ -39,6 +40,11 @@
     ~/.ncmpcpp:                             ncmpcpp
     # ~/.local/bin/rumno:                     rumno/build/target/release/rumno
     # ~/.local/bin/rumno-background:          rumno/build/target/release/rumno-background
+    #
+    # SIOYEK
+    ~/.local/share/flatpak/app/com.github.ahrm.sioyek/x86_64/stable/active/files/sioyek/keys_user.config: sioyek/keys_user.config
+    ~/.local/share/flatpak/app/com.github.ahrm.sioyek/x86_64/stable/active/files/sioyek/prefs_user.config: sioyek/prefs_user.config
+
 
     # TOOLS -------------------------------------------------------
     ~/.spicetify/Extensions/keyboardShortcut.js: spicetify/keyboardShortcut.js

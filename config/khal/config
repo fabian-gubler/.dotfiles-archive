@@ -15,15 +15,23 @@ path = ~/nextcloud/todo/task
 type = calendar
 color = light red
 
+[[birthday]]
+path = ~/nextcloud/todo/birthday/
+type = calendar
+color = yellow
+
 [locale]
 timeformat = %H:%M
 dateformat = %d.%m.
-longdateformat = %d/%m/%Y
-datetimeformat = %d/%m/%Y %H:%M
-longdatetimeformat = %d/%m/%Y %H:%M
+longdateformat = %d.%m.%Y
+datetimeformat =  %d.%m. %H:%M
+longdatetimeformat = %d.%m.%Y %H:%M
 
 [default]
 default_calendar = pers
+show_all_days = True
+timedelta = 1d
 
 [view]
 blank_line_before_day = True
+event_view_always_visible = False
