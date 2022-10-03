@@ -37,4 +37,4 @@ dbus-update-activation-environment --all &
 $HOME/nextcloud/apps/keyring.sh &
 
 # scripts
-/home/fabian/.dotfiles/scripts/utils/battery-indicator.sh &
+$HOME/.dotfiles/scripts/utils/bat-indicator &

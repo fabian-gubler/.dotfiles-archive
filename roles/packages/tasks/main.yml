@@ -36,6 +36,7 @@
 - name: Install applications
   package:
     name:
+      - gimp
       - chromium
       - zathura
       - sxiv

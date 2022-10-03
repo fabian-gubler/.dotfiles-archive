@@ -27,6 +27,8 @@ command tcr tabclosealltoright
 command tcl tabclosealltoleft
 
 " Navigation
+bind n scrollline 5
+bind e scrollline -5
 bind <C-d> scrollline 15
 bind <C-u> scrollline -15
 

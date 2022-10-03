@@ -1,22 +1,22 @@
 [calendars]
 
 [[pers]]
-path = ~/nextcloud/todo/pers
+path = ~/nextcloud/.calendars/pers
 type = calendar
 color = dark blue
 
 [[uni]]
-path = ~/nextcloud/todo/uni
+path = ~/nextcloud/.calendars/uni
 type = calendar
 color = dark green
 
 [[task]]
-path = ~/nextcloud/todo/task
+path = ~/nextcloud/.calendars/task
 type = calendar
 color = light red
 
 [[birthday]]
-path = ~/nextcloud/todo/birthday/
+path = ~/nextcloud/.calendars/birthday/
 type = calendar
 color = yellow
 

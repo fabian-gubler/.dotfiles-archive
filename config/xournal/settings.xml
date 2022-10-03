@@ -14,8 +14,8 @@
   <property name="zoomStep" value="10.00000000"/>
   <property name="zoomStepScroll" value="2.00000000"/>
   <property name="displayDpi" value="72"/>
-  <property name="mainWndWidth" value="3440"/>
-  <property name="mainWndHeight" value="1418"/>
+  <property name="mainWndWidth" value="1920"/>
+  <property name="mainWndHeight" value="1260"/>
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="true"/>
   <property name="showSidebar" value="false"/>
@@ -90,7 +90,7 @@
   <property name="strokeFilterIgnoreTime" value="150"/>
   <property name="strokeFilterIgnoreLength" value="2.00000000"/>
   <property name="strokeFilterSuccessiveTime" value="500"/>
-  <property name="strokeFilterEnabled" value="false"/>
+  <property name="strokeFilterEnabled" value="true"/>
   <property name="doActionOnStrokeFiltered" value="true"/>
   <property name="trySelectOnStrokeFiltered" value="false"/>
   <property name="snapRecognizedShapesEnabled" value="false"/>
@@ -219,7 +219,7 @@
     <attribute name="count" type="int" value="9"/>
   </data>
   <data name="tools">
-    <attribute name="current" type="string" value="text"/>
+    <attribute name="current" type="string" value="eraser"/>
     <data name="drawArrow">
       <attribute name="drawingType" type="string" value="default"/>
     </data>
@@ -244,7 +244,7 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="highlighter">
-      <attribute name="color" type="hex" value="ff79c6"/>
+      <attribute name="color" type="hex" value="ffff00"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
@@ -254,12 +254,12 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="pen">
-      <attribute name="color" type="hex" value="ff00ff"/>
-      <attribute name="drawingType" type="string" value="rectangle"/>
+      <attribute name="color" type="hex" value="ffffff"/>
+      <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
-      <attribute name="size" type="string" value="MEDIUM"/>
-      <attribute name="style" type="string" value="plain"/>
+      <attribute name="size" type="string" value="THIN"/>
+      <attribute name="style" type="string" value="dashdot"/>
     </data>
     <data name="playObject">
       <attribute name="drawingType" type="string" value="default"/>

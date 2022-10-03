@@ -41,6 +41,7 @@
       - mkdocs-material
       - markdown-anki-decks
       - khal
+      - fahrplan
     state: present
 
 - name: add the flathub flatpak repository

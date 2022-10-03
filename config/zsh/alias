@@ -1,5 +1,5 @@
 # Abbreviations
-alias dnow="date '+%T'"
+alias now="date '+%T'"
 alias v="nvim"
 alias sv="sudoedit"
 alias fzf="fzf -i"
@@ -7,22 +7,19 @@ alias lg="lazygit"
 alias ran="autorandr"
 alias yk="devour sioyek"
 alias k="khal"
+alias ik="ikhal"
 alias sbb="fahrplan"
 alias ncdu="ncdu --exclude /run"
 alias mutt="neomutt"
-
-
-# Scripts
-alias notes="~/.dotfiles/scripts/utils/tmux-windowizer"
-alias blank="xrandr --output HDMI-1-1 --brightness 0; read ans; xrandr --output HDMI-1-1 --brightness 1; xset s off -dpms"
-alias alarm="~/.dotfiles/scripts/utils/alarm.sh"
-alias wake="~/.dotfiles/scripts/utils/wake.sh"
+alias sc="cd ~/.dotfiles/scripts && exa -a"
 
 # Todo
 alias t="todo.sh -d /home/fabian/nextcloud/todo/config"
-alias d="todo.sh -d /home/fabian/nextcloud/todo/config-dev"
-alias dv="nvim -c 'sort' /home/fabian/nextcloud/todo/todo-dev.txt"
+alias d="todo.sh -d /home/fabian/nextcloud/todo/dev/config"
+alias u="todo.sh -d /home/fabian/nextcloud/todo/uni/config"
+alias dv="nvim -c 'sort' /home/fabian/nextcloud/todo/dev/dev.txt"
 alias tv="nvim -c 'sort' /home/fabian/nextcloud/todo/todo.txt"
+alias uv="nvim -c 'sort' /home/fabian/nextcloud/todo/uni/uni.txt"
 
 # Productivity
 alias .="exa -a"

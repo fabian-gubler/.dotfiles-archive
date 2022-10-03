@@ -11,7 +11,7 @@ This repository is separated into three primary components:
 git clone --recursive https://github.com/fabian-gubler/.dotfiles
 
 # Run Ansible Playbooks
-bash scripts/install.sh
+bash scripts/install
 
 # Dotfiles Configuration
 bash config/configure.sh
@@ -22,7 +22,3 @@ bash config/configure.sh
 # Todo Later
 - SSH Setup (Github)
 
-# Might add in future
-- Mail 
-	- Programs: [Client] Neomutt, Lynx [Server] Proton Bridge
-	- Config: mutt dir, create gpg keys
