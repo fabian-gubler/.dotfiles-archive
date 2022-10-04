@@ -1,5 +1,4 @@
 # Abbreviations
-alias now="date '+%T'"
 alias v="nvim"
 alias sv="sudoedit"
 alias fzf="fzf -i"
