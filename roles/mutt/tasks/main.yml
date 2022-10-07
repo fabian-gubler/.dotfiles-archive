@@ -1,0 +1,23 @@
+- name: clone mutt-wizard
+  git:
+    repo: https://github.com/LukeSmithxyz/mutt-wizard
+    dest: "{{ ansible_user_dir }}/.local/share/mutt-wizard"
+    update: no
+
+- name: compile mutt-wizard
+  make:
+    chdir: "{{ ansible_user_dir }}/.local/share/mutt-wizard"
+    target: install
+  become: true
+
+- name: install dependencies
+
+- name: mail with mutt
+  package:
+    name:
+      - neomutt
+      - isync     # sync mail to local storage
+      - lynx      # display html
+      - notmuch   # search mail
+      - msmtp
+      - pass

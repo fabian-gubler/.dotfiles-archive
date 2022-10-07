@@ -12,7 +12,7 @@ export QT_SCALE_FACTOR=1.5
 
 # paths
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="/usr/sbin:/usr/local/go/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/bin::$PATH"
+export PATH="/usr/sbin:/usr/local/go/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/.dotfiles/scripts/utils:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib
 export ZDOTDIR=$HOME/.config/zsh     
 export ANKI_BASE="/home/fabian/nextcloud/apps/anki-data"

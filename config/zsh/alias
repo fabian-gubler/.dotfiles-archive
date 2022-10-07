@@ -9,7 +9,8 @@ alias k="khal"
 alias ik="ikhal"
 alias sbb="fahrplan"
 alias ncdu="ncdu --exclude /run"
-alias mutt="neomutt"
+alias mutt="neomutt" 
+alias alarm="$HOME/.dotfiles/scripts/utils/alarm"
 alias sc="cd ~/.dotfiles/scripts && exa -a"
 
 # Todo

@@ -6,3 +6,4 @@
     - { role: packages, tags: packages }
     - { role: build, tags: build }
     - { role: custom, tags: custom }
+    - { role: mutt, tags: mutt }

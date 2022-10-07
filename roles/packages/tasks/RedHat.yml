@@ -30,10 +30,11 @@
       - golang
       - python3-pip
       - cargo
+      - java-17-openjdk
 
     state: present
   become: true
-    
+
 - name: Install python packages
   pip:
     name: 
@@ -41,6 +42,7 @@
       - mkdocs-material
       - markdown-anki-decks
       - khal
+      - khard
       - fahrplan
     state: present
 

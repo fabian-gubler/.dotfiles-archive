@@ -6,18 +6,15 @@
 - clean: ['~']
 
 - link:
-
-    # SYSTEM ------------------------------------------------------
+    ~/.config/sxiv:                         sxiv
     ~/.config/zsh:                          zsh
     ~/.local/share/fonts:                   fonts
     ~/.config/keyboard.conf:                setxkbmap/keyboard.conf
     ~/.tmux.conf:                           tmux/tmux.conf
     ~/.local/bin/tmuxdd:                    tmux/tmuxdd
-
-    # UTILITIES ---------------------------------------------------
     ~/.latexmkrc:                           latex/.latexmkrc
-    ~/.mutt/muttrc:                         neomutt/muttrc
     ~/.config/khal:                         khal  
+    ~/.config/khard:                        khard  
     ~/.config/alacritty:                    alacritty
     ~/.config/kitty:                        kitty
     ~/.newsboat:                            newsboat
@@ -38,15 +35,6 @@
     ~/.config/mimeapps.list:                xutils/mimeapps.list
     ~/.config/mpDris2:                      mpDris2
     ~/.ncmpcpp:                             ncmpcpp
-    # ~/.local/bin/rumno:                     rumno/build/target/release/rumno
-    # ~/.local/bin/rumno-background:          rumno/build/target/release/rumno-background
-    #
-    # SIOYEK
-    ~/.local/share/flatpak/app/com.github.ahrm.sioyek/x86_64/stable/active/files/sioyek/keys_user.config: sioyek/keys_user.config
-    ~/.local/share/flatpak/app/com.github.ahrm.sioyek/x86_64/stable/active/files/sioyek/prefs_user.config: sioyek/prefs_user.config
-
-
-    # TOOLS -------------------------------------------------------
     ~/.spicetify/Extensions/keyboardShortcut.js: spicetify/keyboardShortcut.js
     ~/.config/spicetify/config-xpui.ini:    spicetify/config-xpui.ini
     ~/.config/ranger/rc.conf:               ranger/rc.conf
@@ -55,14 +43,8 @@
     ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf
     ~/.config/zathura:                      zathura
     ~/.config/xournalpp:                    xournal
-
-    # WEB TOOLS ---------------------------------------------------
     ~/.config/tridactyl/tridactylrc:        firefox/tridactylrc.vim
     ~/.config/tridactyl/themes/nord.css:    firefox/nord.css
-
-
-    # ARCHIVED ----------------------------------------------------
-    # ~/.config/rofi/config:                  .archive/rofi/config
-    # ~/.config/rofi/themes/minimal.rasi:     .archive/rofi/minimal.rasi
-    # ~/.config/autorandr/postswitch:         .archive/autorandr/postswitch
     ~/.config/dunst:                        dunst
+    ~/.local/share/flatpak/app/com.github.ahrm.sioyek/x86_64/stable/active/files/sioyek/keys_user.config: sioyek/keys_user.config
+    ~/.local/share/flatpak/app/com.github.ahrm.sioyek/x86_64/stable/active/files/sioyek/prefs_user.config: sioyek/prefs_user.config
