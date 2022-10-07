@@ -19,7 +19,6 @@ static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#d8dee9";
 static char selbordercolor[]        = "#5e81ac";
 static char selbgcolor[]            = "#434c5e";
-static const char *ebooks[] = { "$HOME/.dotfiles/scripts/utils/ebooks", NULL };
 static char *colors[][3] = {
 
 	/*               fg           bg           border   */
@@ -77,7 +76,6 @@ static const char *termcmd[] = { "kitty", NULL };
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_r,	   spawn,          {.v = ebooks } },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("firefox -P main")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_g,      spawn,          SHCMD("sioyek")},

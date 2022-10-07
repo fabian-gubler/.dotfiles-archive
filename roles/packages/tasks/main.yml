@@ -39,6 +39,5 @@
       - gimp
       - chromium
       - zathura
-      - sxiv
     state: present
   become: true
