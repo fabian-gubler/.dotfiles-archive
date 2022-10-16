@@ -76,11 +76,10 @@ static const char *termcmd[] = { "kitty", NULL };
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_w,      spawn,          SHCMD("firefox -P main")},
+	{ MODKEY,						XK_w,      spawn,          SHCMD("qutebrowser")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_g,      spawn,          SHCMD("sioyek")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("spotify --force-device-scale-factor=1.5")},
-	{ MODKEY,                       XK_Return, spawn,          SHCMD("kitty $HOME/.dotfiles/scripts/tmux/tmuxdd")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/bluetooth")},
@@ -88,7 +87,7 @@ static Key keys[] = {
 
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run -i")},
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,						XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
     { MODKEY,						XK_a,      togglesystray,  {0} },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
