@@ -22,18 +22,17 @@ unbind S
 unbind a
 unbind A
 
-" Aliases
-command tcr tabclosealltoright
-command tcl tabclosealltoleft
-
 " Navigation
 bind n scrollline 5
 bind e scrollline -5
 bind <C-d> scrollline 15
 bind <C-u> scrollline -15
 
---- Text Input --------------------------------------------------------------
+" Window
+bind cl tabclosealltoleft
+bind cr tabclosealltoright
 
+" --- Text Input --------------------------------------------------------------
 bind --mode=ex     <C-k> text.kill_line
 bind --mode=insert <C-k> text.kill_line
 bind --mode=input  <C-k> text.kill_line
@@ -45,17 +44,13 @@ bind --mode=input  <C-u> text.backward_kill_line
 
 " Auto Ignore
 blacklistadd docs.google.com
-
-" Protonmail
-unbindurl proton.me t
-unbindurl proton.me /
+blacklistadd mail.proton.me
 
 " YouTube
 unbindurl youtube.com l
 unbindurl youtube.com f
 unbindurl youtube.com c
 unbindurl youtube.com t
-
 
 " Coursera
 unbindurl coursera.org k

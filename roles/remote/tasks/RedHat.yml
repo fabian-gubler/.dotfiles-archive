@@ -1,0 +1,122 @@
+
+# ---
+# rpm remote packages
+# ---
+
+- name: install protonvpn
+  become: true
+  dnf:
+    name: 'https://protonvpn.com/download/protonvpn-stable-release-1.0.1-1.noarch.rpm'
+    disable_gpg_check: yes
+    state: present
+
+- name: install masterpdfeditor
+  become: true
+  dnf:
+    name: 'https://code-industry.net/public/master-pdf-editor-5.8.46-qt5.x86_64.rpm'
+    disable_gpg_check: yes
+    state: present
+
+- name: install onlyoffice
+  become: true
+  dnf:
+    name: 'https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm'
+    disable_gpg_check: yes
+    state: present
+
+- name: install zoom
+  become: true
+  dnf:
+    name: 'https://zoom.us/client/latest/zoom_x86_64.rpm'
+    disable_gpg_check: yes
+    state: present
+
+# --
+# pip
+# --
+
+# - name: Install python packages (data science)
+#   pip:
+#     name:
+#       - pynvim
+#       - jupyter-client
+#       - ueberzug
+#       - ipykernel
+#       - tensorflow
+#       - numpy
+#       - matplotlib
+#     state: present
+
+- name: install python packages
+  pip:
+    name: 
+      - mkdocs
+      - mkdocs-material
+      - markdown-anki-decks
+      - khal
+      - khard
+      - fahrplan
+      - pulsemixer
+      - tldextract # qutebrowser: bitwarden userscript 
+    state: present
+
+# --
+# flatpak
+# --
+
+- name: add the flathub flatpak repository
+  ansible.builtin.shell:
+    cmd: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+- name: install flatpak packages
+  community.general.flatpak:
+    name:
+      - com.github.ahrm.sioyek
+      - org.signal.Signal
+      - io.typora.Typora
+      - com.spotify.Client
+      - com.obsproject.Studio
+    method: user
+
+- name: link typora
+  file:
+    src: "$HOME/.local/share/flatpak/exports/bin/io.typora.Typora"
+    dest: "$HOME/.local/bin/typora"
+    state: link
+
+- name: link signal
+  file:
+    src: "$HOME/.local/share/flatpak/exports/bin/org.signal.Signal"
+    dest: "$HOME/.local/bin/signal"
+    state: link
+
+- name: link sioyek
+  file:
+    src: "$HOME/.local/share/flatpak/app/com.github.ahrm.sioyek/x86_64/stable/active/files/sioyek/sioyek"
+    dest: "$HOME/.local/bin/sioyek"
+    state: link
+
+- name: link sioyek (db)
+  file:
+    src: "$HOME/nextcloud/apps/sioyek/shared.db"
+    dest: "$HOME/.config/.local/share/Sioyek/shared.db"
+
+- name: link spotify
+  file:
+    src: "$HOME/.local/share/flatpak/exports/bin/com.spotify.Client"
+    dest: "$HOME/.local/bin/spotify"
+    state: link
+
+- name: link obs
+  file:
+    src: "$HOME/.local/share/flatpak/exports/bin/com.obsproject.Studio"
+    dest: "$HOME/.local/bin/obs"
+    state: link
+
+# --
+# cargo
+# --
+
+- name: install rust packages
+  community.general.cargo:
+    name: stylua

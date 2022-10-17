@@ -23,14 +23,13 @@ picom --config $HOME/.dotfiles/config/picom/picom.conf & # window compositor
 hsetroot -solid "#252A34" & # solid background
 xset s off -dpms & # monitor always on
 nextcloud --background & # establish connection to cloud server
-nm-applet & # network applet
 clipmenud & # clipboard manager daemon
 redshift -l 47.66667:8.98333 & # night light with coordinates
 xbindkeys & # playerctl with headphones
-xmodmap ~/.Xmodmap # keyset
 mpd & # music player daemon
-flatpak run org.signal.Signal --start-in-tray --no-sandbox &
-protonmail-bridge --no-window &
+flatpak run org.signal.Signal --start-in-tray --no-sandbox & # messenger
+protonmail-bridge --no-window & # mail backend
+nm-applet & # network control
 
 # keyring
 dbus-update-activation-environment --all &

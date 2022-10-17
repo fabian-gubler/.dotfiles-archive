@@ -21,5 +21,4 @@ bash config/configure.sh
 
 # Todo Later
 - SSH Setup (Github)
-- Docker (https://docs.docker.com/engine/install/fedora/)
-
+- Set AutoEnable=true in /etc/bluetooth/main.conf

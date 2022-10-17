@@ -15,8 +15,7 @@
 while read file
 do
 	case "$1" in
-		"w") sioyek "${file%jpg}"epub & killall sxiv ;; 	
-		"f") foliate "${file%jpg}"epub & killall sxiv ;; 	
+		"x") sioyek "${file%jpg}"epub & killall sxiv ;; 	
 	esac
 done
 

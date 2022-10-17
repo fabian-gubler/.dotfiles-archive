@@ -1,19 +1,24 @@
-# Abbreviations
+# abbreviations
 alias v="nvim"
 alias sv="sudoedit"
-alias fzf="fzf -i"
 alias lg="lazygit"
-alias ran="autorandr"
 alias yk="devour sioyek"
 alias k="khal"
 alias ik="ikhal"
 alias sbb="fahrplan"
-alias ncdu="ncdu --exclude /run"
 alias mutt="neomutt" 
-alias alarm="$HOME/.dotfiles/scripts/utils/alarm"
-alias sc="cd ~/.dotfiles/scripts && exa -a"
+alias nb="newsboat"
+alias pm="pulsemixer"
 
-# Todo
+# scripts
+alias alarm="$HOME/.dotfiles/scripts/utils/alarm"
+alias sc="cd ~/.dotfiles/scripts/utils/ && exa -a"
+
+# default flags
+alias ncdu="ncdu --exclude /run"
+alias fzf="fzf -i"
+
+# todo
 alias t="todo.sh -d /home/fabian/nextcloud/todo/config"
 alias d="todo.sh -d /home/fabian/nextcloud/todo/dev/config"
 alias u="todo.sh -d /home/fabian/nextcloud/todo/uni/config"
@@ -21,7 +26,7 @@ alias dv="nvim -c 'sort' /home/fabian/nextcloud/todo/dev/dev.txt"
 alias tv="nvim -c 'sort' /home/fabian/nextcloud/todo/todo.txt"
 alias uv="nvim -c 'sort' /home/fabian/nextcloud/todo/uni/uni.txt"
 
-# Productivity
+# productivity
 alias .="exa -a"
 alias ..="cl .."
 alias ...="cl ../.."
@@ -30,10 +35,9 @@ alias gpush="git add . && git commit -m 'manual update' && git push"
 alias top="gotop -l minimal"
 
 # -------------------
-# Functions 
+# functions 
 # -------------------
 
-# Directory
 cl() {
         cd "$@" && exa -a;
 }

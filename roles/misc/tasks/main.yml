@@ -1,0 +1,47 @@
+---
+
+- include_tasks: '{{ ansible_os_family }}.yml'
+
+- name: clone neovim
+  git:
+    repo: https://github.com/fabian-gubler/nvim-config.git
+    dest: "{{ ansible_user_dir }}/.config/nvim"
+    update: no
+
+- name: gtk file chooser window size
+  ansible.builtin.shell:
+    cmd: gsettings set org.gtk.Settings.FileChooser window-size '(1200, 800)'
+
+- name: install gotop
+  ansible.builtin.shell:
+    cmd: go install github.com/xxxserxxx/gotop/v4/cmd/gotop@latest
+
+- name: install spicetify
+  ansible.builtin.shell:
+    cmd: curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
+
+# Cronjobs
+- name: check mail every 5 minutes
+  ansible.builtin.cron:
+    name: "sync mailbox"
+    minute: "*/5"
+    job: "killall mbsync &>/dev/null; mbsync -a -c ~/nextcloud/apps/mail/.mbsyncrc -V 2>&1 > ~/.mbsync_log"
+
+- name: update blacklist every week
+  ansible.builtin.cron:
+    name: "sync blacklist"
+    weekday: "0"
+    minute: "0"
+    hour: "8"
+    job: "$HOME/.dotfiles/scripts/utils/blacklist"
+
+- name: execute blacklist command right now
+  ansible.builtin.shell:
+    cmd: "sudo bash $HOME/.dotfiles/scripts/utils/blacklist"
+
+- name: add user to docker group
+  become: true
+  user:
+    name: 'fabian'
+    groups: docker
+    append: yes

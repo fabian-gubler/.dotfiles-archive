@@ -63,8 +63,8 @@
     registerBind("Q", true, false, false, clickQueueButton);
 
     // Shift + H and Shift + L to go back and forward page
-    registerBind("H", false, true, false, clickNavigatingBackButton);
-    registerBind("L", false, true, false, clickNavigatingForwardButton);
+    registerBind("<Left>", false, true, false, clickNavigatingBackButton);
+    registerBind("<Right>", false, true, false, clickNavigatingForwardButton);
 
     // PageUp, PageDown to focus on iframe app before scrolling
     registerBind("PAGE_UP", false, true, false, focusOnApp);

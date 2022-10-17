@@ -10,8 +10,6 @@
     target: install
   become: true
 
-- name: install dependencies
-
 - name: mail with mutt
   package:
     name:

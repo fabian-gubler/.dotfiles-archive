@@ -1,9 +1,25 @@
 # Read desired time
 TIME=$1
+SCRIPTS_DIR=$HOME/.dotfiles/scripts/utils/
+
+# Prompt for Do not disturb
+while true; do
+    read -p "Disable notifications? (y/n) " yn
+    case $yn in
+        [Yy]* ) dunstctl set-paused true; break;;
+        [Nn]* ) dunstctl set-paused false; break;;
+        * ) echo "Please answer yes or no. ";;
+    esac
+done
+
+
+TIME=$1
 
 # Notify at time
 at $TIME << ENDMARKER
-~/.dotfiles/scripts/utils/alarm_notification.sh
+	# dunstify "Alarm:" "$(date '+%T')"
+	dunstify "Alarm" 
+	dunstctl set-paused false
 ENDMARKER
 
 # NOTE: Can be more generalized as

@@ -16,9 +16,20 @@
       - xsetroot
       - xprop
       - xclip
-      - poppler-utils # pdfunite
     state: present
   become: true
+
+- name: pdf utilities
+  package:
+    name:
+      - poppler-utils # -> pdfunite, pdfseparate
+      - pdf-stapler
+      # Not available in Repo
+      # - pdftk 
+      # Graphical
+      # - pdfshuffler
+    state: present
+    become: true
 
 - name: Install cli tools
   package:

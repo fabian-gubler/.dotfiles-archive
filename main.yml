@@ -2,8 +2,10 @@
 - hosts: localhost
   roles:
     - { role: base, tags: base }
+    - { role: suckless, tags: suckless }
     - { role: xorg, tags: xorg }
     - { role: packages, tags: packages }
+    - { role: remote, tags: remote }
     - { role: build, tags: build }
-    - { role: custom, tags: custom }
+    - { role: misc, tags: misc }
     - { role: mutt, tags: mutt }

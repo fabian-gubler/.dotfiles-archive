@@ -38,3 +38,45 @@
     state: started
     scope: user
     enabled: yes
+
+- name: install lazydocker
+  shell:
+    cmd: go install github.com/jesseduffield/lazydocker@latest
+
+
+- name: extract postman tar
+  ansible.builtin.unarchive:
+    src: "{{ ansible_user_dir }}/Downloads/postman.tar.gz"
+    dest: "{{ ansible_user_dir }}/.local/share/"
+
+- name: link postman-agent
+  become: true
+  file:
+    src: "{{ ansible_user_dir }}/.local/share/Postman\ Agent/app/postman-agent"
+    dest: "{{ ansible_user_dir }}/.local/bin/postman-agent"
+    state: link
+      
+# ---
+# docker
+# ---
+
+- name: add docker repositories
+  ansible.builtin.shell: 
+    cmd: sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+
+- name: install docker packages
+  become: true
+  package:
+    name:
+      - docker-ce
+      - docker-ce-cli 
+      - containerd.io 
+      - docker-compose-plugin
+    state: present
+
+- name: Enable automatic updates
+  become: true
+  systemd:
+    state: started
+    name: docker
+    enabled: yes

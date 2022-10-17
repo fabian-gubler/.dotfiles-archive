@@ -10,18 +10,21 @@
     - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm
     - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm
 
-- name: Upgrade all packages
+- name: upgrade all packages
+  become: true
   ansible.builtin.dnf:
     name: "*"
     state: latest
-  become: true
 
-- name: Install latex packages
+
+- name: install latex packages
+  become: true
   package:
     name:
       - latexmk
 
-- name: Install programming languages
+- name: install programming languages
+  become: true
   package:
     name:
       - nodejs
@@ -33,68 +36,7 @@
       - java-17-openjdk
 
     state: present
-  become: true
 
-- name: Install python packages
-  pip:
-    name: 
-      - mkdocs
-      - mkdocs-material
-      - markdown-anki-decks
-      - khal
-      - khard
-      - fahrplan
-    state: present
-
-- name: add the flathub flatpak repository
-  ansible.builtin.shell:
-    cmd: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-- name: Install flatpak packages
-  community.general.flatpak:
-    name:
-      - com.github.ahrm.sioyek
-      - org.signal.Signal
-      - io.typora.Typora
-      - com.spotify.Client
-    method: user
-
-- name: link typora
-  file:
-    src: "$HOME/.local/share/flatpak/exports/bin/io.typora.Typora"
-    dest: "$HOME/.local/bin/typora"
-    state: link
-
-- name: link signal
-  file:
-    src: "$HOME/.local/share/flatpak/exports/bin/org.signal.Signal"
-    dest: "$HOME/.local/bin/signal"
-    state: link
-
-- name: link sioyek
-  file:
-    src: "$HOME/.local/share/flatpak/app/com.github.ahrm.sioyek/x86_64/stable/active/files/sioyek/sioyek"
-    dest: "$HOME/.local/bin/sioyek"
-    state: link
-
-- name: link spotify
-  file:
-    src: "$HOME/.local/share/flatpak/exports/bin/com.spotify.Client"
-    dest: "$HOME/.local/bin/spotify"
-    state: link
-
-# - name: Install python packages (data science)
-#   pip:
-#     name:
-#       - pynvim
-#       - jupyter-client
-#       - ueberzug
-#       - ipykernel
-#       - tensorflow
-#       - numpy
-#       - matplotlib
-#     state: present
-#
 - name: Install system packages
   package:
     name:
@@ -115,12 +57,13 @@
       - dunst
       - xsel
       - xset
+      - trash-cli
       - mediawriter
       - imlib2-devel # needed for hsetroot
     state: present
   become: true
 
-- name: Install cli tools
+- name: install cli tools
   package:
     name:
       - texlive
@@ -129,7 +72,7 @@
     state: present
   become: true
 
-- name: Multimedia Package
+- name: multimedia package
   package:
     name:
       - mpv
@@ -141,56 +84,48 @@
     state: present
   become: true
 
-- name: Install applications
+- name: install applications
   package:
     name:
       - lpf-spotify-client
       - qbittorrent
       - pavucontrol
-      - VirtualBox
-      - virtualbox-guest-additions
       - xournalpp
       - xsane
       - timeshift
       - flameshot
+      - qutebrowser
     state: present
   become: true
 
-- name: Install firefox
+- name: install virtualization packages
+  package:
+    name:
+      - bridge-utils
+      - libvirt
+      - virt-install
+      - qemu
+      - qemu-kvm
+      - VirtualBox
+      - virtualbox-guest-additions
+- name: install firefox
   dnf:
     name: firefox
     disable_gpg_check: yes
   become: true
 
+
 # ---
-# RPM Remote Repositories
+# rawhide repos (dev branch)
 # ---
 
-- name: Install protonvpn
-  become: true
-  dnf:
-    name: 'https://protonvpn.com/download/protonvpn-stable-release-1.0.1-1.noarch.rpm'
-    disable_gpg_check: yes
-    state: present
+- name: enable rawhide repos
+  package:
+    name:
+      - fedora-repos-rawhide
 
-- name: Install masterpdfeditor
-  become: true
-  dnf:
-    name: 'https://code-industry.net/public/master-pdf-editor-5.8.46-qt5.x86_64.rpm'
-    disable_gpg_check: yes
-    state: present
-
-- name: Install onlyoffice
-  become: true
-  dnf:
-    name: 'https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors.x86_64.rpm'
-    disable_gpg_check: yes
-    state: present
-
-- name: Install zoom
-  become: true
-  dnf:
-    name: 'https://zoom.us/client/latest/zoom_x86_64.rpm'
-    disable_gpg_check: yes
-    state: present
-
+- name: install rawhide packages
+  package:
+    name:
+      - neovim
+    enablerepo: rawhide

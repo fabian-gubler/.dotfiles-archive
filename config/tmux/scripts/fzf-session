@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # save selection into variable
-SELECTION=$(tmux list-sessions | sed -E 's/:.*$//' | fzf -m --reverse)
+SELECTION=$(tmux list-sessions | sed -E 's/:.*$//' | fzf -m --reverse --prompt="$1 window > " --padding 5%)
 
 # exit if no selection
 if [[ -z $SELECTION ]]; then
@@ -10,10 +10,10 @@ fi
 
 # session actions based on argument
 case "$1" in
-  "-switch")
+  "switch")
 	  tmux switch-client -t $SELECTION
     ;;
-  "-kill")
+  "kill")
 	  tmux kill-session -t $SELECTION
     ;;
   *)
