@@ -514,9 +514,13 @@ c.colors.webpage.bg = "#2E3440"
 # c.colors.webpage.darkmode.policy.images = 'always'
 # c.colors.webpage.darkmode.grayscale.images = 0.35
 
+# Custom Stylesheet
+# c.content.user_stylesheets = "~/.config/qutebrowser/stylesheets/default.css"
+
 
 # Bindings for normal mode
 config.bind(",m", "hint links spawn mpv {hint-url}")
+config.bind("Y", "tab-only")
 config.bind(",M", "spawn mpv {url}")
 config.bind("<Ctrl-o>", "back")
 config.bind("<Ctrl-i>", "forward")

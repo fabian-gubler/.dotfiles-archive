@@ -1,8 +1,30 @@
-# Read desired time
-TIME=$1
-SCRIPTS_DIR=$HOME/.dotfiles/scripts/utils/
+#!/bin/bash
 
-# Prompt for Do not disturb
+# flags
+while getopts ":t:m:" OPTION; do
+  case "$OPTION" in
+    t)
+	  time=${OPTARG}
+      ;;
+    m)
+	  message=${OPTARG}
+      ;;
+    ?)
+      echo "script usage: $(basename \$0) [-t] [-m]" >&2
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+
+
+# notification
+at $time << ENDMARKER
+	dunstify "Alarm: ${message}" 
+	dunstctl set-paused false
+ENDMARKER
+
+# do not disturb
 while true; do
     read -p "Disable notifications? (y/n) " yn
     case $yn in
@@ -11,22 +33,3 @@ while true; do
         * ) echo "Please answer yes or no. ";;
     esac
 done
-
-
-TIME=$1
-
-# Notify at time
-at $TIME << ENDMARKER
-	# dunstify "Alarm:" "$(date '+%T')"
-	dunstify "Alarm" 
-	dunstctl set-paused false
-ENDMARKER
-
-# NOTE: Can be more generalized as
-# a scheduler by passing the desired script 
-# as the second argument (see below)
-
-# SCRIPT=$2
-# at $TIME << ENDMARKER
-# $2
-# ENDMARKER

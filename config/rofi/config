@@ -1,4 +1,4 @@
-rofi.theme: .config/rofi/themes/minimal.rasi
+rofi.theme: .config/rofi/themes/nord.rasi
 
 rofi.kb-row-up:                      Up,Shift+Tab
 rofi.kb-row-down:                    Down

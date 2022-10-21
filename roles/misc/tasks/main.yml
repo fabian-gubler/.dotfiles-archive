@@ -25,7 +25,7 @@
   ansible.builtin.cron:
     name: "sync mailbox"
     minute: "*/5"
-    job: "killall mbsync &>/dev/null; mbsync -a -c ~/nextcloud/apps/mail/.mbsyncrc -V 2>&1 > ~/.mbsync_log"
+    job: "killall mbsync &>/dev/null; mbsync -a -c ~/nextcloud/apps/mail/.mbsyncrc" 
 
 - name: update blacklist every week
   ansible.builtin.cron:

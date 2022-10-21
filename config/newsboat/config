@@ -32,7 +32,7 @@ color     info                  white   color236
 ### MACROS
 #         key     action
 macro     m       set browser "mpv"; open-in-browser ; set browser piper
-macro     f       set browser "firefox"; open-in-browser ; set browser pipe
+macro     b       set browser "qutebrowser"; open-in-browser ; set browser pipe
 
 ### KEYBINDINGS
 unbind-key  RIGHT

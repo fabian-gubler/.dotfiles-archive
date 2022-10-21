@@ -15,7 +15,6 @@
 while read file
 do
 	case "$1" in
-		"x") sioyek "${file%jpg}"epub & killall sxiv ;; 	
+		"x") sioyek --new-instance "${file%jpg}"epub & killall sxiv ;; 	
 	esac
 done
-

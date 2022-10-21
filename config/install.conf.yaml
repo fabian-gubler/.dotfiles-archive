@@ -7,11 +7,13 @@
 
 - link:
     ~/.config/sxiv:                         sxiv
+    ~/.config/qutebrowser:                  qutebrowser
     ~/.config/zsh:                          zsh
+    ~/.config/rbw:                          rbw
     ~/.local/share/fonts:                   fonts
     ~/.config/keyboard.conf:                setxkbmap/keyboard.conf
     ~/.tmux.conf:                           tmux/tmux.conf
-    ~/.local/bin/tmuxdd:                    tmux/tmuxdd
+    ~/.config/rofi:                         rofi
     ~/.latexmkrc:                           latex/.latexmkrc
     ~/.config/khal:                         khal  
     ~/.config/khard:                        khard  

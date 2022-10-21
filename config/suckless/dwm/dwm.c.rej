@@ -1,0 +1,88 @@
+--- dwm.c	2019-02-02 04:55:28.000000000 -0800
++++ dwm.c	2019-07-12 11:47:37.726846244 -0700
+@@ -64,7 +64,7 @@ enum { NetSupported, NetWMName, NetWMSta
+        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
+        NetWMWindowTypeDialog, NetClientList, NetLast }; /* EWMH atoms */
+ enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; /* default atoms */
+-enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,
++enum { ClkTagBar, ClkTabBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,
+        ClkClientWin, ClkRootWin, ClkLast }; /* clicks */
+ 
+ typedef union {
+@@ -171,12 +179,15 @@ static void detachstack(Client *c);
+ static Monitor *dirtomon(int dir);
+ static void drawbar(Monitor *m);
+ static void drawbars(void);
++static void drawtab(Monitor *m);
++static void drawtabs(void);
+ static void enternotify(XEvent *e);
+ static void expose(XEvent *e);
+ static void focus(Client *c);
+ static void focusin(XEvent *e);
+ static void focusmon(const Arg *arg);
+ static void focusstack(const Arg *arg);
++static void focuswin(const Arg* arg);
+ static int getrootptr(int *x, int *y);
+ static long getstate(Window w);
+ static int gettextprop(Window w, Atom atom, char *text, unsigned int size);
+@@ -214,6 +225,7 @@ static void seturgent(Client *c, int urg
+ static void showhide(Client *c);
+ static void sigchld(int unused);
+ static void spawn(const Arg *arg);
++static void tabmode(const Arg *arg);
+ static void tag(const Arg *arg);
+ static void tagmon(const Arg *arg);
+ static void tile(Monitor *);
+@@ -453,7 +467,24 @@ buttonpress(XEvent *e)
+ 			click = ClkStatusText;
+ 		else
+ 			click = ClkWinTitle;
+-	} else if ((c = wintoclient(ev->window))) {
++	}
++	if(ev->window == selmon->tabwin) {
++		i = 0; x = 0;
++		for(c = selmon->clients; c; c = c->next){
++			if(!ISVISIBLE(c)) continue;
++			x += selmon->tab_widths[i];
++			if (ev->x > x)
++				++i;
++			else
++				break;
++			if(i >= m->ntabs) break;
++		}
++		if(c) {
++			click = ClkTabBar;
++			arg.ui = i;
++		}
++	}
++	else if((c = wintoclient(ev->window))) {
+ 		focus(c);
+ 		restack(selmon);
+ 		XAllowEvents(dpy, ReplayPointer, CurrentTime);
+@@ -891,8 +1027,10 @@ expose(XEvent *e)
+ 	Monitor *m;
+ 	XExposeEvent *ev = &e->xexpose;
+ 
+-	if (ev->count == 0 && (m = wintomon(ev->window)))
++	if(ev->count == 0 && (m = wintomon(ev->window))){
+ 		drawbar(m);
++		drawtab(m);
++	}
+ }
+ 
+ void
+@@ -1362,12 +1514,14 @@ propertynotify(XEvent *e)
+ 		case XA_WM_HINTS:
+ 			updatewmhints(c);
+ 			drawbars();
++			drawtabs();
+ 			break;
+ 		}
+ 		if (ev->atom == XA_WM_NAME || ev->atom == netatom[NetWMName]) {
+ 			updatetitle(c);
+ 			if (c == c->mon->sel)
+ 				drawbar(c->mon);
++			drawtab(c->mon);
+ 		}
+ 		if (ev->atom == netatom[NetWMWindowType])
+ 			updatewindowtype(c);

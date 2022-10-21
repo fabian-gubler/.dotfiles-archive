@@ -1,5 +1,14 @@
 ---
 
+# Mongo db
+# sudo dnf install mongodb-org-server mongodb-org-shell mongodb-database-tools mongodb-org-mongos mongodb-mongosh
+# link: https://tecadmin.net/install-mongodb-on-fedora/
+
+
+- name: Set default browser
+  ansible.builtin.shell:
+    cmd: xdg-settings set default-web-browser qutebrowser.desktop
+
 - name: Install automatic updates
   package:
     name: dnf-automatic

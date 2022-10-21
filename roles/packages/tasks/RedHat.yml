@@ -91,10 +91,12 @@
       - qbittorrent
       - pavucontrol
       - xournalpp
+      - okular
       - xsane
       - timeshift
       - flameshot
       - qutebrowser
+      - rofi
     state: present
   become: true
 
