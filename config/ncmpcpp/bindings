@@ -1,7 +1,7 @@
-def_key "e"
+def_key "up"
   scroll_up
 
-def_key "n"
+def_key "down"
   scroll_down
 
 def_key "i"
@@ -22,10 +22,10 @@ def_key "enter"
 def_key "space"
   add_item_to_playlist
 
-def_key "up"
+def_key "ctrl-p"
   volume_up
 
-def_key "down"
+def_key "ctrl-n"
   volume_down
 
 def_key "right"

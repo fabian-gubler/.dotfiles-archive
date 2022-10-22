@@ -17,3 +17,5 @@ locked_screen_width_part = 20
 header_visibility = yes
 statusbar_visibility = no
 connected_message_on_startup = no
+
+mpd_music_dir = ~/nextcloud/music

@@ -57,6 +57,7 @@
       - khard
       - fahrplan
       - pulsemixer
+      - trash-cli
       - tldextract # qutebrowser: bitwarden userscript 
     state: present
 

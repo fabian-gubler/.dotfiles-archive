@@ -530,6 +530,7 @@ config.bind("cl", "tab-only --next")
 config.bind("cr", "tab-only --prev")
 config.bind("cm", "clear-messages")
 config.bind(",b", "spawn --userscript qute-bitwarden")
+config.bind("gd", "download-open")
 config.unbind("<Ctrl-w>", mode="normal")
 
 # Bindings for insert mode
@@ -551,17 +552,17 @@ config.bind("<Ctrl-k>", "fake-key <Shift-End><Delete>", "insert")
 # Search Engines
 c.url.searchengines["y"] = "https://youtube.com/results?search_query={}"
 #
-# c.url.searchengines['w'] = \
-#     'https://en.wikipedia.org/?search={}'
-#
+c.url.searchengines['w'] = \
+    'https://en.wikipedia.org/?search={}'
+
 # c.url.searchengines['k'] = \
 #     'https://en.wiktionary.org/?search={}'
-#
+
 # c.url.searchengines['x'] = \
 #     'https://1337x.to/search/{}/1/'
-#
-# c.url.searchengines['g'] = \
-#     'https://www.google.com/search?q={}'
+
+c.url.searchengines['g'] = \
+    'https://www.google.com/search?q={}'
 
 # Enhance Privacy
 # TEST: https://coveryourtracks.eff.org
@@ -574,3 +575,7 @@ c.content.blocking.adblock.lists = [
 
 # Stylesheets
 config.bind(',t', 'config-cycle content.user_stylesheets ~/.config/qutebrowser/stylesheets/nord.css ""')
+
+config.set("fileselect.handler", "external")
+config.set("fileselect.single_file.command", ['alacritty', '--class', 'ranger,ranger', '-e', 'ranger', '--choosefile', '{}'])
+config.set("fileselect.multiple_files.command", ['alacritty', '--class', 'ranger,ranger', '-e', 'ranger', '--choosefiles', '{}'])
