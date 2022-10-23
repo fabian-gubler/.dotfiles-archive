@@ -519,9 +519,8 @@ c.colors.webpage.bg = "#2E3440"
 
 
 # Bindings for normal mode
-config.bind(",m", "hint links spawn mpv {hint-url}")
-config.bind("Y", "tab-only")
-config.bind(",M", "spawn mpv {url}")
+config.bind(";m", "hint links spawn mpv {hint-url}")
+config.bind(",b", "spawn --userscript qute-bitwarden")
 config.bind("<Ctrl-o>", "back")
 config.bind("<Ctrl-i>", "forward")
 config.bind("xs", "config-cycle statusbar.show always never")
@@ -529,9 +528,7 @@ config.bind("xt", "config-cycle tabs.show always never")
 config.bind("cl", "tab-only --next")
 config.bind("cr", "tab-only --prev")
 config.bind("cm", "clear-messages")
-config.bind(",b", "spawn --userscript qute-bitwarden")
 config.bind("gd", "download-open")
-config.unbind("<Ctrl-w>", mode="normal")
 
 # Bindings for insert mode
 config.bind("<Ctrl-h>", "fake-key <Backspace>", "insert")

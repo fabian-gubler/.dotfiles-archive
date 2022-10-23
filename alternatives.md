@@ -1,4 +1,22 @@
-# Visual
+# Office
+
+## Group & Workplace
+- Google Suite (Browser)
+- Microsoft Online (Browser)
+
+## Spreadsheets
+- **Simple:** Fast: Nextcloud w/ Collabora (Onlyoffice as soon as available)
+- **Advanced Data & Graphs:** R Markdown, Jupyter Notebook
+
+## Word Processing
+- **Notetaking:** Markdown
+- **Typesetting:** Latex
+
+## Presentations
+- reveal.js (optionally with slides.go)
+- Google Slides
+
+# Graphics
 
 ## Charts
 - Simple: draw.io (free)

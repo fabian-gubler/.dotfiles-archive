@@ -6,7 +6,7 @@
   <property name="pressureMultiplier" value="1.49000000"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Floating Toolbox (experimental)"/>
-  <property name="lastSavePath" value="/home/fabian/Downloads"/>
+  <property name="lastSavePath" value="/home/fabian/.config/xournalpp"/>
   <property name="lastOpenPath" value="/home/fabian/nextcloud/mcs/core/cyber/slides"/>
   <property name="lastImagePath" value=""/>
   <property name="edgePanSpeed" value="20.00000000"/>
@@ -219,7 +219,7 @@
     <attribute name="count" type="int" value="9"/>
   </data>
   <data name="tools">
-    <attribute name="current" type="string" value="eraser"/>
+    <attribute name="current" type="string" value="pen"/>
     <data name="drawArrow">
       <attribute name="drawingType" type="string" value="default"/>
     </data>
@@ -254,12 +254,12 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="pen">
-      <attribute name="color" type="hex" value="ff142e9a"/>
+      <attribute name="color" type="hex" value="ffffff"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
       <attribute name="size" type="string" value="MEDIUM"/>
-      <attribute name="style" type="string" value="dashdot"/>
+      <attribute name="style" type="string" value="plain"/>
     </data>
     <data name="playObject">
       <attribute name="drawingType" type="string" value="default"/>
