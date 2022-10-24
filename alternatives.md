@@ -5,7 +5,7 @@
 - Microsoft Online (Browser)
 
 ## Spreadsheets
-- **Simple:** Fast: Nextcloud w/ Collabora (Onlyoffice as soon as available)
+- **Simple:** LibreOffice 
 - **Advanced Data & Graphs:** R Markdown, Jupyter Notebook
 
 ## Word Processing

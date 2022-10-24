@@ -1,0 +1,69 @@
+IMAPAccount protonmail
+Host 127.0.0.1
+Port 1143
+UserCmd "rbw get bridge --full | tail -1"
+#Here you enter a command to retrieve your password
+# PassCmd "gpg2 -q -d ~/.authinfo.gpg | awk 'FNR == 1 {print $8}'"
+PassCmd "rbw get bridge"
+SSLType NONE
+#SSLVersions SSLv3
+#SSLVersions SSLv3
+#CertificateFile /etc/ssl/certs/ca-bundle.crt
+
+IMAPStore pm-remote
+Account protonmail
+
+MaildirStore pm-local
+Path ~/.mail/
+Inbox ~/.mail/INBOX/
+
+Channel pm-inbox
+Far :pm-remote:
+Near :pm-local:
+Patterns "INBOX"
+Create Both
+Expunge Both
+SyncState *
+
+Channel pm-sent
+Far :pm-remote:"Sent"
+Near :pm-local:"Sent"
+Create Both
+Expunge Both
+SyncState *
+
+Channel pm-trash
+Far :pm-remote:"Trash"
+Near :pm-local:"Trash"
+Create Both
+Expunge Both
+SyncState *
+
+Channel pm-spam
+Far :pm-remote:"Spam"
+Near :pm-local:"Spam"
+Create Both
+Expunge Both
+SyncState *
+
+Channel pm-drafts
+Far :pm-remote:"Drafts"
+Near :pm-local:"Drafts"
+Create Both
+Expunge Both
+SyncState *
+
+Channel pm-archive
+Far :pm-remote:"Archive"
+Near :pm-local:"Archive"
+Create Both
+Expunge Both
+SyncState *
+
+Group protonmail
+Channel pm-inbox
+Channel pm-sent
+Channel pm-trash
+Channel pm-spam
+Channel pm-drafts
+Channel pm-archive

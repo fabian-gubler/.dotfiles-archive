@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# TODO:
+# 1. Get Current Path
+# 2. Manipulate to know which subject
+# 3. Evoke command on edit in vim
+# 4. Fallback -> Select Menu
+
+
 DIRS="lectures out --sync --delete"
 ARGS="--sync --delete --prefix"
 HOMEDIR="/home/fabian/nextcloud/mcs/"

@@ -31,11 +31,13 @@ mpd & # music player daemon
 flatpak run org.signal.Signal --start-in-tray --no-sandbox & # messenger
 protonmail-bridge --no-window & # mail backend
 nm-applet & # network control
-dbus-update-activation-environment --all & # keyring
 
 # chmod script (if needed) and execute it
-KEYRING_PATH=/home/fabian/nextcloud/apps/keyring.sh
-[ -x $KEYRING_PATH ] && sudo bash $KEYRING_PATH || [chmod +x $KEYRING_PATH && sudo bash $KEYRING_PATH]
+
+# KEYRING_PATH=/home/fabian/nextcloud/apps/keyring.sh
+# [ -x $KEYRING_PATH ] && sudo bash $KEYRING_PATH || [chmod +x $KEYRING_PATH && sudo bash $KEYRING_PATH]
+$HOME/nextcloud/apps/keyring.sh &
+dbus-update-activation-environment --all & # keyring
 
 # scripts
 $HOME/.dotfiles/scripts/utils/bat-indicator &

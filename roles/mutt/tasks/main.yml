@@ -17,5 +17,4 @@
       - isync     # sync mail to local storage
       - lynx      # display html
       - notmuch   # search mail
-      - msmtp
-      - pass
+      - msmtp     # send mail
