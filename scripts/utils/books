@@ -1,3 +1,3 @@
 #! /bin/bash
 
-sxiv -t $HOME/nextcloud/books/*
+sxiv -t $HOME/nextcloud/media/books/*

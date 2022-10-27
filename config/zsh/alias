@@ -9,6 +9,7 @@ alias sbb="fahrplan"
 alias mutt="neomutt" 
 alias nb="newsboat"
 alias pm="pulsemixer"
+alias trackpad="cat /sys/class/power_supply/hid-a8:91:3d:e6:a7:c4-battery/capacity"
 
 # scripts
 alias alarm="$HOME/.dotfiles/scripts/utils/alarm"

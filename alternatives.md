@@ -5,16 +5,29 @@
 - Microsoft Online (Browser)
 
 ## Spreadsheets
-- **Simple:** LibreOffice 
+- **Simple:** Fast: Nextcloud w/ Collabora (Onlyoffice as soon as available)
 - **Advanced Data & Graphs:** R Markdown, Jupyter Notebook
 
 ## Word Processing
-- **Notetaking:** Markdown
-- **Typesetting:** Latex
+- Notetaking: Markdown
+- Typesetting: Latex
 
 ## Presentations
 - reveal.js (optionally with slides.go)
 - Google Slides
+
+# Mail, Calendar, Contacts
+I like the idea of having both local and cloud copies of my mail, contacts and calendars, with 2-way sync. 
+
+## Applications
+- Mail: Neomutt
+- Calendar: khal
+- Contacts: khard
+
+## Synchronization
+- Location: Nextcloud server 
+- Mail: isync
+- Calendar & Contacts: vdirsyncer
 
 # Graphics
 

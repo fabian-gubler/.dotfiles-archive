@@ -68,7 +68,9 @@ config.set("content.cookies.accept", "all", "devtools://*")
 # Value to send in the `Accept-Language` header. Note that the value
 # read from JavaScript is always the global value.
 # Type: String
-config.set("content.headers.accept_language", "", "https://matchmaker.krunker.io/*")
+
+# config.set("content.headers.accept_language", "", "https://matchmaker.krunker.io/*")
+c.content.headers.accept_language = "en-US,en;q=0.5"
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -84,11 +86,22 @@ config.set("content.headers.accept_language", "", "https://matchmaker.krunker.io
 # between 5.12 and 5.14 (inclusive), changing the value exposed to
 # JavaScript requires a restart.
 # Type: FormatString
-config.set(
-    "content.headers.user_agent",
-    "Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}",
-    "https://web.whatsapp.com/",
-)
+# config.set(
+#     "content.headers.user_agent",
+#     "Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}",
+#     "https://web.whatsapp.com/",
+# )
+
+# c.content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99999.0.3578.98 Safari/537.36"
+
+
+# Common User Agents:
+# LINK: https://gist.github.com/fijimunkii/952acac988f2d25bef7e0284bc63c406
+
+# c.content.canvas_reading = False
+
+config.set("content.headers.custom",  {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"})
+
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -104,11 +117,13 @@ config.set(
 # between 5.12 and 5.14 (inclusive), changing the value exposed to
 # JavaScript requires a restart.
 # Type: FormatString
-config.set(
-    "content.headers.user_agent",
-    "Mozilla/5.0 ({os_info}; rv:90.0) Gecko/20100101 Firefox/90.0",
-    "https://accounts.google.com/*",
-)
+
+# config.set(
+#     "content.headers.user_agent",
+#     "Mozilla/5.0 ({os_info}; rv:90.0) Gecko/20100101 Firefox/90.0",
+#     "https://accounts.google.com/*",
+# )
+c.content.headers.user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/90.0"
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -462,6 +477,9 @@ c.colors.tabs.even.bg = "#4c566a"
 # Type: QtColor
 c.colors.tabs.selected.odd.fg = "#e5e9f0"
 
+c.colors.tabs.pinned.even.bg = "#4c566a"
+c.colors.tabs.pinned.odd.bg = "#4c566a"
+
 # Background color of selected odd tabs.
 # Type: QtColor
 c.colors.tabs.selected.odd.bg = "#2e3440"
@@ -529,6 +547,8 @@ config.bind("cl", "tab-only --next")
 config.bind("cr", "tab-only --prev")
 config.bind("cm", "clear-messages")
 config.bind("gd", "download-open")
+config.bind("o", "spawn --userscript quterofi open")
+config.bind("O", "spawn --userscript quterofi tab")
 
 # Bindings for insert mode
 config.bind("<Ctrl-h>", "fake-key <Backspace>", "insert")
@@ -552,18 +572,18 @@ c.url.searchengines["y"] = "https://youtube.com/results?search_query={}"
 c.url.searchengines['w'] = \
     'https://en.wikipedia.org/?search={}'
 
+c.url.searchengines['x'] = \
+    'https://1337x.to/search/{}/1/'
+
 # c.url.searchengines['k'] = \
 #     'https://en.wiktionary.org/?search={}'
 
-# c.url.searchengines['x'] = \
-#     'https://1337x.to/search/{}/1/'
 
 c.url.searchengines['g'] = \
     'https://www.google.com/search?q={}'
 
 # Enhance Privacy
 # TEST: https://coveryourtracks.eff.org
-c.content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99999.0.3578.98 Safari/537.36"
 c.content.blocking.adblock.lists = [
     "https://easylist.to/easylist/easylist.txt",
     "https://easylist.to/easylist/easyprivacy.txt",

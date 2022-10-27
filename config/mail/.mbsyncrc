@@ -2,8 +2,6 @@ IMAPAccount protonmail
 Host 127.0.0.1
 Port 1143
 UserCmd "rbw get bridge --full | tail -1"
-#Here you enter a command to retrieve your password
-# PassCmd "gpg2 -q -d ~/.authinfo.gpg | awk 'FNR == 1 {print $8}'"
 PassCmd "rbw get bridge"
 SSLType NONE
 #SSLVersions SSLv3

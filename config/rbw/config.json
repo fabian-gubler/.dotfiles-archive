@@ -1,1 +1,7 @@
-{"email":"fabian.gubler@protonmail.com","base_url":null,"identity_url":null,"lock_timeout":7200,"pinentry":"pinentry"}
+{
+  "email": "fabian.gubler@protonmail.com",
+  "base_url": null,
+  "identity_url": null,
+  "lock_timeout": 18000,
+  "pinentry": "pinentry"
+}

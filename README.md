@@ -16,9 +16,5 @@ bash scripts/install
 # Dotfiles Configuration
 bash config/configure.sh
 ```
-# Done but not in ansible
-- PAM Keyring | https://nurdletech.com/linux-notes/agents/keyring.html
-
-# Todo Later
-- SSH Setup (Github)
-- Set AutoEnable=true in /etc/bluetooth/main.conf
+# Automation Ideas
+- [Automatic Upgrades](https://www.tecmint.com/dnf-automatic-install-security-updates-automatically-in-centos-8/)
