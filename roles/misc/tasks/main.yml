@@ -27,6 +27,12 @@
     minute: "*/5"
     job: "killall mbsync &>/dev/null; mbsync protonmail" 
 
+- name: sync calendars every 15 minutes
+  ansible.builtin.cron:
+    name: "sync calendars"
+    minute: "*/15"
+    job: "vdirsyncer sync" 
+
 - name: update blacklist every week
   ansible.builtin.cron:
     name: "sync blacklist"
@@ -39,6 +45,7 @@
   ansible.builtin.shell:
     cmd: "sudo bash $HOME/.dotfiles/scripts/utils/blacklist"
 
+# Sysadmin
 - name: add user to docker group
   become: true
   user:

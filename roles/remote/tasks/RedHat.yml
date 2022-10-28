@@ -54,6 +54,7 @@
       - mkdocs-material
       - markdown-anki-decks
       - khal
+      - vdirsyncer
       - khard
       - fahrplan
       - pulsemixer

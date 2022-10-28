@@ -12,6 +12,7 @@ export QT_SCALE_FACTOR=1.5
 
 # paths
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
 export PATH="/usr/sbin:/usr/local/go/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 export PATH="$HOME/.dotfiles/scripts/utils:$HOME/.dotfiles/scripts/tmux:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib

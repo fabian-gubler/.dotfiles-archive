@@ -53,17 +53,17 @@
     cmd: go install github.com/jesseduffield/lazydocker@latest
 
 
-- name: extract postman tar
-  ansible.builtin.unarchive:
-    src: "{{ ansible_user_dir }}/Downloads/postman.tar.gz"
-    dest: "{{ ansible_user_dir }}/.local/share/"
-
-- name: link postman-agent
-  become: true
-  file:
-    src: "{{ ansible_user_dir }}/.local/share/Postman\ Agent/app/postman-agent"
-    dest: "{{ ansible_user_dir }}/.local/bin/postman-agent"
-    state: link
+# - name: extract postman tar
+#   ansible.builtin.unarchive:
+#     src: "{{ ansible_user_dir }}/Downloads/postman.tar.gz"
+#     dest: "{{ ansible_user_dir }}/.local/share/"
+#
+# - name: link postman-agent
+#   become: true
+#   file:
+#     src: "{{ ansible_user_dir }}/.local/share/Postman\ Agent/app/postman-agent"
+#     dest: "{{ ansible_user_dir }}/.local/bin/postman-agent"
+#     state: link
       
 # ---
 # docker

@@ -1,5 +1,5 @@
-asse:db-view http://db.admin.localhost:8089/db/tapas-tasks/
-asse:postman https://crimson-station-448675.postman.co/workspace/ASSE_Tapas~d04dfb95-1763-457e-a9da-56107c3317bb/request/23712048-fd056fd4-547b-47b7-9038-a352193caab8
-asse:chaos-doc https://codecentric.github.io/chaos-monkey-spring-boot/latest/#chaosmonkeydisable
-asse:tapas-group https://github.com/unisg-scs-asse/tapas-fs22-group3
-asse:tapas-master https://github.com/unisg-scs-asse/tapas-fs22
+nextcloud https://220624z6bmfrl5nztze.nextcloud.hosting.zone/apps/files/
+calendar https://220624z6bmfrl5nztze.nextcloud.hosting.zone/apps/calendar/timeGridWeek/now
+postman https://www.postman.com/
+github https://github.com/
+tapas https://github.com/unisg-scs-asse/tapas-fs22-group3

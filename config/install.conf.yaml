@@ -19,6 +19,7 @@
     ~/.latexmkrc:                           latex/.latexmkrc
     ~/.config/khal:                         khal  
     ~/.config/khard:                        khard  
+    ~/.config/vdirsyncer:                   vdirsyncer
     ~/.config/alacritty:                    alacritty
     ~/.config/kitty:                        kitty
     ~/.newsboat:                            newsboat

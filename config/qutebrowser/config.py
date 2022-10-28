@@ -547,8 +547,10 @@ config.bind("cl", "tab-only --next")
 config.bind("cr", "tab-only --prev")
 config.bind("cm", "clear-messages")
 config.bind("gd", "download-open")
-config.bind("o", "spawn --userscript quterofi open")
-config.bind("O", "spawn --userscript quterofi tab")
+config.bind("o", "spawn --userscript rofi-menu open")
+config.bind("O", "spawn --userscript rofi-menu tab")
+config.bind("b", "spawn --userscript rofi-menu marks")
+config.bind("B", "spawn --userscript rofi-menu marks-tab")
 
 # Bindings for insert mode
 config.bind("<Ctrl-h>", "fake-key <Backspace>", "insert")
