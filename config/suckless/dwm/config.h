@@ -77,7 +77,6 @@ static const char *termcmd[] = { "kitty", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,						XK_w,      spawn,          SHCMD("qutebrowser")},
-	{ MODKEY,                       XK_o,      spawn,          SHCMD("$HOME/.config/qutebrowser/userscripts/quterofi open")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_g,      spawn,          SHCMD("sioyek")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("spotify --force-device-scale-factor=1.5")},

@@ -13,7 +13,7 @@ create_menu() {
 
 get_selection() {
     opts+=(-p qutebrowser)
-    create_menu | rofi -dmenu -l 10 "${opts[@]}"
+    create_menu | rofi -dmenu -i -l 8 "${opts[@]}"
 }
 
 url=$(get_selection)
@@ -23,6 +23,6 @@ url=${url/*http/http}
 [[ -z $url ]] && exit 0
 
 case $1 in
-    open)    printf '%s' "open $url" >> "$QUTE_FIFO" || qutebrowser "$url" ;;
+    open)    printf '%s' "open $url" >> "$QUTE_FIFO" || qutebrowser "$url" --target tab-bg ;;
     tab)     printf '%s' "open -t $url" >> "$QUTE_FIFO" || qutebrowser "$url"  ;;
 esac

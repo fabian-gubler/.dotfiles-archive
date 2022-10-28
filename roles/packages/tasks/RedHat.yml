@@ -99,6 +99,7 @@
       - flameshot
       - qutebrowser
       - rofi
+      - font-manager
     state: present
   become: true
 

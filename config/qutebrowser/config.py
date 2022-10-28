@@ -591,7 +591,7 @@ c.content.blocking.adblock.lists = [
 ]
 
 # Stylesheets
-config.bind(',t', 'config-cycle content.user_stylesheets ~/.config/qutebrowser/stylesheets/nord.css ""')
+config.bind(',t', 'config-cycle content.user_stylesheets ~/.config/qutebrowser/stylesheets/darculized.css ""')
 
 config.set("fileselect.handler", "external")
 config.set("fileselect.single_file.command", ['alacritty', '--class', 'ranger,ranger', '-e', 'ranger', '--choosefile', '{}'])
