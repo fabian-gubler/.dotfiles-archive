@@ -15,9 +15,9 @@ path = ~/nextcloud/.calendars/task
 type = calendar
 color = light red
 
-[[birthday]]
-path = ~/nextcloud/.calendars/birthday/
-type = calendar
+[[cakeday]]
+path = ~/nextcloud/.contacts/contacts/
+type = birthdays
 color = yellow
 
 [locale]

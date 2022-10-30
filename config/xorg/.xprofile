@@ -38,3 +38,4 @@ dbus-update-activation-environment --all & # keyring
 
 # scripts
 $HOME/.dotfiles/scripts/utils/bat-indicator &
+$HOME/.dotfiles/scripts/watchers/autovdirsyncer &

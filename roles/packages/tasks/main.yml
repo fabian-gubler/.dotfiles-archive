@@ -29,7 +29,7 @@
       # Graphical
       # - pdfshuffler
     state: present
-    become: true
+  become: true
 
 - name: Install cli tools
   package:

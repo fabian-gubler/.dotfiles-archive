@@ -78,10 +78,3 @@
     target: install
   become: true
 
-- name: clone rbw
-  git:
-    repo: https://git.tozt.net/rbw
-    dest: "{{ ansible_user_dir }}/.local/share/rbw"
-    update: no
-
-

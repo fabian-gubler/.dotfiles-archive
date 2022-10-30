@@ -1,0 +1,24 @@
+- name: install packages
+  package:
+    name:
+      - qutebrowser
+    state: present
+  become: true
+
+- name: set default browser
+  ansible.builtin.shell:
+    cmd: xdg-settings set default-web-browser qutebrowser.desktop
+
+- name: set default pdf
+  ansible.builtin.shell:
+    cmd: xdg-mime default sioyek.desktop application/pdf
+
+- name: install python packages
+  pip:
+    name:
+      - tldextract # qutebrowser: bitwarden userscript
+    state: present
+
+- name: get pdf.js library
+  ansible.builtin.shell:
+    cmd: $HOME/.dotfiles/roles/qute/files/get-pdfjs.sh

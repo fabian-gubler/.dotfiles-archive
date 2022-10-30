@@ -113,6 +113,8 @@
       - qemu-kvm
       - VirtualBox
       - virtualbox-guest-additions
+  become: true
+
 - name: install firefox
   dnf:
     name: firefox
@@ -128,9 +130,11 @@
   package:
     name:
       - fedora-repos-rawhide
+  become: true
 
 - name: install rawhide packages
   package:
     name:
       - neovim
     enablerepo: rawhide
+  become: true

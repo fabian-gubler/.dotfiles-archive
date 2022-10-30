@@ -17,7 +17,8 @@
 
 ### Web Frontend
 - Mail: Protonmail
-- Calendar & Contacts: Nextcloud
+- Calendar & Contacts: Nextcloud 
+	- + Calendar -> Sharing (Invite Events + CalDAV Feed)
 
 # Graphics
 

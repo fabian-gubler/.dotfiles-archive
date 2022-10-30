@@ -1,3 +1,4 @@
 config/zsh/.histfile
 config/zsh/.zcompdump
 config/mpv/watch_later/*
+config/qutebrowser/bookmarks/*

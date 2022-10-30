@@ -4,7 +4,7 @@
 # https://github.com/qutebrowser/qutebrowser/blob/master/misc/userscripts/qutedmenu
 
 QUTE_DATA_DIR=$HOME/.local/share/qutebrowser
-QUTE_CONFIG_DIR=$HOME/.config/qutebrowser
+QUTE_BOOKMARKS_DIR=$HOME/nextcloud/apps/qutebrowser
 
 create_menu() {
         printf -- '%s\n' "$(
@@ -16,7 +16,7 @@ create_menu_quickmarks() {
     # Check quickmarks
     while read -r mark; do
         printf -- '%s\n' "$mark"
-    done < "$QUTE_CONFIG_DIR"/quickmarks
+    done < "$QUTE_BOOKMARKS_DIR"/bookmarks
 }
 
 case $1 in

@@ -5,7 +5,7 @@
 - name: clone neovim
   git:
     repo: https://github.com/fabian-gubler/nvim-config.git
-    dest: "{{ ansible_user_dir }}/.config/nvim"
+    dest: "$HOME/.config/nvim"
     update: no
 
 - name: gtk file chooser window size
@@ -20,18 +20,16 @@
   ansible.builtin.shell:
     cmd: curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
 
+- name: install sioyek
+  ansible.builtin.shell: 
+    cmd: $HOME/.dotfiles/roles/misc/files/get-sioyek.sh
+
 # Cronjobs
 - name: check mail every 5 minutes
   ansible.builtin.cron:
     name: "sync mailbox"
     minute: "*/5"
     job: "killall mbsync &>/dev/null; mbsync protonmail" 
-
-- name: sync calendars every 15 minutes
-  ansible.builtin.cron:
-    name: "sync calendars"
-    minute: "*/15"
-    job: "vdirsyncer sync" 
 
 - name: update blacklist every week
   ansible.builtin.cron:

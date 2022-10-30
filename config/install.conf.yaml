@@ -13,6 +13,7 @@
     ~/.config/zsh:                          zsh
     ~/.config/rbw:                          rbw
     ~/.local/share/fonts:                   fonts
+    ~/.config/yt-dlp:                       yt-dlp
     ~/.config/keyboard.conf:                setxkbmap/keyboard.conf
     ~/.tmux.conf:                           tmux/tmux.conf
     ~/.config/rofi:                         rofi
@@ -51,5 +52,4 @@
     ~/.config/tridactyl/tridactylrc:        firefox/tridactylrc.vim
     ~/.config/tridactyl/themes/nord.css:    firefox/nord.css
     ~/.config/dunst:                        dunst
-    ~/.local/share/flatpak/app/com.github.ahrm.sioyek/x86_64/stable/active/files/sioyek/keys_user.config: sioyek/keys_user.config
-    ~/.local/share/flatpak/app/com.github.ahrm.sioyek/x86_64/stable/active/files/sioyek/prefs_user.config: sioyek/prefs_user.config
+    ~/.config/sioyek:                       sioyek

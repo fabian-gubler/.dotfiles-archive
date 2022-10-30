@@ -6,7 +6,10 @@
       - lynx      # display html
       - notmuch   # search mail
       - msmtp     # send mail
+  become: true
 
-- name: create mail directory
-  ansible.builtin.shell:
-    cmd: mkdir ~/.mail
+- name: create mail directory if it does not exist
+  ansible.builtin.file:
+    path: $HOME/.mail
+    state: directory
+    mode: '0755'

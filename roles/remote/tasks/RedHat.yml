@@ -59,7 +59,6 @@
       - fahrplan
       - pulsemixer
       - trash-cli
-      - tldextract # qutebrowser: bitwarden userscript 
     state: present
 
 - name: install rust packages
@@ -77,7 +76,6 @@
 - name: install flatpak packages
   community.general.flatpak:
     name:
-      - com.github.ahrm.sioyek
       - org.signal.Signal
       - io.typora.Typora
       - com.spotify.Client
@@ -95,17 +93,6 @@
     src: "$HOME/.local/share/flatpak/exports/bin/org.signal.Signal"
     dest: "$HOME/.local/bin/signal"
     state: link
-
-- name: link sioyek
-  file:
-    src: "$HOME/.local/share/flatpak/app/com.github.ahrm.sioyek/x86_64/stable/active/files/sioyek/sioyek"
-    dest: "$HOME/.local/bin/sioyek"
-    state: link
-
-- name: link sioyek (db)
-  file:
-    src: "$HOME/nextcloud/apps/sioyek/shared.db"
-    dest: "$HOME/.config/.local/share/Sioyek/shared.db"
 
 - name: link spotify
   file:

@@ -1,25 +1,25 @@
 ---
 - name: link xinitrc
   file:
-    src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.xinitrc"
-    dest: "{{ ansible_user_dir }}/.xinitrc"
+    src: "$HOME/.dotfiles/config/xorg/.xinitrc"
+    dest: "$HOME/.xinitrc"
     state: link
 
 - name: link xprofile
   file:
-    src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.xprofile"
-    dest: "{{ ansible_user_dir }}/.xprofile"
+    src: "$HOME/.dotfiles/config/xorg/.xprofile"
+    dest: "$HOME/.xprofile"
     state: link
 
 - name: link Xresources
   file:
-    src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.Xresources"
-    dest: "{{ ansible_user_dir }}/.Xresources"
+    src: "$HOME/.dotfiles/config/xorg/.Xresources"
+    dest: "$HOME/.Xresources"
     state: link
 
 - name: link Xmodmap
   file:
-    src: "{{ ansible_user_dir }}/.dotfiles/config/xorg/.Xmodmap"
-    dest: "{{ ansible_user_dir }}/.Xmodmap"
+    src: "$HOME/.dotfiles/config/xorg/.Xmodmap"
+    dest: "$HOME/.Xmodmap"
     state: link
 

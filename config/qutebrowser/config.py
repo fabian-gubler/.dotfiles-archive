@@ -70,7 +70,7 @@ config.set("content.cookies.accept", "all", "devtools://*")
 # Type: String
 
 # config.set("content.headers.accept_language", "", "https://matchmaker.krunker.io/*")
-c.content.headers.accept_language = "en-US,en;q=0.5"
+c.content.headers.accept_language = "en-US,en;q=0.8"
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -91,16 +91,6 @@ c.content.headers.accept_language = "en-US,en;q=0.5"
 #     "Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}",
 #     "https://web.whatsapp.com/",
 # )
-
-# c.content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99999.0.3578.98 Safari/537.36"
-
-
-# Common User Agents:
-# LINK: https://gist.github.com/fijimunkii/952acac988f2d25bef7e0284bc63c406
-
-# c.content.canvas_reading = False
-
-config.set("content.headers.custom",  {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"})
 
 
 # User agent to send.  The following placeholders are defined:  *
@@ -123,7 +113,8 @@ config.set("content.headers.custom",  {"accept": "text/html,application/xhtml+xm
 #     "Mozilla/5.0 ({os_info}; rv:90.0) Gecko/20100101 Firefox/90.0",
 #     "https://accounts.google.com/*",
 # )
-c.content.headers.user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/90.0"
+# c.content.headers.user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/105.0"
+c.content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:105.0) Gecko/20100101 Firefox/105.0"
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:

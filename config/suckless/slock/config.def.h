@@ -3,10 +3,10 @@ static const char *user  = "nobody";
 static const char *group = "nobody";
 
 static const char *colorname[NUMCOLS] = {
-    [BACKGROUND] = "white",
+    [BACKGROUND] = "#d7dde8",
 	[INIT] =   "2d2d2d",     /* after initialization */
-	[INPUT] =  "#005577",   /* during input */
-	[FAILED] = "#CC3333",   /* wrong password */
+	[INPUT] =  "#88C0D0",   /* during input */
+	[FAILED] = "#BF616A",   /* wrong password */
 };
 
 /* treat a cleared input like a wrong password (color) */
@@ -31,8 +31,8 @@ static XRectangle rectangles[9] = {
 /*Enable blur*/
 #define BLUR
 /*Set blur radius*/
-static const int blurRadius=10;
+static const int blurRadius=30;
 /*Enable Pixelation*/
-//#define PIXELATION
+// #define PIXELATION
 /*Set pixelation radius*/
-static const int pixelSize=50;
+static const int pixelSize=15;

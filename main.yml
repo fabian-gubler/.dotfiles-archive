@@ -9,3 +9,4 @@
     - { role: build, tags: build }
     - { role: misc, tags: misc }
     - { role: mutt, tags: mutt }
+    - { role: qute, tags: qute }

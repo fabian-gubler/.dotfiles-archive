@@ -12,7 +12,7 @@ static int showsystray				= 0;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
 static const char *fonts[]          = { "SFMono:size=11" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char dmenufont[]       = "SFMono:size=10";
 static char normbgcolor[]           = "#252A34";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -76,6 +76,7 @@ static const char *termcmd[] = { "kitty", NULL };
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run -i")},
 	{ MODKEY,						XK_w,      spawn,          SHCMD("qutebrowser")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_g,      spawn,          SHCMD("sioyek")},
@@ -86,14 +87,13 @@ static Key keys[] = {
 	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},
 
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run -i")},
 	{ MODKEY,						XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
     { MODKEY,						XK_a,      togglesystray,  {0} },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = -1 } },
-	// { MODKEY,                       XK_l,      incnmaster,     {.i = +1 } },
-	// { MODKEY,                       XK_u,      incnmaster,     {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_l,      incnmaster,     {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_u,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_m,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_i,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ControlMask,           XK_n,      movestack,      {.i = +1 } },
