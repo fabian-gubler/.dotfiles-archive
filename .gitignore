@@ -1,4 +1,4 @@
 config/zsh/.histfile
 config/zsh/.zcompdump
 watch_later/
-config/qutebrowser/bookmarks/*
+config/qutebrowser/bookmarks/
