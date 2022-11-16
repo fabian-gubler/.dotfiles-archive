@@ -6,7 +6,5 @@
 
 config_version: 2
 settings:
-  content.pdfjs:
-    global: true
   content.user_stylesheets:
     global: null

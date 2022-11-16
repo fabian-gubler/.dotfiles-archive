@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # save selection into variable
-SELECTION=$(tmux list-sessions | sed -E 's/:.*$//' | fzf -m --reverse --prompt="$1 window > " --padding 5%)
+CURRENT_SESSION=$(tmux display-message -p '#S')
+SELECTION=$(tmux list-sessions | sed -E 's/:.*$//' | grep -v $CURRENT_SESSION | fzf -m --reverse --prompt="$1 window > " --padding 5%)
 
 # exit if no selection
 if [[ -z $SELECTION ]]; then

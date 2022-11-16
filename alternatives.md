@@ -21,7 +21,6 @@
 	- + Calendar -> Sharing (Invite Events + CalDAV Feed)
 
 # Graphics
-
 ## Charts
 - Simple: draw.io (free)
 - Advanced: lucid.app (paid), microsoft visio online (free)
@@ -44,6 +43,9 @@
 	- extract
 	- split
 	- arange (difficult) -> use pdfshuffler / online tool
+
+- poppler-utils
+	- pdfimages (extract jpg's)
 
 
 ## Alternatives
@@ -72,3 +74,11 @@
 - reveal.js (optionally with slides.go)
 - Google Slides
 
+# Browsers
+## Use Case Descrition
+| Browser     | Use Case        | Description                                                          |
+| ---         | ---             | ---                                                                  |
+| Qutebrowser | Daily Driver    | Workflow (Keyboard Driven), Customizabilty, Scriptability            |
+| Firefox     | Fallback        | Alternative to Qutebrowser + Advanced DevTools                       |
+| Tor         | Privacy         | Reduce Fingerprinting                                                |
+| Chromium    | Google Services | Everything that requires Google Account (e.g. Docs, Slides, YouTube) |

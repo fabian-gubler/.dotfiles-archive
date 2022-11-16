@@ -121,7 +121,6 @@
     disable_gpg_check: yes
   become: true
 
-
 # ---
 # rawhide repos (dev branch)
 # ---

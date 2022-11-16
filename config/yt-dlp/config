@@ -3,6 +3,7 @@
 
 # Subtitles
 --write-auto-sub
+--embed-subs
 --sub-lang=en
 
 # Best Resolution (1080p max)

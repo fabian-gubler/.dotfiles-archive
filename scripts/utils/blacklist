@@ -6,4 +6,4 @@ ghcr.io/stevenblack/hosts:latest updateHostsFile.py --auto \
 --replace --extensions gambling porn
 
 # Append Custom Domains
-sudo cat /home/fabian/nextcloud/apps/shared/blacklist.txt >> /etc/hosts
+# sudo cat /home/fabian/nextcloud/apps/shared/blacklist.txt >> /etc/hosts

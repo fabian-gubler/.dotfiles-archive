@@ -1,21 +1,44 @@
-startup_screen = "browser"
-external_editor = nvim
-progressbar_look = ->
+[mpd]
+# mpd_music_dir = "/media/addy/Media/musik/"
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_crossfade_time = "2"
+
+[visualizer]
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_in_stereo = "no"
+visualizer_type = "spectrum"
+visualizer_output_name = "my_fifo"
+visualizer_look = "●┃"
+visualizer_color = "default"
+
+[header]
+header_visibility = "no"
+header_window_color = "default"
+volume_color = "default"
+state_line_color = "black"
+
+[playlist]
+playlist_display_mode = "classic"
+song_list_format = "{{%a - %t}|{%f}}{$R%l}"
+now_playing_prefix = "$b$5"
+now_playing_suffix = "$/b$9"
+
+[statusbar]
+progressbar_look = "─> "
+progressbar_color = "black"
 progressbar_elapsed_color = blue:b
+statusbar_visibility = "no"
+statusbar_color = "default"
+song_status_format = "{{%a{ - %t}}|{ - %f}{ - %b{ (%y)}}}"
 
-empty_tag_color = magenta
-statusbar_color = white
-statusbar_time_color = cyan:b
+[library]
+song_library_format = "{{%a - %t}|{%f}}{$R%l}"
+empty_tag_color = "black"
 
-current_item_prefix = $(blue)$r$b
-current_item_suffix = $/r$(end)$/b
-current_item_inactive_column_suffix = $/r$(end)
-volume_change_step = 5
-
-locked_screen_width_part = 20
-
-header_visibility = yes
-statusbar_visibility = no
-connected_message_on_startup = no
-
-mpd_music_dir = ~/nextcloud/media/music
+[global]
+colors_enabled = "yes"
+main_window_color = "default"
+centered_cursor = "yes"
+enable_window_title = "yes"
+external_editor = "vim"

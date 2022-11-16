@@ -1,11 +1,12 @@
 # general
-HISTFILE=$HOME/.dotfiles/config/zsh/.histfile
+DOTDIR=$HOME/.dotfiles/config/zsh
+HISTFILE=$DOTDIR/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 export MANPAGER='nvim +Man!'
 
 # pure prompt
-fpath+=$HOME/.dotfiles/config/zsh/pure
+fpath+=$DOTDIR/pure
 autoload -U promptinit; promptinit
 prompt pure
 zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
@@ -14,9 +15,8 @@ PURE_PROMPT_SYMBOL="❯"
 PURE_CMD_MAX_EXEC_TIME=99999999999999
 
 # completion
-zstyle :compinstall filename '/home/fabian/.dotfiles/config/zsh/.zshrc'
+zstyle :compinstall filename '$DOTDIR/.zshrc'
 zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/home/fabian/.dotfiles/config/zsh/.zshrc'
 autoload -Uz compinit
 compinit
 
@@ -42,5 +42,5 @@ zsh_add_plugin "Aloxaf/fzf-tab"
 zsh_add_plugin "agkozak/zsh-z"
 
 # should be automated
-source ~/.dotfiles/config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.dotfiles/config/zsh/plugins/zsh-autopair/autopair.zsh
+source $DOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $DOTDIR/plugins/zsh-autopair/autopair.zsh

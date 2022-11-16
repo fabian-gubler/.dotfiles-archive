@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-
 # select dir
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/nextcloud/mcs/core  ~/nextcloud/mcs/electives ~/nextcloud/mcs/context -mindepth 1 -maxdepth 1 -type d | fzf --prompt="select workspace > ")
+    selected=$(find ~/nextcloud/mcs/core  ~/nextcloud/mcs/electives ~/nextcloud/mcs/context \
+		-mindepth 1 -maxdepth 1 -type d \
+		| fzf --prompt="select workspace > ")
 fi
 
 # exit if no selection
@@ -19,11 +20,15 @@ selected_name=$(basename "$selected" | tr . _)
 # create selected session
 if ! tmux has-session -t=$selected_name 2> /dev/null; then
     tmux new-session -ds $selected_name -c $selected
-	tmux neww -dn notes -t $selected_name
 fi
 
-# open notes
-tmux send-keys -t $selected_name:notes "cd $HOME/nextcloud/mcs/docs/$selected_name && nvim ." Enter
+# open notes (if exists)
+docs_dir=$HOME/nextcloud/mcs/docs/
 
+if [[ -d $docs_dir/$selected_name ]] then
+	tmux neww -dn notes -t $selected_name
+	tmux send-keys -t $selected_name:notes "cd $docs_dir/$selected_name && nvim ." Enter
+fi
+
+# switch to session
 tmux switch-client -t $selected_name
-

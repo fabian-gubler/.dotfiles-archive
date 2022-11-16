@@ -49,6 +49,18 @@
     name:
       - gimp
       - chromium
+      - torbrowser-launcher
       - zathura
     state: present
   become: true
+
+- name: Install browsers
+  package:
+    name:
+      - chromium
+      - torbrowser-launcher
+    state: present
+  become: true
+
+
+

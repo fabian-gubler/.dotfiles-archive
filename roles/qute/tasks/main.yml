@@ -2,6 +2,7 @@
   package:
     name:
       - qutebrowser
+      - qt5-qtwebengine-freeworld   # video codecs
     state: present
   become: true
 

@@ -10,7 +10,7 @@ set spoolfile = +INBOX
 set postponed = +Drafts
 set trash = +Trash
 set record = +Sent
-set sidebar_visible = yes
+set sidebar_visible = no
 set forward_format = "Fwd: %s"	# format of subject when forwarding
 set include						# include message in replies
 set sort = 'reverse-date'
@@ -25,7 +25,7 @@ mailboxes "=INBOX" "=Drafts" "=Spam" "=Trash" "=Sent" "=Archive"
 bind index,pager g noop
 bind index,pager M noop
 bind index,pager C noop
-bind index,pager V  noop        ## Unbinds V from version
+bind index,pager V noop
 bind index gg first-entry
 bind index G last-entry
 bind browser gg top-page

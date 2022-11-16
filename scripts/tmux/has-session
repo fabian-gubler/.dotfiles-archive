@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if test $(tmux list-sessions | wc -l) -gt 1 
+then
+	echo "*"
+fi

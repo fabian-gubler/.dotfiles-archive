@@ -31,6 +31,13 @@
     minute: "*/5"
     job: "killall mbsync &>/dev/null; mbsync protonmail" 
 
+- name: trash downloaded files every 2 hours
+  ansible.builtin.cron:
+    name: "trash downloads"
+    hour: "4"
+    minute: "0"
+    job: "trash $HOME/Downloads/*"
+
 - name: update blacklist every week
   ansible.builtin.cron:
     name: "sync blacklist"

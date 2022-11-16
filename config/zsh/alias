@@ -5,11 +5,13 @@ alias lg="lazygit"
 alias yk="devour sioyek"
 alias k="khal"
 alias ik="ikhal"
+alias kp="khal-populate"
 alias sbb="fahrplan"
 alias mutt="mbsync protonmail && neomutt" 
 alias nb="newsboat"
 alias pm="pulsemixer"
-alias trackpad="cat /sys/class/power_supply/hid-a8:91:3d:e6:a7:c4-battery/capacity"
+alias py="python3"
+alias task="task-finder"
 
 # scripts
 alias alarm="$HOME/.dotfiles/scripts/utils/alarm"
@@ -40,9 +42,13 @@ alias top="gotop -l minimal"
 # -------------------
 
 cl() {
-        cd "$@" && exa -a;
+	cd "$@" && exa -a;
 }
 
 zl() {
-        zshz "$@" && exa -a;
+	zshz "$@" && exa -a;
+}
+
+randpw(){ 
+	< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-$1};echo;
 }

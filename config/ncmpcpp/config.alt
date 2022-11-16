@@ -1,0 +1,21 @@
+startup_screen = "browser"
+external_editor = nvim
+progressbar_look = ->
+progressbar_elapsed_color = blue:b
+
+empty_tag_color = magenta
+statusbar_color = white
+statusbar_time_color = cyan:b
+
+current_item_prefix = $(blue)$r$b
+current_item_suffix = $/r$(end)$/b
+current_item_inactive_column_suffix = $/r$(end)
+volume_change_step = 5
+
+locked_screen_width_part = 20
+
+header_visibility = yes
+statusbar_visibility = no
+connected_message_on_startup = no
+
+mpd_music_dir = ~/nextcloud/media/music
