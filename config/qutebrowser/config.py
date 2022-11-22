@@ -76,6 +76,8 @@ config.bind(',,', 'set content.user_stylesheets ""')
 config.bind(',r', 'spawn --userscript readability')
 # }}}
 # {{{ Search Engines
+
+# Search
 c.url.searchengines["y"] = \
 	"https://yewtu.be/search?q={}"
 
@@ -91,11 +93,16 @@ c.url.searchengines['w'] = \
 c.url.searchengines['x'] = \
     'https://1337x.to/search/{}/1/'
 
+# Linguistic
 c.url.searchengines['de'] = \
     'https://www.deepl.com/translator#en/de/{}'
 
 c.url.searchengines['en'] = \
     'https://www.deepl.com/translator#de/en/{}'
+
+c.url.searchengines['p'] = \
+	'https://www.powerthesaurus.org/{}/synonyms'
+
 # }}}
 # {{{ Adblocking
 # Test Adblock: https://d3ward.github.io/toolz/adblock.html

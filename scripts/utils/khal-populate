@@ -9,8 +9,9 @@ normal=$(tput sgr0)
 # - Select populated entries with spacebar
 
 if [ $# -eq 0 ]; then
-	echo "Please indicate time:"
+	echo -n "Please indicate time: "
 	read time
+	echo ""
 else
 	time=$1
 fi
@@ -35,19 +36,26 @@ create_commute ()
 			timespan="06:53 08:11"
 			from="Steckborn"
 			arrival="St. Gallen"
+			echo "Selection: St. Gallen"
+			echo ""
 			;;
 		2) 
 			timespan="06:53 07:47"
 			from="Steckborn"
 			arrival="Frauenfeld"
+			echo "Selection: Frauenfeld"
+			echo ""
 			;;
 		3) 
 			timespan="06:53 07:59"
 			from="Steckborn"
 			arrival="Winterthur"
+			echo "Selection: Winterthur"
+			echo ""
 			;;
 		*) 
-			echo "No Selection"
+			echo "Selection: No Selection"
+			echo ""
 			return
 			;;
 	esac

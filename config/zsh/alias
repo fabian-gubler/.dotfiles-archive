@@ -11,7 +11,7 @@ alias mutt="mbsync protonmail && neomutt"
 alias nb="newsboat"
 alias pm="pulsemixer"
 alias py="python3"
-alias task="task-finder"
+# alias task="task-finder"
 
 # scripts
 alias alarm="$HOME/.dotfiles/scripts/utils/alarm"
@@ -24,7 +24,6 @@ alias fzf="fzf -i"
 # todo
 alias t="todo.sh -d /home/fabian/nextcloud/todo/config"
 alias d="todo.sh -d /home/fabian/nextcloud/todo/dev/config"
-alias u="todo.sh -d /home/fabian/nextcloud/todo/uni/config"
 alias dv="nvim -c 'sort' /home/fabian/nextcloud/todo/dev/dev.txt"
 alias tv="nvim -c 'sort' /home/fabian/nextcloud/todo/todo.txt"
 alias uv="nvim -c 'sort' /home/fabian/nextcloud/todo/uni/uni.txt"
@@ -51,4 +50,17 @@ zl() {
 
 randpw(){ 
 	< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-$1};echo;
+}
+
+mpn(){
+	nohup mpv "$@" &
+}
+
+# ------------------
+# todo.txt
+# ------------------
+
+u() {
+	date +"# Pri Work  %V     ID     Name"
+	todo.sh -d /home/fabian/nextcloud/todo/uni/config "$@"
 }

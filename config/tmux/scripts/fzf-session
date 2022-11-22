@@ -17,6 +17,9 @@ case "$1" in
   "kill")
 	  tmux kill-session -t $SELECTION
     ;;
+  "move")
+	  tmux move-window -s $SELECTION
+	;;
   *)
     echo "You have failed to specify what to do"
     exit 1
