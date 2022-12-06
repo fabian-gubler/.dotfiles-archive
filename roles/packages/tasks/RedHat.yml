@@ -37,6 +37,15 @@
 
     state: present
 
+- name: install applets
+  become: true
+  package:
+    name:
+      - network-manager-applet
+      - blueberry
+      - pasystray
+    state: present
+
 - name: Install system packages
   package:
     name:
@@ -49,7 +58,6 @@
       - alacritty
       - gnome-keyring
       - gnome-keyring-pam
-      - network-manager-applet
       - seahorse
       - nextcloud-client
       - autorandr
@@ -99,7 +107,6 @@
       - flameshot
       - qutebrowser
       - rofi
-      - font-manager
     state: present
   become: true
 

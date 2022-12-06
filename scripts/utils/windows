@@ -1,3 +1,3 @@
 #!/bin/bash
 
-VBoxManage startvm "WinDev2210Eval"
+VBoxManage startvm "Win10"

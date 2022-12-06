@@ -46,6 +46,13 @@
     hour: "8"
     job: "$HOME/.dotfiles/scripts/utils/blacklist"
 
+- name: push dotfiles every day
+  ansible.builtin.cron:
+    name: "sync blacklist"
+    hour: "5"
+    minute: "0"
+    job: "cd $HOME/.dotfiles && git add . && git commit -m 'automated update' && git push origin main"
+
 - name: delete trashed items after 30 days
   ansible.builtin.cron:
     name: "empty trash older than 30 days every week"

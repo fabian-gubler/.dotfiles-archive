@@ -46,11 +46,24 @@
     name: atim/lazygit
   become: true
 
+- name: enable neomutt
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    name:  flatcap/neomutt
+    become: true
+
+- name: enable font-manager
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    name:  jerrycasiano/FontManager
+    become: true
+
 - name: install packages
   package:
     name:
       - blanket
       - lazygit
+      - neomutt
     state: present
   become: true
 # --
