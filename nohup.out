@@ -1,0 +1,13 @@
+/app/extra/bin/spotify: /app/lib/libcurl-gnutls.so.4: no version information available (required by /app/extra/bin/spotify)
+[spotifywm] attached to spotify
+/app/extra/share/spotify/spotify: /app/lib/libcurl-gnutls.so.4: no version information available (required by /app/extra/share/spotify/spotify)
+/app/extra/share/spotify/spotify: /app/lib/libcurl-gnutls.so.4: no version information available (required by /app/extra/share/spotify/spotify)
+[spotifywm] attached to spotify
+[spotifywm] attached to spotify
+Gtk-Message: 20:14:40.469: Failed to load module "xapp-gtk3-module"
+/proc/self/exe: /app/lib/libcurl-gnutls.so.4: no version information available (required by /proc/self/exe)
+[spotifywm] spotify window 4000004 found
+[spotifywm] spotify window 4000003 found
+[spotifywm] attached to spotify
+[spotifywm] spotify window 4c00008 found
+[spotifywm] spotify window 4c0000f found

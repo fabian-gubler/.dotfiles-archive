@@ -57,6 +57,7 @@
       - tlp
       - alacritty
       - gnome-keyring
+      - libevdev-devel # needed for evdev-rightclick
       - gnome-keyring-pam
       - seahorse
       - nextcloud-client
@@ -107,6 +108,9 @@
       - flameshot
       - qutebrowser
       - rofi
+      - openvpn  
+      - NetworkManager-openvpn 
+      - NetworkManager-openvpn-gnome
     state: present
   become: true
 

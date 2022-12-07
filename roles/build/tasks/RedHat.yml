@@ -54,6 +54,18 @@
     target: install
   become: true
 
+- name: clone evdev-rightclick
+  git:
+    repo: https://github.com/PeterCxy/evdev-right-click-emulation
+    dest: "{{ ansible_user_dir }}/.local/share/evdev-rightclick"
+    update: no
+
+- name: compile evdev-rightclick
+  make:
+    chdir: "{{ ansible_user_dir }}/.local/share/evdev-rightclick"
+    target: all
+  become: false
+
 - name: clone hsetroot
   git:
     repo: https://github.com/himdel/hsetroot

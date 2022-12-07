@@ -1,3 +1,5 @@
+
+
 # ---
 # rpm remote packages
 # ---
@@ -50,13 +52,13 @@
   community.general.copr:
     host: copr.fedorainfracloud.org
     name:  flatcap/neomutt
-    become: true
+  become: true
 
 - name: enable font-manager
   community.general.copr:
     host: copr.fedorainfracloud.org
     name:  jerrycasiano/FontManager
-    become: true
+  become: true
 
 - name: install packages
   package:
@@ -66,24 +68,43 @@
       - neomutt
     state: present
   become: true
+
+# --
+# neomutt
+# --
+
+- name: mail with mutt
+  package:
+    name:
+      - isync     # sync mail to local storage
+      - lynx      # display html
+      - notmuch   # search mail
+      - msmtp     # send mail
+  become: true
+
+- name: create mail directory if it does not exist
+  ansible.builtin.file:
+    path: $HOME/.mail
+    state: directory
+    mode: '0755'
+
 # --
 # pip
 # --
 
-# - name: Install python packages (data science)
-#   pip:
-#     name:
-#       - pynvim
-#       - jupyter-client
-#       - jupyterlab-autosave-on-focus-change
-#       - ueberzug
-#       - ipykernel
-#       - tensorflow
-#       - numpy
-#       - matplotlib
-#     state: present
+- name: Install python packages (data science)
+  pip:
+    name:
+      - pynvim
+      - jupyter-client
+      - ueberzug
+      - ipykernel
+      - tensorflow
+      - numpy
+      - matplotlib
+    state: present
 
-- name: install python packages
+- name: Install python packages
   pip:
     name:
       - mkdocs
@@ -95,12 +116,8 @@
       - fahrplan
       - pulsemixer
       - trash-cli
+      - tldextract # bitwarden login script
     state: present
-
-- name: install rust packages
-  community.general.cargo:
-    name:
-      - rbw
 
 # Spotifyd Steps
 # 1. Clone Repo
@@ -124,29 +141,29 @@
       - io.typora.Typora
       - com.spotify.Client
       - com.obsproject.Studio
-    method: user
+      - com.github.ahrm.sioyek
 
 - name: link typora
   file:
-    src: '$HOME/.local/share/flatpak/exports/bin/io.typora.Typora'
+    src: '/var/lib/flatpak/exports/bin/io.typora.Typora'
     dest: '$HOME/.local/bin/typora'
     state: link
 
 - name: link signal
   file:
-    src: '$HOME/.local/share/flatpak/exports/bin/org.signal.Signal'
+    src: '/var/lib/flatpak/exports/bin/org.signal.Signal'
     dest: '$HOME/.local/bin/signal'
     state: link
 
 - name: link spotify
   file:
-    src: '$HOME/.local/share/flatpak/exports/bin/com.spotify.Client'
+    src: '/var/lib/flatpak/exports/bin/com.spotify.Client'
     dest: '$HOME/.local/bin/spotify'
     state: link
 
 - name: link obs
   file:
-    src: '$HOME/.local/share/flatpak/exports/bin/com.obsproject.Studio'
+    src: '/var/lib/flatpak/exports/bin/com.obsproject.Studio'
     dest: '$HOME/.local/bin/obs'
     state: link
 
@@ -156,4 +173,6 @@
 
 - name: install rust packages
   community.general.cargo:
-    name: stylua
+    name: 
+      - stylua
+      - rbw

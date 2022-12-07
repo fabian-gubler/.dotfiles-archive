@@ -11,7 +11,8 @@ alias mutt="mbsync protonmail && neomutt"
 alias nb="newsboat"
 alias pm="pulsemixer"
 alias py="python3"
-# alias task="task-finder"
+alias ran="autorandr"
+alias n="nohup"
 
 # scripts
 alias alarm="$HOME/.dotfiles/scripts/utils/alarm"
@@ -52,15 +53,22 @@ randpw(){
 	< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-$1};echo;
 }
 
-mpn(){
-	nohup mpv "$@" &
-}
-
 # ------------------
 # todo.txt
 # ------------------
 
 u() {
-	date +"# Pri Work  %V     ID     Name"
+	date +"#  Pri Work  %V     ID     Name"
 	todo.sh -d /home/fabian/nextcloud/todo/uni/config "$@"
+}
+
+uf() {
+	u
+	echo ""
+	echo "---"
+	date +'%A, %d.%m.%Y   (%W)'
+	echo "---"
+	echo ""
+
+	khal -c ~/.config/khal/config.tasks list -a task now 30d
 }

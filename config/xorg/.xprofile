@@ -10,6 +10,9 @@ export GTK_THEME=Nordic
 export QT_QPA_PLATFORMTHEME=qt6ct
 export QT_SCALE_FACTOR=1.5
 
+# sensitive
+export MAIL_ADDRESS=$(rbw get bridge --full | tail -1)
+
 # paths
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -32,10 +35,15 @@ redshift -l 47.66667:8.98333 & # night light with coordinates
 xbindkeys & # playerctl with headphones
 mpd & # music player daemon
 flatpak run org.signal.Signal --start-in-tray --no-sandbox & # messenger
-protonmail-bridge --no-window & # mail backend
-nm-applet & # network control
 playerctld & # Switch Tracks
 
+# applets
+nm-applet & # network control
+blueberry-tray &
+pasystray &
+protonmail-bridge --no-window & # mail backend
+
+# keyring
 $HOME/nextcloud/apps/keyring.sh &
 dbus-update-activation-environment --all & # keyring
 

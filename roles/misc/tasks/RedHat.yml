@@ -17,6 +17,11 @@
     name: tlp
     enabled: yes
 
+- name: change power button behavior
+  ansible.builtin.shell: 
+    cmd: grep -qxF "HandlePowerKey=suspend" /etc/systemd/logind.conf || echo "HandlePowerKey=suspend" | sudo tee -a /etc/systemd/logind.conf
+  become: true
+
 - name: clone dmenu bluetooth-autoconnect
   git:
     repo: https://github.com/jrouleau/bluetooth-autoconnect
@@ -60,7 +65,24 @@
 #     src: "{{ ansible_user_dir }}/.local/share/Postman\ Agent/app/postman-agent"
 #     dest: "{{ ansible_user_dir }}/.local/bin/postman-agent"
 #     state: link
-      
+
+# ---
+# ZSA WAlly
+# ---
+
+- name: install dependencies
+  become: true
+  package:
+    name:
+      - gtk3
+      - webkit2gtk3 
+      - libusb
+    state: present
+
+# 1. TODO: Download binary (https://github.com/zsa/wally/wiki/Linux-install#3-download-the-wally-binary-and-run-it)
+# 2. TODO: Udev Rule (https://github.com/zsa/wally/wiki/Linux-install#2-create-a-udev-rule-file)
+# 3. TODO: Make executable and put in .local/bin
+
 # ---
 # docker
 # ---

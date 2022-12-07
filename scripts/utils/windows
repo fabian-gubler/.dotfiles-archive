@@ -1,3 +1,13 @@
 #!/bin/bash
 
+sudo -v
+
+if ! sudo -v &> /dev/null
+then
+    dunstify -u "critical" "Error: run with sudo"
+    exit 2
+fi
+
+sudo $HOME/.local/share/evdev-rightclick/out/evdev-rce &
+
 VBoxManage startvm "Win10"

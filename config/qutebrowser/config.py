@@ -47,7 +47,7 @@ config.bind("<Ctrl-k>", "fake-key <Shift-End><Delete>", "insert")
 
 # }}}
 # {{{ Options
-c.content.pdfjs = True
+c.content.pdfjs = False
 c.hints.chars = "arstdhneio"
 c.content.autoplay = False
 
@@ -68,6 +68,7 @@ config.set("fileselect.multiple_files.command", ['alacritty', '--class', 'ranger
 # }}}
 # {{{ Stylesheets
 c.colors.webpage.bg = "#2E3440"
+
 
 # Bindings
 config.bind(',d', 'set content.user_stylesheets ~/.config/qutebrowser/stylesheets/dark.css')
