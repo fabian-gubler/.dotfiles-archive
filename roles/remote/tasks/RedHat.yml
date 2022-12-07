@@ -95,13 +95,17 @@
 - name: Install python packages (data science)
   pip:
     name:
-      - pynvim
       - jupyter-client
-      - ueberzug
+      - jupyterlab
+      - jupyterlab-vim
+      - pynvim
       - ipykernel
-      - tensorflow
       - numpy
       - matplotlib
+      - pandas
+      - klepto # repl for sniprun
+      # - tensorflow (not found)
+      # - ueberzug (does not exist anymore)
     state: present
 
 - name: Install python packages
@@ -116,7 +120,6 @@
       - fahrplan
       - pulsemixer
       - trash-cli
-      - tldextract # bitwarden login script
     state: present
 
 # Spotifyd Steps

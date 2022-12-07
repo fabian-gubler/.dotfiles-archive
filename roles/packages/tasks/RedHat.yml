@@ -32,6 +32,7 @@
       - rust
       - golang
       - python3-pip
+      - conda
       - cargo
       - java-17-openjdk
 

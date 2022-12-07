@@ -6,9 +6,9 @@
     state: present
   become: true
 
-- name: set default browser
-  ansible.builtin.shell:
-    cmd: xdg-settings set default-web-browser qutebrowser.desktop
+# - name: set default browser
+#   ansible.builtin.shell:
+#     cmd: xdg-settings set default-web-browser qutebrowser.desktop
 
 - name: set default pdf
   ansible.builtin.shell:

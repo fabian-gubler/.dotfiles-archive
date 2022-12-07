@@ -30,12 +30,14 @@
     path: /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify
     state: directory
     mode: 'a+wr'
+  become: true
 
 - name: read/write permissions for spicetify
   ansible.builtin.file:
     path: /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/Apps
     state: directory
     mode: 'a+wr'
+  become: true
 
 # Cron environment
 - name: Add "SHELL" environment variable to crontab
