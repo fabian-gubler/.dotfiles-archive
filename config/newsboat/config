@@ -14,7 +14,7 @@ reload-threads      100
 
 #                   statement
 pager				internal
-browser				"mpv"
+browser				"nohup mpv"
 
 ### UI
 #                   format

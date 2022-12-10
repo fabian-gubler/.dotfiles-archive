@@ -104,6 +104,9 @@ c.url.searchengines['en'] = \
 c.url.searchengines['p'] = \
 	'https://www.powerthesaurus.org/{}/synonyms'
 
+c.url.searchengines['k'] = \
+	'https://www.merriam-webster.com/dictionary/{}'
+
 # }}}
 # {{{ Adblocking
 # Test Adblock: https://d3ward.github.io/toolz/adblock.html
