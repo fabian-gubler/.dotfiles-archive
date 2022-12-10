@@ -8,3 +8,7 @@ config_version: 2
 settings:
   content.notifications.enabled:
     https://1337x.unblockit.pet: false
+  statusbar.show:
+    global: always
+  tabs.show:
+    global: always
