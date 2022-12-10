@@ -53,52 +53,52 @@
     job: $MAIL_ADDRESS
 
 # Cronjobs
-- name: check mail every 5 minutes
+- name: cron entry - check mail 
   ansible.builtin.cron:
-    name: "sync mailbox"
+    name: "sync mailbox (every 5 minutes)"
     minute: "*/5"
     job: "killall mbsync &>/dev/null; mbsync protonmail" 
 
-- name: backup vm every week
+- name: cron entry - backup vm 
   ansible.builtin.cron:
-    name: "backup virtual machine"
+    name: "backup virtual machine (every week)"
     weekday: "0"
     minute: "0"
     hour: "8"
     job: "VBoxManage export 'Win10' -o '$HOME/nextcloud/apps/vms/Win10/(date +'%Y-%m-%d')-Win10.ova'"
 
-- name: trash downloaded files every 2 hours
+- name: cron entry - trash downloaded files 
   ansible.builtin.cron:
-    name: "trash downloads"
-    hour: "4"
+    name: "trash downloads (at 5 AM)"
+    hour: "5"
     minute: "0"
     job: "trash $HOME/Downloads/*"
 
-- name: update blacklist every week
+- name: cron entry - update blacklist 
   ansible.builtin.cron:
-    name: "sync blacklist"
+    name: "sync blacklist (every week)"
     weekday: "0"
     minute: "0"
     hour: "8"
     job: "$HOME/.dotfiles/scripts/utils/blacklist"
 
-- name: push dotfiles every day
+- name: cron entry - push dotfiles 
   ansible.builtin.cron:
-    name: "push dotfiles"
+    name: "push dotfiles (at 5 AM)"
     hour: "5"
     minute: "0"
     job: "cd $HOME/.dotfiles && git add . && git commit -m 'automated update' && git push origin main"
 
-- name: push neovim config every day
+- name: cron entry - push neovim config 
   ansible.builtin.cron:
-    name: "push neovim"
+    name: "push neovim (at 5 AM)"
     hour: "5"
     minute: "0"
     job: "cd $HOME/.config/nvim && git add . && git commit -m 'automated update' && git push origin main"
 
-- name: delete trashed items after 30 days
+- name: cron entry - delete trashed items 
   ansible.builtin.cron:
-    name: "empty trash older than 30 days every week"
+    name: "empty trash older than 30 days (every week)"
     weekday: "0"
     minute: "0"
     hour: "8"

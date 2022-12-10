@@ -2,6 +2,7 @@
 
 # general
 export EDITOR=nvim
+export PAGER=nvim
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
 
