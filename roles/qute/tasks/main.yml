@@ -6,13 +6,46 @@
     state: present
   become: true
 
-# - name: set default browser
-#   ansible.builtin.shell:
-#     cmd: xdg-settings set default-web-browser qutebrowser.desktop
+# xdg-settings set default-web-browser qutebrowser.desktop
+# xdg-mime default sxiv.desktop image/jpeg
+# xdg-mime default sxiv.desktop image/png
+
+- name: "Create qutebrowser desktop entry"
+  ansible.builtin.copy:
+    dest: $HOME/.local/share/applications/qutebrowser.desktop
+    content: |
+      [Desktop Entry]
+      Name=qutebrowser
+      Comment=web brobser
+      Exec=qutebrowser
+      Type=Application
+      MimeType=x-scheme-handler/unknown;x-scheme-handler/about;x-scheme-handler/https;x-scheme-handler/http;text/html;html
+
+- name: "Create sxiv desktop entry"
+  ansible.builtin.copy:
+    dest: $HOME/.local/share/applications/sxiv.desktop
+    content: |
+      [Desktop Entry]
+      Name=sxiv
+      Comment=image viewer
+      Exec=sxiv
+      Type=Application
+      MimeType=image/png;image/jpeg
+
+- name: set default browser
+  ansible.builtin.shell:
+    cmd: xdg-settings set default-web-browser qutebrowser.desktop
+
+
+- name: set default image viewer
+  ansible.builtin.shell:
+    cmd: xdg-mime default sxiv.desktop image/jpeg
 
 - name: set default pdf
   ansible.builtin.shell:
-    cmd: xdg-mime default sioyek.desktop application/pdf
+    cmd: |
+      xdg-mime default sxiv.desktop image/jpeg
+      xdg-mime default sxiv.desktop image/png
 
 - name: install python packages
   pip:
