@@ -92,8 +92,7 @@ c.url.searchengines['w'] = \
     'https://en.wikipedia.org/?search={}'
 
 c.url.searchengines['x'] = \
-    'https://1337x.to/search/{}/1/'
-    'https://www.1337xx.to/torrent/1945616/Snowden-2016-1080p-Pinkihacks/'
+    'https://1337x.unblockit.pet/search/{}/1/'
 
 # Linguistic
 c.url.searchengines['de'] = \
