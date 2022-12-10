@@ -10,8 +10,11 @@ set spoolfile = +INBOX
 set postponed = +Drafts
 set trash = +Trash
 set record = +Sent
-set sidebar_visible = no
+set sidebar_visible = yes
 set forward_format = "Fwd: %s"	# format of subject when forwarding
+set forward_decode              # decode when forwarding
+set forward_quote				# include message in forwards
+unset mime_forward				# forward attachments as part of body
 set include						# include message in replies
 set sort = 'reverse-date'
 set mailcap_path = ~/.config/mutt/mailcap
@@ -40,7 +43,7 @@ macro index,pager V "<view-attachments><search>html<enter><view-mailcap><exit>"
 macro attach S "<save-entry><bol>~/Downloads/<eol>" "save to downloads"
 macro index \Cf "<enter-command>unset wait_key<enter><shell-escape>printf 'Enter a search term to find with notmuch: '; read x; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' | perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \`\"<enter>" "show only messages matching a notmuch pattern"
 
-# macros
+# set macros
 macro index,pager gi "<change-folder>=INBOX<enter>" "go to inbox"
 macro index,pager Mi ";<save-message>=INBOX<enter>" "move mail to inbox"
 macro index,pager Ci ";<copy-message>=INBOX<enter>" "copy mail to inbox"
@@ -63,7 +66,7 @@ macro index,pager gp "<change-folder>=Spam<enter>" "go to spam"
 macro index,pager Mp ";<save-message>=Spam<enter>" "move mail to spam"
 macro index,pager Cp ";<copy-message>=Spam<enter>" "copy mail to spam"
 
-# arrow
+# arrow keys
 bind attach <Right> view-mailcap
 bind attach <Right> view-mailcap
 bind pager <Right> view-attachments

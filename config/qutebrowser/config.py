@@ -93,6 +93,7 @@ c.url.searchengines['w'] = \
 
 c.url.searchengines['x'] = \
     'https://1337x.to/search/{}/1/'
+    'https://www.1337xx.to/torrent/1945616/Snowden-2016-1080p-Pinkihacks/'
 
 # Linguistic
 c.url.searchengines['de'] = \
