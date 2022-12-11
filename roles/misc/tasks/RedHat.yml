@@ -101,7 +101,14 @@
       - docker-compose-plugin
     state: present
 
-- name: Enable automatic updates
+- name: add user to docker group
+  become: true
+  user:
+    name: 'fabian'
+    groups: docker
+    append: yes
+
+- name: start docker service
   become: true
   systemd:
     state: started

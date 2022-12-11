@@ -21,6 +21,7 @@ declare -a options=(
 "Suspend"
 "Shutdown"
 "Reboot"
+"Monitor"
 )
 
 output(){
@@ -50,9 +51,13 @@ case $choice in
     'Suspend')
         systemctl suspend
         ;;
+	'Monitor')
+		xset dpms force off
+		;;
 	# It is a common practice to use the wildcard asterisk symbol (*) as a final
     # pattern to define the default case. This pattern will always match.
     *)
         exit 0
     ;;
 esac
+xset dpms force off

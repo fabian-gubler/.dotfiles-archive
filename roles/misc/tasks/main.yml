@@ -67,13 +67,6 @@
     hour: "8"
     job: "VBoxManage export 'Win10' -o '$HOME/nextcloud/apps/vms/Win10/(date +'%Y-%m-%d')-Win10.ova'"
 
-- name: cron entry - trash downloaded files 
-  ansible.builtin.cron:
-    name: "trash downloads (at 5 AM)"
-    hour: "5"
-    minute: "0"
-    job: "trash $HOME/Downloads/*"
-
 - name: cron entry - update blacklist 
   ansible.builtin.cron:
     name: "sync blacklist (every week)"
@@ -81,6 +74,13 @@
     minute: "0"
     hour: "8"
     job: "$HOME/.dotfiles/scripts/utils/blacklist"
+
+- name: cron entry - trash downloaded files 
+  ansible.builtin.cron:
+    name: "trash downloads (at 5 AM)"
+    hour: "5"
+    minute: "0"
+    job: "trash $HOME/Downloads/*"
 
 - name: cron entry - push dotfiles 
   ansible.builtin.cron:
@@ -104,10 +104,3 @@
     hour: "8"
     job: "trash-empty 30"
 
-# Sysadmin
-- name: add user to docker group
-  become: true
-  user:
-    name: 'fabian'
-    groups: docker
-    append: yes
