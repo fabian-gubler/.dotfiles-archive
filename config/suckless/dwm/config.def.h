@@ -6,13 +6,13 @@ static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
-static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const unsigned int systrayspacing = 10;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static int showsystray				= 0;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
-static const char *fonts[]          = { "SFMono:size=11" };
-static const char dmenufont[]       = "SFMono:size=10";
+static const char *fonts[]          = { "SFMono:size=12" };
+static const char dmenufont[]       = "SFMono:size=12";
 static char normbgcolor[]           = "#252A34";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -43,6 +43,8 @@ static const Rule rules[] = {
 	{ "Firefox",  NULL,       NULL,       0,			0,           -1,        50,50,500,500,        0 },
 	{ "Firefox",  NULL,       "Save As",  0,			0,           -1,        50,50,500,500,        0 },
 	{ "Florence",  NULL,	   NULL,	  0,			1,           -1,        50,50,1000,1000,        0 },
+	{ "Rofi",  NULL,	   NULL,	  0,			1,           -1,        50,50,1000,1000,        0 },
+	{ "Blueberry.py",  NULL,	   NULL,	  0,			1,           -1,        50,50,1000,1000,        0 },
 };
 
 /* layout(s) */
@@ -82,6 +84,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_g,      spawn,          SHCMD("sioyek")},
 	{ MODKEY,                       XK_z,      spawn,          SHCMD("blanket")},
+	{ MODKEY,                       XK_f,      spawn,          SHCMD("thunar")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("spotify --force-device-scale-factor=1.5")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
@@ -105,7 +108,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Tab,	   view,           {0} },
 	{ MODKEY,						XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	// { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_h,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	{ MODKEY,						XK_space,  togglefloating, {0} },

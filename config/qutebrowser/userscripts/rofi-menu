@@ -34,7 +34,8 @@ create_menu_quickmarks() {
 }
 
 # launcher config (remove rofi_args if using dmenu)
-launcher="rofi -dmenu"
+# launcher="rofi -dmenu"
+launcher="rofi -dmenu -normal-window"
 args+=(-p qutebrowser)
 args+=(-i -l 8)
 args+=(-format s\|f) # only work with rofi

@@ -18,6 +18,9 @@
       - xclip
       - xkill
       - sqlite
+      - touchegg
+      - touche
+      - onboard
     state: present
   become: true
 
@@ -53,6 +56,7 @@
       - chromium
       - torbrowser-launcher
       - zathura
+      - thunar
     state: present
   become: true
 

@@ -62,7 +62,7 @@ argument_parser = argparse.ArgumentParser(
 argument_parser.add_argument('url', nargs='?', default=os.getenv('QUTE_URL'))
 argument_parser.add_argument('--dmenu-invocation', '-d', default='rofi -mesg "Enter your Password" -dmenu -i -p Bitwarden',
                              help='Invocation used to execute a dmenu-provider')
-argument_parser.add_argument('--password-prompt-invocation', '-p', default='rofi -mesg "Enter your Password" -dmenu -p "Master Password" -password -lines 0',
+argument_parser.add_argument('--password-prompt-invocation', '-p', default='rofi -mesg "Enter your Password" -normal-window -dmenu -p "Master Password" -password -lines 0',
                              help='Invocation used to prompt the user for their Bitwarden password')
 argument_parser.add_argument('--no-insert-mode', '-n', dest='insert_mode', action='store_false',
                              help="Don't automatically enter insert mode")

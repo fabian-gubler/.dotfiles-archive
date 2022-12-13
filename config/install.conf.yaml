@@ -9,6 +9,7 @@
     ~/.config/sxiv:                         sxiv
     ~/.config/mutt:                         mail/mutt
     ~/.mbsyncrc:                            mail/.mbsyncrc
+    ~/.config/touchegg:                     touchegg
     ~/.config/qutebrowser:                  qutebrowser
     ~/.config/zsh:                          zsh
     ~/.config/rbw:                          rbw
