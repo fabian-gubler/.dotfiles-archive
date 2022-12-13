@@ -37,17 +37,18 @@ xbindkeys & # playerctl with headphones
 mpd & # music player daemon
 flatpak run org.signal.Signal --start-in-tray --no-sandbox & # messenger
 playerctld & # Switch Tracks
+touchegg & # touch gestures
 
 # applets
 nm-applet & # network control
 blueberry-tray &
-pasystray &
-protonmail-bridge --no-window & # mail backend
+protonmail-bridge --no-window --noninteractive & # mail backend
 
 # keyring
 $HOME/nextcloud/apps/keyring.sh &
 dbus-update-activation-environment --all & # keyring
 
-# scripts
+# script
 $HOME/.dotfiles/scripts/utils/bat-indicator &
 $HOME/.dotfiles/scripts/watchers/autovdirsyncer &
+volctl &

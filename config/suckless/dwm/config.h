@@ -42,6 +42,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
 	{ "Firefox",  NULL,       NULL,       0,			0,           -1,        50,50,500,500,        0 },
 	{ "Firefox",  NULL,       "Save As",  0,			0,           -1,        50,50,500,500,        0 },
+	{ "Florence",  NULL,	   NULL,	  0,			1,           -1,        50,50,1000,1000,        0 },
 };
 
 /* layout(s) */
@@ -80,6 +81,7 @@ static Key keys[] = {
 	{ MODKEY,						XK_w,      spawn,          SHCMD("qutebrowser")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_g,      spawn,          SHCMD("sioyek")},
+	{ MODKEY,                       XK_z,      spawn,          SHCMD("blanket")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("spotify --force-device-scale-factor=1.5")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
@@ -88,6 +90,8 @@ static Key keys[] = {
 
 	/* modifier                     key        function        argument */
 	{ MODKEY,						XK_Return, spawn,          {.v = termcmd } },
+	// { Mod1Mask,						XK_space,  togglebar,      {0} },
+	{ ShiftMask,					XK_space,  togglebar,      {0} },
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
     { MODKEY,						XK_a,      togglesystray,  {0} },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
