@@ -14,7 +14,7 @@
 
 - name: idle screen timeout delay
   ansible.builtin.shell:
-    cmd: gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 0
+    cmd: gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout -1
 
 - name: install gotop
   ansible.builtin.shell:

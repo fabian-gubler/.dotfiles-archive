@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+
+## Author  : Aditya Shakya (adi1090x)
+## Github  : @adi1090x
+#
+## Applets : Quick Links
+
+# Import Current Theme
+ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
+theme="$ROFI_DIR/shared/style-2.rasi"
+
+# Theme Elements
+prompt='Quick Links'
+
+list_col='2'
+list_row='4'
+
+option_1="	Back"
+option_2="	SBB"
+option_3="	Kindle"
+option_4="	Youtube"
+option_5="	Maps"
+option_6="	Mail"
+option_7="	Teams"
+option_8="	Calendar"
+
+# Rofi CMD
+rofi_cmd() {
+	rofi -theme-str "listview {columns: $list_col; lines: $list_row;}" \
+		-theme-str 'window {location: center; anchor: center; fullscreen: false; width: 800px;}' \
+		-theme-str 'textbox-prompt-colon {str: "";}' \
+		-theme-str "element-text {font: \"$efonts\";}" \
+		-dmenu \
+		-markup-rows \
+		-theme ${theme}
+}
+
+# Pass variables to rofi dmenu
+run_rofi() {
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7\n$option_8" | rofi_cmd
+}
+
+# Execute Command
+run_cmd() {
+	if [[ "$1" == '--opt1' ]]; then
+		sleep 0.2
+		$ROFI_DIR/launcher
+	elif [[ "$1" == '--opt2' ]]; then
+		xdg-open 'https://www.sbb.ch/'
+	elif [[ "$1" == '--opt3' ]]; then
+		xdg-open 'https://read.amazon.com/kindle-library'
+	elif [[ "$1" == '--opt4' ]]; then
+		xdg-open 'https://www.yewtu.be/'
+	elif [[ "$1" == '--opt5' ]]; then
+		xdg-open 'https://www.google.com/maps'
+	elif [[ "$1" == '--opt6' ]]; then
+		xdg-open 'https://mail.proton.me'
+	elif [[ "$1" == '--opt7' ]]; then
+		xdg-open 'https://teams.microsoft.com/'
+	elif [[ "$1" == '--opt8' ]]; then
+		xdg-open 'https://220624z6bmfrl5nztze.nextcloud.hosting.zone/apps/calendar/timeGridWeek/now'
+	fi
+}
+
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
+    $option_1)
+		run_cmd --opt1
+        ;;
+    $option_2)
+		run_cmd --opt2
+        ;;
+    $option_3)
+		run_cmd --opt3
+        ;;
+    $option_4)
+		run_cmd --opt4
+        ;;
+    $option_5)
+		run_cmd --opt5
+        ;;
+    $option_6)
+		run_cmd --opt6
+        ;;
+    $option_7)
+		run_cmd --opt7
+        ;;
+    $option_8)
+		run_cmd --opt8
+        ;;
+esac

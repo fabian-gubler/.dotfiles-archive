@@ -9,6 +9,13 @@
 # dependencies: rofi, sqlite3 
 # usage: spawn --userscript open|open-tab|marks|marks-tab 
 
+# launcher config (remove rofi_args if using dmenu)
+# launcher="rofi -dmenu"
+launcher="rofi -dmenu "
+args+=(-p qutebrowser)
+args+=(-i -l 8)
+args+=(-format s\|f) # only work with rofi
+
 QUTE_DATA_DIR=$HOME/.local/share/qutebrowser
 QUTE_BOOKMARKS_DIR=$HOME/nextcloud/apps/qutebrowser
 
@@ -18,6 +25,10 @@ if [ "$2" == "copy" ]; then
 	# xdotool type $(cat $QUTE_DATA_DIR/search-history | tail -1)
 fi
 
+# save previous entry in clipboard
+if [ "$2" == "touch" ]; then
+	args+=(-normal-window)
+fi
 
 create_menu() {
 	printf -- '%s\n' "$(
@@ -35,7 +46,7 @@ create_menu_quickmarks() {
 
 # launcher config (remove rofi_args if using dmenu)
 # launcher="rofi -dmenu"
-launcher="rofi -dmenu -normal-window"
+launcher="rofi -dmenu "
 args+=(-p qutebrowser)
 args+=(-i -l 8)
 args+=(-format s\|f) # only work with rofi
@@ -44,6 +55,11 @@ case $1 in
 open | tab)
 	get_history() {
 		create_menu | $launcher "${args[@]}"
+	}
+	;;
+alt_open | tab)
+	get_history() {
+		create_menu | $alt_launcher "${args[@]}"
 	}
 	;;
 marks | marks-tab)
@@ -63,7 +79,7 @@ url=${myarray[0]}
 term=${myarray[1]}
 
 # if no selection is made, exit (escape pressed, e.g.)
-[[ -z $query ]] && exit 0
+# [[ -z $query ]] && exit 0
 
 # append search term to history
 if [ -z $term ]; then

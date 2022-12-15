@@ -11,15 +11,18 @@
     state: present
   become: true
 
-- name: Enable automatic updates
-  become: true
-  systemd:
-    name: tlp
-    enabled: yes
-
 - name: change power button behavior
   ansible.builtin.shell: 
     cmd: grep -qxF "HandlePowerKey=suspend" /etc/systemd/logind.conf || echo "HandlePowerKey=suspend" | sudo tee -a /etc/systemd/logind.conf
+  become: true
+
+- name: suspend on inactivity
+  ansible.builtin.shell: 
+    cmd: grep -qxF "IdleAction=suspend" /etc/systemd/logind.conf || echo "IdleAction=suspend" | sudo tee -a /etc/systemd/logind.conf
+
+- name: set inactivity timeout
+  ansible.builtin.shell: 
+    cmd: grep -qxF "IdleActionSec=15min" /etc/systemd/logind.conf || echo "IdleActionSec=15min" | sudo tee -a /etc/systemd/logind.conf
   become: true
 
 - name: clone dmenu bluetooth-autoconnect
@@ -108,9 +111,27 @@
     groups: docker
     append: yes
 
+# ---
+# systemd
+# ---
+
 - name: start docker service
   become: true
   systemd:
     state: started
     name: docker
+    enabled: yes
+
+- name: enable touchegg
+  become: true
+  systemd:
+    state: started
+    name: tlp
+    enabled: yes
+
+- name: enable automatic updates
+  become: true
+  systemd:
+    state: started
+    name: tlp
     enabled: yes

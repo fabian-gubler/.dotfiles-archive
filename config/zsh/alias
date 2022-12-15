@@ -13,6 +13,7 @@ alias pm="pulsemixer"
 alias py="python3"
 alias ran="autorandr"
 alias n="nohup"
+alias launch="~/.config/rofi/powermenu/type-2/powermenu.sh"
 
 # flatpak
 alias touche="flatpak run com.github.joseexposito.touche"

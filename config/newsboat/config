@@ -38,6 +38,7 @@ macro     b       set browser "qutebrowser"; open-in-browser ; set browser pipe
 ### KEYBINDINGS
 unbind-key  RIGHT
 unbind-key  LEFT
+unbind-key  q
 
 #         key     action
 bind-key  ENTER   open-in-browser 
@@ -47,4 +48,3 @@ bind-key  g       home
 bind-key  a       toggle-article-read 
 bind-key  RIGHT   open
 bind-key  LEFT    quit
-bind-key  q       hard-quit 

@@ -90,3 +90,25 @@
     target: install
   become: true
 
+# --- 
+# volctl
+# ---
+
+- name: clone volctl
+  git:
+    repo: https://github.com/buzz/volctl
+    dest: "{{ ansible_user_dir }}/.local/share/volctl"
+    update: no
+
+- name: install volctl
+  ansible.builtin.shell:
+    cmd: sudo ./setup.py install
+
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: "{{ ansible_user_dir }}/.local/share/volctl/data/apps.volctl.gschema.xml"
+    dest: /usr/share/glib-2.0/schemas/apps.volctl.gschema.xml
+
+- name: compile schemas
+  ansible.builtin.shell:
+    cmd: sudo glib-compile-schemas /usr/share/glib-2.0/schemas/

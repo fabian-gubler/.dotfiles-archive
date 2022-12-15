@@ -32,14 +32,28 @@
       Type=Application
       MimeType=image/png;image/jpeg
 
+- name: "Create sioyek desktop entry"
+  ansible.builtin.copy:
+    dest: $HOME/.local/share/applications/sioyek.desktop
+    content: |
+      [Desktop Entry]
+      Name=sioyek
+      Comment=pdf viewer
+      Exec=sioyek
+      Type=Application
+      MimeType=application/pdf
+
 - name: set default browser
   ansible.builtin.shell:
     cmd: xdg-settings set default-web-browser qutebrowser.desktop
 
-
 - name: set default image viewer
   ansible.builtin.shell:
     cmd: xdg-mime default sxiv.desktop image/jpeg
+
+- name: set default pdf viewer
+  ansible.builtin.shell:
+    cmd: xdg-mime default sioyek.desktop application/pdf
 
 - name: set default pdf
   ansible.builtin.shell:

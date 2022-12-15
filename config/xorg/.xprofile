@@ -5,6 +5,8 @@ export EDITOR=nvim
 export PAGER=nvim
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
+export PDF_VIEWER=sioyek
+export BROWSER=qutebrowser
 
 # theme
 export GTK_THEME=Nordic
@@ -34,15 +36,12 @@ nextcloud --background & # establish connection to cloud server
 clipmenud & # clipboard manager daemon
 redshift -l 47.66667:8.98333 & # night light with coordinates
 xbindkeys & # playerctl with headphones
+xautolock -time 15 -detectsleep -locker "systemctl suspend" & # suspend after inactivity
 mpd & # music player daemon
-flatpak run org.signal.Signal --start-in-tray --no-sandbox & # messenger
 playerctld & # Switch Tracks
 touchegg & # touch gestures
-
-# applets
-nm-applet & # network control
-blueberry-tray &
 protonmail-bridge --no-window --noninteractive & # mail backend
+
 
 # keyring
 $HOME/nextcloud/apps/keyring.sh &
@@ -51,4 +50,4 @@ dbus-update-activation-environment --all & # keyring
 # script
 $HOME/.dotfiles/scripts/utils/bat-indicator &
 $HOME/.dotfiles/scripts/watchers/autovdirsyncer &
-$HOME/.dotfiles/scripts/utils/delayed-apps &
+$HOME/.dotfiles/scripts/utils/applets &

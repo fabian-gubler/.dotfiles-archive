@@ -7,6 +7,7 @@
 
 - link:
     ~/.config/sxiv:                         sxiv
+    ~/.config/picom.conf:                   picom/picom.conf
     ~/.config/mutt:                         mail/mutt
     ~/.mbsyncrc:                            mail/.mbsyncrc
     ~/.config/touchegg:                     touchegg
@@ -17,7 +18,8 @@
     ~/.config/yt-dlp:                       yt-dlp
     ~/.config/keyboard.conf:                setxkbmap/keyboard.conf
     ~/.tmux.conf:                           tmux/tmux.conf
-    ~/.config/rofi:                         rofi
+    ~/.config/rofi/themes:                  rofi/themes
+    ~/.config/rofi/config.rasi:             rofi/config.rasi
     ~/.latexmkrc:                           latex/.latexmkrc
     ~/.config/khal:                         khal  
     ~/.config/khard:                        khard  

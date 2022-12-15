@@ -4,6 +4,11 @@ https://lukesmith.xyz/rss.xml
 ### YOUTUBE
 "query:YouTube Subscriptions:tags # \"youtube\""
 
+# Interesting:
+# - Just Murphy
+# - The Defiant
+# - Coffeezilla
+
 # Linux / Vim
 https://www.youtube.com/feeds/videos.xml?channel_id=UC8ENHE5xdFSwx71u3fDH5Xw "!" "youtube"    # The Primeagen
 https://www.youtube.com/feeds/videos.xml?channel_id=UCd3dNckv1Za2coSaHGHl5aA "!" "youtube"    # TJ Devries

@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+flatpak run org.signal.Signal --start-in-tray --no-sandbox & # messenger
+sleep 2
+
+nextcloud --background & # establish connection to cloud server
+sleep 1
+
+nm-applet & # network control
+sleep 1
+
+blueberry-tray &
+sleep 1
+
+onboard &
+
+while volctl /tmp/file >& /dev/null; [[ $? -eq 0 ]];
+do
+  echo "Result unsuccessful"
+  sleep 5
+done
+
+echo "Result successful"

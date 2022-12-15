@@ -1,0 +1,5 @@
+@import "../shared/onedarker.rasi"
+
+* {
+    font: "SF Pro Display 20";
+}
