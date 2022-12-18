@@ -1,21 +1,3 @@
 #!/bin/bash
 
 VBoxManage startvm "Win10"
-
-evdev() {
-	sudo -v
-
-	if ! sudo -v &> /dev/null
-	then
-		dunstify -u "critical" "Error: run with sudo"
-		exit 2
-	fi
-
-	sudo $HOME/.local/share/evdev-rightclick/out/evdev-rce &
-}
-
-# save previous entry in clipboard
-if [ "$1" == "evdev" ]; then
-	evdev
-fi
-

@@ -63,8 +63,8 @@ c.tabs.show = "always"
 c.statusbar.show = "always"
 
 # Default Pages
-c.url.default_page = "about:blank"
-c.url.start_pages = "about:blank"
+c.url.default_page = "/home/fabian/index.html"
+c.url.start_pages = "/home/fabian/index.html"
 
 # File Selection
 config.set("fileselect.handler", "external")
@@ -72,7 +72,7 @@ config.set("fileselect.single_file.command", ['alacritty', '--class', 'ranger,ra
 config.set("fileselect.multiple_files.command", ['alacritty', '--class', 'ranger,ranger', '-e', 'ranger', '--choosefiles', '{}'])
 # }}}
 # {{{ Stylesheets
-c.colors.webpage.bg = "#2E3440"
+# c.colors.webpage.bg = "#2E3440"
 
 
 # Bindings
@@ -180,7 +180,6 @@ config.set("content.cookies.accept", "all", "devtools://*")
 # Type: String
 
 # config.set("content.headers.accept_language", "", "https://matchmaker.krunker.io/*")
-c.content.headers.accept_language = "en-US,en;q=0.8"
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -223,8 +222,6 @@ c.content.headers.accept_language = "en-US,en;q=0.8"
 #     "Mozilla/5.0 ({os_info}; rv:90.0) Gecko/20100101 Firefox/90.0",
 #     "https://accounts.google.com/*",
 # )
-# c.content.headers.user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/105.0"
-c.content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:105.0) Gecko/20100101 Firefox/105.0"
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:

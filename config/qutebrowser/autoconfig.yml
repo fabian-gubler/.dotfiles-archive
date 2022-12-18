@@ -6,10 +6,6 @@
 
 config_version: 2
 settings:
-  content.notifications.enabled:
-    https://teams.microsoft.com: true
-  content.user_stylesheets:
-    global: null
   statusbar.show:
     global: always
   tabs.show:

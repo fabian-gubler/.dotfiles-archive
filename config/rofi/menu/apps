@@ -43,7 +43,7 @@ run_cmd() {
 	elif [[ "$1" == '--opt2' ]]; then
 		thunar
 	elif [[ "$1" == '--opt3' ]]; then
-		$BROWSER
+		qutebrowser
 	elif [[ "$1" == '--opt4' ]]; then
 		kitty
 	elif [[ "$1" == '--opt5' ]]; then

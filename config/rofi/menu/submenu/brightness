@@ -21,6 +21,7 @@ option_4="100%"
 option_5="-10%"
 option_6="+10%"
 
+
 # Rofi CMD
 rofi_cmd() {
 	rofi -theme-str "listview {columns: $list_col; lines: $list_row;}" \
@@ -46,7 +47,6 @@ run_cmd() {
 		$ROFI_DIR/settings
 	elif [[ "$1" == '--opt2' ]]; then
 		brightnessctl set 0%
-		$ROFI_DIR/submenu/brightness
 	elif [[ "$1" == '--opt3' ]]; then
 		brightnessctl set 2%
 		$ROFI_DIR/submenu/brightness
@@ -84,4 +84,3 @@ case ${chosen} in
 		run_cmd --opt6
         ;;
 esac
-
