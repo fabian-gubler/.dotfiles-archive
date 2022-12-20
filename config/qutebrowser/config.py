@@ -63,8 +63,8 @@ c.tabs.show = "always"
 c.statusbar.show = "always"
 
 # Default Pages
-c.url.default_page = "/home/fabian/index.html"
-c.url.start_pages = "/home/fabian/index.html"
+c.url.default_page = "/home/fabian/.dotfiles/config/qutebrowser/index.html"
+c.url.start_pages = "/home/fabian/.dotfiles/config/qutebrowser/index.html"
 
 # File Selection
 config.set("fileselect.handler", "external")
