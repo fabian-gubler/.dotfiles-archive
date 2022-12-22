@@ -24,6 +24,10 @@ create_commute ()
 		return
 	fi
 
+	if [[ $(khal list $time | grep "07:23") ]]; then
+		return
+	fi
+
 	# Determine Train Ride
 	echo "${bold}Where are you heading to?${normal}"
 	echo "1 - St. Gallen"
@@ -41,7 +45,7 @@ create_commute ()
 			echo ""
 			;;
 		2) 
-			timespan="06:53 07:47"
+			timespan="07:23 08:17"
 			from="Steckborn"
 			arrival="Frauenfeld"
 			echo "Selection: Frauenfeld"
@@ -96,7 +100,7 @@ echo ""
 echo "${bold}Entries${normal}"
 
 echo $(khal list $time | grep 06:53)
-create_block "08:15 10:00 Study -a uni"
+create_block "08:30 10:00 Study -a uni"
 create_block "10:15 12:00 Study -a uni"
 create_block "12:15 14:00 Fitness -a pers"
 create_block "14:15 16:00 Study -a uni"
