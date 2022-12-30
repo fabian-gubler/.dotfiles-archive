@@ -7,7 +7,7 @@
 
 # Import Current Theme
 ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
-theme="$ROFI_DIR/shared/style-2.rasi"
+theme="$ROFI_DIR/styles/text.rasi"
 
 # Theme Elements
 prompt='Quick Links'
@@ -40,53 +40,35 @@ run_rofi() {
 	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7\n$option_8" | rofi_cmd
 }
 
-# Execute Command
-run_cmd() {
-	if [[ "$1" == '--opt1' ]]; then
-		sleep 0.2
-		$ROFI_DIR/launcher
-	elif [[ "$1" == '--opt2' ]]; then
-		xdg-open 'https://www.sbb.ch/'
-	elif [[ "$1" == '--opt3' ]]; then
-		xdg-open 'https://read.amazon.com/kindle-library'
-	elif [[ "$1" == '--opt4' ]]; then
-		xdg-open 'https://www.yewtu.be/'
-	elif [[ "$1" == '--opt5' ]]; then
-		xdg-open 'https://www.google.com/maps'
-	elif [[ "$1" == '--opt6' ]]; then
-		xdg-open 'https://mail.proton.me'
-	elif [[ "$1" == '--opt7' ]]; then
-		xdg-open 'https://teams.microsoft.com/'
-	elif [[ "$1" == '--opt8' ]]; then
-		xdg-open 'https://220624z6bmfrl5nztze.nextcloud.hosting.zone/apps/calendar/timeGridWeek/now'
-	fi
-}
-
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
     $option_1)
-		run_cmd --opt1
+		sleep 0.2
+		$ROFI_DIR/launcher
         ;;
     $option_2)
-		run_cmd --opt2
+		xdg-open 'https://www.sbb.ch/'
         ;;
     $option_3)
-		run_cmd --opt3
+		xdg-open 'https://read.amazon.com/kindle-library'
         ;;
     $option_4)
-		run_cmd --opt4
+		xdg-open 'https://www.yewtu.be/'
         ;;
     $option_5)
-		run_cmd --opt5
+		xdg-open 'https://www.google.com/maps'
         ;;
     $option_6)
-		run_cmd --opt6
+		xdg-open 'https://mail.proton.me'
         ;;
     $option_7)
-		run_cmd --opt7
+		xdg-open 'https://teams.microsoft.com/'
         ;;
     $option_8)
-		run_cmd --opt8
+		xdg-open 'https://220624z6bmfrl5nztze.nextcloud.hosting.zone/apps/calendar/timeGridWeek/now'
         ;;
+	*)
+		exit
+		;;
 esac

@@ -39,12 +39,20 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class			instance    title       tags mask   isfloating   monitor    float x,y,w,h       floatborderpx*/
-	{ "Firefox",		NULL,       NULL,       1 << 8,		0,           -1,        50,50,500,500,      0 },
-	{ "Firefox",		NULL,       "Save As",  0,			0,           -1,        50,50,500,500,      0 },
-	{ "Florence",		NULL,		NULL,		0,			1,           -1,        50,50,1000,1000,    0 },
-	{ "Rofi",			NULL,	   	NULL,	  	0,			1,           -1,        50,50,1000,1000,    0 },
-	{ "Blueberry.py",	NULL,	   	NULL,	  	0,			1,           -1,        50,50,1000,1000,    0 },
+	/* class				instance    title       tags mask   isfloating   monitor    float x,y,w,h       floatborderpx*/
+	{ "Spotify",			NULL,       NULL,       1 << 7,		0,           -1,        50,50,500,500,      0 },
+	{ "sioyek",				NULL,       NULL,       1 << 5,		0,           -1,        50,50,500,500,      0 },
+	{ "Chromium-browser",	NULL,       NULL,       1 << 4,		0,           -1,        50,50,500,500,      0 },
+	{ "firefox",			NULL,       NULL,       1 << 3,		0,           -1,        50,50,500,500,      0 },
+	{ "mpv",				NULL,       NULL,       1 << 2,		0,           -1,        50,50,500,500,      0 },
+	{ "qutebrowser",		NULL,       NULL,       1 << 1,		0,           -1,        50,50,500,500,      0 },
+	{ "kitty",				NULL,       NULL,       0,			0,           -1,        50,50,500,500,      0 },
+
+	/* class				instance    title       tags mask   isfloating   monitor    float x,y,w,h       floatborderpx*/
+	{ "Firefox",			NULL,       "Save As",  0,			0,           -1,        50,50,500,500,      0 },
+	{ "Florence",			NULL,		NULL,		0,			1,           -1,        50,50,1000,1000,    0 },
+	{ "Rofi",				NULL,	   	NULL,	  	0,			1,           -1,        50,50,1000,1000,    0 },
+	{ "Blueberry.py",		NULL,	   	NULL,	  	0,			1,           -1,        50,50,1000,1000,    0 },
 };
 
 /* layout(s) */

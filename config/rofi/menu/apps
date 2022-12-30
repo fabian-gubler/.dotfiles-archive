@@ -7,7 +7,7 @@
 
 # Import Current Theme
 ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
-theme="$ROFI_DIR/shared/style-2.rasi"
+theme="$ROFI_DIR/styles/text.rasi"
 
 # Layout
 list_col='1'
@@ -35,42 +35,24 @@ run_rofi() {
 	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | rofi_cmd
 }
 
-# Execute Command
-run_cmd() {
-	if [[ "$1" == '--opt1' ]]; then
-		sleep 0.2
-		$ROFI_DIR/launcher
-	elif [[ "$1" == '--opt2' ]]; then
-		thunar
-	elif [[ "$1" == '--opt3' ]]; then
-		qutebrowser
-	elif [[ "$1" == '--opt4' ]]; then
-		kitty
-	elif [[ "$1" == '--opt5' ]]; then
-		spotify --force-device-scale-factor=1.5
-	fi
-}
-
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
     $option_1)
-		run_cmd --opt1
+		sleep 0.2
+		$ROFI_DIR/launcher
         ;;
     $option_2)
-		run_cmd --opt2
+		thunar
         ;;
     $option_3)
-		run_cmd --opt3
+		qutebrowser
         ;;
     $option_4)
-		run_cmd --opt4
+		kitty
         ;;
     $option_5)
-		run_cmd --opt5
-        ;;
-    $option_6)
-		run_cmd --opt6
+		spotify --force-device-scale-factor=1.5
         ;;
 esac
 

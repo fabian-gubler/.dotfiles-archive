@@ -7,14 +7,6 @@
  * Rofi Version: 1.7.3
  **/
 
-/*****----- Configuration -----*****/
-configuration {
-  /* single click */
-  hover-select: true;
-  me-select-entry: "";
-  me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
-    show-icons:                 false;
-}
 
 /*****----- Global Properties -----*****/
 @import                          "../shared/properties.rasi"

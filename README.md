@@ -18,3 +18,10 @@ bash config/configure.sh
 ```
 # Automation Ideas
 - [Automatic Upgrades](https://www.tecmint.com/dnf-automatic-install-security-updates-automatically-in-centos-8/)
+
+# Audio on Tigerlake
+Install SOF Drivers on [Link](https://github.com/thesofproject/sof-bin/releases)
+
+## Notes
+- Version: Tested with v.2.2.2
+- Optional: /home/fabian/.dotfiles/config/audio/sound.sh

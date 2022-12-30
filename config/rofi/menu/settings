@@ -7,7 +7,7 @@
 
 # Import Current Theme
 ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
-theme="$ROFI_DIR/shared/style-2.rasi"
+theme="$ROFI_DIR/styles/text.rasi"
 
 # Layout
 list_col='1'
@@ -33,38 +33,21 @@ run_rofi() {
 	echo -e "$option_1\n$option_2\n$option_3" | rofi_cmd
 }
 
-# Execute Command
-run_cmd() {
-	if [[ "$1" == '--opt1' ]]; then
-		sleep 0.2
-		$ROFI_DIR/launcher
-	elif [[ "$1" == '--opt2' ]]; then
-		$ROFI_DIR/submenu/brightness
-	elif [[ "$1" == '--opt3' ]]; then
-		pavucontrol
-	fi
-}
-
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
     $option_1)
-		run_cmd --opt1
+		sleep 0.2
+		$ROFI_DIR/launcher
         ;;
     $option_2)
-		run_cmd --opt2
+		$ROFI_DIR/brightness
         ;;
     $option_3)
-		run_cmd --opt3
+		pavucontrol
         ;;
-    $option_4)
-		run_cmd --opt4
-        ;;
-    $option_5)
-		run_cmd --opt5
-        ;;
-    $option_6)
-		run_cmd --opt6
-        ;;
+	*)
+		exit
+		;;
 esac
 
