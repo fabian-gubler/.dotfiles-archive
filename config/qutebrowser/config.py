@@ -1,3 +1,5 @@
+
+
 # Ignore settings configured via autoconfig.yml
 config.load_autoconfig(False)
 
@@ -63,8 +65,10 @@ c.tabs.show = "always"
 c.statusbar.show = "always"
 
 # Default Pages
-c.url.default_page = "/home/fabian/.dotfiles/config/qutebrowser/index.html"
-c.url.start_pages = "/home/fabian/.dotfiles/config/qutebrowser/index.html"
+# c.url.default_page = "/home/fabian/.dotfiles/config/qutebrowser/index.html"
+# c.url.start_pages = "/home/fabian/.dotfiles/config/qutebrowser/index.html"
+c.url.default_page = "about:blank"
+c.url.start_pages = "about:blank"
 
 # File Selection
 config.set("fileselect.handler", "external")
@@ -72,7 +76,16 @@ config.set("fileselect.single_file.command", ['alacritty', '--class', 'ranger,ra
 config.set("fileselect.multiple_files.command", ['alacritty', '--class', 'ranger,ranger', '-e', 'ranger', '--choosefiles', '{}'])
 # }}}
 # {{{ Stylesheets
-# c.colors.webpage.bg = "#2E3440"
+config.bind('td', 'config-cycle colors.webpage.darkmode.enabled ;; restart'    )
+
+c.colors.webpage.bg = "#2E3440"
+c.colors.webpage.preferred_color_scheme = 'dark'
+c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.algorithm = "lightness-cielab"
+c.colors.webpage.darkmode.threshold.text = 150
+c.colors.webpage.darkmode.threshold.background = 100
+c.colors.webpage.darkmode.policy.images = 'always'
+c.colors.webpage.darkmode.grayscale.images = 0.35
 
 
 # Bindings
@@ -195,48 +208,16 @@ config.set("content.cookies.accept", "all", "devtools://*")
 # between 5.12 and 5.14 (inclusive), changing the value exposed to
 # JavaScript requires a restart.
 # Type: FormatString
-# config.set(
-#     "content.headers.user_agent",
-#     "Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}",
-#     "https://web.whatsapp.com/",
-# )
 
+# Avoid Browser Deprecation Messages
+# NEWEST: https://www.mozilla.org/en-US/firefox/releases/
+# METHOD: Firefox > Help > About
+config.set(
+    "content.headers.user_agent",
+    # 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}',
+    "Mozilla/5.0 (X11; Linux x86_64; rv:108.0) Gecko/20100101 Firefox/108.0"
+)
 
-# User agent to send.  The following placeholders are defined:  *
-# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
-# The underlying WebKit version (set to a fixed value   with
-# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
-# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
-# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
-# QtWebEngine. * `{upstream_browser_version}`: The corresponding
-# Safari/Chrome version. * `{qutebrowser_version}`: The currently
-# running qutebrowser version.  The default value is equal to the
-# unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
-# read from JavaScript is always the global value. With QtWebEngine
-# between 5.12 and 5.14 (inclusive), changing the value exposed to
-# JavaScript requires a restart.
-# Type: FormatString
-
-# config.set(
-#     "content.headers.user_agent",
-#     "Mozilla/5.0 ({os_info}; rv:90.0) Gecko/20100101 Firefox/90.0",
-#     "https://accounts.google.com/*",
-# )
-
-# User agent to send.  The following placeholders are defined:  *
-# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
-# The underlying WebKit version (set to a fixed value   with
-# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
-# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
-# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
-# QtWebEngine. * `{upstream_browser_version}`: The corresponding
-# Safari/Chrome version. * `{qutebrowser_version}`: The currently
-# running qutebrowser version.  The default value is equal to the
-# unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
-# read from JavaScript is always the global value. With QtWebEngine
-# between 5.12 and 5.14 (inclusive), changing the value exposed to
-# JavaScript requires a restart.
-# Type: FormatString
 
 # Which method of blocking ads should be used.  Support for Adblock Plus
 # (ABP) syntax blocklists using Brave's Rust library requires the
