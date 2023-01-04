@@ -5,9 +5,10 @@
 #
 ## Applets : Power Menu
 
-# Import Current Theme
+# Import shared content
 ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
 theme="$ROFI_DIR/styles/text.rasi"
+source $ROFI_DIR/shared/common.sh
 
 # Layout
 list_col='1'
@@ -17,16 +18,6 @@ list_row='3'
 option_1="	Back"
 option_2="	Brightness"
 option_3="墳	Volume"
-
-# Rofi CMD
-rofi_cmd() {
-	rofi -theme-str "listview {columns: $list_col; lines: $list_row;}" \
-		-theme-str 'window {location: center; anchor: center; fullscreen: false; width: 500px;}' \
-		-theme-str 'textbox-prompt-colon {str: "";}' \
-		-dmenu \
-		-markup-rows \
-		-theme ${theme}
-}
 
 # Pass variables to rofi dmenu
 run_rofi() {
@@ -44,7 +35,7 @@ case ${chosen} in
 		$ROFI_DIR/brightness
         ;;
     $option_3)
-		pavucontrol
+		pavucontrol &
         ;;
 	*)
 		exit

@@ -6,7 +6,9 @@
 - clean: ['~']
 
 - link:
+    ~/.config/pipewire:                     pipewire
     ~/.config/sxiv:                         sxiv
+    ~/.config/autorandr:                    autorandr
     ~/.config/picom.conf:                   picom/picom.conf
     ~/.config/mutt:                         mail/mutt
     ~/.mbsyncrc:                            mail/.mbsyncrc

@@ -5,9 +5,10 @@
 #
 ## Applets : Power Menu
 
-# Import Current Theme
+# Import shared content
 ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
 theme="$ROFI_DIR/styles/text.rasi"
+source $ROFI_DIR/shared/common.sh
 
 # Layout
 list_col='1'
@@ -22,31 +23,9 @@ option_5="	Shutdown"
 yes=' Yes'
 no=' No'
 
-# Rofi CMD
-rofi_cmd() {
-	rofi -theme-str "listview {columns: $list_col; lines: $list_row;}" \
-		-theme-str 'window {location: center; anchor: center; fullscreen: false; width: 500px;}' \
-		-theme-str 'textbox-prompt-colon {str: "";}' \
-		-dmenu \
-		-markup-rows \
-		-theme ${theme}
-}
-
 # Pass variables to rofi dmenu
 run_rofi() {
 	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | rofi_cmd
-}
-
-# Confirmation CMD
-confirm_cmd() {
-	rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 350px;}' \
-		-theme-str 'listview {columns: 2; lines: 1;}' \
-		-theme-str 'element-text {horizontal-align: 0.5;}' \
-		-theme-str 'textbox {horizontal-align: 0.5;}' \
-		-dmenu \
-		-p 'Confirmation' \
-		-mesg 'Are you Sure?' \
-		-theme ${theme}
 }
 
 # Ask for confirmation
@@ -74,10 +53,10 @@ case ${chosen} in
 		$ROFI_DIR/launcher
         ;;
     $option_2)
-		slock
+		slock &
         ;;
     $option_3)
-		systemctl suspend
+		systemctl suspend &
         ;;
     $option_4)
 		confirm_run 'systemctl reboot'

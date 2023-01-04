@@ -82,3 +82,8 @@
 | Firefox     | Fallback        | Alternative to Qutebrowser + Advanced DevTools                       |
 | Tor         | Privacy         | Reduce Fingerprinting                                                |
 | Chromium    | Google Services | Everything that requires Google Account (e.g. Docs, Slides, YouTube) |
+
+# Ebooks
+- Reader: Koodo
+- Books: Torrent or de-drm ebooks (https://www.acsmconverter.com/)
+- Alternative: Sync Kindle and export with Calibre

@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-# Import Current Theme
+# Import shared content
 ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
 theme="$ROFI_DIR/styles/icon.rasi"
+source $ROFI_DIR/shared/common.sh
 
-list_col='6'
+list_col='7'
 list_row='1'
 
 option_1="爵"
@@ -12,24 +13,16 @@ option_2=""
 option_3=""
 option_4=""
 option_5=""
-option_6=""
-
-# Rofi CMD
-rofi_cmd() {
-	rofi -theme-str "listview {columns: $list_col; lines: $list_row;}" \
-		-dmenu \
-		-markup-rows \
-		-steal-focus \
-		-theme ${theme}
-}
+option_6=""
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | rofi_cmd
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6" | rofi_cmd
 }
 
 # Actions
 chosen="$(run_rofi)"
+sleep 0.2
 case ${chosen} in
     $option_1)
 		$ROFI_DIR/quicklinks
@@ -41,10 +34,13 @@ case ${chosen} in
 		$ROFI_DIR/apps
         ;;
     $option_4)
-		blueberry
+		blueberry &
         ;;
     $option_5)
 		$ROFI_DIR/settings
+        ;;
+    $option_6)
+		exit
         ;;
 esac
 

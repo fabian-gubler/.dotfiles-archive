@@ -14,7 +14,7 @@ reload-threads      100
 
 #                   statement
 pager				internal
-browser				"nohup mpv"
+browser				"qutebrowser"
 
 ### UI
 #                   format
@@ -34,16 +34,17 @@ color     info                  white   color236
 #         key     action
 macro     f       set browser "firefox"; open-in-browser ; set browser piper
 macro     b       set browser "qutebrowser"; open-in-browser ; set browser pipe
+macro     m       set browser "nohup mpv"; open-in-browser ; set browser pipe
 
 ### KEYBINDINGS
 unbind-key  RIGHT
 unbind-key  LEFT
 
 #         key     action
-bind-key  ENTER   open-in-browser 
-bind-key  SPACE   macro-prefix
-bind-key  G       end
-bind-key  g       home
+# bind-key  ENTER   open-in-browser 
+# bind-key  SPACE   macro-prefix
+# bind-key  G       end
+# bind-key  g       home
 bind-key  a       toggle-article-read 
 bind-key  RIGHT   open
 bind-key  LEFT    quit

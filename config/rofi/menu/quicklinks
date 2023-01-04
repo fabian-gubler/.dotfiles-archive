@@ -5,9 +5,10 @@
 #
 ## Applets : Quick Links
 
-# Import Current Theme
+# Import shared content
 ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
 theme="$ROFI_DIR/styles/text.rasi"
+source $ROFI_DIR/shared/common.sh
 
 # Theme Elements
 prompt='Quick Links'
@@ -24,17 +25,6 @@ option_6="	Mail"
 option_7="	Teams"
 option_8="	Calendar"
 
-# Rofi CMD
-rofi_cmd() {
-	rofi -theme-str "listview {columns: $list_col; lines: $list_row;}" \
-		-theme-str 'window {location: center; anchor: center; fullscreen: false; width: 800px;}' \
-		-theme-str 'textbox-prompt-colon {str: "";}' \
-		-theme-str "element-text {font: \"$efonts\";}" \
-		-dmenu \
-		-markup-rows \
-		-theme ${theme}
-}
-
 # Pass variables to rofi dmenu
 run_rofi() {
 	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7\n$option_8" | rofi_cmd
@@ -48,25 +38,25 @@ case ${chosen} in
 		$ROFI_DIR/launcher
         ;;
     $option_2)
-		xdg-open 'https://www.sbb.ch/'
+		qutebrowser 'https://www.sbb.ch/' 
         ;;
     $option_3)
-		xdg-open 'https://read.amazon.com/kindle-library'
+		qutebrowser 'https://read.amazon.com/kindle-library' 
         ;;
     $option_4)
-		xdg-open 'https://www.yewtu.be/'
+		qutebrowser 'https://www.yewtu.be/' 
         ;;
     $option_5)
-		xdg-open 'https://www.google.com/maps'
+		qutebrowser 'https://www.google.com/maps' 
         ;;
     $option_6)
-		xdg-open 'https://mail.proton.me'
+		qutebrowser 'https://mail.proton.me' 
         ;;
     $option_7)
-		xdg-open 'https://teams.microsoft.com/'
+		qutebrowser 'https://teams.microsoft.com/' 
         ;;
     $option_8)
-		xdg-open 'https://220624z6bmfrl5nztze.nextcloud.hosting.zone/apps/calendar/timeGridWeek/now'
+		qutebrowser 'https://220624z6bmfrl5nztze.nextcloud.hosting.zone/apps/calendar/timeGridWeek/now' 
         ;;
 	*)
 		exit

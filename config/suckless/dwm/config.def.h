@@ -44,6 +44,7 @@ static const Rule rules[] = {
 	{ "sioyek",				NULL,       NULL,       1 << 5,		0,           -1,        50,50,500,500,      0 },
 	{ "Chromium-browser",	NULL,       NULL,       1 << 4,		0,           -1,        50,50,500,500,      0 },
 	{ "firefox",			NULL,       NULL,       1 << 3,		0,           -1,        50,50,500,500,      0 },
+	{ "koodo-reader",		NULL,       NULL,       1 << 2,		0,           -1,        50,50,500,500,      0 },
 	{ "mpv",				NULL,       NULL,       1 << 2,		0,           -1,        50,50,500,500,      0 },
 	{ "qutebrowser",		NULL,       NULL,       1 << 1,		0,           -1,        50,50,500,500,      0 },
 	{ "kitty",				NULL,       NULL,       0,			0,           -1,        50,50,500,500,      0 },
@@ -97,6 +98,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/bluetooth")},
+	{ MODKEY|ControlMask,           XK_y,      spawn,          SHCMD("autorandr --load lap")},
 	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},
 
 	/* modifier                     key        function        argument */

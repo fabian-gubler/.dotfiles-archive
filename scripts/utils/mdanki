@@ -25,12 +25,14 @@ sync() {
 }
 
 
-while true; do
-	sync
-	inotifywait \
-		--event modify \
-		--event create \
-		--event delete \
-		--timeout 300 \
-		--recursive "$DOCSDIR"
-done
+# while true; do
+# 	sync
+# 	inotifywait \
+# 		--event modify \
+# 		--event create \
+# 		--event delete \
+# 		--timeout 300 \
+# 		--recursive "$DOCSDIR"
+# done
+
+sync
