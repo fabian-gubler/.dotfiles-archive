@@ -1,0 +1,9 @@
+[Added Associations]
+
+[Default Applications]
+application/html=qutebrowser.desktop;
+application/pdf=sioyek.desktop;
+image/jpeg=sxiv.desktop;
+image/png=sxiv.desktop;
+text/*=nvim.desktop;
+x-scheme-handler/terminal=kitty-open.desktop;

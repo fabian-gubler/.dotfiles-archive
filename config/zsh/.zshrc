@@ -26,7 +26,7 @@ zsh_add_file "alias"
 
 # keybinds
 bindkey -e                        # emacs bindings
-bindkey -s '^f' 'ranger^M'        # ranger
+bindkey -s '^f' 'lf^M'        # ranger
 bindkey -s '^t' 'exa -a^M'        # extended ls
 
 bindkey "^[[3~" delete-char       # make delete work

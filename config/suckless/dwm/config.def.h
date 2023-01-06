@@ -40,10 +40,12 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class				instance    title       tags mask   isfloating   monitor    float x,y,w,h       floatborderpx*/
+	{ "Blanket",			NULL,       NULL,       1 << 7,		0,           -1,        50,50,500,500,      0 },
 	{ "Spotify",			NULL,       NULL,       1 << 7,		0,           -1,        50,50,500,500,      0 },
 	{ "sioyek",				NULL,       NULL,       1 << 5,		0,           -1,        50,50,500,500,      0 },
 	{ "Chromium-browser",	NULL,       NULL,       1 << 4,		0,           -1,        50,50,500,500,      0 },
 	{ "firefox",			NULL,       NULL,       1 << 3,		0,           -1,        50,50,500,500,      0 },
+	{ "com.github.johnfactotum.Foliate",NULL, NULL, 1 << 2,		0,           -1,        50,50,500,500,      0 },
 	{ "koodo-reader",		NULL,       NULL,       1 << 2,		0,           -1,        50,50,500,500,      0 },
 	{ "mpv",				NULL,       NULL,       1 << 2,		0,           -1,        50,50,500,500,      0 },
 	{ "qutebrowser",		NULL,       NULL,       1 << 1,		0,           -1,        50,50,500,500,      0 },
@@ -93,22 +95,20 @@ static Key keys[] = {
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_g,      spawn,          SHCMD("sioyek")},
 	{ MODKEY,                       XK_z,      spawn,          SHCMD("blanket")},
-	{ MODKEY,                       XK_f,      spawn,          SHCMD("thunar")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("spotify --force-device-scale-factor=1.5")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/bluetooth")},
 	{ MODKEY|ControlMask,           XK_y,      spawn,          SHCMD("autorandr --load lap")},
+	{ MODKEY|ShiftMask|ControlMask, XK_y,      spawn,          SHCMD("autorandr --load mon")},
 	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},
 
 	/* modifier                     key        function        argument */
 	{ MODKEY,						XK_Return, spawn,          {.v = termcmd } },
-	// { Mod1Mask,						XK_space,  togglebar,      {0} },
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
     { MODKEY,						XK_a,      togglesystray,  {0} },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = -1 } },
-
 	{ MODKEY,                       XK_m,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_i,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ControlMask,           XK_n,      movestack,      {.i = +1 } },
@@ -117,7 +117,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Tab,	   view,           {0} },
 	{ MODKEY,						XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	// { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_h,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	{ MODKEY,						XK_space,  togglefloating, {0} },

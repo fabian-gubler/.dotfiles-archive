@@ -7,6 +7,7 @@
 
 - link:
     ~/.config/pipewire:                     pipewire
+    ~/.config/handlr:                       handlr
     ~/.config/sxiv:                         sxiv
     ~/.config/autorandr:                    autorandr
     ~/.config/picom.conf:                   picom/picom.conf
@@ -22,7 +23,6 @@
     ~/.tmux.conf:                           tmux/tmux.conf
     ~/.config/rofi/themes:                  rofi/themes
     ~/.config/rofi/config.rasi:             rofi/config.rasi
-    ~/.latexmkrc:                           latex/.latexmkrc
     ~/.config/khal:                         khal  
     ~/.config/khard:                        khard  
     ~/.config/vdirsyncer:                   vdirsyncer
@@ -42,15 +42,13 @@
     ~/.config/redshift:                     redshift
     ~/.config/mpv:                          mpv
     ~/.config/mpd:                          mpd
-    ~/.xbindkeysrc:                         xutils/.xbindkeysrc
-    ~/.config/mimeapps.list:                xutils/mimeapps.list
+    ~/.xbindkeysrc:                         xorg/.xbindkeysrc
+    ~/.config/mimeapps.list:                xorg/mimeapps.list
     ~/.config/mpDris2:                      mpDris2
     ~/.ncmpcpp:                             ncmpcpp
     ~/.spicetify/Extensions/keyboardShortcut.js: spicetify/keyboardShortcut.js
     ~/.config/spicetify/config-xpui.ini:    spicetify/config-xpui.ini
-    ~/.config/ranger/rc.conf:               ranger/rc.conf
-    ~/.config/ranger/rifle.conf:            ranger/rifle.conf
-    ~/.config/ranger/plugins:               ranger/plugins
+    ~/.config/lf:                           lf
     ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf
     ~/.config/zathura:                      zathura
     ~/.config/xournalpp:                    xournal

@@ -11,6 +11,7 @@ config.load_autoconfig(False)
 from qutebrowser.api import interceptor
 from qutebrowser.api import cmdutils
 # }}}
+
 # {{{ Bindings
 # Bindings for normal mode
 config.bind(";m", "hint links spawn mpv {hint-url}")

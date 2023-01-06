@@ -3,17 +3,14 @@
 # general
 export EDITOR=nvim
 export PAGER=nvim
+export PDF_VIEWER=sioyek
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
-export PDF_VIEWER=sioyek
 
 # theme
 export GTK_THEME=Nordic
 export QT_QPA_PLATFORMTHEME=qt6ct
 export QT_SCALE_FACTOR=1.5
-
-# sensitive
-export MAIL_ADDRESS=$(rbw get bridge --full | tail -1)
 
 # paths
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -39,14 +36,13 @@ xautolock -time 15 -detectsleep -locker "systemctl suspend" & # suspend after in
 mpd & # music player daemon
 playerctld & # Switch Tracks
 touchegg & # touch gestures
-protonmail-bridge --no-window --noninteractive & # mail backend
-
+protonmail-bridge --no-window --noninteractive & # mail backend, run in background
 
 # keyring
-$HOME/nextcloud/apps/keyring.sh &
-dbus-update-activation-environment --all & # keyring
+$HOME/nextcloud/apps/keyring.sh & # retrieve keyring
+dbus-update-activation-environment --all & # activate keyring
 
 # script
-$HOME/.dotfiles/scripts/utils/bat-indicator &
-$HOME/.dotfiles/scripts/watchers/autovdirsyncer &
-$HOME/.dotfiles/scripts/utils/applets &
+$HOME/.dotfiles/scripts/utils/bat-indicator & # show battery level
+$HOME/.dotfiles/scripts/watchers/autovdirsyncer & # sync calendar/contacts on write
+$HOME/.dotfiles/scripts/utils/applets & # staart applets in order

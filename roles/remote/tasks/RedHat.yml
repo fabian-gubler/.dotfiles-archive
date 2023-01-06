@@ -145,6 +145,7 @@
       - com.spotify.Client
       - com.obsproject.Studio
       - com.github.ahrm.sioyek
+      - com.github.johnfactotum.Foliate
 
 - name: link typora
   file:
@@ -170,6 +171,11 @@
     dest: '$HOME/.local/bin/obs'
     state: link
 
+- name: link foliate
+  file:
+    src: '/usr/bin/com.github.johnfactotum.Foliate'
+    dest: '$HOME/.local/bin/foliate'
+    state: link
 # --
 # cargo
 # --

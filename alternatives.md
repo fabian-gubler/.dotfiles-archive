@@ -84,6 +84,6 @@
 | Chromium    | Google Services | Everything that requires Google Account (e.g. Docs, Slides, YouTube) |
 
 # Ebooks
-- Reader: Koodo
+- Reader: Foliate
 - Books: Torrent or de-drm ebooks (https://www.acsmconverter.com/)
 - Alternative: Sync Kindle and export with Calibre
