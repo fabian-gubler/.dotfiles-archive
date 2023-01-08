@@ -45,4 +45,8 @@ dbus-update-activation-environment --all & # activate keyring
 # script
 $HOME/.dotfiles/scripts/utils/bat-indicator & # show battery level
 $HOME/.dotfiles/scripts/watchers/autovdirsyncer & # sync calendar/contacts on write
-$HOME/.dotfiles/scripts/utils/applets & # staart applets in order
+$HOME/.dotfiles/scripts/utils/applets & # start applets in order
+
+# main applications
+kitty -e "tmuxd" &
+qutebrowser &

@@ -35,9 +35,9 @@ alias uv="nvim -c 'sort' /home/fabian/nextcloud/todo/uni/uni.txt"
 
 # productivity
 alias .="exa -a"
-alias ..="cl .."
-alias ...="cl ../.."
-alias ....="cl ../../.."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 alias gpush="git add . && git commit -m 'manual update' && git push"
 alias top="gotop -l minimal"
 
@@ -45,13 +45,13 @@ alias top="gotop -l minimal"
 # functions 
 # -------------------
 
-cl() {
-	cd "$@" && exa -a;
-}
-
-zl() {
-	zshz "$@" && exa -a;
-}
+# cl() {
+# 	cd "$@" && exa -a;
+# }
+#
+# zl() {
+# 	zshz "$@" && exa -a;
+# }
 
 randpw(){ 
 	< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-$1};echo;

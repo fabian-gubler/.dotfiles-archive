@@ -68,6 +68,7 @@
       - xsel
       - xset
       - trash-cli
+      - autojump-zsh
       - pandoc
       - mediawriter
       - imlib2-devel # needed for hsetroot

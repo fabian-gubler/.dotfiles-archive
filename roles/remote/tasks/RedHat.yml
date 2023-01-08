@@ -145,7 +145,6 @@
       - com.spotify.Client
       - com.obsproject.Studio
       - com.github.ahrm.sioyek
-      - com.github.johnfactotum.Foliate
 
 - name: link typora
   file:

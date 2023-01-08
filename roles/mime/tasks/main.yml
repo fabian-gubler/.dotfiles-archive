@@ -1,0 +1,40 @@
+---
+- name: "Create qutebrowser desktop entry"
+  ansible.builtin.copy:
+    dest: $HOME/.local/share/applications/qutebrowser.desktop
+    content: |
+      [Desktop Entry]
+      Name=qutebrowser
+      Exec=qutebrowser
+      Type=Application
+      MimeType=x-scheme-handler/unknown;x-scheme-handler/about;x-scheme-handler/https;x-scheme-handler/http;text/html;html
+
+- name: "Create sxiv desktop entry"
+  ansible.builtin.copy:
+    dest: $HOME/.local/share/applications/sxiv.desktop
+    content: |
+      [Desktop Entry]
+      Name=sxiv
+      Exec=sxiv
+      Type=Application
+      MimeType=image/png;image/jpeg
+
+- name: "Create sioyek desktop entry"
+  ansible.builtin.copy:
+    dest: $HOME/.local/share/applications/sioyek.desktop
+    content: |
+      [Desktop Entry]
+      Name=sioyek
+      Exec=sioyek
+      Type=Application
+      MimeType=application/pdf
+
+- name: "Create foliate desktop entry"
+  ansible.builtin.copy:
+    dest: $HOME/.local/share/applications/foliate.desktop
+    content: |
+      [Desktop Entry]
+      Name=foliate
+      Exec=foliate
+      Type=Application
+      MimeType=application/epub+zip

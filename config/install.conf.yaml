@@ -7,7 +7,7 @@
 
 - link:
     ~/.config/pipewire:                     pipewire
-    ~/.config/handlr:                       handlr
+    ~/.config/handlr/handlr.toml:           handlr/handlr.toml
     ~/.config/sxiv:                         sxiv
     ~/.config/autorandr:                    autorandr
     ~/.config/picom.conf:                   picom/picom.conf

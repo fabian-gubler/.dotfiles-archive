@@ -1,9 +1,13 @@
 [Added Associations]
 
 [Default Applications]
+application/djvu=sioyek.desktop;
+application/epub+zip=foliate.desktop;
 application/html=qutebrowser.desktop;
 application/pdf=sioyek.desktop;
 image/jpeg=sxiv.desktop;
 image/png=sxiv.desktop;
 text/*=nvim.desktop;
+video/mp4=mpv.desktop;
+video/x-matroska=mpv.desktop;
 x-scheme-handler/terminal=kitty-open.desktop;

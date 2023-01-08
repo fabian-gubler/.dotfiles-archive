@@ -59,6 +59,7 @@
       - torbrowser-launcher
       - zathura
       - thunar
+      - foliate
     state: present
   become: true
 

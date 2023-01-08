@@ -1,0 +1,3 @@
+#!/bin/bash
+
+foliate --add ~/nextcloud/media/books/*

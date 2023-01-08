@@ -12,9 +12,9 @@
   ansible.builtin.shell:
     cmd: gsettings set org.gtk.Settings.FileChooser window-size '(1200, 800)'
 
-- name: idle screen timeout delay
-  ansible.builtin.shell:
-    cmd: gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout -1
+# - name: idle screen timeout delay
+#   ansible.builtin.shell:
+#     cmd: gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout -1
 
 - name: install gotop
   ansible.builtin.shell:
@@ -71,36 +71,45 @@
     hour: "8"
     job: "VBoxManage export 'Win10' -o '$HOME/nextcloud/apps/vms/Win10/(date +'%Y-%m-%d')-Win10.ova'"
 
-- name: cron entry - update blacklist 
+- name: cron - update blacklist 
   ansible.builtin.cron:
     name: "sync blacklist (every week)"
     weekday: "0"
     minute: "0"
-    hour: "8"
-    job: "$HOME/.dotfiles/scripts/utils/blacklist"
+    hour: "11"
+    job: "$HOME/.dotfiles/scripts/cron/update-blacklist"
 
-- name: cron entry - trash downloaded files 
+- name: cron - update book list
   ansible.builtin.cron:
-    name: "trash downloads (at 5 AM)"
-    hour: "5"
+    name: "update books (every week)"
+    weekday: "0"
+    minute: "0"
+    hour: "11"
+    job: "$HOME/.dotfiles/scripts/cron/book-refresh"
+
+
+- name: cron - trash downloaded files 
+  ansible.builtin.cron:
+    name: "trash downloads (at 11 AM)"
+    hour: "11"
     minute: "0"
     job: "trash $HOME/Downloads/*"
 
-- name: cron entry - push dotfiles 
+- name: cron - push dotfiles 
   ansible.builtin.cron:
-    name: "push dotfiles (at 5 AM)"
-    hour: "5"
+    name: "push dotfiles (at 11 AM)"
+    hour: "11"
     minute: "0"
     job: "cd $HOME/.dotfiles && git add . && git commit -m 'automated update' && git push origin main"
 
-- name: cron entry - push neovim config 
+- name: cron - push neovim config 
   ansible.builtin.cron:
-    name: "push neovim (at 5 AM)"
-    hour: "5"
+    name: "push neovim (at 11 AM)"
+    hour: "11"
     minute: "0"
     job: "cd $HOME/.config/nvim && git add . && git commit -m 'automated update' && git push origin main"
 
-- name: cron entry - delete trashed items 
+- name: cron - delete trashed items 
   ansible.builtin.cron:
     name: "empty trash older than 30 days (every week)"
     weekday: "0"

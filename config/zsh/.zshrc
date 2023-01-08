@@ -24,9 +24,13 @@ compinit
 source "$ZDOTDIR/functions"
 zsh_add_file "alias"
 
+# follow dirs
+source ~/.config/lf/lfcd.sh
+
 # keybinds
 bindkey -e                        # emacs bindings
-bindkey -s '^f' 'lf^M'        # ranger
+# bindkey -s '^f' 'lfcd^M'        # ranger
+bindkey -s '^f' 'lfcd\n'  # zsh
 bindkey -s '^t' 'exa -a^M'        # extended ls
 
 bindkey "^[[3~" delete-char       # make delete work
@@ -39,11 +43,11 @@ zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
 zsh_add_plugin "Aloxaf/fzf-tab"
-zsh_add_plugin "agkozak/zsh-z"
 
 # should be automated
 source $DOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $DOTDIR/plugins/zsh-autopair/autopair.zsh
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
