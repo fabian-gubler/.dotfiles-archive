@@ -40,13 +40,12 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class				instance    title       tags mask   isfloating   monitor    float x,y,w,h       floatborderpx*/
-	{ "Blanket",			NULL,       NULL,       1 << 7,		0,           -1,        50,50,500,500,      0 },
+	// { "Blanket",			NULL,       NULL,       1 << 7,		0,           -1,        50,50,500,500,      0 },
 	{ "Spotify",			NULL,       NULL,       1 << 7,		0,           -1,        50,50,500,500,      0 },
 	{ "sioyek",				NULL,       NULL,       1 << 5,		0,           -1,        50,50,500,500,      0 },
 	{ "Chromium-browser",	NULL,       NULL,       1 << 4,		0,           -1,        50,50,500,500,      0 },
 	{ "firefox",			NULL,       NULL,       1 << 3,		0,           -1,        50,50,500,500,      0 },
 	{ "Com.github.johnfactotum.Foliate",NULL, NULL, 1 << 2,		0,           -1,        50,50,500,500,      0 },
-	{ "koodo-reader",		NULL,       NULL,       1 << 2,		0,           -1,        50,50,500,500,      0 },
 	{ "mpv",				NULL,       NULL,       1 << 2,		0,           -1,        50,50,500,500,      0 },
 	{ "qutebrowser",		NULL,       NULL,       1 << 1,		0,           -1,        50,50,500,500,      0 },
 	{ "kitty",				NULL,       NULL,       0,			0,           -1,        50,50,500,500,      0 },
