@@ -133,48 +133,48 @@
 # flatpak
 # --
 
-- name: add the flathub flatpak repository
-  ansible.builtin.shell:
-    cmd: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-- name: install flatpak packages
-  community.general.flatpak:
-    name:
-      - org.signal.Signal
-      - io.typora.Typora
-      - com.spotify.Client
-      - com.obsproject.Studio
-      - com.github.ahrm.sioyek
-
-- name: link typora
-  file:
-    src: '/var/lib/flatpak/exports/bin/io.typora.Typora'
-    dest: '$HOME/.local/bin/typora'
-    state: link
-
-- name: link signal
-  file:
-    src: '/var/lib/flatpak/exports/bin/org.signal.Signal'
-    dest: '$HOME/.local/bin/signal'
-    state: link
-
-- name: link spotify
-  file:
-    src: '/var/lib/flatpak/exports/bin/com.spotify.Client'
-    dest: '$HOME/.local/bin/spotify'
-    state: link
-
-- name: link obs
-  file:
-    src: '/var/lib/flatpak/exports/bin/com.obsproject.Studio'
-    dest: '$HOME/.local/bin/obs'
-    state: link
-
-- name: link foliate
-  file:
-    src: '/usr/bin/com.github.johnfactotum.Foliate'
-    dest: '$HOME/.local/bin/foliate'
-    state: link
+# - name: add the flathub flatpak repository
+#   ansible.builtin.shell:
+#     cmd: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+#
+# - name: install flatpak packages
+#   community.general.flatpak:
+#     name:
+#       - org.signal.Signal
+#       - io.typora.Typora
+#       - com.spotify.Client
+#       - com.obsproject.Studio
+#       - com.github.ahrm.sioyek
+#
+# - name: link typora
+#   file:
+#     src: '/var/lib/flatpak/exports/bin/io.typora.Typora'
+#     dest: '$HOME/.local/bin/typora'
+#     state: link
+#
+# - name: link signal
+#   file:
+#     src: '/var/lib/flatpak/exports/bin/org.signal.Signal'
+#     dest: '$HOME/.local/bin/signal'
+#     state: link
+#
+# - name: link spotify
+#   file:
+#     src: '/var/lib/flatpak/exports/bin/com.spotify.Client'
+#     dest: '$HOME/.local/bin/spotify'
+#     state: link
+#
+# - name: link obs
+#   file:
+#     src: '/var/lib/flatpak/exports/bin/com.obsproject.Studio'
+#     dest: '$HOME/.local/bin/obs'
+#     state: link
+#
+# - name: link foliate
+#   file:
+#     src: '/usr/bin/com.github.johnfactotum.Foliate'
+#     dest: '$HOME/.local/bin/foliate'
+#     state: link
 # --
 # cargo
 # --
