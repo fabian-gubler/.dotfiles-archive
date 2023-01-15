@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if ! command -v zbarimg &> /dev/null
+then
+    echo "Error: zbar is not installed. Please install zbar before running this script."
+    exit 1
+fi
+
+# Schedule the mp3 file to play in a loop until the alarm is turned off
+echo "mpv --loop=inf $force_file" | at $time
+
+# Wait for the specific QR code to be scanned
+echo "Scan the QR code to turn off the alarm"
+qr_code="your_qr_code_string"
+scanned_code=$(sudo zbarimg -q --raw -Sdisable -Sqrcode.enable /dev/video0)
+while [ "$scanned_code" != "$qr_code" ]
+do
+    scanned_code=$(sudo zbarimg -q --raw -Sdisable -Sqrcode.enable /dev/video0)
+done
+
+# Turn off the alarm
+pkill -f mpv
+
+# Confirm that the alarm has been turned off
+echo "Alarm turned off"

@@ -1,0 +1,104 @@
+#!/bin/bash
+
+# Steps needed to turn off alarm:
+	# 1. Turn on brightness / screen
+	# 2. Remove at commands
+	# 3. killall mpv
+
+# Ways to enforce waking up:
+	# Current: Put keyboard in a different room
+	# Advanced: Implement QR Code / Geolocation unlocking
+
+# Declare the paths to the mp3 files as variables
+soothing_file="$HOME/nextcloud/media/music/soothing/weightless.mp3"
+normal_file="$HOME/nextcloud/media/music/regular/resonance.opus"
+force_file="$HOME/nextcloud/media/music/force/wake-up.mp3"
+
+# Check if time is given as input
+if [ $# -eq 0 ]
+then
+	# Ask the user to enter time if no input is given
+	read -p "Do you want to schedule the alarm in 8 hours? [y/n]: " answer
+	if [ "$answer" == "y" ]; then
+		time=$(date --date='8 hours' +%H:%M)
+	else
+		read -p "Enter the time for the alarm in 24h format (HH:MM): " time
+	fi
+else
+    time=$1
+fi
+
+check_dependencies() {
+	# Check if mpv is installed
+	if ! command -v mpv &> /dev/null
+	then
+		echo "Error: mpv is not installed. Please install mpv before running this script."
+		exit 1
+	fi
+
+	if ! command -v tput &> /dev/null
+	then
+		echo "Error: ncurses is not installed. Please install ncurses before running this script."
+		exit 1
+	fi
+}
+
+check_files() {
+	# Check if the mp3 files exist
+	if [ ! -f "$soothing_file" ]; then
+		echo "Error: $soothing_file does not exist"
+		exit 1
+	fi
+
+	if [ ! -f "$normal_file" ]; then
+		echo "Error: $normal_file does not exist"
+		exit 1
+	fi
+
+	if [ ! -f "$force_file" ]; then
+		echo "Error: $force_file does not exist"
+		exit 1
+	fi
+}
+
+schedule_alarm() {
+	# Schedule the volume and unmute commands to run at the given time
+	echo "pactl set-sink-mute 0 0" | at $time > /dev/null 2>&1
+	echo "pactl set-sink-volume 0 100%" | at $time > /dev/null 2>&1
+
+	# Schedule the first mp3 file to play at the given time with low volume
+	echo "mpv --volume=30 --length=60 $soothing_file" | at $time > /dev/null 2>&1
+
+	# Schedule the second mp3 file to play 10 minutes after the first alarm with normal volume
+	echo "mpv --volume=70 --length=60 $normal_file" | at $time + 10 minutes > /dev/null 2>&1
+
+	# Schedule the third mp3 file to play 20 minutes after the first alarm with high volume
+	echo "mpv --volume=100 --loop=inf $force_file" | at $time + 20 minutes > /dev/null 2>&1
+}
+
+confirm_schedule() {
+	# Define variables for formatting
+	bold=$(tput bold)
+	normal=$(tput sgr0)
+	green=$(tput setaf 2)
+	blue=$(tput setaf 4)
+	yellow=$(tput setaf 3)
+
+	# Pretty print that the alarms have been scheduled
+	printf "%b%bAlarm set to play%b %-20s %b at %-20s %b with low volume%b\n" "${bold}" "${green}" "${blue}" "$(basename $soothing_file)" "${yellow}" "$time" "${green}" "${normal}"
+	printf "%b%bAlarm set to play%b %-20s %b at %-20s %b with normal volume%b\n" "${bold}" "${green}" "${blue}" "$(basename $normal_file)" "${yellow}" "$time + 10 minutes" "${green}" "${normal}"
+	printf "%b%bAlarm set to play%b %-20s %b at %-20s %b with high volume%b\n" "${bold}" "${green}" "${blue}" "$(basename $force_file)" "${yellow}" "$time + 20 minutes" "${green}" "${normal}"
+}
+
+# Main Function
+main() {
+	check_dependencies
+	check_files
+	check_files
+	confirm_schedule
+}
+
+# Check if the Script is being run directly
+if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+    main
+fi

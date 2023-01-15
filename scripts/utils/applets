@@ -1,15 +1,14 @@
 #!/bin/zsh
 
-flatpak run org.signal.Signal --start-in-tray --no-sandbox & # messenger
+# starts applets in correct order
+
+signal --start-in-tray --no-sandbox & # secure messenger
 sleep 2
 
 nextcloud --background & # establish connection to cloud server
 sleep 1
 
 nm-applet & # network control
-sleep 1
-
-blueberry-tray &
 sleep 1
 
 onboard &
