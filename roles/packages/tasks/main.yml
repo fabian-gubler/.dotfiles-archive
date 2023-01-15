@@ -1,84 +1,71 @@
 ---
 - include_tasks: '{{ ansible_os_family }}.yml'
 
-- name: xorg utilities
-  package:
+# --
+# pip
+# --
+
+- name: Install python packages (data science)
+  pip:
     name:
-      - xsetroot
-      - xprop
-      - xclip
-      - xkill
+      - jupyter-client
+      - jupyterlab
+      - jupyterlab-vim
+      - pynvim
+      - ipykernel
+      - numpy
+      - matplotlib
+      - pandas
+      - klepto # repl for sniprun
+      # - tensorflow (not found)
     state: present
-  become: true
 
-- name: Install system packages
-  package:
+- name: Install python packages
+  pip:
     name:
-      - tar
-      - wget
-      - curl
-      - arandr
-      - fzf
-      - unclutter-xfixes
-      - picom
-      - gtk3-devel
-      - g++
-      - sqlite
-      - touchegg
-      - touche
-      - onboard
+      - mkdocs
+      - mkdocs-material
+      - markdown-anki-decks
+      - khal
+      - vdirsyncer
+      - khard
+      - fahrplan
+      - pulsemixer
+      - trash-cli
     state: present
-  become: true
 
-- name: pdf utilities
-  package:
+# --
+# flatpak
+# --
+
+- name: add the flathub flatpak repository
+  ansible.builtin.shell:
+    cmd: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+- name: install flatpak packages
+  community.general.flatpak:
     name:
-      - poppler-utils # -> pdfunite, pdfseparate
-      - pdf-stapler
-    state: present
-  become: true
+      - io.typora.Typora
+      - com.github.ahrm.sioyek
 
-- name: Install cli tools
-  package:
-    name:
-      - zsh
-      - kitty
-      - tmux
-      - exa
-      - ripgrep
-      - ranger
-      - ncdu
-    state: present
-  become: true
+- name: link typora
+  file:
+    src: '/var/lib/flatpak/exports/bin/io.typora.Typora'
+    dest: '$HOME/.local/bin/typora'
+    state: link
 
-- name: Install applications
-  package:
-    name:
-      - gimp
-      - chromium
-      - torbrowser-launcher
-      - zathura
-      - thunar
-      - foliate
-    state: present
-  become: true
+- name: link typora
+  file:
+    src: '/var/lib/flatpak/exports/bin/com.github.ahrm.sioyek'
+    dest: '$HOME/.local/bin/sioyek'
+    state: link
 
-- name: Install graphical applications
-  package:
-    name:
-      - gimp
-      - inkscape
-      - xournalpp
-    state: present
-  become: true
+# --
+# cargo
+# --
 
-- name: Install browsers
-  package:
-    name:
-      - chromium
-      - torbrowser-launcher
-    state: present
-  become: true
-
-
-
+- name: install rust packages
+  community.general.cargo:
+    name: 
+      - stylua
+      - rbw

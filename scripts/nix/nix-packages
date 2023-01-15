@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# find older package versions: https://lazamar.co.uk/nix-versions/?channel=nixpkgs-unstable&package=signal-desktop
+
+# install packages
+nix-env -iA \
+	nixpkgs.bitwig-studio \
+	nixpkgs.signal-desktop \
+	nixpkgs.xdragon \
+	nixpkgs.todo-txt-cli \
+	nixpkgs.devour \
+	nixpkgs.clipnotify \
+	nixpkgs.clipmenu \
+	nixpkgs.volctl \
+	nixpkgs.gotop \
+	nixpkgs.spotify \
+	nixpkgs.spicetify-cli

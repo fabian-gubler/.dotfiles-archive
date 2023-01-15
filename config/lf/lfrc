@@ -6,30 +6,24 @@ set hidden on
 set nopreview
 set ratios 1
 
-# autojump
-cmd aj %lf -remote "send $id cd '$(autojump $1)'"
-map j push :aj<space>
-
 # interpreter for shell commands
 set shell sh
-
-# set '-eu' options for shell commands
-# These options are used to have safer shell commands. Option '-e' is used to
-# exit on error and option '-u' is used to give error for unset variables.
-set shellopts '-eu'
-
-# set internal field separator (IFS) to "\n" for shell commands
-# This is useful to automatically split file names in $fs and $fx properly
-# since default file separator used in these variables (i.e. 'filesep' option)
-# is newline. You need to consider the values of these options and create your
-# commands accordingly.
-set ifs "\n"
 
 # leave some space at the top and the bottom of the screen
 set scrolloff 10
 
-# use enter for shell commands
-map <enter> shell
+# custom mappings
+map <enter> open
+
+# autojump
+cmd aj %lf -remote "send $id cd '$(autojump $1)'"
+map j push :aj<space>
+
+# drag and drop
+cmd drag %dragon $fx
+
+# move current file or selected files to trash folder
+cmd trash %trash-put $fx
 
 # fuzzy find
 cmd fzf_jump ${{
@@ -45,19 +39,14 @@ cmd fzf_jump ${{
 }}
 map f :fzf_jump
 
+
 # define a custom 'open' command
-# This command is called when current file is not a directory. You may want to
-# use either file extensions and/or mime types here. Below uses an editor for
-# text files and a file opener for the rest.
 cmd open &{{
     case $(file --mime-type -Lb $f) in
         text/*) lf -remote "send $id \$$EDITOR \$fx";;
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
-
-# move current file or selected files to trash folder
-cmd trash %trash-put $fx
 
 # extract the current file with the right command
 cmd extract ${{
@@ -89,3 +78,15 @@ cmd zip ${{
     zip -r $1.zip $1
     rm -rf $1
 }}
+
+# set '-eu' options for shell commands
+# These options are used to have safer shell commands. Option '-e' is used to
+# exit on error and option '-u' is used to give error for unset variables.
+set shellopts '-eu'
+
+# set internal field separator (IFS) to "\n" for shell commands
+# This is useful to automatically split file names in $fs and $fx properly
+# since default file separator used in these variables (i.e. 'filesep' option)
+# is newline. You need to consider the values of these options and create your
+# commands accordingly.
+set ifs "\n"

@@ -16,6 +16,84 @@
     name: "*"
     state: latest
 
+- name: xorg utilities
+  package:
+    name:
+      - hsetroot
+      - xprop
+      - xclip
+      - xkill
+    state: present
+  become: true
+
+- name: install system packages
+  package:
+    name:
+      - tar
+      - wget
+      - curl
+      - arandr
+      - fzf
+      - unclutter-xfixes
+      - picom
+      - gtk3-devel
+      - g++
+      - sqlite
+      - touchegg
+      - onboard
+    state: present
+  become: true
+
+- name: pdf utilities
+  package:
+    name:
+      - poppler-utils # -> pdfunite, pdfseparate
+      - pdf-stapler
+    state: present
+  become: true
+
+- name: install cli tools
+  package:
+    name:
+      - zsh
+      - kitty
+      - tmux
+      - exa
+      - ripgrep
+      - ranger
+      - ncdu
+    state: present
+  become: true
+
+- name: install applications
+  package:
+    name:
+      - gimp
+      - chromium
+      - obs-studio
+      - torbrowser-launcher
+      - zathura
+      - thunar
+      - foliate
+    state: present
+  become: true
+
+- name: install graphical applications
+  package:
+    name:
+      - gimp
+      - inkscape
+      - xournalpp
+    state: present
+  become: true
+
+- name: install browsers
+  package:
+    name:
+      - chromium
+      - torbrowser-launcher
+    state: present
+  become: true
 
 - name: install latex packages
   become: true
@@ -47,7 +125,7 @@
       - pasystray
     state: present
 
-- name: Install system packages
+- name: install system packages
   package:
     name:
       - neovim
@@ -100,7 +178,6 @@
 - name: install applications
   package:
     name:
-      - lpf-spotify-client
       - qbittorrent
       - pavucontrol
       - okular
@@ -149,3 +226,80 @@
       - neovim
     enablerepo: rawhide
   become: true
+
+# --
+# copr
+# --
+
+- name: enable blanket
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    name: tuxino/Blob
+  become: true
+
+- name: enable lazygit
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    name: atim/lazygit
+  become: true
+
+- name: enable neomutt
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    name:  flatcap/neomutt
+  become: true
+
+- name: enable font-manager
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    name:  jerrycasiano/FontManager
+  become: true
+
+- name: install packages
+  package:
+    name:
+      - blanket
+      - lazygit
+      - neomutt
+    state: present
+  become: true
+
+# --
+# neomutt
+# --
+
+- name: mail with mutt
+  package:
+    name:
+      - isync     # sync mail to local storage
+      - lynx      # display html
+      - notmuch   # search mail
+      - msmtp     # send mail
+  become: true
+
+- name: create mail directory if it does not exist
+  ansible.builtin.file:
+    path: $HOME/.mail
+    state: directory
+    mode: '0755'
+
+
+# --
+# qutebrowser
+# --
+
+- name: install packages
+  package:
+    name:
+      - qutebrowser
+      - qt5-qtwebengine-freeworld   # video codecs
+    state: present
+  become: true
+
+
+- name: install python dependencies
+  pip:
+    name:
+      - tldextract # qutebrowser: bitwarden userscript
+    state: present
+

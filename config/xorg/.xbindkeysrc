@@ -31,13 +31,13 @@
 # Headphones
 # ---
 
-# # Mute volume (headphones)
-# "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-#     m:0x0 + c:171
-#
-# # Play-pause (headphones)
-# "playerctl play-pause"
-#     m:0x0 + c:208
+# Mute volume (headphones)
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    m:0x0 + c:171
+
+# Play-pause (headphones)
+"playerctl play-pause"
+    m:0x0 + c:208
 
 
 

@@ -27,9 +27,6 @@ zsh_add_file "alias"
 # follow dirs
 source ~/.config/lf/lfcd.sh
 
-# nix package manager
-source $HOME/.nix-profile/etc/profile.d/nix.sh
-
 # keybinds
 bindkey -e                        # emacs bindings
 # bindkey -s '^f' 'lfcd^M'        # ranger

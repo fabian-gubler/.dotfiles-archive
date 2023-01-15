@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Author: Fabian Gubler, Github: https://github.com/fabian-gubler 
+
 # Steps needed to turn off alarm:
 	# 1. Turn on brightness / screen
 	# 2. Remove at commands
@@ -13,6 +15,12 @@
 soothing_file="$HOME/nextcloud/media/music/soothing/weightless.mp3"
 normal_file="$HOME/nextcloud/media/music/regular/resonance.opus"
 force_file="$HOME/nextcloud/media/music/force/wake-up.mp3"
+
+# Declare the volumes of the mp3 files as variables
+soothing_volume=30
+normal_volume=70
+force_volume=100
+
 
 # Check if time is given as input
 if [ $# -eq 0 ]
@@ -67,13 +75,13 @@ schedule_alarm() {
 	echo "pactl set-sink-volume 0 100%" | at $time > /dev/null 2>&1
 
 	# Schedule the first mp3 file to play at the given time with low volume
-	echo "mpv --volume=30 --length=60 $soothing_file" | at $time > /dev/null 2>&1
+	echo "mpv --volume=$soothing_volume --length=60 $soothing_file" | at $time > /dev/null 2>&1
 
 	# Schedule the second mp3 file to play 10 minutes after the first alarm with normal volume
-	echo "mpv --volume=70 --length=60 $normal_file" | at $time + 10 minutes > /dev/null 2>&1
+	echo "mpv --volume=$normal_volume --length=60 $normal_file" | at $time + 10 minutes > /dev/null 2>&1
 
 	# Schedule the third mp3 file to play 20 minutes after the first alarm with high volume
-	echo "mpv --volume=100 --loop=inf $force_file" | at $time + 20 minutes > /dev/null 2>&1
+	echo "mpv --volume=$force_volume --loop=inf $force_file" | at $time + 20 minutes > /dev/null 2>&1
 }
 
 confirm_schedule() {
@@ -85,16 +93,16 @@ confirm_schedule() {
 	yellow=$(tput setaf 3)
 
 	# Pretty print that the alarms have been scheduled
-	printf "%b%bAlarm set to play%b %-20s %b at %-20s %b with low volume%b\n" "${bold}" "${green}" "${blue}" "$(basename $soothing_file)" "${yellow}" "$time" "${green}" "${normal}"
-	printf "%b%bAlarm set to play%b %-20s %b at %-20s %b with normal volume%b\n" "${bold}" "${green}" "${blue}" "$(basename $normal_file)" "${yellow}" "$time + 10 minutes" "${green}" "${normal}"
-	printf "%b%bAlarm set to play%b %-20s %b at %-20s %b with high volume%b\n" "${bold}" "${green}" "${blue}" "$(basename $force_file)" "${yellow}" "$time + 20 minutes" "${green}" "${normal}"
+	printf "%b%bPlaying: %b %-20s %b %-20s %b with $soothing_volume volume%b\n" "${bold}" "${green}" "${blue}" "$(basename $soothing_file)" "${yellow}" "$time" "${green}" "${normal}"
+	printf "%b%bPlaying: %b %-20s %b %-20s %b with $normal_volume volume%b\n" "${bold}" "${green}" "${blue}" "$(basename $normal_file)" "${yellow}" "$time + 10 minutes" "${green}" "${normal}"
+	printf "%b%bPlaying: %b %-20s %b %-20s %b with $force_volume volume%b\n" "${bold}" "${green}" "${blue}" "$(basename $force_file)" "${yellow}" "$time + 20 minutes" "${green}" "${normal}"
 }
 
 # Main Function
 main() {
 	check_dependencies
 	check_files
-	check_files
+	schedule_alarm
 	confirm_schedule
 }
 

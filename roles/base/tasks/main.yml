@@ -6,3 +6,90 @@
     path: ~/.local/bin
     state: directory
 
+# --
+# xorg files
+# --
+
+- name: link xinitrc
+  file:
+    src: "$HOME/.dotfiles/config/xorg/.xinitrc"
+    dest: "$HOME/.xinitrc"
+    state: link
+
+- name: link xprofile
+  file:
+    src: "$HOME/.dotfiles/config/xorg/.xprofile"
+    dest: "$HOME/.xprofile"
+    state: link
+
+- name: link Xresources
+  file:
+    src: "$HOME/.dotfiles/config/xorg/.Xresources"
+    dest: "$HOME/.Xresources"
+    state: link
+
+- name: link Xmodmap
+  file:
+    src: "$HOME/.dotfiles/config/xorg/.Xmodmap"
+    dest: "$HOME/.Xmodmap"
+    state: link
+
+# --
+# suckless utils
+# --
+
+- name: build dwm
+  make:
+    chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dwm"
+  become: true
+
+- name: compile dwm
+  make:
+    chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dwm"
+    target: install
+  become: true
+
+- name: build dmenu
+  make:
+    chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dmenu"
+  become: true
+
+- name: compile dmenu
+  make:
+    chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/dmenu"
+    target: install
+  become: true
+
+# - name: build sxiv
+#   make:
+#     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/sxiv"
+#   become: true
+#
+# - name: compile sxiv
+#   make:
+#     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/sxiv"
+#     target: install
+#   become: true
+#
+# - name: build slock
+#   make:
+#     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/slock"
+#   become: true
+#    
+# - name: compile slock
+#   make:
+#     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/slock"
+#     target: install
+#   become: true
+#
+# - name: build tabbed
+#   make:
+#     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/tabbed"
+#   become: true
+#
+# - name: compile tabbed
+#   make:
+#     chdir: "{{ ansible_user_dir }}/.dotfiles/config/suckless/tabbed"
+#     target: install
+#   become: true
+#

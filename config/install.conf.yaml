@@ -46,7 +46,7 @@
     ~/.config/mimeapps.list:                xorg/mimeapps.list
     ~/.config/mpDris2:                      mpDris2
     ~/.ncmpcpp:                             ncmpcpp
-    ~/.spicetify/Extensions/keyboardShortcut.js: spicetify/keyboardShortcut.js
+    ~/.config/spicetify/Extensions/keyboardShortcut.js: spicetify/keyboardShortcut.js
     ~/.config/spicetify/config-xpui.ini:    spicetify/config-xpui.ini
     ~/.config/lf:                           lf
     ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf

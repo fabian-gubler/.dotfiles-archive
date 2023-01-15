@@ -2,11 +2,5 @@
 - hosts: localhost
   roles:
     - { role: base, tags: base }
-    - { role: suckless, tags: suckless }
-    - { role: xorg, tags: xorg }
     - { role: packages, tags: packages }
-    - { role: remote, tags: remote }
-    - { role: build, tags: build }
     - { role: misc, tags: misc }
-    - { role: mime, tags: mime }
-    - { role: qute, tags: qute }

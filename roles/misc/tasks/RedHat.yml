@@ -108,27 +108,3 @@
     groups: docker
     append: yes
 
-# ---
-# systemd
-# ---
-
-- name: start docker service
-  become: true
-  systemd:
-    state: started
-    name: docker
-    enabled: yes
-
-- name: enable touchegg
-  become: true
-  systemd:
-    state: started
-    name: tlp
-    enabled: yes
-
-- name: enable automatic updates
-  become: true
-  systemd:
-    state: started
-    name: tlp
-    enabled: yes

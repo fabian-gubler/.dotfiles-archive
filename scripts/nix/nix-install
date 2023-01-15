@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# install nix
+sudo install -d -m755 -o $(id -u) -g $(id -g) /nix
+curl -L https://nixos.org/nix/install | sh
+
+# add unfree
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+nix-channel --update
