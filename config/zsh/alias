@@ -15,8 +15,10 @@ alias ran="autorandr"
 alias n="nohup"
 alias launch="~/.config/rofi/powermenu/type-2/powermenu.sh"
 
-# flatpak
-alias touche="flatpak run com.github.joseexposito.touche"
+# harsh
+alias h="harsh"
+alias hc="nvim ~/.config/harsh/habits"
+alias hl="nvim ~/.config/harsh/log"
 
 # scripts
 alias alarm="$HOME/.dotfiles/scripts/utils/alarm"

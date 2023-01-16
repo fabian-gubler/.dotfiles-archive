@@ -166,6 +166,7 @@
   package:
     name:
       - mpv
+      - mpv-mpris
       - mpd
       - mpc
       - mpdris2
