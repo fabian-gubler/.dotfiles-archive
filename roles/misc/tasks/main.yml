@@ -54,22 +54,22 @@
 
 - name: cron - trash downloaded files 
   ansible.builtin.cron:
-    name: "trash downloads (at 11 AM)"
-    hour: "11"
+    name: "trash downloads (at 5 AM)"
+    hour: "5"
     minute: "0"
     job: "trash $HOME/Downloads/*"
 
 - name: cron - push dotfiles 
   ansible.builtin.cron:
-    name: "push dotfiles (at 11 AM)"
-    hour: "11"
+    name: "push dotfiles (at 5 AM)"
+    hour: "5"
     minute: "0"
     job: "cd $HOME/.dotfiles && git add . && git commit -m 'automated update' && git push origin main"
 
 - name: cron - push neovim config 
   ansible.builtin.cron:
-    name: "push neovim (at 11 AM)"
-    hour: "11"
+    name: "push neovim (at 5 AM)"
+    hour: "5"
     minute: "0"
     job: "cd $HOME/.config/nvim && git add . && git commit -m 'automated update' && git push origin main"
 
