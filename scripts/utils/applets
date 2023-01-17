@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # starts applets in correct order
 signal-desktop --start-in-tray --no-sandbox & # secure messenger

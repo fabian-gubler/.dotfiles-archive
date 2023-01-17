@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Watch vdirsyncer calendars.
 # Sync on changes and every 5 minutes.
