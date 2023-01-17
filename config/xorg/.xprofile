@@ -50,5 +50,5 @@ $HOME/.dotfiles/scripts/watchers/autovdirsyncer & # sync calendar/contacts on wr
 $HOME/.dotfiles/scripts/utils/applets & # start applets in order
 
 # main applications
-kitty -e "tmuxd" &
-qutebrowser &
+# kitty -e "tmuxd" &
+# qutebrowser &
