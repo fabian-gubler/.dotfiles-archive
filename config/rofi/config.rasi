@@ -1,4 +1,4 @@
-@theme "/home/fabian/.config/rofi/themes/spotlight-dark.rasi"
+@theme "themes/spotlight-dark.rasi"
 
 configuration {
 	kb-row-up:						"Up,Shift+Tab";

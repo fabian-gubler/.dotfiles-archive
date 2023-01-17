@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # TODO: work with flags -m {mode} -c -l {launcher}
 # TODO: but prev search logic into rofi
