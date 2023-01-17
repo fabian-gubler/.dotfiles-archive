@@ -22,6 +22,9 @@ map j push :aj<space>
 # drag and drop
 cmd drag %dragon $fx
 
+# move current file or selected files to trash folder
+cmd trash %trash-put $fx
+
 # fuzzy find
 cmd fzf_jump ${{
     res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
@@ -41,7 +44,7 @@ map f :fzf_jump
 cmd open &{{
     case $(file --mime-type -Lb $f) in
         text/*) lf -remote "send $id \$$EDITOR \$fx";;
-        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+        *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;
     esac
 }}
 
