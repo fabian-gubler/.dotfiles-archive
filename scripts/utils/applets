@@ -11,11 +11,14 @@ nm-applet & # network control
 sleep 1
 
 onboard &
+sleep 1
 
-while volctl /tmp/file >& /dev/null; [[ $? -eq 0 ]];
-do
-  echo "Result unsuccessful"
-  sleep 5
-done
+volctl &
 
-echo "Result successful"
+# while volctl /tmp/file >& /dev/null; [[ $? -eq 0 ]];
+# do
+#   echo "Result unsuccessful"
+#   sleep 5
+# done
+
+# echo "Result successful"
