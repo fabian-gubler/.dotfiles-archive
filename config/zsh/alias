@@ -30,11 +30,11 @@ alias ncdu="ncdu --exclude /run"
 alias fzf="fzf -i"
 
 # todo
-alias t="todo.sh -d /home/fabian/nextcloud/todo/config"
-alias d="todo.sh -d /home/fabian/nextcloud/todo/dev/config"
-alias dv="nvim -c 'sort' /home/fabian/nextcloud/todo/dev/dev.txt"
-alias tv="nvim -c 'sort' /home/fabian/nextcloud/todo/todo.txt"
-alias uv="nvim -c 'sort' /home/fabian/nextcloud/todo/uni/uni.txt"
+alias t="todo.sh -d $HOME/nextcloud/todo/config"
+alias d="todo.sh -d $HOME/nextcloud/todo/dev/config"
+alias dv="nvim -c 'sort' $HOME/nextcloud/todo/dev/dev.txt"
+alias tv="nvim -c 'sort' $HOME/nextcloud/todo/todo.txt"
+alias uv="nvim -c 'sort' $HOME/nextcloud/todo/uni/uni.txt"
 
 # productivity
 alias .="exa -a"
@@ -66,7 +66,7 @@ randpw(){
 
 u() {
 	date +"#  Pri Work  %V     ID     Name"
-	todo.sh -d /home/fabian/nextcloud/todo/uni/config "$@"
+	todo.sh -d $HOME/nextcloud/todo/uni/config "$@"
 }
 
 uf() {
