@@ -34,8 +34,8 @@ nextcloud --background & # establish connection to cloud server
 clipmenud & # clipboard manager daemon
 redshift -l 47.66667:8.98333 & # night light with coordinates
 xbindkeys & # playerctl with headphones
-xautolock -time 15 -detectsleep -locker "systemctl suspend" & # suspend after inactivity
-mpd & # music player daemon
+# xautolock -time 15 -detectsleep -locker "systemctl suspend" & # suspend after inactivity
+# mpd & # music player daemon
 playerctld & # Switch Tracks
 touchegg & # touch gestures
 protonmail-bridge --no-window --noninteractive & # mail backend, run in background
