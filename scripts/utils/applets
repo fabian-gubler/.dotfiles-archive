@@ -1,8 +1,7 @@
 #!/bin/zsh
 
 # starts applets in correct order
-
-signal --start-in-tray --no-sandbox & # secure messenger
+signal-desktop --start-in-tray --no-sandbox & # secure messenger
 sleep 2
 
 nextcloud --background & # establish connection to cloud server
