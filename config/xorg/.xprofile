@@ -26,7 +26,7 @@ export ANKI_BASE="$HOME/nextcloud/apps/anki-data"
 export NODE_PATH=$NODE_PATH:$(npm root -g)
 
 # startup
-unclutter -idle 1 & # hide mouse pointer
+# unclutter -idle 1 & # hide mouse pointer
 picom --config $HOME/.dotfiles/config/picom/picom.conf & # window compositor
 hsetroot -solid "#252A34" & # solid background
 xset s off -dpms & # monitor always on
