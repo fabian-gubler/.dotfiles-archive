@@ -22,9 +22,6 @@ map j push :aj<space>
 # drag and drop
 cmd drag %dragon $fx
 
-# move current file or selected files to trash folder
-cmd trash %trash-put $fx
-
 # fuzzy find
 cmd fzf_jump ${{
     res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"

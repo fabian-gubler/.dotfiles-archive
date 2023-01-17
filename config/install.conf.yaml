@@ -43,6 +43,7 @@
     ~/.config/mpv:                          mpv
     ~/.config/mpd:                          mpd
     ~/.xbindkeysrc:                         xorg/.xbindkeysrc
+    ~/.xprofile:                            xorg/.xprofile
     ~/.config/mimeapps.list:                xorg/mimeapps.list
     ~/.config/mpDris2:                      mpDris2
     ~/.ncmpcpp:                             ncmpcpp
