@@ -4,7 +4,7 @@
 application/djvu=sioyek.desktop;
 application/epub+zip=foliate.desktop;
 application/html=qutebrowser.desktop;
-application/pdf=sioyek.desktop;
+application/pdf=zathura.desktop;
 image/jpeg=sxiv.desktop;
 image/png=sxiv.desktop;
 text/*=nvim.desktop;
