@@ -32,13 +32,10 @@
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
     ~/.config/Typora/themes/nord:           typora/nord
     ~/.config/Typora/themes/nord.css:       typora/nord.css
-    ~/.config/gtk-3.0/settings.ini:         gtk/settings.ini
-    ~/.gtkrc-2.0:                           gtk/.gtkrc-2.0
     ~/.config/qt5ct/qt5ct.conf:             qt/qt5ct.conf
     ~/.config/qt6ct/qt6ct.conf:             qt/qt6ct.conf
     ~/.config/qt5ct/colors/nord.conf:       qt/nord.conf 
     ~/.config/qt6ct/colors/nord.conf:       qt/nord.conf 
-    ~/.themes/Nordic:                       gtk/Nordic
     ~/.config/redshift:                     redshift
     ~/.config/mpv:                          mpv
     ~/.config/mpd:                          mpd

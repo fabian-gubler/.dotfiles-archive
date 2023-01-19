@@ -22,7 +22,6 @@ export PATH="/usr/sbin:/usr/local/go/bin:$HOME/.local/bin:$PATH"
 export PATH="$HOME/go/bin:$HOME/.cargo/bin:$HOME/.nix-profile/bin:$PATH"
 export PATH="$HOME/.dotfiles/scripts/utils:$HOME/.dotfiles/scripts/tmux:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib
-export ZDOTDIR=$HOME/.config/zsh     
 export ANKI_BASE="$HOME/nextcloud/apps/anki-data"
 export NODE_PATH=$NODE_PATH:$(npm root -g)
 
