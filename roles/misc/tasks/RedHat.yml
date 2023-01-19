@@ -23,10 +23,10 @@
 #   ansible.builtin.shell: 
 #     cmd: grep -qxF "IdleAction=suspend" /etc/systemd/logind.conf || echo "IdleAction=suspend" | sudo tee -a /etc/systemd/logind.conf
 
-- name: set inactivity timeout
-  ansible.builtin.shell: 
-    cmd: grep -qxF "IdleActionSec=15min" /etc/systemd/logind.conf || echo "IdleActionSec=15min" | sudo tee -a /etc/systemd/logind.conf
-  become: true
+# - name: set inactivity timeout
+#   ansible.builtin.shell: 
+#     cmd: grep -qxF "IdleActionSec=15min" /etc/systemd/logind.conf || echo "IdleActionSec=15min" | sudo tee -a /etc/systemd/logind.conf
+#   become: true
 
 # ----------------
 # Applications

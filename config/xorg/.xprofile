@@ -33,10 +33,8 @@ redshift -l 47.66667:8.98333 & # night light with coordinates
 touchegg & # touch gestures
 
 # startup
-# xautolock -time 15 -detectsleep -locker "systemctl suspend" & # suspend after inactivity
-# mpd & # music player daemon
 hsetroot -solid "#252A34" & # solid background
-xset s off -dpms & # monitor always on
+xset s off -dpms & # turns off screen saver
 nextcloud --background & # establish connection to cloud server
 clipmenud & # clipboard manager daemon
 xbindkeys & # playerctl with headphones
