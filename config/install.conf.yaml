@@ -26,7 +26,7 @@
     ~/.config/khal:                         khal  
     ~/.config/khard:                        khard  
     ~/.config/vdirsyncer:                   vdirsyncer
-    ~/.config/alacritty:                    alacritty
+    # ~/.config/alacritty:                    alacritty
     ~/.config/kitty:                        kitty
     ~/.newsboat:                            newsboat
     ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
