@@ -1,40 +1,43 @@
-; ZSH PLUGINS
-; [submodule "config/zsh/pure"]
-; 	path = config/zsh/pure
-; 	url = https://github.com/sindresorhus/pure
-; [submodule "config/zsh/plugins/fzf-tab"]
-; 	path = config/zsh/plugins/fzf-tab
-; 	url = https://github.com/Aloxaf/fzf-tab
-; [submodule "config/zsh/plugins/zsh-autopair"]
-; 	path = config/zsh/plugins/zsh-autopair
-; 	url = https://github.com/hlissner/zsh-autopair
-; [submodule "config/zsh/plugins/zsh-autosuggestions"]
-; 	path = config/zsh/plugins/zsh-autosuggestions
-; 	url = https://github.com/zsh-users/zsh-autosuggestions
-; [submodule "config/zsh/plugins/zsh-completions"]
-; 	path = config/zsh/plugins/zsh-completions
-; 	url = https://github.com/zsh-users/zsh-completions
-; [submodule "config/zsh/plugins/zsh-syntax-highlighting"]
-; 	path = config/zsh/plugins/zsh-syntax-highlighting
-; 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-; [submodule "config/zsh/plugins/zsh-z"]
-; 	path = config/zsh/plugins/zsh-z
-; 	url = https://github.com/agkozak/zsh-z
+# ZSH PLUGINS
+[submodule "config/zsh/plugins/fzf-tab"]
+	path = config/zsh/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab
+[submodule "config/zsh/plugins/zsh-autopair"]
+	path = config/zsh/plugins/zsh-autopair
+	url = https://github.com/hlissner/zsh-autopair
+[submodule "config/zsh/plugins/zsh-autosuggestions"]
+	path = config/zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "config/zsh/plugins/zsh-completions"]
+	path = config/zsh/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions
+[submodule "config/zsh/plugins/zsh-syntax-highlighting"]
+	path = config/zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "config/zsh/plugins/zsh-z"]
+	path = config/zsh/plugins/zsh-z
+	url = https://github.com/agkozak/zsh-z
 
-; RANGER PLUGINS
-; [submodule "config/ranger/plugins/ranger-archives"]
-; 	path = config/ranger/plugins/ranger-archives
-; 	url = https://github.com/maximtrp/ranger-archives
-; [submodule "config/ranger/plugins/ranger_devicons"]
-; 	path = config/ranger/plugins/ranger_devicons
-; 	url = https://github.com/alexanderjeurissen/ranger_devicons
+# RANGER PLUGINS
+[submodule "config/ranger/plugins/ranger-archives"]
+	path = config/ranger/plugins/ranger-archives
+	url = https://github.com/maximtrp/ranger-archives
+[submodule "config/ranger/plugins/ranger_devicons"]
+	path = config/ranger/plugins/ranger_devicons
+	url = https://github.com/alexanderjeurissen/ranger_devicons
 
 # OTHER
 [submodule "config/gtk/Nordic"]
 	path = config/gtk/Nordic
 	url = https://github.com/EliverLara/Nordic
 
+[submodule "config/rumno/repo"]
+	path = config/rumno/repo
+	url = https://gitlab.com/natjo/rumno
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "config/gtk/qbittorrent"]
+	path = config/gtk/qbittorrent
+	url = https://github.com/dracula/qbittorrent
