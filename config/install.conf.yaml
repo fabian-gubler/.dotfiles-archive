@@ -54,7 +54,7 @@
     ~/.config/tridactyl/tridactylrc:        firefox/tridactylrc.vim
     ~/.config/tridactyl/themes/nord.css:    firefox/nord.css
     ~/.config/dunst:                        dunst
-    # ~/.config/sioyek:                       sioyek
-    /home/fabian/.var/app/com.github.ahrm.sioyek/config/sioyek/prefs_user.config: sioyek/prefs_user.config
-    /home/fabian/.var/app/com.github.ahrm.sioyek/config/sioyek/keys_user.config: sioyek/keys_user.config
+    ~/.config/sioyek:                       sioyek
+    # /home/fabian/.var/app/com.github.ahrm.sioyek/config/sioyek/prefs_user.config: sioyek/prefs_user.config
+    # /home/fabian/.var/app/com.github.ahrm.sioyek/config/sioyek/keys_user.config: sioyek/keys_user.config
 
