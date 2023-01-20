@@ -4,7 +4,11 @@ This repository is separated into three primary components:
 - **roles:** ansible playbooks for automating installation
 - **scripts:** bash scripts for personal use
 
-# Installation
+# Installation using Nix
+I have recently migrated my setup towards NixOS.
+Link of the repo can be found [here](https://github.com/fabian-gubler/nixos-config).
+
+# Legacy Installation using Ansible
 
 ```bash
 # Clone dotfiles repository
