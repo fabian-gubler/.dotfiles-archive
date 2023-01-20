@@ -1,4 +1,4 @@
-- defaults:
+  - defaults:
     link:
       create: true    # Create parent directories as needed
       force: true     # Removes the old target and forces a new link
@@ -6,55 +6,27 @@
 - clean: ['~']
 
 - link:
-    ~/.config/pipewire:                     pipewire
-    ~/.config/handlr/handlr.toml:           handlr/handlr.toml
-    ~/.config/sxiv:                         sxiv
     ~/.config/autorandr:                    autorandr
-    ~/.config/picom.conf:                   picom/picom.conf
     ~/.config/mutt:                         mail/mutt
     ~/.mbsyncrc:                            mail/.mbsyncrc
     ~/.config/touchegg:                     touchegg
     ~/.config/qutebrowser:                  qutebrowser
-    ~/.config/zsh:                          zsh
-    ~/.config/rbw:                          rbw
     ~/.local/share/fonts:                   fonts
     ~/.config/yt-dlp:                       yt-dlp
-    ~/.config/keyboard.conf:                setxkbmap/keyboard.conf
     ~/.tmux.conf:                           tmux/tmux.conf
     ~/.config/rofi/themes:                  rofi/themes
     ~/.config/rofi/config.rasi:             rofi/config.rasi
     ~/.config/khal:                         khal  
     ~/.config/khard:                        khard  
     ~/.config/vdirsyncer:                   vdirsyncer
-    # ~/.config/alacritty:                    alacritty
-    ~/.config/kitty:                        kitty
     ~/.newsboat:                            newsboat
-    ~/.config/Typora/conf/conf.user.json:   typora/conf.user.json
-    ~/.config/Typora/themes/nord:           typora/nord
-    ~/.config/Typora/themes/nord.css:       typora/nord.css
-    ~/.config/qt5ct/qt5ct.conf:             qt/qt5ct.conf
-    ~/.config/qt6ct/qt6ct.conf:             qt/qt6ct.conf
-    ~/.config/qt5ct/colors/nord.conf:       qt/nord.conf 
-    ~/.config/qt6ct/colors/nord.conf:       qt/nord.conf 
-    ~/.config/redshift:                     redshift
     ~/.config/mpv:                          mpv
-    ~/.config/mpd:                          mpd
     ~/.xbindkeysrc:                         xorg/.xbindkeysrc
     ~/.xinitrc:                             xorg/.xinitrc
     ~/.xprofile:                            xorg/.xprofile
-    ~/.config/mimeapps.list:                xorg/mimeapps.list
-    ~/.config/mpDris2:                      mpDris2
-    ~/.ncmpcpp:                             ncmpcpp
     ~/.config/spicetify/Extensions/keyboardShortcut.js: spicetify/keyboardShortcut.js
     ~/.config/spicetify/config-xpui.ini:    spicetify/config-xpui.ini
     ~/.config/lf:                           lf
-    ~/.config/qBittorrent/qBittorrent.conf: qBittorrent/qBittorrent.conf
-    ~/.config/zathura:                      zathura
     ~/.config/xournalpp:                    xournal
-    ~/.config/tridactyl/tridactylrc:        firefox/tridactylrc.vim
-    ~/.config/tridactyl/themes/nord.css:    firefox/nord.css
     ~/.config/dunst:                        dunst
     ~/.config/sioyek:                       sioyek
-    # /home/fabian/.var/app/com.github.ahrm.sioyek/config/sioyek/prefs_user.config: sioyek/prefs_user.config
-    # /home/fabian/.var/app/com.github.ahrm.sioyek/config/sioyek/keys_user.config: sioyek/keys_user.config
-
