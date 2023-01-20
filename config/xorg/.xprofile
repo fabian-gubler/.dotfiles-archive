@@ -7,6 +7,7 @@ nextcloud --background & # establish connection to cloud server
 clipmenud & # clipboard manager daemon
 xbindkeys & # playerctl with headphones
 playerctld & # Switch Tracks
+touchegg & # touch gestures
 protonmail-bridge --no-window --noninteractive & # mail backend, run in background
 
 # script
