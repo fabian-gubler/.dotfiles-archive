@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if test $(tmux list-sessions | wc -l) -gt 1 
 then

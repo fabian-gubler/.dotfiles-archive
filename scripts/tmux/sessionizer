@@ -25,7 +25,7 @@ fi
 # open notes (if exists)
 docs_dir=$HOME/nextcloud/mcs/docs/
 
-if [[ -d $docs_dir/$selected_name ]] then
+if [[ -d $docs_dir/$selected_name ]]; then
 	tmux neww -dn notes -t $selected_name
 	tmux send-keys -t $selected_name:notes "cd $docs_dir/$selected_name && nvim ." Enter
 fi

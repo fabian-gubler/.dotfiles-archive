@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # save selection into variable
 CURRENT_SESSION=$(tmux display-message -p '#S')

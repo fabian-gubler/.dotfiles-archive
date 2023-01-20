@@ -14,4 +14,4 @@ sleep 1
 onboard &
 sleep 1
 
-volctl &&
+# volctl 
