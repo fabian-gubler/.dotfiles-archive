@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Pull latest hosts file
 docker run --pull always --rm -it -v /etc/hosts:/etc/hosts \
