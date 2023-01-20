@@ -1,36 +1,5 @@
 #!/bin/sh
 
-# general
-export EDITOR=nvim
-export PAGER=less
-export PDF_VIEWER=sioyek
-export XDG_SESSION_TYPE=x11
-export GDK_BACKEND=x11
-export NIXPKGS_ALLOW_UNFREE=1
-export OPENER=xdg-open
-
-# theme
-export GTK_THEME=Nordic
-export QT_QPA_PLATFORMTHEME=qt6ct
-export QT_SCALE_FACTOR=1.5
-
-# paths
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_DOWNLOAD_DIR="$HOME/Downloads"
-export PATH="/usr/sbin:/usr/local/go/bin:$HOME/.local/bin:$PATH"
-export PATH="$HOME/go/bin:$HOME/.cargo/bin:$HOME/.nix-profile/bin:$PATH"
-export PATH="$HOME/.dotfiles/scripts/utils:$HOME/.dotfiles/scripts/tmux:$PATH"
-export LD_LIBRARY_PATH=/usr/local/lib
-export ANKI_BASE="$HOME/nextcloud/apps/anki-data"
-export NODE_PATH=$NODE_PATH:$(npm root -g)
-
-# TODO: remove in nixos
-unclutter -idle 1 & # hide mouse pointer
-picom --config $HOME/.dotfiles/config/picom/picom.conf & # window compositor
-redshift -l 47.66667:8.98333 & # night light with coordinates
-touchegg & # touch gestures
-
 # startup
 hsetroot -solid "#252A34" & # solid background
 xset s off -dpms & # turns off screen saver
