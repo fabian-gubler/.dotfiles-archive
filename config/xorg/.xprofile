@@ -50,5 +50,5 @@ $HOME/nextcloud/apps/keyring.sh & # retrieve keyring
 dbus-update-activation-environment --all & # activate keyring
 
 # main applications
-# kitty -e "tmuxd" &
-# qutebrowser &
+kitty -e "tmuxd" &
+qutebrowser &
