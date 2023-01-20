@@ -6,9 +6,11 @@ This repository is separated into three primary components:
 
 # Installation using Nix
 I have recently migrated my setup towards NixOS.
+
 Link of the repo can be found [here](https://github.com/fabian-gubler/nixos-config).
 
 # Legacy Installation using Ansible
+Note: The ansible scripts are written for Fedora
 
 ```bash
 # Clone dotfiles repository
