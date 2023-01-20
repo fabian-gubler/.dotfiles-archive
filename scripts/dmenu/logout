@@ -36,20 +36,17 @@ choice=$(printf '%s\n' "${options[@]}" | dmenu -i -p 'Shutdown menu:' "${@}" )
 # What to do when/if we choose one of the options.
 case $choice in
     'Lock')
-		xhost +local:
+		xset dpms force off
         slock
-        ;;
-    'Reboot')
-        systemctl reboot
-        ;;
-	'Hibernate')
-		systemctl hibernate
-		;;
-    'Shutdown')
-        systemctl poweroff
         ;;
     'Suspend')
         systemctl suspend
+        ;;
+    'Shutdown')
+        systemctl poweroff
+        ;;
+    'Reboot')
+        systemctl reboot
         ;;
 	'Monitor')
 		xset dpms force off
@@ -60,4 +57,3 @@ case $choice in
         exit 0
     ;;
 esac
-xset dpms force off
