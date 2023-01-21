@@ -1,4 +1,4 @@
-  - defaults:
+- defaults:
     link:
       create: true    # Create parent directories as needed
       force: true     # Removes the old target and forces a new link
